@@ -5,6 +5,7 @@ const ACCESS_KEY_ID = process.env.R2_ACCESS_KEY_ID!
 const SECRET_ACCESS_KEY = process.env.R2_SECRET_ACCESS_KEY!
 const BUCKET_NAME = process.env.R2_BUCKET_NAME!
 const PUBLIC_URL = process.env.R2_PUBLIC_URL!
+const R2_PREFIX = process.env.R2_PREFIX || ''
 
 export const r2Enabled = !!(ACCOUNT_ID && ACCESS_KEY_ID && SECRET_ACCESS_KEY && BUCKET_NAME)
 
@@ -28,25 +29,29 @@ export async function uploadToR2(
     throw new Error('R2 is not configured')
   }
 
+  const key = R2_PREFIX ? `${R2_PREFIX}/${filename}` : filename
+
   await r2Client.send(
     new PutObjectCommand({
       Bucket: BUCKET_NAME,
-      Key: filename,
+      Key: key,
       Body: buffer,
       ContentType: contentType,
     })
   )
 
-  return `${PUBLIC_URL}/${filename}`
+  return `${PUBLIC_URL}/${key}`
 }
 
 export async function deleteFromR2(filename: string): Promise<void> {
   if (!r2Client) return
 
+  const key = R2_PREFIX ? `${R2_PREFIX}/${filename}` : filename
+
   await r2Client.send(
     new DeleteObjectCommand({
       Bucket: BUCKET_NAME,
-      Key: filename,
+      Key: key,
     })
   )
 }

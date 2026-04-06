@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
     default: siteConfig.name,
-    template: `%s — ${siteConfig.name}`,
+    template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
   openGraph: {
@@ -56,6 +56,9 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: '/',
+    types: {
+      'application/rss+xml': '/feed.xml',
+    },
   },
 }
 
@@ -79,6 +82,12 @@ export default function RootLayout({
         <ThemeScript />
       </head>
       <body className="flex min-h-dvh flex-col">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-xl focus:bg-primary focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-foreground focus:outline-none"
+        >
+          Aller au contenu
+        </a>
         <RootWrapper>{children}</RootWrapper>
       </body>
     </html>

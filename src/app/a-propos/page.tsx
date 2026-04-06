@@ -4,10 +4,10 @@ import { AboutContent } from './about-content'
 import { breadcrumbJsonLd, webPageJsonLd } from '@/components/seo/json-ld'
 
 const description =
-  'Découvrez notre histoire, nos valeurs et notre équipe. Nous accompagnons les entreprises dans leur développement digital.'
+  'Victor Beasse, consultant SEO et développeur web à Rennes. Plus de 8 ans d\'expérience au service des PME et artisans en Bretagne. Découvrez mon parcours et mon approche.'
 
 export const metadata: Metadata = {
-  title: 'À propos',
+  title: 'Victor Beasse | Consultant SEO & Développeur Web à Rennes',
   description,
   alternates: { canonical: '/a-propos' },
 }

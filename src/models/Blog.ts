@@ -1,11 +1,17 @@
 import mongoose, { Schema, Document } from 'mongoose'
 
+export interface IFaqItem {
+  question: string
+  answer: string
+}
+
 export interface IBlogPost extends Document {
   title: string
   slug: string
   excerpt: string
   content: string
   coverImage: string
+  coverImageAlt: string
   category: string
   tags: string[]
   author: string
@@ -13,6 +19,11 @@ export interface IBlogPost extends Document {
   publishedAt?: Date
   metaTitle?: string
   metaDescription?: string
+  focusKeyword?: string
+  secondaryKeywords: string[]
+  canonicalUrl?: string
+  noIndex: boolean
+  faq: IFaqItem[]
   createdAt: Date
   updatedAt: Date
 }
@@ -34,6 +45,7 @@ const BlogPostSchema = new Schema<IBlogPost>(
     excerpt: { type: String, default: '' },
     content: { type: String, default: '' },
     coverImage: { type: String, default: '' },
+    coverImageAlt: { type: String, default: '' },
     category: { type: String, default: 'Général' },
     tags: [{ type: String }],
     author: { type: String, default: '' },
@@ -41,6 +53,14 @@ const BlogPostSchema = new Schema<IBlogPost>(
     publishedAt: { type: Date },
     metaTitle: String,
     metaDescription: String,
+    focusKeyword: { type: String, default: '' },
+    secondaryKeywords: [{ type: String }],
+    canonicalUrl: { type: String, default: '' },
+    noIndex: { type: Boolean, default: false },
+    faq: [{
+      question: { type: String, required: true },
+      answer: { type: String, required: true },
+    }],
   },
   { timestamps: true }
 )

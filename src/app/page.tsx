@@ -1,21 +1,28 @@
 import type { Metadata } from 'next'
 
-import { CtaSection } from '@/components/sections/cta-section'
-import { GalleryCarousel } from '@/components/sections/gallery-carousel'
 import { HeroSection } from '@/components/sections/hero-section'
-import { ServicesPreview } from '@/components/sections/services-preview'
-import { StorySection } from '@/components/sections/story-section'
+import { FounderSection } from '@/components/sections/founder-section'
+import { ProblemStatsSection } from '@/components/sections/problem-stats-section'
+import { MethodSection } from '@/components/sections/method-section'
+import { ResultsSection } from '@/components/sections/results-section'
 import { TestimonialsSection } from '@/components/sections/testimonials-section'
-import { ValuesMarquee } from '@/components/sections/values-marquee'
+import { CaseStudiesSection } from '@/components/sections/case-studies-section'
+import { CtaGallerySection } from '@/components/sections/cta-gallery-section'
 import {
   localBusinessJsonLd,
   organizationJsonLd,
+  personJsonLd,
   webPageJsonLd,
   webSiteJsonLd,
 } from '@/components/seo/json-ld'
 import { siteConfig } from '@/lib/seo'
 
+const description =
+  'Consultant SEO à Rennes : plus de clients grâce à Google. Référencement naturel, création de sites internet et applications web pour PME, artisans et commerces en Bretagne. 75 avis 5 étoiles.'
+
 export const metadata: Metadata = {
+  title: 'Consultant SEO Rennes : Plus de Clients grâce à Google | VBWEB',
+  description,
   alternates: { canonical: '/' },
 }
 
@@ -25,7 +32,8 @@ const jsonLd = {
     webSiteJsonLd(),
     organizationJsonLd(),
     localBusinessJsonLd(),
-    webPageJsonLd(siteConfig.name, siteConfig.description, '/'),
+    personJsonLd(),
+    webPageJsonLd('Consultant SEO Rennes | VBWEB', description, '/', ['h1', '.hero-description']),
   ],
 }
 
@@ -37,12 +45,13 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <HeroSection />
-      <ServicesPreview />
-      <StorySection />
+      <FounderSection />
+      <ProblemStatsSection />
+      <MethodSection />
+      <ResultsSection />
       <TestimonialsSection />
-      <GalleryCarousel />
-      <CtaSection />
-      <ValuesMarquee />
+      <CaseStudiesSection />
+      <CtaGallerySection />
     </>
   )
 }

@@ -11,7 +11,7 @@ type ThemeToggleProps = {
 }
 
 export function ThemeToggle({ className }: ThemeToggleProps) {
-  const [dark, setDark] = useState(false)
+  const [dark, setDark] = useState(true)
 
   useEffect(() => {
     setDark(document.documentElement.classList.contains('dark'))
@@ -27,7 +27,7 @@ export function ThemeToggle({ className }: ThemeToggleProps) {
       type="button"
       variant="ghost"
       size="icon-sm"
-      className={cn('rounded-full', className)}
+      className={cn('rounded-full text-foreground/60 hover:text-foreground hover:bg-foreground/5', className)}
       aria-label={dark ? 'Passer en thème clair' : 'Passer en thème sombre'}
       aria-pressed={dark}
       onClick={() => setDark((d) => !d)}

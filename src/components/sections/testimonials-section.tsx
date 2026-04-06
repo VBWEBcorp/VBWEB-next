@@ -2,28 +2,16 @@
 
 import { Star } from 'lucide-react'
 
-import { SectionTitle } from '@/components/ui/section-title'
-import { useContent } from '@/hooks/use-content'
-
-const defaultTestimonials = [
-  { name: 'Marie D.', company: 'Boulangerie Le Fournil', text: "Depuis le nouveau site, je reçois 3 fois plus d'appels. Les clients nous trouvent enfin sur Google.", stars: 5 },
-  { name: 'Thomas L.', company: 'Cabinet Conseil TLR', text: 'Un travail soigné, un site clair et professionnel. Mes prospects comprennent immédiatement ce que je propose.', stars: 5 },
-  { name: 'Camille B.', company: 'Atelier Camille', text: "Le site reflète parfaitement l'univers de ma marque. J'ai gagné en crédibilité auprès de mes clients.", stars: 5 },
-  { name: 'Laurent M.', company: 'LM Rénovation', text: 'En trois mois, mon chiffre a augmenté de 40 %. Le site et le SEO font vraiment la différence.', stars: 5 },
-  { name: 'Nadia K.', company: 'Agence NovaTour', text: "Un accompagnement au top, des délais respectés et un résultat qui dépasse mes attentes.", stars: 5 },
-  { name: 'Sophie R.', company: 'Studio Pilates Zen', text: "L'équipe a su capter l'ambiance de mon studio. Les réservations ont décollé.", stars: 5 },
-  { name: 'Pierre V.', company: 'Transports Vallée', text: "Un investissement rentabilisé en quelques semaines. Des contacts qualifiés chaque jour.", stars: 5 },
-  { name: 'Julie A.', company: "Les Jardins d'Alice", text: "Ils ont transformé notre présence en ligne. Le site est magnifique et nos ventes ont triplé.", stars: 5 },
-  { name: 'Franck G.', company: 'Studio FG', text: "Design épuré, navigation fluide, exactement ce que je voulais pour présenter mes projets.", stars: 4 },
-  { name: 'Émilie T.', company: 'Clinique Vétérinaire du Parc', text: "Nos clients trouvent toutes les infos facilement. La prise de rendez-vous a changé notre quotidien.", stars: 5 },
+const testimonials = [
+  { name: 'Maxime Guillois Magicien', initial: 'M', date: 'il y a 5 mois', text: 'Un immense merci à VBWeb et à Victor pour la création de mon site internet "Maxime Guillois Magicien" ! 🎩✨' },
+  { name: 'Brad Mouche', initial: 'B', date: 'il y a 5 mois', text: 'Sa fait maintenant 1 an que Victor s\'occupe de mes sites internet dans le domaine de la couverture. Je suis très satisfait des résultats et de Victor qui est toujours à l\'écoute et toujours disponible.' },
+  { name: 'Lea Nogier', initial: 'L', date: 'il y a 5 mois', text: 'J\'ai vraiment bien fait de faire confiance à VBWEB ! Vraiment une bonne stratégie de privilégier le référencement naturel à la pub bien que ça ai mis du temps à se mettre en place, des économies et bien plus d\'appels ! Merci 🤩' },
+  { name: 'Pauline Buffet', initial: 'P', date: 'il y a 5 mois', text: 'VBWEB nous a développé une plate-forme en interne qui nous facilite bien la vie ! Merci pour son professionnalisme.' },
+  { name: 'Mélina Jéhannin', initial: 'M', date: 'il y a 5 mois', text: 'Encore merci ! Référencement au top et un conseil d\'exception, Victor a pris le temps de m\'expliquer en détail l\'importance du référencement ce qui m\'a permis d\'y voir plus clair, les résultats sont au RDV je recommande' },
+  { name: 'Caroline Le Blavec', initial: 'C', date: 'il y a 9 mois', text: 'Un accompagnement de qualité, Victor m\'a fait un audit video très explicite de mon site et m\'accompagne maintenant depuis 2 ans dans ma strategie SEO, ce qui a vraiment augmenté mon trafic et les appels. C\'est quelqu\'un de très reactif et pro, je recommande ✅️' },
+  { name: 'Johanna Gonzalez', initial: 'J', date: 'il y a 7 mois', text: 'De très bons, résultats en terme de référencement ! Ça fait maintenant plus d\'un an que je travaille avec Victor et les résultats sont là beaucoup plus d\'appels et de ventes je recommande 👌' },
+  { name: 'Romain Geff', initial: 'R', date: 'il y a un an', text: 'Victor vient de réaliser mon site. J\'avais déjà une petite idée de ce que je voulais faire, mais grâce à son écoute attentive et ses recommandations, mes attentes ont été largement dépassées.' },
 ]
-
-const defaults = {
-  eyebrow: 'Témoignages',
-  title: 'Ils nous font confiance',
-  description: 'Des entreprises de tous horizons qui ont gagné en visibilité et en crédibilité.',
-  testimonials: defaultTestimonials,
-}
 
 function GoogleLogo() {
   return (
@@ -36,56 +24,45 @@ function GoogleLogo() {
   )
 }
 
-function TestimonialCard({
-  testimonial,
-}: {
-  testimonial: { name: string; company: string; text: string; stars: number }
-}) {
+function TestimonialCard({ testimonial }: { testimonial: typeof testimonials[0] }) {
   return (
-    <figure className="flex h-[180px] w-[300px] shrink-0 flex-col rounded-xl border border-border/60 bg-card/80 px-5 py-4 shadow-[var(--shadow-xs)] ring-1 ring-foreground/[0.03] backdrop-blur-sm">
+    <figure className="flex h-[200px] w-[320px] shrink-0 flex-col rounded-xl border border-border bg-card/80 px-5 py-4 shadow-[var(--shadow-xs)] backdrop-blur-sm">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-0.5">
           {Array.from({ length: 5 }).map((_, i) => (
-            <Star
-              key={i}
-              className={`size-3 ${i < testimonial.stars ? 'fill-amber-400 text-amber-400' : 'fill-muted text-muted'}`}
-              aria-hidden
-            />
+            <Star key={i} className="size-3 fill-amber-400 text-amber-400" aria-hidden />
           ))}
         </div>
         <GoogleLogo />
       </div>
-      <blockquote className="mt-3 flex-1">
-        <p className="text-[13px] leading-relaxed text-foreground/85">
-          "{testimonial.text}"
+      <blockquote className="mt-3 flex-1 overflow-hidden">
+        <p className="text-[13px] leading-relaxed text-foreground/70 line-clamp-4">
+          &ldquo;{testimonial.text}&rdquo;
         </p>
       </blockquote>
-      <figcaption className="mt-3 flex items-center gap-2.5 border-t border-border/40 pt-3">
-        <div className="flex size-7 items-center justify-center rounded-full bg-primary/10 text-[11px] font-bold text-primary">
-          {testimonial.name.charAt(0)}
+      <figcaption className="mt-3 flex items-center gap-2.5 border-t border-border pt-3">
+        <div className="flex size-7 items-center justify-center rounded-full bg-primary/15 text-[11px] font-bold text-primary">
+          {testimonial.initial}
         </div>
         <div className="min-w-0">
-          <p className="truncate text-xs font-semibold text-foreground">{testimonial.name}</p>
-          <p className="truncate text-[11px] text-muted-foreground">{testimonial.company}</p>
+          <p className="truncate text-xs font-semibold text-foreground/90">{testimonial.name}</p>
+          <p className="truncate text-[11px] text-muted-foreground/60">{testimonial.date}</p>
         </div>
       </figcaption>
     </figure>
   )
 }
 
-function MarqueeRow({
-  items,
-  direction,
-}: {
-  items: { name: string; company: string; text: string; stars: number }[]
-  direction: 'left' | 'right'
-}) {
+function MarqueeRow({ items, direction, tilt = 0 }: { items: typeof testimonials; direction: 'left' | 'right'; tilt?: number }) {
   const animationClass = direction === 'left' ? 'animate-marquee-left' : 'animate-marquee-right'
 
   return (
-    <div className="group relative flex overflow-hidden">
-      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-background to-transparent sm:w-24" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-background to-transparent sm:w-24" />
+    <div
+      className="group relative flex overflow-hidden"
+      style={{ transform: `rotate(${tilt}deg)`, marginLeft: '-2%', marginRight: '-2%', width: '104%' }}
+    >
+      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-card to-transparent sm:w-28" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-card to-transparent sm:w-28" />
       <div className={`flex shrink-0 gap-6 py-2 ${animationClass} group-hover:[animation-play-state:paused]`}>
         {items.map((t, i) => (
           <TestimonialCard key={`${t.name}-${i}`} testimonial={t} />
@@ -101,26 +78,53 @@ function MarqueeRow({
 }
 
 export function TestimonialsSection() {
-  const { data } = useContent('testimonials', defaults)
-  const testimonials = data.testimonials ?? defaults.testimonials
-
   const mid = Math.ceil(testimonials.length / 2)
   const topRow = testimonials.slice(0, mid)
   const bottomRow = testimonials.slice(mid)
 
   return (
-    <section className="overflow-hidden border-y border-border/60 bg-muted/10">
-      <div className="mx-auto max-w-6xl px-4 pt-14 sm:px-6 lg:px-8 lg:pt-20">
-        <SectionTitle
-          eyebrow={data.eyebrow ?? defaults.eyebrow}
-          title={data.title ?? defaults.title}
-          description={data.description ?? defaults.description}
-        />
-      </div>
+    <section className="bg-background">
+      <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+        <div className="rounded-3xl border border-border/50 bg-card overflow-hidden shadow-sm">
 
-      <div className="mt-10 space-y-6 pb-14 lg:pb-20">
-        <MarqueeRow items={topRow} direction="left" />
-        {bottomRow.length > 0 && <MarqueeRow items={bottomRow} direction="right" />}
+          {/* Header */}
+          <div className="px-6 pt-10 sm:px-10 lg:pt-14">
+            <div className="mx-auto max-w-2xl text-center space-y-4">
+              <div className="flex items-center justify-center gap-3">
+                <GoogleLogo />
+                <span className="text-sm font-medium text-muted-foreground">Avis Google</span>
+                <span className="rounded-full bg-primary/15 px-2.5 py-0.5 text-xs font-semibold text-primary">75 avis</span>
+              </div>
+              <h2 className="font-display text-balance text-3xl leading-[1.12] tracking-[-0.02em] text-foreground sm:text-4xl md:text-[2.6rem]">
+                Mes avis
+              </h2>
+              <div className="flex items-center justify-center gap-1">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star key={i} className="size-5 fill-amber-400 text-amber-400" aria-hidden />
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Marquee rows */}
+          <div className="mt-10 space-y-6 pb-8">
+            <MarqueeRow items={topRow} direction="left" tilt={-2} />
+            {bottomRow.length > 0 && <MarqueeRow items={bottomRow} direction="right" tilt={2} />}
+          </div>
+
+          {/* CTA */}
+          <div className="pb-10 text-center">
+            <a
+              href="https://g.page/r/VBWEB/review"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-border bg-foreground/5 px-5 py-2.5 text-sm font-medium text-foreground/70 transition-colors hover:bg-foreground/10"
+            >
+              Laissez un avis
+            </a>
+          </div>
+
+        </div>
       </div>
     </section>
   )

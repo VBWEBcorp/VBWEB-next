@@ -22,12 +22,12 @@ interface AdminUser {
 }
 
 const modules = [
-  { href: '/admin/pages/accueil', label: 'Accueil', desc: 'Hero, histoire, CTA, bandeau', icon: Home },
-  { href: '/admin/pages/a-propos', label: 'À propos', desc: 'Présentation, valeurs, galerie', icon: Users },
+  { href: '/admin/pages/accueil', label: 'Accueil', desc: 'Hero, fondateur, méthode, CTA', icon: Home },
+  { href: '/admin/pages/a-propos', label: 'À propos', desc: 'Présentation, valeurs, parcours', icon: Users },
   { href: '/admin/pages/services', label: 'Services', desc: 'Liste des services', icon: Briefcase },
   { href: '/admin/pages/contact', label: 'Contact', desc: 'Formulaire, coordonnées', icon: Phone },
-  { href: '/admin/pages/temoignages', label: 'Témoignages', desc: 'Avis clients', icon: MessageSquare },
-  { href: '/admin/gallery', label: 'Galerie', desc: 'Photos du site', icon: Images },
+  { href: '/admin/pages/temoignages', label: 'Témoignages', desc: 'Avis clients Google', icon: MessageSquare },
+  { href: '/admin/gallery', label: 'Galerie', desc: 'Photos et réalisations', icon: Images },
   { href: '/admin/blog', label: 'Blog', desc: 'Articles et actualités', icon: FileText },
 ]
 
@@ -67,13 +67,13 @@ export default function AdminDashboardPage() {
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease }}
-        className="rounded-2xl bg-primary/10 p-8 lg:p-10"
+        className="rounded-2xl border border-border/50 bg-gradient-to-br from-primary/10 to-primary/[0.02] p-8 lg:p-10"
       >
         <h1 className="text-2xl lg:text-3xl font-bold text-foreground">
-          Bonjour !
+          Bonjour{user.name ? `, ${user.name}` : ''} !
         </h1>
-        <p className="text-muted-foreground mt-1">
-          Gérez le contenu de votre site depuis cet espace.
+        <p className="text-muted-foreground/60 mt-1.5">
+          Gerez le contenu de votre site depuis cet espace.
         </p>
       </motion.div>
 
@@ -83,8 +83,8 @@ export default function AdminDashboardPage() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease, delay: 0.08 }}
       >
-        <h2 className="text-sm font-bold text-muted-foreground/60 uppercase tracking-widest mb-4">
-          Éditer les pages
+        <h2 className="text-[11px] font-semibold text-muted-foreground/30 uppercase tracking-widest mb-4">
+          Editer les pages
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
           {modules.map((mod) => {
@@ -93,16 +93,16 @@ export default function AdminDashboardPage() {
               <Link
                 key={mod.href}
                 href={mod.href}
-                className="group flex items-center gap-4 p-4 rounded-xl border border-border/40 bg-card hover:border-primary/20 hover:shadow-sm transition-all"
+                className="group flex items-center gap-4 p-4 rounded-xl border border-border/50 bg-background/50 hover:border-primary/20 hover:bg-background/80 transition-all"
               >
-                <div className="flex size-11 items-center justify-center rounded-xl bg-primary/8 group-hover:bg-primary/15 transition-colors">
+                <div className="flex size-11 items-center justify-center rounded-xl bg-primary/10 group-hover:bg-primary/15 transition-colors">
                   <Icon className="size-5 text-primary" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <p className="text-sm font-semibold text-foreground">{mod.label}</p>
-                  <p className="text-xs text-muted-foreground truncate">{mod.desc}</p>
+                  <p className="text-xs text-muted-foreground/50 truncate">{mod.desc}</p>
                 </div>
-                <ArrowRight className="size-4 text-muted-foreground/40 group-hover:text-primary group-hover:translate-x-0.5 transition-all" />
+                <ArrowRight className="size-4 text-muted-foreground/20 group-hover:text-primary group-hover:translate-x-0.5 transition-all" />
               </Link>
             )
           })}
@@ -115,13 +115,13 @@ export default function AdminDashboardPage() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease, delay: 0.16 }}
-          className="rounded-xl border border-dashed border-border/60 p-5 flex items-center justify-between"
+          className="rounded-xl border border-dashed border-border bg-background/30 p-5 flex items-center justify-between"
         >
           <div className="flex items-center gap-3">
-            <Database className="size-5 text-muted-foreground" />
+            <Database className="size-5 text-muted-foreground/40" />
             <div>
               <p className="text-sm font-medium text-foreground">Données d&apos;exemple</p>
-              <p className="text-xs text-muted-foreground">Ajouter des photos galerie et articles blog pour tester le template</p>
+              <p className="text-xs text-muted-foreground/50">Ajouter des photos galerie et articles blog pour tester</p>
             </div>
           </div>
           <button
@@ -139,13 +139,13 @@ export default function AdminDashboardPage() {
                   alert('Erreur lors du seed')
                 }
               } catch {
-                alert('Erreur réseau')
+                alert('Erreur reseau')
               } finally {
                 setSeeding(false)
               }
             }}
             disabled={seeding}
-            className="shrink-0 px-4 py-2 rounded-lg bg-primary text-white text-sm font-medium hover:bg-primary/90 transition-colors disabled:opacity-50"
+            className="shrink-0 px-4 py-2.5 rounded-xl bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/85 transition-colors disabled:opacity-50"
           >
             {seeding ? 'Chargement...' : 'Charger les données'}
           </button>

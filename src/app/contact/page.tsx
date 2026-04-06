@@ -4,10 +4,10 @@ import { ContactContent } from './contact-content'
 import { breadcrumbJsonLd, webPageJsonLd } from '@/components/seo/json-ld'
 
 const description =
-  'Contactez-nous pour discuter de votre projet. Devis gratuit, réponse rapide.'
+  'Contactez VBWEB à Rennes pour votre projet SEO ou web. Réponse sous 24h, devis gratuit et sans engagement. Parlons de votre visibilité sur Google.'
 
 export const metadata: Metadata = {
-  title: 'Contact',
+  title: 'Contact | Devis Gratuit',
   description,
   alternates: { canonical: '/contact' },
 }

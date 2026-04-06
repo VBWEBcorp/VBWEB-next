@@ -4,18 +4,9 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { Lock, Mail, User as UserIcon, ArrowRight } from 'lucide-react'
+import { Lock, Mail, User as UserIcon, Globe, Shield } from 'lucide-react'
 
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
+const ease = [0.22, 1, 0.36, 1] as const
 
 export default function AdminRegisterPage() {
   const [formData, setFormData] = useState({
@@ -29,10 +20,7 @@ export default function AdminRegisterPage() {
   const router = useRouter()
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    })
+    setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
   const handleRegister = async (e: React.FormEvent) => {
@@ -72,139 +60,119 @@ export default function AdminRegisterPage() {
     }
   }
 
+  const inputClass = 'w-full h-11 rounded-xl border border-border bg-foreground/5 pl-10 pr-4 text-sm text-foreground placeholder:text-muted-foreground/30 outline-none transition-colors focus:border-primary/50 focus:bg-foreground/8 focus:ring-1 focus:ring-primary/25'
+
   return (
-    <div className="min-h-screen flex items-center justify-center p-4 bg-background">
+    <div className="relative min-h-screen flex items-center justify-center p-4 bg-background">
+      {/* Background effects */}
+      <div aria-hidden className="pointer-events-none absolute top-1/4 left-1/2 -translate-x-1/2 h-[600px] w-[600px] rounded-full bg-primary/[0.06] blur-[150px]" />
+      <div aria-hidden className="pointer-events-none absolute bottom-0 right-0 h-[400px] w-[400px] rounded-full bg-primary/[0.03] blur-[120px]" />
+
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-        className="w-full max-w-md"
+        transition={{ duration: 0.5, ease }}
+        className="w-full max-w-[420px] relative z-10"
       >
-        <Card>
-          <CardHeader className="space-y-2">
-            <div className="flex items-center gap-2">
-              <div className="flex items-center justify-center size-8 rounded-lg bg-primary/10">
-                <UserIcon className="size-4 text-primary" />
+        {/* Logo */}
+        <div className="flex items-center justify-center gap-2.5 mb-8">
+          <span className="flex size-10 items-center justify-center rounded-xl bg-primary text-primary-foreground">
+            <Globe className="size-5" />
+          </span>
+          <span className="font-display text-xl font-bold text-foreground tracking-tight">VBWEB</span>
+        </div>
+
+        {/* Card */}
+        <div className="rounded-2xl border border-border bg-background/80 backdrop-blur-xl shadow-2xl p-8">
+          <div className="space-y-1.5 mb-6">
+            <h1 className="text-xl font-bold text-foreground">Créer un compte</h1>
+            <p className="text-sm text-muted-foreground/60">
+              Inscription a l&apos;espace d&apos;administration
+            </p>
+          </div>
+
+          <form onSubmit={handleRegister} className="space-y-4">
+            <div className="space-y-2">
+              <label htmlFor="name" className="block text-xs font-medium text-muted-foreground uppercase tracking-wider">
+                Nom complet
+              </label>
+              <div className="relative">
+                <UserIcon className="absolute left-3 top-1/2 -translate-y-1/2 size-4 text-muted-foreground/40 pointer-events-none" />
+                <input id="name" name="name" type="text" value={formData.name} onChange={handleChange} required placeholder="Victor Beasse" className={inputClass} />
               </div>
-              <CardTitle>Créer un compte</CardTitle>
             </div>
-            <CardDescription>
-              Inscription à l'espace d'administration
-            </CardDescription>
-          </CardHeader>
 
-          <CardContent>
-            <form onSubmit={handleRegister} className="space-y-4">
-              <div className="space-y-2">
-                <Label htmlFor="name">Nom complet</Label>
-                <div className="relative">
-                  <UserIcon className="absolute left-2.5 top-2.5 size-4 text-muted-foreground pointer-events-none" />
-                  <Input
-                    id="name"
-                    name="name"
-                    type="text"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    placeholder="Votre nom"
-                    className="pl-8"
-                  />
-                </div>
+            <div className="space-y-2">
+              <label htmlFor="email" className="block text-xs font-medium text-muted-foreground uppercase tracking-wider">
+                Email
+              </label>
+              <div className="relative">
+                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 size-4 text-muted-foreground/40 pointer-events-none" />
+                <input id="email" name="email" type="email" value={formData.email} onChange={handleChange} required placeholder="admin@vbweb.fr" className={inputClass} />
               </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
-                <div className="relative">
-                  <Mail className="absolute left-2.5 top-2.5 size-4 text-muted-foreground pointer-events-none" />
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    placeholder="admin@example.com"
-                    className="pl-8"
-                  />
-                </div>
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="password">Mot de passe</Label>
-                <div className="relative">
-                  <Lock className="absolute left-2.5 top-2.5 size-4 text-muted-foreground pointer-events-none" />
-                  <Input
-                    id="password"
-                    name="password"
-                    type="password"
-                    value={formData.password}
-                    onChange={handleChange}
-                    required
-                    minLength={6}
-                    placeholder="••••••••"
-                    className="pl-8"
-                  />
-                </div>
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="confirmPassword">Confirmer le mot de passe</Label>
-                <div className="relative">
-                  <Lock className="absolute left-2.5 top-2.5 size-4 text-muted-foreground pointer-events-none" />
-                  <Input
-                    id="confirmPassword"
-                    name="confirmPassword"
-                    type="password"
-                    value={formData.confirmPassword}
-                    onChange={handleChange}
-                    required
-                    minLength={6}
-                    placeholder="••••••••"
-                    className="pl-8"
-                  />
-                </div>
-              </div>
-
-              {error && (
-                <motion.div
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: 'auto' }}
-                  className="p-3 bg-destructive/10 border border-destructive/20 text-destructive rounded-lg text-sm"
-                >
-                  {error}
-                </motion.div>
-              )}
-
-              <Button
-                type="submit"
-                disabled={loading}
-                className="w-full h-9 mt-2"
-              >
-                {loading ? 'Inscription en cours...' : 'S\'inscrire'}
-              </Button>
-            </form>
-
-            <div className="mt-6 pt-4 border-t border-border/50">
-              <p className="text-sm text-muted-foreground text-center mb-4">
-                Vous avez déjà un compte?
-              </p>
-              <Button
-                asChild
-                variant="outline"
-                className="w-full"
-              >
-                <Link href="/admin/login" className="flex items-center justify-between">
-                  Se connecter
-                  <ArrowRight className="size-4" />
-                </Link>
-              </Button>
             </div>
-          </CardContent>
-        </Card>
 
-        <p className="text-xs text-muted-foreground text-center mt-6">
-          Inscription sécurisée avec JWT • MongoDB
-        </p>
+            <div className="space-y-2">
+              <label htmlFor="password" className="block text-xs font-medium text-muted-foreground uppercase tracking-wider">
+                Mot de passe
+              </label>
+              <div className="relative">
+                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 size-4 text-muted-foreground/40 pointer-events-none" />
+                <input id="password" name="password" type="password" value={formData.password} onChange={handleChange} required minLength={6} placeholder="••••••••" className={inputClass} />
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              <label htmlFor="confirmPassword" className="block text-xs font-medium text-muted-foreground uppercase tracking-wider">
+                Confirmer le mot de passe
+              </label>
+              <div className="relative">
+                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 size-4 text-muted-foreground/40 pointer-events-none" />
+                <input id="confirmPassword" name="confirmPassword" type="password" value={formData.confirmPassword} onChange={handleChange} required minLength={6} placeholder="••••••••" className={inputClass} />
+              </div>
+            </div>
+
+            {error && (
+              <motion.div
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: 'auto' }}
+                className="p-3 bg-red-500/10 border border-red-500/20 text-red-400 rounded-xl text-sm"
+              >
+                {error}
+              </motion.div>
+            )}
+
+            <button
+              type="submit"
+              disabled={loading}
+              className="w-full h-11 rounded-xl bg-primary text-primary-foreground text-sm font-semibold transition-all hover:bg-primary/85 disabled:opacity-50 disabled:cursor-not-allowed mt-2"
+            >
+              {loading ? (
+                <span className="flex items-center justify-center gap-2">
+                  <svg className="animate-spin size-4" viewBox="0 0 24 24" fill="none"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" /><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" /></svg>
+                  Inscription...
+                </span>
+              ) : 'S\'inscrire'}
+            </button>
+          </form>
+
+          <div className="mt-6 pt-5 border-t border-border/50">
+            <p className="text-sm text-muted-foreground/50 text-center">
+              Deja un compte ?{' '}
+              <Link href="/admin/login" className="text-primary hover:text-primary/85 transition-colors font-medium">
+                Se connecter
+              </Link>
+            </p>
+          </div>
+        </div>
+
+        {/* Security footer */}
+        <div className="mt-6 flex items-center justify-center gap-2 text-muted-foreground/40">
+          <Shield className="size-3.5" />
+          <p className="text-xs">
+            Inscription sécurisée. Données chiffrées
+          </p>
+        </div>
       </motion.div>
     </div>
   )

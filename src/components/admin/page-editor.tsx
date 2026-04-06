@@ -92,7 +92,7 @@ export function PageEditor({ pageId, title, defaultContent, children }: PageEdit
   return (
     <div className="p-6 lg:p-8">
       {/* Header sticky */}
-      <div className="sticky top-0 z-10 -mx-6 -mt-6 lg:-mx-8 lg:-mt-8 px-6 lg:px-8 pt-6 lg:pt-8 pb-4 bg-muted/30 backdrop-blur-sm border-b border-border/30 mb-6">
+      <div className="sticky top-0 z-10 -mx-6 -mt-6 lg:-mx-8 lg:-mt-8 px-6 lg:px-8 pt-6 lg:pt-8 pb-4 bg-background/90 backdrop-blur-xl border-b border-border/50 mb-6">
         <div className="flex items-center justify-between max-w-4xl">
           <div className="flex items-center gap-3">
             <Link
@@ -107,7 +107,7 @@ export function PageEditor({ pageId, title, defaultContent, children }: PageEdit
             onClick={handleSave}
             disabled={saving}
             size="sm"
-            className={saved ? 'bg-emerald-600 hover:bg-emerald-600' : ''}
+            className={saved ? 'bg-emerald-600 hover:bg-emerald-600' : 'bg-primary hover:bg-primary/85'}
           >
             {saved ? (
               <>

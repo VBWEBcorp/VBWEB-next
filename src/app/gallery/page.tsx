@@ -87,13 +87,13 @@ export default function GalleryPage() {
             transition={{ duration: 0.6, ease }}
             className="text-center max-w-3xl mx-auto"
           >
-            <p className="font-display text-xs font-semibold tracking-[0.22em] text-white/70 uppercase mb-4">
+            <p className="font-display text-xs font-semibold tracking-[0.22em] text-foreground/70 uppercase mb-4">
               {settings.eyebrow || 'Galerie'}
             </p>
-            <h1 className="font-display text-4xl tracking-tight text-white sm:text-5xl lg:text-6xl font-bold">
+            <h1 className="font-display text-4xl tracking-tight text-foreground sm:text-5xl lg:text-6xl font-bold">
               {settings.title || 'Nos réalisations'}
             </h1>
-            <p className="mt-5 text-lg text-white/70 leading-relaxed sm:text-xl max-w-2xl mx-auto">
+            <p className="mt-5 text-lg text-foreground/70 leading-relaxed sm:text-xl max-w-2xl mx-auto">
               {settings.description || 'Découvrez nos projets récents et laissez-vous inspirer par notre savoir-faire.'}
             </p>
           </motion.div>
@@ -189,7 +189,7 @@ export default function GalleryPage() {
             </div>
             <button
               onClick={() => setLightbox(null)}
-              className="absolute top-3 right-3 size-8 flex items-center justify-center rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors"
+              className="absolute top-3 right-3 size-8 flex items-center justify-center rounded-full bg-black/50 text-foreground hover:bg-black/70 transition-colors"
             >
               ✕
             </button>

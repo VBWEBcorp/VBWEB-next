@@ -31,19 +31,19 @@ export function PageHero({ eyebrow, title, description, image, breadcrumb }: Pag
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* Breadcrumb */}
         <nav aria-label="Fil d'Ariane" className="pt-6">
-          <ol className="flex flex-wrap items-center gap-1.5 text-xs text-white/50">
+          <ol className="flex flex-wrap items-center gap-1.5 text-xs text-muted-foreground">
             <li className="flex items-center gap-1.5">
               <Link
                 href="/"
-                className="flex items-center gap-1 transition-colors hover:text-white/80"
+                className="flex items-center gap-1 transition-colors hover:text-foreground/80"
               >
                 <Home className="size-3" aria-hidden />
                 <span>Accueil</span>
               </Link>
             </li>
             <li className="flex items-center gap-1.5">
-              <ChevronRight className="size-3 text-white/30" aria-hidden />
-              <span aria-current="page" className="font-medium text-white/70">
+              <ChevronRight className="size-3 text-muted-foreground/50" aria-hidden />
+              <span aria-current="page" className="font-medium text-foreground/70">
                 {breadcrumb}
               </span>
             </li>
@@ -58,14 +58,14 @@ export function PageHero({ eyebrow, title, description, image, breadcrumb }: Pag
             transition={{ duration: 0.6, ease }}
             className="mx-auto max-w-3xl text-center"
           >
-            <p className="font-display text-xs font-semibold tracking-[0.22em] uppercase text-white/70">
+            <p className="font-display text-xs font-semibold tracking-[0.22em] uppercase text-foreground/70">
               {eyebrow}
             </p>
-            <h1 className="mt-6 font-display text-balance text-4xl leading-[1.08] tracking-[-0.03em] text-white sm:text-5xl">
+            <h1 className="mt-6 font-display text-balance text-4xl leading-[1.08] tracking-[-0.03em] text-foreground sm:text-5xl">
               {title}
             </h1>
             {description && (
-              <p className="mx-auto mt-6 max-w-2xl text-pretty text-lg leading-relaxed text-white/70">
+              <p className="mx-auto mt-6 max-w-2xl text-pretty text-lg leading-relaxed text-foreground/70">
                 {description}
               </p>
             )}

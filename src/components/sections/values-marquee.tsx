@@ -33,15 +33,15 @@ function ValuesTrack({
 
   const textClass =
     variant === 'dark'
-      ? 'text-white/60'
+      ? 'text-muted-foreground'
       : 'text-foreground/70'
   const iconClass =
     variant === 'dark'
-      ? 'text-white/30'
+      ? 'text-muted-foreground/50'
       : 'text-primary/50'
   const separatorClass =
     variant === 'dark'
-      ? 'text-white/20'
+      ? 'text-muted-foreground/30'
       : 'text-border'
 
   const items = values.map((v) => (
@@ -52,7 +52,7 @@ function ValuesTrack({
       <v.icon className={`size-4 ${iconClass}`} aria-hidden />
       {v.label}
       <span className={separatorClass} aria-hidden>
-        —
+        ·
       </span>
     </span>
   ))
@@ -79,7 +79,7 @@ function ValuesTrack({
 export function ValuesMarquee({ variant = 'light' }: { variant?: 'light' | 'dark' }) {
   const wrapperClass =
     variant === 'dark'
-      ? 'border-t border-white/10 bg-black/20 backdrop-blur-sm py-4 sm:py-5'
+      ? 'border-t border-border bg-black/20 backdrop-blur-sm py-4 sm:py-5'
       : 'border-y border-border/60 bg-muted/15 py-6 sm:py-8'
 
   return (

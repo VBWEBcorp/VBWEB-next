@@ -5,9 +5,15 @@ import StarterKit from '@tiptap/starter-kit'
 import LinkExtension from '@tiptap/extension-link'
 import ImageExtension from '@tiptap/extension-image'
 import Placeholder from '@tiptap/extension-placeholder'
+import { Table } from '@tiptap/extension-table'
+import { TableRow } from '@tiptap/extension-table-row'
+import { TableCell } from '@tiptap/extension-table-cell'
+import { TableHeader } from '@tiptap/extension-table-header'
+import { Underline } from '@tiptap/extension-underline'
 import {
   Bold,
   Italic,
+  Underline as UnderlineIcon,
   Heading2,
   Heading3,
   List,
@@ -19,6 +25,9 @@ import {
   Undo,
   Redo,
   Unlink,
+  Table as TableIcon,
+  Trash2,
+  Plus,
 } from 'lucide-react'
 import { useCallback, useEffect } from 'react'
 import { cn } from '@/lib/utils'
@@ -72,6 +81,7 @@ export function RichEditor({ content, onChange, placeholder }: RichEditorProps) 
       StarterKit.configure({
         heading: { levels: [2, 3] },
       }),
+      Underline,
       LinkExtension.configure({
         openOnClick: false,
         HTMLAttributes: {
@@ -84,6 +94,13 @@ export function RichEditor({ content, onChange, placeholder }: RichEditorProps) 
           class: 'rounded-xl max-w-full my-4',
         },
       }),
+      Table.configure({
+        resizable: true,
+        HTMLAttributes: { class: 'blog-table' },
+      }),
+      TableRow,
+      TableHeader,
+      TableCell,
       Placeholder.configure({
         placeholder: placeholder || 'Commencez à écrire votre article...',
       }),
@@ -148,6 +165,13 @@ export function RichEditor({ content, onChange, placeholder }: RichEditorProps) 
           title="Italique"
         >
           <Italic className="size-3.5" />
+        </ToolbarButton>
+        <ToolbarButton
+          onClick={() => editor.chain().focus().toggleUnderline().run()}
+          active={editor.isActive('underline')}
+          title="Souligné"
+        >
+          <UnderlineIcon className="size-3.5" />
         </ToolbarButton>
 
         <ToolbarDivider />
@@ -224,6 +248,37 @@ export function RichEditor({ content, onChange, placeholder }: RichEditorProps) 
           <Minus className="size-3.5" />
         </ToolbarButton>
 
+        <ToolbarDivider />
+
+        <ToolbarButton
+          onClick={() => editor.chain().focus().insertTable({ rows: 3, cols: 3, withHeaderRow: true }).run()}
+          title="Insérer un tableau"
+        >
+          <TableIcon className="size-3.5" />
+        </ToolbarButton>
+        {editor.isActive('table') && (
+          <>
+            <ToolbarButton
+              onClick={() => editor.chain().focus().addColumnAfter().run()}
+              title="Ajouter une colonne"
+            >
+              <Plus className="size-3.5" />
+            </ToolbarButton>
+            <ToolbarButton
+              onClick={() => editor.chain().focus().addRowAfter().run()}
+              title="Ajouter une ligne"
+            >
+              <Plus className="size-3" />
+            </ToolbarButton>
+            <ToolbarButton
+              onClick={() => editor.chain().focus().deleteTable().run()}
+              title="Supprimer le tableau"
+            >
+              <Trash2 className="size-3.5" />
+            </ToolbarButton>
+          </>
+        )}
+
         <div className="flex-1" />
 
         <ToolbarButton
@@ -296,6 +351,34 @@ export function RichEditor({ content, onChange, placeholder }: RichEditorProps) 
           color: hsl(var(--primary));
           text-decoration: underline;
           text-underline-offset: 4px;
+        }
+        .prose-editor table {
+          border-collapse: collapse;
+          width: 100%;
+          margin: 1rem 0;
+          overflow: hidden;
+          border-radius: 0.5rem;
+          border: 1px solid var(--border);
+        }
+        .prose-editor th,
+        .prose-editor td {
+          border: 1px solid var(--border);
+          padding: 0.5rem 0.75rem;
+          text-align: left;
+          font-size: 0.8125rem;
+          vertical-align: top;
+          min-width: 80px;
+        }
+        .prose-editor th {
+          background: var(--muted);
+          font-weight: 600;
+          color: var(--foreground);
+        }
+        .prose-editor td {
+          color: var(--muted-foreground);
+        }
+        .prose-editor .selectedCell {
+          background: hsl(var(--primary) / 0.08);
         }
         .prose-editor p.is-editor-empty:first-child::before {
           content: attr(data-placeholder);

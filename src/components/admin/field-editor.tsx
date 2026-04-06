@@ -194,7 +194,7 @@ export function ImageField({ label, value, onChange }: ImageFieldProps) {
                   Cliquez ou glissez une image ici
                 </span>
                 <span className="text-xs text-muted-foreground/60">
-                  JPG, PNG, WebP, GIF — max 5 Mo
+                  JPG, PNG, WebP, GIF (max 5 Mo)
                 </span>
               </>
             )}
@@ -211,7 +211,7 @@ export function ImageField({ label, value, onChange }: ImageFieldProps) {
           <button
             type="button"
             onClick={() => onChange('')}
-            className="absolute top-2 right-2 p-1 rounded-md bg-black/60 text-white opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/80"
+            className="absolute top-2 right-2 p-1 rounded-md bg-black/60 text-foreground opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/80"
           >
             <X className="size-3" />
           </button>
