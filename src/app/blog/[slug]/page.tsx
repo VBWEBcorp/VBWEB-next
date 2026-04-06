@@ -11,7 +11,7 @@ import {
 } from '@/components/seo/json-ld'
 import { BlogPostContent } from './blog-post-client'
 
-export const revalidate = 3600
+export const dynamic = 'force-dynamic'
 
 type Props = {
   params: Promise<{ slug: string }>
@@ -47,9 +47,14 @@ async function getPost(slug: string) {
 }
 
 export async function generateStaticParams() {
-  await connectDB()
-  const posts = await BlogPost.find({ published: true }).select('slug').lean()
-  return posts.map((post) => ({ slug: post.slug }))
+  if (!process.env.MONGODB_URI) return []
+  try {
+    await connectDB()
+    const posts = await BlogPost.find({ published: true }).select('slug').lean()
+    return posts.map((post) => ({ slug: post.slug }))
+  } catch {
+    return []
+  }
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

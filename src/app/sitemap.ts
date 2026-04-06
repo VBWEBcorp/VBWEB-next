@@ -84,6 +84,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ]
 
   try {
+    if (!process.env.MONGODB_URI) throw new Error('No DB')
     await connectDB()
 
     // Gallery page if enabled

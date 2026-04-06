@@ -15,6 +15,8 @@ function stripHtml(html: string) {
   return html.replace(/<[^>]*>/g, '').trim()
 }
 
+export const dynamic = 'force-dynamic'
+
 export async function GET() {
   await connectDB()
   const posts = await BlogPost.find({ published: true })
