@@ -57,10 +57,12 @@ export function CookieConsent() {
 
             {/* Close button */}
             <button
+              type="button"
               onClick={handleDecline}
+              aria-label="Fermer la bannière cookies"
               className="absolute top-4 right-4 text-muted-foreground transition-colors hover:text-foreground"
             >
-              <X className="size-5" />
+              <X className="size-5" aria-hidden />
             </button>
 
             <p className="mb-4 text-sm text-foreground/80">

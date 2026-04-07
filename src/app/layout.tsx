@@ -86,9 +86,8 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
-        {/* DNS prefetch + preconnect pour les ressources externes critiques */}
+        {/* DNS prefetch pour les ressources externes paresseuses (pas critiques) */}
         <link rel="dns-prefetch" href="https://images.unsplash.com" />
-        <link rel="preconnect" href="https://images.unsplash.com" crossOrigin="" />
         <link rel="dns-prefetch" href="https://i.ytimg.com" />
         <link rel="dns-prefetch" href="https://www.youtube-nocookie.com" />
         <ThemeScript />

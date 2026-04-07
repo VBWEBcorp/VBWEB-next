@@ -181,7 +181,8 @@ export function HeroSection() {
                 height={288}
                 priority
                 fetchPriority="high"
-                sizes="(max-width: 640px) 224px, (max-width: 1024px) 256px, 288px"
+                quality={80}
+                sizes="288px"
                 className="size-full object-cover object-center"
               />
             </div>

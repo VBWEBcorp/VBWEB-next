@@ -16,13 +16,18 @@ const nextConfig: NextConfig = {
   // Optimisations expérimentales
   experimental: {
     optimizePackageImports: ['lucide-react', 'framer-motion', 'date-fns'],
+    // Inline le CSS critique au-dessus de la ligne de flottaison via beasties
+    // -> reduit le render-blocking CSS et accelere LCP/FCP
+    optimizeCss: true,
   },
 
   images: {
-    // Formats modernes (AVIF en priorité, fallback WebP)
+    // Formats modernes (AVIF en priorite, fallback WebP)
     formats: ['image/avif', 'image/webp'],
-    // Tailles d'écran prises en charge pour le srcset
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048],
+    // Tailles d'ecran prises en charge pour le srcset
+    // Ajout 480/576 pour servir les portraits cercles type Victor
+    // (224*2=448, 256*2=512, 288*2=576) sans tomber sur 640
+    deviceSizes: [480, 576, 640, 750, 828, 1080, 1200, 1920, 2048],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     minimumCacheTTL: 31536000, // 1 an
     remotePatterns: [
