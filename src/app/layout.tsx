@@ -11,6 +11,8 @@ const inter = Inter({
   subsets: ['latin'],
   variable: '--font-sans',
   display: 'swap',
+  preload: true,
+  adjustFontFallback: true,
 })
 
 const jakarta = Plus_Jakarta_Sans({
@@ -18,6 +20,8 @@ const jakarta = Plus_Jakarta_Sans({
   variable: '--font-display',
   weight: ['500', '600', '700'],
   display: 'swap',
+  preload: true,
+  adjustFontFallback: true,
 })
 
 export const metadata: Metadata = {
@@ -82,6 +86,11 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
+        {/* DNS prefetch + preconnect pour les ressources externes critiques */}
+        <link rel="dns-prefetch" href="https://images.unsplash.com" />
+        <link rel="preconnect" href="https://images.unsplash.com" crossOrigin="" />
+        <link rel="dns-prefetch" href="https://i.ytimg.com" />
+        <link rel="dns-prefetch" href="https://www.youtube-nocookie.com" />
         <ThemeScript />
       </head>
       <body className="flex min-h-dvh flex-col">

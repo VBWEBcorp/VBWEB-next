@@ -1,34 +1,29 @@
-'use client'
-
-import { usePathname } from 'next/navigation'
-import { useEffect, useState } from 'react'
+import { headers } from 'next/headers'
 
 import { CookieConsent } from '@/components/layout/cookie-consent'
 import { FloatingCallButton } from '@/components/floating-call-button'
 import { Footer } from '@/components/layout/footer'
 import { Navbar } from '@/components/layout/navbar'
 
-export function RootWrapper({ children }: { children: React.ReactNode }) {
-  const pathname = usePathname()
-  const [isAdmin, setIsAdmin] = useState(false)
+export async function RootWrapper({ children }: { children: React.ReactNode }) {
+  // Detection du path cote serveur via x-pathname header (set par middleware Next)
+  // ou fallback : on renvoie navbar/footer par defaut
+  const headersList = await headers()
+  const pathname = headersList.get('x-pathname') || headersList.get('x-invoke-path') || ''
+  const isAdmin = pathname.startsWith('/admin')
 
-  useEffect(() => {
-    // Vérifier si on est en espace admin ET si on est connecté
-    const isAdminPath = pathname?.startsWith('/admin')
-    const token = localStorage.getItem('authToken')
-    setIsAdmin(isAdminPath && !!token)
-  }, [pathname])
-
-  // En espace admin connecté: pas de header/footer
+  // En espace admin: pas de header/footer (pleine largeur pour le dashboard)
   if (isAdmin) {
-    return children
+    return <>{children}</>
   }
 
-  // Sinon: header + contenu + footer complet
+  // Sinon: header + contenu + footer + bouton flottant + cookie consent
   return (
     <>
       <Navbar />
-      <main id="main-content" className="flex-1">{children}</main>
+      <main id="main-content" className="flex-1">
+        {children}
+      </main>
       <Footer />
       <FloatingCallButton />
       <CookieConsent />

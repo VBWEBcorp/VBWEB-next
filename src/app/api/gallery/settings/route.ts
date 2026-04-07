@@ -3,20 +3,27 @@ import { connectDB } from '@/lib/db'
 import { GallerySettings } from '@/models/Gallery'
 import { verifyAuth } from '@/lib/auth'
 
+export const dynamic = 'force-dynamic'
+
+const DEFAULT_SETTINGS = {
+  enabled: false,
+  title: 'Nos réalisations',
+  eyebrow: 'Galerie',
+  description: 'Découvrez nos projets récents et laissez-vous inspirer par notre savoir-faire.',
+}
+
+const CACHE_HEADERS = {
+  'Cache-Control': 'public, max-age=300, s-maxage=300, stale-while-revalidate=3600',
+}
+
 // GET gallery settings (public)
 export async function GET() {
   try {
     await connectDB()
     const settings = await GallerySettings.findOne()
-
-    if (!settings) {
-      return NextResponse.json({ enabled: false, title: 'Nos réalisations', eyebrow: 'Galerie', description: 'Découvrez nos projets récents et laissez-vous inspirer par notre savoir-faire.' })
-    }
-
-    return NextResponse.json(settings)
-  } catch (error) {
-    console.error('Gallery settings error:', error)
-    return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
+    return NextResponse.json(settings ?? DEFAULT_SETTINGS, { headers: CACHE_HEADERS })
+  } catch {
+    return NextResponse.json(DEFAULT_SETTINGS, { headers: CACHE_HEADERS })
   }
 }
 
@@ -44,7 +51,9 @@ export async function PUT(request: NextRequest) {
 
     return NextResponse.json(settings)
   } catch (error) {
-    console.error('Gallery settings update error:', error)
+    if (process.env.NODE_ENV !== 'production') {
+      console.error('Gallery settings update error:', error)
+    }
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
   }
 }

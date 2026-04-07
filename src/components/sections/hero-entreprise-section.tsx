@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { ArrowRight, Star } from 'lucide-react'
+import Image from 'next/image'
 import Link from 'next/link'
 
 import { Button } from '@/components/ui/button'
@@ -57,10 +58,13 @@ function ScrollColumn({ images, direction = 'up', duration = 35 }: { images: str
       >
         {doubled.map((src, i) => (
           <div key={i} className="p-1.5">
-            <img
+            <Image
               src={src}
               alt=""
+              width={300}
+              height={400}
               loading="lazy"
+              sizes="(max-width: 640px) 33vw, (max-width: 1024px) 20vw, 14vw"
               className="aspect-[3/4] w-full rounded-xl object-cover"
             />
           </div>
@@ -163,13 +167,15 @@ export function HeroEntrepriseSection() {
           >
             <div aria-hidden className="absolute -inset-6 rounded-full bg-primary/10 blur-3xl" />
             <div className="relative size-56 overflow-hidden rounded-full border-2 border-primary/20 shadow-[var(--shadow-lg)] ring-1 ring-foreground/5 sm:size-64 lg:size-72">
-              <img
-                src="https://i.ibb.co/1fRDj4NP/Victor.jpg"
+              <Image
+                src="/victor.jpg"
                 alt="Victor Béasse, fondateur de VBWEB"
-                className="size-full object-cover object-center"
                 width={288}
                 height={288}
+                priority
                 fetchPriority="high"
+                sizes="(max-width: 640px) 224px, (max-width: 1024px) 256px, 288px"
+                className="size-full object-cover object-center"
               />
             </div>
           </motion.div>

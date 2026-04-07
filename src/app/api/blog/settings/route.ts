@@ -3,17 +3,27 @@ import { connectDB } from '@/lib/db'
 import { BlogSettings } from '@/models/Blog'
 import { verifyAuth } from '@/lib/auth'
 
+export const dynamic = 'force-dynamic'
+
+const DEFAULT_SETTINGS = {
+  enabled: false,
+  title: 'Nos dernières actualités',
+  eyebrow: 'Blog',
+  description: 'Retrouvez nos conseils, nos projets récents et les tendances du secteur.',
+}
+
+const CACHE_HEADERS = {
+  'Cache-Control': 'public, max-age=300, s-maxage=300, stale-while-revalidate=3600',
+}
+
 export async function GET() {
   try {
     await connectDB()
     const settings = await BlogSettings.findOne()
-    if (!settings) {
-      return NextResponse.json({ enabled: false, title: 'Nos dernières actualités', eyebrow: 'Blog', description: 'Retrouvez nos conseils, nos projets récents et les tendances du secteur.' })
-    }
-    return NextResponse.json(settings)
-  } catch (error) {
-    console.error('Blog settings error:', error)
-    return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
+    return NextResponse.json(settings ?? DEFAULT_SETTINGS, { headers: CACHE_HEADERS })
+  } catch {
+    // DB indisponible (env var manquante, timeout, etc.) — fallback gracieux
+    return NextResponse.json(DEFAULT_SETTINGS, { headers: CACHE_HEADERS })
   }
 }
 
@@ -40,7 +50,9 @@ export async function PUT(request: NextRequest) {
 
     return NextResponse.json(settings)
   } catch (error) {
-    console.error('Blog settings update error:', error)
+    if (process.env.NODE_ENV !== 'production') {
+      console.error('Blog settings update error:', error)
+    }
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
   }
 }

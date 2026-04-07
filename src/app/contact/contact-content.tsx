@@ -3,6 +3,7 @@
 import { useState, FormEvent } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight, MessageCircle, Calendar, CheckCircle2, Send, Mail, Phone } from 'lucide-react'
+import Image from 'next/image'
 
 import { siteConfig } from '@/lib/seo'
 
@@ -51,10 +52,13 @@ function ScrollColumn({
       >
         {doubled.map((src, i) => (
           <div key={i} className="p-1.5">
-            <img
+            <Image
               src={src}
               alt=""
+              width={300}
+              height={400}
               loading="lazy"
+              sizes="(max-width: 640px) 33vw, (max-width: 1024px) 20vw, 14vw"
               className="aspect-[3/4] w-full rounded-xl object-cover"
             />
           </div>
@@ -199,12 +203,13 @@ export function ContactContent() {
                       className="absolute -inset-3 rounded-full bg-primary/10 blur-2xl"
                     />
                     <div className="relative size-28 overflow-hidden rounded-full border-2 border-primary/20 ring-1 ring-foreground/5 lg:size-32">
-                      <img
-                        src="https://i.ibb.co/1fRDj4NP/Victor.jpg"
+                      <Image
+                        src="/victor.jpg"
                         alt="Victor Béasse"
-                        className="size-full object-cover object-center"
                         width={128}
                         height={128}
+                        sizes="(max-width: 1024px) 112px, 128px"
+                        className="size-full object-cover object-center"
                       />
                     </div>
                   </div>

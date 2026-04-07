@@ -1,0 +1,108 @@
+# Redirections 301 permanentes : vbweb.fr -> consultant-seo-rennes.fr
+# Transfert d'autorite SEO de l'ancien NDD vers le nouveau.
+# Le :splat capture le path apres le domaine et le replace dans la nouvelle URL.
+
+[[redirects]]
+  from = "https://vbweb.fr/*"
+  to = "https://www.consultant-seo-rennes.fr/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.vbweb.fr/*"
+  to = "https://www.consultant-seo-rennes.fr/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://vbweb.fr/*"
+  to = "https://www.consultant-seo-rennes.fr/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.vbweb.fr/*"
+  to = "https://www.consultant-seo-rennes.fr/:splat"
+  status = 301
+  force = true
+
+# Canonicalisation : consultant-seo-rennes.fr (sans www) -> www.consultant-seo-rennes.fr
+[[redirects]]
+  from = "https://consultant-seo-rennes.fr/*"
+  to = "https://www.consultant-seo-rennes.fr/:splat"
+  status = 301
+  force = true
+
+# ============================================================
+# SECURITY HEADERS — appliques a toutes les pages
+# ============================================================
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=(), payment=(), usb=(), interest-cohort=()"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.youtube.com https://www.youtube-nocookie.com https://www.google.com https://www.gstatic.com https://i.ytimg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: blob: https://i.ibb.co https://images.unsplash.com https://i.ytimg.com https://*.r2.dev https://*.r2.cloudflarestorage.com; font-src 'self' data: https://fonts.gstatic.com; frame-src https://www.youtube.com https://www.youtube-nocookie.com https://calendly.com; connect-src 'self' https://formspree.io https://www.google-analytics.com; media-src 'self' https://www.youtube.com; object-src 'none'; base-uri 'self'; form-action 'self' https://formspree.io; frame-ancestors 'none'; upgrade-insecure-requests"
+    Cross-Origin-Opener-Policy = "same-origin-allow-popups"
+    X-DNS-Prefetch-Control = "on"
+
+# ============================================================
+# CACHE — assets statiques Next.js (immutables, hash dans l'URL)
+# ============================================================
+[[headers]]
+  for = "/_next/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/_next/image/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# ============================================================
+# CACHE — fichiers statiques (images, fonts, icons)
+# ============================================================
+[[headers]]
+  for = "/*.svg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.ico"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.jpg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.webp"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.woff2"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# ============================================================
+# CACHE — sitemap & robots (frequemment lus par les bots)
+# ============================================================
+[[headers]]
+  for = "/sitemap.xml"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, s-maxage=86400"
+
+[[headers]]
+  for = "/robots.txt"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"

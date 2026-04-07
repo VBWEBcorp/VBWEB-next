@@ -1,10 +1,56 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ArrowRight, ArrowUpRight } from 'lucide-react'
+import { ArrowRight, ArrowUpRight, Play } from 'lucide-react'
+import Image from 'next/image'
 import Link from 'next/link'
+import { useState } from 'react'
 
 const ease = [0.22, 1, 0.36, 1] as const
+
+const VIDEO_ID = 'w_Tg2rnwrSE'
+
+function VideoFacade() {
+  const [loaded, setLoaded] = useState(false)
+
+  if (loaded) {
+    return (
+      <iframe
+        src={`https://www.youtube-nocookie.com/embed/${VIDEO_ID}?autoplay=1&mute=1&loop=1&playlist=${VIDEO_ID}&rel=0&modestbranding=1`}
+        title="Victor Béasse, Fondateur VBWEB"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerPolicy="strict-origin-when-cross-origin"
+        allowFullScreen
+        className="absolute inset-0 size-full"
+      />
+    )
+  }
+
+  return (
+    <button
+      type="button"
+      onClick={() => setLoaded(true)}
+      aria-label="Lire la vidéo de Victor Béasse"
+      className="group/play absolute inset-0 size-full"
+    >
+      <Image
+        src={`https://i.ytimg.com/vi/${VIDEO_ID}/maxresdefault.jpg`}
+        alt="Aperçu de la vidéo : la vision derrière VBWEB"
+        fill
+        sizes="(max-width: 1024px) 100vw, 1280px"
+        className="object-cover transition-transform duration-700 group-hover/play:scale-[1.02]"
+      />
+      {/* Overlay sombre */}
+      <div aria-hidden className="absolute inset-0 bg-black/20 transition-colors duration-300 group-hover/play:bg-black/30" />
+      {/* Play button center */}
+      <div aria-hidden className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+        <div className="flex size-16 items-center justify-center rounded-full bg-primary/90 text-primary-foreground shadow-2xl ring-4 ring-white/10 backdrop-blur-md transition-transform duration-300 group-hover/play:scale-110 sm:size-20">
+          <Play className="size-6 fill-current sm:size-8" />
+        </div>
+      </div>
+    </button>
+  )
+}
 
 export function FounderSection() {
   return (
@@ -55,9 +101,12 @@ export function FounderSection() {
               {/* Mini bloc auteur à droite (desktop) */}
               <div className="flex items-center gap-3">
                 <div className="size-10 overflow-hidden rounded-full ring-1 ring-border/60">
-                  <img
-                    src="https://i.ibb.co/1fRDj4NP/Victor.jpg"
+                  <Image
+                    src="/victor.jpg"
                     alt=""
+                    width={40}
+                    height={40}
+                    sizes="40px"
                     className="size-full object-cover"
                   />
                 </div>
@@ -77,15 +126,7 @@ export function FounderSection() {
               className="relative mt-10 sm:mt-12"
             >
               <div className="relative aspect-video overflow-hidden rounded-[1.25rem] border border-border/60 bg-background ring-1 ring-foreground/5 sm:rounded-[1.5rem]">
-                <iframe
-                  src="https://www.youtube.com/embed/w_Tg2rnwrSE?autoplay=1&mute=1&loop=1&playlist=w_Tg2rnwrSE&rel=0&modestbranding=1"
-                  title="Victor Béasse, Fondateur VBWEB"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  allowFullScreen
-                  className="absolute inset-0 size-full"
-                  loading="lazy"
-                />
+                <VideoFacade />
               </div>
             </motion.div>
 
