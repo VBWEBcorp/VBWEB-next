@@ -2,91 +2,114 @@
 
 import { motion } from 'framer-motion'
 import { ShieldCheck, Users, Clock } from 'lucide-react'
-import { useState } from 'react'
 
 const ease = [0.22, 1, 0.36, 1] as const
 
 const results = [
   {
     icon: ShieldCheck,
-    title: 'Un site qui inspire confiance',
-    description: 'Vos prospects vous font immédiatement confiance. Design premium, navigation intuitive, messages qui convertissent.',
+    title: 'Confiance',
+    description: 'Un site qui rassure dès la première seconde.',
   },
   {
     icon: Users,
-    title: 'Plus de clients qualifiés',
-    description: 'Google vous trouve, vos prospects aussi. Plus d\'appels, plus de rendez-vous, plus de ventes qualifiées.',
+    title: 'Clients qualifiés',
+    description: 'Google vous trouve. Vos prospects aussi.',
   },
   {
     icon: Clock,
-    title: 'Sérénité & gain de temps',
-    description: 'Votre site travaille pour vous 24h/24. Vous vous concentrez sur votre métier, moi sur votre croissance digitale.',
+    title: 'Sérénité',
+    description: 'Votre site travaille 24h/24. Vous, sur votre métier.',
   },
 ]
 
 export function ResultsSection() {
-  const [active, setActive] = useState<number | null>(null)
-
   return (
-    <section className="bg-background">
-      <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+    <section className="relative overflow-hidden bg-background">
+      {/* Grain */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 opacity-[0.04]"
+        style={{
+          backgroundImage:
+            'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.6) 1px, transparent 0)',
+          backgroundSize: '32px 32px',
+        }}
+      />
+
+      {/* Glow */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute left-1/2 top-1/2 h-[400px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/[0.04] blur-[110px]"
+      />
+
+      <div className="relative mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+        {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 14 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
-          transition={{ duration: 0.55, ease }}
-          className="mx-auto max-w-2xl text-center space-y-4"
+          transition={{ duration: 0.6, ease }}
+          className="mx-auto max-w-2xl text-center"
         >
-          <p className="font-display text-xs font-semibold tracking-[0.22em] text-primary uppercase">
+          <p className="font-display text-[11px] font-semibold tracking-[0.24em] text-primary/80 uppercase">
             Résultats
           </p>
-          <h2 className="font-display text-balance text-3xl leading-[1.12] tracking-[-0.02em] text-foreground sm:text-4xl md:text-[2.6rem]">
-            3 résultats concrets que mes clients obtiennent
+          <h2 className="mt-5 font-display text-balance text-3xl font-medium leading-[1.1] tracking-[-0.025em] text-foreground sm:text-4xl lg:text-[2.75rem]">
+            Trois promesses,{' '}
+            <span className="italic text-muted-foreground/80">tenues</span>
           </h2>
-          <p className="text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Cliquez sur une carte pour découvrir l&apos;objectif
-          </p>
         </motion.div>
 
-        <div className="mt-14 grid gap-6 lg:grid-cols-3">
+        {/* Grille minimaliste */}
+        <div className="mt-14 grid gap-px overflow-hidden rounded-[1.5rem] border border-border/50 bg-border/40 sm:mt-16 sm:grid-cols-3">
           {results.map((result, i) => {
-            const isActive = active === i
+            const Icon = result.icon
             return (
-              <motion.button
+              <motion.div
                 key={result.title}
-                type="button"
-                onClick={() => setActive(isActive ? null : i)}
                 initial={{ opacity: 0, y: 14 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-80px' }}
-                transition={{ duration: 0.45, ease, delay: i * 0.08 }}
-                className={`group cursor-pointer rounded-2xl border p-8 text-left transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[var(--shadow-md)] ${
-                  isActive
-                    ? 'border-primary/30 bg-primary/10'
-                    : 'border-border bg-card/60'
-                }`}
+                transition={{ duration: 0.55, ease, delay: i * 0.1 }}
+                className="group relative bg-background/95 p-8 backdrop-blur-sm transition-colors duration-500 hover:bg-card/60 sm:p-10"
               >
-                <span className={`flex size-12 items-center justify-center rounded-2xl ring-1 transition-colors ${
-                  isActive
-                    ? 'bg-primary/20 text-primary ring-primary/30'
-                    : 'bg-primary/10 text-primary ring-primary/15'
-                }`}>
-                  <result.icon className="size-6" aria-hidden />
-                </span>
-                <h3 className="mt-5 font-display text-lg font-semibold text-foreground">
-                  {result.title}
-                </h3>
-                <motion.div
-                  initial={false}
-                  animate={{ height: isActive ? 'auto' : 0, opacity: isActive ? 1 : 0 }}
-                  transition={{ duration: 0.3, ease }}
-                  className="overflow-hidden"
-                >
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                {/* Spotlight au hover */}
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                  style={{
+                    background:
+                      'radial-gradient(circle at center top, rgba(78,186,236,0.08), transparent 70%)',
+                  }}
+                />
+
+                <div className="relative flex flex-col items-center text-center">
+                  {/* Icone */}
+                  <div className="relative">
+                    <div
+                      aria-hidden
+                      className="absolute inset-0 rounded-full bg-primary/10 blur-lg opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                    />
+                    <div className="relative flex size-12 items-center justify-center rounded-full border border-border/60 bg-background text-muted-foreground/70 transition-all duration-500 group-hover:border-primary/40 group-hover:text-primary">
+                      <Icon className="size-5" aria-hidden />
+                    </div>
+                  </div>
+
+                  {/* Titre */}
+                  <h3 className="mt-6 font-display text-xl font-semibold tracking-[-0.01em] text-foreground sm:text-2xl">
+                    {result.title}
+                  </h3>
+
+                  {/* Trait gradient */}
+                  <div className="mt-4 h-px w-12 bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
+
+                  {/* Description */}
+                  <p className="mt-4 max-w-[200px] text-[15px] leading-relaxed text-muted-foreground">
                     {result.description}
                   </p>
-                </motion.div>
-              </motion.button>
+                </div>
+              </motion.div>
             )
           })}
         </div>

@@ -1,7 +1,6 @@
-import { ArrowRight, Mail, MapPin, Phone } from 'lucide-react'
+import { ArrowRight, ArrowUpRight, Mail, MapPin, Phone, Globe } from 'lucide-react'
 import Link from 'next/link'
 
-import { Button } from '@/components/ui/button'
 import { siteConfig } from '@/lib/seo'
 
 const navLinks = [
@@ -31,156 +30,172 @@ const legalLinks = [
 export function Footer() {
   return (
     <footer className="relative overflow-hidden bg-background text-foreground">
-      {/* Background glows */}
+      {/* Grain global */}
       <div
         aria-hidden
-        className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 h-[500px] w-[800px] rounded-full bg-primary/[0.04] blur-[120px]"
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute bottom-0 right-0 h-[300px] w-[400px] rounded-full bg-primary/[0.02] blur-[100px]"
+        className="pointer-events-none absolute inset-0 opacity-[0.04]"
+        style={{
+          backgroundImage:
+            'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.6) 1px, transparent 0)',
+          backgroundSize: '32px 32px',
+        }}
       />
 
-      {/* CTA band */}
-      <div className="relative border-b border-border/50">
-        <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
-          <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
-            <div>
-              <h3 className="font-display text-xl font-semibold text-foreground sm:text-2xl">
-                Un projet en tête ?
-              </h3>
-              <p className="mt-1 text-sm text-muted-foreground">
-                Discutons de votre visibilite sur Google. Devis gratuit sous 24h.
-              </p>
-            </div>
-            <Button size="lg" className="group shrink-0 bg-primary text-primary-foreground hover:bg-primary/85" asChild>
-              <Link href="/contact">
-                Demander un devis
-                <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </div>
+      <div className="relative px-3 py-4 sm:px-4 sm:py-5">
+        {/* GRANDE CARD QUASI EDGE-TO-EDGE */}
+        <div className="relative">
+          <div className="relative overflow-hidden rounded-[1.5rem] border border-border/60 bg-card/40 backdrop-blur-sm sm:rounded-[1.75rem]">
+            {/* Spotlight interne unique, discret */}
+            <div
+              aria-hidden
+              className="pointer-events-none absolute -right-32 -top-32 h-80 w-80 rounded-full bg-primary/[0.05] blur-3xl"
+            />
 
-      {/* Main footer */}
-      <div className="relative mx-auto max-w-6xl px-4 pt-14 pb-8 sm:px-6 lg:px-8">
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
-          {/* Brand */}
-          <div className="space-y-5">
-            <Link href="/" className="inline-flex flex-col items-start gap-2 font-display tracking-tight">
-              <span className="inline-flex items-center gap-2.5">
-                <span className="flex size-9 items-center justify-center rounded-xl bg-primary text-primary-foreground">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-[18px]"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
-                </span>
-                <span className="text-lg font-semibold text-foreground">{siteConfig.name}</span>
-              </span>
-              <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-muted-foreground/50">
-                Marque historique&nbsp;: {siteConfig.shortName}
-              </span>
-            </Link>
-            <p className="max-w-xs text-[13px] leading-relaxed text-muted-foreground/60">
-              {siteConfig.name}, dirigé par {siteConfig.legalName}. J&apos;aide les PME, artisans
-              et commerces de Bretagne à attirer plus de clients grâce à Google.
-            </p>
-            {/* Contact info */}
-            <div className="space-y-2.5 pt-1">
-              <a
-                href={`tel:${siteConfig.phone}`}
-                className="group flex items-center gap-3 text-sm text-muted-foreground/60 transition-colors hover:text-foreground"
-              >
-                <span className="flex size-8 items-center justify-center rounded-lg bg-foreground/5 text-primary transition-colors group-hover:bg-foreground/10">
-                  <Phone className="size-3.5" />
-                </span>
-                {siteConfig.phone}
-              </a>
-              <a
-                href={`mailto:${siteConfig.email}`}
-                className="group flex items-center gap-3 text-sm text-muted-foreground/60 transition-colors hover:text-foreground"
-              >
-                <span className="flex size-8 items-center justify-center rounded-lg bg-foreground/5 text-primary transition-colors group-hover:bg-foreground/10">
-                  <Mail className="size-3.5" />
-                </span>
-                {siteConfig.email}
-              </a>
-              <div className="flex items-center gap-3 text-sm text-muted-foreground/60">
-                <span className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-foreground/5 text-primary">
-                  <MapPin className="size-3.5" />
-                </span>
-                <span>Rennes, Bretagne</span>
+            <div className="relative">
+              {/* === SECTION 1 — HERO CTA (compact) === */}
+              <div className="border-b border-border/40 p-6 sm:p-8 lg:px-10 lg:py-8">
+                <div className="flex flex-col items-start justify-between gap-5 sm:flex-row sm:items-center">
+                  <div>
+                    <p className="font-display text-[11px] font-semibold tracking-[0.24em] text-primary/80 uppercase">
+                      Discutons
+                    </p>
+                    <h2 className="mt-3 font-display text-balance text-2xl font-medium leading-[1.1] tracking-[-0.02em] text-foreground sm:text-3xl">
+                      Un projet en{' '}
+                      <span className="italic text-muted-foreground/80">tête</span> ?
+                    </h2>
+                    <p className="mt-2 text-[13px] leading-relaxed text-muted-foreground sm:text-[14px]">
+                      Réponse sous 24h. Devis gratuit, sans engagement.
+                    </p>
+                  </div>
+
+                  <Link
+                    href="/contact"
+                    className="group/cta inline-flex h-11 shrink-0 items-center gap-2 rounded-full bg-primary px-6 text-[13px] font-medium text-primary-foreground transition-colors hover:bg-primary/85"
+                  >
+                    Demander un devis
+                    <ArrowRight className="size-3.5 transition-transform group-hover/cta:translate-x-0.5" />
+                  </Link>
+                </div>
+              </div>
+
+              {/* === SECTION 2 — GRILLE LIENS === */}
+              <div className="grid gap-px bg-border/30 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr]">
+                {/* Brand + coordonnées */}
+                <div className="bg-card/40 p-8 backdrop-blur-sm sm:p-10">
+                  <Link href="/" className="group/logo inline-flex items-center gap-2.5">
+                    <span className="flex size-9 items-center justify-center rounded-full bg-primary/10 text-primary ring-1 ring-primary/15 transition-transform duration-300 group-hover/logo:scale-105">
+                      <Globe className="size-4" aria-hidden />
+                    </span>
+                    <span className="font-display text-lg font-semibold tracking-tight text-foreground">
+                      {siteConfig.shortName}
+                    </span>
+                  </Link>
+
+                  <p className="mt-5 max-w-xs text-[13px] leading-relaxed text-muted-foreground/70">
+                    {siteConfig.name}, dirigé par {siteConfig.legalName}. J&apos;aide les PME, artisans et commerces de Bretagne à attirer plus de clients grâce à Google.
+                  </p>
+
+                  {/* Coordonnées */}
+                  <div className="mt-6 space-y-2">
+                    <a
+                      href={`tel:${siteConfig.phone.replace(/\s/g, '')}`}
+                      className="group/c flex items-center gap-3 rounded-xl border border-border/40 bg-background/40 px-3 py-2.5 text-[13px] text-muted-foreground transition-all duration-300 hover:border-primary/30 hover:bg-background/70 hover:text-foreground"
+                    >
+                      <span className="flex size-7 shrink-0 items-center justify-center rounded-lg border border-border/40 bg-background/60 text-muted-foreground transition-colors group-hover/c:border-primary/40 group-hover/c:text-primary">
+                        <Phone className="size-3.5" />
+                      </span>
+                      {siteConfig.phone}
+                    </a>
+                    <a
+                      href={`mailto:${siteConfig.email}`}
+                      className="group/c flex items-center gap-3 rounded-xl border border-border/40 bg-background/40 px-3 py-2.5 text-[13px] text-muted-foreground transition-all duration-300 hover:border-primary/30 hover:bg-background/70 hover:text-foreground"
+                    >
+                      <span className="flex size-7 shrink-0 items-center justify-center rounded-lg border border-border/40 bg-background/60 text-muted-foreground transition-colors group-hover/c:border-primary/40 group-hover/c:text-primary">
+                        <Mail className="size-3.5" />
+                      </span>
+                      <span className="truncate">{siteConfig.email}</span>
+                    </a>
+                    <div className="flex items-center gap-3 rounded-xl border border-border/40 bg-background/40 px-3 py-2.5 text-[13px] text-muted-foreground/80">
+                      <span className="flex size-7 shrink-0 items-center justify-center rounded-lg border border-border/40 bg-background/60 text-muted-foreground">
+                        <MapPin className="size-3.5" />
+                      </span>
+                      Rennes, Bretagne
+                    </div>
+                  </div>
+                </div>
+
+                {/* Navigation */}
+                <nav aria-label="Navigation" className="bg-card/40 p-8 backdrop-blur-sm sm:p-10">
+                  <p className="font-display text-[10px] font-semibold uppercase tracking-[0.22em] text-muted-foreground/60">
+                    Navigation
+                  </p>
+                  <ul className="mt-5 space-y-2.5">
+                    {navLinks.map((l) => (
+                      <li key={l.label}>
+                        <Link
+                          href={l.to}
+                          className="group/link inline-flex items-center gap-1 text-[13px] text-muted-foreground/70 transition-colors hover:text-foreground"
+                        >
+                          {l.label}
+                          <ArrowUpRight className="size-3 opacity-0 transition-all duration-300 group-hover/link:opacity-100" />
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </nav>
+
+                {/* Services */}
+                <nav aria-label="Services" className="bg-card/40 p-8 backdrop-blur-sm sm:p-10">
+                  <p className="font-display text-[10px] font-semibold uppercase tracking-[0.22em] text-muted-foreground/60">
+                    Services
+                  </p>
+                  <ul className="mt-5 space-y-2.5">
+                    {serviceLinks.map((l) => (
+                      <li key={l.label}>
+                        <Link
+                          href={l.to}
+                          className="group/link inline-flex items-center gap-1 text-[13px] text-muted-foreground/70 transition-colors hover:text-foreground"
+                        >
+                          {l.label}
+                          <ArrowUpRight className="size-3 opacity-0 transition-all duration-300 group-hover/link:opacity-100" />
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </nav>
+
+                {/* Légal */}
+                <nav aria-label="Légal" className="bg-card/40 p-8 backdrop-blur-sm sm:p-10">
+                  <p className="font-display text-[10px] font-semibold uppercase tracking-[0.22em] text-muted-foreground/60">
+                    Légal
+                  </p>
+                  <ul className="mt-5 space-y-2.5">
+                    {legalLinks.map((l) => (
+                      <li key={l.label}>
+                        <Link
+                          href={l.to}
+                          className="group/link inline-flex items-center gap-1 text-[13px] text-muted-foreground/70 transition-colors hover:text-foreground"
+                        >
+                          {l.label}
+                          <ArrowUpRight className="size-3 opacity-0 transition-all duration-300 group-hover/link:opacity-100" />
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </nav>
+              </div>
+
+              {/* === SECTION 3 — BOTTOM BAR === */}
+              <div className="flex flex-col items-start justify-between gap-3 border-t border-border/40 bg-card/30 px-8 py-5 backdrop-blur-sm sm:flex-row sm:items-center sm:px-10">
+                <p className="text-[11px] text-muted-foreground/50">
+                  © {new Date().getFullYear()} {siteConfig.name} · Tous droits réservés
+                </p>
+                <p className="text-[11px] uppercase tracking-[0.16em] text-muted-foreground/40">
+                  Consultant SEO · Rennes · Bretagne
+                </p>
               </div>
             </div>
           </div>
-
-          {/* Navigation */}
-          <nav aria-label="Navigation">
-            <h3 className="text-[11px] font-semibold uppercase tracking-[0.2em] text-muted-foreground/50">
-              Navigation
-            </h3>
-            <ul className="mt-5 space-y-3">
-              {navLinks.map((l) => (
-                <li key={l.label}>
-                  <Link
-                    href={l.to}
-                    className="text-sm text-foreground/45 transition-colors hover:text-foreground"
-                  >
-                    {l.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-
-          {/* Services */}
-          <nav aria-label="Services">
-            <h3 className="text-[11px] font-semibold uppercase tracking-[0.2em] text-muted-foreground/50">
-              Services
-            </h3>
-            <ul className="mt-5 space-y-3">
-              {serviceLinks.map((l) => (
-                <li key={l.label}>
-                  <Link
-                    href={l.to}
-                    className="text-sm text-foreground/45 transition-colors hover:text-foreground"
-                  >
-                    {l.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-
-          {/* Legal */}
-          <nav aria-label="Legal">
-            <h3 className="text-[11px] font-semibold uppercase tracking-[0.2em] text-muted-foreground/50">
-              Legal
-            </h3>
-            <ul className="mt-5 space-y-3">
-              {legalLinks.map((l) => (
-                <li key={l.label}>
-                  <Link
-                    href={l.to}
-                    className="text-sm text-foreground/45 transition-colors hover:text-foreground"
-                  >
-                    {l.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        </div>
-
-        {/* Divider */}
-        <div className="mt-12 border-t border-border/50" />
-
-        {/* Bottom bar */}
-        <div className="mt-6 flex flex-col items-center justify-between gap-3 sm:flex-row">
-          <p className="text-xs text-muted-foreground/40">
-            &copy; {new Date().getFullYear()} {siteConfig.name}. Tous droits réservés
-          </p>
-          <p className="text-xs text-muted-foreground/40">
-            Consultant SEO a Rennes, Bretagne
-          </p>
         </div>
       </div>
     </footer>

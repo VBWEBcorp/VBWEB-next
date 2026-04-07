@@ -62,20 +62,15 @@ function ScrollColumn({ images, direction = 'up', duration = 35 }: { images: str
 export function CtaGallerySection() {
   return (
     <section className="relative overflow-hidden bg-background">
-      {/* Photo columns */}
-      <div className="absolute inset-0 flex justify-center gap-3 opacity-50 px-4">
-        <div className="hidden w-44 sm:block">
-          <ScrollColumn images={col1} direction="up" duration={40} />
-        </div>
-        <div className="w-44">
-          <ScrollColumn images={col2} direction="down" duration={35} />
-        </div>
-        <div className="w-44">
-          <ScrollColumn images={col3} direction="up" duration={38} />
-        </div>
-        <div className="hidden w-44 lg:block">
-          <ScrollColumn images={col1.slice().reverse()} direction="down" duration={42} />
-        </div>
+      {/* Photo columns — pleine largeur écran */}
+      <div className="absolute inset-0 grid grid-cols-3 gap-3 opacity-25 sm:grid-cols-5 lg:grid-cols-7">
+        <ScrollColumn images={col1} direction="up" duration={40} />
+        <ScrollColumn images={col2} direction="down" duration={35} />
+        <ScrollColumn images={col3} direction="up" duration={38} />
+        <ScrollColumn images={col1.slice().reverse()} direction="down" duration={42} />
+        <ScrollColumn images={col2.slice().reverse()} direction="up" duration={36} />
+        <ScrollColumn images={col3.slice().reverse()} direction="down" duration={44} />
+        <ScrollColumn images={col1} direction="up" duration={39} />
       </div>
 
       {/* Gradient overlay — léger pour laisser voir les images */}
@@ -117,22 +112,6 @@ export function CtaGallerySection() {
       </div>
 
       {/* CSS animations */}
-      <style jsx global>{`
-        @keyframes scroll-up {
-          0% { transform: translateY(0); }
-          100% { transform: translateY(-50%); }
-        }
-        @keyframes scroll-down {
-          0% { transform: translateY(-50%); }
-          100% { transform: translateY(0); }
-        }
-        .animate-scroll-up {
-          animation: scroll-up linear infinite;
-        }
-        .animate-scroll-down {
-          animation: scroll-down linear infinite;
-        }
-      `}</style>
     </section>
   )
 }

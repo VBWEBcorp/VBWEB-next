@@ -1,7 +1,8 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion, useScroll, useSpring, useTransform } from 'framer-motion'
 import { Search, Rocket, TrendingUp, Sparkles, Gift } from 'lucide-react'
+import { useRef } from 'react'
 
 const ease = [0.22, 1, 0.36, 1] as const
 
@@ -37,6 +38,19 @@ const steps = [
 ]
 
 export function MethodSection() {
+  const timelineRef = useRef<HTMLDivElement>(null)
+  const { scrollYProgress } = useScroll({
+    target: timelineRef,
+    offset: ['start 70%', 'end 60%'],
+  })
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 120,
+    damping: 28,
+    restDelta: 0.001,
+  })
+  const progressHeight = useTransform(smoothProgress, [0, 1], ['0%', '100%'])
+  const glowOpacity = useTransform(smoothProgress, [0, 0.05, 0.95, 1], [0, 1, 1, 0])
+
   return (
     <section className="relative overflow-hidden bg-card">
       {/* Background grain */}
@@ -78,14 +92,30 @@ export function MethodSection() {
         </motion.div>
 
         {/* Timeline */}
-        <div className="relative mx-auto mt-16 max-w-3xl">
-          {/* Ligne verticale gradient */}
+        <div ref={timelineRef} className="relative mx-auto mt-16 max-w-3xl">
+          {/* Ligne verticale background (statique, discrète) */}
           <div
             aria-hidden
-            className="pointer-events-none absolute left-[18px] top-2 bottom-2 w-px bg-gradient-to-b from-transparent via-border to-transparent sm:left-6"
+            className="pointer-events-none absolute left-[18px] top-2 bottom-2 w-px bg-border/50 sm:left-6"
+          />
+
+          {/* Ligne verticale animée au scroll (le fil conducteur qui s'illumine) */}
+          <motion.div
+            aria-hidden
+            style={{ height: progressHeight }}
+            className="pointer-events-none absolute left-[18px] top-2 w-px bg-gradient-to-b from-primary via-primary to-primary/60 sm:left-6"
           >
-            <div className="absolute inset-0 bg-gradient-to-b from-primary/0 via-primary/40 to-primary/0" />
-          </div>
+            {/* Glow autour de la ligne */}
+            <motion.div
+              style={{ opacity: glowOpacity }}
+              className="absolute inset-0 -inset-x-1 bg-gradient-to-b from-primary/40 via-primary/40 to-primary/40 blur-md"
+            />
+            {/* Point lumineux en bas (la "tête" qui descend) */}
+            <motion.div
+              style={{ opacity: glowOpacity }}
+              className="absolute -bottom-1.5 -left-[5px] size-3 rounded-full bg-primary shadow-[0_0_20px_rgba(78,186,236,0.8),0_0_40px_rgba(78,186,236,0.4)]"
+            />
+          </motion.div>
 
           <ol className="space-y-6 sm:space-y-8">
             {steps.map((step, i) => {

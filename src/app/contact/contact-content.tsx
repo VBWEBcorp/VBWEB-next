@@ -2,7 +2,7 @@
 
 import { useState, FormEvent } from 'react'
 import { motion } from 'framer-motion'
-import { ArrowRight, MessageCircle, Calendar, CheckCircle2, Send } from 'lucide-react'
+import { ArrowRight, MessageCircle, Calendar, CheckCircle2, Send, Mail, Phone } from 'lucide-react'
 
 import { siteConfig } from '@/lib/seo'
 
@@ -33,12 +33,20 @@ const col3 = [
   'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=400&q=80',
 ]
 
-function ScrollColumn({ images, direction = 'up', duration = 35 }: { images: string[]; direction?: 'up' | 'down'; duration?: number }) {
+function ScrollColumn({
+  images,
+  direction = 'up',
+  duration = 35,
+}: {
+  images: string[]
+  direction?: 'up' | 'down'
+  duration?: number
+}) {
   const doubled = [...images, ...images]
   return (
     <div className="relative h-full overflow-hidden">
       <div
-        className={direction === 'up' ? 'animate-contact-scroll-up' : 'animate-contact-scroll-down'}
+        className={direction === 'up' ? 'animate-scroll-up' : 'animate-scroll-down'}
         style={{ animationDuration: `${duration}s` }}
       >
         {doubled.map((src, i) => (
@@ -68,13 +76,7 @@ const services = [
   'Autre',
 ]
 
-const budgets = [
-  '< 1 000 €',
-  '1 - 3k €',
-  '3 - 5k €',
-  '5 - 10k €',
-  '10k € +',
-]
+const budgets = ['< 1 000 €', '1 - 3k €', '3 - 5k €', '5 - 10k €', '10k € +']
 
 export function ContactContent() {
   const [service, setService] = useState('')
@@ -112,289 +114,354 @@ export function ContactContent() {
   }
 
   return (
-    <div className="min-h-screen bg-background">
-
-      {/* Hero with scrolling photo background */}
-      <div className="relative overflow-hidden">
-        {/* Photo columns */}
-        <div className="absolute inset-0 flex justify-center gap-3 opacity-50 px-4">
-          <div className="hidden w-44 sm:block">
-            <ScrollColumn images={col1} direction="up" duration={40} />
-          </div>
-          <div className="w-44">
-            <ScrollColumn images={col2} direction="down" duration={35} />
-          </div>
-          <div className="w-44">
-            <ScrollColumn images={col3} direction="up" duration={38} />
-          </div>
-          <div className="hidden w-44 lg:block">
-            <ScrollColumn images={col1.slice().reverse()} direction="down" duration={42} />
-          </div>
+    <>
+      {/* HERO style Framer */}
+      <section className="relative isolate overflow-hidden bg-background">
+        {/* Photo columns pleine largeur */}
+        <div className="absolute inset-0 grid grid-cols-3 gap-3 opacity-25 sm:grid-cols-5 lg:grid-cols-7">
+          <ScrollColumn images={col1} direction="up" duration={40} />
+          <ScrollColumn images={col2} direction="down" duration={35} />
+          <ScrollColumn images={col3} direction="up" duration={38} />
+          <ScrollColumn images={col1.slice().reverse()} direction="down" duration={42} />
+          <ScrollColumn images={col2.slice().reverse()} direction="up" duration={36} />
+          <ScrollColumn images={col3.slice().reverse()} direction="down" duration={44} />
+          <ScrollColumn images={col1} direction="up" duration={39} />
         </div>
 
-        {/* Gradient overlays */}
+        {/* Overlays */}
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-background via-background/50 to-background" />
         <div className="pointer-events-none absolute inset-0 bg-background/35" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(78,186,236,0.08),transparent_60%)]" aria-hidden />
 
-        {/* Heading */}
-        <div className="relative z-10 pt-20 pb-16 lg:pt-28 lg:pb-20">
+        <div className="relative z-10 mx-auto max-w-4xl px-4 pt-24 pb-16 text-center sm:px-6 sm:pt-32 sm:pb-20 lg:px-8 lg:pt-40">
           <motion.div
-            initial={{ opacity: 0, y: 12 }}
+            initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease }}
-            className="text-center"
+            transition={{ duration: 0.65, ease }}
           >
-            <p className="font-display text-xs font-semibold tracking-[0.22em] text-primary uppercase mb-4">
+            <p className="font-display text-[11px] font-semibold tracking-[0.24em] text-primary/80 uppercase">
               Contact
             </p>
-            <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground">
-              Parlons de votre projet
+            <h1 className="mt-5 font-display text-balance text-4xl font-medium leading-[1.05] tracking-[-0.03em] text-foreground sm:text-5xl lg:text-[3.5rem]">
+              Parlons de{' '}
+              <span className="italic text-muted-foreground/80">votre projet</span>
             </h1>
-            <p className="mt-4 text-muted-foreground text-lg max-w-xl mx-auto">
+            <p className="mx-auto mt-6 max-w-xl text-pretty text-[15px] leading-relaxed text-muted-foreground sm:text-base">
               Réponse sous 24h, devis gratuit, sans engagement.
             </p>
           </motion.div>
         </div>
+      </section>
 
-        {/* CSS animations */}
-        <style jsx global>{`
-          @keyframes contact-scroll-up {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(-50%); }
-          }
-          @keyframes contact-scroll-down {
-            0% { transform: translateY(-50%); }
-            100% { transform: translateY(0); }
-          }
-          .animate-contact-scroll-up {
-            animation: contact-scroll-up linear infinite;
-          }
-          .animate-contact-scroll-down {
-            animation: contact-scroll-down linear infinite;
-          }
-        `}</style>
-      </div>
+      {/* CONTACT — card style Framer */}
+      <section className="relative overflow-hidden bg-background">
+        {/* Grain */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 opacity-[0.04]"
+          style={{
+            backgroundImage:
+              'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.6) 1px, transparent 0)',
+            backgroundSize: '32px 32px',
+          }}
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute left-1/2 top-1/2 h-[600px] w-[900px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/[0.04] blur-[120px]"
+        />
 
-      <div className="mx-auto max-w-5xl px-4 sm:px-6 pb-24 lg:pb-32">
+        <div className="relative mx-auto max-w-5xl px-4 pb-24 sm:px-6 lg:px-8 lg:pb-32">
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease, delay: 0.1 }}
+            className="group relative"
+          >
+            {/* Glow border */}
+            <div
+              aria-hidden
+              className="pointer-events-none absolute -inset-px rounded-[1.6rem] bg-gradient-to-br from-primary/30 via-primary/0 to-primary/20 opacity-60 blur-[3px]"
+            />
+            <div className="relative overflow-hidden rounded-[1.5rem] border border-border/60 bg-card/40 backdrop-blur-sm">
+              {/* Spotlight interne */}
+              <div
+                aria-hidden
+                className="pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full bg-primary/[0.06] blur-3xl"
+              />
 
-        {/* Main card */}
-        <motion.div
-          initial={{ opacity: 0, y: 18 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.55, ease, delay: 0.06 }}
-          className="rounded-3xl border border-border/50 bg-card overflow-hidden shadow-sm"
-        >
-          <div className="grid lg:grid-cols-[340px_1fr]">
+              <div className="relative grid lg:grid-cols-[360px_1fr]">
+                {/* Left panel */}
+                <div className="relative flex flex-col items-center border-b border-border/40 p-8 text-center lg:items-start lg:border-b-0 lg:border-r lg:p-10 lg:text-left">
+                  {/* Avatar */}
+                  <div className="relative mb-6">
+                    <div
+                      aria-hidden
+                      className="absolute -inset-3 rounded-full bg-primary/10 blur-2xl"
+                    />
+                    <div className="relative size-28 overflow-hidden rounded-full border-2 border-primary/20 ring-1 ring-foreground/5 lg:size-32">
+                      <img
+                        src="https://i.ibb.co/1fRDj4NP/Victor.jpg"
+                        alt="Victor Béasse"
+                        className="size-full object-cover object-center"
+                        width={128}
+                        height={128}
+                      />
+                    </div>
+                  </div>
 
-            {/* Left panel with photo + info */}
-            <div className="relative bg-gradient-to-b from-primary/8 via-primary/4 to-transparent p-8 lg:p-10 flex flex-col items-center lg:items-start text-center lg:text-left border-b lg:border-b-0 lg:border-r border-border/40">
-              <div className="relative mb-6">
-                <div aria-hidden className="absolute -inset-3 rounded-full bg-primary/10 blur-2xl" />
-                <div className="relative size-28 lg:size-32 overflow-hidden rounded-full border-2 border-primary/20 ring-1 ring-foreground/5">
-                  <img
-                    src="https://i.ibb.co/1fRDj4NP/Victor.jpg"
-                    alt="Victor Beasse, Consultant SEO à Rennes"
-                    className="size-full object-cover object-center"
-                    width={128}
-                    height={128}
-                  />
+                  <h2 className="font-display text-xl font-semibold tracking-[-0.01em] text-foreground sm:text-2xl">
+                    Victor Béasse
+                  </h2>
+                  <p className="mt-1 text-[12px] font-medium uppercase tracking-[0.18em] text-primary/80">
+                    Consultant SEO & Dev web
+                  </p>
+                  <p className="mt-4 text-[14px] leading-relaxed text-muted-foreground">
+                    Je vous accompagne pour transformer votre site en un véritable levier de croissance.
+                  </p>
+
+                  {/* Coordonnées */}
+                  <div className="mt-6 w-full space-y-2 text-left">
+                    <a
+                      href={`mailto:${siteConfig.email}`}
+                      className="group/contact flex items-center gap-3 rounded-xl border border-border/40 bg-background/40 px-3 py-2.5 text-[13px] text-muted-foreground transition-all duration-300 hover:border-primary/30 hover:bg-background/70 hover:text-foreground"
+                    >
+                      <span className="flex size-7 shrink-0 items-center justify-center rounded-lg border border-border/40 bg-background/60 text-muted-foreground transition-colors group-hover/contact:border-primary/40 group-hover/contact:text-primary">
+                        <Mail className="size-3.5" />
+                      </span>
+                      <span className="truncate">{siteConfig.email}</span>
+                    </a>
+                    <a
+                      href={`tel:${siteConfig.phone.replace(/\s/g, '')}`}
+                      className="group/contact flex items-center gap-3 rounded-xl border border-border/40 bg-background/40 px-3 py-2.5 text-[13px] text-muted-foreground transition-all duration-300 hover:border-primary/30 hover:bg-background/70 hover:text-foreground"
+                    >
+                      <span className="flex size-7 shrink-0 items-center justify-center rounded-lg border border-border/40 bg-background/60 text-muted-foreground transition-colors group-hover/contact:border-primary/40 group-hover/contact:text-primary">
+                        <Phone className="size-3.5" />
+                      </span>
+                      {siteConfig.phone}
+                    </a>
+                  </div>
+
+                  {/* Divider */}
+                  <div className="my-7 h-px w-full bg-gradient-to-r from-transparent via-border/60 to-transparent" />
+
+                  {/* WhatsApp + Calendly CTAs */}
+                  <div className="w-full space-y-3">
+                    <a
+                      href={`https://wa.me/${siteConfig.phone.replace(/[^0-9]/g, '')}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group/cta flex h-11 w-full items-center justify-center gap-2 rounded-full border border-border/60 bg-background/60 px-5 text-[13px] font-medium text-foreground/90 backdrop-blur-sm transition-all duration-300 hover:border-primary/40 hover:bg-background/80"
+                    >
+                      <MessageCircle className="size-4 text-primary" />
+                      WhatsApp
+                    </a>
+                    <a
+                      href={CALENDLY}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group/cta flex h-11 w-full items-center justify-center gap-2 rounded-full bg-primary px-5 text-[13px] font-medium text-primary-foreground transition-colors hover:bg-primary/85"
+                    >
+                      <Calendar className="size-4" />
+                      Réserver un appel
+                      <ArrowRight className="size-3.5 transition-transform group-hover/cta:translate-x-0.5" />
+                    </a>
+                    <p className="text-center text-[11px] text-muted-foreground/60">
+                      30 min · Gratuit · Sans engagement
+                    </p>
+                  </div>
+                </div>
+
+                {/* Right panel — Form */}
+                <div className="p-8 lg:p-10">
+                  {sent ? (
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.95 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      className="flex h-full flex-col items-center justify-center space-y-5 py-12 text-center"
+                    >
+                      <div className="relative">
+                        <div
+                          aria-hidden
+                          className="absolute -inset-4 rounded-full bg-primary/15 blur-2xl"
+                        />
+                        <div className="relative flex size-16 items-center justify-center rounded-full border border-primary/40 bg-primary/10 text-primary">
+                          <CheckCircle2 className="size-8" />
+                        </div>
+                      </div>
+                      <h3 className="font-display text-2xl font-medium tracking-[-0.02em] text-foreground sm:text-3xl">
+                        Message envoyé !
+                      </h3>
+                      <p className="max-w-sm text-[14px] text-muted-foreground">
+                        Merci pour votre message. Je reviens vers vous sous 24h.
+                      </p>
+                      <a
+                        href={CALENDLY}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group inline-flex items-center gap-2 text-[13px] font-medium text-primary transition-colors hover:text-primary/80"
+                      >
+                        <Calendar className="size-4" />
+                        Ou réservez un appel directement
+                        <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" />
+                      </a>
+                    </motion.div>
+                  ) : (
+                    <form className="space-y-6" onSubmit={handleSubmit}>
+                      {/* Eyebrow */}
+                      <div>
+                        <p className="font-display text-[10px] font-semibold uppercase tracking-[0.22em] text-primary/80">
+                          Formulaire
+                        </p>
+                        <h3 className="mt-2 font-display text-xl font-medium tracking-[-0.01em] text-foreground sm:text-2xl">
+                          Décrivez votre projet
+                        </h3>
+                      </div>
+
+                      {/* Name + Email */}
+                      <div className="grid gap-4 sm:grid-cols-2">
+                        <div>
+                          <label
+                            htmlFor="name"
+                            className="mb-2 block text-[12px] font-medium uppercase tracking-[0.12em] text-muted-foreground/70"
+                          >
+                            Nom
+                          </label>
+                          <input
+                            id="name"
+                            name="name"
+                            required
+                            autoComplete="name"
+                            placeholder="Votre nom"
+                            className="w-full rounded-xl border border-border/60 bg-background/60 px-4 py-3 text-[14px] text-foreground placeholder:text-muted-foreground/40 outline-none backdrop-blur-sm transition-all focus:border-primary/60 focus:bg-background/90 focus:ring-2 focus:ring-primary/10"
+                          />
+                        </div>
+                        <div>
+                          <label
+                            htmlFor="email"
+                            className="mb-2 block text-[12px] font-medium uppercase tracking-[0.12em] text-muted-foreground/70"
+                          >
+                            Email
+                          </label>
+                          <input
+                            id="email"
+                            name="email"
+                            type="email"
+                            required
+                            autoComplete="email"
+                            placeholder="vous@email.com"
+                            className="w-full rounded-xl border border-border/60 bg-background/60 px-4 py-3 text-[14px] text-foreground placeholder:text-muted-foreground/40 outline-none backdrop-blur-sm transition-all focus:border-primary/60 focus:bg-background/90 focus:ring-2 focus:ring-primary/10"
+                          />
+                        </div>
+                      </div>
+
+                      {/* Phone */}
+                      <div>
+                        <label
+                          htmlFor="phone"
+                          className="mb-2 block text-[12px] font-medium uppercase tracking-[0.12em] text-muted-foreground/70"
+                        >
+                          Téléphone <span className="font-normal normal-case text-muted-foreground/40">— optionnel</span>
+                        </label>
+                        <input
+                          id="phone"
+                          name="phone"
+                          type="tel"
+                          autoComplete="tel"
+                          placeholder="06 00 00 00 00"
+                          className="w-full rounded-xl border border-border/60 bg-background/60 px-4 py-3 text-[14px] text-foreground placeholder:text-muted-foreground/40 outline-none backdrop-blur-sm transition-all focus:border-primary/60 focus:bg-background/90 focus:ring-2 focus:ring-primary/10"
+                        />
+                      </div>
+
+                      {/* Service */}
+                      <div>
+                        <p className="mb-3 text-[12px] font-medium uppercase tracking-[0.12em] text-muted-foreground/70">
+                          Je cherche
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                          {services.map((s) => (
+                            <button
+                              key={s}
+                              type="button"
+                              onClick={() => setService(service === s ? '' : s)}
+                              className={`rounded-full px-4 py-2 text-[13px] font-medium transition-all duration-300 ${
+                                service === s
+                                  ? 'border border-primary/40 bg-primary/15 text-primary'
+                                  : 'border border-border/60 bg-background/40 text-muted-foreground hover:border-foreground/30 hover:text-foreground'
+                              }`}
+                            >
+                              {s}
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Budget */}
+                      <div>
+                        <p className="mb-3 text-[12px] font-medium uppercase tracking-[0.12em] text-muted-foreground/70">
+                          Budget estimé
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                          {budgets.map((b) => (
+                            <button
+                              key={b}
+                              type="button"
+                              onClick={() => setBudget(budget === b ? '' : b)}
+                              className={`rounded-full px-4 py-2 text-[13px] font-medium transition-all duration-300 ${
+                                budget === b
+                                  ? 'border border-primary/40 bg-primary/15 text-primary'
+                                  : 'border border-border/60 bg-background/40 text-muted-foreground hover:border-foreground/30 hover:text-foreground'
+                              }`}
+                            >
+                              {b}
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Message */}
+                      <div>
+                        <label
+                          htmlFor="message"
+                          className="mb-2 block text-[12px] font-medium uppercase tracking-[0.12em] text-muted-foreground/70"
+                        >
+                          Votre projet
+                        </label>
+                        <textarea
+                          id="message"
+                          name="message"
+                          rows={4}
+                          placeholder="Décrivez votre projet en quelques mots…"
+                          className="w-full resize-none rounded-xl border border-border/60 bg-background/60 px-4 py-3 text-[14px] text-foreground placeholder:text-muted-foreground/40 outline-none backdrop-blur-sm transition-all focus:border-primary/60 focus:bg-background/90 focus:ring-2 focus:ring-primary/10"
+                        />
+                      </div>
+
+                      {error && (
+                        <p className="text-[13px] text-red-400">{error}</p>
+                      )}
+
+                      {/* Submit */}
+                      <button
+                        type="submit"
+                        disabled={sending}
+                        className="group flex h-12 w-full items-center justify-center gap-2 rounded-full bg-primary text-[14px] font-medium text-primary-foreground transition-all hover:bg-primary/85 disabled:opacity-50"
+                      >
+                        {sending ? (
+                          'Envoi en cours…'
+                        ) : (
+                          <>
+                            Envoyer ma demande
+                            <Send className="size-4 transition-transform group-hover:translate-x-0.5" />
+                          </>
+                        )}
+                      </button>
+                    </form>
+                  )}
                 </div>
               </div>
-
-              <h2 className="font-display text-xl font-bold text-foreground">
-                Victor Beasse
-              </h2>
-              <p className="text-sm text-primary font-medium mt-1">
-                Consultant SEO & Développeur web
-              </p>
-              <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
-                Je vous accompagne pour transformer votre site en un véritable levier de croissance.
-              </p>
-
-              {/* WhatsApp CTA */}
-              <div className="mt-8 w-full">
-                <a
-                  href={`https://wa.me/${siteConfig.phone.replace(/[^0-9]/g, '')}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2.5 w-full rounded-full border border-primary/20 bg-primary/5 px-5 py-3 text-sm font-semibold text-primary hover:bg-primary/10 hover:border-primary/30 transition-all group"
-                >
-                  <MessageCircle className="size-4" />
-                  Me contacter sur WhatsApp
-                </a>
-              </div>
-
-              {/* Calendly CTA */}
-              <div className="mt-auto pt-8 w-full">
-                <a
-                  href={CALENDLY}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2.5 w-full rounded-full border border-primary/20 bg-primary/5 px-5 py-3 text-sm font-semibold text-primary hover:bg-primary/10 hover:border-primary/30 transition-all group"
-                >
-                  <Calendar className="size-4" />
-                  Réserver un appel gratuit
-                  <ArrowRight className="size-3.5 group-hover:translate-x-0.5 transition-transform" />
-                </a>
-                <p className="text-xs text-muted-foreground/50 text-center mt-2.5">
-                  30 min, gratuit, sans engagement
-                </p>
-              </div>
             </div>
-
-            {/* Right panel with form */}
-            <div className="p-8 lg:p-10">
-              {sent ? (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  className="flex flex-col items-center justify-center h-full text-center py-12 space-y-4"
-                >
-                  <CheckCircle2 className="size-14 text-primary" />
-                  <p className="text-2xl font-bold text-foreground">Message envoyé !</p>
-                  <p className="text-muted-foreground max-w-sm">
-                    Merci pour votre message. Je reviens vers vous sous 24h.
-                  </p>
-                  <a
-                    href={CALENDLY}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 mt-4 text-sm font-medium text-primary hover:text-primary/80 transition-colors"
-                  >
-                    <Calendar className="size-4" />
-                    Ou réservez un appel directement
-                  </a>
-                </motion.div>
-              ) : (
-                <form className="space-y-7" onSubmit={handleSubmit}>
-                  {/* Name + Email row */}
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
-                        Nom
-                      </label>
-                      <input
-                        id="name"
-                        name="name"
-                        required
-                        autoComplete="name"
-                        placeholder="Votre nom"
-                        className="w-full rounded-xl border border-border/60 bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/40 outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/10"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-                        Email
-                      </label>
-                      <input
-                        id="email"
-                        name="email"
-                        type="email"
-                        required
-                        autoComplete="email"
-                        placeholder="Votre email"
-                        className="w-full rounded-xl border border-border/60 bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/40 outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/10"
-                      />
-                    </div>
-                  </div>
-
-                  {/* Phone */}
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">
-                      Téléphone <span className="text-muted-foreground/50 font-normal">(optionnel)</span>
-                    </label>
-                    <input
-                      id="phone"
-                      name="phone"
-                      type="tel"
-                      autoComplete="tel"
-                      placeholder="06 00 00 00 00"
-                      className="w-full rounded-xl border border-border/60 bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/40 outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/10"
-                    />
-                  </div>
-
-                  {/* Service */}
-                  <div>
-                    <p className="text-sm font-medium text-foreground mb-3">Je cherche</p>
-                    <div className="flex flex-wrap gap-2">
-                      {services.map((s) => (
-                        <button
-                          key={s}
-                          type="button"
-                          onClick={() => setService(service === s ? '' : s)}
-                          className={`rounded-full px-4 py-2 text-sm transition-all duration-200 ${
-                            service === s
-                              ? 'bg-primary text-primary-foreground shadow-sm'
-                              : 'border border-border/60 text-muted-foreground hover:text-foreground hover:border-foreground/30'
-                          }`}
-                        >
-                          {s}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Budget */}
-                  <div>
-                    <p className="text-sm font-medium text-foreground mb-3">Budget estimé</p>
-                    <div className="flex flex-wrap gap-2">
-                      {budgets.map((b) => (
-                        <button
-                          key={b}
-                          type="button"
-                          onClick={() => setBudget(budget === b ? '' : b)}
-                          className={`rounded-full px-4 py-2 text-sm transition-all duration-200 ${
-                            budget === b
-                              ? 'bg-primary text-primary-foreground shadow-sm'
-                              : 'border border-border/60 text-muted-foreground hover:text-foreground hover:border-foreground/30'
-                          }`}
-                        >
-                          {b}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Message */}
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
-                      Votre projet
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      rows={4}
-                      placeholder="Décrivez votre projet en quelques mots..."
-                      className="w-full rounded-xl border border-border/60 bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/40 outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/10 resize-none"
-                    />
-                  </div>
-
-                  {error && (
-                    <p className="text-sm text-red-400">{error}</p>
-                  )}
-
-                  {/* Submit */}
-                  <button
-                    type="submit"
-                    disabled={sending}
-                    className="w-full h-12 rounded-full bg-primary text-primary-foreground text-sm font-semibold transition-all hover:bg-primary/85 disabled:opacity-50 flex items-center justify-center gap-2 group shadow-sm hover:shadow-md"
-                  >
-                    {sending ? (
-                      'Envoi en cours...'
-                    ) : (
-                      <>
-                        Envoyer ma demande
-                        <Send className="size-4 transition-transform group-hover:translate-x-0.5" />
-                      </>
-                    )}
-                  </button>
-                </form>
-              )}
-            </div>
-          </div>
-        </motion.div>
-
-      </div>
-    </div>
+          </motion.div>
+        </div>
+      </section>
+    </>
   )
 }
