@@ -26,12 +26,9 @@
   status = 301
   force = true
 
-# Canonicalisation : consultant-seo-rennes.fr (sans www) -> www.consultant-seo-rennes.fr
-[[redirects]]
-  from = "https://consultant-seo-rennes.fr/*"
-  to = "https://www.consultant-seo-rennes.fr/:splat"
-  status = 301
-  force = true
+# NOTE : la canonicalisation www <-> apex est geree nativement par
+# Netlify via "Primary domain" dans Domain settings. Ne pas la dupliquer
+# ici sinon -> ERR_TOO_MANY_REDIRECTS.
 
 # ============================================================
 # SECURITY HEADERS — appliques a toutes les pages
