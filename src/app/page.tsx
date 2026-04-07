@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 
 import { HeroSection } from '@/components/sections/hero-section'
+import { AudiencesMarquee } from '@/components/sections/audiences-marquee'
 import { FounderSection } from '@/components/sections/founder-section'
 import { ProblemStatsSection } from '@/components/sections/problem-stats-section'
 import { MethodSection } from '@/components/sections/method-section'
@@ -45,6 +46,7 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <HeroSection />
+      <AudiencesMarquee />
       <FounderSection />
       <ProblemStatsSection />
       <MethodSection />

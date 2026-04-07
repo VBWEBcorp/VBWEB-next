@@ -60,6 +60,9 @@ export const metadata: Metadata = {
       'application/rss+xml': '/feed.xml',
     },
   },
+  verification: {
+    google: 'XRpkdAl7JgyfyXqpBoX3Zyg00TRLZNHQEOxwqblOZqk',
+  },
 }
 
 export const viewport: Viewport = {

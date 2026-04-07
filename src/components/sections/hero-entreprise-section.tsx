@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button'
 
 const ease = [0.22, 1, 0.36, 1] as const
 
-const row1 = [
+const col1 = [
   'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=400&q=80',
   'https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=400&q=80',
   'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=400&q=80',
@@ -17,7 +17,7 @@ const row1 = [
   'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=400&q=80',
 ]
 
-const row2 = [
+const col2 = [
   'https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=400&q=80',
   'https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?auto=format&fit=crop&w=400&q=80',
   'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80',
@@ -26,7 +26,7 @@ const row2 = [
   'https://images.unsplash.com/photo-1531973576160-7125cd663d86?auto=format&fit=crop&w=400&q=80',
 ]
 
-const row3 = [
+const col3 = [
   'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=400&q=80',
   'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80',
   'https://images.unsplash.com/photo-1573164574572-cb89e39749b4?auto=format&fit=crop&w=400&q=80',
@@ -35,22 +35,22 @@ const row3 = [
   'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=400&q=80',
 ]
 
-function ScrollRow({ images, direction = 'left', duration = 50 }: { images: string[]; direction?: 'left' | 'right'; duration?: number }) {
+function ScrollColumn({ images, direction = 'up', duration = 35 }: { images: string[]; direction?: 'up' | 'down'; duration?: number }) {
   const doubled = [...images, ...images]
 
   return (
-    <div className="relative overflow-hidden">
+    <div className="relative h-full overflow-hidden">
       <div
-        className={direction === 'left' ? 'flex animate-scroll-left' : 'flex animate-scroll-right'}
+        className={direction === 'up' ? 'animate-scroll-up' : 'animate-scroll-down'}
         style={{ animationDuration: `${duration}s` }}
       >
         {doubled.map((src, i) => (
-          <div key={i} className="shrink-0 p-1.5">
+          <div key={i} className="p-1.5">
             <img
               src={src}
               alt=""
               loading="lazy"
-              className="aspect-[4/3] h-32 rounded-xl object-cover sm:h-40"
+              className="aspect-[3/4] w-full rounded-xl object-cover"
             />
           </div>
         ))}
@@ -59,21 +59,30 @@ function ScrollRow({ images, direction = 'left', duration = 50 }: { images: stri
   )
 }
 
-export function HeroSection() {
+export function HeroEntrepriseSection() {
   return (
     <section className="relative isolate overflow-hidden bg-background">
-      {/* Photo rows animées en arrière-plan (sens alternés) */}
-      <div className="absolute inset-x-0 top-0 flex flex-col gap-3 pt-4 opacity-55">
-        <ScrollRow images={row1} direction="left" duration={55} />
-        <ScrollRow images={row2} direction="right" duration={45} />
-        <ScrollRow images={row3} direction="left" duration={50} />
+      {/* Photo columns animées en arrière-plan */}
+      <div className="absolute inset-0 flex justify-center gap-3 opacity-50 px-4">
+        <div className="hidden w-44 sm:block">
+          <ScrollColumn images={col1} direction="up" duration={40} />
+        </div>
+        <div className="w-44">
+          <ScrollColumn images={col2} direction="down" duration={35} />
+        </div>
+        <div className="w-44">
+          <ScrollColumn images={col3} direction="up" duration={38} />
+        </div>
+        <div className="hidden w-44 lg:block">
+          <ScrollColumn images={col1.slice().reverse()} direction="down" duration={42} />
+        </div>
       </div>
 
-      {/* Overlays pour lisibilité */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-background via-background/55 to-background" />
+      {/* Gradient overlay pour lisibilité */}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-background via-background/50 to-background" />
       <div className="pointer-events-none absolute inset-0 bg-background/35" />
 
-      <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/20" aria-hidden />
+      {/* Glow primary */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(78,186,236,0.08),transparent_60%)]" aria-hidden />
 
       <div className="relative z-10 mx-auto max-w-6xl px-4 pt-20 pb-10 sm:px-6 sm:pt-28 sm:pb-14 lg:px-8 lg:pt-36 lg:pb-16">
@@ -86,9 +95,9 @@ export function HeroSection() {
             className="text-center lg:text-left"
           >
             <h1 className="font-display text-balance text-4xl leading-[1.08] tracking-[-0.03em] text-foreground sm:text-5xl lg:text-6xl">
-              Consultant SEO à Rennes,{' '}
+              Plus de clients{' '}
               <br className="hidden sm:block" />
-              <span className="text-primary">plus de clients grâce à Google</span>
+              <span className="text-primary">grâce à Google</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-pretty text-lg leading-relaxed text-muted-foreground sm:text-xl lg:mx-0">
               Je transforme votre site en générateur de clients qualifiés grâce au référencement naturel et un site web performant.
@@ -123,7 +132,7 @@ export function HeroSection() {
             </div>
           </motion.div>
 
-          {/* Photo */}
+          {/* Photo Victor */}
           <motion.div
             initial={{ opacity: 0, scale: 0.92 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -134,7 +143,7 @@ export function HeroSection() {
             <div className="relative size-56 overflow-hidden rounded-full border-2 border-primary/20 shadow-[var(--shadow-lg)] ring-1 ring-foreground/5 sm:size-64 lg:size-72">
               <img
                 src="https://i.ibb.co/1fRDj4NP/Victor.jpg"
-                alt="Victor Beasse, Consultant SEO à Rennes, fondateur de VBWEB"
+                alt="Victor Béasse, fondateur de VBWEB"
                 className="size-full object-cover object-center"
                 width={288}
                 height={288}
@@ -144,26 +153,6 @@ export function HeroSection() {
           </motion.div>
         </div>
       </div>
-
-      {/* CSS animations horizontales */}
-      <style jsx global>{`
-        @keyframes scroll-left {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-        @keyframes scroll-right {
-          0% { transform: translateX(-50%); }
-          100% { transform: translateX(0); }
-        }
-        .animate-scroll-left {
-          animation: scroll-left linear infinite;
-          width: max-content;
-        }
-        .animate-scroll-right {
-          animation: scroll-right linear infinite;
-          width: max-content;
-        }
-      `}</style>
     </section>
   )
 }
