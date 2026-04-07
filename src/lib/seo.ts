@@ -1,5 +1,7 @@
 export const siteConfig = {
-  name: 'VBWEB',
+  name: 'Consultant SEO Rennes - VBWEB',
+  shortName: 'VBWEB',
+  legalName: 'Victor Béasse',
   url: 'https://www.consultant-seo-rennes.fr',
   locale: 'fr_FR',
   description:
@@ -8,8 +10,8 @@ export const siteConfig = {
   twitterHandle: '@vbweb',
   themeColor: '#1B2D46',
   phone: '+33 6 27 30 17 88',
-  email: 'contact@vbweb.fr',
-  founder: 'Victor Beasse',
+  email: 'contact@consultant-seo-rennes.fr',
+  founder: 'Victor Béasse',
   address: {
     street: 'Rennes',
     city: 'Rennes',

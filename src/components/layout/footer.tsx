@@ -68,14 +68,20 @@ export function Footer() {
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
           {/* Brand */}
           <div className="space-y-5">
-            <Link href="/" className="inline-flex items-center gap-2.5 font-display text-lg font-semibold tracking-tight">
-              <span className="flex size-9 items-center justify-center rounded-xl bg-primary text-primary-foreground">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-[18px]"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+            <Link href="/" className="inline-flex flex-col items-start gap-2 font-display tracking-tight">
+              <span className="inline-flex items-center gap-2.5">
+                <span className="flex size-9 items-center justify-center rounded-xl bg-primary text-primary-foreground">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-[18px]"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+                </span>
+                <span className="text-lg font-semibold text-foreground">{siteConfig.name}</span>
               </span>
-              <span className="text-foreground">{siteConfig.name}</span>
+              <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-muted-foreground/50">
+                Marque historique&nbsp;: {siteConfig.shortName}
+              </span>
             </Link>
             <p className="max-w-xs text-[13px] leading-relaxed text-muted-foreground/60">
-              Consultant SEO et developpeur web a Rennes. J&apos;aide les PME, artisans et commerces a attirer plus de clients grace a Google.
+              {siteConfig.name}, dirigé par {siteConfig.legalName}. J&apos;aide les PME, artisans
+              et commerces de Bretagne à attirer plus de clients grâce à Google.
             </p>
             {/* Contact info */}
             <div className="space-y-2.5 pt-1">

@@ -53,12 +53,12 @@ export default function LegalPage() {
                 Le site accessible à l&apos;adresse <strong>{siteConfig.url}</strong> est édité par :
               </p>
               <ul className="list-inside list-disc space-y-1 pl-1">
-                <li><strong>Raison sociale :</strong> {siteConfig.name}</li>
-                <li><strong>Forme juridique :</strong> [SARL / SAS / EI / Auto-entrepreneur, à compléter]</li>
-                <li><strong>Capital social :</strong> [Montant] € (si applicable)</li>
+                <li><strong>Raison sociale (personne physique) :</strong> {siteConfig.legalName}</li>
+                <li><strong>Dénomination commerciale :</strong> {siteConfig.name}</li>
+                <li><strong>Marque commerciale historique :</strong> {siteConfig.shortName}</li>
+                <li><strong>Forme juridique :</strong> Entreprise individuelle (micro-entrepreneur)</li>
                 <li><strong>SIRET :</strong> [N° SIRET à compléter]</li>
-                <li><strong>RCS :</strong> [Ville] B [N° RCS] (si applicable)</li>
-                <li><strong>N° TVA intracommunautaire :</strong> [FR XX XXXXXXXXX, à compléter]</li>
+                <li><strong>N° TVA intracommunautaire :</strong> Non applicable (franchise en base de TVA, art. 293 B du CGI)</li>
                 <li>
                   <strong>Siège social :</strong> {siteConfig.address.street},{' '}
                   {siteConfig.address.postalCode} {siteConfig.address.city}
@@ -67,7 +67,14 @@ export default function LegalPage() {
                 <li><strong>Email :</strong> {siteConfig.email}</li>
               </ul>
               <p>
-                <strong>Directeur de la publication :</strong> [Nom et prénom du responsable, à compléter]
+                <strong>Directeur de la publication :</strong> {siteConfig.legalName}
+              </p>
+              <p className="text-xs italic">
+                L&apos;activité est exploitée sous la dénomination commerciale {' '}
+                <strong>{siteConfig.name}</strong>, reprenant la marque historique {siteConfig.shortName}{' '}
+                créée en 2017. Cette dénomination est utilisée de manière constante sur le site web,
+                le nom de domaine principal ({siteConfig.url}), l&apos;adresse de contact, les supports
+                commerciaux et les profils sur les réseaux professionnels.
               </p>
             </section>
 

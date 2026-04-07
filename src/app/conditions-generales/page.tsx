@@ -52,7 +52,13 @@ export default function CGUPage() {
               <p>
                 Les présentes Conditions Générales d&apos;Utilisation (ci-après &quot;CGU&quot;)
                 définissent les règles d&apos;accès et d&apos;utilisation du site{' '}
-                <strong>{siteConfig.url}</strong> édité par {siteConfig.name}.
+                <strong>{siteConfig.url}</strong> édité sous la dénomination commerciale{' '}
+                <strong>{siteConfig.name}</strong> par {siteConfig.legalName},
+                micro-entrepreneur (voir les{' '}
+                <Link href="/mentions-legales" className="font-medium text-primary underline underline-offset-4 hover:text-primary/80">
+                  mentions légales
+                </Link>{' '}
+                pour le détail).
               </p>
               <p>
                 L&apos;accès au site implique l&apos;acceptation pleine et entière des présentes

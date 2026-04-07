@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next'
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'VBWEB | Consultant SEO Rennes',
+    name: 'Consultant SEO Rennes - VBWEB',
     short_name: 'VBWEB',
     description: 'Consultant SEO et développeur web à Rennes. Référencement naturel, création de sites et applications web.',
     start_url: '/',

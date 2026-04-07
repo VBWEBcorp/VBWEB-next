@@ -21,7 +21,7 @@ const description =
   'Consultant SEO à Rennes : plus de clients grâce à Google. Référencement naturel, création de sites internet et applications web pour PME, artisans et commerces en Bretagne. 75 avis 5 étoiles.'
 
 export const metadata: Metadata = {
-  title: 'Consultant SEO Rennes : Plus de Clients grâce à Google | VBWEB',
+  title: 'Consultant SEO Rennes - VBWEB | Plus de Clients grâce à Google',
   description,
   alternates: { canonical: '/' },
 }
@@ -33,7 +33,7 @@ const jsonLd = {
     organizationJsonLd(),
     localBusinessJsonLd(),
     personJsonLd(),
-    webPageJsonLd('Consultant SEO Rennes | VBWEB', description, '/', ['h1', '.hero-description']),
+    webPageJsonLd('Consultant SEO Rennes - VBWEB', description, '/', ['h1', '.hero-description']),
   ],
 }
 
