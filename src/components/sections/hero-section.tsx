@@ -84,7 +84,10 @@ function ScrollColumn({
 
 export function HeroSection() {
   return (
-    <section className="relative isolate overflow-hidden bg-background">
+    <section
+      className="relative isolate overflow-hidden bg-background"
+      style={{ minHeight: 'min(720px, 100vh)' }}
+    >
       {/* Photo columns pleine largeur (identique au CTA gallery) */}
       <div className="absolute inset-0 grid grid-cols-3 gap-3 opacity-25 sm:grid-cols-5 lg:grid-cols-7">
         <ScrollColumn images={col1} direction="up" duration={40} />

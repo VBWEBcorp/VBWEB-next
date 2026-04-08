@@ -15,10 +15,14 @@ const nextConfig: NextConfig = {
 
   // Optimisations expérimentales
   experimental: {
-    optimizePackageImports: ['lucide-react', 'framer-motion', 'date-fns'],
-    // Inline le CSS critique au-dessus de la ligne de flottaison via beasties
-    // -> reduit le render-blocking CSS et accelere LCP/FCP
-    optimizeCss: true,
+    optimizePackageImports: [
+      'lucide-react',
+      'framer-motion',
+      'date-fns',
+      '@radix-ui/react-slot',
+    ],
+    // optimizeCss desactive : casse Tailwind v4 (issue connue avec beasties)
+    // optimizeCss: true,
   },
 
   images: {
