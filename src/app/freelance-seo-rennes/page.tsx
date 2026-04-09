@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 const faqs = [
   {
     question: 'Quelle est la différence entre un freelance SEO et une agence SEO à Rennes ?',
-    answer: 'Avec un freelance SEO à Rennes, vous échangez directement avec le responsable de votre projet. Pas de chargé de compte intermédiaire. Chez VBWEB, une équipe dédiée assure l\'exécution au quotidien pendant que vous gardez un contact direct avec le fondateur. Les tarifs sont aussi souvent plus accessibles qu\'en agence, sans sacrifier la qualité.',
+    answer: 'Avec un freelance SEO à Rennes, vous travaillez avec quelqu\'un qui connaît votre dossier. Pas de commercial, pas de chargé de compte qui change tous les 3 mois. La relation est simple et directe, et les tarifs sont souvent plus accessibles qu\'en agence.',
   },
   {
     question: 'Pourquoi faire appel à un freelance SEO basé à Rennes plutôt qu\'à Paris ?',
