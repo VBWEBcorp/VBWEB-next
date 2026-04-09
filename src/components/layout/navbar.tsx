@@ -278,7 +278,7 @@ export function Navbar() {
           {/* Panel */}
           <div
             id="mega-menu"
-            className="fixed left-1/2 top-[80px] z-50 w-[calc(100%-2rem)] max-w-md -translate-x-1/2 sm:top-[88px] lg:max-w-4xl animate-[menu-in_0.22s_cubic-bezier(0.22,1,0.36,1)_both]"
+            className="fixed inset-x-4 top-[80px] z-50 mx-auto max-w-md sm:inset-x-6 sm:top-[88px] lg:max-w-4xl animate-[menu-in_0.22s_cubic-bezier(0.22,1,0.36,1)_both]"
           >
             <div className="overflow-hidden rounded-2xl border border-border/60 bg-background/95 shadow-[0_20px_60px_rgba(0,0,0,0.25)] backdrop-blur-xl">
               {/* Liste verticale (mobile) / grille côte à côte (desktop) */}
