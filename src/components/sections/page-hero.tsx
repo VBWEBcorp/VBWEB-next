@@ -1,10 +1,5 @@
-'use client'
-
-import { motion } from 'framer-motion'
 import { ChevronRight, Home } from 'lucide-react'
 import Link from 'next/link'
-
-const ease = [0.22, 1, 0.36, 1] as const
 
 type PageHeroProps = {
   eyebrow: string
@@ -52,11 +47,9 @@ export function PageHero({ eyebrow, title, description, image, breadcrumb }: Pag
 
         {/* Content */}
         <div className="pb-20 pt-14 sm:pb-24 sm:pt-16 lg:pb-32 lg:pt-20">
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease }}
+          <div
             className="mx-auto max-w-3xl text-center"
+            style={{ animation: 'hero-fade-up 0.6s cubic-bezier(0.22,1,0.36,1) both' }}
           >
             <p className="font-display text-xs font-semibold tracking-[0.22em] uppercase text-foreground/70">
               {eyebrow}
@@ -65,11 +58,11 @@ export function PageHero({ eyebrow, title, description, image, breadcrumb }: Pag
               {title}
             </h1>
             {description && (
-              <p className="mx-auto mt-6 max-w-2xl text-pretty text-lg leading-relaxed text-foreground/70">
+              <p className="hero-description mx-auto mt-6 max-w-2xl text-pretty text-lg leading-relaxed text-foreground/70">
                 {description}
               </p>
             )}
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

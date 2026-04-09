@@ -1,12 +1,8 @@
-'use client'
-
-import { motion } from 'framer-motion'
 import { ArrowRight, Calendar } from 'lucide-react'
 import Link from 'next/link'
 
 import { Button } from '@/components/ui/button'
-
-const ease = [0.22, 1, 0.36, 1] as const
+import { Reveal } from '@/components/ui/reveal'
 
 const CALENDLY = 'https://calendly.com/web-rdv/echange-vbweb-30-minutes'
 
@@ -14,13 +10,7 @@ export function CtaSection() {
   return (
     <section className="bg-background">
       <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
-        <motion.div
-          initial={{ opacity: 0, y: 14 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-80px' }}
-          transition={{ duration: 0.55, ease }}
-          className="mx-auto max-w-3xl text-center space-y-6"
-        >
+        <Reveal className="mx-auto max-w-3xl text-center space-y-6">
           <h2 className="font-display text-balance text-3xl leading-[1.12] tracking-[-0.02em] text-foreground sm:text-4xl md:text-[2.6rem]">
             Prêt à transformer votre site en générateur de clients ?
           </h2>
@@ -42,7 +32,7 @@ export function CtaSection() {
               </Link>
             </Button>
           </div>
-        </motion.div>
+        </Reveal>
       </div>
     </section>
   )
