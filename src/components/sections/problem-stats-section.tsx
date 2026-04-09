@@ -1,11 +1,14 @@
 import { TrendingDown, Search } from 'lucide-react'
 
+import { CountUp } from '@/components/ui/count-up'
 import { Reveal } from '@/components/ui/reveal'
 
 const stats = [
   {
     icon: TrendingDown,
-    value: '+80%',
+    numValue: 80,
+    prefix: '+',
+    suffix: '%',
     label: 'des sites ne convertissent pas',
     title: 'Vous avez un beau site… mais il ne vous rapporte pas de clients',
     description:
@@ -13,7 +16,9 @@ const stats = [
   },
   {
     icon: Search,
-    value: '93%',
+    numValue: 93,
+    prefix: '',
+    suffix: '%',
     label: 'des achats commencent sur Google',
     title: 'Vos futurs clients vous cherchent sur Google en ce moment même',
     description:
@@ -54,7 +59,7 @@ export function ProblemStatsSection() {
             const Icon = stat.icon
             return (
               <Reveal
-                key={stat.value}
+                key={stat.numValue}
                 delay={i * 0.1}
                 className="group relative "
               >
@@ -75,9 +80,12 @@ export function ProblemStatsSection() {
 
                   {/* Big number */}
                   <div className="relative">
-                    <span className="font-display text-[4.5rem] font-bold leading-none tracking-[-0.04em] text-foreground sm:text-[5.5rem]">
-                      {stat.value}
-                    </span>
+                    <CountUp
+                      value={stat.numValue}
+                      prefix={stat.prefix}
+                      suffix={stat.suffix}
+                      className="font-display text-[3rem] font-bold leading-none tracking-[-0.04em] text-foreground sm:text-[3.75rem]"
+                    />
                     <p className="mt-2 text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground/60">
                       {stat.label}
                     </p>
