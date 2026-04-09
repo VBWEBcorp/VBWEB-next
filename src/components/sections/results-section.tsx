@@ -32,11 +32,6 @@ export function ResultsSection() {
         }}
       />
 
-      {/* Glow */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute left-1/2 top-1/2 h-[400px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/[0.04] blur-[110px]"
-      />
 
       <div className="relative mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
         {/* Header */}
@@ -57,7 +52,7 @@ export function ResultsSection() {
             return (
               <div
                 key={result.title}
-                className="group relative bg-background/95 p-8 backdrop-blur-sm transition-colors duration-500 hover:bg-card/60 sm:p-10"
+                className="group relative bg-background/95 p-8 transition-colors duration-500 hover:bg-card/60 sm:p-10"
               >
                 {/* Spotlight au hover */}
                 <div
@@ -71,12 +66,8 @@ export function ResultsSection() {
 
                 <div className="relative flex flex-col items-center text-center">
                   {/* Icone */}
-                  <div className="relative">
-                    <div
-                      aria-hidden
-                      className="absolute inset-0 rounded-full bg-primary/10 blur-lg opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                    />
-                    <div className="relative flex size-12 items-center justify-center rounded-full border border-border/60 bg-background text-muted-foreground/70 transition-all duration-500 group-hover:border-primary/40 group-hover:text-primary">
+                  <div>
+                    <div className="flex size-12 items-center justify-center rounded-full border border-border/60 bg-background text-muted-foreground/70 transition-colors duration-500 group-hover:border-primary/40 group-hover:text-primary">
                       <Icon className="size-5" aria-hidden />
                     </div>
                   </div>

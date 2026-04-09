@@ -45,11 +45,6 @@ export function MethodSection() {
         }}
       />
 
-      {/* Glow ambiance */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute left-1/2 top-1/3 h-[500px] w-[800px] -translate-x-1/2 rounded-full bg-primary/[0.04] blur-[120px]"
-      />
 
       <div className="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
         {/* Header épuré */}
@@ -73,11 +68,6 @@ export function MethodSection() {
             aria-hidden
             className="pointer-events-none absolute left-[18px] top-2 bottom-2 w-px bg-gradient-to-b from-primary via-primary to-primary/60 sm:left-6"
           />
-          {/* Glow autour de la ligne */}
-          <div
-            aria-hidden
-            className="pointer-events-none absolute left-[17px] top-2 bottom-2 w-[3px] bg-gradient-to-b from-primary/40 via-primary/40 to-primary/40 blur-md sm:left-[23px]"
-          />
 
           <ol className="space-y-6 sm:space-y-8">
             {steps.map((step) => {
@@ -89,14 +79,8 @@ export function MethodSection() {
                 >
                   {/* Node de la timeline */}
                   <div className="absolute left-0 top-1 sm:top-2">
-                    <div className="relative">
-                      <div
-                        aria-hidden
-                        className="absolute -inset-2 rounded-full bg-primary/10 blur-md"
-                      />
-                      <div className="relative flex size-9 items-center justify-center rounded-full border border-primary/30 bg-background text-primary shadow-[0_0_0_4px_rgba(0,0,0,0.4)] sm:size-12">
-                        <Icon className="size-4 sm:size-5" aria-hidden />
-                      </div>
+                    <div className="flex size-9 items-center justify-center rounded-full border border-primary/30 bg-background text-primary shadow-[0_0_0_4px_rgba(0,0,0,0.4)] sm:size-12">
+                      <Icon className="size-4 sm:size-5" aria-hidden />
                     </div>
                   </div>
 
@@ -106,12 +90,7 @@ export function MethodSection() {
                       aria-hidden
                       className="pointer-events-none absolute -inset-px rounded-[1.2rem] bg-gradient-to-br from-primary/40 via-primary/0 to-primary/20 opacity-0 blur-[2px] transition-opacity duration-500 group-hover:opacity-100"
                     />
-                    <div className="relative overflow-hidden rounded-[1.15rem] border border-border/60 bg-background/50 p-6 backdrop-blur-sm transition-all duration-500 group-hover:border-primary/30 group-hover:bg-background/70 sm:p-7">
-                      {/* Spotlight interne */}
-                      <div
-                        aria-hidden
-                        className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-primary/[0.05] blur-3xl transition-opacity duration-500 group-hover:bg-primary/[0.12]"
-                      />
+                    <div className="relative overflow-hidden rounded-[1.15rem] border border-border/60 bg-background/50 p-6 transition-colors duration-500 group-hover:border-primary/30 group-hover:bg-background/70 sm:p-7">
 
                       <div className="relative flex items-baseline gap-4">
                         <span className="font-display text-[2.25rem] font-bold leading-none tracking-[-0.03em] text-muted-foreground/30 sm:text-[2.75rem]">
@@ -141,11 +120,7 @@ export function MethodSection() {
               aria-hidden
               className="pointer-events-none absolute -inset-px rounded-[1.3rem] bg-gradient-to-br from-primary/50 via-primary/10 to-primary/30 opacity-60 blur-[3px] transition-opacity duration-500 group-hover:opacity-100"
             />
-            <div className="relative overflow-hidden rounded-[1.25rem] border border-primary/30 bg-background/70 p-7 backdrop-blur-sm sm:p-8">
-              <div
-                aria-hidden
-                className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-primary/[0.1] blur-3xl"
-              />
+            <div className="relative overflow-hidden rounded-[1.25rem] border border-primary/30 bg-background/70 p-7 sm:p-8">
               <div className="relative flex items-start gap-5">
                 <div className="flex size-11 shrink-0 items-center justify-center rounded-xl border border-primary/40 bg-primary/10 text-primary">
                   <Gift className="size-5" aria-hidden />

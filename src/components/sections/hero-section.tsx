@@ -168,7 +168,6 @@ export function HeroSection() {
             className="relative mx-auto lg:mx-0"
             style={{ animation: 'hero-scale-in 0.7s cubic-bezier(0.22,1,0.36,1) 0.15s both' }}
           >
-            <div aria-hidden className="absolute -inset-6 rounded-full bg-primary/10 blur-3xl" />
             <div className="relative size-56 overflow-hidden rounded-full border-2 border-primary/20 shadow-[var(--shadow-lg)] ring-1 ring-foreground/5 sm:size-64 lg:size-72">
               <Image
                 src="/victor.jpg"

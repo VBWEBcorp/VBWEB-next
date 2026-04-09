@@ -26,12 +26,7 @@ function GoogleLogo({ className = 'size-4' }: { className?: string }) {
 
 function TestimonialCard({ testimonial }: { testimonial: typeof testimonials[0] }) {
   return (
-    <figure className="group relative flex h-[220px] w-[340px] shrink-0 flex-col overflow-hidden rounded-2xl border border-border/60 bg-card/60 p-6 backdrop-blur-sm transition-colors duration-500 hover:border-primary/30 hover:bg-card/80">
-      {/* Spotlight subtil au hover */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -right-12 -top-12 h-40 w-40 rounded-full bg-primary/[0.05] blur-3xl transition-opacity duration-500 group-hover:bg-primary/[0.12]"
-      />
+    <figure className="group relative flex h-[220px] w-[340px] shrink-0 flex-col overflow-hidden rounded-2xl border border-border/60 bg-card/60 p-6 transition-colors duration-500 hover:border-primary/30 hover:bg-card/80">
 
       {/* Header avec étoiles + Google */}
       <div className="relative flex items-center justify-between">
@@ -118,16 +113,11 @@ export function TestimonialsSection() {
         }}
       />
 
-      {/* Glow ambiance */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute left-1/2 top-1/2 h-[500px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/[0.04] blur-[120px]"
-      />
 
       <div className="relative py-16 sm:py-20 lg:py-24">
         {/* Header */}
         <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
-          <div className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/60 px-3.5 py-1.5 backdrop-blur-sm">
+          <div className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/60 px-3.5 py-1.5">
             <GoogleLogo className="size-3.5" />
             <span className="text-[12px] font-medium text-muted-foreground">75 avis Google</span>
             <span aria-hidden className="h-3 w-px bg-border" />
@@ -155,7 +145,7 @@ export function TestimonialsSection() {
             href="https://g.page/r/VBWEB/review"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-5 py-2.5 text-sm font-medium text-foreground/80 backdrop-blur-sm transition-colors hover:border-primary/30 hover:bg-card/80 hover:text-foreground"
+            className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-5 py-2.5 text-sm font-medium text-foreground/80 transition-colors hover:border-primary/30 hover:bg-card/80 hover:text-foreground"
           >
             <GoogleLogo className="size-4" />
             Laissez un avis

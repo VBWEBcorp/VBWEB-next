@@ -47,10 +47,6 @@ export function CaseStudiesSection() {
           backgroundSize: '32px 32px',
         }}
       />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute left-1/2 top-1/2 h-[500px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/[0.04] blur-[120px]"
-      />
 
       <div className="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
         {/* Header asymétrique style Framer */}
@@ -75,7 +71,7 @@ export function CaseStudiesSection() {
             <div key={cat.title}>
               <Link
                 href={cat.href}
-                className="group relative block h-full overflow-hidden rounded-[1.4rem] border border-border/60 bg-card/40 backdrop-blur-sm transition-all duration-500 hover:border-primary/30"
+                className="group relative block h-full overflow-hidden rounded-[1.4rem] border border-border/60 bg-card/40 transition-colors duration-500 hover:border-primary/30"
               >
                 {/* Image */}
                 <div className="relative aspect-[4/3] overflow-hidden">
@@ -98,7 +94,7 @@ export function CaseStudiesSection() {
 
                   {/* Arrow en haut à droite */}
                   <div className="absolute right-5 top-5">
-                    <div className="flex size-9 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white backdrop-blur-md transition-all duration-500 group-hover:border-primary/60 group-hover:bg-primary group-hover:text-primary-foreground">
+                    <div className="flex size-9 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white transition-colors duration-500 group-hover:border-primary/60 group-hover:bg-primary group-hover:text-primary-foreground">
                       <ArrowUpRight className="size-4 transition-transform duration-500 group-hover:rotate-45" />
                     </div>
                   </div>

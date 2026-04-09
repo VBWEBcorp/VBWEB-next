@@ -33,11 +33,6 @@ export function ProblemStatsSection() {
         }}
       />
 
-      {/* Glow primary discret */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -top-20 left-1/2 h-[400px] w-[700px] -translate-x-1/2 rounded-full bg-primary/[0.05] blur-[110px]"
-      />
 
       <div className="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
         {/* Header épuré */}
@@ -66,12 +61,7 @@ export function ProblemStatsSection() {
                   className="pointer-events-none absolute -inset-px rounded-[1.4rem] bg-gradient-to-br from-primary/40 via-primary/0 to-primary/20 opacity-0 blur-[2px] transition-opacity duration-500 group-hover:opacity-100"
                 />
 
-                <div className="relative h-full overflow-hidden rounded-[1.35rem] border border-border/60 bg-card/40 p-8 backdrop-blur-sm transition-all duration-500 group-hover:border-primary/30 group-hover:bg-card/60 sm:p-10">
-                  {/* Spotlight gradient interne */}
-                  <div
-                    aria-hidden
-                    className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-primary/[0.06] blur-3xl transition-opacity duration-500 group-hover:bg-primary/[0.12]"
-                  />
+                <div className="relative h-full overflow-hidden rounded-[1.35rem] border border-border/60 bg-card/40 p-8 transition-colors duration-500 group-hover:border-primary/30 group-hover:bg-card/60 sm:p-10">
 
                   {/* Icone discrète en haut à droite */}
                   <div className="absolute right-6 top-6 sm:right-8 sm:top-8">
