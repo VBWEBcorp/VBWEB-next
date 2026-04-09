@@ -1,6 +1,5 @@
 'use client'
 
-import { motion } from 'framer-motion'
 import { ArrowRight, Star } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -17,8 +16,6 @@ function GoogleG({ className = 'size-4' }: { className?: string }) {
     </svg>
   )
 }
-
-const ease = [0.22, 1, 0.36, 1] as const
 
 const col1 = [
   'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=400&q=80',
@@ -108,11 +105,9 @@ export function HeroSection() {
       <div className="relative z-10 mx-auto max-w-6xl px-4 pt-16 pb-16 sm:px-6 sm:pt-28 sm:pb-14 lg:px-8 lg:pt-36 lg:pb-16">
         <div className="grid items-center gap-10 lg:grid-cols-[1fr_auto] lg:gap-16">
           {/* Text */}
-          <motion.div
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.65, ease }}
+          <div
             className="text-center lg:text-left"
+            style={{ animation: 'hero-fade-up 0.65s cubic-bezier(0.22,1,0.36,1) both' }}
           >
             {/* Eyebrow */}
             <p className="font-display text-[11px] font-semibold tracking-[0.24em] text-primary/80 uppercase">
@@ -166,14 +161,12 @@ export function HeroSection() {
                 <span className="text-[12px] font-medium text-muted-foreground">75 avis</span>
               </div>
             </div>
-          </motion.div>
+          </div>
 
           {/* Photo */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.92 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7, ease, delay: 0.15 }}
+          <div
             className="relative mx-auto lg:mx-0"
+            style={{ animation: 'hero-scale-in 0.7s cubic-bezier(0.22,1,0.36,1) 0.15s both' }}
           >
             <div aria-hidden className="absolute -inset-6 rounded-full bg-primary/10 blur-3xl" />
             <div className="relative size-56 overflow-hidden rounded-full border-2 border-primary/20 shadow-[var(--shadow-lg)] ring-1 ring-foreground/5 sm:size-64 lg:size-72">
@@ -189,7 +182,7 @@ export function HeroSection() {
                 className="size-full object-cover object-center"
               />
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
 

@@ -1,6 +1,5 @@
 'use client'
 
-import { AnimatePresence, motion } from 'framer-motion'
 import {
   Menu,
   X,
@@ -25,8 +24,6 @@ import { useState, useEffect } from 'react'
 
 import { ThemeToggle } from '@/components/theme/theme-toggle'
 import { cn } from '@/lib/utils'
-
-const ease = [0.22, 1, 0.36, 1] as const
 
 interface MenuItem {
   to: string
@@ -268,93 +265,83 @@ export function Navbar() {
       </header>
 
       {/* Dropdown menu compact */}
-      <AnimatePresence>
-        {open && (
-          <>
-            {/* Backdrop léger pour click-to-close */}
-            <motion.button
-              type="button"
-              aria-label="Fermer le menu"
-              onClick={() => setOpen(false)}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              className="fixed inset-0 z-40 bg-background/40 backdrop-blur-sm"
-            />
+      {open && (
+        <>
+          {/* Backdrop */}
+          <button
+            type="button"
+            aria-label="Fermer le menu"
+            onClick={() => setOpen(false)}
+            className="fixed inset-0 z-40 bg-background/40 backdrop-blur-sm animate-[fade-in_0.2s_ease-out_both]"
+          />
 
-            {/* Panel compact mobile / large desktop */}
-            <motion.div
-              id="mega-menu"
-              initial={{ opacity: 0, y: -8 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -8 }}
-              transition={{ duration: 0.22, ease }}
-              className="fixed left-1/2 top-[80px] z-50 w-[calc(100%-2rem)] max-w-md -translate-x-1/2 sm:top-[88px] lg:max-w-4xl"
-            >
-              <div className="overflow-hidden rounded-2xl border border-border/60 bg-background/95 shadow-[0_20px_60px_rgba(0,0,0,0.25)] backdrop-blur-xl">
-                {/* Liste verticale (mobile) / grille côte à côte (desktop) */}
-                <nav className="max-h-[min(70vh,560px)] overflow-y-auto p-2 lg:max-h-none lg:overflow-visible lg:p-4">
-                  <div className="lg:grid lg:grid-cols-3 lg:gap-2">
-                    {sections.map((section, idx) => (
-                      <div
-                        key={section.title}
-                        className={cn(
-                          idx > 0 && 'mt-1 border-t border-border/40 pt-2',
-                          'lg:mt-0 lg:border-t-0 lg:pt-0'
-                        )}
-                      >
-                        <p className="px-3 pt-2 pb-1.5 font-display text-[10px] font-semibold uppercase tracking-[0.2em] text-muted-foreground/60">
-                          {section.title}
-                        </p>
-                        <div className="space-y-0.5">
-                          {section.items.map((item) => {
-                            const Icon = item.icon
-                            const isActive = pathname === item.to
-                            return (
-                              <Link
-                                key={item.to}
-                                href={item.to}
-                                onClick={() => setOpen(false)}
-                                className={cn(
-                                  'group/item flex items-center gap-3 rounded-xl px-3 py-2.5 transition-colors duration-200',
-                                  isActive
-                                    ? 'bg-foreground/[0.05] text-foreground'
-                                    : 'text-foreground/85 hover:bg-foreground/[0.05] hover:text-foreground'
-                                )}
-                              >
-                                <span className="flex size-7 shrink-0 items-center justify-center rounded-md text-muted-foreground transition-colors duration-200 group-hover/item:text-primary">
-                                  <Icon className="size-4" />
-                                </span>
-                                <span className="flex-1 text-[14px] font-medium">
-                                  {item.label}
-                                </span>
-                                <ArrowUpRight className="size-3.5 shrink-0 text-muted-foreground/30 opacity-0 transition-all duration-200 group-hover/item:opacity-100" />
-                              </Link>
-                            )
-                          })}
-                        </div>
+          {/* Panel */}
+          <div
+            id="mega-menu"
+            className="fixed left-1/2 top-[80px] z-50 w-[calc(100%-2rem)] max-w-md -translate-x-1/2 sm:top-[88px] lg:max-w-4xl animate-[menu-in_0.22s_cubic-bezier(0.22,1,0.36,1)_both]"
+          >
+            <div className="overflow-hidden rounded-2xl border border-border/60 bg-background/95 shadow-[0_20px_60px_rgba(0,0,0,0.25)] backdrop-blur-xl">
+              {/* Liste verticale (mobile) / grille côte à côte (desktop) */}
+              <nav className="max-h-[min(70vh,560px)] overflow-y-auto p-2 lg:max-h-none lg:overflow-visible lg:p-4">
+                <div className="lg:grid lg:grid-cols-3 lg:gap-2">
+                  {sections.map((section, idx) => (
+                    <div
+                      key={section.title}
+                      className={cn(
+                        idx > 0 && 'mt-1 border-t border-border/40 pt-2',
+                        'lg:mt-0 lg:border-t-0 lg:pt-0'
+                      )}
+                    >
+                      <p className="px-3 pt-2 pb-1.5 font-display text-[10px] font-semibold uppercase tracking-[0.2em] text-muted-foreground/60">
+                        {section.title}
+                      </p>
+                      <div className="space-y-0.5">
+                        {section.items.map((item) => {
+                          const Icon = item.icon
+                          const isActive = pathname === item.to
+                          return (
+                            <Link
+                              key={item.to}
+                              href={item.to}
+                              onClick={() => setOpen(false)}
+                              className={cn(
+                                'group/item flex items-center gap-3 rounded-xl px-3 py-2.5 transition-colors duration-200',
+                                isActive
+                                  ? 'bg-foreground/[0.05] text-foreground'
+                                  : 'text-foreground/85 hover:bg-foreground/[0.05] hover:text-foreground'
+                              )}
+                            >
+                              <span className="flex size-7 shrink-0 items-center justify-center rounded-md text-muted-foreground transition-colors duration-200 group-hover/item:text-primary">
+                                <Icon className="size-4" />
+                              </span>
+                              <span className="flex-1 text-[14px] font-medium">
+                                {item.label}
+                              </span>
+                              <ArrowUpRight className="size-3.5 shrink-0 text-muted-foreground/30 opacity-0 transition-all duration-200 group-hover/item:opacity-100" />
+                            </Link>
+                          )
+                        })}
                       </div>
-                    ))}
-                  </div>
-                </nav>
-
-                {/* Footer CTA compact */}
-                <div className="border-t border-border/40 p-3 lg:p-4">
-                  <Link
-                    href="/contact"
-                    onClick={() => setOpen(false)}
-                    className="group flex h-10 w-full items-center justify-center gap-2 rounded-xl bg-primary text-[13px] font-medium text-primary-foreground transition-colors hover:bg-primary/85 lg:h-11 lg:text-sm"
-                  >
-                    Devis gratuit sous 24h
-                    <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" />
-                  </Link>
+                    </div>
+                  ))}
                 </div>
+              </nav>
+
+              {/* Footer CTA compact */}
+              <div className="border-t border-border/40 p-3 lg:p-4">
+                <Link
+                  href="/contact"
+                  onClick={() => setOpen(false)}
+                  className="group flex h-10 w-full items-center justify-center gap-2 rounded-xl bg-primary text-[13px] font-medium text-primary-foreground transition-colors hover:bg-primary/85 lg:h-11 lg:text-sm"
+                >
+                  Devis gratuit sous 24h
+                  <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" />
+                </Link>
               </div>
-            </motion.div>
-          </>
-        )}
-      </AnimatePresence>
+            </div>
+          </div>
+        </>
+      )}
     </>
   )
 }
