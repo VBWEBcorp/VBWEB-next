@@ -81,17 +81,17 @@ export function Footer() {
               {/* === SECTION 2 — GRILLE LIENS === */}
               <div className="grid gap-px bg-border/30 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr]">
                 {/* Brand + coordonnées */}
-                <div className="bg-card/40 p-8 backdrop-blur-sm sm:p-10">
+                <div className="bg-[#0f1f35] p-8 sm:p-10">
                   <Link href="/" className="group/logo inline-flex items-center gap-2.5">
-                    <span className="flex size-9 items-center justify-center rounded-full bg-primary/10 text-primary ring-1 ring-primary/15 transition-transform duration-300 group-hover/logo:scale-105">
+                    <span className="flex size-9 items-center justify-center rounded-full bg-primary/20 text-primary ring-1 ring-primary/25 transition-transform duration-300 group-hover/logo:scale-105">
                       <Globe className="size-4" aria-hidden />
                     </span>
-                    <span className="font-display text-lg font-semibold tracking-tight text-foreground">
+                    <span className="font-display text-lg font-semibold tracking-tight text-white">
                       {siteConfig.shortName}
                     </span>
                   </Link>
 
-                  <p className="mt-5 max-w-xs text-[13px] leading-relaxed text-muted-foreground/70">
+                  <p className="mt-5 max-w-xs text-[13px] leading-relaxed text-white/60">
                     {siteConfig.name}, dirigé par {siteConfig.legalName}. J&apos;aide les PME, artisans et commerces de Bretagne à attirer plus de clients grâce à Google.
                   </p>
 
@@ -99,24 +99,24 @@ export function Footer() {
                   <div className="mt-6 space-y-2">
                     <a
                       href={`tel:${siteConfig.phone.replace(/\s/g, '')}`}
-                      className="group/c flex items-center gap-3 rounded-xl border border-border/40 bg-background/40 px-3 py-2.5 text-[13px] text-muted-foreground transition-all duration-300 hover:border-primary/30 hover:bg-background/70 hover:text-foreground"
+                      className="group/c flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-3 py-2.5 text-[13px] text-white/70 transition-all duration-300 hover:border-primary/30 hover:bg-white/10 hover:text-white"
                     >
-                      <span className="flex size-7 shrink-0 items-center justify-center rounded-lg border border-border/40 bg-background/60 text-muted-foreground transition-colors group-hover/c:border-primary/40 group-hover/c:text-primary">
+                      <span className="flex size-7 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-white/60 transition-colors group-hover/c:border-primary/40 group-hover/c:text-primary">
                         <Phone className="size-3.5" />
                       </span>
                       {siteConfig.phone}
                     </a>
                     <a
                       href={`mailto:${siteConfig.email}`}
-                      className="group/c flex items-center gap-3 rounded-xl border border-border/40 bg-background/40 px-3 py-2.5 text-[13px] text-muted-foreground transition-all duration-300 hover:border-primary/30 hover:bg-background/70 hover:text-foreground"
+                      className="group/c flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-3 py-2.5 text-[13px] text-white/70 transition-all duration-300 hover:border-primary/30 hover:bg-white/10 hover:text-white"
                     >
-                      <span className="flex size-7 shrink-0 items-center justify-center rounded-lg border border-border/40 bg-background/60 text-muted-foreground transition-colors group-hover/c:border-primary/40 group-hover/c:text-primary">
+                      <span className="flex size-7 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-white/60 transition-colors group-hover/c:border-primary/40 group-hover/c:text-primary">
                         <Mail className="size-3.5" />
                       </span>
                       <span className="truncate">{siteConfig.email}</span>
                     </a>
-                    <div className="flex items-center gap-3 rounded-xl border border-border/40 bg-background/40 px-3 py-2.5 text-[13px] text-muted-foreground/80">
-                      <span className="flex size-7 shrink-0 items-center justify-center rounded-lg border border-border/40 bg-background/60 text-muted-foreground">
+                    <div className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-3 py-2.5 text-[13px] text-white/60">
+                      <span className="flex size-7 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-white/50">
                         <MapPin className="size-3.5" />
                       </span>
                       Rennes, Bretagne
