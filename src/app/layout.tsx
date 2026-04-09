@@ -3,6 +3,7 @@ import { Inter, Plus_Jakarta_Sans } from 'next/font/google'
 
 import { RootWrapper } from '@/components/layout/root-wrapper'
 import { ThemeScript } from '@/components/theme/theme-script'
+import { AuditProvider } from '@/components/ui/audit-provider'
 import { siteConfig } from '@/lib/seo'
 
 import '../index.css'
@@ -99,7 +100,9 @@ export default function RootLayout({
         >
           Aller au contenu
         </a>
-        <RootWrapper>{children}</RootWrapper>
+        <AuditProvider>
+          <RootWrapper>{children}</RootWrapper>
+        </AuditProvider>
       </body>
     </html>
   )

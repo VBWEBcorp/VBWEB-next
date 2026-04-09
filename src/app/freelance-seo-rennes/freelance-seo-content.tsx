@@ -19,6 +19,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 
 import { CtaGallerySection } from '@/components/sections/cta-gallery-section'
+import { AuditButton } from '@/components/ui/audit-button'
 import { Button } from '@/components/ui/button'
 import { CountUp } from '@/components/ui/count-up'
 import { Reveal } from '@/components/ui/reveal'
@@ -128,12 +129,7 @@ export function FreelanceSeoContent({ faqs }: FreelanceSeoContentProps) {
             </p>
 
             <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
-              <Button size="lg" className="group bg-primary text-primary-foreground hover:bg-primary/85" asChild>
-                <Link href="/audit-seo-gratuit">
-                  Audit SEO gratuit
-                  <ArrowRight className="transition-transform group-hover:translate-x-0.5" />
-                </Link>
-              </Button>
+              <AuditButton />
               <Button size="lg" variant="outline" className="border-border/60" asChild>
                 <Link href="/contact">Demander un devis</Link>
               </Button>
@@ -247,12 +243,7 @@ export function FreelanceSeoContent({ faqs }: FreelanceSeoContentProps) {
       <div className="bg-card py-8">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-4 sm:flex-row sm:px-6 lg:px-8">
           <p className="text-[15px] text-muted-foreground">Vous voulez savoir ce que le SEO peut vous apporter ?</p>
-          <Button size="lg" className="group shrink-0 bg-primary text-primary-foreground hover:bg-primary/85" asChild>
-            <Link href="/audit-seo-gratuit">
-              Audit SEO gratuit
-              <ArrowRight className="transition-transform group-hover:translate-x-0.5" />
-            </Link>
-          </Button>
+          <AuditButton />
         </div>
       </div>
 
