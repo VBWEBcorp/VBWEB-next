@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 import {
   ArrowLeft,
@@ -15,6 +14,11 @@ import {
 } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
+import { Reveal } from '@/components/ui/reveal'
+
+/* ------------------------------------------------------------------ */
+/*  Data                                                               */
+/* ------------------------------------------------------------------ */
 
 interface SeoCaseStudy {
   id: string
@@ -166,7 +170,26 @@ const quickNav = [
   { id: 'jumelles', label: 'E-commerce', sub: 'Jumelles.com' },
 ]
 
-const ease = [0.22, 1, 0.36, 1] as const
+/* ------------------------------------------------------------------ */
+/*  Grain overlay                                                      */
+/* ------------------------------------------------------------------ */
+
+const grain = (
+  <div
+    aria-hidden
+    className="pointer-events-none absolute inset-0"
+    style={{
+      backgroundImage:
+        'radial-gradient(circle, currentColor 1px, transparent 1px)',
+      backgroundSize: '4px 4px',
+      opacity: 0.04,
+    }}
+  />
+)
+
+/* ------------------------------------------------------------------ */
+/*  Sub-components                                                     */
+/* ------------------------------------------------------------------ */
 
 function MetricRow({ metric }: { metric: SeoCaseStudy['metrics'][0] }) {
   return (
@@ -210,27 +233,17 @@ function MetricRow({ metric }: { metric: SeoCaseStudy['metrics'][0] }) {
   )
 }
 
-function CaseStudyCard({
-  study,
-  index,
-}: {
-  study: SeoCaseStudy
-  index: number
-}) {
+function CaseStudyCard({ study }: { study: SeoCaseStudy }) {
   return (
-    <motion.div
-      id={study.id}
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-50px' }}
-      transition={{ duration: 0.5, delay: index * 0.1, ease }}
-      className="scroll-mt-20 overflow-hidden rounded-2xl border border-border bg-background"
-    >
-      {/* Header */}
-      <div className="border-b border-border p-4 sm:p-8">
-        <div className="flex items-start justify-between gap-3">
+    <Reveal>
+      <div
+        id={study.id}
+        className="scroll-mt-20 overflow-hidden rounded-[1.5rem] border border-border/60 bg-card/40 p-6 sm:p-8"
+      >
+        {/* Header */}
+        <div className="mb-6 flex items-start justify-between gap-3 sm:mb-8">
           <div>
-            <span className="mb-2 inline-block rounded-full border border-primary/20 bg-primary/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-primary sm:mb-3">
+            <span className="mb-2 inline-block rounded-full border border-primary/20 bg-primary/10 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-primary sm:mb-3 sm:px-3">
               {study.tag}
             </span>
             <h3 className="mb-1 font-display text-xl font-bold leading-tight text-foreground sm:text-3xl">
@@ -245,40 +258,38 @@ function CaseStudyCard({
               href={study.website}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-6 inline-flex shrink-0 items-center gap-1.5 rounded-lg border border-border bg-foreground/5 px-2.5 py-2 text-xs font-medium text-muted-foreground/60 transition-colors hover:border-primary/20 hover:bg-primary/10 hover:text-primary sm:px-3"
+              className="mt-6 inline-flex shrink-0 items-center gap-1.5 rounded-lg border border-border bg-foreground/5 px-2.5 py-2 text-xs font-medium text-muted-foreground/60 transition-colors duration-200 hover:border-primary/20 hover:bg-primary/10 hover:text-primary sm:px-3"
             >
               <ExternalLink className="size-3.5" />
               <span className="hidden sm:inline">Voir le site</span>
             </a>
           )}
         </div>
-      </div>
 
-      {/* Images avant/après */}
-      <div className="grid grid-cols-2 gap-2 p-4 pb-0 sm:gap-3 sm:p-8 sm:pb-0">
-        {study.images.map((img, i) => (
-          <div
-            key={i}
-            className="overflow-hidden rounded-lg border border-border bg-foreground/5 sm:rounded-xl"
-          >
-            <img
-              src={img.src}
-              alt={img.alt}
-              className="block h-auto w-full"
-              loading="lazy"
-            />
-            <div className="bg-foreground/5 px-3 py-1.5 text-center">
-              <span className="text-[10px] font-medium uppercase tracking-wider text-muted-foreground/60 sm:text-xs">
-                {i === 0 ? 'Avant' : 'Après'}
-              </span>
+        {/* Images avant/apres */}
+        <div className="mb-6 grid grid-cols-2 gap-2 sm:mb-8 sm:gap-3">
+          {study.images.map((img, i) => (
+            <div
+              key={i}
+              className="overflow-hidden rounded-lg border border-border bg-foreground/5 sm:rounded-xl"
+            >
+              <img
+                src={img.src}
+                alt={img.alt}
+                className="block h-auto w-full"
+                loading="lazy"
+              />
+              <div className="bg-foreground/5 px-3 py-1.5 text-center">
+                <span className="text-[10px] font-medium uppercase tracking-wider text-muted-foreground/60 sm:text-xs">
+                  {i === 0 ? 'Avant' : 'Après'}
+                </span>
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
 
-      {/* Contenu */}
-      <div className="space-y-6 p-4 sm:space-y-8 sm:p-8">
-        <div>
+        {/* Problematique */}
+        <div className="mb-6 border-l-2 border-red-500/40 pl-4 sm:mb-8 sm:pl-5">
           <h4 className="mb-2 font-display text-sm font-semibold text-red-400 sm:text-base">
             Problématique
           </h4>
@@ -287,7 +298,8 @@ function CaseStudyCard({
           </p>
         </div>
 
-        <div>
+        {/* Actions SEO */}
+        <div className="mb-6 border-l-2 border-primary/40 pl-4 sm:mb-8 sm:pl-5">
           <h4 className="mb-2 font-display text-sm font-semibold text-primary sm:text-base">
             Actions SEO mises en place
           </h4>
@@ -301,7 +313,8 @@ function CaseStudyCard({
           </div>
         </div>
 
-        <div>
+        {/* Resultats */}
+        <div className="mb-6 border-l-2 border-emerald-500/40 pl-4 sm:mb-8 sm:pl-5">
           <div className="mb-3 flex items-center justify-between">
             <h4 className="font-display text-sm font-semibold text-green-400 sm:text-base">
               Résultats obtenus
@@ -317,6 +330,7 @@ function CaseStudyCard({
           </div>
         </div>
 
+        {/* Testimonial */}
         {study.testimonial && (
           <div className="rounded-xl border border-white/5 bg-foreground/5 p-4 sm:p-5">
             <Quote className="mb-2 size-4 text-primary/40 sm:size-5" />
@@ -329,7 +343,7 @@ function CaseStudyCard({
           </div>
         )}
       </div>
-    </motion.div>
+    </Reveal>
   )
 }
 
@@ -337,86 +351,82 @@ function ClientReviewsVideo() {
   const [isModalOpen, setIsModalOpen] = useState(false)
 
   return (
-    <section className="bg-background">
-      <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
-        <motion.div
-          initial={{ opacity: 0, y: 14 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.55, ease }}
-          className="mx-auto mb-10 max-w-3xl space-y-4 text-center"
-        >
-          <p className="font-display text-xs font-semibold uppercase tracking-[0.22em] text-primary">
-            Témoignages
-          </p>
-          <h2 className="font-display text-balance text-3xl leading-[1.12] tracking-[-0.02em] text-foreground sm:text-4xl">
-            Ce que disent nos clients
-          </h2>
-          <p className="text-base leading-relaxed text-muted-foreground">
-            Découvrez les retours de TPE et PME accompagnées par VBWEB en référencement naturel.
-          </p>
-        </motion.div>
-
-        <div className="flex justify-center">
-          <div className="relative aspect-video w-full max-w-3xl overflow-hidden rounded-2xl border border-border bg-background">
-            <iframe
-              src="https://www.youtube-nocookie.com/embed/ygRn3UEfB1A?autoplay=1&mute=1&rel=0&modestbranding=1&controls=0&loop=1&playlist=ygRn3UEfB1A"
-              title="Avis clients VBWEB, témoignages référencement SEO Rennes"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="absolute inset-0 size-full"
-            />
-            <button
-              type="button"
-              className="absolute bottom-3 right-3 z-10 flex items-center gap-2 rounded-lg bg-black/70 px-3 py-2 backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-black/90"
-              onClick={() => setIsModalOpen(true)}
-            >
-              <Play className="size-3 text-foreground" />
-              <span className="text-xs font-medium text-foreground">
-                Visionner la vidéo
-              </span>
-            </button>
+    <section className="relative bg-background py-16 sm:py-20 lg:py-24">
+      {grain}
+      <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <Reveal>
+          <div className="mx-auto mb-10 max-w-3xl space-y-4 text-center">
+            <p className="font-display text-xs font-semibold uppercase tracking-[0.22em] text-primary">
+              Témoignages
+            </p>
+            <h2 className="font-display text-balance text-3xl leading-[1.12] tracking-[-0.02em] text-foreground sm:text-4xl">
+              Ce que disent nos clients
+            </h2>
+            <p className="text-base leading-relaxed text-muted-foreground">
+              Découvrez les retours de TPE et PME accompagnées par VBWEB en référencement naturel.
+            </p>
           </div>
-        </div>
-      </div>
+        </Reveal>
 
-      <AnimatePresence>
-        {isModalOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
-            onClick={() => setIsModalOpen(false)}
-          >
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              className="relative aspect-video w-full max-w-4xl overflow-hidden rounded-xl bg-black"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <button
-                type="button"
-                onClick={() => setIsModalOpen(false)}
-                className="absolute right-4 top-4 z-10 rounded-full bg-black/70 p-2 transition-colors hover:bg-black/90"
-              >
-                <X className="size-5 text-foreground" />
-              </button>
+        <Reveal delay={0.1}>
+          <div className="flex justify-center">
+            <div className="relative aspect-video w-full max-w-3xl overflow-hidden rounded-2xl border border-border bg-background">
               <iframe
-                src="https://www.youtube-nocookie.com/embed/ygRn3UEfB1A?autoplay=1&rel=0&modestbranding=1&controls=1"
+                src="https://www.youtube-nocookie.com/embed/ygRn3UEfB1A?autoplay=1&mute=1&rel=0&modestbranding=1&controls=0&loop=1&playlist=ygRn3UEfB1A"
                 title="Avis clients VBWEB, témoignages référencement SEO Rennes"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
                 className="absolute inset-0 size-full"
               />
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+              <button
+                type="button"
+                className="absolute bottom-3 right-3 z-10 flex items-center gap-2 rounded-lg bg-black/70 px-3 py-2 backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-black/90"
+                onClick={() => setIsModalOpen(true)}
+              >
+                <Play className="size-3 text-foreground" />
+                <span className="text-xs font-medium text-foreground">
+                  Visionner la vidéo
+                </span>
+              </button>
+            </div>
+          </div>
+        </Reveal>
+      </div>
+
+      {/* Video modal — CSS animation, no framer-motion */}
+      {isModalOpen && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 animate-[fade-in_0.2s_ease]"
+          onClick={() => setIsModalOpen(false)}
+        >
+          <div
+            className="relative aspect-video w-full max-w-4xl overflow-hidden rounded-xl bg-black animate-[hero-scale-in_0.25s_ease]"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              type="button"
+              onClick={() => setIsModalOpen(false)}
+              className="absolute right-4 top-4 z-10 rounded-full bg-black/70 p-2 transition-colors duration-200 hover:bg-black/90"
+            >
+              <X className="size-5 text-foreground" />
+            </button>
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/ygRn3UEfB1A?autoplay=1&rel=0&modestbranding=1&controls=1"
+              title="Avis clients VBWEB, témoignages référencement SEO Rennes"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="absolute inset-0 size-full"
+            />
+          </div>
+        </div>
+      )}
     </section>
   )
 }
+
+/* ------------------------------------------------------------------ */
+/*  Main export                                                        */
+/* ------------------------------------------------------------------ */
 
 export function ReferencementContent() {
   const scrollTo = (id: string) => {
@@ -426,20 +436,20 @@ export function ReferencementContent() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-background">
-        <div className="mx-auto max-w-6xl px-4 py-24 sm:px-6 sm:py-32 lg:px-8">
+      <section className="relative bg-background py-16 sm:py-20 lg:py-24">
+        {grain}
+        <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <Link
             href="/etudes-de-cas"
-            className="mb-8 inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
+            className="mb-8 inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors duration-200 hover:text-foreground"
           >
             <ArrowLeft className="size-3.5" />
             Toutes les études de cas
           </Link>
-          <motion.div
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.65, ease }}
+
+          <div
             className="mx-auto max-w-3xl text-center"
+            style={{ animation: 'hero-fade-up 0.65s cubic-bezier(0.22,1,0.36,1) both' }}
           >
             <p className="font-display text-xs font-semibold uppercase tracking-[0.22em] text-primary">
               Résultats concrets
@@ -454,67 +464,61 @@ export function ReferencementContent() {
               <Button size="lg" className="group bg-primary text-primary-foreground hover:bg-primary/85" asChild>
                 <Link href="/audit-seo-gratuit">
                   Audit SEO gratuit
-                  <ArrowRight className="transition-transform group-hover:translate-x-0.5" />
+                  <ArrowRight className="transition-transform duration-200 group-hover:translate-x-0.5" />
                 </Link>
               </Button>
               <Button size="lg" variant="outline" className="border-white/15 bg-foreground/5 text-foreground hover:bg-foreground/10 hover:text-foreground" asChild>
                 <Link href="/contact">Me contacter</Link>
               </Button>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Quick nav */}
-      <section className="bg-card">
-        <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
-          <motion.div
-            initial={{ opacity: 0, y: 14 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.55, ease }}
-            className="mx-auto mb-10 max-w-3xl space-y-4 text-center"
-          >
-            <h2 className="font-display text-balance text-3xl leading-[1.12] tracking-[-0.02em] text-foreground sm:text-4xl">
-              3 études de cas, 3 stratégies SEO différentes
-            </h2>
-            <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
-              Chaque entreprise est unique. Découvrez comment le <Link href="/referencement-seo-rennes" className="text-primary underline underline-offset-2 hover:text-primary/80">référencement naturel</Link> s&apos;adapte à chaque situation.
-            </p>
-          </motion.div>
+      <section className="relative bg-card py-16 sm:py-20 lg:py-24">
+        {grain}
+        <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <Reveal>
+            <div className="mx-auto mb-10 max-w-3xl space-y-4 text-center">
+              <h2 className="font-display text-balance text-3xl leading-[1.12] tracking-[-0.02em] text-foreground sm:text-4xl">
+                3 études de cas, 3 stratégies SEO différentes
+              </h2>
+              <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
+                Chaque entreprise est unique. Découvrez comment le <Link href="/referencement-seo-rennes" className="text-primary underline underline-offset-2 hover:text-primary/80">référencement naturel</Link> s&apos;adapte à chaque situation.
+              </p>
+            </div>
+          </Reveal>
 
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, ease }}
-            className="mx-auto grid max-w-2xl grid-cols-3 gap-2 sm:gap-3"
-          >
-            {quickNav.map((item) => (
-              <button
-                key={item.id}
-                type="button"
-                onClick={() => scrollTo(item.id)}
-                className="group rounded-xl border border-border bg-background/50 px-2 py-3 text-center transition-all duration-300 hover:border-primary/30 hover:bg-background sm:px-6 sm:py-4"
-              >
-                <span className="block font-display text-[11px] font-semibold leading-tight text-foreground/90 transition-colors group-hover:text-primary sm:text-sm">
-                  {item.label}
-                </span>
-                <span className="mt-1 block text-[9px] text-muted-foreground/60 sm:text-xs">
-                  {item.sub}
-                </span>
-              </button>
-            ))}
-          </motion.div>
+          <Reveal delay={0.1}>
+            <div className="mx-auto grid max-w-2xl grid-cols-3 gap-2 sm:gap-3">
+              {quickNav.map((item) => (
+                <button
+                  key={item.id}
+                  type="button"
+                  onClick={() => scrollTo(item.id)}
+                  className="group rounded-xl border border-border bg-background/50 px-2 py-3 text-center transition-all duration-300 hover:border-primary/30 hover:bg-background sm:px-6 sm:py-4"
+                >
+                  <span className="block font-display text-[11px] font-semibold leading-tight text-foreground/90 transition-colors duration-200 group-hover:text-primary sm:text-sm">
+                    {item.label}
+                  </span>
+                  <span className="mt-1 block text-[9px] text-muted-foreground/60 sm:text-xs">
+                    {item.sub}
+                  </span>
+                </button>
+              ))}
+            </div>
+          </Reveal>
         </div>
       </section>
 
       {/* Case studies */}
-      <section className="bg-background">
-        <div className="mx-auto max-w-4xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+      <section className="relative bg-background py-16 sm:py-20 lg:py-24">
+        {grain}
+        <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="space-y-8 sm:space-y-12">
-            {caseStudies.map((study, index) => (
-              <CaseStudyCard key={study.id} study={study} index={index} />
+            {caseStudies.map((study) => (
+              <CaseStudyCard key={study.id} study={study} />
             ))}
           </div>
         </div>
@@ -524,56 +528,49 @@ export function ReferencementContent() {
       <ClientReviewsVideo />
 
       {/* Social proof + CTA */}
-      <section className="bg-card">
-        <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="flex flex-col items-center gap-2"
-          >
-            <div className="flex items-center gap-0.5">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <Star key={i} className="size-4 fill-amber-400 text-amber-400" />
-              ))}
+      <section className="relative bg-card py-16 sm:py-20 lg:py-24">
+        {grain}
+        <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <Reveal>
+            <div className="flex flex-col items-center gap-2">
+              <div className="flex items-center gap-0.5">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star key={i} className="size-4 fill-amber-400 text-amber-400" />
+                ))}
+              </div>
+              <p className="text-xs text-muted-foreground/60">75 avis 5 étoiles</p>
+              <a
+                href="https://share.google/RdtyxDLN4e3KEx2eO"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs text-muted-foreground underline underline-offset-2 transition-colors duration-200 hover:text-primary"
+              >
+                Découvrir les avis clients
+              </a>
             </div>
-            <p className="text-xs text-muted-foreground/60">75 avis 5 étoiles</p>
-            <a
-              href="https://share.google/RdtyxDLN4e3KEx2eO"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xs text-muted-foreground underline underline-offset-2 transition-colors hover:text-primary"
-            >
-              Découvrir les avis clients
-            </a>
-          </motion.div>
+          </Reveal>
 
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, ease }}
-            className="mt-14 rounded-2xl border border-border bg-background p-8 text-center sm:p-12"
-          >
-            <h2 className="font-display text-balance text-xl font-semibold text-foreground sm:text-2xl">
-              Vous aussi, dominez Google à Rennes
-            </h2>
-            <p className="mx-auto mt-3 max-w-lg text-sm leading-relaxed text-muted-foreground">
-              <Link href="/audit-seo-gratuit" className="text-primary underline underline-offset-2 hover:text-primary/80">Audit SEO gratuit</Link> pour identifier vos opportunités de croissance. Résultats mesurables, sans engagement.
-            </p>
-            <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <Button size="lg" variant="outline" className="border-white/15 bg-foreground/5 text-foreground hover:bg-foreground/10 hover:text-foreground" asChild>
-                <Link href="/referencement-seo-rennes">Nos services SEO</Link>
-              </Button>
-              <Button size="lg" className="group bg-primary text-primary-foreground hover:bg-primary/85" asChild>
-                <Link href="/contact">
-                  Demander un devis
-                  <ArrowRight className="transition-transform group-hover:translate-x-0.5" />
-                </Link>
-              </Button>
+          <Reveal delay={0.1}>
+            <div className="mt-14 rounded-[1.5rem] border border-border/60 bg-card/40 p-8 text-center sm:p-12">
+              <h2 className="font-display text-balance text-xl font-semibold text-foreground sm:text-2xl">
+                Vous aussi, dominez Google à Rennes
+              </h2>
+              <p className="mx-auto mt-3 max-w-lg text-sm leading-relaxed text-muted-foreground">
+                <Link href="/audit-seo-gratuit" className="text-primary underline underline-offset-2 hover:text-primary/80">Audit SEO gratuit</Link> pour identifier vos opportunités de croissance. Résultats mesurables, sans engagement.
+              </p>
+              <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
+                <Button size="lg" variant="outline" className="border-white/15 bg-foreground/5 text-foreground hover:bg-foreground/10 hover:text-foreground" asChild>
+                  <Link href="/referencement-seo-rennes">Nos services SEO</Link>
+                </Button>
+                <Button size="lg" className="group bg-primary text-primary-foreground hover:bg-primary/85" asChild>
+                  <Link href="/contact">
+                    Demander un devis
+                    <ArrowRight className="transition-transform duration-200 group-hover:translate-x-0.5" />
+                  </Link>
+                </Button>
+              </div>
             </div>
-          </motion.div>
+          </Reveal>
         </div>
       </section>
     </>

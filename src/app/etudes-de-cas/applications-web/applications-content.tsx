@@ -1,10 +1,8 @@
-'use client'
-
-import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { ArrowLeft, ArrowRight, CheckCircle2, Quote } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
+import { Reveal } from '@/components/ui/reveal'
 
 interface AppProject {
   title: string
@@ -68,69 +66,27 @@ const projects: AppProject[] = [
   },
 ]
 
-const ease = [0.22, 1, 0.36, 1] as const
-
-function ProjectCard({
-  project,
-  index,
-}: {
-  project: AppProject
-  index: number
-}) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-30px' }}
-      transition={{ duration: 0.4, delay: index * 0.1, ease }}
-      className="flex flex-col overflow-hidden rounded-xl border border-border bg-background"
-    >
-      <div className="aspect-video">
-        <iframe
-          src={`https://www.loom.com/embed/${project.loomId}`}
-          frameBorder="0"
-          allowFullScreen
-          className="size-full"
-          title={`Démonstration ${project.title}, application web développée par VBWEB à Rennes`}
-          loading="lazy"
-        />
-      </div>
-
-      <div className="flex flex-1 flex-col p-5">
-        <h3 className="mb-2 font-display text-lg font-bold text-foreground">{project.title}</h3>
-        <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
-          {project.description}
-        </p>
-
-        <div className="mb-5 space-y-2">
-          {project.features.map((feature, i) => (
-            <div key={i} className="flex items-start gap-2">
-              <CheckCircle2 className="mt-0.5 size-3.5 shrink-0 text-primary" />
-              <span className="text-xs text-foreground/70">{feature}</span>
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-auto rounded-lg border border-white/5 bg-foreground/5 p-4">
-          <Quote className="mb-1.5 size-4 text-primary/40" />
-          <p className="mb-2 text-xs italic leading-relaxed text-foreground/80">
-            &ldquo;{project.testimonial.text}&rdquo;
-          </p>
-          <p className="text-[11px] font-medium text-primary">
-            {project.testimonial.author}
-          </p>
-        </div>
-      </div>
-    </motion.div>
-  )
-}
+/* Grain overlay reused across sections */
+const grain = (
+  <div
+    aria-hidden
+    className="pointer-events-none absolute inset-0"
+    style={{
+      backgroundImage:
+        'radial-gradient(circle, currentColor 1px, transparent 1px)',
+      backgroundSize: '4px 4px',
+      opacity: 0.04,
+    }}
+  />
+)
 
 export function ApplicationsWebContent() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-background">
-        <div className="mx-auto max-w-6xl px-4 py-24 sm:px-6 sm:py-32 lg:px-8">
+      <section className="relative overflow-hidden bg-background">
+        {grain}
+        <div className="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
           <Link
             href="/etudes-de-cas"
             className="mb-8 inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
@@ -138,16 +94,17 @@ export function ApplicationsWebContent() {
             <ArrowLeft className="size-3.5" />
             Toutes les études de cas
           </Link>
-          <motion.div
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.65, ease }}
+          <div
             className="mx-auto max-w-3xl text-center"
+            style={{
+              animation:
+                'hero-fade-up 0.65s cubic-bezier(0.22,1,0.36,1) both',
+            }}
           >
-            <p className="font-display text-xs font-semibold uppercase tracking-[0.22em] text-primary">
+            <p className="font-display text-[11px] font-semibold tracking-[0.24em] text-primary/80 uppercase">
               Développement sur mesure à Rennes
             </p>
-            <h1 className="mt-4 font-display text-balance text-4xl leading-[1.08] tracking-[-0.03em] text-foreground sm:text-5xl">
+            <h1 className="mt-4 font-display text-balance text-4xl font-medium leading-[1.08] tracking-[-0.03em] text-foreground sm:text-5xl">
               Applications web et outils digitaux
             </h1>
             <p className="hero-description mx-auto mt-6 max-w-2xl text-pretty text-lg leading-relaxed text-muted-foreground">
@@ -164,88 +121,118 @@ export function ApplicationsWebContent() {
                 <Link href="/creation-site-internet-rennes">Nos services web</Link>
               </Button>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Context */}
-      <section className="bg-card">
-        <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
-          <motion.div
-            initial={{ opacity: 0, y: 14 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.55, ease }}
-            className="mx-auto max-w-3xl space-y-4 text-center"
-          >
-            <h2 className="font-display text-balance text-3xl leading-[1.12] tracking-[-0.02em] text-foreground sm:text-4xl">
+      <section className="relative overflow-hidden bg-card">
+        {grain}
+        <div className="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+          <Reveal className="mx-auto max-w-3xl space-y-4 text-center">
+            <h2 className="font-display text-balance text-3xl font-medium leading-[1.12] tracking-[-0.02em] text-foreground sm:text-4xl">
               Des outils conçus pour votre métier
             </h2>
             <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
               Chaque application est développée en fonction de vos processus métier. Pas de solution générique. Un outil qui s&apos;adapte à votre façon de travailler, pas l&apos;inverse. Découvrez 3 projets réalisés en vidéo.
             </p>
-          </motion.div>
+          </Reveal>
         </div>
       </section>
 
       {/* Projects grid */}
-      <section className="bg-background">
-        <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
-          <motion.div
-            initial={{ opacity: 0, y: 14 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.55, ease }}
-            className="mx-auto mb-12 max-w-3xl text-center"
-          >
-            <p className="font-display text-xs font-semibold uppercase tracking-[0.22em] text-primary">
+      <section className="relative overflow-hidden bg-background">
+        {grain}
+        <div className="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+          <Reveal className="mx-auto mb-12 max-w-3xl text-center">
+            <p className="font-display text-[11px] font-semibold tracking-[0.24em] text-primary/80 uppercase">
               Réalisations
             </p>
-            <h2 className="mt-4 font-display text-3xl tracking-[-0.02em] text-foreground sm:text-4xl">
+            <h2 className="mt-4 font-display text-3xl font-medium tracking-[-0.02em] text-foreground sm:text-4xl">
               Applications développées à Rennes
             </h2>
-          </motion.div>
+          </Reveal>
 
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {projects.map((project, index) => (
-              <ProjectCard
-                key={project.loomId}
-                project={project}
-                index={index}
-              />
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {projects.map((project, i) => (
+              <Reveal key={project.loomId} delay={i * 0.08}>
+                <div className="group flex h-full flex-col overflow-hidden rounded-[1.35rem] border border-border/60 bg-card/40 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5">
+                  {/* Loom embed */}
+                  <div className="aspect-video overflow-hidden">
+                    <iframe
+                      src={`https://www.loom.com/embed/${project.loomId}`}
+                      frameBorder="0"
+                      allowFullScreen
+                      className="size-full"
+                      title={`Démonstration ${project.title}, application web développée par VBWEB à Rennes`}
+                      loading="lazy"
+                    />
+                  </div>
+
+                  {/* Content */}
+                  <div className="flex flex-1 flex-col p-6">
+                    <h3 className="mb-2 font-display text-lg font-bold text-foreground">
+                      {project.title}
+                    </h3>
+                    <p className="mb-5 text-sm leading-relaxed text-muted-foreground">
+                      {project.description}
+                    </p>
+
+                    {/* Features */}
+                    <div className="mb-6 space-y-2.5">
+                      {project.features.map((feature, fi) => (
+                        <div key={fi} className="flex items-start gap-2.5">
+                          <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-primary" />
+                          <span className="text-[13px] leading-snug text-foreground/70">
+                            {feature}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Testimonial */}
+                    <div className="mt-auto rounded-xl border border-border/40 bg-foreground/[0.03] p-5">
+                      <Quote className="mb-2 size-4 text-primary/40" />
+                      <p className="mb-2.5 text-[13px] italic leading-relaxed text-foreground/80">
+                        &ldquo;{project.testimonial.text}&rdquo;
+                      </p>
+                      <p className="text-xs font-semibold text-primary">
+                        {project.testimonial.author}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </Reveal>
             ))}
           </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="bg-card">
-        <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, ease }}
-            className="rounded-2xl border border-border bg-background p-8 text-center sm:p-12"
-          >
-            <h2 className="font-display text-balance text-xl font-semibold text-foreground sm:text-2xl">
-              Un projet d&apos;application sur mesure ?
-            </h2>
-            <p className="mx-auto mt-3 max-w-lg text-sm leading-relaxed text-muted-foreground">
-              CRM, outil de gestion, plateforme métier : je développe l&apos;application dont votre entreprise a besoin. Basé à Rennes, je travaille avec des entreprises dans toute la Bretagne.
-            </p>
-            <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <Button size="lg" variant="outline" className="border-white/15 bg-foreground/5 text-foreground hover:bg-foreground/10 hover:text-foreground" asChild>
-                <Link href="/creation-site-internet-rennes">En savoir plus</Link>
-              </Button>
-              <Button size="lg" className="group bg-primary text-primary-foreground hover:bg-primary/85" asChild>
-                <Link href="/contact">
-                  Discuter de mon projet
-                  <ArrowRight className="transition-transform group-hover:translate-x-0.5" />
-                </Link>
-              </Button>
+      <section className="relative overflow-hidden bg-card">
+        {grain}
+        <div className="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+          <Reveal>
+            <div className="rounded-2xl border border-border/60 bg-background p-8 text-center sm:p-12">
+              <h2 className="font-display text-balance text-xl font-semibold text-foreground sm:text-2xl">
+                Un projet d&apos;application sur mesure ?
+              </h2>
+              <p className="mx-auto mt-3 max-w-lg text-sm leading-relaxed text-muted-foreground">
+                CRM, outil de gestion, plateforme métier : je développe l&apos;application dont votre entreprise a besoin. Basé à Rennes, je travaille avec des entreprises dans toute la Bretagne.
+              </p>
+              <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
+                <Button size="lg" variant="outline" className="border-white/15 bg-foreground/5 text-foreground hover:bg-foreground/10 hover:text-foreground" asChild>
+                  <Link href="/creation-site-internet-rennes">En savoir plus</Link>
+                </Button>
+                <Button size="lg" className="group bg-primary text-primary-foreground hover:bg-primary/85" asChild>
+                  <Link href="/contact">
+                    Discuter de mon projet
+                    <ArrowRight className="transition-transform group-hover:translate-x-0.5" />
+                  </Link>
+                </Button>
+              </div>
             </div>
-          </motion.div>
+          </Reveal>
         </div>
       </section>
     </>
