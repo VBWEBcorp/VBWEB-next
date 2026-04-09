@@ -9,10 +9,10 @@ import {
 } from '@/components/seo/json-ld'
 
 const description =
-  'Freelance SEO à Rennes : accompagnement en référencement naturel pour PME, artisans et commerces bretons. Plus de 200 campagnes SEO menées, 150 sites créés, 75 avis 5 étoiles.'
+  'Freelance SEO à Rennes : je vous aide à attirer plus de clients grâce à Google. Audit gratuit, stratégie sur mesure, résultats mesurables. 75 avis 5 étoiles.'
 
 export const metadata: Metadata = {
-  title: 'Freelance SEO à Rennes | Référencement Naturel en Bretagne - VBWEB',
+  title: 'Freelance SEO à Rennes | Référencement Naturel - VBWEB',
   description,
   alternates: { canonical: '/freelance-seo-rennes' },
 }

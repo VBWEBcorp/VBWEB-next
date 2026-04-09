@@ -64,6 +64,11 @@ const services = [
     desc: 'Analysez votre visibilité en 30 minutes.',
     href: '/audit-seo-gratuit',
   },
+  {
+    title: 'Freelance SEO Rennes',
+    desc: 'Accompagnement direct et personnalisé.',
+    href: '/freelance-seo-rennes',
+  },
 ]
 
 /* ------------------------------------------------------------------ */

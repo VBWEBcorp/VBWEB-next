@@ -74,6 +74,7 @@ const services = [
   { title: 'Référencement SEO', href: '/referencement-seo-rennes' },
   { title: 'Référencement local', href: '/referencement-local-rennes' },
   { title: 'Audit SEO gratuit', href: '/audit-seo-gratuit' },
+  { title: 'Freelance SEO Rennes', href: '/freelance-seo-rennes' },
 ] as const
 
 /* ------------------------------------------------------------------ */

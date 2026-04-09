@@ -212,6 +212,7 @@ export function LocalSeoContent({ faqs }: { faqs: FaqItem[] }) {
               { title: 'Référencement SEO', href: '/referencement-seo-rennes' },
               { title: 'Création de site', href: '/creation-site-internet-rennes' },
               { title: 'Audit SEO gratuit', href: '/audit-seo-gratuit' },
+              { title: 'Freelance SEO Rennes', href: '/freelance-seo-rennes' },
             ].map((s, i) => (
               <Reveal key={i} delay={i * 0.08}>
                 <Link

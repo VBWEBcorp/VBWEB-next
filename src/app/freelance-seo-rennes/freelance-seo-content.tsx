@@ -142,26 +142,42 @@ export function FreelanceSeoContent({ faqs }: FreelanceSeoContentProps) {
       <section className="relative overflow-hidden bg-card">
         <Grain />
         <div className="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
-          <Reveal className="mx-auto max-w-3xl">
-            <p className="font-display text-[11px] font-semibold tracking-[0.24em] text-primary/80 uppercase">
-              Mon métier de freelance SEO
-            </p>
-            <h2 className="mt-5 font-display text-balance text-3xl font-medium leading-[1.1] tracking-[-0.025em] text-foreground sm:text-4xl lg:text-[3rem]">
-              Concrètement, je fais quoi{' '}
-              <span className="italic text-muted-foreground/80">pour votre site</span> ?
-            </h2>
-            <div className="mt-8 space-y-4 text-[15px] leading-relaxed text-muted-foreground">
-              <p>
-                Le référencement naturel, ça peut sembler abstrait. Voici ce que je fais concrètement : j&apos;analyse votre positionnement actuel sur Google, j&apos;identifie les mots-clés que vos futurs clients recherchent (par exemple &quot;plombier Rennes&quot; ou &quot;restaurant Cesson-Sévigné&quot;), et j&apos;optimise votre site pour qu&apos;il apparaisse dans les premiers résultats.
+          <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+            {/* Texte */}
+            <Reveal>
+              <p className="font-display text-[11px] font-semibold tracking-[0.24em] text-primary/80 uppercase">
+                Mon métier de freelance SEO
               </p>
-              <p>
-                Pour imager : votre site, c&apos;est comme une boutique. Aujourd&apos;hui, elle est peut-être dans une impasse. Mon rôle, c&apos;est de la positionner sur l&apos;avenue principale, là où passent vos clients.
-              </p>
-              <p>
-                Je travaille sur trois axes : la <strong>technique</strong> (que votre site soit rapide et bien construit), le <strong>contenu</strong> (que vos pages répondent aux bonnes questions) et la <strong>notoriété</strong> (que d&apos;autres sites de qualité pointent vers le vôtre). Les premiers résultats apparaissent en général entre 3 et 6 mois, et la progression s&apos;accélère avec le temps.
-              </p>
-            </div>
-          </Reveal>
+              <h2 className="mt-5 font-display text-balance text-3xl font-medium leading-[1.1] tracking-[-0.025em] text-foreground sm:text-4xl lg:text-[3rem]">
+                Concrètement, je fais quoi{' '}
+                <span className="italic text-muted-foreground/80">pour votre site</span> ?
+              </h2>
+              <div className="mt-8 space-y-4 text-[15px] leading-relaxed text-muted-foreground">
+                <p>
+                  Le référencement naturel, ça peut sembler abstrait. Voici ce que je fais concrètement : j&apos;analyse votre positionnement actuel sur Google, j&apos;identifie les mots-clés que vos futurs clients recherchent (par exemple &quot;plombier Rennes&quot; ou &quot;restaurant Cesson-Sévigné&quot;), et j&apos;optimise votre site pour qu&apos;il apparaisse dans les premiers résultats.
+                </p>
+                <p>
+                  Pour imager : votre site, c&apos;est comme une boutique. Aujourd&apos;hui, elle est peut-être dans une impasse. Mon rôle, c&apos;est de la positionner sur l&apos;avenue principale, là où passent vos clients.
+                </p>
+                <p>
+                  Je travaille sur trois axes : la <strong>technique</strong> (que votre site soit rapide et bien construit), le <strong>contenu</strong> (que vos pages répondent aux bonnes questions) et la <strong>notoriété</strong> (que d&apos;autres sites de qualité pointent vers le vôtre). Les premiers résultats apparaissent en général entre 3 et 6 mois, et la progression s&apos;accélère avec le temps.
+                </p>
+              </div>
+            </Reveal>
+
+            {/* Image */}
+            <Reveal delay={0.1}>
+              <div className="relative overflow-hidden rounded-[1.5rem] border border-border/60">
+                <img
+                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"
+                  alt="Analyse de données SEO et référencement naturel sur un tableau de bord"
+                  loading="lazy"
+                  className="aspect-[4/3] w-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-card/60 via-transparent to-transparent" />
+              </div>
+            </Reveal>
+          </div>
         </div>
       </section>
 
