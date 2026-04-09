@@ -1,9 +1,4 @@
-'use client'
-
-import { motion } from 'framer-motion'
 import { TrendingDown, Search } from 'lucide-react'
-
-const ease = [0.22, 1, 0.36, 1] as const
 
 const stats = [
   {
@@ -46,13 +41,7 @@ export function ProblemStatsSection() {
 
       <div className="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
         {/* Header épuré */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-80px' }}
-          transition={{ duration: 0.6, ease }}
-          className="mx-auto max-w-3xl text-center"
-        >
+        <div className="mx-auto max-w-3xl text-center">
           <p className="font-display text-[11px] font-semibold tracking-[0.24em] text-primary/80 uppercase">
             Le constat
           </p>
@@ -60,19 +49,15 @@ export function ProblemStatsSection() {
             Cette situation{' '}
             <span className="italic text-muted-foreground/80">vous dit quelque chose</span> ?
           </h2>
-        </motion.div>
+        </div>
 
         {/* Cards style framer */}
         <div className="mt-14 grid gap-5 lg:grid-cols-2 lg:gap-6">
-          {stats.map((stat, i) => {
+          {stats.map((stat) => {
             const Icon = stat.icon
             return (
-              <motion.div
+              <div
                 key={stat.value}
-                initial={{ opacity: 0, y: 18 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-80px' }}
-                transition={{ duration: 0.55, ease, delay: i * 0.1 }}
                 className="group relative"
               >
                 {/* Glow border on hover */}
@@ -118,7 +103,7 @@ export function ProblemStatsSection() {
                     </p>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             )
           })}
         </div>

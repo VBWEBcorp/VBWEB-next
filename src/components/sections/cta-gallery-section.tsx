@@ -1,12 +1,7 @@
-'use client'
-
-import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 
 import { Button } from '@/components/ui/button'
-
-const ease = [0.22, 1, 0.36, 1] as const
 
 const col1 = [
   'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=400&q=80',
@@ -79,13 +74,7 @@ export function CtaGallerySection() {
 
       {/* Content */}
       <div className="relative z-10 mx-auto max-w-3xl px-4 py-28 sm:px-6 sm:py-36 lg:py-44 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 18 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-80px' }}
-          transition={{ duration: 0.6, ease }}
-          className="space-y-6"
-        >
+        <div className="space-y-6">
           <p className="font-display text-xs font-semibold tracking-[0.22em] text-primary uppercase">
             Prêt à passer à l'action ?
           </p>
@@ -108,7 +97,7 @@ export function CtaGallerySection() {
               </Link>
             </Button>
           </div>
-        </motion.div>
+        </div>
       </div>
 
       {/* CSS animations */}

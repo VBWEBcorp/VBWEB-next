@@ -1,10 +1,5 @@
-'use client'
-
-import { motion } from 'framer-motion'
 import { ArrowUpRight } from 'lucide-react'
 import Link from 'next/link'
-
-const ease = [0.22, 1, 0.36, 1] as const
 
 const categories = [
   {
@@ -59,13 +54,7 @@ export function CaseStudiesSection() {
 
       <div className="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
         {/* Header asymétrique style Framer */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-80px' }}
-          transition={{ duration: 0.6, ease }}
-          className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end"
-        >
+        <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
           <div className="max-w-xl">
             <p className="font-display text-[11px] font-semibold tracking-[0.24em] text-primary/80 uppercase">
               Portfolio
@@ -78,18 +67,12 @@ export function CaseStudiesSection() {
           <p className="max-w-xs text-[15px] leading-relaxed text-muted-foreground sm:text-right">
             Trois disciplines, une obsession : transformer votre digital en levier de croissance.
           </p>
-        </motion.div>
+        </div>
 
         {/* Grille 3 colonnes côte à côte */}
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
-          {categories.map((cat, i) => (
-            <motion.div
-              key={cat.title}
-              initial={{ opacity: 0, y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-80px' }}
-              transition={{ duration: 0.6, ease, delay: i * 0.08 }}
-            >
+          {categories.map((cat) => (
+            <div key={cat.title}>
               <Link
                 href={cat.href}
                 className="group relative block h-full overflow-hidden rounded-[1.4rem] border border-border/60 bg-card/40 backdrop-blur-sm transition-all duration-500 hover:border-primary/30"
@@ -143,7 +126,7 @@ export function CaseStudiesSection() {
                   </div>
                 </div>
               </Link>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

@@ -1,9 +1,4 @@
-'use client'
-
-import { motion } from 'framer-motion'
 import { ShieldCheck, Users, Clock } from 'lucide-react'
-
-const ease = [0.22, 1, 0.36, 1] as const
 
 const results = [
   {
@@ -45,13 +40,7 @@ export function ResultsSection() {
 
       <div className="relative mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-80px' }}
-          transition={{ duration: 0.6, ease }}
-          className="mx-auto max-w-2xl text-center"
-        >
+        <div className="mx-auto max-w-2xl text-center">
           <p className="font-display text-[11px] font-semibold tracking-[0.24em] text-primary/80 uppercase">
             Résultats
           </p>
@@ -59,19 +48,15 @@ export function ResultsSection() {
             Trois promesses,{' '}
             <span className="italic text-muted-foreground/80">tenues</span>
           </h2>
-        </motion.div>
+        </div>
 
         {/* Grille minimaliste */}
         <div className="mt-14 grid gap-px overflow-hidden rounded-[1.5rem] border border-border/50 bg-border/40 sm:mt-16 sm:grid-cols-3">
-          {results.map((result, i) => {
+          {results.map((result) => {
             const Icon = result.icon
             return (
-              <motion.div
+              <div
                 key={result.title}
-                initial={{ opacity: 0, y: 14 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-80px' }}
-                transition={{ duration: 0.55, ease, delay: i * 0.1 }}
                 className="group relative bg-background/95 p-8 backdrop-blur-sm transition-colors duration-500 hover:bg-card/60 sm:p-10"
               >
                 {/* Spotlight au hover */}
@@ -109,7 +94,7 @@ export function ResultsSection() {
                     {result.description}
                   </p>
                 </div>
-              </motion.div>
+              </div>
             )
           })}
         </div>

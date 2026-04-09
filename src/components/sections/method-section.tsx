@@ -4,8 +4,6 @@ import { motion, useScroll, useSpring, useTransform } from 'framer-motion'
 import { Search, Rocket, TrendingUp, Sparkles, Gift } from 'lucide-react'
 import { useRef } from 'react'
 
-const ease = [0.22, 1, 0.36, 1] as const
-
 const steps = [
   {
     number: '01',
@@ -72,13 +70,7 @@ export function MethodSection() {
 
       <div className="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
         {/* Header épuré */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-80px' }}
-          transition={{ duration: 0.6, ease }}
-          className="mx-auto max-w-3xl text-center"
-        >
+        <div className="mx-auto max-w-3xl text-center">
           <p className="font-display text-[11px] font-semibold tracking-[0.24em] text-primary/80 uppercase">
             Ma méthode
           </p>
@@ -89,7 +81,7 @@ export function MethodSection() {
           <p className="mx-auto mt-5 max-w-xl text-pretty text-[15px] leading-relaxed text-muted-foreground sm:text-base">
             Une approche premium en 4 étapes pour que votre site attire, convertisse et vous libère du stress du digital.
           </p>
-        </motion.div>
+        </div>
 
         {/* Timeline */}
         <div ref={timelineRef} className="relative mx-auto mt-16 max-w-3xl">
@@ -118,15 +110,11 @@ export function MethodSection() {
           </motion.div>
 
           <ol className="space-y-6 sm:space-y-8">
-            {steps.map((step, i) => {
+            {steps.map((step) => {
               const Icon = step.icon
               return (
-                <motion.li
+                <li
                   key={step.number}
-                  initial={{ opacity: 0, x: -16 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, margin: '-80px' }}
-                  transition={{ duration: 0.55, ease, delay: i * 0.08 }}
                   className="relative pl-14 sm:pl-20"
                 >
                   {/* Node de la timeline */}
@@ -170,20 +158,14 @@ export function MethodSection() {
                       </p>
                     </div>
                   </div>
-                </motion.li>
+                </li>
               )
             })}
           </ol>
         </div>
 
         {/* Bonus card */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-80px' }}
-          transition={{ duration: 0.6, ease, delay: 0.35 }}
-          className="mx-auto mt-12 max-w-3xl"
-        >
+        <div className="mx-auto mt-12 max-w-3xl">
           <div className="group relative">
             <div
               aria-hidden
@@ -212,7 +194,7 @@ export function MethodSection() {
               </div>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   )

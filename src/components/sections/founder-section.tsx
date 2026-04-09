@@ -1,12 +1,9 @@
 'use client'
 
-import { motion } from 'framer-motion'
 import { ArrowRight, ArrowUpRight, Play } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
-
-const ease = [0.22, 1, 0.36, 1] as const
 
 const VIDEO_ID = 'w_Tg2rnwrSE'
 
@@ -68,11 +65,7 @@ export function FounderSection() {
 
       <div className="relative px-3 py-4 sm:px-4 sm:py-5">
         {/* GRANDE CARD edge-to-edge */}
-        <motion.div
-          initial={{ opacity: 0, y: 18 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-80px' }}
-          transition={{ duration: 0.6, ease }}
+        <div
           className="relative overflow-hidden rounded-[1.5rem] border border-border/60 bg-card/40 backdrop-blur-sm sm:rounded-[1.75rem]"
         >
           {/* Spotlight discret */}
@@ -118,17 +111,13 @@ export function FounderSection() {
             </div>
 
             {/* Vidéo plein largeur */}
-            <motion.div
-              initial={{ opacity: 0, y: 16, scale: 0.98 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: true, margin: '-80px' }}
-              transition={{ duration: 0.7, ease, delay: 0.1 }}
+            <div
               className="relative mt-10 sm:mt-12"
             >
               <div className="relative aspect-video overflow-hidden rounded-[1.25rem] border border-border/60 bg-background ring-1 ring-foreground/5 sm:rounded-[1.5rem]">
                 <VideoFacade />
               </div>
-            </motion.div>
+            </div>
 
             {/* Footer — description + liens sous la vidéo */}
             <div className="relative mt-10 flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
@@ -154,7 +143,7 @@ export function FounderSection() {
               </div>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   )
