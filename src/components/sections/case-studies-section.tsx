@@ -87,12 +87,6 @@ export function CaseStudiesSection() {
                   <div className="absolute inset-0 bg-gradient-to-t from-card via-card/30 to-transparent" />
                   <div className={`absolute inset-0 bg-gradient-to-tr ${cat.accent} opacity-60`} />
 
-                  {/* Label en haut à gauche */}
-                  <div className="absolute left-5 top-5">
-                    <span className="font-display text-[10px] font-semibold uppercase tracking-[0.22em] text-white/90">
-                      {cat.label}
-                    </span>
-                  </div>
 
                   {/* Arrow en haut à droite */}
                   <div className="absolute right-5 top-5">
@@ -116,7 +110,7 @@ export function CaseStudiesSection() {
 
                   <div className="mt-4 flex items-center justify-between">
                     <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-muted-foreground/60">
-                      Voir l&apos;étude de cas
+                      Voir les études de cas
                     </span>
                     <span className="font-display text-xs font-semibold text-primary opacity-0 transition-opacity duration-500 group-hover:opacity-100">
                       →
