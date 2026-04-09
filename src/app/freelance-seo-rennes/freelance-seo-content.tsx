@@ -118,10 +118,10 @@ export function FreelanceSeoContent({ faqs }: FreelanceSeoContentProps) {
               />
             </div>
             <p className="font-display text-[11px] font-semibold tracking-[0.24em] text-primary/80 uppercase">
-              Freelance SEO à Rennes
+              Victor Béasse
             </p>
             <h1 className="mt-5 font-display text-balance text-4xl font-medium leading-[1.08] tracking-[-0.03em] text-foreground sm:text-5xl">
-              Freelance SEO à Rennes :{' '}
+              Freelance SEO à Rennes,{' '}
               <span className="italic text-muted-foreground/80">je vous aide à être trouvé sur Google</span>
             </h1>
             <p className="hero-description mx-auto mt-6 max-w-2xl text-pretty text-[15px] leading-relaxed text-muted-foreground sm:text-base">
