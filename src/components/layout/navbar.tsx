@@ -73,12 +73,6 @@ const servicesSection: MenuSection = {
       description: 'Analyse complète sous 48h',
       icon: FileSearch,
     },
-    {
-      to: '/services',
-      label: 'Tous les services',
-      description: "Voir l'ensemble de l'offre",
-      icon: Layers,
-    },
   ],
 }
 
@@ -102,12 +96,6 @@ const caseStudiesSection: MenuSection = {
       label: 'Applications web',
       description: 'CRM, dashboards, automatisations',
       icon: Code,
-    },
-    {
-      to: '/etudes-de-cas',
-      label: 'Toutes les études',
-      description: 'Portfolio complet',
-      icon: Briefcase,
     },
   ],
 }
