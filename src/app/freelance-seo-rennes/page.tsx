@@ -20,35 +20,35 @@ export const metadata: Metadata = {
 const faqs = [
   {
     question: 'Quelle est la différence entre un freelance SEO et une agence SEO à Rennes ?',
-    answer: 'Avec un freelance SEO à Rennes, vous travaillez avec quelqu\'un qui connaît votre dossier. Pas de commercial, pas de chargé de compte qui change tous les 3 mois. La relation est simple et directe, et les tarifs sont souvent plus accessibles qu\'en agence.',
+    answer: 'Avec un freelance SEO, vous travaillez avec la personne qui connaît votre dossier. Pas de commercial, pas de chargé de compte qui change tous les 3 mois. La relation est directe, et les tarifs sont souvent plus accessibles qu\'en agence.',
   },
   {
-    question: 'Pourquoi faire appel à un freelance SEO basé à Rennes plutôt qu\'à Paris ?',
-    answer: 'Un freelance SEO à Rennes connaît le tissu économique local, les habitudes de recherche des Bretons et vos concurrents directs sur le marché rennais. On peut se rencontrer en personne, visiter votre entreprise et comprendre votre métier sur le terrain. C\'est cette proximité qui a permis d\'accompagner Rennes Pneus de 30 à 3 600 visites par mois en SEO local.',
+    question: 'Pourquoi faire appel à un freelance SEO basé à Rennes ?',
+    answer: 'Un freelance SEO local connaît le marché rennais, les habitudes de recherche des Bretons et vos concurrents directs. C\'est aussi la possibilité de se rencontrer en personne. Cette proximité a fait la différence pour Rennes Pneus : de 30 à 3 600 visites par mois grâce au référencement local.',
   },
   {
     question: 'Combien coûte un freelance SEO à Rennes ?',
-    answer: 'Un accompagnement SEO mensuel avec un freelance à Rennes démarre à partir de 500 euros par mois. Le tarif dépend de la taille de votre site, de votre secteur et de la concurrence sur vos mots-clés. On propose un audit SEO gratuit pour évaluer vos besoins et vous donner un devis clair.',
+    answer: 'Un accompagnement SEO mensuel démarre à partir de 500 euros par mois. Le tarif varie selon la taille de votre site et la concurrence sur vos mots-clés. Je propose un audit gratuit pour évaluer vos besoins et vous remettre un devis clair.',
   },
   {
-    question: 'Quels résultats concrets obtiennent vos clients en référencement naturel ?',
-    answer: 'Quelques exemples : EPICU est passé de 100 à 5 000 visites par mois en 3 ans, Rennes Pneus de 30 à 3 600 visites avec 500 appels mensuels, et Jumelles.com a gagné +33% de trafic organique et 1 280 mots-clés supplémentaires. Chaque projet est différent, mais on travaille toujours avec des objectifs mesurables.',
+    question: 'Quels résultats concrets est-ce que je peux attendre ?',
+    answer: 'Quelques exemples récents : EPICU est passé de 100 à 5 000 visites par mois, Rennes Pneus de 30 à 3 600 avec 500 appels mensuels, Jumelles.com a gagné +33% de trafic organique. Chaque projet est différent, mais les résultats sont toujours mesurables.',
   },
   {
-    question: 'Qu\'est-ce qu\'un freelance SEO fait concrètement au quotidien ?',
-    answer: 'Un freelance SEO analyse votre positionnement sur Google, identifie les mots-clés sur lesquels vous devriez apparaître, optimise votre site (technique, contenu, maillage interne) et suit vos résultats mois après mois. Concrètement, c\'est du travail sur les balises de vos pages, la rédaction de contenus ciblés, l\'amélioration de la vitesse du site et la construction de liens vers votre domaine.',
+    question: 'Concrètement, que fait un freelance SEO sur votre site ?',
+    answer: 'J\'analyse votre positionnement sur Google, j\'identifie les mots-clés recherchés par vos clients, et j\'optimise votre site pour que vous apparaissiez dans les premiers résultats. Le travail porte sur la technique (vitesse, structure), le contenu (pages optimisées) et la notoriété (liens de qualité vers votre site).',
   },
   {
-    question: 'Comment se passe l\'accompagnement SEO avec VBWEB à Rennes ?',
-    answer: 'Chaque client a accès à une application dédiée avec le suivi de son projet, des synthèses régulières et des ressources. On fait un point mensuel (visio ou en personne à Rennes), avec un rapport de positionnement et les prochaines actions prévues. Vous pouvez aussi échanger directement par message à tout moment.',
+    question: 'Comment se déroule l\'accompagnement SEO au quotidien ?',
+    answer: 'Vous disposez d\'un espace de suivi dédié avec l\'avancement de votre projet et des synthèses régulières. Nous faisons un point chaque mois, en visio ou en personne à Rennes. Entre les points, vous pouvez me contacter par message à tout moment.',
   },
   {
-    question: 'Un freelance SEO à Rennes peut-il travailler avec des entreprises hors Bretagne ?',
-    answer: 'Oui. VBWEB est basé à Rennes mais accompagne des clients dans toute la Bretagne (Saint-Malo, Brest, Vannes) et au-delà, y compris en région parisienne. La majorité du travail SEO se fait à distance, avec des rendez-vous en personne quand c\'est utile.',
+    question: 'Travaillez-vous aussi en dehors de Rennes ?',
+    answer: 'Oui, je suis basé à Rennes mais j\'accompagne des clients dans toute la Bretagne et en région parisienne. La majorité du travail se fait à distance, avec des rendez-vous en personne lorsque c\'est pertinent.',
   },
   {
-    question: 'En combien de temps un freelance SEO obtient des résultats ?',
-    answer: 'Les premiers résultats en référencement naturel apparaissent en général entre 3 et 6 mois. Le SEO est un investissement qui s\'accélère avec le temps. Pour Rennes Pneus, les premiers appels sont arrivés au bout de 4 mois. Pour EPICU, la croissance a été progressive sur 3 ans pour atteindre 5 000 visites mensuelles.',
+    question: 'En combien de temps je vais voir des résultats ?',
+    answer: 'En général entre 3 et 6 mois pour les premiers résultats. Le SEO c\'est un travail de fond qui s\'accélère avec le temps. Pour Rennes Pneus, les premiers appels sont arrivés au bout de 4 mois. Pour EPICU, la croissance a été progressive sur 3 ans.',
   },
 ]
 
