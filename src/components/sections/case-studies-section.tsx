@@ -58,8 +58,8 @@ export function CaseStudiesSection() {
               Portfolio
             </p>
             <h2 className="mt-4 font-display text-balance text-3xl font-medium leading-[1.05] tracking-[-0.025em] text-foreground sm:text-4xl lg:text-[3rem]">
-              Réalisations{' '}
-              <span className="italic text-muted-foreground/80">sélectionnées</span>
+              Nos{' '}
+              <span className="italic text-muted-foreground/80">réalisations</span>
             </h2>
           </div>
           <p className="max-w-xs text-[15px] leading-relaxed text-muted-foreground sm:text-right">
@@ -87,10 +87,10 @@ export function CaseStudiesSection() {
                   <div className="absolute inset-0 bg-gradient-to-t from-card via-card/30 to-transparent" />
                   <div className={`absolute inset-0 bg-gradient-to-tr ${cat.accent} opacity-60`} />
 
-                  {/* Numéro + label en haut à gauche */}
+                  {/* Label en haut à gauche */}
                   <div className="absolute left-5 top-5">
                     <span className="font-display text-[10px] font-semibold uppercase tracking-[0.22em] text-white/90">
-                      {cat.number} · {cat.label}
+                      {cat.label}
                     </span>
                   </div>
 
