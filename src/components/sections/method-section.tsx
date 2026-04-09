@@ -64,12 +64,20 @@ export function MethodSection() {
         </Reveal>
 
         {/* Timeline */}
-        <div className="relative mx-auto mt-16 max-w-3xl">
-          {/* Ligne verticale statique */}
+        <div className="timeline-container relative mx-auto mt-16 max-w-3xl">
+          {/* Ligne verticale background (gris discret) */}
           <div
             aria-hidden
-            className="pointer-events-none absolute left-[18px] top-2 bottom-2 w-px bg-gradient-to-b from-primary via-primary to-primary/60 sm:left-6"
+            className="pointer-events-none absolute left-[18px] top-2 bottom-2 w-px bg-border/50 sm:left-6"
           />
+          {/* Ligne verticale animée au scroll (CSS scroll-driven) */}
+          <div
+            aria-hidden
+            className="timeline-progress pointer-events-none absolute left-[18px] top-2 w-px origin-top bg-gradient-to-b from-primary via-primary to-primary/60 sm:left-6"
+          >
+            {/* Point lumineux en bas */}
+            <div className="absolute -bottom-1.5 -left-[5px] size-3 rounded-full bg-primary shadow-[0_0_12px_rgba(78,186,236,0.7)]" />
+          </div>
 
           <ol className="space-y-6 sm:space-y-8">
             {steps.map((step, i) => {
