@@ -2,6 +2,7 @@ import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 
 import { Button } from '@/components/ui/button'
+import { Reveal } from '@/components/ui/reveal'
 
 const col1 = [
   'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=400&q=80',
@@ -74,7 +75,7 @@ export function CtaGallerySection() {
 
       {/* Content */}
       <div className="relative z-10 mx-auto max-w-3xl px-4 py-28 sm:px-6 sm:py-36 lg:py-44 text-center">
-        <div className="space-y-6">
+        <Reveal className="space-y-6">
           <p className="font-display text-xs font-semibold tracking-[0.22em] text-primary uppercase">
             Prêt à passer à l'action ?
           </p>
@@ -97,7 +98,7 @@ export function CtaGallerySection() {
               </Link>
             </Button>
           </div>
-        </div>
+        </Reveal>
       </div>
 
       {/* CSS animations */}

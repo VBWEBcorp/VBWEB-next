@@ -2,6 +2,8 @@ import { ArrowRight, ArrowUpRight } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 
+import { Reveal } from '@/components/ui/reveal'
+
 const VIDEO_ID = 'w_Tg2rnwrSE'
 
 export function FounderSection() {
@@ -20,7 +22,7 @@ export function FounderSection() {
 
       <div className="relative px-3 py-4 sm:px-4 sm:py-5">
         {/* GRANDE CARD edge-to-edge */}
-        <div
+        <Reveal
           className="relative overflow-hidden rounded-[1.5rem] border border-border/60 bg-card/40 sm:rounded-[1.75rem]"
         >
 
@@ -97,7 +99,7 @@ export function FounderSection() {
               </div>
             </div>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   )

@@ -1,5 +1,7 @@
 import { Search, Rocket, TrendingUp, Sparkles, Gift } from 'lucide-react'
 
+import { Reveal } from '@/components/ui/reveal'
+
 const steps = [
   {
     number: '01',
@@ -48,7 +50,7 @@ export function MethodSection() {
 
       <div className="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
         {/* Header épuré */}
-        <div className="mx-auto max-w-3xl text-center">
+        <Reveal className="mx-auto max-w-3xl text-center">
           <p className="font-display text-[11px] font-semibold tracking-[0.24em] text-primary/80 uppercase">
             Ma méthode
           </p>
@@ -59,7 +61,7 @@ export function MethodSection() {
           <p className="mx-auto mt-5 max-w-xl text-pretty text-[15px] leading-relaxed text-muted-foreground sm:text-base">
             Une approche premium en 4 étapes pour que votre site attire, convertisse et vous libère du stress du digital.
           </p>
-        </div>
+        </Reveal>
 
         {/* Timeline */}
         <div className="relative mx-auto mt-16 max-w-3xl">
@@ -70,11 +72,13 @@ export function MethodSection() {
           />
 
           <ol className="space-y-6 sm:space-y-8">
-            {steps.map((step) => {
+            {steps.map((step, i) => {
               const Icon = step.icon
               return (
-                <li
+                <Reveal
+                  as="li"
                   key={step.number}
+                  delay={i * 0.08}
                   className="relative pl-14 sm:pl-20"
                 >
                   {/* Node de la timeline */}
@@ -107,14 +111,14 @@ export function MethodSection() {
                       </p>
                     </div>
                   </div>
-                </li>
+                </Reveal>
               )
             })}
           </ol>
         </div>
 
         {/* Bonus card */}
-        <div className="mx-auto mt-12 max-w-3xl">
+        <Reveal delay={0.35} className="mx-auto mt-12 max-w-3xl">
           <div className="group relative">
             <div
               aria-hidden
@@ -139,7 +143,7 @@ export function MethodSection() {
               </div>
             </div>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   )

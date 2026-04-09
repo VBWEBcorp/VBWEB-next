@@ -1,5 +1,7 @@
 import { TrendingDown, Search } from 'lucide-react'
 
+import { Reveal } from '@/components/ui/reveal'
+
 const stats = [
   {
     icon: TrendingDown,
@@ -36,7 +38,7 @@ export function ProblemStatsSection() {
 
       <div className="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
         {/* Header épuré */}
-        <div className="mx-auto max-w-3xl text-center">
+        <Reveal className="mx-auto max-w-3xl text-center">
           <p className="font-display text-[11px] font-semibold tracking-[0.24em] text-primary/80 uppercase">
             Le constat
           </p>
@@ -44,16 +46,17 @@ export function ProblemStatsSection() {
             Cette situation{' '}
             <span className="italic text-muted-foreground/80">vous dit quelque chose</span> ?
           </h2>
-        </div>
+        </Reveal>
 
         {/* Cards style framer */}
         <div className="mt-14 grid gap-5 lg:grid-cols-2 lg:gap-6">
-          {stats.map((stat) => {
+          {stats.map((stat, i) => {
             const Icon = stat.icon
             return (
-              <div
+              <Reveal
                 key={stat.value}
-                className="group relative"
+                delay={i * 0.1}
+                className="group relative no-touch-hover"
               >
                 {/* Glow border on hover */}
                 <div
@@ -93,7 +96,7 @@ export function ProblemStatsSection() {
                     </p>
                   </div>
                 </div>
-              </div>
+              </Reveal>
             )
           })}
         </div>

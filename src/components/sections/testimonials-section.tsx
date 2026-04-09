@@ -2,6 +2,8 @@
 
 import { Star } from 'lucide-react'
 
+import { Reveal } from '@/components/ui/reveal'
+
 const testimonials = [
   { name: 'Maxime Guillois Magicien', initial: 'M', date: 'il y a 5 mois', text: 'Un immense merci à VBWeb et à Victor pour la création de mon site internet "Maxime Guillois Magicien" ! 🎩✨' },
   { name: 'Brad Mouche', initial: 'B', date: 'il y a 5 mois', text: 'Sa fait maintenant 1 an que Victor s\'occupe de mes sites internet dans le domaine de la couverture. Je suis très satisfait des résultats et de Victor qui est toujours à l\'écoute et toujours disponible.' },
@@ -116,7 +118,7 @@ export function TestimonialsSection() {
 
       <div className="relative py-16 sm:py-20 lg:py-24">
         {/* Header */}
-        <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
+        <Reveal className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
           <div className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/60 px-3.5 py-1.5">
             <GoogleLogo className="size-3.5" />
             <span className="text-[12px] font-medium text-muted-foreground">75 avis Google</span>
@@ -131,7 +133,7 @@ export function TestimonialsSection() {
             Ils en parlent{' '}
             <span className="italic text-muted-foreground/80">mieux que moi</span>
           </h2>
-        </div>
+        </Reveal>
 
         {/* Marquee rows */}
         <div className="mt-14 space-y-5">

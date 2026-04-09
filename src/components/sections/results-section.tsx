@@ -1,5 +1,7 @@
 import { ShieldCheck, Users, Clock } from 'lucide-react'
 
+import { Reveal } from '@/components/ui/reveal'
+
 const results = [
   {
     icon: ShieldCheck,
@@ -35,7 +37,7 @@ export function ResultsSection() {
 
       <div className="relative mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
         {/* Header */}
-        <div className="mx-auto max-w-2xl text-center">
+        <Reveal className="mx-auto max-w-2xl text-center">
           <p className="font-display text-[11px] font-semibold tracking-[0.24em] text-primary/80 uppercase">
             Résultats
           </p>
@@ -43,10 +45,10 @@ export function ResultsSection() {
             Trois promesses,{' '}
             <span className="italic text-muted-foreground/80">tenues</span>
           </h2>
-        </div>
+        </Reveal>
 
         {/* Grille minimaliste */}
-        <div className="mt-14 grid gap-px overflow-hidden rounded-[1.5rem] border border-border/50 bg-border/40 sm:mt-16 sm:grid-cols-3">
+        <Reveal className="mt-14 grid gap-px overflow-hidden rounded-[1.5rem] border border-border/50 bg-border/40 sm:mt-16 sm:grid-cols-3">
           {results.map((result) => {
             const Icon = result.icon
             return (
@@ -88,7 +90,7 @@ export function ResultsSection() {
               </div>
             )
           })}
-        </div>
+        </Reveal>
       </div>
     </section>
   )
