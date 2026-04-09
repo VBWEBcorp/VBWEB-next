@@ -17,6 +17,7 @@ const serviceLinks = [
   { label: 'Référencement local', to: '/referencement-local-rennes' },
   { label: 'Création de site', to: '/creation-site-internet-rennes' },
   { label: 'Audit SEO gratuit', to: '/audit-seo-gratuit' },
+  { label: 'Freelance SEO Rennes', to: '/freelance-seo-rennes' },
 ]
 
 const legalLinks = [
