@@ -44,9 +44,9 @@ function Grain() {
 const advantages = [
   {
     icon: User,
-    title: 'Un seul interlocuteur',
+    title: 'Un interlocuteur dédié',
     description:
-      'Pas de chef de projet, pas de commercial. Vous échangez directement avec la personne qui travaille sur votre site. C\'est comme ça qu\'on a pu faire passer Rennes Pneus de 30 à 3 600 visites par mois.',
+      'Vous échangez directement avec moi, pas avec un commercial ou un chargé de compte. Une équipe solide derrière pour l\'exécution. C\'est comme ça qu\'on a pu faire passer Rennes Pneus de 30 à 3 600 visites par mois.',
   },
   {
     icon: Zap,
@@ -144,11 +144,11 @@ export function FreelanceSeoContent({ faqs }: FreelanceSeoContentProps) {
               Freelance SEO à Rennes
             </p>
             <h1 className="mt-5 font-display text-balance text-4xl font-medium leading-[1.08] tracking-[-0.03em] text-foreground sm:text-5xl">
-              Votre expert SEO{' '}
-              <span className="italic text-muted-foreground/80">sans intermédiaire</span>
+              Votre référencement{' '}
+              <span className="italic text-muted-foreground/80">entre de bonnes mains</span>
             </h1>
             <p className="hero-description mx-auto mt-6 max-w-2xl text-pretty text-[15px] leading-relaxed text-muted-foreground sm:text-base">
-              Victor Béasse, freelance SEO basé à Rennes. Plus de 200 campagnes SEO menées pour des PME, artisans et commerces en Bretagne. Un interlocuteur unique, des résultats mesurables, 75 avis 5 étoiles sur Google.
+              Victor Béasse, freelance SEO basé à Rennes. Plus de 200 campagnes SEO menées pour des PME, artisans et commerces en Bretagne. Vous échangez directement avec moi, une équipe dédiée s&apos;occupe du reste. 75 avis 5 étoiles sur Google.
             </p>
 
             <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
@@ -179,7 +179,7 @@ export function FreelanceSeoContent({ faqs }: FreelanceSeoContentProps) {
               <span className="italic text-muted-foreground/80">plutôt qu&apos;une agence</span> ?
             </h2>
             <p className="mx-auto mt-5 max-w-xl text-pretty text-[15px] leading-relaxed text-muted-foreground sm:text-base">
-              En agence, votre dossier passe entre 3 personnes avant d&apos;être traité. En freelance, vous échangez directement avec celui qui travaille sur votre site.
+              En agence, votre dossier passe entre 3 personnes avant d&apos;être traité. Chez VBWEB, vous échangez directement avec le fondateur, et une équipe dédiée assure l&apos;exécution.
             </p>
           </Reveal>
 
