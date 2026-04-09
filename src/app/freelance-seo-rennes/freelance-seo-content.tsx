@@ -142,6 +142,33 @@ export function FreelanceSeoContent({ faqs }: FreelanceSeoContentProps) {
         </div>
       </section>
 
+      {/* ══ CE QUE JE FAIS POUR VOUS ══ */}
+      <section className="relative overflow-hidden bg-card">
+        <Grain />
+        <div className="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+          <Reveal className="mx-auto max-w-3xl">
+            <p className="font-display text-[11px] font-semibold tracking-[0.24em] text-primary/80 uppercase">
+              Mon métier de freelance SEO
+            </p>
+            <h2 className="mt-5 font-display text-balance text-3xl font-medium leading-[1.1] tracking-[-0.025em] text-foreground sm:text-4xl lg:text-[3rem]">
+              Concrètement, je fais quoi{' '}
+              <span className="italic text-muted-foreground/80">pour votre site</span> ?
+            </h2>
+            <div className="mt-8 space-y-4 text-[15px] leading-relaxed text-muted-foreground">
+              <p>
+                Le référencement naturel, ça peut sembler abstrait. Voici ce que je fais concrètement : j&apos;analyse votre positionnement actuel sur Google, j&apos;identifie les mots-clés que vos futurs clients recherchent (par exemple &quot;plombier Rennes&quot; ou &quot;restaurant Cesson-Sévigné&quot;), et j&apos;optimise votre site pour qu&apos;il apparaisse dans les premiers résultats.
+              </p>
+              <p>
+                Pour imager : votre site, c&apos;est comme une boutique. Aujourd&apos;hui, elle est peut-être dans une impasse. Mon rôle, c&apos;est de la positionner sur l&apos;avenue principale, là où passent vos clients.
+              </p>
+              <p>
+                Je travaille sur trois axes : la <strong>technique</strong> (que votre site soit rapide et bien construit), le <strong>contenu</strong> (que vos pages répondent aux bonnes questions) et la <strong>notoriété</strong> (que d&apos;autres sites de qualité pointent vers le vôtre). Les premiers résultats apparaissent en général entre 3 et 6 mois, et la progression s&apos;accélère avec le temps.
+              </p>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       {/* ══ CHIFFRES ══ */}
       <section className="relative overflow-hidden bg-card">
         <Grain />
@@ -332,20 +359,6 @@ export function FreelanceSeoContent({ faqs }: FreelanceSeoContentProps) {
           </Reveal>
 
           <div className="mt-12 space-y-4">
-            <ReadMore title="Concrètement, que fait un freelance SEO pour votre site ?">
-              <div className="space-y-4 text-[15px] leading-relaxed text-muted-foreground">
-                <p>
-                  Le référencement naturel, ça peut sembler abstrait. Voici ce que je fais concrètement : j&apos;analyse votre positionnement actuel sur Google, j&apos;identifie les mots-clés que vos futurs clients recherchent (par exemple &quot;plombier Rennes&quot; ou &quot;restaurant Cesson-Sévigné&quot;), et j&apos;optimise votre site pour qu&apos;il apparaisse dans les premiers résultats.
-                </p>
-                <p>
-                  Pour imager : votre site, c&apos;est comme une boutique. Aujourd&apos;hui, elle est peut-être dans une impasse. Mon rôle, c&apos;est de la positionner sur l&apos;avenue principale, là où passent vos clients.
-                </p>
-                <p>
-                  Je travaille sur trois axes : la <strong>technique</strong> (que votre site soit rapide et bien construit), le <strong>contenu</strong> (que vos pages répondent aux bonnes questions) et la <strong>notoriété</strong> (que d&apos;autres sites de qualité pointent vers le vôtre). Les premiers résultats apparaissent en général entre 3 et 6 mois, et la progression s&apos;accélère avec le temps.
-                </p>
-              </div>
-            </ReadMore>
-
             <ReadMore title="Pourquoi choisir un freelance SEO plutôt qu'une agence à Rennes ?">
               <div className="space-y-5 text-[15px] leading-relaxed text-muted-foreground">
                 <p>En agence, votre dossier passe entre plusieurs interlocuteurs. Avec un freelance SEO à Rennes, vous échangez directement avec la personne qui travaille sur votre site, et les choses avancent plus vite.</p>
