@@ -79,7 +79,7 @@ export function Footer() {
               </div>
 
               {/* === SECTION 2 — GRILLE LIENS === */}
-              <div className="grid gap-px bg-border/30 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr]">
+              <div className="grid gap-px bg-white/[0.06] sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr]">
                 {/* Brand + coordonnées */}
                 <div className="bg-[#0f1f35] p-8 sm:p-10">
                   <Link href="/" className="group/logo inline-flex items-center gap-2.5">
@@ -125,8 +125,8 @@ export function Footer() {
                 </div>
 
                 {/* Navigation */}
-                <nav aria-label="Navigation" className="bg-card/40 p-8 backdrop-blur-sm sm:p-10">
-                  <p className="font-display text-[10px] font-semibold uppercase tracking-[0.22em] text-muted-foreground/60">
+                <nav aria-label="Navigation" className="bg-[#0f1f35] p-8 sm:p-10">
+                  <p className="font-display text-[10px] font-semibold uppercase tracking-[0.22em] text-white/40">
                     Navigation
                   </p>
                   <ul className="mt-5 space-y-2.5">
@@ -134,7 +134,7 @@ export function Footer() {
                       <li key={l.label}>
                         <Link
                           href={l.to}
-                          className="group/link inline-flex items-center gap-1 text-[13px] text-muted-foreground/70 transition-colors hover:text-foreground"
+                          className="group/link inline-flex items-center gap-1 text-[13px] text-white/60 transition-colors hover:text-white"
                         >
                           {l.label}
                           <ArrowUpRight className="size-3 opacity-0 transition-all duration-300 group-hover/link:opacity-100" />
@@ -145,8 +145,8 @@ export function Footer() {
                 </nav>
 
                 {/* Services */}
-                <nav aria-label="Services" className="bg-card/40 p-8 backdrop-blur-sm sm:p-10">
-                  <p className="font-display text-[10px] font-semibold uppercase tracking-[0.22em] text-muted-foreground/60">
+                <nav aria-label="Services" className="bg-[#0f1f35] p-8 sm:p-10">
+                  <p className="font-display text-[10px] font-semibold uppercase tracking-[0.22em] text-white/40">
                     Services
                   </p>
                   <ul className="mt-5 space-y-2.5">
@@ -154,7 +154,7 @@ export function Footer() {
                       <li key={l.label}>
                         <Link
                           href={l.to}
-                          className="group/link inline-flex items-center gap-1 text-[13px] text-muted-foreground/70 transition-colors hover:text-foreground"
+                          className="group/link inline-flex items-center gap-1 text-[13px] text-white/60 transition-colors hover:text-white"
                         >
                           {l.label}
                           <ArrowUpRight className="size-3 opacity-0 transition-all duration-300 group-hover/link:opacity-100" />
@@ -165,8 +165,8 @@ export function Footer() {
                 </nav>
 
                 {/* Légal */}
-                <nav aria-label="Légal" className="bg-card/40 p-8 backdrop-blur-sm sm:p-10">
-                  <p className="font-display text-[10px] font-semibold uppercase tracking-[0.22em] text-muted-foreground/60">
+                <nav aria-label="Légal" className="bg-[#0f1f35] p-8 sm:p-10">
+                  <p className="font-display text-[10px] font-semibold uppercase tracking-[0.22em] text-white/40">
                     Légal
                   </p>
                   <ul className="mt-5 space-y-2.5">
@@ -174,7 +174,7 @@ export function Footer() {
                       <li key={l.label}>
                         <Link
                           href={l.to}
-                          className="group/link inline-flex items-center gap-1 text-[13px] text-muted-foreground/70 transition-colors hover:text-foreground"
+                          className="group/link inline-flex items-center gap-1 text-[13px] text-white/60 transition-colors hover:text-white"
                         >
                           {l.label}
                           <ArrowUpRight className="size-3 opacity-0 transition-all duration-300 group-hover/link:opacity-100" />
@@ -186,11 +186,11 @@ export function Footer() {
               </div>
 
               {/* === SECTION 3 — BOTTOM BAR === */}
-              <div className="flex flex-col items-start justify-between gap-3 border-t border-border/40 bg-card/30 px-8 py-5 backdrop-blur-sm sm:flex-row sm:items-center sm:px-10">
-                <p className="text-[11px] text-muted-foreground/50">
+              <div className="flex flex-col items-start justify-between gap-3 border-t border-white/[0.06] bg-[#0b1829] px-8 py-5 sm:flex-row sm:items-center sm:px-10">
+                <p className="text-[11px] text-white/40">
                   © {new Date().getFullYear()} {siteConfig.name} · Tous droits réservés
                 </p>
-                <p className="text-[11px] uppercase tracking-[0.16em] text-muted-foreground/40">
+                <p className="text-[11px] uppercase tracking-[0.16em] text-white/30">
                   Consultant SEO · Rennes · Bretagne
                 </p>
               </div>
