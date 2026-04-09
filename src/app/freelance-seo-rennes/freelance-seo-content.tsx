@@ -366,8 +366,8 @@ export function FreelanceSeoContent({ faqs }: FreelanceSeoContentProps) {
 
           <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {[
-              { icon: Shield, title: 'Sans engagement', text: 'Pas de contrat longue durée. Vous restez parce que les résultats sont là, pas parce que vous êtes bloqué.' },
-              { icon: Phone, title: 'Joignable directement', text: 'Vous appelez, on décroche. Pas de standard, pas de ticket support.' },
+              { icon: Shield, title: 'Suivi de projet dédié', text: 'Chaque client a accès à une application avec le suivi de son projet, des synthèses régulières et des ressources personnalisées.' },
+              { icon: Phone, title: 'Échange direct', text: 'Vous discutez directement avec moi via l\'application, par message ou en visio. Pas de standard, pas de ticket.' },
               { icon: TrendingUp, title: 'Résultats mesurables', text: 'Rapport mensuel avec vos positions Google, votre trafic et les actions réalisées. Tout est transparent.' },
             ].map((item, i) => {
               const Icon = item.icon
