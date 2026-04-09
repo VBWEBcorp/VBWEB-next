@@ -38,9 +38,9 @@ function Grain() {
 const advantages = [
   {
     icon: User,
-    title: 'Un interlocuteur dédié, une équipe derrière',
+    title: 'Relation directe',
     description:
-      'Vous échangez directement avec le fondateur, pas avec un commercial. Une équipe assure l\'exécution au quotidien. C\'est cette organisation qui a permis d\'accompagner Rennes Pneus de 30 à 3 600 visites par mois.',
+      'On apprend à se connaître, on comprend votre métier, et on avance ensemble. C\'est cette relation de confiance qui a permis d\'accompagner Rennes Pneus de 30 à 3 600 visites par mois.',
   },
   {
     icon: Zap,
@@ -56,9 +56,9 @@ const advantages = [
   },
   {
     icon: MessageCircle,
-    title: 'Transparence sur chaque action',
+    title: 'Pas de boîte noire',
     description:
-      'Rapport mensuel, accès à vos données, explication de chaque optimisation réalisée. Vous comprenez ce qui est fait et pourquoi, pas de boîte noire.',
+      'Rapport mensuel, accès à vos données, explication de chaque optimisation. On prend le temps de vous montrer ce qui a été fait et ce que ça donne.',
   },
 ]
 
@@ -138,7 +138,7 @@ export function FreelanceSeoContent({ faqs }: FreelanceSeoContentProps) {
               <span className="italic text-muted-foreground/80">votre référencement naturel en Bretagne</span>
             </h1>
             <p className="hero-description mx-auto mt-6 max-w-2xl text-pretty text-[15px] leading-relaxed text-muted-foreground sm:text-base">
-              VBWEB, c&apos;est Victor Béasse et son équipe, basés à Rennes. Plus de 200 campagnes de référencement naturel menées pour des PME, artisans et commerces en Bretagne. Vous échangez directement avec le fondateur, une équipe dédiée assure le travail au quotidien.
+              Victor Béasse, freelance SEO basé à Rennes. Plus de 200 campagnes de référencement naturel menées pour des PME, artisans et commerces en Bretagne. 75 avis 5 étoiles sur Google.
             </p>
 
             <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
@@ -170,7 +170,7 @@ export function FreelanceSeoContent({ faqs }: FreelanceSeoContentProps) {
             </h2>
             <div className="mt-8 space-y-4 text-[15px] leading-relaxed text-muted-foreground">
               <p>
-                Un freelance SEO est un expert en référencement naturel qui travaille de manière indépendante pour améliorer la visibilité de votre site sur Google. Contrairement à une agence, vous avez un contact direct avec la personne responsable de votre projet.
+                Un freelance SEO est un professionnel du référencement naturel qui vous accompagne pour améliorer la visibilité de votre site sur Google. L&apos;avantage par rapport à une agence classique, c&apos;est la proximité et la simplicité de la relation.
               </p>
               <p>
                 Concrètement, un freelance SEO à Rennes analyse votre positionnement actuel, identifie les mots-clés que vos clients potentiels tapent sur Google (par exemple "plombier Rennes", "restaurant Cesson-Sévigné" ou "avocat droit des affaires Rennes"), puis optimise votre site pour que vous apparaissiez dans les premiers résultats.
@@ -196,7 +196,7 @@ export function FreelanceSeoContent({ faqs }: FreelanceSeoContentProps) {
               <span className="italic text-muted-foreground/80">à Rennes</span> ?
             </h2>
             <p className="mx-auto mt-5 max-w-xl text-pretty text-[15px] leading-relaxed text-muted-foreground sm:text-base">
-              En agence, votre dossier passe entre 3 personnes avant d&apos;être traité. Chez VBWEB, vous échangez directement avec le fondateur, et une équipe dédiée assure l&apos;exécution.
+              En agence, votre dossier passe entre 3 personnes avant d&apos;être traité. Chez VBWEB, on se connaît, on échange directement, et les choses avancent vite.
             </p>
           </Reveal>
 
@@ -383,9 +383,9 @@ export function FreelanceSeoContent({ faqs }: FreelanceSeoContentProps) {
 
           <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {[
-              { icon: Shield, title: 'Application de suivi dédiée', text: 'Chaque client a accès à une application avec le suivi de son projet, des synthèses régulières et des ressources personnalisées pour son activité.' },
-              { icon: Phone, title: 'Échange direct avec le fondateur', text: 'Vous discutez directement avec Victor via l\'application, par message ou en visio. Pas de standard, pas de ticket.' },
-              { icon: TrendingUp, title: 'Résultats mesurables chaque mois', text: 'Rapport mensuel avec vos positions Google, l\'évolution de votre trafic et les actions réalisées. Tout est transparent et vérifiable.' },
+              { icon: Shield, title: 'Votre espace projet', text: 'Vous avez accès à une application avec le suivi de votre projet, des synthèses régulières et des ressources adaptées à votre activité.' },
+              { icon: Phone, title: 'On reste en contact', text: 'Par message, en visio ou en personne à Rennes. Vous posez vos questions quand vous voulez, on répond rapidement.' },
+              { icon: TrendingUp, title: 'Des résultats que vous pouvez vérifier', text: 'Rapport mensuel avec vos positions Google, l\'évolution de votre trafic et les actions réalisées. Pas de blabla, que du concret.' },
             ].map((item, i) => {
               const Icon = item.icon
               return (
