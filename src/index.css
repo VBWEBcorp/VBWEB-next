@@ -234,15 +234,6 @@
   transform: translateY(0);
 }
 
-/* On touch devices, prevent sticky :hover from tap */
-@media (hover: none) {
-  .no-touch-hover {
-    transition: none !important;
-  }
-  .no-touch-hover * {
-    transition: none !important;
-  }
-}
 
 @layer base {
   * {

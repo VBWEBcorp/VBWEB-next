@@ -56,7 +56,7 @@ export function ProblemStatsSection() {
               <Reveal
                 key={stat.value}
                 delay={i * 0.1}
-                className="group relative no-touch-hover"
+                className="group relative "
               >
                 {/* Glow border on hover */}
                 <div

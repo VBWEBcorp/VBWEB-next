@@ -70,7 +70,7 @@ export function CaseStudiesSection() {
         {/* Grille 3 colonnes côte à côte */}
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
           {categories.map((cat, i) => (
-            <Reveal key={cat.title} delay={i * 0.08} className="no-touch-hover">
+            <Reveal key={cat.title} delay={i * 0.08} className="">
               <Link
                 href={cat.href}
                 className="group relative block h-full overflow-hidden rounded-[1.4rem] border border-border/60 bg-card/40 transition-colors duration-500 hover:border-primary/30"
