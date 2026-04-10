@@ -1,14 +1,15 @@
 'use client'
 
+import { ScrollCol, Grain, ReadMore, caseStudies, col1, col2, col3 } from '@/components/freelance-seo/shared'
 import {
   ArrowRight,
-  ChevronDown,
   Star,
   User,
   Zap,
   MessageCircle,
   Target,
   TrendingUp,
+  Shield,
   Phone,
   MapPin,
   FileSearch,
@@ -17,7 +18,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
 
-import { ScrollCol, Grain, ReadMore, caseStudies, col1, col2, col3 } from '@/components/freelance-seo/shared'
 import { CtaGallerySection } from '@/components/sections/cta-gallery-section'
 import { AuditButton } from '@/components/ui/audit-button'
 import { Button } from '@/components/ui/button'
@@ -25,11 +25,13 @@ import { CountUp } from '@/components/ui/count-up'
 import { Reveal } from '@/components/ui/reveal'
 import { ScrollProgress } from '@/components/ui/scroll-progress'
 
-interface FreelanceSeoContentProps {
+import { ChevronDown } from 'lucide-react'
+
+interface FreelanceSeoNantesContentProps {
   faqs: { question: string; answer: string }[]
 }
 
-export function FreelanceSeoContent({ faqs }: FreelanceSeoContentProps) {
+export function FreelanceSeoNantesContent({ faqs }: FreelanceSeoNantesContentProps) {
   const [openFaq, setOpenFaq] = useState<number | null>(null)
 
   return (
@@ -41,10 +43,10 @@ export function FreelanceSeoContent({ faqs }: FreelanceSeoContentProps) {
           <ScrollCol imgs={col1} dir="up" dur={40} />
           <ScrollCol imgs={col2} dir="down" dur={35} />
           <ScrollCol imgs={col3} dir="up" dur={38} />
-          <div className="hidden min-w-0 flex-1 sm:block"><ScrollCol imgs={[...col1].reverse()} dir="down" dur={42} /></div>
-          <div className="hidden min-w-0 flex-1 sm:block"><ScrollCol imgs={[...col2].reverse()} dir="up" dur={36} /></div>
-          <div className="hidden min-w-0 flex-1 lg:block"><ScrollCol imgs={[...col3].reverse()} dir="down" dur={44} /></div>
-          <div className="hidden min-w-0 flex-1 lg:block"><ScrollCol imgs={col1} dir="up" dur={39} /></div>
+          <div className="hidden min-w-0 flex-1 sm:block"><ScrollCol imgs={[...col1.slice(1), col1[0]]} dir="down" dur={42} /></div>
+          <div className="hidden min-w-0 flex-1 sm:block"><ScrollCol imgs={[...col2.slice(2), ...col2.slice(0, 2)]} dir="up" dur={36} /></div>
+          <div className="hidden min-w-0 flex-1 lg:block"><ScrollCol imgs={[...col3.slice(1), col3[0]]} dir="down" dur={44} /></div>
+          <div className="hidden min-w-0 flex-1 lg:block"><ScrollCol imgs={[...col1.slice(3), ...col1.slice(0, 3)]} dir="up" dur={39} /></div>
         </div>
 
         {/* Overlays */}
@@ -59,7 +61,7 @@ export function FreelanceSeoContent({ faqs }: FreelanceSeoContentProps) {
             <div className="mx-auto mb-6 size-20 overflow-hidden rounded-full border-2 border-primary/20 ring-1 ring-foreground/5 sm:size-24">
               <Image
                 src="/victor.jpg"
-                alt="Victor Béasse, freelance SEO à Rennes"
+                alt="Victor Béasse, freelance SEO à Nantes"
                 width={96}
                 height={96}
                 priority
@@ -70,11 +72,11 @@ export function FreelanceSeoContent({ faqs }: FreelanceSeoContentProps) {
               Victor Béasse
             </p>
             <h1 className="mt-5 font-display text-balance text-4xl font-medium leading-[1.08] tracking-[-0.03em] text-foreground sm:text-5xl">
-              Freelance SEO à Rennes,{' '}
-              <span className="italic text-muted-foreground/80">je vous aide à être trouvé sur Google</span>
+              Freelance SEO à Nantes,{' '}
+              <span className="italic text-muted-foreground/80">boostez votre visibilité sur Google</span>
             </h1>
             <p className="hero-description mx-auto mt-6 max-w-2xl text-pretty text-[15px] leading-relaxed text-muted-foreground sm:text-base">
-              Je suis Victor Béasse, freelance SEO basé à Rennes. J&apos;accompagne des PME, artisans et commerces en Bretagne pour qu&apos;ils attirent plus de clients grâce à Google. Plus de 200 projets SEO menés et 75 avis 5 étoiles.
+              Je suis Victor Béasse, consultant SEO freelance dans le Grand Ouest. J&apos;aide les entreprises nantaises à attirer plus de clients grâce au référencement naturel : startups, PME, commerces, artisans. Plus de 200 projets SEO menés et 75 avis 5 étoiles.
             </p>
 
             <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
@@ -105,10 +107,10 @@ export function FreelanceSeoContent({ faqs }: FreelanceSeoContentProps) {
                   </h2>
                   <div className="mt-6 space-y-4 text-[15px] leading-relaxed text-muted-foreground">
                     <p>
-                      Le référencement naturel, ça peut sembler abstrait. Voici ce que je fais concrètement : j&apos;analyse votre positionnement actuel sur Google, j&apos;identifie les mots-clés que vos futurs clients recherchent (par exemple &quot;plombier Rennes&quot; ou &quot;restaurant Cesson-Sévigné&quot;), et j&apos;optimise votre site pour qu&apos;il apparaisse dans les premiers résultats.
+                      Nantes est un marché digital ultra-concurrentiel. Startups, agences, commerces établis — tout le monde se bat pour les mêmes places sur Google. Tapez &quot;agence web Nantes&quot; ou &quot;coworking Île de Nantes&quot; : les résultats sont trustés par ceux qui ont travaillé leur référencement. Si vous n&apos;êtes pas dans cette première page, vous laissez vos concurrents capter le trafic qui devrait être le vôtre.
                     </p>
                     <p>
-                      Pour imager : votre site, c&apos;est comme une boutique. Aujourd&apos;hui, elle est peut-être dans une impasse. Mon rôle, c&apos;est de la positionner sur l&apos;avenue principale, là où passent vos clients.
+                      Connaissez-vous le passage Pommeraye ? Les boutiques en vitrine sur ce passage mythique ne manquent jamais de visiteurs. Maintenant, imaginez la vôtre coincée dans une ruelle parallèle, sans panneau. C&apos;est souvent la situation d&apos;un site mal référencé à Nantes. Mon travail, c&apos;est de vous ouvrir une vitrine sur le passage.
                     </p>
                   </div>
                 </Reveal>
@@ -117,7 +119,7 @@ export function FreelanceSeoContent({ faqs }: FreelanceSeoContentProps) {
                   <div className="relative overflow-hidden rounded-[1.25rem] border border-border/40">
                     <img
                       src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"
-                      alt="Analyse de données SEO et référencement naturel pour entreprises à Rennes"
+                      alt="Analyse SEO et stratégie de référencement pour entreprises à Nantes"
                       loading="lazy"
                       className="aspect-[4/3] w-full object-cover"
                     />
@@ -208,7 +210,7 @@ export function FreelanceSeoContent({ faqs }: FreelanceSeoContentProps) {
         <div className="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
           <Reveal className="mx-auto max-w-3xl text-center">
             <p className="font-display text-[11px] font-semibold tracking-[0.24em] text-primary/80 uppercase">
-              Résultats SEO à Rennes
+              Résultats SEO dans le Grand Ouest
             </p>
             <h2 className="mt-5 font-display text-balance text-3xl font-medium leading-[1.1] tracking-[-0.025em] text-foreground sm:text-4xl lg:text-[3rem]">
               Des clients que j&apos;ai accompagnés{' '}
@@ -271,8 +273,8 @@ export function FreelanceSeoContent({ faqs }: FreelanceSeoContentProps) {
             <ol className="space-y-6 sm:space-y-8">
               {[
                 { number: '01', title: 'On échange', description: 'Nous prenons 30 minutes pour que je comprenne votre activité, vos objectifs et ce qui freine votre visibilité sur Google. Je vous dis sincèrement si le SEO est pertinent pour vous.' },
-                { number: '02', title: 'J\'analyse votre site', description: 'Je passe votre site au peigne fin : technique, contenu, positionnement, concurrence locale à Rennes. Vous recevez un plan d\'action clair avec les priorités.' },
-                { number: '03', title: 'On avance ensemble', description: 'Les optimisations sont déployées mois après mois. Chaque mois, vous voyez vos positions Google, votre trafic et les demandes reçues dans votre espace de suivi.' },
+                { number: '02', title: 'J\'analyse votre site', description: 'Je passe votre site au peigne fin : technique, contenu, positionnement, concurrence locale à Nantes et en Loire-Atlantique. Vous recevez un plan d\'action clair avec les priorités.' },
+                { number: '03', title: 'On avance ensemble', description: 'Les optimisations sont déployées mois après mois. Chaque mois, vous voyez vos positions Google, votre trafic et les demandes reçues dans votre espace de suivi. Point mensuel en visio ou en personne à Nantes.' },
               ].map((step, i) => (
                 <Reveal as="li" key={step.number} delay={i * 0.08} className="relative pl-14 sm:pl-20">
                   {/* Node */}
@@ -327,14 +329,14 @@ export function FreelanceSeoContent({ faqs }: FreelanceSeoContentProps) {
                   </h2>
 
                   <div className="mt-8 space-y-3">
-                    <ReadMore title="Freelance SEO vs agence à Rennes">
+                    <ReadMore title="Freelance SEO vs agence à Nantes">
                       <div className="space-y-4 text-[15px] leading-relaxed text-muted-foreground">
-                        <p>En agence, votre dossier passe entre plusieurs interlocuteurs. Avec un freelance SEO à Rennes, vous échangez directement avec la personne qui travaille sur votre site, et les choses avancent plus vite.</p>
+                        <p>Nantes compte de nombreuses agences digitales, mais le fonctionnement est souvent le même : un commercial vous vend le projet, un chef de projet coordonne, et un consultant junior exécute. Avec un freelance SEO, vous travaillez directement avec la personne qui optimise votre site. Les échanges sont plus fluides et les décisions plus rapides.</p>
                         <div className="grid gap-3 sm:grid-cols-2">
                           {[
                             { icon: User, title: 'Relation directe', text: 'Je comprends votre métier et ce qui vous différencie.' },
                             { icon: Zap, title: 'Réactivité', text: 'Réponse dans la journée, pas dans 48h.' },
-                            { icon: Target, title: 'Sur mesure', text: 'Stratégie adaptée à votre marché.' },
+                            { icon: Target, title: 'Sur mesure', text: 'Stratégie adaptée à votre marché nantais.' },
                             { icon: MessageCircle, title: 'Transparence', text: 'Rapport mensuel, accès à vos données.' },
                           ].map((item) => {
                             const Icon = item.icon
@@ -352,16 +354,16 @@ export function FreelanceSeoContent({ faqs }: FreelanceSeoContentProps) {
                       </div>
                     </ReadMore>
 
-                    <ReadMore title="Pourquoi être basé à Rennes fait la différence">
+                    <ReadMore title="Pourquoi travailler avec un freelance SEO à Nantes">
                       <div className="space-y-4 text-[15px] leading-relaxed text-muted-foreground">
                         <p>
-                          Je connais le marché rennais et les habitudes de recherche locales. Quand j&apos;ai travaillé sur le référencement de Rennes Pneus, je savais exactement quels mots-clés cibler parce que je connais les réflexes des automobilistes de la métropole.
+                          Nantes est la 6e métropole de France et un pôle économique majeur dans le Grand Ouest. Entre l&apos;Île de Nantes qui concentre les entreprises tech, le quartier de la Création, et les zones commerciales de Saint-Herblain ou Carquefou, la concurrence sur Google est forte. Un freelance SEO qui connaît ce tissu économique local peut cibler les bons mots-clés et vous positionner devant vos concurrents.
                         </p>
                         <p>
-                          J&apos;accompagne des entreprises dans Rennes et sa métropole : <strong>Cesson-Sévigné</strong>, <strong>Saint-Grégoire</strong>, <strong>Bruz</strong>, <strong>Chantepie</strong>, <strong>Pacé</strong>. Mais aussi à <strong>Saint-Malo</strong>, <strong>Vannes</strong>, <strong>Brest</strong> et <strong>Lorient</strong>.
+                          Basé à Rennes, à 1h10 en TGV, je me déplace régulièrement à Nantes. J&apos;accompagne aussi des entreprises à <strong>Saint-Herblain</strong>, <strong>Rezé</strong>, <strong>Orvault</strong>, <strong>Carquefou</strong>, <strong>Saint-Nazaire</strong> et <strong>La Baule</strong>. Et bien sûr à <strong>Rennes</strong> et <strong>Vannes</strong>.
                         </p>
                         <div className="flex flex-wrap gap-2">
-                          {['Rennes', 'Cesson-Sévigné', 'Saint-Grégoire', 'Bruz', 'Saint-Malo', 'Vannes', 'Brest'].map((city) => (
+                          {['Nantes', 'Saint-Herblain', 'Rezé', 'Orvault', 'Carquefou', 'Saint-Nazaire', 'La Baule', 'Rennes', 'Vannes'].map((city) => (
                             <span key={city} className="inline-flex items-center gap-1.5 rounded-full border border-border/40 bg-background/30 px-3 py-1 text-[11px] font-medium text-muted-foreground">
                               <MapPin className="size-2.5 text-primary" /> {city}
                             </span>
@@ -418,7 +420,7 @@ export function FreelanceSeoContent({ faqs }: FreelanceSeoContentProps) {
               Questions fréquentes
             </p>
             <h2 className="mt-5 font-display text-balance text-3xl font-medium leading-[1.1] tracking-[-0.025em] text-foreground sm:text-4xl">
-              Freelance SEO à Rennes :{' '}
+              Freelance SEO à Nantes :{' '}
               <span className="italic text-muted-foreground/80">vos questions</span>
             </h2>
           </Reveal>

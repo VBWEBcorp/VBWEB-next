@@ -227,7 +227,8 @@ export function faqJsonLd(faqs: { question: string; answer: string }[]) {
 export function serviceJsonLd(
   name: string,
   description: string,
-  path: string
+  path: string,
+  areaServed?: { '@type': string; name: string }[]
 ) {
   return {
     '@context': 'https://schema.org',
@@ -237,7 +238,7 @@ export function serviceJsonLd(
     provider: {
       '@id': `${siteConfig.url}/#business`,
     },
-    areaServed: [
+    areaServed: areaServed ?? [
       { '@type': 'City', name: 'Rennes' },
       { '@type': 'AdministrativeArea', name: 'Bretagne' },
     ],

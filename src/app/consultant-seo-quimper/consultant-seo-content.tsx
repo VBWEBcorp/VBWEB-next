@@ -25,11 +25,11 @@ import { CountUp } from '@/components/ui/count-up'
 import { Reveal } from '@/components/ui/reveal'
 import { ScrollProgress } from '@/components/ui/scroll-progress'
 
-interface FreelanceSeoContentProps {
+interface ConsultantSeoQuimperContentProps {
   faqs: { question: string; answer: string }[]
 }
 
-export function FreelanceSeoContent({ faqs }: FreelanceSeoContentProps) {
+export function ConsultantSeoQuimperContent({ faqs }: ConsultantSeoQuimperContentProps) {
   const [openFaq, setOpenFaq] = useState<number | null>(null)
 
   return (
@@ -59,7 +59,7 @@ export function FreelanceSeoContent({ faqs }: FreelanceSeoContentProps) {
             <div className="mx-auto mb-6 size-20 overflow-hidden rounded-full border-2 border-primary/20 ring-1 ring-foreground/5 sm:size-24">
               <Image
                 src="/victor.jpg"
-                alt="Victor Béasse, freelance SEO à Rennes"
+                alt="Consultant SEO à Quimper - Victor Béasse"
                 width={96}
                 height={96}
                 priority
@@ -70,11 +70,11 @@ export function FreelanceSeoContent({ faqs }: FreelanceSeoContentProps) {
               Victor Béasse
             </p>
             <h1 className="mt-5 font-display text-balance text-4xl font-medium leading-[1.08] tracking-[-0.03em] text-foreground sm:text-5xl">
-              Freelance SEO à Rennes,{' '}
-              <span className="italic text-muted-foreground/80">je vous aide à être trouvé sur Google</span>
+              Consultant SEO à Quimper,{' '}
+              <span className="italic text-muted-foreground/80">votre référencement entre de bonnes mains</span>
             </h1>
             <p className="hero-description mx-auto mt-6 max-w-2xl text-pretty text-[15px] leading-relaxed text-muted-foreground sm:text-base">
-              Je suis Victor Béasse, freelance SEO basé à Rennes. J&apos;accompagne des PME, artisans et commerces en Bretagne pour qu&apos;ils attirent plus de clients grâce à Google. Plus de 200 projets SEO menés et 75 avis 5 étoiles.
+              Je suis Victor Béasse, consultant SEO basé à Rennes. J&apos;accompagne les entreprises de Quimper et du Finistère pour qu&apos;elles gagnent en visibilité sur Google. Plus de 200 projets SEO menés et 75 avis 5 étoiles.
             </p>
 
             <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
@@ -97,7 +97,7 @@ export function FreelanceSeoContent({ faqs }: FreelanceSeoContentProps) {
               <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
                 <Reveal>
                   <p className="font-display text-[11px] font-semibold tracking-[0.24em] text-primary/80 uppercase">
-                    Mon métier de freelance SEO
+                    Mon rôle de consultant SEO
                   </p>
                   <h2 className="mt-4 font-display text-balance text-3xl font-medium leading-[1.1] tracking-[-0.025em] text-foreground sm:text-4xl lg:text-[2.75rem]">
                     Concrètement, je fais quoi{' '}
@@ -105,10 +105,10 @@ export function FreelanceSeoContent({ faqs }: FreelanceSeoContentProps) {
                   </h2>
                   <div className="mt-6 space-y-4 text-[15px] leading-relaxed text-muted-foreground">
                     <p>
-                      Le référencement naturel, ça peut sembler abstrait. Voici ce que je fais concrètement : j&apos;analyse votre positionnement actuel sur Google, j&apos;identifie les mots-clés que vos futurs clients recherchent (par exemple &quot;plombier Rennes&quot; ou &quot;restaurant Cesson-Sévigné&quot;), et j&apos;optimise votre site pour qu&apos;il apparaisse dans les premiers résultats.
+                      Quimper est le coeur économique de la Cornouaille, avec ses filières agroalimentaires, son artisanat (la faïencerie, ce n&apos;est pas que du folklore) et un bassin de services qui rayonne jusqu&apos;à Douarnenez et Concarneau. Pourtant, la majorité des entreprises locales laissent leurs concurrents capter le trafic Google sans réagir. C&apos;est là que j&apos;interviens.
                     </p>
                     <p>
-                      Pour imager : votre site, c&apos;est comme une boutique. Aujourd&apos;hui, elle est peut-être dans une impasse. Mon rôle, c&apos;est de la positionner sur l&apos;avenue principale, là où passent vos clients.
+                      Je commence par un audit de votre site et de votre marché. Quels mots-clés vos clients potentiels utilisent-ils vraiment ? Quelles pages manquent ? Où se situent les failles techniques qui freinent votre indexation ? À partir de ce diagnostic, je mets en place une stratégie sur mesure pour que &quot;boulangerie Quimper&quot; ou &quot;plombier Cornouaille&quot; renvoie vers vous, pas vers le voisin.
                     </p>
                   </div>
                 </Reveal>
@@ -117,7 +117,7 @@ export function FreelanceSeoContent({ faqs }: FreelanceSeoContentProps) {
                   <div className="relative overflow-hidden rounded-[1.25rem] border border-border/40">
                     <img
                       src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"
-                      alt="Analyse de données SEO et référencement naturel pour entreprises à Rennes"
+                      alt="Analyse de données SEO et référencement naturel pour entreprises à Quimper"
                       loading="lazy"
                       className="aspect-[4/3] w-full object-cover"
                     />
@@ -132,9 +132,9 @@ export function FreelanceSeoContent({ faqs }: FreelanceSeoContentProps) {
               {/* 3 axes en cards */}
               <div className="mt-10 grid gap-4 sm:grid-cols-3">
                 {[
-                  { icon: Zap, title: 'Technique', desc: 'Que votre site soit rapide, bien construit et lisible par Google.' },
-                  { icon: FileSearch, title: 'Contenu', desc: 'Que vos pages répondent aux bonnes questions avec les bons mots-clés.' },
-                  { icon: TrendingUp, title: 'Notoriété', desc: 'Que d\'autres sites de qualité pointent vers le vôtre.' },
+                  { icon: Zap, title: 'Technique', desc: 'Que votre site soit rapide, bien structuré et parfaitement lisible par Google.' },
+                  { icon: FileSearch, title: 'Contenu', desc: 'Que vos pages répondent aux recherches de vos clients avec les bons mots-clés.' },
+                  { icon: TrendingUp, title: 'Notoriété', desc: 'Que des sites de confiance pointent vers le vôtre pour renforcer votre crédibilité.' },
                 ].map((axis, i) => {
                   const Icon = axis.icon
                   return (
@@ -208,10 +208,10 @@ export function FreelanceSeoContent({ faqs }: FreelanceSeoContentProps) {
         <div className="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
           <Reveal className="mx-auto max-w-3xl text-center">
             <p className="font-display text-[11px] font-semibold tracking-[0.24em] text-primary/80 uppercase">
-              Résultats SEO à Rennes
+              Résultats clients
             </p>
             <h2 className="mt-5 font-display text-balance text-3xl font-medium leading-[1.1] tracking-[-0.025em] text-foreground sm:text-4xl lg:text-[3rem]">
-              Des clients que j&apos;ai accompagnés{' '}
+              Des entreprises accompagnées{' '}
               <span className="italic text-muted-foreground/80">et leurs résultats</span>
             </h2>
           </Reveal>
@@ -246,7 +246,7 @@ export function FreelanceSeoContent({ faqs }: FreelanceSeoContentProps) {
       {/* ══ MINI CTA ══ */}
       <div className="bg-card py-8">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-4 sm:flex-row sm:px-6 lg:px-8">
-          <p className="text-[15px] text-muted-foreground">Vous voulez savoir ce que le SEO peut vous apporter ?</p>
+          <p className="text-[15px] text-muted-foreground">Vous voulez savoir ce que le SEO peut apporter à votre entreprise à Quimper ?</p>
           <AuditButton />
         </div>
       </div>
@@ -270,9 +270,9 @@ export function FreelanceSeoContent({ faqs }: FreelanceSeoContentProps) {
 
             <ol className="space-y-6 sm:space-y-8">
               {[
-                { number: '01', title: 'On échange', description: 'Nous prenons 30 minutes pour que je comprenne votre activité, vos objectifs et ce qui freine votre visibilité sur Google. Je vous dis sincèrement si le SEO est pertinent pour vous.' },
-                { number: '02', title: 'J\'analyse votre site', description: 'Je passe votre site au peigne fin : technique, contenu, positionnement, concurrence locale à Rennes. Vous recevez un plan d\'action clair avec les priorités.' },
-                { number: '03', title: 'On avance ensemble', description: 'Les optimisations sont déployées mois après mois. Chaque mois, vous voyez vos positions Google, votre trafic et les demandes reçues dans votre espace de suivi.' },
+                { number: '01', title: 'On échange', description: 'Nous prenons 30 minutes pour que je comprenne votre activité, vos objectifs et ce qui freine votre visibilité sur Google. Je vous dis honnêtement si le SEO est la bonne solution pour vous.' },
+                { number: '02', title: 'J\'analyse votre site', description: 'Je passe votre site au crible : technique, contenu, positionnement, concurrence locale à Quimper et dans le Finistère. Vous recevez un plan d\'action clair avec les priorités.' },
+                { number: '03', title: 'On avance ensemble', description: 'Les optimisations sont déployées mois après mois. Chaque mois, vous suivez vos positions Google, votre trafic et les demandes reçues dans votre espace de suivi dédié.' },
               ].map((step, i) => (
                 <Reveal as="li" key={step.number} delay={i * 0.08} className="relative pl-14 sm:pl-20">
                   {/* Node */}
@@ -327,15 +327,15 @@ export function FreelanceSeoContent({ faqs }: FreelanceSeoContentProps) {
                   </h2>
 
                   <div className="mt-8 space-y-3">
-                    <ReadMore title="Freelance SEO vs agence à Rennes">
+                    <ReadMore title="Consultant SEO vs agence : quel choix pour Quimper ?">
                       <div className="space-y-4 text-[15px] leading-relaxed text-muted-foreground">
-                        <p>En agence, votre dossier passe entre plusieurs interlocuteurs. Avec un freelance SEO à Rennes, vous échangez directement avec la personne qui travaille sur votre site, et les choses avancent plus vite.</p>
+                        <p>En agence, votre dossier passe entre plusieurs mains et les interlocuteurs changent. Avec un consultant SEO, vous travaillez directement avec la personne qui optimise votre site. Les décisions sont plus rapides et la stratégie reste cohérente dans le temps.</p>
                         <div className="grid gap-3 sm:grid-cols-2">
                           {[
-                            { icon: User, title: 'Relation directe', text: 'Je comprends votre métier et ce qui vous différencie.' },
+                            { icon: User, title: 'Interlocuteur unique', text: 'Je connais votre métier et votre marché.' },
                             { icon: Zap, title: 'Réactivité', text: 'Réponse dans la journée, pas dans 48h.' },
-                            { icon: Target, title: 'Sur mesure', text: 'Stratégie adaptée à votre marché.' },
-                            { icon: MessageCircle, title: 'Transparence', text: 'Rapport mensuel, accès à vos données.' },
+                            { icon: Target, title: 'Stratégie sur mesure', text: 'Adaptée au marché quimpérois.' },
+                            { icon: MessageCircle, title: 'Transparence totale', text: 'Rapport mensuel, accès à vos données.' },
                           ].map((item) => {
                             const Icon = item.icon
                             return (
@@ -352,16 +352,16 @@ export function FreelanceSeoContent({ faqs }: FreelanceSeoContentProps) {
                       </div>
                     </ReadMore>
 
-                    <ReadMore title="Pourquoi être basé à Rennes fait la différence">
+                    <ReadMore title="Pourquoi choisir un consultant SEO qui connaît le Finistère">
                       <div className="space-y-4 text-[15px] leading-relaxed text-muted-foreground">
                         <p>
-                          Je connais le marché rennais et les habitudes de recherche locales. Quand j&apos;ai travaillé sur le référencement de Rennes Pneus, je savais exactement quels mots-clés cibler parce que je connais les réflexes des automobilistes de la métropole.
+                          Quimper est une ville à l&apos;identité forte : capitale historique de la Cornouaille, connue pour sa faïence, sa cathédrale Saint-Corentin et son tissu économique tourné vers l&apos;agroalimentaire et le tourisme. Un consultant SEO qui comprend ces spécificités cible les bons mots-clés et parle le même langage que vos clients.
                         </p>
                         <p>
-                          J&apos;accompagne des entreprises dans Rennes et sa métropole : <strong>Cesson-Sévigné</strong>, <strong>Saint-Grégoire</strong>, <strong>Bruz</strong>, <strong>Chantepie</strong>, <strong>Pacé</strong>. Mais aussi à <strong>Saint-Malo</strong>, <strong>Vannes</strong>, <strong>Brest</strong> et <strong>Lorient</strong>.
+                          J&apos;accompagne des entreprises à Quimper et dans tout le Finistère : <strong>Ergué-Gabéric</strong>, <strong>Pluguffan</strong>, <strong>Fouesnant</strong>, <strong>Bénodet</strong>, <strong>Concarneau</strong>, <strong>Douarnenez</strong>. Mais aussi à <strong>Brest</strong>, <strong>Lorient</strong> et <strong>Rennes</strong>.
                         </p>
                         <div className="flex flex-wrap gap-2">
-                          {['Rennes', 'Cesson-Sévigné', 'Saint-Grégoire', 'Bruz', 'Saint-Malo', 'Vannes', 'Brest'].map((city) => (
+                          {['Quimper', 'Ergué-Gabéric', 'Fouesnant', 'Concarneau', 'Douarnenez', 'Brest', 'Lorient'].map((city) => (
                             <span key={city} className="inline-flex items-center gap-1.5 rounded-full border border-border/40 bg-background/30 px-3 py-1 text-[11px] font-medium text-muted-foreground">
                               <MapPin className="size-2.5 text-primary" /> {city}
                             </span>
@@ -418,7 +418,7 @@ export function FreelanceSeoContent({ faqs }: FreelanceSeoContentProps) {
               Questions fréquentes
             </p>
             <h2 className="mt-5 font-display text-balance text-3xl font-medium leading-[1.1] tracking-[-0.025em] text-foreground sm:text-4xl">
-              Freelance SEO à Rennes :{' '}
+              Consultant SEO à Quimper :{' '}
               <span className="italic text-muted-foreground/80">vos questions</span>
             </h2>
           </Reveal>

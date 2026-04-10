@@ -9,6 +9,7 @@ import {
   MessageCircle,
   Target,
   TrendingUp,
+  Shield,
   Phone,
   MapPin,
   FileSearch,
@@ -17,19 +18,19 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
 
-import { ScrollCol, Grain, ReadMore, caseStudies, col1, col2, col3 } from '@/components/freelance-seo/shared'
 import { CtaGallerySection } from '@/components/sections/cta-gallery-section'
+import { ScrollCol, Grain, ReadMore, caseStudies, col1, col2, col3 } from '@/components/freelance-seo/shared'
 import { AuditButton } from '@/components/ui/audit-button'
 import { Button } from '@/components/ui/button'
 import { CountUp } from '@/components/ui/count-up'
 import { Reveal } from '@/components/ui/reveal'
 import { ScrollProgress } from '@/components/ui/scroll-progress'
 
-interface FreelanceSeoContentProps {
+interface FreelanceSeoBrestContentProps {
   faqs: { question: string; answer: string }[]
 }
 
-export function FreelanceSeoContent({ faqs }: FreelanceSeoContentProps) {
+export function FreelanceSeoBrestContent({ faqs }: FreelanceSeoBrestContentProps) {
   const [openFaq, setOpenFaq] = useState<number | null>(null)
 
   return (
@@ -41,10 +42,10 @@ export function FreelanceSeoContent({ faqs }: FreelanceSeoContentProps) {
           <ScrollCol imgs={col1} dir="up" dur={40} />
           <ScrollCol imgs={col2} dir="down" dur={35} />
           <ScrollCol imgs={col3} dir="up" dur={38} />
-          <div className="hidden min-w-0 flex-1 sm:block"><ScrollCol imgs={[...col1].reverse()} dir="down" dur={42} /></div>
-          <div className="hidden min-w-0 flex-1 sm:block"><ScrollCol imgs={[...col2].reverse()} dir="up" dur={36} /></div>
-          <div className="hidden min-w-0 flex-1 lg:block"><ScrollCol imgs={[...col3].reverse()} dir="down" dur={44} /></div>
-          <div className="hidden min-w-0 flex-1 lg:block"><ScrollCol imgs={col1} dir="up" dur={39} /></div>
+          <div className="hidden min-w-0 flex-1 sm:block"><ScrollCol imgs={[...col1.slice(1), col1[0]]} dir="down" dur={42} /></div>
+          <div className="hidden min-w-0 flex-1 sm:block"><ScrollCol imgs={[...col2.slice(1), col2[0]]} dir="up" dur={36} /></div>
+          <div className="hidden min-w-0 flex-1 lg:block"><ScrollCol imgs={[...col3.slice(1), col3[0]]} dir="down" dur={44} /></div>
+          <div className="hidden min-w-0 flex-1 lg:block"><ScrollCol imgs={[...col1.slice(2), ...col1.slice(0, 2)]} dir="up" dur={39} /></div>
         </div>
 
         {/* Overlays */}
@@ -59,7 +60,7 @@ export function FreelanceSeoContent({ faqs }: FreelanceSeoContentProps) {
             <div className="mx-auto mb-6 size-20 overflow-hidden rounded-full border-2 border-primary/20 ring-1 ring-foreground/5 sm:size-24">
               <Image
                 src="/victor.jpg"
-                alt="Victor Béasse, freelance SEO à Rennes"
+                alt="Victor Béasse, freelance SEO à Brest"
                 width={96}
                 height={96}
                 priority
@@ -70,11 +71,11 @@ export function FreelanceSeoContent({ faqs }: FreelanceSeoContentProps) {
               Victor Béasse
             </p>
             <h1 className="mt-5 font-display text-balance text-4xl font-medium leading-[1.08] tracking-[-0.03em] text-foreground sm:text-5xl">
-              Freelance SEO à Rennes,{' '}
-              <span className="italic text-muted-foreground/80">je vous aide à être trouvé sur Google</span>
+              Freelance SEO à Brest,{' '}
+              <span className="italic text-muted-foreground/80">plus de clients grâce à Google</span>
             </h1>
             <p className="hero-description mx-auto mt-6 max-w-2xl text-pretty text-[15px] leading-relaxed text-muted-foreground sm:text-base">
-              Je suis Victor Béasse, freelance SEO basé à Rennes. J&apos;accompagne des PME, artisans et commerces en Bretagne pour qu&apos;ils attirent plus de clients grâce à Google. Plus de 200 projets SEO menés et 75 avis 5 étoiles.
+              Je suis Victor Béasse, freelance SEO basé en Bretagne. J&apos;accompagne les entreprises brestoises &mdash; du port de commerce au Technopôle Brest-Iroise &mdash; pour qu&apos;elles gagnent en visibilité sur Google et attirent plus de clients. Plus de 200 projets SEO menés et 75 avis 5 étoiles.
             </p>
 
             <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
@@ -105,10 +106,10 @@ export function FreelanceSeoContent({ faqs }: FreelanceSeoContentProps) {
                   </h2>
                   <div className="mt-6 space-y-4 text-[15px] leading-relaxed text-muted-foreground">
                     <p>
-                      Le référencement naturel, ça peut sembler abstrait. Voici ce que je fais concrètement : j&apos;analyse votre positionnement actuel sur Google, j&apos;identifie les mots-clés que vos futurs clients recherchent (par exemple &quot;plombier Rennes&quot; ou &quot;restaurant Cesson-Sévigné&quot;), et j&apos;optimise votre site pour qu&apos;il apparaisse dans les premiers résultats.
+                      À Brest, beaucoup d&apos;entreprises tournent encore grâce au bouche-à-oreille. Ça fonctionne — jusqu&apos;au jour où un concurrent investit le web et capte des centaines de recherches Google chaque mois. &quot;Naval Brest&quot;, &quot;restaurant rue de Siam&quot;, &quot;plombier Brest&quot; : ces requêtes existent, elles sont tapées tous les jours, et si votre site n&apos;y répond pas, quelqu&apos;un d&apos;autre le fait à votre place.
                     </p>
                     <p>
-                      Pour imager : votre site, c&apos;est comme une boutique. Aujourd&apos;hui, elle est peut-être dans une impasse. Mon rôle, c&apos;est de la positionner sur l&apos;avenue principale, là où passent vos clients.
+                      Pour imager : votre site, c&apos;est comme une boutique. Aujourd&apos;hui, elle est peut-être dans une ruelle. Mon rôle, c&apos;est de la placer sur la rue de Siam, là où passent vos clients.
                     </p>
                   </div>
                 </Reveal>
@@ -117,7 +118,7 @@ export function FreelanceSeoContent({ faqs }: FreelanceSeoContentProps) {
                   <div className="relative overflow-hidden rounded-[1.25rem] border border-border/40">
                     <img
                       src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"
-                      alt="Analyse de données SEO et référencement naturel pour entreprises à Rennes"
+                      alt="Analyse SEO et stratégie de référencement pour entreprises à Brest"
                       loading="lazy"
                       className="aspect-[4/3] w-full object-cover"
                     />
@@ -208,7 +209,7 @@ export function FreelanceSeoContent({ faqs }: FreelanceSeoContentProps) {
         <div className="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
           <Reveal className="mx-auto max-w-3xl text-center">
             <p className="font-display text-[11px] font-semibold tracking-[0.24em] text-primary/80 uppercase">
-              Résultats SEO à Rennes
+              Résultats SEO en Bretagne
             </p>
             <h2 className="mt-5 font-display text-balance text-3xl font-medium leading-[1.1] tracking-[-0.025em] text-foreground sm:text-4xl lg:text-[3rem]">
               Des clients que j&apos;ai accompagnés{' '}
@@ -271,8 +272,8 @@ export function FreelanceSeoContent({ faqs }: FreelanceSeoContentProps) {
             <ol className="space-y-6 sm:space-y-8">
               {[
                 { number: '01', title: 'On échange', description: 'Nous prenons 30 minutes pour que je comprenne votre activité, vos objectifs et ce qui freine votre visibilité sur Google. Je vous dis sincèrement si le SEO est pertinent pour vous.' },
-                { number: '02', title: 'J\'analyse votre site', description: 'Je passe votre site au peigne fin : technique, contenu, positionnement, concurrence locale à Rennes. Vous recevez un plan d\'action clair avec les priorités.' },
-                { number: '03', title: 'On avance ensemble', description: 'Les optimisations sont déployées mois après mois. Chaque mois, vous voyez vos positions Google, votre trafic et les demandes reçues dans votre espace de suivi.' },
+                { number: '02', title: 'J\'analyse votre site', description: 'Je passe votre site au peigne fin : technique, contenu, positionnement, concurrence locale à Brest et dans le Finistère. Vous recevez un plan d\'action clair avec les priorités.' },
+                { number: '03', title: 'On avance ensemble', description: 'Les optimisations sont déployées mois après mois. Chaque mois, on fait le point en visio ou en personne à Brest, et vous suivez vos positions Google, votre trafic et les demandes reçues.' },
               ].map((step, i) => (
                 <Reveal as="li" key={step.number} delay={i * 0.08} className="relative pl-14 sm:pl-20">
                   {/* Node */}
@@ -327,14 +328,14 @@ export function FreelanceSeoContent({ faqs }: FreelanceSeoContentProps) {
                   </h2>
 
                   <div className="mt-8 space-y-3">
-                    <ReadMore title="Freelance SEO vs agence à Rennes">
+                    <ReadMore title="Freelance SEO vs agence à Brest">
                       <div className="space-y-4 text-[15px] leading-relaxed text-muted-foreground">
-                        <p>En agence, votre dossier passe entre plusieurs interlocuteurs. Avec un freelance SEO à Rennes, vous échangez directement avec la personne qui travaille sur votre site, et les choses avancent plus vite.</p>
+                        <p>À Brest, quelques agences web proposent du SEO, mais votre dossier est souvent géré par un junior qui suit une checklist. Avec un freelance, vous travaillez directement avec la personne qui prend les décisions stratégiques sur votre projet. Les choses avancent plus vite et le budget est mieux utilisé.</p>
                         <div className="grid gap-3 sm:grid-cols-2">
                           {[
-                            { icon: User, title: 'Relation directe', text: 'Je comprends votre métier et ce qui vous différencie.' },
+                            { icon: User, title: 'Relation directe', text: 'Un seul interlocuteur qui connaît votre métier.' },
                             { icon: Zap, title: 'Réactivité', text: 'Réponse dans la journée, pas dans 48h.' },
-                            { icon: Target, title: 'Sur mesure', text: 'Stratégie adaptée à votre marché.' },
+                            { icon: Target, title: 'Sur mesure', text: 'Stratégie adaptée au marché brestois.' },
                             { icon: MessageCircle, title: 'Transparence', text: 'Rapport mensuel, accès à vos données.' },
                           ].map((item) => {
                             const Icon = item.icon
@@ -352,16 +353,16 @@ export function FreelanceSeoContent({ faqs }: FreelanceSeoContentProps) {
                       </div>
                     </ReadMore>
 
-                    <ReadMore title="Pourquoi être basé à Rennes fait la différence">
+                    <ReadMore title="Pourquoi un freelance SEO dans le Finistère">
                       <div className="space-y-4 text-[15px] leading-relaxed text-muted-foreground">
                         <p>
-                          Je connais le marché rennais et les habitudes de recherche locales. Quand j&apos;ai travaillé sur le référencement de Rennes Pneus, je savais exactement quels mots-clés cibler parce que je connais les réflexes des automobilistes de la métropole.
+                          Le Finistère a ses spécificités : une économie tournée vers le naval, la défense, les sciences marines et le tourisme côtier. Je comprends ces secteurs et je sais quels mots-clés vos clients utilisent vraiment. Quand un sous-traitant de Naval Group veut être trouvé, ce n&apos;est pas la même stratégie que pour un crêpier du port.
                         </p>
                         <p>
-                          J&apos;accompagne des entreprises dans Rennes et sa métropole : <strong>Cesson-Sévigné</strong>, <strong>Saint-Grégoire</strong>, <strong>Bruz</strong>, <strong>Chantepie</strong>, <strong>Pacé</strong>. Mais aussi à <strong>Saint-Malo</strong>, <strong>Vannes</strong>, <strong>Brest</strong> et <strong>Lorient</strong>.
+                          J&apos;accompagne des entreprises à Brest et dans tout le Finistère : <strong>Guipavas</strong>, <strong>Plouzané</strong>, <strong>Le Relecq-Kerhuon</strong>, <strong>Plougastel-Daoulas</strong>, <strong>Landerneau</strong>. Mais aussi à <strong>Quimper</strong>, <strong>Saint-Brieuc</strong> et <strong>Rennes</strong>.
                         </p>
                         <div className="flex flex-wrap gap-2">
-                          {['Rennes', 'Cesson-Sévigné', 'Saint-Grégoire', 'Bruz', 'Saint-Malo', 'Vannes', 'Brest'].map((city) => (
+                          {['Brest', 'Guipavas', 'Plouzané', 'Le Relecq-Kerhuon', 'Plougastel-Daoulas', 'Landerneau', 'Quimper'].map((city) => (
                             <span key={city} className="inline-flex items-center gap-1.5 rounded-full border border-border/40 bg-background/30 px-3 py-1 text-[11px] font-medium text-muted-foreground">
                               <MapPin className="size-2.5 text-primary" /> {city}
                             </span>
@@ -418,7 +419,7 @@ export function FreelanceSeoContent({ faqs }: FreelanceSeoContentProps) {
               Questions fréquentes
             </p>
             <h2 className="mt-5 font-display text-balance text-3xl font-medium leading-[1.1] tracking-[-0.025em] text-foreground sm:text-4xl">
-              Freelance SEO à Rennes :{' '}
+              Freelance SEO à Brest :{' '}
               <span className="italic text-muted-foreground/80">vos questions</span>
             </h2>
           </Reveal>

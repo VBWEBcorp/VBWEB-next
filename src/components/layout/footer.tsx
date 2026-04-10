@@ -80,19 +80,19 @@ export function Footer() {
               </div>
 
               {/* === SECTION 2 — GRILLE LIENS === */}
-              <div className="grid gap-px bg-white/[0.06] sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr]">
+              <div className="grid gap-px bg-border/20 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr]">
                 {/* Brand + coordonnées */}
-                <div className="bg-[#0f1f35] p-8 sm:p-10">
+                <div className="bg-card/60 p-8 sm:p-10">
                   <Link href="/" className="group/logo inline-flex items-center gap-2.5">
                     <span className="flex size-9 items-center justify-center rounded-full bg-primary/20 text-primary ring-1 ring-primary/25 transition-transform duration-300 group-hover/logo:scale-105">
                       <Globe className="size-4" aria-hidden />
                     </span>
-                    <span className="font-display text-lg font-semibold tracking-tight text-white">
+                    <span className="font-display text-lg font-semibold tracking-tight text-foreground">
                       {siteConfig.shortName}
                     </span>
                   </Link>
 
-                  <p className="mt-5 max-w-xs text-[13px] leading-relaxed text-white/60">
+                  <p className="mt-5 max-w-xs text-[13px] leading-relaxed text-muted-foreground">
                     {siteConfig.name}, dirigé par {siteConfig.legalName}. J&apos;aide les PME, artisans et commerces de Bretagne à attirer plus de clients grâce à Google.
                   </p>
 
@@ -100,24 +100,24 @@ export function Footer() {
                   <div className="mt-6 space-y-2">
                     <a
                       href={`tel:${siteConfig.phone.replace(/\s/g, '')}`}
-                      className="group/c flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-3 py-2.5 text-[13px] text-white/70 transition-all duration-300 hover:border-primary/30 hover:bg-white/10 hover:text-white"
+                      className="group/c flex items-center gap-3 rounded-xl border border-border/40 bg-foreground/5 px-3 py-2.5 text-[13px] text-muted-foreground transition-all duration-300 hover:border-primary/30 hover:bg-foreground/10 hover:text-foreground"
                     >
-                      <span className="flex size-7 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-white/60 transition-colors group-hover/c:border-primary/40 group-hover/c:text-primary">
+                      <span className="flex size-7 shrink-0 items-center justify-center rounded-lg border border-border/40 bg-foreground/5 text-muted-foreground transition-colors group-hover/c:border-primary/40 group-hover/c:text-primary">
                         <Phone className="size-3.5" />
                       </span>
                       {siteConfig.phone}
                     </a>
                     <a
                       href={`mailto:${siteConfig.email}`}
-                      className="group/c flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-3 py-2.5 text-[13px] text-white/70 transition-all duration-300 hover:border-primary/30 hover:bg-white/10 hover:text-white"
+                      className="group/c flex items-center gap-3 rounded-xl border border-border/40 bg-foreground/5 px-3 py-2.5 text-[13px] text-muted-foreground transition-all duration-300 hover:border-primary/30 hover:bg-foreground/10 hover:text-foreground"
                     >
-                      <span className="flex size-7 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-white/60 transition-colors group-hover/c:border-primary/40 group-hover/c:text-primary">
+                      <span className="flex size-7 shrink-0 items-center justify-center rounded-lg border border-border/40 bg-foreground/5 text-muted-foreground transition-colors group-hover/c:border-primary/40 group-hover/c:text-primary">
                         <Mail className="size-3.5" />
                       </span>
                       <span className="truncate">{siteConfig.email}</span>
                     </a>
-                    <div className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-3 py-2.5 text-[13px] text-white/60">
-                      <span className="flex size-7 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-white/50">
+                    <div className="flex items-center gap-3 rounded-xl border border-border/40 bg-foreground/5 px-3 py-2.5 text-[13px] text-muted-foreground">
+                      <span className="flex size-7 shrink-0 items-center justify-center rounded-lg border border-border/40 bg-foreground/5 text-muted-foreground/60">
                         <MapPin className="size-3.5" />
                       </span>
                       Rennes, Bretagne
@@ -126,8 +126,8 @@ export function Footer() {
                 </div>
 
                 {/* Navigation */}
-                <nav aria-label="Navigation" className="bg-[#0f1f35] p-8 sm:p-10">
-                  <p className="font-display text-[10px] font-semibold uppercase tracking-[0.22em] text-white/40">
+                <nav aria-label="Navigation" className="bg-card/60 p-8 sm:p-10">
+                  <p className="font-display text-[10px] font-semibold uppercase tracking-[0.22em] text-muted-foreground/60">
                     Navigation
                   </p>
                   <ul className="mt-5 space-y-2.5">
@@ -135,7 +135,7 @@ export function Footer() {
                       <li key={l.label}>
                         <Link
                           href={l.to}
-                          className="group/link inline-flex items-center gap-1 text-[13px] text-white/60 transition-colors hover:text-white"
+                          className="group/link inline-flex items-center gap-1 text-[13px] text-muted-foreground transition-colors hover:text-foreground"
                         >
                           {l.label}
                           <ArrowUpRight className="size-3 opacity-0 transition-all duration-300 group-hover/link:opacity-100" />
@@ -146,8 +146,8 @@ export function Footer() {
                 </nav>
 
                 {/* Services */}
-                <nav aria-label="Services" className="bg-[#0f1f35] p-8 sm:p-10">
-                  <p className="font-display text-[10px] font-semibold uppercase tracking-[0.22em] text-white/40">
+                <nav aria-label="Services" className="bg-card/60 p-8 sm:p-10">
+                  <p className="font-display text-[10px] font-semibold uppercase tracking-[0.22em] text-muted-foreground/60">
                     Services
                   </p>
                   <ul className="mt-5 space-y-2.5">
@@ -155,7 +155,7 @@ export function Footer() {
                       <li key={l.label}>
                         <Link
                           href={l.to}
-                          className="group/link inline-flex items-center gap-1 text-[13px] text-white/60 transition-colors hover:text-white"
+                          className="group/link inline-flex items-center gap-1 text-[13px] text-muted-foreground transition-colors hover:text-foreground"
                         >
                           {l.label}
                           <ArrowUpRight className="size-3 opacity-0 transition-all duration-300 group-hover/link:opacity-100" />
@@ -166,8 +166,8 @@ export function Footer() {
                 </nav>
 
                 {/* Légal */}
-                <nav aria-label="Légal" className="bg-[#0f1f35] p-8 sm:p-10">
-                  <p className="font-display text-[10px] font-semibold uppercase tracking-[0.22em] text-white/40">
+                <nav aria-label="Légal" className="bg-card/60 p-8 sm:p-10">
+                  <p className="font-display text-[10px] font-semibold uppercase tracking-[0.22em] text-muted-foreground/60">
                     Légal
                   </p>
                   <ul className="mt-5 space-y-2.5">
@@ -175,7 +175,7 @@ export function Footer() {
                       <li key={l.label}>
                         <Link
                           href={l.to}
-                          className="group/link inline-flex items-center gap-1 text-[13px] text-white/60 transition-colors hover:text-white"
+                          className="group/link inline-flex items-center gap-1 text-[13px] text-muted-foreground transition-colors hover:text-foreground"
                         >
                           {l.label}
                           <ArrowUpRight className="size-3 opacity-0 transition-all duration-300 group-hover/link:opacity-100" />
@@ -187,11 +187,11 @@ export function Footer() {
               </div>
 
               {/* === SECTION 3 — BOTTOM BAR === */}
-              <div className="flex flex-col items-start justify-between gap-3 border-t border-white/[0.06] bg-[#0b1829] px-8 py-5 sm:flex-row sm:items-center sm:px-10">
-                <p className="text-[11px] text-white/40">
+              <div className="flex flex-col items-start justify-between gap-3 border-t border-border/40 bg-card/80 px-8 py-5 sm:flex-row sm:items-center sm:px-10">
+                <p className="text-[11px] text-muted-foreground/60">
                   © {new Date().getFullYear()} {siteConfig.name} · Tous droits réservés
                 </p>
-                <p className="text-[11px] uppercase tracking-[0.16em] text-white/30">
+                <p className="text-[11px] uppercase tracking-[0.16em] text-muted-foreground/40">
                   Consultant SEO · Rennes · Bretagne
                 </p>
               </div>

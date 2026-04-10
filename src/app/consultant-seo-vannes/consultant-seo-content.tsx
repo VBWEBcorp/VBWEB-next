@@ -9,7 +9,6 @@ import {
   MessageCircle,
   Target,
   TrendingUp,
-  Phone,
   MapPin,
   FileSearch,
 } from 'lucide-react'
@@ -17,19 +16,19 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
 
-import { ScrollCol, Grain, ReadMore, caseStudies, col1, col2, col3 } from '@/components/freelance-seo/shared'
 import { CtaGallerySection } from '@/components/sections/cta-gallery-section'
+import { ScrollCol, Grain, ReadMore, caseStudies, col1, col2, col3 } from '@/components/freelance-seo/shared'
 import { AuditButton } from '@/components/ui/audit-button'
 import { Button } from '@/components/ui/button'
 import { CountUp } from '@/components/ui/count-up'
 import { Reveal } from '@/components/ui/reveal'
 import { ScrollProgress } from '@/components/ui/scroll-progress'
 
-interface FreelanceSeoContentProps {
+interface ConsultantSeoVannesContentProps {
   faqs: { question: string; answer: string }[]
 }
 
-export function FreelanceSeoContent({ faqs }: FreelanceSeoContentProps) {
+export function ConsultantSeoVannesContent({ faqs }: ConsultantSeoVannesContentProps) {
   const [openFaq, setOpenFaq] = useState<number | null>(null)
 
   return (
@@ -41,10 +40,10 @@ export function FreelanceSeoContent({ faqs }: FreelanceSeoContentProps) {
           <ScrollCol imgs={col1} dir="up" dur={40} />
           <ScrollCol imgs={col2} dir="down" dur={35} />
           <ScrollCol imgs={col3} dir="up" dur={38} />
-          <div className="hidden min-w-0 flex-1 sm:block"><ScrollCol imgs={[...col1].reverse()} dir="down" dur={42} /></div>
-          <div className="hidden min-w-0 flex-1 sm:block"><ScrollCol imgs={[...col2].reverse()} dir="up" dur={36} /></div>
-          <div className="hidden min-w-0 flex-1 lg:block"><ScrollCol imgs={[...col3].reverse()} dir="down" dur={44} /></div>
-          <div className="hidden min-w-0 flex-1 lg:block"><ScrollCol imgs={col1} dir="up" dur={39} /></div>
+          <div className="hidden min-w-0 flex-1 sm:block"><ScrollCol imgs={['https://i.ibb.co/k6sXPdjv/Edouard-Suchet.jpg',...col1.slice(0,5)]} dir="down" dur={42} /></div>
+          <div className="hidden min-w-0 flex-1 sm:block"><ScrollCol imgs={[col1[5],...col2.slice(0,5)]} dir="up" dur={36} /></div>
+          <div className="hidden min-w-0 flex-1 lg:block"><ScrollCol imgs={[col2[5],...col3.slice(0,5)]} dir="down" dur={44} /></div>
+          <div className="hidden min-w-0 flex-1 lg:block"><ScrollCol imgs={[col3[5],'https://i.ibb.co/k6sXPdjv/Edouard-Suchet.jpg',...col1.slice(0,4)]} dir="up" dur={39} /></div>
         </div>
 
         {/* Overlays */}
@@ -59,7 +58,7 @@ export function FreelanceSeoContent({ faqs }: FreelanceSeoContentProps) {
             <div className="mx-auto mb-6 size-20 overflow-hidden rounded-full border-2 border-primary/20 ring-1 ring-foreground/5 sm:size-24">
               <Image
                 src="/victor.jpg"
-                alt="Victor Béasse, freelance SEO à Rennes"
+                alt="Victor Béasse, consultant SEO à Vannes"
                 width={96}
                 height={96}
                 priority
@@ -70,11 +69,11 @@ export function FreelanceSeoContent({ faqs }: FreelanceSeoContentProps) {
               Victor Béasse
             </p>
             <h1 className="mt-5 font-display text-balance text-4xl font-medium leading-[1.08] tracking-[-0.03em] text-foreground sm:text-5xl">
-              Freelance SEO à Rennes,{' '}
-              <span className="italic text-muted-foreground/80">je vous aide à être trouvé sur Google</span>
+              Consultant SEO à Vannes,{' '}
+              <span className="italic text-muted-foreground/80">je propulse votre site sur Google</span>
             </h1>
             <p className="hero-description mx-auto mt-6 max-w-2xl text-pretty text-[15px] leading-relaxed text-muted-foreground sm:text-base">
-              Je suis Victor Béasse, freelance SEO basé à Rennes. J&apos;accompagne des PME, artisans et commerces en Bretagne pour qu&apos;ils attirent plus de clients grâce à Google. Plus de 200 projets SEO menés et 75 avis 5 étoiles.
+              Je suis Victor Béasse, consultant SEO basé à Rennes. J&apos;aide les entreprises de Vannes et du Morbihan à gagner des positions sur Google grâce à des audits techniques, une stratégie éditoriale ciblée et un suivi mensuel. Plus de 200 campagnes SEO menées, 75 avis 5 étoiles.
             </p>
 
             <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
@@ -97,18 +96,18 @@ export function FreelanceSeoContent({ faqs }: FreelanceSeoContentProps) {
               <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
                 <Reveal>
                   <p className="font-display text-[11px] font-semibold tracking-[0.24em] text-primary/80 uppercase">
-                    Mon métier de freelance SEO
+                    Consultant SEO : mon approche
                   </p>
                   <h2 className="mt-4 font-display text-balance text-3xl font-medium leading-[1.1] tracking-[-0.025em] text-foreground sm:text-4xl lg:text-[2.75rem]">
-                    Concrètement, je fais quoi{' '}
-                    <span className="italic text-muted-foreground/80">pour votre site</span> ?
+                    Ce que je fais concrètement{' '}
+                    <span className="italic text-muted-foreground/80">pour votre visibilité</span>
                   </h2>
                   <div className="mt-6 space-y-4 text-[15px] leading-relaxed text-muted-foreground">
                     <p>
-                      Le référencement naturel, ça peut sembler abstrait. Voici ce que je fais concrètement : j&apos;analyse votre positionnement actuel sur Google, j&apos;identifie les mots-clés que vos futurs clients recherchent (par exemple &quot;plombier Rennes&quot; ou &quot;restaurant Cesson-Sévigné&quot;), et j&apos;optimise votre site pour qu&apos;il apparaisse dans les premiers résultats.
+                      Mon travail de consultant SEO commence toujours par un diagnostic. J&apos;examine la structure technique de votre site, la qualité de vos contenus et votre profil de liens. À partir de là, je construis un plan d&apos;action adapté à votre marché vannetais : les mots-clés que tapent vos clients, les pages à créer ou corriger, les opportunités que vos concurrents n&apos;exploitent pas.
                     </p>
                     <p>
-                      Pour imager : votre site, c&apos;est comme une boutique. Aujourd&apos;hui, elle est peut-être dans une impasse. Mon rôle, c&apos;est de la positionner sur l&apos;avenue principale, là où passent vos clients.
+                      À Vannes, le tissu économique mêle tourisme balnéaire, nautisme, artisanat et services de proximité. Chaque secteur a ses propres cycles de recherche sur Google. Mon rôle est d&apos;aligner votre présence en ligne sur ces réalités pour générer du trafic qualifié toute l&apos;année.
                     </p>
                   </div>
                 </Reveal>
@@ -117,7 +116,7 @@ export function FreelanceSeoContent({ faqs }: FreelanceSeoContentProps) {
                   <div className="relative overflow-hidden rounded-[1.25rem] border border-border/40">
                     <img
                       src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"
-                      alt="Analyse de données SEO et référencement naturel pour entreprises à Rennes"
+                      alt="Consultant SEO à Vannes : stratégie de référencement naturel"
                       loading="lazy"
                       className="aspect-[4/3] w-full object-cover"
                     />
@@ -208,7 +207,7 @@ export function FreelanceSeoContent({ faqs }: FreelanceSeoContentProps) {
         <div className="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
           <Reveal className="mx-auto max-w-3xl text-center">
             <p className="font-display text-[11px] font-semibold tracking-[0.24em] text-primary/80 uppercase">
-              Résultats SEO à Rennes
+              Résultats SEO en Bretagne
             </p>
             <h2 className="mt-5 font-display text-balance text-3xl font-medium leading-[1.1] tracking-[-0.025em] text-foreground sm:text-4xl lg:text-[3rem]">
               Des clients que j&apos;ai accompagnés{' '}
@@ -257,11 +256,11 @@ export function FreelanceSeoContent({ faqs }: FreelanceSeoContentProps) {
         <div className="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
           <Reveal className="mx-auto max-w-3xl text-center">
             <p className="font-display text-[11px] font-semibold tracking-[0.24em] text-primary/80 uppercase">
-              Comment ça se passe
+              Ma méthode de consultant
             </p>
             <h2 className="mt-5 font-display text-balance text-3xl font-medium leading-[1.1] tracking-[-0.025em] text-foreground sm:text-4xl lg:text-[3rem]">
-              Si on travaille ensemble,{' '}
-              <span className="italic text-muted-foreground/80">voilà ce qui vous attend</span>
+              Travailler avec un consultant SEO,{' '}
+              <span className="italic text-muted-foreground/80">ça ressemble à quoi</span>
             </h2>
           </Reveal>
 
@@ -270,9 +269,9 @@ export function FreelanceSeoContent({ faqs }: FreelanceSeoContentProps) {
 
             <ol className="space-y-6 sm:space-y-8">
               {[
-                { number: '01', title: 'On échange', description: 'Nous prenons 30 minutes pour que je comprenne votre activité, vos objectifs et ce qui freine votre visibilité sur Google. Je vous dis sincèrement si le SEO est pertinent pour vous.' },
-                { number: '02', title: 'J\'analyse votre site', description: 'Je passe votre site au peigne fin : technique, contenu, positionnement, concurrence locale à Rennes. Vous recevez un plan d\'action clair avec les priorités.' },
-                { number: '03', title: 'On avance ensemble', description: 'Les optimisations sont déployées mois après mois. Chaque mois, vous voyez vos positions Google, votre trafic et les demandes reçues dans votre espace de suivi.' },
+                { number: '01', title: 'Diagnostic complet', description: 'Je réalise un audit approfondi de votre site : performance technique, architecture, contenus existants, positionnement actuel sur les requêtes liées à Vannes et au Morbihan. Vous repartez avec un état des lieux précis.' },
+                { number: '02', title: 'Stratégie sur mesure', description: 'Sur la base de l\'audit, je construis un plan d\'action priorisé : corrections techniques, pages à optimiser, contenus à produire, opportunités de liens. Chaque recommandation est justifiée par des données.' },
+                { number: '03', title: 'Déploiement et suivi', description: 'Les optimisations sont mises en place progressivement. Chaque mois, vous recevez un rapport avec l\'évolution de vos positions, votre trafic organique et les actions réalisées. On ajuste la stratégie selon les résultats.' },
               ].map((step, i) => (
                 <Reveal as="li" key={step.number} delay={i * 0.08} className="relative pl-14 sm:pl-20">
                   {/* Node */}
@@ -327,15 +326,15 @@ export function FreelanceSeoContent({ faqs }: FreelanceSeoContentProps) {
                   </h2>
 
                   <div className="mt-8 space-y-3">
-                    <ReadMore title="Freelance SEO vs agence à Rennes">
+                    <ReadMore title="Consultant SEO vs agence à Vannes">
                       <div className="space-y-4 text-[15px] leading-relaxed text-muted-foreground">
-                        <p>En agence, votre dossier passe entre plusieurs interlocuteurs. Avec un freelance SEO à Rennes, vous échangez directement avec la personne qui travaille sur votre site, et les choses avancent plus vite.</p>
+                        <p>Une agence web à Vannes vous proposera souvent un package global : site, SEO, réseaux sociaux, publicité. Le consultant SEO, lui, se concentre sur un seul objectif : vos positions Google. Cette spécialisation fait la différence. Je ne dilue pas mon expertise dans dix métiers différents, je maîtrise le référencement naturel en profondeur.</p>
                         <div className="grid gap-3 sm:grid-cols-2">
                           {[
-                            { icon: User, title: 'Relation directe', text: 'Je comprends votre métier et ce qui vous différencie.' },
-                            { icon: Zap, title: 'Réactivité', text: 'Réponse dans la journée, pas dans 48h.' },
-                            { icon: Target, title: 'Sur mesure', text: 'Stratégie adaptée à votre marché.' },
-                            { icon: MessageCircle, title: 'Transparence', text: 'Rapport mensuel, accès à vos données.' },
+                            { icon: User, title: 'Expertise dédiée', text: 'Le SEO est mon seul métier, pas un service parmi d\'autres.' },
+                            { icon: Zap, title: 'Réactivité', text: 'Un message et j\'interviens, sans circuit de validation.' },
+                            { icon: Target, title: 'Stratégie locale', text: 'Connaissance du marché vannetais et morbihannais.' },
+                            { icon: MessageCircle, title: 'Transparence totale', text: 'Accès aux données, rapport mensuel détaillé.' },
                           ].map((item) => {
                             const Icon = item.icon
                             return (
@@ -352,16 +351,16 @@ export function FreelanceSeoContent({ faqs }: FreelanceSeoContentProps) {
                       </div>
                     </ReadMore>
 
-                    <ReadMore title="Pourquoi être basé à Rennes fait la différence">
+                    <ReadMore title="Pourquoi choisir un consultant SEO dans le Morbihan">
                       <div className="space-y-4 text-[15px] leading-relaxed text-muted-foreground">
                         <p>
-                          Je connais le marché rennais et les habitudes de recherche locales. Quand j&apos;ai travaillé sur le référencement de Rennes Pneus, je savais exactement quels mots-clés cibler parce que je connais les réflexes des automobilistes de la métropole.
+                          Le Morbihan attire chaque année des millions de visiteurs grâce au Golfe, aux îles et au littoral. Cette attractivité se traduit en volumes de recherches Google considérables, mais très saisonniers. Un consultant SEO qui connaît ces dynamiques sait quand et comment positionner votre site pour capter ce trafic.
                         </p>
                         <p>
-                          J&apos;accompagne des entreprises dans Rennes et sa métropole : <strong>Cesson-Sévigné</strong>, <strong>Saint-Grégoire</strong>, <strong>Bruz</strong>, <strong>Chantepie</strong>, <strong>Pacé</strong>. Mais aussi à <strong>Saint-Malo</strong>, <strong>Vannes</strong>, <strong>Brest</strong> et <strong>Lorient</strong>.
+                          J&apos;accompagne des entreprises à Vannes et dans les communes environnantes : <strong>Arradon</strong>, <strong>Séné</strong>, <strong>Theix-Noyalo</strong>, <strong>Sarzeau</strong>, <strong>Auray</strong>. Je travaille aussi avec des clients à <strong>Lorient</strong> et <strong>Rennes</strong>.
                         </p>
                         <div className="flex flex-wrap gap-2">
-                          {['Rennes', 'Cesson-Sévigné', 'Saint-Grégoire', 'Bruz', 'Saint-Malo', 'Vannes', 'Brest'].map((city) => (
+                          {['Vannes', 'Arradon', 'Séné', 'Auray', 'Lorient', 'Rennes'].map((city) => (
                             <span key={city} className="inline-flex items-center gap-1.5 rounded-full border border-border/40 bg-background/30 px-3 py-1 text-[11px] font-medium text-muted-foreground">
                               <MapPin className="size-2.5 text-primary" /> {city}
                             </span>
@@ -418,7 +417,7 @@ export function FreelanceSeoContent({ faqs }: FreelanceSeoContentProps) {
               Questions fréquentes
             </p>
             <h2 className="mt-5 font-display text-balance text-3xl font-medium leading-[1.1] tracking-[-0.025em] text-foreground sm:text-4xl">
-              Freelance SEO à Rennes :{' '}
+              Consultant SEO à Vannes :{' '}
               <span className="italic text-muted-foreground/80">vos questions</span>
             </h2>
           </Reveal>
