@@ -83,7 +83,7 @@ export default function RootLayout({
     <html
       lang="fr"
       dir="ltr"
-      className={`${inter.variable} ${jakarta.variable}`}
+      className={`dark ${inter.variable} ${jakarta.variable}`}
       suppressHydrationWarning
     >
       <head>

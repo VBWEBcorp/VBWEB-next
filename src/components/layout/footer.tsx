@@ -1,4 +1,4 @@
-import { ArrowRight, ArrowUpRight, Mail, MapPin, Phone, Globe } from 'lucide-react'
+import { ArrowRight, ArrowUpRight, Mail, MapPin, Phone } from 'lucide-react'
 import Link from 'next/link'
 
 import { siteConfig } from '@/lib/seo'
@@ -84,12 +84,11 @@ export function Footer() {
                 {/* Brand + coordonnées */}
                 <div className="bg-card/60 p-8 sm:p-10">
                   <Link href="/" className="group/logo inline-flex items-center gap-2.5">
-                    <span className="flex size-9 items-center justify-center rounded-full bg-primary/20 text-primary ring-1 ring-primary/25 transition-transform duration-300 group-hover/logo:scale-105">
-                      <Globe className="size-4" aria-hidden />
-                    </span>
-                    <span className="font-display text-lg font-semibold tracking-tight text-foreground">
-                      {siteConfig.shortName}
-                    </span>
+                    <img
+                      src="https://i.ibb.co/C3ZJ3z59/VBWEB-LOGO-BLEU-BLANC.png"
+                      alt="VBWEB - Consultant SEO Rennes"
+                      className="h-9 w-auto transition-transform duration-300 group-hover/logo:scale-105"
+                    />
                   </Link>
 
                   <p className="mt-5 max-w-xs text-[13px] leading-relaxed text-muted-foreground">

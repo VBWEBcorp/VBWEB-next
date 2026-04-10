@@ -204,12 +204,11 @@ export function Navbar() {
             aria-label="Accueil"
             className="group flex items-center gap-2"
           >
-            <span className="flex size-8 items-center justify-center rounded-full bg-primary/10 text-primary ring-1 ring-primary/15 transition-transform duration-300 group-hover:scale-105">
-              <Globe className="size-4" aria-hidden />
-            </span>
-            <span className="hidden font-display text-[15px] font-semibold tracking-tight text-foreground sm:inline">
-              VBWEB
-            </span>
+            <img
+              src="https://i.ibb.co/C3ZJ3z59/VBWEB-LOGO-BLEU-BLANC.png"
+              alt="VBWEB - Consultant SEO Rennes"
+              className="h-8 w-auto transition-transform duration-300 group-hover:scale-105"
+            />
           </Link>
 
           {/* Right actions */}
