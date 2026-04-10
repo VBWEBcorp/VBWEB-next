@@ -23,6 +23,7 @@ import { AuditButton } from '@/components/ui/audit-button'
 import { Button } from '@/components/ui/button'
 import { CountUp } from '@/components/ui/count-up'
 import { Reveal } from '@/components/ui/reveal'
+import { ScrollProgress } from '@/components/ui/scroll-progress'
 
 function Grain() {
   return (
@@ -277,20 +278,37 @@ export function FreelanceSeoContent({ faqs }: FreelanceSeoContentProps) {
             </h2>
           </Reveal>
 
-          <div className="mt-14 grid gap-5 lg:grid-cols-3">
-            {[
-              { number: '01', title: 'On échange', description: 'Nous prenons 30 minutes pour que je comprenne votre activité, vos objectifs et ce qui freine votre visibilité sur Google. Je vous dis sincèrement si le SEO est pertinent pour vous.' },
-              { number: '02', title: 'J\'analyse votre site', description: 'Je passe votre site au peigne fin : technique, contenu, positionnement, concurrence locale à Rennes. Vous recevez un plan d\'action clair avec les priorités.' },
-              { number: '03', title: 'On avance ensemble', description: 'Les optimisations sont déployées mois après mois. Chaque mois, vous voyez vos positions Google, votre trafic et les demandes reçues dans votre espace de suivi.' },
-            ].map((step, i) => (
-              <Reveal key={step.number} delay={i * 0.08}>
-                <div className="relative h-full rounded-[1.35rem] border border-border/60 bg-card/40 p-8">
-                  <span className="font-display text-[2.25rem] font-bold leading-none tracking-[-0.03em] text-muted-foreground/20">{step.number}</span>
-                  <h3 className="mt-4 font-display text-lg font-semibold text-foreground">{step.title}</h3>
-                  <p className="mt-3 text-[15px] leading-relaxed text-muted-foreground">{step.description}</p>
-                </div>
-              </Reveal>
-            ))}
+          <div className="timeline-container relative mx-auto mt-16 max-w-3xl">
+            <ScrollProgress />
+
+            <ol className="space-y-6 sm:space-y-8">
+              {[
+                { number: '01', title: 'On échange', description: 'Nous prenons 30 minutes pour que je comprenne votre activité, vos objectifs et ce qui freine votre visibilité sur Google. Je vous dis sincèrement si le SEO est pertinent pour vous.' },
+                { number: '02', title: 'J\'analyse votre site', description: 'Je passe votre site au peigne fin : technique, contenu, positionnement, concurrence locale à Rennes. Vous recevez un plan d\'action clair avec les priorités.' },
+                { number: '03', title: 'On avance ensemble', description: 'Les optimisations sont déployées mois après mois. Chaque mois, vous voyez vos positions Google, votre trafic et les demandes reçues dans votre espace de suivi.' },
+              ].map((step, i) => (
+                <Reveal as="li" key={step.number} delay={i * 0.08} className="relative pl-14 sm:pl-20">
+                  {/* Node */}
+                  <div className="absolute left-0 top-1 sm:top-2">
+                    <div className="flex size-9 items-center justify-center rounded-full border border-primary/30 bg-background text-primary shadow-[0_0_0_4px_rgba(0,0,0,0.4)] sm:size-12">
+                      <span className="font-display text-[13px] font-bold sm:text-[15px]">{step.number}</span>
+                    </div>
+                  </div>
+
+                  {/* Card */}
+                  <div className="group relative">
+                    <div
+                      aria-hidden
+                      className="pointer-events-none absolute -inset-px rounded-[1.2rem] bg-gradient-to-br from-primary/40 via-primary/0 to-primary/20 opacity-0 blur-[2px] transition-opacity duration-500 group-hover:opacity-100"
+                    />
+                    <div className="relative overflow-hidden rounded-[1.15rem] border border-border/60 bg-card/40 p-6 transition-colors duration-500 group-hover:border-primary/30 group-hover:bg-card/60 sm:p-7">
+                      <h3 className="font-display text-lg font-semibold text-foreground sm:text-xl">{step.title}</h3>
+                      <p className="mt-3 text-[15px] leading-relaxed text-muted-foreground">{step.description}</p>
+                    </div>
+                  </div>
+                </Reveal>
+              ))}
+            </ol>
           </div>
 
           <Reveal delay={0.3} className="mt-10 text-center">
