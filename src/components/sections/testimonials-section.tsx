@@ -68,17 +68,17 @@ function MarqueeRow({
   items: typeof testimonials
   direction: 'left' | 'right'
 }) {
-  const animationClass = direction === 'left' ? 'animate-marquee-left' : 'animate-marquee-right'
+  const animationClass =
+    direction === 'left' ? 'animate-marquee-testimonials-left' : 'animate-marquee-testimonials-right'
 
   return (
-    <div className="group relative flex overflow-hidden">
+    <div className="group relative flex gap-5 overflow-hidden">
       {/* Fades latéraux */}
       <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-background to-transparent sm:w-32" />
       <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-background to-transparent sm:w-32" />
 
       <div
         className={`flex shrink-0 gap-5 py-2 ${animationClass} group-hover:[animation-play-state:paused]`}
-        style={{ animationDuration: '30s' }}
       >
         {items.map((t, i) => (
           <TestimonialCard key={`${t.name}-${i}`} testimonial={t} />
@@ -87,7 +87,6 @@ function MarqueeRow({
       <div
         aria-hidden
         className={`flex shrink-0 gap-5 py-2 ${animationClass} group-hover:[animation-play-state:paused]`}
-        style={{ animationDuration: '30s' }}
       >
         {items.map((t, i) => (
           <TestimonialCard key={`${t.name}-dup-${i}`} testimonial={t} />

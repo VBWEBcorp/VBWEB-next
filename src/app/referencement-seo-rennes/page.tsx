@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 
-import { SeoRennesContent } from './seo-content'
+import { MetierTemplate, type MetierConfig } from '@/components/metier/metier-template'
 import {
   breadcrumbJsonLd,
   faqJsonLd,
@@ -52,6 +52,77 @@ const faqs = [
   },
 ]
 
+const config: MetierConfig = {
+  metier: 'Référencement SEO',
+  metierLower: 'référencement SEO',
+  heroKicker: 'Consultant SEO · Rennes',
+  heroHeadline: 'Référencement naturel,',
+  heroHeadlineItalic: 'des clients qui viennent à vous',
+  heroDescription:
+    'Je positionne votre site en haut de Google sur les requêtes que tapent vos futurs clients à Rennes et en Bretagne. Audit, stratégie, contenu, technique, liens : une approche complète pour transformer votre site en premier canal d\'acquisition.',
+  heroImageAlt: 'Victor Béasse, consultant SEO à Rennes',
+  whatKicker: 'Consultant SEO à Rennes',
+  whatTitle: 'Du SEO qui ramène',
+  whatTitleItalic: 'de vrais clients, pas juste du trafic',
+  whatPara1:
+    'Beaucoup de consultants SEO vendent du trafic. Le problème, c\'est que le trafic ne paye pas vos factures : les clients qualifiés si. Mon approche est différente : j\'identifie les requêtes Google qui correspondent à une intention d\'achat réelle dans votre secteur, et je positionne votre site dessus. Chaque position gagnée est une position qui vous ramène un client potentiel, pas juste une visite perdue.',
+  whatPara2:
+    'Je construis votre stratégie SEO comme on construit un canal d\'acquisition durable : audit technique poussé pour corriger ce qui freine Google, création de contenu qui répond exactement aux questions de vos prospects, optimisation du maillage interne pour faire remonter les pages qui convertissent, et suivi mensuel transparent. Pas de blabla, que des actions qui bougent vos positions et vos revenus.',
+  whatImageUrl: 'https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?auto=format&fit=crop&w=800&q=80',
+  whatImageAlt: 'Consultant SEO à Rennes — stratégie de référencement naturel',
+  pillars: [
+    { icon: 'FileSearch', title: 'Audit stratégique', desc: 'Diagnostic technique, contenu, concurrence. Je vous montre exactement où vous perdez et où vous pouvez gagner.' },
+    { icon: 'Target', title: 'Contenu qui convertit', desc: 'Pages pensées pour les requêtes à forte intention d\'achat, pas les mots-clés vanity sans retour.' },
+    { icon: 'TrendingUp', title: 'Suivi mensuel transparent', desc: 'Rapport clair chaque mois : positions gagnées, trafic, conversions. Pas de rapports creux.' },
+  ],
+  whatFooterText:
+    'Un accompagnement SEO sérieux, c\'est en moyenne +120 à +300 % de trafic qualifié après 12 mois, avec des positions tenues dans la durée.',
+  timelineTitle: 'Du diagnostic',
+  timelineTitleItalic: 'aux premiers clients venus de Google',
+  timelineSteps: [
+    {
+      number: '01',
+      title: 'Audit SEO complet',
+      description:
+        'Analyse technique (vitesse, indexation, structure), analyse de contenu, analyse concurrentielle, identification des requêtes à fort potentiel dans votre secteur. Vous repartez avec un plan d\'action priorisé.',
+    },
+    {
+      number: '02',
+      title: 'Stratégie et mise en œuvre',
+      description:
+        'Correction des freins techniques, optimisation on-page, création de contenu ciblé sur les requêtes qui convertissent, maillage interne, netlinking qualitatif si nécessaire.',
+    },
+    {
+      number: '03',
+      title: 'Suivi mensuel et optimisation continue',
+      description:
+        'Reporting clair chaque mois (positions, trafic, conversions), ajustements en fonction des résultats, nouvelles pages à créer, opportunités repérées. Vous gardez la main sur les décisions.',
+    },
+  ],
+  keywordsTitle: 'Les requêtes Google qui rapportent le plus en SEO',
+  keywordsIntro:
+    'Toutes les requêtes ne se valent pas. Certaines amènent des curieux qui ne convertissent jamais, d\'autres amènent des clients qui signent dans la semaine. Je construis votre stratégie SEO autour de celles qui font réellement sonner le téléphone ou rentrer les devis.',
+  keywordCategories: [
+    { icon: 'Target', title: 'Intention commerciale', text: 'votre service + ville, prix, tarifs, devis, meilleur, comparatif, avis.' },
+    { icon: 'Zap', title: 'Urgence', text: 'urgence, dépannage, 24/24, près de moi, disponible, rapide.' },
+    { icon: 'MapPin', title: 'Local', text: 'votre métier + Rennes, + Bretagne, + votre quartier, + département.' },
+    { icon: 'FileSearch', title: 'Comparaison', text: 'alternatives, vs, meilleur choix, fonctionnalités, recommandation.' },
+  ],
+  relatedTitle: 'Vous cherchez un autre type d\'accompagnement SEO ?',
+  relatedPara:
+    'Le référencement naturel couvre plusieurs leviers. Selon votre besoin, voici les autres services qui peuvent vous intéresser.',
+  relatedLinks: [
+    { label: 'Référencement local Rennes', href: '/referencement-local-rennes' },
+    { label: 'Audit SEO gratuit', href: '/audit-seo-gratuit' },
+    { label: 'Création de site Rennes', href: '/creation-site-internet-rennes' },
+    { label: 'Freelance SEO Rennes', href: '/freelance-seo-rennes' },
+  ],
+  miniCtaText: 'Envie de savoir ce que le SEO peut vraiment vous rapporter ?',
+  caseStudiesKicker: 'Résultats SEO de mes clients',
+  faqTitlePrefix: 'Référencement naturel',
+  faqTitleItalic: 'vos questions',
+}
+
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -72,7 +143,7 @@ export default function SeoRennesPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <SeoRennesContent faqs={faqs} />
+      <MetierTemplate config={config} faqs={faqs} />
     </>
   )
 }

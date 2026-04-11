@@ -1,5 +1,7 @@
-import { Search, Rocket, TrendingUp, Sparkles, Gift } from 'lucide-react'
+import { Search, Rocket, TrendingUp, Sparkles, Gift, ArrowRight } from 'lucide-react'
+import Link from 'next/link'
 
+import { Button } from '@/components/ui/button'
 import { Reveal } from '@/components/ui/reveal'
 import { ScrollProgress } from '@/components/ui/scroll-progress'
 
@@ -112,6 +114,15 @@ export function MethodSection() {
               )
             })}
           </ol>
+        </div>
+
+        <div className="mt-12 flex justify-center">
+          <Button size="lg" className="group bg-primary text-primary-foreground hover:bg-primary/85" asChild>
+            <Link href="/contact">
+              Prendre RDV
+              <ArrowRight className="transition-transform group-hover:translate-x-0.5" />
+            </Link>
+          </Button>
         </div>
 
         {/* Bonus card */}

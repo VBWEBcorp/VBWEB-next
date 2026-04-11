@@ -38,7 +38,7 @@ const CtaGallerySection = dynamic(() =>
 )
 
 const description =
-  'Consultant SEO à Rennes : plus de clients grâce à Google. Référencement naturel, création de sites internet et applications web pour PME, artisans et commerces en Bretagne. 75 avis 5 étoiles.'
+  'Consultant SEO à Rennes, je transforme votre site en générateur de clients qualifiés grâce au référencement naturel. Audit gratuit, 75 avis Google.'
 
 export const metadata: Metadata = {
   title: 'Consultant SEO Rennes - VBWEB | Plus de Clients grâce à Google',
@@ -72,7 +72,7 @@ export default function HomePage() {
       <ResultsSection />
       <TestimonialsSection />
       <CaseStudiesSection />
-      <CtaGallerySection />
+      <CtaGallerySection variant="homepage" />
     </>
   )
 }

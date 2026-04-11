@@ -22,7 +22,6 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState, useEffect } from 'react'
 
-import { ThemeToggle } from '@/components/theme/theme-toggle'
 import { cn } from '@/lib/utils'
 
 interface MenuItem {
@@ -42,7 +41,7 @@ const mainSection: MenuSection = {
   items: [
     { to: '/', label: 'Accueil', description: 'Page principale', icon: Home },
     { to: '/a-propos', label: 'À propos', description: "L'histoire et la vision", icon: User },
-    { to: '/contact', label: 'Contact', description: 'Devis gratuit sous 24h', icon: Mail },
+    { to: '/contact', label: 'Contact', description: 'Réponse sous 24h', icon: Mail },
   ],
 }
 
@@ -213,13 +212,11 @@ export function Navbar() {
 
           {/* Right actions */}
           <div className="flex items-center gap-2">
-            <ThemeToggle />
-
             <Link
               href="/contact"
               className="hidden h-9 items-center gap-1.5 rounded-full bg-primary px-4 text-[13px] font-medium text-primary-foreground transition-colors hover:bg-primary/85 sm:inline-flex"
             >
-              Devis gratuit
+              Prendre RDV
               <ArrowRight className="size-3.5" />
             </Link>
 
@@ -321,7 +318,7 @@ export function Navbar() {
                   onClick={() => setOpen(false)}
                   className="group flex h-10 w-full items-center justify-center gap-2 rounded-xl bg-primary text-[13px] font-medium text-primary-foreground transition-colors hover:bg-primary/85 lg:h-11 lg:text-sm"
                 >
-                  Devis gratuit sous 24h
+                  Parlez-moi de votre projet
                   <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" />
                 </Link>
               </div>

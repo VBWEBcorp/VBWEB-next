@@ -81,6 +81,11 @@ export interface MetierConfig {
 
   // FAQ
   faqTitleItalic: string
+
+  // Overrides optionnels pour pages non-métier (services SEO, etc.)
+  timelineTitle?: string
+  timelineTitleItalic?: string
+  faqTitlePrefix?: string
 }
 
 interface MetierTemplateProps {
@@ -307,8 +312,8 @@ export function MetierTemplate({ config, faqs }: MetierTemplateProps) {
               Comment ça se passe
             </p>
             <h2 className="mt-5 font-display text-balance text-3xl font-medium leading-[1.1] tracking-[-0.025em] text-foreground sm:text-4xl lg:text-[3rem]">
-              Du premier appel{' '}
-              <span className="italic text-muted-foreground/80">à la mise en ligne</span>
+              {config.timelineTitle ?? 'Du premier appel'}{' '}
+              <span className="italic text-muted-foreground/80">{config.timelineTitleItalic ?? 'à la mise en ligne'}</span>
             </h2>
           </Reveal>
 
@@ -448,7 +453,7 @@ export function MetierTemplate({ config, faqs }: MetierTemplateProps) {
               Questions fréquentes
             </p>
             <h2 className="mt-5 font-display text-balance text-3xl font-medium leading-[1.1] tracking-[-0.025em] text-foreground sm:text-4xl">
-              Site internet {config.metierLower} :{' '}
+              {config.faqTitlePrefix ?? `Site internet ${config.metierLower}`} :{' '}
               <span className="italic text-muted-foreground/80">{config.faqTitleItalic}</span>
             </h2>
           </Reveal>

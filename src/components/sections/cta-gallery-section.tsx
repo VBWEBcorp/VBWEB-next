@@ -1,6 +1,9 @@
+'use client'
+
 import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 
+import { useAudit } from '@/components/ui/audit-provider'
 import { Button } from '@/components/ui/button'
 import { Reveal } from '@/components/ui/reveal'
 
@@ -55,7 +58,9 @@ function ScrollColumn({ images, direction = 'up', duration = 35 }: { images: str
   )
 }
 
-export function CtaGallerySection() {
+export function CtaGallerySection({ variant = 'default' }: { variant?: 'default' | 'homepage' } = {}) {
+  const { openAudit } = useAudit()
+
   return (
     <section className="relative overflow-hidden bg-background">
       {/* Photo columns — pleine largeur écran */}
@@ -85,19 +90,37 @@ export function CtaGallerySection() {
           <p className="mx-auto max-w-xl text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
             Un site qui convertit, une visibilité qui explose. Réservez 30 min gratuites et repartez avec un plan d'action concret. Sans engagement.
           </p>
-          <div className="flex flex-col justify-center gap-3 pt-2 sm:flex-row">
-            <Button size="lg" className="group bg-primary text-primary-foreground hover:bg-primary/85" asChild>
-              <Link href="/contact">
-                Prendre rendez-vous
-                <ArrowRight className="transition-transform group-hover:translate-x-0.5" />
-              </Link>
-            </Button>
-            <Button size="lg" variant="outline" className="border-border bg-card/50 backdrop-blur-sm" asChild>
-              <Link href="/audit-seo-gratuit">
-                Audit SEO gratuit
-              </Link>
-            </Button>
-          </div>
+          {variant === 'homepage' ? (
+            <div className="flex flex-col items-center justify-center gap-3 pt-2">
+              <Button size="lg" className="group bg-primary text-primary-foreground hover:bg-primary/85" asChild>
+                <Link href="/contact">
+                  Parlez-moi de votre projet
+                  <ArrowRight className="transition-transform group-hover:translate-x-0.5" />
+                </Link>
+              </Button>
+              <button
+                type="button"
+                onClick={openAudit}
+                className="text-[13px] text-muted-foreground underline-offset-4 transition-colors hover:text-primary hover:underline"
+              >
+                ou demandez un audit SEO gratuit
+              </button>
+            </div>
+          ) : (
+            <div className="flex flex-col justify-center gap-3 pt-2 sm:flex-row">
+              <Button size="lg" className="group bg-primary text-primary-foreground hover:bg-primary/85" asChild>
+                <Link href="/contact">
+                  Prendre rendez-vous
+                  <ArrowRight className="transition-transform group-hover:translate-x-0.5" />
+                </Link>
+              </Button>
+              <Button size="lg" variant="outline" className="border-border bg-card/50 backdrop-blur-sm" asChild>
+                <Link href="/audit-seo-gratuit">
+                  Audit SEO gratuit
+                </Link>
+              </Button>
+            </div>
+          )}
         </Reveal>
       </div>
 

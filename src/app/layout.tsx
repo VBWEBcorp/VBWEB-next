@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from 'next'
 import { Inter, Plus_Jakarta_Sans } from 'next/font/google'
 
 import { RootWrapper } from '@/components/layout/root-wrapper'
-import { ThemeScript } from '@/components/theme/theme-script'
 import { AuditProvider } from '@/components/ui/audit-provider'
 import { siteConfig } from '@/lib/seo'
 
@@ -56,8 +55,11 @@ export const metadata: Metadata = {
     'max-video-preview': -1,
   },
   icons: {
-    icon: '/favicon.svg',
-    apple: '/apple-touch-icon.png',
+    icon: [
+      { url: '/victor.jpg', type: 'image/jpeg' },
+    ],
+    shortcut: '/victor.jpg',
+    apple: '/victor.jpg',
   },
   alternates: {
     canonical: '/',
@@ -91,7 +93,6 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://images.unsplash.com" />
         <link rel="dns-prefetch" href="https://i.ytimg.com" />
         <link rel="dns-prefetch" href="https://www.youtube-nocookie.com" />
-        <ThemeScript />
       </head>
       <body className="flex min-h-dvh flex-col">
         <a

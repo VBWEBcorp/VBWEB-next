@@ -175,6 +175,12 @@
   .animate-marquee-bar {
     animation: marquee-left 30s linear infinite;
   }
+  .animate-marquee-testimonials-left {
+    animation: marquee-testimonials-left 30s linear infinite;
+  }
+  .animate-marquee-testimonials-right {
+    animation: marquee-testimonials-right 30s linear infinite;
+  }
   .animate-scroll-up {
     animation: scroll-up linear infinite;
   }
@@ -210,6 +216,16 @@
 }
 @keyframes marquee-right {
   from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+/* Keyframes dédiées aux avis : chaque div se décale de 100% + le gap-5 (20px) du parent,
+   pour que le loop reste seamless avec gap entre les deux copies. */
+@keyframes marquee-testimonials-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(-100% - 20px)); }
+}
+@keyframes marquee-testimonials-right {
+  from { transform: translateX(calc(-100% - 20px)); }
   to { transform: translateX(0); }
 }
 @keyframes scroll-up {

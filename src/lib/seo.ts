@@ -5,7 +5,7 @@ export const siteConfig = {
   url: 'https://www.consultant-seo-rennes.fr',
   locale: 'fr_FR',
   description:
-    'Consultant SEO à Rennes : plus de clients grâce à Google. Référencement naturel, création de sites internet et applications web pour PME, artisans et commerces en Bretagne.',
+    'Consultant SEO à Rennes, je transforme votre site en générateur de clients qualifiés grâce au référencement naturel. Audit gratuit, 75 avis Google.',
   ogImage: 'https://www.consultant-seo-rennes.fr/og.png',
   twitterHandle: '@vbweb',
   themeColor: '#1B2D46',

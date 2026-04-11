@@ -4,6 +4,7 @@ import { ArrowRight, Star } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 
+import { useAudit } from '@/components/ui/audit-provider'
 import { Button } from '@/components/ui/button'
 
 function GoogleG({ className = 'size-4' }: { className?: string }) {
@@ -80,6 +81,8 @@ function ScrollColumn({
 }
 
 export function HeroSection() {
+  const { openAudit } = useAudit()
+
   return (
     <section
       className="relative isolate overflow-hidden bg-background"
@@ -123,28 +126,25 @@ export function HeroSection() {
             </h1>
 
             {/* Sous-titre */}
-            <p className="mx-auto mt-6 max-w-xl text-pretty text-[15px] leading-relaxed text-muted-foreground sm:text-base lg:mx-0">
+            <p className="mx-auto mt-6 max-w-xl text-pretty text-[15px] leading-relaxed text-white sm:text-base lg:mx-0">
               Je transforme votre site en générateur de clients qualifiés grâce au référencement naturel et un site web performant.
             </p>
 
             {/* CTAs */}
-            <div className="mt-12 flex flex-col justify-center gap-3 sm:mt-10 sm:flex-row lg:justify-start">
+            <div className="mt-12 flex flex-col items-center gap-3 sm:mt-10 lg:items-start">
               <Button size="lg" className="group bg-primary text-primary-foreground hover:bg-primary/85" asChild>
                 <Link href="/contact">
-                  Prendre rendez-vous
+                  Parlez-moi de votre projet
                   <ArrowRight className="transition-transform group-hover:translate-x-0.5" />
                 </Link>
               </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-white/15 bg-foreground/5 text-foreground backdrop-blur-sm hover:bg-foreground/10 hover:text-foreground"
-                asChild
+              <button
+                type="button"
+                onClick={openAudit}
+                className="text-[13px] text-muted-foreground underline-offset-4 transition-colors hover:text-primary hover:underline"
               >
-                <Link href="#etudes-de-cas">
-                  Étude de cas
-                </Link>
-              </Button>
+                ou demandez un audit SEO gratuit
+              </button>
             </div>
 
             {/* Badge avis Google avec le G coloré */}

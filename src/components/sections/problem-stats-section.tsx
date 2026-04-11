@@ -1,5 +1,6 @@
 import { TrendingDown, Search } from 'lucide-react'
 
+import { AuditButton } from '@/components/ui/audit-button'
 import { CountUp } from '@/components/ui/count-up'
 import { Reveal } from '@/components/ui/reveal'
 
@@ -108,6 +109,10 @@ export function ProblemStatsSection() {
             )
           })}
         </div>
+
+        <Reveal delay={0.2} className="mt-12 flex justify-center">
+          <AuditButton />
+        </Reveal>
       </div>
     </section>
   )

@@ -15,7 +15,6 @@ const audiences = [
   'Hôtels & Locations',
   'Agences immobilières',
   'Salons de beauté',
-  'Garages & Carrossiers',
   'Écoles & Formations',
 ]
 

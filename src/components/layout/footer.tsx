@@ -65,7 +65,7 @@ export function Footer() {
                       <span className="italic text-muted-foreground/80">tête</span> ?
                     </h2>
                     <p className="mt-2 text-[13px] leading-relaxed text-muted-foreground sm:text-[14px]">
-                      Réponse sous 24h. Devis gratuit, sans engagement.
+                      Réponse sous 24h. Échange sans engagement.
                     </p>
                   </div>
 
@@ -73,7 +73,7 @@ export function Footer() {
                     href="/contact"
                     className="group/cta inline-flex h-11 shrink-0 items-center gap-2 rounded-full bg-primary px-6 text-[13px] font-medium text-primary-foreground transition-colors hover:bg-primary/85"
                   >
-                    Demander un devis
+                    Parlez-moi de votre projet
                     <ArrowRight className="size-3.5 transition-transform group-hover/cta:translate-x-0.5" />
                   </Link>
                 </div>

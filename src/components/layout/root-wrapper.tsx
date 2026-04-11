@@ -1,7 +1,6 @@
 import { headers } from 'next/headers'
 
 import { CookieConsent } from '@/components/layout/cookie-consent'
-import { FloatingCallButton } from '@/components/floating-call-button'
 import { Footer } from '@/components/layout/footer'
 import { Navbar } from '@/components/layout/navbar'
 
@@ -17,7 +16,6 @@ export async function RootWrapper({ children }: { children: React.ReactNode }) {
     return <>{children}</>
   }
 
-  // Sinon: header + contenu + footer + bouton flottant + cookie consent
   return (
     <>
       <Navbar />
@@ -25,7 +23,6 @@ export async function RootWrapper({ children }: { children: React.ReactNode }) {
         {children}
       </main>
       <Footer />
-      <FloatingCallButton />
       <CookieConsent />
     </>
   )
