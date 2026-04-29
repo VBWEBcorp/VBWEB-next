@@ -27,7 +27,7 @@ const jakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: siteConfig.name,
+    default: siteConfig.fullName,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
@@ -36,14 +36,14 @@ export const metadata: Metadata = {
     locale: siteConfig.locale,
     url: siteConfig.url,
     siteName: siteConfig.name,
-    title: siteConfig.name,
+    title: siteConfig.fullName,
     description: siteConfig.description,
     images: [{ url: siteConfig.ogImage }],
   },
   twitter: {
     card: 'summary_large_image',
     site: siteConfig.twitterHandle,
-    title: siteConfig.name,
+    title: siteConfig.fullName,
     description: siteConfig.description,
     images: [siteConfig.ogImage],
   },

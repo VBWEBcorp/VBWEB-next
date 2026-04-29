@@ -3,7 +3,6 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import {
-  ArrowLeft,
   ArrowRight,
   CheckCircle2,
   Quote,
@@ -435,69 +434,37 @@ export function ReferencementContent() {
 
   return (
     <>
-      {/* Hero */}
-      <section className="relative bg-background py-16 sm:py-20 lg:py-24">
+      {/* Hero compact */}
+      <section className="relative bg-background pt-6 pb-4 sm:pt-10 sm:pb-6 lg:pt-14 lg:pb-8">
         {grain}
         <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <Link
-            href="/etudes-de-cas"
-            className="mb-8 inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors duration-200 hover:text-foreground"
-          >
-            <ArrowLeft className="size-3.5" />
-            Toutes les études de cas
-          </Link>
-
           <div
-            className="mx-auto max-w-3xl text-center"
+            className="mx-auto flex max-w-3xl flex-col items-center text-center"
             style={{ animation: 'hero-fade-up 0.65s cubic-bezier(0.22,1,0.36,1) both' }}
           >
-            <p className="font-display text-xs font-semibold uppercase tracking-[0.22em] text-primary">
+            <div className="relative mb-3 size-14 overflow-hidden rounded-full border-2 border-primary/30 sm:size-16">
+              <img
+                src="/victor.jpg"
+                alt="Victor Béasse, consultant SEO à Rennes"
+                className="size-full object-cover"
+              />
+            </div>
+            <p className="font-display text-[11px] font-semibold uppercase tracking-[0.22em] text-primary sm:text-xs">
               Résultats concrets
             </p>
-            <h1 className="mt-4 font-display text-balance text-4xl leading-[1.08] tracking-[-0.03em] text-foreground sm:text-5xl">
+            <h1 className="mt-2 font-display text-balance text-[26px] leading-[1.08] tracking-[-0.03em] text-foreground sm:mt-3 sm:text-5xl">
               Études de cas référencement SEO
             </h1>
-            <p className="hero-description mx-auto mt-6 max-w-2xl text-pretty text-lg leading-relaxed text-muted-foreground">
-              Trafic organique, positionnement Google, génération de clients qualifiés : découvrez les résultats SEO obtenus pour des PME et commerces à Rennes et en Bretagne.
-            </p>
-            <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-              <Button size="lg" className="group bg-primary text-primary-foreground hover:bg-primary/85" asChild>
-                <Link href="/audit-seo-gratuit">
-                  Audit SEO gratuit
-                  <ArrowRight className="transition-transform duration-200 group-hover:translate-x-0.5" />
-                </Link>
-              </Button>
-              <Button size="lg" variant="outline" className="border-white/15 bg-foreground/5 text-foreground hover:bg-foreground/10 hover:text-foreground" asChild>
-                <Link href="/contact">Me contacter</Link>
-              </Button>
-            </div>
           </div>
-        </div>
-      </section>
 
-      {/* Quick nav */}
-      <section className="relative bg-card py-16 sm:py-20 lg:py-24">
-        {grain}
-        <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <Reveal>
-            <div className="mx-auto mb-10 max-w-3xl space-y-4 text-center">
-              <h2 className="font-display text-balance text-3xl leading-[1.12] tracking-[-0.02em] text-foreground sm:text-4xl">
-                3 études de cas, 3 stratégies SEO différentes
-              </h2>
-              <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
-                Chaque entreprise est unique. Découvrez comment le <Link href="/referencement-seo-rennes" className="text-primary underline underline-offset-2 hover:text-primary/80">référencement naturel</Link> s&apos;adapte à chaque situation.
-              </p>
-            </div>
-          </Reveal>
-
-          <Reveal delay={0.1}>
-            <div className="mx-auto grid max-w-2xl grid-cols-3 gap-2 sm:gap-3">
+          <Reveal delay={0.05}>
+            <div className="mx-auto mt-6 grid max-w-2xl grid-cols-3 gap-2 sm:gap-3">
               {quickNav.map((item) => (
                 <button
                   key={item.id}
                   type="button"
                   onClick={() => scrollTo(item.id)}
-                  className="group rounded-xl border border-border bg-background/50 px-2 py-3 text-center transition-all duration-300 hover:border-primary/30 hover:bg-background sm:px-6 sm:py-4"
+                  className="group rounded-xl border border-border bg-card/40 px-2 py-2.5 text-center transition-all duration-300 hover:border-primary/30 hover:bg-background sm:px-6 sm:py-3.5"
                 >
                   <span className="block font-display text-[11px] font-semibold leading-tight text-foreground/90 transition-colors duration-200 group-hover:text-primary sm:text-sm">
                     {item.label}
@@ -513,7 +480,7 @@ export function ReferencementContent() {
       </section>
 
       {/* Case studies */}
-      <section className="relative bg-background py-16 sm:py-20 lg:py-24">
+      <section className="relative bg-background pb-16 pt-4 sm:pb-20 sm:pt-6 lg:pb-24">
         {grain}
         <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="space-y-8 sm:space-y-12">

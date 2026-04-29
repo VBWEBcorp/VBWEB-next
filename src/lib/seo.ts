@@ -1,16 +1,18 @@
 export const siteConfig = {
-  name: 'Consultant SEO Rennes - VBWEB',
+  name: 'VBWEB',
   shortName: 'VBWEB',
+  tagline: 'Agence web & SEO',
+  fullName: 'VBWEB - Agence web & SEO',
   legalName: 'Victor Béasse',
-  url: 'https://www.consultant-seo-rennes.fr',
+  url: 'https://www.vbweb.fr',
   locale: 'fr_FR',
   description:
-    'Consultant SEO à Rennes, je transforme votre site en générateur de clients qualifiés grâce au référencement naturel. Audit gratuit, 75 avis Google.',
-  ogImage: 'https://www.consultant-seo-rennes.fr/og.png',
+    'VBWEB - Création de sites internet, référencement naturel et applications web sur mesure. Stratégie digitale pour entreprises ambitieuses.',
+  ogImage: 'https://www.vbweb.fr/victor.jpg',
   twitterHandle: '@vbweb',
   themeColor: '#1B2D46',
   phone: '+33 6 27 30 17 88',
-  email: 'contact@consultant-seo-rennes.fr',
+  email: 'contact@vbweb.fr',
   founder: 'Victor Béasse',
   address: {
     street: 'Rennes',

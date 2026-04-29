@@ -14,6 +14,7 @@ import {
   ArrowRight,
   FileText,
   Database,
+  Linkedin,
 } from 'lucide-react'
 
 interface AdminUser {
@@ -29,6 +30,7 @@ const modules = [
   { href: '/admin/pages/temoignages', label: 'Témoignages', desc: 'Avis clients Google', icon: MessageSquare },
   { href: '/admin/gallery', label: 'Galerie', desc: 'Photos et réalisations', icon: Images },
   { href: '/admin/blog', label: 'Blog', desc: 'Articles et actualités', icon: FileText },
+  { href: '/admin/linkedin', label: 'LinkedIn IA', desc: 'Générer un post depuis un article', icon: Linkedin },
 ]
 
 const ease = [0.22, 1, 0.36, 1] as const

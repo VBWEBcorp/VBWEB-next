@@ -38,10 +38,10 @@ const CtaGallerySection = dynamic(() =>
 )
 
 const description =
-  'Consultant SEO à Rennes, je transforme votre site en générateur de clients qualifiés grâce au référencement naturel. Audit gratuit, 75 avis Google.'
+  'VBWEB, agence web indépendante. Création de sites internet, référencement naturel et applications web sur mesure pour PME et entreprises ambitieuses.'
 
 export const metadata: Metadata = {
-  title: 'Consultant SEO Rennes - VBWEB | Plus de Clients grâce à Google',
+  title: { absolute: 'VBWEB - Agence web : sites internet, SEO et applications sur mesure' },
   description,
   alternates: { canonical: '/' },
 }
@@ -53,7 +53,7 @@ const jsonLd = {
     organizationJsonLd(),
     localBusinessJsonLd(),
     personJsonLd(),
-    webPageJsonLd('Consultant SEO Rennes - VBWEB', description, '/', ['h1', '.hero-description']),
+    webPageJsonLd('VBWEB - Agence web & SEO', description, '/', ['h1', '.hero-description']),
   ],
 }
 

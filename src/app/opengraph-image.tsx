@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og'
 
 export const runtime = 'edge'
-export const alt = 'Consultant SEO Rennes - VBWEB'
+export const alt = 'VBWEB - Agence web & SEO'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
@@ -68,15 +68,15 @@ export default function OgImage() {
         {/* Title */}
         <div
           style={{
-            fontSize: 56,
-            fontWeight: 700,
+            fontSize: 96,
+            fontWeight: 800,
             color: 'white',
             textAlign: 'center',
-            lineHeight: 1.1,
-            letterSpacing: '-0.03em',
+            lineHeight: 1,
+            letterSpacing: '0.02em',
           }}
         >
-          Consultant SEO Rennes
+          VBWEB
         </div>
 
         {/* Subtitle */}
@@ -84,12 +84,12 @@ export default function OgImage() {
           style={{
             fontSize: 28,
             color: '#4EBAEC',
-            marginTop: 16,
-            fontWeight: 700,
-            letterSpacing: '0.15em',
+            marginTop: 20,
+            fontWeight: 600,
+            letterSpacing: '0.05em',
           }}
         >
-          VBWEB
+          Agence web & SEO
         </div>
 
         {/* Description */}

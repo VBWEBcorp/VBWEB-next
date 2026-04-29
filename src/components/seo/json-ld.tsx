@@ -64,6 +64,8 @@ export function localBusinessJsonLd() {
       { '@type': 'City', name: 'Rennes' },
       { '@type': 'AdministrativeArea', name: 'Ille-et-Vilaine' },
       { '@type': 'AdministrativeArea', name: 'Bretagne' },
+      { '@type': 'Country', name: 'France' },
+      { '@type': 'Place', name: 'Worldwide (remote)' },
     ],
     knowsAbout: [
       'Référencement naturel',
@@ -128,8 +130,8 @@ export function personJsonLd() {
     '@type': 'Person',
     '@id': `${siteConfig.url}/#person`,
     name: siteConfig.founder,
-    description: 'Consultant SEO et développeur web à Rennes, spécialisé en référencement naturel et création de sites performants pour PME et commerces en Bretagne.',
-    jobTitle: 'Consultant SEO & Développeur Web',
+    description: 'Fondateur de VBWEB, agence web spécialisée en création de sites internet, référencement naturel et applications web sur mesure. Basé à Rennes, accompagne des clients en France et à l\'international.',
+    jobTitle: 'Fondateur VBWEB - Consultant SEO & Développeur Web',
     worksFor: {
       '@type': 'Organization',
       name: siteConfig.name,
@@ -241,6 +243,7 @@ export function serviceJsonLd(
     areaServed: areaServed ?? [
       { '@type': 'City', name: 'Rennes' },
       { '@type': 'AdministrativeArea', name: 'Bretagne' },
+      { '@type': 'Country', name: 'France' },
     ],
     url: `${siteConfig.url}${path}`,
   }

@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation'
 import { motion } from 'framer-motion'
 import {
   Plus, Trash2, Check, ArrowLeft, Pencil, Eye, EyeOff,
-  Calendar, Settings, FileText, X, Save,
+  Calendar, Settings, FileText, X, Save, MessageCircle,
 } from 'lucide-react'
 import Link from 'next/link'
 
@@ -35,6 +35,7 @@ interface BlogSettings {
   eyebrow?: string
   heroImage?: string
   categories?: string[]
+  moderateComments?: boolean
 }
 
 type Tab = 'articles' | 'settings'
@@ -42,7 +43,7 @@ type Tab = 'articles' | 'settings'
 export default function AdminBlogPage() {
   const router = useRouter()
   const [tab, setTab] = useState<Tab>('articles')
-  const [settings, setSettings] = useState<BlogSettings>({ enabled: false, title: 'Nos dernières actualités', eyebrow: 'Blog', description: 'Retrouvez nos conseils, nos projets récents et les tendances du secteur.', heroImage: '', categories: [] })
+  const [settings, setSettings] = useState<BlogSettings>({ enabled: false, title: 'Nos dernières actualités', eyebrow: 'Blog', description: 'Retrouvez nos conseils, nos projets récents et les tendances du secteur.', heroImage: '', categories: [], moderateComments: false })
   const [posts, setPosts] = useState<BlogPost[]>([])
   const [loading, setLoading] = useState(true)
   const [saving, setSaving] = useState(false)
@@ -203,6 +204,14 @@ export default function AdminBlogPage() {
             </span>
           </label>
         </div>
+
+        <Link
+          href="/admin/comments"
+          className="inline-flex items-center gap-1.5 rounded-lg border border-border/60 bg-card px-3 py-2 text-xs font-medium text-foreground hover:border-primary/30 hover:bg-primary/5 transition-colors"
+        >
+          <MessageCircle className="size-3.5" />
+          Commentaires
+        </Link>
       </div>
 
       {/* Tabs */}
@@ -514,6 +523,41 @@ export default function AdminBlogPage() {
                   Ajouter
                 </Button>
               </div>
+            </div>
+          </div>
+
+          {/* Comments moderation */}
+          <div className="rounded-xl bg-card border border-border/40 overflow-hidden">
+            <div className="px-5 py-3 border-b border-border/40 bg-muted/30">
+              <h3 className="text-xs font-bold text-muted-foreground/60 uppercase tracking-widest">
+                Commentaires
+              </h3>
+            </div>
+            <div className="p-5 space-y-4">
+              <label className="flex items-start gap-3 cursor-pointer">
+                <div
+                  className={cn(
+                    'relative w-9 h-5 rounded-full transition-colors shrink-0 mt-0.5',
+                    settings.moderateComments ? 'bg-primary' : 'bg-muted-foreground/30'
+                  )}
+                  onClick={() =>
+                    setSettings({ ...settings, moderateComments: !settings.moderateComments })
+                  }
+                >
+                  <div
+                    className={cn(
+                      'absolute top-0.5 left-0.5 size-4 rounded-full bg-white shadow transition-transform',
+                      settings.moderateComments && 'translate-x-4'
+                    )}
+                  />
+                </div>
+                <div>
+                  <p className="text-sm font-medium text-foreground">Modération manuelle</p>
+                  <p className="text-[11px] text-muted-foreground/70 mt-0.5">
+                    Si activée, les nouveaux commentaires sont en attente de validation avant publication. À valider depuis l&apos;onglet <Link href="/admin/comments" className="text-primary underline underline-offset-2">Commentaires</Link>.
+                  </p>
+                </div>
+              </label>
             </div>
           </div>
 

@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
 import { connectDB } from '@/lib/db'
-import { BlogPost } from '@/models/Blog'
+import { BlogPost, BlogComment } from '@/models/Blog'
 import { siteConfig } from '@/lib/seo'
 import {
   blogPostingJsonLd,
@@ -11,7 +11,7 @@ import {
 } from '@/components/seo/json-ld'
 import { BlogPostContent } from './blog-post-client'
 
-export const dynamic = 'force-dynamic'
+export const revalidate = 3600
 
 type Props = {
   params: Promise<{ slug: string }>
@@ -43,6 +43,62 @@ async function getPost(slug: string) {
     faq: { question: string; answer: string }[]
     createdAt: string
     updatedAt: string
+  }
+}
+
+type RelatedPost = {
+  _id: string
+  title: string
+  slug: string
+  excerpt: string
+  coverImage: string
+  category: string
+  publishedAt: string
+}
+
+async function getRelatedPosts(
+  currentSlug: string,
+  tags: string[],
+  category: string
+): Promise<RelatedPost[]> {
+  try {
+    const query: Record<string, unknown> = {
+      slug: { $ne: currentSlug },
+      published: true,
+    }
+    const or: Record<string, unknown>[] = []
+    if (tags?.length) or.push({ tags: { $in: tags } })
+    if (category) or.push({ category })
+    if (or.length) query.$or = or
+
+    const posts = await BlogPost.find(query)
+      .sort({ publishedAt: -1, createdAt: -1 })
+      .limit(3)
+      .select('title slug excerpt coverImage category publishedAt')
+      .lean()
+
+    return JSON.parse(JSON.stringify(posts)) as RelatedPost[]
+  } catch {
+    return []
+  }
+}
+
+type CommentItem = {
+  _id: string
+  author: string
+  content: string
+  createdAt: string
+}
+
+async function getComments(slug: string): Promise<CommentItem[]> {
+  try {
+    const comments = await BlogComment.find({ postSlug: slug, approved: true })
+      .sort({ createdAt: -1 })
+      .select('author content createdAt')
+      .lean()
+    return JSON.parse(JSON.stringify(comments)) as CommentItem[]
+  } catch {
+    return []
   }
 }
 
@@ -93,6 +149,11 @@ export default async function BlogPostPage({ params }: Props) {
   const post = await getPost(slug)
   if (!post) notFound()
 
+  const [relatedPosts, comments] = await Promise.all([
+    getRelatedPosts(post.slug, post.tags || [], post.category || ''),
+    getComments(post.slug),
+  ])
+
   const graph: Record<string, unknown>[] = [
     blogPostingJsonLd({
       title: post.metaTitle || post.title,
@@ -125,11 +186,15 @@ export default async function BlogPostPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <BlogPostContent post={{
-        ...post,
-        coverImageAlt: post.coverImageAlt || '',
-        faq: validFaqs,
-      }} />
+      <BlogPostContent
+        post={{
+          ...post,
+          coverImageAlt: post.coverImageAlt || '',
+          faq: validFaqs,
+        }}
+        relatedPosts={relatedPosts}
+        initialComments={comments}
+      />
     </>
   )
 }

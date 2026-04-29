@@ -1,28 +1,28 @@
-# Redirections 301 permanentes : vbweb.fr -> consultant-seo-rennes.fr
+# Redirections 301 permanentes : consultant-seo-rennes.fr -> vbweb.fr
 # Transfert d'autorite SEO de l'ancien NDD vers le nouveau.
 # Le :splat capture le path apres le domaine et le replace dans la nouvelle URL.
 
 [[redirects]]
-  from = "https://vbweb.fr/*"
-  to = "https://www.consultant-seo-rennes.fr/:splat"
+  from = "https://consultant-seo-rennes.fr/*"
+  to = "https://www.vbweb.fr/:splat"
   status = 301
   force = true
 
 [[redirects]]
-  from = "https://www.vbweb.fr/*"
-  to = "https://www.consultant-seo-rennes.fr/:splat"
+  from = "https://www.consultant-seo-rennes.fr/*"
+  to = "https://www.vbweb.fr/:splat"
   status = 301
   force = true
 
 [[redirects]]
-  from = "http://vbweb.fr/*"
-  to = "https://www.consultant-seo-rennes.fr/:splat"
+  from = "http://consultant-seo-rennes.fr/*"
+  to = "https://www.vbweb.fr/:splat"
   status = 301
   force = true
 
 [[redirects]]
-  from = "http://www.vbweb.fr/*"
-  to = "https://www.consultant-seo-rennes.fr/:splat"
+  from = "http://www.consultant-seo-rennes.fr/*"
+  to = "https://www.vbweb.fr/:splat"
   status = 301
   force = true
 

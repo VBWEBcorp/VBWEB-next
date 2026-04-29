@@ -3,7 +3,18 @@
     "allow": [
       "Bash(npm install:*)",
       "Bash(npm ls:*)",
-      "WebFetch(domain:guersanguillaume.com)"
+      "WebFetch(domain:guersanguillaume.com)",
+      "Bash(npm run:*)",
+      "Bash(start http://localhost:3001)",
+      "Bash(start http://localhost:3001/etudes-de-cas/sites-internet)",
+      "Bash(grep -l \"alternates.*canonical\" \"/c/Users/conta/OneDrive/Desktop/Cursor/Site internet VBWEB/src/app\"/**/page.tsx)",
+      "Bash(find \"/c/Users/conta/OneDrive/Desktop/Cursor/Site internet VBWEB/src/app\" -name \"page.tsx\" -exec grep -L \"canonical\" {} \\\\;)",
+      "Bash(node scripts/setup-r2-bucket.mjs)",
+      "Bash(node scripts/check-blog.mjs)",
+      "Bash(curl -s http://localhost:3005/blog/creer-site-ia-vibe-coding-verite)",
+      "Bash(curl -s http://localhost:3005/blog/creer-site-ia-vibe-coding-verite -o /dev/null -w \"%{http_code}\\\\n\")",
+      "Bash(curl -s http://localhost:3005/admin/comments -o /dev/null -w \"%{http_code}\\\\n\")",
+      "Bash(node scripts/upsert-admin.mjs)"
     ]
   }
 }

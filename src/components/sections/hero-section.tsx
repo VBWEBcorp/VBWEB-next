@@ -106,16 +106,38 @@ export function HeroSection() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(78,186,236,0.08),transparent_60%)]" aria-hidden />
 
       <div className="relative z-10 mx-auto max-w-6xl px-4 pt-16 pb-16 sm:px-6 sm:pt-28 sm:pb-14 lg:px-8 lg:pt-36 lg:pb-16">
-        <div className="grid items-center gap-10 lg:grid-cols-[1fr_auto] lg:gap-16">
+        <div className="grid items-center gap-10 lg:grid-cols-[1fr_auto] lg:gap-x-16 lg:gap-y-8">
+          {/* Photo — à droite sur desktop (sur 2 rangées), en haut sur mobile/tablet */}
+          <div
+            className="order-1 flex justify-center lg:order-none lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:self-center"
+            style={{ animation: 'hero-scale-in 0.7s cubic-bezier(0.22,1,0.36,1) 0.15s both' }}
+          >
+            <div className="relative size-56 overflow-hidden rounded-full border-2 border-primary/20 shadow-[var(--shadow-lg)] ring-1 ring-foreground/5 sm:size-64 lg:size-72">
+              <Image
+                src="/victor.jpg"
+                alt="Victor Béasse, Consultant SEO à Rennes, fondateur de VBWEB"
+                width={288}
+                height={288}
+                priority
+                fetchPriority="high"
+                quality={80}
+                sizes="288px"
+                className="size-full object-cover object-center"
+              />
+            </div>
+          </div>
+
           {/* Text */}
           <div
-            className="text-center lg:text-left"
+            className="order-2 text-center lg:order-none lg:col-start-1 lg:row-start-1 lg:text-left"
             style={{ animation: 'hero-fade-up 0.65s cubic-bezier(0.22,1,0.36,1) both' }}
           >
             {/* Eyebrow */}
-            <p className="font-display text-[11px] font-semibold tracking-[0.24em] text-primary/80 uppercase">
-              Consultant SEO · Rennes
-            </p>
+            <div className="flex justify-center lg:justify-start">
+              <span className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 px-3 py-1 font-display text-[11px] font-semibold tracking-[0.18em] text-primary uppercase backdrop-blur-sm">
+                Référencement &amp; développement web
+              </span>
+            </div>
 
             {/* Titre style Framer */}
             <h1 className="mt-5 font-display text-balance text-4xl font-medium leading-[1.05] tracking-[-0.03em] text-foreground sm:text-5xl lg:text-[4rem]">
@@ -127,11 +149,17 @@ export function HeroSection() {
 
             {/* Sous-titre */}
             <p className="mx-auto mt-6 max-w-xl text-pretty text-[15px] leading-relaxed text-white sm:text-base lg:mx-0">
-              Je transforme votre site en générateur de clients qualifiés grâce au référencement naturel et un site web performant.
+              Expert en référencement Google (SEO/GEO) et développeur web, j&apos;aide les PME à dominer Google avec un site optimisé de A à Z.
             </p>
+          </div>
 
+          {/* CTAs + badge Google — sous le texte (à gauche sur desktop) */}
+          <div
+            className="order-3 flex flex-col items-center gap-7 lg:order-none lg:col-start-1 lg:row-start-2 lg:items-start"
+            style={{ animation: 'hero-scale-in 0.7s cubic-bezier(0.22,1,0.36,1) 0.15s both' }}
+          >
             {/* CTAs */}
-            <div className="mt-12 flex flex-col items-center gap-3 sm:mt-10 lg:items-start">
+            <div className="flex flex-col items-center gap-3 lg:items-start">
               <Button size="lg" className="group bg-primary text-primary-foreground hover:bg-primary/85" asChild>
                 <Link href="/contact">
                   Parlez-moi de votre projet
@@ -147,39 +175,17 @@ export function HeroSection() {
               </button>
             </div>
 
-            {/* Badge avis Google avec le G coloré */}
-            <div className="mt-8 flex justify-center lg:justify-start">
-              <div className="inline-flex items-center gap-3 rounded-full border border-border/60 bg-card/60 px-4 py-2 backdrop-blur-sm">
-                <GoogleG className="size-4" />
-                <span aria-hidden className="h-3 w-px bg-border" />
-                <div className="flex items-center gap-0.5">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} className="size-3 fill-amber-400 text-amber-400" aria-hidden />
-                  ))}
-                </div>
-                <span aria-hidden className="h-3 w-px bg-border" />
-                <span className="text-[12px] font-medium text-muted-foreground">75 avis</span>
+            {/* Badge avis Google */}
+            <div className="inline-flex items-center gap-3 rounded-full border border-border/60 bg-card/60 px-4 py-2 backdrop-blur-sm">
+              <GoogleG className="size-4" />
+              <span aria-hidden className="h-3 w-px bg-border" />
+              <div className="flex items-center gap-0.5">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star key={i} className="size-3 fill-amber-400 text-amber-400" aria-hidden />
+                ))}
               </div>
-            </div>
-          </div>
-
-          {/* Photo */}
-          <div
-            className="relative mx-auto lg:mx-0"
-            style={{ animation: 'hero-scale-in 0.7s cubic-bezier(0.22,1,0.36,1) 0.15s both' }}
-          >
-            <div className="relative size-56 overflow-hidden rounded-full border-2 border-primary/20 shadow-[var(--shadow-lg)] ring-1 ring-foreground/5 sm:size-64 lg:size-72">
-              <Image
-                src="/victor.jpg"
-                alt="Victor Béasse, Consultant SEO à Rennes, fondateur de VBWEB"
-                width={288}
-                height={288}
-                priority
-                fetchPriority="high"
-                quality={80}
-                sizes="288px"
-                className="size-full object-cover object-center"
-              />
+              <span aria-hidden className="h-3 w-px bg-border" />
+              <span className="text-[12px] font-medium text-muted-foreground">75 avis</span>
             </div>
           </div>
         </div>

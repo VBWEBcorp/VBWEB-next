@@ -1,4 +1,4 @@
-import { Search, Rocket, TrendingUp, Sparkles, Gift, ArrowRight } from 'lucide-react'
+import { Search, Rocket, TrendingUp, Gift, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 
 import { Button } from '@/components/ui/button'
@@ -9,30 +9,23 @@ const steps = [
   {
     number: '01',
     icon: Search,
-    title: 'Diagnostic précis de vos fuites',
+    title: 'Audit et diagnostic',
     description:
-      "J'identifie exactement où vous perdez vos futurs clients et comment vos concurrents vous devancent sur Google.",
+      "J'analyse votre site, votre positionnement Google et celui de vos concurrents pour identifier précisément vos opportunités de croissance.",
   },
   {
     number: '02',
     icon: Rocket,
-    title: 'Site premium + stratégie SEO sur-mesure',
+    title: 'Site internet et stratégie SEO',
     description:
-      'Un site qui inspire confiance ET qui convertit, couplé à une stratégie SEO qui vous positionne devant vos concurrents.',
+      'Un site moderne et performant, associé à une stratégie de référencement adaptée à votre marché et à vos clients.',
   },
   {
     number: '03',
     icon: TrendingUp,
-    title: 'Croissance continue et sérénité',
+    title: 'Suivi mensuel et croissance',
     description:
-      'Accompagnement mensuel premium : votre visibilité grandit, vos clients aussi. Vous vous concentrez sur votre métier, moi sur votre croissance digitale.',
-  },
-  {
-    number: '04',
-    icon: Sparkles,
-    title: 'Automatisation & gain de temps',
-    description:
-      "Plus de clients, plus de sérénité, plus de temps pour votre métier grâce à l'automatisation intelligente.",
+      'Optimisations continues, reporting clair et accompagnement régulier. Vous gardez votre énergie pour votre métier, je m\'occupe de votre visibilité.',
   },
 ]
 
@@ -62,7 +55,7 @@ export function MethodSection() {
             <span className="italic text-muted-foreground/80">générateur de clients</span>
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-pretty text-[15px] leading-relaxed text-muted-foreground sm:text-base">
-            Une approche premium en 4 étapes pour que votre site attire, convertisse et vous libère du stress du digital.
+            Une approche structurée en 3 étapes pour transformer votre site en véritable levier de croissance pour votre entreprise.
           </p>
         </Reveal>
 
@@ -139,13 +132,13 @@ export function MethodSection() {
                 </div>
                 <div className="flex-1">
                   <span className="font-display text-[10px] font-semibold uppercase tracking-[0.22em] text-primary">
-                    Bonus premium
+                    En bonus
                   </span>
                   <h3 className="mt-2 font-display text-lg font-semibold leading-snug text-foreground sm:text-xl">
-                    Outils sur-mesure pour votre croissance
+                    Des outils sur-mesure pour gagner du temps
                   </h3>
                   <p className="mt-2 text-[15px] leading-relaxed text-muted-foreground">
-                    CRM personnalisé, tableaux de bord, automatisations… Des outils qui vous font gagner des heures chaque semaine.
+                    CRM, tableaux de bord et automatisations adaptés à votre activité. Des outils simples qui simplifient votre quotidien et libèrent du temps pour ce qui compte vraiment.
                   </p>
                 </div>
               </div>

@@ -10,7 +10,7 @@ const categories = [
     title: 'Sites Internet',
     description:
       'Vitrines, e-commerce et sites sur-mesure qui transforment vos visiteurs en clients.',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=800&q=65',
     href: '/etudes-de-cas/sites-internet',
     accent: 'from-sky-400/20 via-transparent to-transparent',
   },
@@ -20,7 +20,7 @@ const categories = [
     title: 'Référencement SEO',
     description:
       'Stratégies de visibilité Google qui propulsent mes clients en première page.',
-    image: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=65',
     href: '/etudes-de-cas/referencement',
     accent: 'from-violet-400/20 via-transparent to-transparent',
   },
@@ -30,7 +30,7 @@ const categories = [
     title: 'Applications Web',
     description:
       'CRM, logiciels et dashboards sur-mesure pour automatiser et piloter votre activité.',
-    image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=65',
     href: '/etudes-de-cas/applications-web',
     accent: 'from-emerald-400/20 via-transparent to-transparent',
   },
@@ -67,8 +67,8 @@ export function CaseStudiesSection() {
           </p>
         </Reveal>
 
-        {/* Grille 3 colonnes côte à côte */}
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
+        {/* Grille 3 colonnes côte à côte (tablette + desktop) */}
+        <div className="mt-14 grid gap-4 md:grid-cols-3 md:gap-5 lg:gap-6">
           {categories.map((cat, i) => (
             <Reveal key={cat.title} delay={i * 0.08} className="">
               <Link

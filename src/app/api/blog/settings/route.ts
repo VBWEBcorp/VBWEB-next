@@ -6,10 +6,11 @@ import { verifyAuth } from '@/lib/auth'
 export const dynamic = 'force-dynamic'
 
 const DEFAULT_SETTINGS = {
-  enabled: false,
+  enabled: true,
   title: 'Nos dernières actualités',
   eyebrow: 'Blog',
   description: 'Retrouvez nos conseils, nos projets récents et les tendances du secteur.',
+  moderateComments: false,
 }
 
 const CACHE_HEADERS = {
@@ -41,7 +42,7 @@ export async function PUT(request: NextRequest) {
     if (!settings) {
       settings = await BlogSettings.create(body)
     } else {
-      const fields = ['enabled', 'title', 'description', 'eyebrow', 'heroImage', 'categories']
+      const fields = ['enabled', 'title', 'description', 'eyebrow', 'heroImage', 'categories', 'moderateComments']
       for (const field of fields) {
         if (body[field] !== undefined) (settings as any)[field] = body[field]
       }

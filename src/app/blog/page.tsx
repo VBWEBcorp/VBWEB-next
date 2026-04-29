@@ -6,7 +6,7 @@ import { siteConfig } from '@/lib/seo'
 import { breadcrumbJsonLd, webPageJsonLd } from '@/components/seo/json-ld'
 import { BlogListClient } from './blog-list-client'
 
-export const dynamic = 'force-dynamic'
+export const revalidate = 1800
 
 async function getBlogData() {
   await connectDB()

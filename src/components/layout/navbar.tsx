@@ -1,20 +1,14 @@
 'use client'
 
 import {
-  Menu,
-  X,
   ArrowRight,
   ArrowUpRight,
   Search,
   MapPin,
   Globe,
   FileSearch,
-  Briefcase,
   Code,
-  Layers,
-  Home,
   User,
-  Mail,
   Image as ImageIcon,
   BookOpen,
 } from 'lucide-react'
@@ -36,12 +30,10 @@ interface MenuSection {
   items: MenuItem[]
 }
 
-const mainSection: MenuSection = {
-  title: 'Navigation',
+const aboutSection: MenuSection = {
+  title: 'Agence',
   items: [
-    { to: '/', label: 'Accueil', description: 'Page principale', icon: Home },
     { to: '/a-propos', label: 'À propos', description: "L'histoire et la vision", icon: User },
-    { to: '/contact', label: 'Contact', description: 'Réponse sous 24h', icon: Mail },
   ],
 }
 
@@ -183,8 +175,9 @@ export function Navbar() {
         }
       : null
 
-  const sections = [mainSection, servicesSection, caseStudiesSection]
+  const sections = [caseStudiesSection, servicesSection]
   if (moreSection) sections.push(moreSection)
+  sections.push(aboutSection)
 
   return (
     <>
@@ -205,13 +198,21 @@ export function Navbar() {
           >
             <img
               src="https://i.ibb.co/C3ZJ3z59/VBWEB-LOGO-BLEU-BLANC.png"
-              alt="VBWEB - Consultant SEO Rennes"
+              alt="VBWEB - Agence web & SEO"
               className="h-8 w-auto transition-transform duration-300 group-hover:scale-105"
             />
           </Link>
 
           {/* Right actions */}
           <div className="flex items-center gap-2">
+            {hasBlog && (
+              <Link
+                href="/blog"
+                className="hidden h-9 items-center rounded-full px-3 text-[13px] font-medium text-foreground/80 transition-colors hover:text-foreground sm:inline-flex"
+              >
+                Blog
+              </Link>
+            )}
             <Link
               href="/contact"
               className="hidden h-9 items-center gap-1.5 rounded-full bg-primary px-4 text-[13px] font-medium text-primary-foreground transition-colors hover:bg-primary/85 sm:inline-flex"

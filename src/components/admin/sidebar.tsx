@@ -16,6 +16,8 @@ import {
   ExternalLink,
   FileText,
   Globe,
+  Linkedin,
+  MessageCircle,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { useSidebar } from '@/components/admin/sidebar-context'
@@ -32,6 +34,11 @@ const pageItems = [
   { href: '/admin/pages/temoignages', label: 'Témoignages', icon: MessageSquare },
   { href: '/admin/gallery', label: 'Galerie', icon: Images },
   { href: '/admin/blog', label: 'Blog', icon: FileText },
+]
+
+const toolItems = [
+  { href: '/admin/linkedin', label: 'LinkedIn IA', icon: Linkedin },
+  { href: '/admin/comments', label: 'Commentaires', icon: MessageCircle },
 ]
 
 function NavLink({
@@ -139,6 +146,18 @@ export function AdminSidebar() {
           )}
           {collapsed && <div className="border-t border-border/50 mb-2" />}
           {pageItems.map((item) => (
+            <NavLink key={item.href} {...item} pathname={pathname} collapsed={collapsed} />
+          ))}
+        </div>
+
+        <div className="space-y-1">
+          {!collapsed && (
+            <p className="px-3 pb-1.5 text-[10px] font-semibold text-muted-foreground/30 uppercase tracking-widest">
+              Outils
+            </p>
+          )}
+          {collapsed && <div className="border-t border-border/50 mb-2" />}
+          {toolItems.map((item) => (
             <NavLink key={item.href} {...item} pathname={pathname} collapsed={collapsed} />
           ))}
         </div>

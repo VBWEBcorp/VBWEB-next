@@ -35,7 +35,17 @@ export interface IBlogSettings extends Document {
   eyebrow?: string
   heroImage?: string
   categories: string[]
+  moderateComments: boolean
   updatedAt: Date
+}
+
+export interface IBlogComment extends Document {
+  postSlug: string
+  author: string
+  email: string
+  content: string
+  approved: boolean
+  createdAt: Date
 }
 
 const BlogPostSchema = new Schema<IBlogPost>(
@@ -67,12 +77,24 @@ const BlogPostSchema = new Schema<IBlogPost>(
 
 const BlogSettingsSchema = new Schema<IBlogSettings>(
   {
-    enabled: { type: Boolean, default: false },
+    enabled: { type: Boolean, default: true },
     title: { type: String, default: 'Nos dernières actualités' },
     description: { type: String, default: 'Retrouvez nos conseils, nos projets récents et les tendances du secteur.' },
     eyebrow: { type: String, default: 'Blog' },
     heroImage: String,
     categories: [{ type: String }],
+    moderateComments: { type: Boolean, default: false },
+  },
+  { timestamps: true }
+)
+
+const BlogCommentSchema = new Schema<IBlogComment>(
+  {
+    postSlug: { type: String, required: true, index: true },
+    author: { type: String, required: true, trim: true, maxlength: 80 },
+    email: { type: String, required: true, trim: true, maxlength: 160 },
+    content: { type: String, required: true, trim: true, maxlength: 2000 },
+    approved: { type: Boolean, default: true },
   },
   { timestamps: true }
 )
@@ -82,3 +104,6 @@ export const BlogPost = mongoose.models.BlogPost ||
 
 export const BlogSettings = mongoose.models.BlogSettings ||
   mongoose.model<IBlogSettings>('BlogSettings', BlogSettingsSchema)
+
+export const BlogComment = mongoose.models.BlogComment ||
+  mongoose.model<IBlogComment>('BlogComment', BlogCommentSchema)

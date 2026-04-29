@@ -86,13 +86,13 @@ export function Footer() {
                   <Link href="/" className="group/logo inline-flex items-center gap-2.5">
                     <img
                       src="https://i.ibb.co/C3ZJ3z59/VBWEB-LOGO-BLEU-BLANC.png"
-                      alt="VBWEB - Consultant SEO Rennes"
+                      alt="VBWEB - Agence web & SEO"
                       className="h-9 w-auto transition-transform duration-300 group-hover/logo:scale-105"
                     />
                   </Link>
 
                   <p className="mt-5 max-w-xs text-[13px] leading-relaxed text-muted-foreground">
-                    {siteConfig.name}, dirigé par {siteConfig.legalName}. J&apos;aide les PME, artisans et commerces de Bretagne à attirer plus de clients grâce à Google.
+                    {siteConfig.name}, fondée par {siteConfig.legalName}. J&apos;accompagne les entreprises dans leur stratégie digitale : sites internet, référencement naturel, applications web sur mesure.
                   </p>
 
                   {/* Coordonnées */}

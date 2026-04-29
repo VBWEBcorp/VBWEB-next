@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ArrowLeft, ArrowRight, ExternalLink, Info, Star } from 'lucide-react'
+import { ArrowRight, ExternalLink, Info, Star } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
 import { Reveal } from '@/components/ui/reveal'
@@ -162,18 +162,18 @@ function ProjectCard({ project, index }: { project: WebProject; index: number })
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/80 via-background/10 to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-80" />
         </div>
 
-        <div className="flex flex-1 flex-col p-4 sm:p-5">
-          <h3 className="mb-2 font-display text-sm font-semibold text-foreground transition-colors duration-200 group-hover:text-primary sm:text-base">
+        <div className="flex flex-1 flex-col p-3 sm:p-5">
+          <h3 className="mb-1.5 font-display text-[13px] font-semibold leading-tight text-foreground transition-colors duration-200 group-hover:text-primary sm:mb-2 sm:text-base">
             {project.name}
           </h3>
-          <p className="mb-3 flex-1 text-xs leading-relaxed text-muted-foreground sm:mb-4 sm:text-sm">
+          <p className="mb-3 flex-1 text-[11px] leading-relaxed text-muted-foreground sm:mb-4 sm:text-sm">
             {project.description}
           </p>
           <a
             href={project.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-auto flex w-full items-center justify-center gap-1.5 rounded-xl border border-primary/30 bg-primary/10 px-3 py-2 text-xs font-medium text-foreground transition-all duration-200 hover:border-primary hover:bg-primary hover:text-primary-foreground"
+            className="mt-auto flex w-full items-center justify-center gap-1.5 rounded-xl border border-primary/30 bg-primary/10 px-2 py-1.5 text-[11px] font-medium text-foreground transition-all duration-200 hover:border-primary hover:bg-primary hover:text-primary-foreground sm:px-3 sm:py-2 sm:text-xs"
           >
             <ExternalLink className="size-3" />
             Voir le site
@@ -192,62 +192,24 @@ export function SitesInternetContent() {
         {/* Grain overlay */}
         <div className="pointer-events-none absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'url(/grain.webp)', backgroundRepeat: 'repeat' }} />
 
-        <div className="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
-          <Link
-            href="/etudes-de-cas"
-            className="mb-8 inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors duration-200 hover:text-foreground"
-          >
-            <ArrowLeft className="size-3.5" />
-            Toutes les études de cas
-          </Link>
-
+        <div className="relative mx-auto max-w-6xl px-4 pb-4 pt-6 sm:px-6 sm:pb-8 sm:pt-10 lg:px-8 lg:pb-10 lg:pt-14">
           <div
             className="mx-auto max-w-3xl text-center"
             style={{ animation: 'hero-fade-up 0.65s cubic-bezier(0.22,1,0.36,1) both' }}
           >
-            <p className="font-display text-xs font-semibold uppercase tracking-[0.22em] text-primary">
+            <p className="font-display text-[11px] font-semibold uppercase tracking-[0.22em] text-primary sm:text-xs">
               Portfolio, Créations web à Rennes
             </p>
-            <h1 className="mt-4 font-display text-balance text-4xl leading-[1.08] tracking-[-0.03em] text-foreground sm:text-5xl">
+            <h1 className="mt-2 font-display text-balance text-[26px] leading-[1.08] tracking-[-0.03em] text-foreground sm:mt-3 sm:text-5xl">
               Sites internet créés sur mesure
             </h1>
-            <p className="hero-description mx-auto mt-6 max-w-2xl text-pretty text-lg leading-relaxed text-muted-foreground">
-              Vitrines, e-commerce, sites d&apos;artisans ou de PME : chaque site est conçu sur mesure, optimisé pour la performance et pensé pour convertir vos visiteurs en clients.
-            </p>
-            <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-              <Button size="lg" className="group bg-primary text-primary-foreground hover:bg-primary/85" asChild>
-                <Link href="/contact">
-                  Demander un devis
-                  <ArrowRight className="transition-transform duration-200 group-hover:translate-x-0.5" />
-                </Link>
-              </Button>
-              <Button size="lg" variant="outline" className="border-white/15 bg-foreground/5 text-foreground hover:bg-foreground/10 hover:text-foreground" asChild>
-                <Link href="/creation-site-internet-rennes">Nos services web</Link>
-              </Button>
-            </div>
           </div>
-        </div>
-      </section>
 
-      {/* ── Info + context SEO ── */}
-      <section className="relative bg-card">
-        <div className="pointer-events-none absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'url(/grain.webp)', backgroundRepeat: 'repeat' }} />
-
-        <div className="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
-          <Reveal className="mx-auto max-w-3xl space-y-4 text-center">
-            <h2 className="font-display text-balance text-3xl leading-[1.12] tracking-[-0.02em] text-foreground sm:text-4xl">
-              +19 sites internet livrés pour des entreprises à Rennes et en Bretagne
-            </h2>
-            <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
-              PME, artisans, commerces, professions libérales : chaque projet est unique. Design moderne, responsive, rapide : des sites pensés pour votre activité et vos clients.
-            </p>
-          </Reveal>
-
-          <Reveal delay={0.1} className="mx-auto mt-10 max-w-3xl">
-            <div className="rounded-[1.35rem] border border-border/60 bg-background/50 p-4 sm:p-5">
-              <div className="flex items-start gap-3">
-                <Info className="mt-0.5 size-5 shrink-0 text-primary" />
-                <p className="text-xs leading-relaxed text-muted-foreground sm:text-sm">
+          <Reveal delay={0.05} className="mx-auto mt-5 max-w-3xl sm:mt-6">
+            <div className="rounded-2xl border border-border/60 bg-card/40 p-3 sm:p-4">
+              <div className="flex items-start gap-2.5">
+                <Info className="mt-0.5 size-4 shrink-0 text-primary sm:size-5" />
+                <p className="text-[11px] leading-relaxed text-muted-foreground sm:text-sm">
                   Cet espace présente un aperçu des créations réalisées par VBWEB.
                   La partie <Link href="/referencement-seo-rennes" className="text-primary underline underline-offset-2 transition-colors duration-200 hover:text-primary/80">référencement SEO</Link> dépend
                   du budget et des besoins de chaque client. Ici, c&apos;est uniquement le design et l&apos;expérience utilisateur qui sont mis en avant.
@@ -262,21 +224,24 @@ export function SitesInternetContent() {
       <section className="relative bg-background">
         <div className="pointer-events-none absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'url(/grain.webp)', backgroundRepeat: 'repeat' }} />
 
-        <div className="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
-          <Reveal className="mx-auto mb-12 max-w-3xl text-center">
-            <p className="font-display text-xs font-semibold uppercase tracking-[0.22em] text-primary">
-              Réalisations
-            </p>
-            <h2 className="mt-4 font-display text-3xl tracking-[-0.02em] text-foreground sm:text-4xl">
-              Nos créations de sites web
-            </h2>
-          </Reveal>
-
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="relative mx-auto max-w-6xl px-4 pb-12 pt-2 sm:px-6 sm:pb-16 sm:pt-4 lg:px-8 lg:pb-20">
+          <div className="grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-3">
             {projects.map((project, index) => (
               <ProjectCard key={project.id} project={project} index={index} />
             ))}
           </div>
+
+          <Reveal delay={0.1} className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <Button size="lg" className="group bg-primary text-primary-foreground hover:bg-primary/85" asChild>
+              <Link href="/contact">
+                Demander un devis
+                <ArrowRight className="transition-transform duration-200 group-hover:translate-x-0.5" />
+              </Link>
+            </Button>
+            <Button size="lg" variant="outline" className="border-white/15 bg-foreground/5 text-foreground hover:bg-foreground/10 hover:text-foreground" asChild>
+              <Link href="/creation-site-internet-rennes">Nos services web</Link>
+            </Button>
+          </Reveal>
         </div>
       </section>
 
