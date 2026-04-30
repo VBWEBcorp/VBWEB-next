@@ -1,5 +1,4 @@
 import { ArrowRight, ArrowUpRight } from 'lucide-react'
-import Image from 'next/image'
 import Link from 'next/link'
 
 import { Reveal } from '@/components/ui/reveal'
@@ -28,7 +27,7 @@ export function FounderSection() {
 
           <div className="relative p-6 sm:p-10 lg:p-14">
             {/* Header — texte au-dessus */}
-            <div className="relative flex flex-col items-start gap-8 sm:flex-row sm:items-end sm:justify-between">
+            <div className="relative">
               <div className="max-w-xl">
                 <p className="font-display text-[11px] font-semibold tracking-[0.24em] text-primary/80 uppercase">
                   Quelques mots du fondateur
@@ -77,23 +76,6 @@ export function FounderSection() {
                 </div>
               </div>
 
-              {/* Mini bloc auteur à droite (desktop) */}
-              <div className="flex items-center gap-3">
-                <div className="size-10 overflow-hidden rounded-full ring-1 ring-border/60">
-                  <Image
-                    src="/victor.jpg"
-                    alt=""
-                    width={40}
-                    height={40}
-                    sizes="40px"
-                    className="size-full object-cover"
-                  />
-                </div>
-                <div>
-                  <p className="text-[13px] font-semibold text-foreground">Victor Béasse</p>
-                  <p className="text-[11px] text-muted-foreground/70">Fondateur VBWEB</p>
-                </div>
-              </div>
             </div>
 
             {/* Vidéo plein largeur */}

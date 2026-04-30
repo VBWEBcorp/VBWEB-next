@@ -16,7 +16,7 @@ const steps = [
   {
     number: '02',
     icon: Rocket,
-    title: 'Site internet et stratégie SEO',
+    title: 'Site internet et stratégie SEO/GEO',
     description:
       'Un site moderne et performant, associé à une stratégie de référencement adaptée à votre marché et à vos clients.',
   },

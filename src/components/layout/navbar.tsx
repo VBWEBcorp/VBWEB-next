@@ -9,8 +9,6 @@ import {
   FileSearch,
   Code,
   User,
-  Image as ImageIcon,
-  BookOpen,
 } from 'lucide-react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -23,17 +21,23 @@ interface MenuItem {
   label: string
   description: string
   icon: React.ComponentType<{ className?: string }>
+  image?: string
 }
 
 interface MenuSection {
-  title: string
+  title?: string
   items: MenuItem[]
 }
 
 const aboutSection: MenuSection = {
-  title: 'Agence',
   items: [
-    { to: '/a-propos', label: 'À propos', description: "L'histoire et la vision", icon: User },
+    {
+      to: '/a-propos',
+      label: 'À propos',
+      description: "L'histoire et la vision",
+      icon: User,
+      image: '/victor.jpg',
+    },
   ],
 }
 
@@ -94,7 +98,6 @@ const caseStudiesSection: MenuSection = {
 export function Navbar() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
-  const [hasGallery, setHasGallery] = useState(false)
   const [hasBlog, setHasBlog] = useState(false)
   const pathname = usePathname()
 
@@ -108,13 +111,8 @@ export function Navbar() {
   useEffect(() => {
     const checkFeatures = async () => {
       try {
-        const [galleryRes, blogRes] = await Promise.all([
-          fetch('/api/gallery/settings'),
-          fetch('/api/blog/settings'),
-        ])
-        const gallery = await galleryRes.json()
+        const blogRes = await fetch('/api/blog/settings')
         const blog = await blogRes.json()
-        setHasGallery(!!gallery.enabled)
         setHasBlog(!!blog.enabled)
       } catch (error) {
         console.error('Failed to check features:', error)
@@ -146,38 +144,7 @@ export function Navbar() {
     setOpen(false)
   }, [pathname])
 
-  const moreSection: MenuSection | null =
-    hasGallery || hasBlog
-      ? {
-          title: 'Plus',
-          items: [
-            ...(hasGallery
-              ? [
-                  {
-                    to: '/gallery',
-                    label: 'Galerie',
-                    description: 'Inspirations visuelles',
-                    icon: ImageIcon,
-                  },
-                ]
-              : []),
-            ...(hasBlog
-              ? [
-                  {
-                    to: '/blog',
-                    label: 'Blog',
-                    description: 'Articles et conseils SEO',
-                    icon: BookOpen,
-                  },
-                ]
-              : []),
-          ],
-        }
-      : null
-
-  const sections = [caseStudiesSection, servicesSection]
-  if (moreSection) sections.push(moreSection)
-  sections.push(aboutSection)
+  const sections: MenuSection[] = [caseStudiesSection, servicesSection, aboutSection]
 
   return (
     <>
@@ -277,9 +244,11 @@ export function Navbar() {
                         'lg:mt-0 lg:border-t-0 lg:pt-0'
                       )}
                     >
-                      <p className="px-3 pt-2 pb-1.5 font-display text-[10px] font-semibold uppercase tracking-[0.2em] text-muted-foreground/60">
-                        {section.title}
-                      </p>
+                      {section.title && (
+                        <p className="px-3 pt-2 pb-1.5 font-display text-[10px] font-semibold uppercase tracking-[0.2em] text-muted-foreground/60">
+                          {section.title}
+                        </p>
+                      )}
                       <div className="space-y-0.5">
                         {section.items.map((item) => {
                           const Icon = item.icon
@@ -296,9 +265,19 @@ export function Navbar() {
                                   : 'text-foreground/85 hover:bg-foreground/[0.05] hover:text-foreground'
                               )}
                             >
-                              <span className="flex size-7 shrink-0 items-center justify-center rounded-md text-muted-foreground transition-colors duration-200 group-hover/item:text-primary">
-                                <Icon className="size-4" />
-                              </span>
+                              {item.image ? (
+                                <span className="flex size-7 shrink-0 overflow-hidden rounded-full ring-1 ring-border/60">
+                                  <img
+                                    src={item.image}
+                                    alt=""
+                                    className="size-full object-cover"
+                                  />
+                                </span>
+                              ) : (
+                                <span className="flex size-7 shrink-0 items-center justify-center rounded-md text-muted-foreground transition-colors duration-200 group-hover/item:text-primary">
+                                  <Icon className="size-4" />
+                                </span>
+                              )}
                               <span className="flex-1 text-[14px] font-medium">
                                 {item.label}
                               </span>
