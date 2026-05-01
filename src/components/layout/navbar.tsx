@@ -27,6 +27,7 @@ interface MenuItem {
 interface MenuSection {
   title?: string
   items: MenuItem[]
+  featured?: boolean
 }
 
 const aboutSection: MenuSection = {
@@ -73,6 +74,7 @@ const servicesSection: MenuSection = {
 
 const caseStudiesSection: MenuSection = {
   title: 'Études de cas',
+  featured: true,
   items: [
     {
       to: '/etudes-de-cas/sites-internet',
@@ -238,20 +240,25 @@ export function Navbar() {
                 <div className="lg:grid lg:grid-cols-3 lg:gap-2">
                   {sections.map((section, idx) => (
                     <div
-                      key={section.title}
+                      key={section.title ?? `section-${idx}`}
                       className={cn(
                         idx > 0 && 'mt-1 border-t border-border/40 pt-2',
-                        'lg:mt-0 lg:border-t-0 lg:pt-0'
+                        'lg:mt-0 lg:border-t-0 lg:pt-0',
+                        section.featured && 'rounded-xl bg-primary/[0.04] p-1 lg:p-2'
                       )}
                     >
                       {section.title && (
-                        <p className="px-3 pt-2 pb-1.5 font-display text-[10px] font-semibold uppercase tracking-[0.2em] text-muted-foreground/60">
+                        <p
+                          className={cn(
+                            'px-3 pt-2 pb-1.5 font-display text-[10px] font-semibold uppercase tracking-[0.2em]',
+                            section.featured ? 'text-primary' : 'text-white'
+                          )}
+                        >
                           {section.title}
                         </p>
                       )}
                       <div className="space-y-0.5">
                         {section.items.map((item) => {
-                          const Icon = item.icon
                           const isActive = pathname === item.to
                           return (
                             <Link
@@ -259,13 +266,14 @@ export function Navbar() {
                               href={item.to}
                               onClick={() => setOpen(false)}
                               className={cn(
-                                'group/item flex items-center gap-3 rounded-xl px-3 py-2.5 transition-colors duration-200',
+                                'group/item flex items-center gap-3 rounded-xl px-3 transition-colors duration-200',
+                                section.featured ? 'py-2' : 'py-2.5',
                                 isActive
                                   ? 'bg-foreground/[0.05] text-foreground'
                                   : 'text-foreground/85 hover:bg-foreground/[0.05] hover:text-foreground'
                               )}
                             >
-                              {item.image ? (
+                              {item.image && (
                                 <span className="flex size-7 shrink-0 overflow-hidden rounded-full ring-1 ring-border/60">
                                   <img
                                     src={item.image}
@@ -273,13 +281,16 @@ export function Navbar() {
                                     className="size-full object-cover"
                                   />
                                 </span>
-                              ) : (
-                                <span className="flex size-7 shrink-0 items-center justify-center rounded-md text-muted-foreground transition-colors duration-200 group-hover/item:text-primary">
-                                  <Icon className="size-4" />
-                                </span>
                               )}
-                              <span className="flex-1 text-[14px] font-medium">
-                                {item.label}
+                              <span className="flex-1 min-w-0">
+                                <span className="block text-[14px] font-medium">
+                                  {item.label}
+                                </span>
+                                {section.featured && (
+                                  <span className="mt-0.5 block text-[12px] text-muted-foreground/70">
+                                    {item.description}
+                                  </span>
+                                )}
                               </span>
                               <ArrowUpRight className="size-3.5 shrink-0 text-muted-foreground/30 opacity-0 transition-all duration-200 group-hover/item:opacity-100" />
                             </Link>
