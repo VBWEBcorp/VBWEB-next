@@ -156,7 +156,7 @@ export async function POST(request: NextRequest) {
     }
 
     const plainContent = stripHtml(post.content || '').slice(0, 12000)
-    const articleUrl = `https://www.consultant-seo-rennes.fr/blog/${post.slug}`
+    const articleUrl = `https://www.vbweb.fr/blog/${post.slug}`
 
     const userPrompt = `Voici un article de blog publié par VBWEB. Analyse-le et génère un post LinkedIn putaclic (mais honnête) qui donne envie de le lire.
 

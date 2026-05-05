@@ -817,7 +817,7 @@ export default function BlogPostEditor({ params }: { params: Promise<{ slug: str
                   {post.metaTitle || post.title || 'Titre de l\'article'}
                 </p>
                 <p className="text-[#006621] text-[11px] truncate">
-                  consultant-seo-rennes.fr/blog/{post.slug || 'url-article'}
+                  vbweb.fr/blog/{post.slug || 'url-article'}
                 </p>
                 <p className="text-[11px] text-[#545454] line-clamp-2 leading-relaxed">
                   {post.metaDescription || post.excerpt || 'Description de l\'article...'}

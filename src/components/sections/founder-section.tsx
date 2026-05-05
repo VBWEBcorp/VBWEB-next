@@ -26,8 +26,8 @@ export function FounderSection() {
         >
 
           <div className="relative p-6 sm:p-10 lg:p-14">
-            {/* Header — texte au-dessus */}
-            <div className="relative">
+            {/* Header — titre + bloc expertise/résultat (split sur desktop) */}
+            <div className="relative grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-12">
               <div className="max-w-xl">
                 <p className="font-display text-[11px] font-semibold tracking-[0.24em] text-primary/80 uppercase">
                   Quelques mots du fondateur
@@ -36,46 +36,45 @@ export function FounderSection() {
                   Deux expertises,{' '}
                   <span className="italic text-muted-foreground/80">un résultat parfait</span>
                 </h2>
+              </div>
 
-                <div className="mt-7 grid gap-3 sm:grid-cols-[1fr_auto_1fr] sm:items-center sm:gap-4">
-                  {/* Mon expertise — rectangle fin */}
-                  <div className="rounded-xl border border-border/60 bg-card/30 px-4 py-3 backdrop-blur-sm">
-                    <p className="font-display text-[10px] font-semibold uppercase tracking-[0.22em] text-white">
-                      Mon expertise
-                    </p>
-                    <div className="mt-2 flex flex-wrap gap-1.5">
-                      <span className="rounded-full border border-primary/25 bg-primary/5 px-2.5 py-1 text-[12px] font-medium text-foreground">
-                        Référencement Google (SEO/GEO)
-                      </span>
-                      <span className="rounded-full border border-primary/25 bg-primary/5 px-2.5 py-1 text-[12px] font-medium text-foreground">
-                        Développement web
-                      </span>
-                    </div>
+              <div className="grid gap-3 sm:grid-cols-[1fr_auto_1fr] sm:items-center sm:gap-4">
+                {/* Mon expertise — rectangle fin */}
+                <div className="rounded-xl border border-border/60 bg-card/30 px-4 py-3 backdrop-blur-sm">
+                  <p className="font-display text-[10px] font-semibold uppercase tracking-[0.22em] text-white">
+                    Mon expertise
+                  </p>
+                  <div className="mt-2 flex flex-wrap gap-1.5">
+                    <span className="rounded-full border border-primary/25 bg-primary/5 px-2.5 py-1 text-[12px] font-medium text-foreground">
+                      Référencement Google (SEO/GEO)
+                    </span>
+                    <span className="rounded-full border border-primary/25 bg-primary/5 px-2.5 py-1 text-[12px] font-medium text-foreground">
+                      Développement web
+                    </span>
                   </div>
+                </div>
 
-                  {/* Flèche */}
-                  <div className="flex items-center justify-center text-primary/60">
-                    <ArrowRight className="hidden size-5 sm:block" aria-hidden />
-                    <ArrowRight className="size-5 rotate-90 sm:hidden" aria-hidden />
-                  </div>
+                {/* Flèche */}
+                <div className="flex items-center justify-center text-primary/60">
+                  <ArrowRight className="hidden size-5 sm:block" aria-hidden />
+                  <ArrowRight className="size-5 rotate-90 sm:hidden" aria-hidden />
+                </div>
 
-                  {/* Votre résultat — rectangle fin */}
-                  <div className="rounded-xl border border-border/60 bg-card/30 px-4 py-3 backdrop-blur-sm">
-                    <p className="font-display text-[10px] font-semibold uppercase tracking-[0.22em] text-white">
-                      Votre résultat
-                    </p>
-                    <div className="mt-2 flex flex-wrap gap-1.5">
-                      <span className="rounded-full border border-foreground/15 bg-foreground/5 px-2.5 py-1 text-[12px] font-medium text-foreground">
-                        Plus de crédibilité
-                      </span>
-                      <span className="rounded-full border border-foreground/15 bg-foreground/5 px-2.5 py-1 text-[12px] font-medium text-foreground">
-                        Plus de prospects qualifiés
-                      </span>
-                    </div>
+                {/* Votre résultat — rectangle fin */}
+                <div className="rounded-xl border border-border/60 bg-card/30 px-4 py-3 backdrop-blur-sm">
+                  <p className="font-display text-[10px] font-semibold uppercase tracking-[0.22em] text-white">
+                    Votre résultat
+                  </p>
+                  <div className="mt-2 flex flex-wrap gap-1.5">
+                    <span className="rounded-full border border-foreground/15 bg-foreground/5 px-2.5 py-1 text-[12px] font-medium text-foreground">
+                      Plus de crédibilité
+                    </span>
+                    <span className="rounded-full border border-foreground/15 bg-foreground/5 px-2.5 py-1 text-[12px] font-medium text-foreground">
+                      Plus de prospects qualifiés
+                    </span>
                   </div>
                 </div>
               </div>
-
             </div>
 
             {/* Vidéo plein largeur */}
