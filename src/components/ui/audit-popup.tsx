@@ -1,9 +1,12 @@
 'use client'
 
-import { ArrowRight, CheckCircle2, X } from 'lucide-react'
+import { ArrowRight, CalendarClock, CheckCircle2, ShieldCheck, X } from 'lucide-react'
 import { useState, FormEvent, useEffect, useCallback } from 'react'
 
+import { useHomeLang, t } from '@/components/home/lang'
+
 const FORMSPREE = 'https://formspree.io/f/xojppgjr'
+const CALENDLY = 'https://calendly.com/web-rdv/echange-vbweb-30-minutes'
 
 export function useAuditPopup() {
   const [open, setOpen] = useState(false)
@@ -14,6 +17,9 @@ export function AuditPopup({ open, onClose }: { open: boolean; onClose: () => vo
   const [sending, setSending] = useState(false)
   const [sent, setSent] = useState(false)
   const [error, setError] = useState('')
+  const { lang } = useHomeLang()
+  const tp = t.popup
+  const budgetOptions = tp.budgetOptions[lang]
 
   const handleKey = useCallback((e: KeyboardEvent) => {
     if (e.key === 'Escape') onClose()
@@ -38,7 +44,7 @@ export function AuditPopup({ open, onClose }: { open: boolean; onClose: () => vo
     setError('')
 
     const data = new FormData(e.currentTarget)
-    data.set('service', 'Audit SEO gratuit')
+    data.set('service', 'Diagnostic SEO/GEO gratuit')
 
     try {
       const res = await fetch(FORMSPREE, {
@@ -49,10 +55,10 @@ export function AuditPopup({ open, onClose }: { open: boolean; onClose: () => vo
       if (res.ok) {
         setSent(true)
       } else {
-        setError('Une erreur est survenue. Réessayez ou contactez-nous directement.')
+        setError(tp.errorGeneric[lang])
       }
     } catch {
-      setError('Erreur réseau. Vérifiez votre connexion.')
+      setError(tp.errorNetwork[lang])
     } finally {
       setSending(false)
     }
@@ -61,24 +67,35 @@ export function AuditPopup({ open, onClose }: { open: boolean; onClose: () => vo
   if (!open) return null
 
   return (
-    <div className="fixed inset-0 z-[200] flex items-center justify-center p-4">
+    <div className="fixed inset-0 z-[200] overflow-y-auto">
       {/* Backdrop */}
       <button
         type="button"
         aria-label="Fermer"
         onClick={onClose}
-        className="absolute inset-0 bg-black/60 animate-[fade-in_0.2s_ease-out_both]"
+        className="fixed inset-0 bg-black/60 animate-[fade-in_0.2s_ease-out_both]"
       />
 
-      {/* Modal */}
-      <div className="relative w-full max-w-md animate-[hero-scale-in_0.25s_cubic-bezier(0.22,1,0.36,1)_both]">
-        <div className="relative overflow-hidden rounded-[1.5rem] border border-border/60 bg-background p-6 shadow-2xl sm:p-8">
+      {/* Modal wrapper — handles centering and overflow scroll */}
+      <div className="relative flex min-h-full items-center justify-center p-3 sm:p-4">
+        <div className="relative my-4 w-full max-w-md animate-[hero-scale-in_0.25s_cubic-bezier(0.22,1,0.36,1)_both]">
+          <div className="relative overflow-hidden rounded-[1.5rem] border border-border/60 bg-background p-5 shadow-2xl sm:p-8">
+          {/* Top accent gradient */}
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent"
+          />
+          {/* Subtle radial glow */}
+          <div
+            aria-hidden
+            className="pointer-events-none absolute -top-24 left-1/2 size-48 -translate-x-1/2 rounded-full bg-primary/10 blur-3xl"
+          />
           {/* Close button */}
           <button
             type="button"
             onClick={onClose}
             aria-label="Fermer"
-            className="absolute right-4 top-4 flex size-8 items-center justify-center rounded-full text-muted-foreground transition-colors hover:text-foreground"
+            className="absolute right-4 top-4 z-10 flex size-8 items-center justify-center rounded-full text-muted-foreground transition-colors hover:text-foreground"
           >
             <X className="size-4" />
           </button>
@@ -89,37 +106,40 @@ export function AuditPopup({ open, onClose }: { open: boolean; onClose: () => vo
                 <CheckCircle2 className="size-7" />
               </div>
               <h3 className="font-display text-xl font-medium text-foreground">
-                Demande envoyée !
+                {tp.successTitle[lang]}
               </h3>
               <p className="text-[14px] text-muted-foreground">
-                Je vous envoie votre audit vidéo sous 48h. Pensez à vérifier vos spams.
+                {tp.successMessage[lang]}
               </p>
               <button
                 type="button"
                 onClick={onClose}
                 className="mt-2 text-[13px] font-medium text-primary transition-colors hover:text-primary/80"
               >
-                Fermer
+                {tp.close[lang]}
               </button>
             </div>
           ) : (
             <>
-              <div className="mb-6">
-                <p className="font-display text-[11px] font-semibold tracking-[0.24em] text-primary/80 uppercase">
-                  Gratuit, sans engagement
-                </p>
-                <h3 className="mt-2 font-display text-xl font-medium tracking-[-0.01em] text-foreground sm:text-2xl">
-                  Votre audit SEO en vidéo
+              <div className="mb-4 sm:mb-5">
+                <div className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-3 py-1 shadow-[0_0_20px_-8px_rgba(78,186,236,0.5)]">
+                  <ShieldCheck className="size-3.5 text-primary" />
+                  <span className="font-display text-[11px] font-bold uppercase tracking-[0.14em] text-primary sm:text-[12px] sm:tracking-[0.16em]">
+                    {tp.badge[lang]}
+                  </span>
+                </div>
+                <h3 className="mt-3 font-display text-lg font-medium tracking-[-0.01em] text-foreground sm:text-2xl">
+                  {tp.title[lang]}
                 </h3>
-                <p className="mt-2 text-[14px] text-muted-foreground">
-                  Je vous envoie une analyse vidéo personnalisée de 10 minutes de votre site. Sous 48h.
+                <p className="mt-1.5 text-[13px] leading-snug text-muted-foreground sm:text-[14px] sm:leading-relaxed">
+                  {tp.subtitle[lang]}
                 </p>
               </div>
 
-              <form className="space-y-4" onSubmit={handleSubmit}>
+              <form className="space-y-3" onSubmit={handleSubmit}>
                 <div>
                   <label htmlFor="audit-name" className="mb-1.5 block text-[12px] font-medium uppercase tracking-[0.12em] text-muted-foreground/70">
-                    Votre nom
+                    {tp.nameLabel[lang]}
                   </label>
                   <input
                     id="audit-name"
@@ -127,12 +147,12 @@ export function AuditPopup({ open, onClose }: { open: boolean; onClose: () => vo
                     required
                     autoComplete="name"
                     placeholder="Victor Béasse"
-                    className="w-full rounded-xl border border-border/60 bg-card/40 px-4 py-3 text-[14px] text-foreground placeholder:text-muted-foreground/40 outline-none transition-all focus:border-primary/60 focus:ring-2 focus:ring-primary/10"
+                    className="w-full rounded-xl border border-border/60 bg-card/40 px-4 py-2.5 text-base text-foreground placeholder:text-muted-foreground/40 outline-none transition-all focus:border-primary/60 focus:ring-2 focus:ring-primary/10"
                   />
                 </div>
                 <div>
                   <label htmlFor="audit-email" className="mb-1.5 block text-[12px] font-medium uppercase tracking-[0.12em] text-muted-foreground/70">
-                    Votre email
+                    {tp.emailLabel[lang]}
                   </label>
                   <input
                     id="audit-email"
@@ -141,12 +161,12 @@ export function AuditPopup({ open, onClose }: { open: boolean; onClose: () => vo
                     required
                     autoComplete="email"
                     placeholder="vous@email.com"
-                    className="w-full rounded-xl border border-border/60 bg-card/40 px-4 py-3 text-[14px] text-foreground placeholder:text-muted-foreground/40 outline-none transition-all focus:border-primary/60 focus:ring-2 focus:ring-primary/10"
+                    className="w-full rounded-xl border border-border/60 bg-card/40 px-4 py-2.5 text-base text-foreground placeholder:text-muted-foreground/40 outline-none transition-all focus:border-primary/60 focus:ring-2 focus:ring-primary/10"
                   />
                 </div>
                 <div>
                   <label htmlFor="audit-url" className="mb-1.5 block text-[12px] font-medium uppercase tracking-[0.12em] text-muted-foreground/70">
-                    URL de votre site
+                    {tp.urlLabel[lang]}
                   </label>
                   <input
                     id="audit-url"
@@ -154,8 +174,27 @@ export function AuditPopup({ open, onClose }: { open: boolean; onClose: () => vo
                     type="url"
                     required
                     placeholder="https://votresite.fr"
-                    className="w-full rounded-xl border border-border/60 bg-card/40 px-4 py-3 text-[14px] text-foreground placeholder:text-muted-foreground/40 outline-none transition-all focus:border-primary/60 focus:ring-2 focus:ring-primary/10"
+                    className="w-full rounded-xl border border-border/60 bg-card/40 px-4 py-2.5 text-base text-foreground placeholder:text-muted-foreground/40 outline-none transition-all focus:border-primary/60 focus:ring-2 focus:ring-primary/10"
                   />
+                </div>
+                <div>
+                  <label htmlFor="audit-budget" className="mb-1.5 block text-[12px] font-medium uppercase tracking-[0.12em] text-muted-foreground/70">
+                    {tp.budgetLabel[lang]}
+                  </label>
+                  <select
+                    id="audit-budget"
+                    name="budget"
+                    required
+                    defaultValue=""
+                    className="w-full appearance-none rounded-xl border border-border/60 bg-card/40 px-4 py-2.5 text-base text-foreground outline-none transition-all focus:border-primary/60 focus:ring-2 focus:ring-primary/10"
+                  >
+                    <option value="" disabled>{tp.budgetPlaceholder[lang]}</option>
+                    <option value="<1500">{budgetOptions[0]}</option>
+                    <option value="1500-3000">{budgetOptions[1]}</option>
+                    <option value="3000-5000">{budgetOptions[2]}</option>
+                    <option value=">5000">{budgetOptions[3]}</option>
+                    <option value="discuter">{budgetOptions[4]}</option>
+                  </select>
                 </div>
 
                 {error && <p className="text-[13px] text-red-400">{error}</p>}
@@ -163,20 +202,44 @@ export function AuditPopup({ open, onClose }: { open: boolean; onClose: () => vo
                 <button
                   type="submit"
                   disabled={sending}
-                  className="group flex h-12 w-full items-center justify-center gap-2 rounded-full bg-primary text-[14px] font-medium text-primary-foreground transition-all hover:bg-primary/85 disabled:opacity-50"
+                  className="group flex h-11 w-full items-center justify-center gap-2 rounded-full bg-primary text-[14px] font-medium text-primary-foreground transition-all hover:bg-primary/85 disabled:opacity-50"
                 >
                   {sending ? (
-                    'Envoi en cours…'
+                    tp.submitting[lang]
                   ) : (
                     <>
-                      Recevoir mon audit gratuit
+                      {tp.submit[lang]}
                       <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
                     </>
                   )}
                 </button>
               </form>
+
+              {/* Séparateur "ou" */}
+              <div className="relative my-3 sm:my-4">
+                <div aria-hidden className="absolute inset-0 flex items-center">
+                  <div className="w-full border-t border-border/40" />
+                </div>
+                <div className="relative flex justify-center">
+                  <span className="bg-background px-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-muted-foreground/60">
+                    {tp.or[lang]}
+                  </span>
+                </div>
+              </div>
+
+              {/* Bouton Calendly direct */}
+              <a
+                href={CALENDLY}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex h-10 w-full items-center justify-center gap-2 rounded-full border border-border/60 bg-card/40 text-[13px] font-medium text-foreground transition-all hover:border-primary/40 hover:bg-card/60 sm:h-11"
+              >
+                <CalendarClock className="size-4 text-primary" />
+                {tp.calendly[lang]}
+              </a>
             </>
           )}
+          </div>
         </div>
       </div>
     </div>

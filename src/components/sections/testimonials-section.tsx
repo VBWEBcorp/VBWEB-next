@@ -2,6 +2,7 @@
 
 import { Star } from 'lucide-react'
 
+import { useHomeLang, t } from '@/components/home/lang'
 import { Reveal } from '@/components/ui/reveal'
 
 const testimonials = [
@@ -97,6 +98,7 @@ function MarqueeRow({
 }
 
 export function TestimonialsSection() {
+  const { lang } = useHomeLang()
   const mid = Math.ceil(testimonials.length / 2)
   const topRow = testimonials.slice(0, mid)
   const bottomRow = testimonials.slice(mid)
@@ -120,7 +122,7 @@ export function TestimonialsSection() {
         <Reveal className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
           <div className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/60 px-3.5 py-1.5">
             <GoogleLogo className="size-3.5" />
-            <span className="text-[12px] font-medium text-muted-foreground">75 avis Google</span>
+            <span className="text-[12px] font-medium text-muted-foreground">{t.testimonials.badge[lang]}</span>
             <span aria-hidden className="h-3 w-px bg-border" />
             <div className="flex items-center gap-0.5">
               {Array.from({ length: 5 }).map((_, i) => (
@@ -129,8 +131,8 @@ export function TestimonialsSection() {
             </div>
           </div>
           <h2 className="mt-6 font-display text-balance text-3xl font-medium leading-[1.1] tracking-[-0.025em] text-foreground sm:text-4xl lg:text-[2.75rem]">
-            Ils en parlent{' '}
-            <span className="italic text-muted-foreground/80">mieux que moi</span>
+            {t.testimonials.h2Part1[lang]}{' '}
+            <span className="italic text-muted-foreground/80">{t.testimonials.h2Part2[lang]}</span>
           </h2>
         </Reveal>
 
@@ -149,7 +151,7 @@ export function TestimonialsSection() {
             className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-5 py-2.5 text-sm font-medium text-foreground/80 transition-colors hover:border-primary/30 hover:bg-card/80 hover:text-foreground"
           >
             <GoogleLogo className="size-4" />
-            Laissez un avis
+            {t.testimonials.cta[lang]}
           </a>
         </div>
       </div>

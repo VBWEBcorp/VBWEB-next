@@ -1,33 +1,34 @@
+'use client'
+
 import { TrendingDown, Search } from 'lucide-react'
 
+import { useHomeLang, t } from '@/components/home/lang'
 import { AuditButton } from '@/components/ui/audit-button'
 import { CountUp } from '@/components/ui/count-up'
 import { Reveal } from '@/components/ui/reveal'
 
-const stats = [
-  {
-    icon: TrendingDown,
-    numValue: 80,
-    prefix: '+',
-    suffix: '%',
-    label: 'des sites ne convertissent pas',
-    title: 'Vous avez un beau site… mais il ne vous rapporte pas de clients',
-    description:
-      'Vos prospects cherchent sur Google, mais c\'est votre concurrence qu\'ils trouvent. Vous perdez des clients chaque jour sans même le savoir.',
-  },
-  {
-    icon: Search,
-    numValue: 93,
-    prefix: '',
-    suffix: '%',
-    label: 'des achats commencent sur Google',
-    title: 'Vos futurs clients vous cherchent sur Google en ce moment même',
-    description:
-      'Pendant que vous investissez dans la pub et les réseaux sociaux, ils tapent votre secteur + votre ville. Et tombent sur quelqu\'un d\'autre.',
-  },
-]
-
 export function ProblemStatsSection() {
+  const { lang } = useHomeLang()
+  const stats = [
+    {
+      icon: TrendingDown,
+      numValue: 80,
+      prefix: '+',
+      suffix: '%',
+      label: t.problemStats.stat1Label[lang],
+      title: t.problemStats.stat1Title[lang],
+      description: t.problemStats.stat1Desc[lang],
+    },
+    {
+      icon: Search,
+      numValue: 93,
+      prefix: '',
+      suffix: '%',
+      label: t.problemStats.stat2Label[lang],
+      title: t.problemStats.stat2Title[lang],
+      description: t.problemStats.stat2Desc[lang],
+    },
+  ]
   return (
     <section className="relative overflow-hidden bg-background">
       {/* Grain / texture subtile en fond */}
@@ -46,11 +47,11 @@ export function ProblemStatsSection() {
         {/* Header épuré */}
         <Reveal className="mx-auto max-w-3xl text-center">
           <p className="font-display text-[11px] font-semibold tracking-[0.24em] text-primary/80 uppercase">
-            Le constat
+            {t.problemStats.eyebrow[lang]}
           </p>
           <h2 className="mt-5 font-display text-balance text-3xl font-medium leading-[1.1] tracking-[-0.025em] text-foreground sm:text-4xl lg:text-[3rem]">
-            Cette situation{' '}
-            <span className="italic text-muted-foreground/80">vous dit quelque chose</span> ?
+            {t.problemStats.h2Part1[lang]}{' '}
+            <span className="italic text-muted-foreground/80">{t.problemStats.h2Part2[lang]}</span> ?
           </h2>
         </Reveal>
 

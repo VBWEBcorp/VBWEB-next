@@ -1,8 +1,10 @@
 'use client'
 
 import { ArrowRight } from 'lucide-react'
+import Image from 'next/image'
 import Link from 'next/link'
 
+import { useHomeLang, t } from '@/components/home/lang'
 import { useAudit } from '@/components/ui/audit-provider'
 import { Button } from '@/components/ui/button'
 import { Reveal } from '@/components/ui/reveal'
@@ -45,10 +47,15 @@ function ScrollColumn({ images, direction = 'up', duration = 35 }: { images: str
       >
         {doubled.map((src, i) => (
           <div key={i} className="p-1.5">
-            <img
+            <Image
               src={src}
               alt=""
-              loading="eager"
+              width={240}
+              height={320}
+              loading="lazy"
+              fetchPriority="low"
+              quality={40}
+              sizes="(max-width: 640px) 33vw, (max-width: 1024px) 20vw, 14vw"
               className="aspect-[3/4] w-full rounded-xl object-cover"
             />
           </div>
@@ -60,6 +67,7 @@ function ScrollColumn({ images, direction = 'up', duration = 35 }: { images: str
 
 export function CtaGallerySection({ variant = 'default' }: { variant?: 'default' | 'homepage' } = {}) {
   const { openAudit } = useAudit()
+  const { lang } = useHomeLang()
 
   return (
     <section className="relative overflow-hidden bg-background">
@@ -82,29 +90,30 @@ export function CtaGallerySection({ variant = 'default' }: { variant?: 'default'
       <div className="relative z-10 mx-auto max-w-3xl px-4 py-28 sm:px-6 sm:py-36 lg:py-44 text-center">
         <Reveal className="space-y-6">
           <p className="font-display text-xs font-semibold tracking-[0.22em] text-primary uppercase">
-            Prêt à passer à l'action ?
+            {t.ctaGallery.eyebrow[lang]}
           </p>
           <h2 className="font-display text-balance text-4xl leading-[1.08] tracking-[-0.03em] text-foreground sm:text-5xl lg:text-[3.5rem]">
-            Parlons de votre projet
+            {t.ctaGallery.h2[lang]}
           </h2>
           <p className="mx-auto max-w-xl text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Un site qui convertit, une visibilité qui explose. Réservez 30 min gratuites et repartez avec un plan d'action concret. Sans engagement.
+            {t.ctaGallery.description[lang]}
           </p>
           {variant === 'homepage' ? (
             <div className="flex flex-col items-center justify-center gap-3 pt-2">
-              <Button size="lg" className="group bg-primary text-primary-foreground hover:bg-primary/85" asChild>
-                <Link href="/contact">
-                  Parlez-moi de votre projet
-                  <ArrowRight className="transition-transform group-hover:translate-x-0.5" />
-                </Link>
-              </Button>
-              <button
-                type="button"
+              <Button
+                size="lg"
+                className="group bg-primary text-primary-foreground hover:bg-primary/85"
                 onClick={openAudit}
+              >
+                {t.ctaGallery.ctaPrimary[lang]}
+                <ArrowRight className="transition-transform group-hover:translate-x-0.5" />
+              </Button>
+              <Link
+                href="/contact"
                 className="text-[13px] text-muted-foreground underline-offset-4 transition-colors hover:text-primary hover:underline"
               >
-                ou demandez un audit SEO gratuit
-              </button>
+                {t.ctaGallery.ctaSecondary[lang]}
+              </Link>
             </div>
           ) : (
             <div className="flex flex-col justify-center gap-3 pt-2 sm:flex-row">
@@ -116,7 +125,7 @@ export function CtaGallerySection({ variant = 'default' }: { variant?: 'default'
               </Button>
               <Button size="lg" variant="outline" className="border-border bg-card/50 backdrop-blur-sm" asChild>
                 <Link href="/audit-seo-gratuit">
-                  Audit SEO gratuit
+                  Diagnostic gratuit
                 </Link>
               </Button>
             </div>

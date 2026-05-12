@@ -146,6 +146,13 @@ const projects: WebProject[] = [
     image: 'https://i.ibb.co/k6sXPdjv/Edouard-Suchet.jpg',
     description: 'Société de conseil.',
   },
+  {
+    id: 'cheap-actors',
+    name: 'Cheap Actors',
+    url: 'https://cheap-actors.netlify.app/',
+    image: 'https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=800&q=80',
+    description: 'Plateforme de courts-métrages d\'acteurs et cinéastes indépendants.',
+  },
 ]
 
 function ProjectCard({ project, index }: { project: WebProject; index: number }) {

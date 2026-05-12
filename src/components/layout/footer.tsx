@@ -1,6 +1,9 @@
-import { ArrowRight, ArrowUpRight, Mail, MapPin, Phone } from 'lucide-react'
+'use client'
+
+import { ArrowRight, ArrowUpRight, Mail, Phone } from 'lucide-react'
 import Link from 'next/link'
 
+import { useHomeLang, t } from '@/components/home/lang'
 import { siteConfig } from '@/lib/seo'
 
 const navLinks = [
@@ -16,7 +19,7 @@ const serviceLinks = [
   { label: 'Référencement SEO', to: '/referencement-seo-rennes' },
   { label: 'Référencement local', to: '/referencement-local-rennes' },
   { label: 'Création de site', to: '/creation-site-internet-rennes' },
-  { label: 'Audit SEO gratuit', to: '/audit-seo-gratuit' },
+  { label: 'Diagnostic gratuit', to: '/audit-seo-gratuit' },
   { label: 'Freelance SEO Rennes', to: '/freelance-seo-rennes' },
 ]
 
@@ -29,6 +32,8 @@ const legalLinks = [
 ]
 
 export function Footer() {
+  const { lang } = useHomeLang()
+  const tf = t.footer
   return (
     <footer className="relative overflow-hidden bg-background text-foreground">
       {/* Grain global */}
@@ -58,14 +63,14 @@ export function Footer() {
                 <div className="flex flex-col items-start justify-between gap-5 sm:flex-row sm:items-center">
                   <div>
                     <p className="font-display text-[11px] font-semibold tracking-[0.24em] text-primary/80 uppercase">
-                      Discutons
+                      {tf.eyebrow[lang]}
                     </p>
                     <h2 className="mt-3 font-display text-balance text-2xl font-medium leading-[1.1] tracking-[-0.02em] text-foreground sm:text-3xl">
-                      Un projet en{' '}
-                      <span className="italic text-muted-foreground/80">tête</span> ?
+                      {tf.h2Part1[lang]}{' '}
+                      <span className="italic text-muted-foreground/80">{tf.h2Part2[lang]}</span> ?
                     </h2>
                     <p className="mt-2 text-[13px] leading-relaxed text-muted-foreground sm:text-[14px]">
-                      Réponse sous 24h. Échange sans engagement.
+                      {tf.subtitle[lang]}
                     </p>
                   </div>
 
@@ -73,7 +78,7 @@ export function Footer() {
                     href="/contact"
                     className="group/cta inline-flex h-11 shrink-0 items-center gap-2 rounded-full bg-primary px-6 text-[13px] font-medium text-primary-foreground transition-colors hover:bg-primary/85"
                   >
-                    Parlez-moi de votre projet
+                    {tf.cta[lang]}
                     <ArrowRight className="size-3.5 transition-transform group-hover/cta:translate-x-0.5" />
                   </Link>
                 </div>
@@ -92,7 +97,7 @@ export function Footer() {
                   </Link>
 
                   <p className="mt-5 max-w-xs text-[13px] leading-relaxed text-muted-foreground">
-                    {siteConfig.name}, fondée par {siteConfig.legalName}. J&apos;accompagne les entreprises dans leur stratégie digitale : sites internet, référencement naturel, applications web sur mesure.
+                    {tf.brandDesc[lang]}
                   </p>
 
                   {/* Coordonnées */}
@@ -115,19 +120,13 @@ export function Footer() {
                       </span>
                       <span className="truncate">{siteConfig.email}</span>
                     </a>
-                    <div className="flex items-center gap-3 rounded-xl border border-border/40 bg-foreground/5 px-3 py-2.5 text-[13px] text-muted-foreground">
-                      <span className="flex size-7 shrink-0 items-center justify-center rounded-lg border border-border/40 bg-foreground/5 text-muted-foreground/60">
-                        <MapPin className="size-3.5" />
-                      </span>
-                      Rennes, Bretagne
-                    </div>
                   </div>
                 </div>
 
                 {/* Navigation */}
                 <nav aria-label="Navigation" className="bg-card/60 p-8 sm:p-10">
                   <p className="font-display text-[10px] font-semibold uppercase tracking-[0.22em] text-muted-foreground/60">
-                    Navigation
+                    {tf.navTitle[lang]}
                   </p>
                   <ul className="mt-5 space-y-2.5">
                     {navLinks.map((l) => (
@@ -147,7 +146,7 @@ export function Footer() {
                 {/* Services */}
                 <nav aria-label="Services" className="bg-card/60 p-8 sm:p-10">
                   <p className="font-display text-[10px] font-semibold uppercase tracking-[0.22em] text-muted-foreground/60">
-                    Services
+                    {tf.servicesTitle[lang]}
                   </p>
                   <ul className="mt-5 space-y-2.5">
                     {serviceLinks.map((l) => (
@@ -165,9 +164,9 @@ export function Footer() {
                 </nav>
 
                 {/* Légal */}
-                <nav aria-label="Légal" className="bg-card/60 p-8 sm:p-10">
+                <nav aria-label="Legal" className="bg-card/60 p-8 sm:p-10">
                   <p className="font-display text-[10px] font-semibold uppercase tracking-[0.22em] text-muted-foreground/60">
-                    Légal
+                    {tf.legalTitle[lang]}
                   </p>
                   <ul className="mt-5 space-y-2.5">
                     {legalLinks.map((l) => (
@@ -188,10 +187,10 @@ export function Footer() {
               {/* === SECTION 3 — BOTTOM BAR === */}
               <div className="flex flex-col items-start justify-between gap-3 border-t border-border/40 bg-card/80 px-8 py-5 sm:flex-row sm:items-center sm:px-10">
                 <p className="text-[11px] text-muted-foreground/60">
-                  © {new Date().getFullYear()} {siteConfig.name} · Tous droits réservés
+                  © {new Date().getFullYear()} {siteConfig.name} · {tf.copyright[lang]}
                 </p>
                 <p className="text-[11px] uppercase tracking-[0.16em] text-muted-foreground/40">
-                  Consultant SEO · Rennes · Bretagne
+                  {tf.subTagline[lang]}
                 </p>
               </div>
             </div>

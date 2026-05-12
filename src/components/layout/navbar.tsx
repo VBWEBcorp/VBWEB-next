@@ -14,6 +14,8 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState, useEffect } from 'react'
 
+import { useHomeLang, t } from '@/components/home/lang'
+import { LangToggle } from '@/components/home/lang-toggle'
 import { cn } from '@/lib/utils'
 
 interface MenuItem {
@@ -30,97 +32,32 @@ interface MenuSection {
   featured?: boolean
 }
 
-const aboutSection: MenuSection = {
-  items: [
-    {
-      to: '/a-propos',
-      label: 'À propos',
-      description: "L'histoire et la vision",
-      icon: User,
-      image: '/victor.jpg',
-    },
-  ],
-}
-
-const servicesSection: MenuSection = {
-  title: 'Services',
-  items: [
-    {
-      to: '/referencement-seo-rennes',
-      label: 'Référencement SEO',
-      description: 'Optimisation technique et contenu',
-      icon: Search,
-    },
-    {
-      to: '/referencement-local-rennes',
-      label: 'Référencement local',
-      description: 'Google Maps et SEO local',
-      icon: MapPin,
-    },
-    {
-      to: '/creation-site-internet-rennes',
-      label: 'Création de site',
-      description: 'Sites vitrines & e-commerce',
-      icon: Globe,
-    },
-    {
-      to: '/audit-seo-gratuit',
-      label: 'Audit SEO gratuit',
-      description: 'Analyse complète sous 48h',
-      icon: FileSearch,
-    },
-  ],
-}
-
-const caseStudiesSection: MenuSection = {
-  title: 'Études de cas',
-  featured: true,
-  items: [
-    {
-      to: '/etudes-de-cas/sites-internet',
-      label: 'Sites internet',
-      description: 'Vitrines, e-commerce, sur-mesure',
-      icon: Globe,
-    },
-    {
-      to: '/etudes-de-cas/referencement',
-      label: 'Référencement',
-      description: 'Stratégies SEO et résultats',
-      icon: Search,
-    },
-    {
-      to: '/etudes-de-cas/applications-web',
-      label: 'Applications web',
-      description: 'CRM, dashboards, automatisations',
-      icon: Code,
-    },
-  ],
-}
+// Routes & icons stay constant; labels/descriptions are looked up from translations at render time.
+const ABOUT_ITEM = { to: '/a-propos', key: 'about' as const, icon: User, image: '/victor.jpg' }
+const SERVICE_ITEMS = [
+  { to: '/referencement-seo-rennes', key: 'seo' as const, icon: Search },
+  { to: '/referencement-local-rennes', key: 'localSeo' as const, icon: MapPin },
+  { to: '/creation-site-internet-rennes', key: 'webDesign' as const, icon: Globe },
+  { to: '/audit-seo-gratuit', key: 'diagnostic' as const, icon: FileSearch },
+]
+const CASE_STUDY_ITEMS = [
+  { to: '/etudes-de-cas/sites-internet', key: 'sites' as const, icon: Globe },
+  { to: '/etudes-de-cas/referencement', key: 'seoCase' as const, icon: Search },
+  { to: '/etudes-de-cas/applications-web', key: 'apps' as const, icon: Code },
+]
 
 export function Navbar() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
-  const [hasBlog, setHasBlog] = useState(false)
   const pathname = usePathname()
+  const { lang } = useHomeLang()
+  const navItems = t.navbar.items[lang]
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
     onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
-  }, [])
-
-  useEffect(() => {
-    const checkFeatures = async () => {
-      try {
-        const blogRes = await fetch('/api/blog/settings')
-        const blog = await blogRes.json()
-        setHasBlog(!!blog.enabled)
-      } catch (error) {
-        console.error('Failed to check features:', error)
-      }
-    }
-    checkFeatures()
   }, [])
 
   useEffect(() => {
@@ -146,7 +83,20 @@ export function Navbar() {
     setOpen(false)
   }, [pathname])
 
-  const sections: MenuSection[] = [caseStudiesSection, servicesSection, aboutSection]
+  const sections: MenuSection[] = [
+    {
+      title: t.navbar.caseStudies[lang],
+      featured: true,
+      items: CASE_STUDY_ITEMS.map((c) => ({ ...c, label: navItems[c.key].label, description: navItems[c.key].description })),
+    },
+    {
+      title: t.navbar.services[lang],
+      items: SERVICE_ITEMS.map((s) => ({ ...s, label: navItems[s.key].label, description: navItems[s.key].description })),
+    },
+    {
+      items: [{ ...ABOUT_ITEM, label: navItems.about.label, description: navItems.about.description }],
+    },
+  ]
 
   return (
     <>
@@ -174,21 +124,15 @@ export function Navbar() {
 
           {/* Right actions */}
           <div className="flex items-center gap-2">
-            {hasBlog && (
-              <Link
-                href="/blog"
-                className="hidden h-9 items-center rounded-full px-3 text-[13px] font-medium text-foreground/80 transition-colors hover:text-foreground sm:inline-flex"
-              >
-                Blog
-              </Link>
-            )}
             <Link
               href="/contact"
               className="hidden h-9 items-center gap-1.5 rounded-full bg-primary px-4 text-[13px] font-medium text-primary-foreground transition-colors hover:bg-primary/85 sm:inline-flex"
             >
-              Prendre RDV
+              {t.navbar.prendreRdv[lang]}
               <ArrowRight className="size-3.5" />
             </Link>
+
+            <LangToggle />
 
             <button
               type="button"
@@ -196,9 +140,8 @@ export function Navbar() {
               aria-expanded={open}
               aria-controls="mega-menu"
               aria-label={open ? 'Fermer le menu' : 'Ouvrir le menu'}
-              className="group flex h-9 items-center gap-2 rounded-full border border-border/60 bg-card/40 px-3.5 text-foreground transition-all duration-300 hover:border-primary/40 hover:bg-card/70"
+              className="group flex h-9 w-9 items-center justify-center rounded-full border border-border/60 bg-card/40 text-foreground transition-all duration-300 hover:border-primary/40 hover:bg-card/70"
             >
-              <span className="text-[12px] font-medium">Menu</span>
               <span className="relative flex size-4 flex-col items-center justify-center">
                 <span
                   className={cn(

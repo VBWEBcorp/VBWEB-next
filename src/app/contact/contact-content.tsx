@@ -71,19 +71,15 @@ function ScrollColumn({
 const FORMSPREE = 'https://formspree.io/f/xojppgjr'
 const CALENDLY = 'https://calendly.com/web-rdv/echange-vbweb-30-minutes'
 
-const services = [
-  'Site internet',
-  'SEO',
-  'SEO local',
-  'Application web',
-  'Audit SEO',
-  'Autre',
+const budgets = [
+  '- de 1 500 €/mois',
+  '1 500 € - 3 000 €/mois',
+  '3 000 € - 5 000 €/mois',
+  '+ de 5 000 €/mois',
+  'Je préfère en discuter de vive voix',
 ]
 
-const budgets = ['< 1 000 €', '1 - 3k €', '3 - 5k €', '5 - 10k €', '10k € +']
-
 export function ContactContent() {
-  const [service, setService] = useState('')
   const [budget, setBudget] = useState('')
   const [sending, setSending] = useState(false)
   const [sent, setSent] = useState(false)
@@ -96,7 +92,6 @@ export function ContactContent() {
 
     const form = e.currentTarget
     const data = new FormData(form)
-    data.set('service', service)
     data.set('budget', budget)
 
     try {
@@ -356,47 +351,6 @@ export function ContactContent() {
                             placeholder="vous@email.com"
                             className="w-full rounded-xl border border-border/60 bg-background/60 px-4 py-3 text-[14px] text-foreground placeholder:text-muted-foreground/40 outline-none backdrop-blur-sm transition-all focus:border-primary/60 focus:bg-background/90 focus:ring-2 focus:ring-primary/10"
                           />
-                        </div>
-                      </div>
-
-                      {/* Phone */}
-                      <div>
-                        <label
-                          htmlFor="phone"
-                          className="mb-2 block text-[12px] font-medium uppercase tracking-[0.12em] text-muted-foreground/70"
-                        >
-                          Téléphone <span className="font-normal normal-case text-muted-foreground/40">— optionnel</span>
-                        </label>
-                        <input
-                          id="phone"
-                          name="phone"
-                          type="tel"
-                          autoComplete="tel"
-                          placeholder="06 00 00 00 00"
-                          className="w-full rounded-xl border border-border/60 bg-background/60 px-4 py-3 text-[14px] text-foreground placeholder:text-muted-foreground/40 outline-none backdrop-blur-sm transition-all focus:border-primary/60 focus:bg-background/90 focus:ring-2 focus:ring-primary/10"
-                        />
-                      </div>
-
-                      {/* Service */}
-                      <div>
-                        <p className="mb-3 text-[12px] font-medium uppercase tracking-[0.12em] text-muted-foreground/70">
-                          Je cherche
-                        </p>
-                        <div className="flex flex-wrap gap-2">
-                          {services.map((s) => (
-                            <button
-                              key={s}
-                              type="button"
-                              onClick={() => setService(service === s ? '' : s)}
-                              className={`rounded-full px-4 py-2 text-[13px] font-medium transition-all duration-300 ${
-                                service === s
-                                  ? 'border border-primary/40 bg-primary/15 text-primary'
-                                  : 'border border-border/60 bg-background/40 text-muted-foreground hover:border-foreground/30 hover:text-foreground'
-                              }`}
-                            >
-                              {s}
-                            </button>
-                          ))}
                         </div>
                       </div>
 

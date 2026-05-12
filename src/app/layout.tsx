@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next'
 import { Inter, Plus_Jakarta_Sans } from 'next/font/google'
 
 import { RootWrapper } from '@/components/layout/root-wrapper'
+import { HomeLangProvider } from '@/components/home/lang'
 import { AuditProvider } from '@/components/ui/audit-provider'
 import { siteConfig } from '@/lib/seo'
 
@@ -101,9 +102,11 @@ export default function RootLayout({
         >
           Aller au contenu
         </a>
-        <AuditProvider>
-          <RootWrapper>{children}</RootWrapper>
-        </AuditProvider>
+        <HomeLangProvider>
+          <AuditProvider>
+            <RootWrapper>{children}</RootWrapper>
+          </AuditProvider>
+        </HomeLangProvider>
       </body>
     </html>
   )

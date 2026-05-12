@@ -1,24 +1,10 @@
 'use client'
 
-const audiences = [
-  'PME & Entreprises',
-  'Artisans & Commerces',
-  'Boutiques en ligne',
-  'Restaurants & Cafés',
-  'Professions libérales',
-  'Avocats & Notaires',
-  'Médecins & Thérapeutes',
-  'Plombiers & Couvreurs',
-  'Électriciens & Maçons',
-  'Architectes & Designers',
-  'Coachs & Consultants',
-  'Hôtels & Locations',
-  'Agences immobilières',
-  'Salons de beauté',
-  'Écoles & Formations',
-]
+import { useHomeLang, t } from '@/components/home/lang'
 
 export function AudiencesMarquee() {
+  const { lang } = useHomeLang()
+  const audiences = t.audiences[lang]
   const doubled = [...audiences, ...audiences]
 
   return (

@@ -1,31 +1,23 @@
+'use client'
+
 import { ArrowUpRight, TrendingDown, TrendingUp } from 'lucide-react'
 import Link from 'next/link'
 
+import { useHomeLang, t } from '@/components/home/lang'
 import { Reveal } from '@/components/ui/reveal'
 
-const before = {
-  icon: TrendingDown,
-  title: 'Avant VBWEB',
-  bullets: [
-    '30 visites organiques par mois',
-    '15 appels entrants par mois',
-    '3 mots-clés en top 10',
-    '1ère page Google : invisible',
-  ],
-}
-
-const after = {
-  icon: TrendingUp,
-  title: 'Après VBWEB',
-  bullets: [
-    '3 600 visites organiques par mois',
-    '~500 appels entrants par mois',
-    '87 mots-clés en top 10',
-    '1er sur "Pneus Rennes", "Pneus neufs à Rennes", +5 autres',
-  ],
-}
-
 export function ResultsSection() {
+  const { lang } = useHomeLang()
+  const before = {
+    icon: TrendingDown,
+    title: t.results.beforeTitle[lang],
+    bullets: t.results.beforeBullets[lang],
+  }
+  const after = {
+    icon: TrendingUp,
+    title: t.results.afterTitle[lang],
+    bullets: t.results.afterBullets[lang],
+  }
   return (
     <section className="relative overflow-hidden bg-background">
       {/* Grain */}
@@ -43,11 +35,11 @@ export function ResultsSection() {
         {/* Header */}
         <Reveal className="mx-auto max-w-2xl text-center">
           <p className="font-display text-[11px] font-semibold tracking-[0.24em] text-primary/80 uppercase">
-            Avant / Après
+            {t.results.eyebrow[lang]}
           </p>
           <h2 className="mt-5 font-display text-balance text-3xl font-medium leading-[1.1] tracking-[-0.025em] text-foreground sm:text-4xl lg:text-[2.75rem]">
-            De l&apos;invisible,{' '}
-            <span className="italic text-muted-foreground/80">au top 3 Google</span>
+            {t.results.h2Part1[lang]}{' '}
+            <span className="italic text-muted-foreground/80">{t.results.h2Part2[lang]}</span>
           </h2>
         </Reveal>
 
@@ -121,7 +113,7 @@ export function ResultsSection() {
             className="group inline-flex items-center gap-1.5 text-[13px] text-muted-foreground transition-colors hover:text-primary"
           >
             <span>
-              <span className="font-medium text-foreground">Rennes Pneus</span> — accompagnement SEO sur 3 ans · Voir l&apos;étude de cas
+              <span className="font-medium text-foreground">Rennes Pneus</span> · {t.results.caseStudyLink[lang]}
             </span>
             <ArrowUpRight className="size-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </Link>

@@ -1,11 +1,16 @@
-import { ArrowRight, ArrowUpRight } from 'lucide-react'
+'use client'
+
+import { ArrowUpRight } from 'lucide-react'
 import Link from 'next/link'
 
+import { useHomeLang, t } from '@/components/home/lang'
 import { Reveal } from '@/components/ui/reveal'
 
 const VIDEO_ID = 'w_Tg2rnwrSE'
 
 export function FounderSection() {
+  const { lang } = useHomeLang()
+  const tags = t.founder.resultTags[lang]
   return (
     <section className="relative overflow-hidden bg-background">
       {/* Grain */}
@@ -30,49 +35,25 @@ export function FounderSection() {
             <div className="relative grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-12">
               <div className="max-w-xl">
                 <p className="font-display text-[11px] font-semibold tracking-[0.24em] text-primary/80 uppercase">
-                  Quelques mots du fondateur
+                  {t.founder.eyebrow[lang]}
                 </p>
                 <h2 className="mt-4 font-display text-balance text-3xl font-medium leading-[1.1] tracking-[-0.025em] text-foreground sm:text-4xl lg:text-[2.75rem]">
-                  Deux expertises,{' '}
-                  <span className="italic text-muted-foreground/80">un résultat parfait</span>
+                  {t.founder.h2Part1[lang]}{' '}
+                  <span className="italic text-muted-foreground/80">{t.founder.h2Part2[lang]}</span>
                 </h2>
               </div>
 
-              <div className="grid gap-3 sm:grid-cols-[1fr_auto_1fr] sm:items-center sm:gap-4">
-                {/* Mon expertise — rectangle fin */}
-                <div className="rounded-xl border border-border/60 bg-card/30 px-4 py-3 backdrop-blur-sm">
-                  <p className="font-display text-[10px] font-semibold uppercase tracking-[0.22em] text-white">
-                    Mon expertise
-                  </p>
-                  <div className="mt-2 flex flex-wrap gap-1.5">
-                    <span className="rounded-full border border-primary/25 bg-primary/5 px-2.5 py-1 text-[12px] font-medium text-foreground">
-                      Référencement Google (SEO/GEO)
+              {/* Votre résultat — discret */}
+              <div className="rounded-xl border border-border/40 px-4 py-2.5">
+                <p className="font-display text-[10px] font-semibold uppercase tracking-[0.22em] text-muted-foreground/70">
+                  {t.founder.resultLabel[lang]}
+                </p>
+                <div className="mt-1.5 flex flex-wrap gap-1.5">
+                  {tags.map((tag) => (
+                    <span key={tag} className="rounded-full border border-border/40 px-2 py-0.5 text-[11px] text-foreground/80">
+                      {tag}
                     </span>
-                    <span className="rounded-full border border-primary/25 bg-primary/5 px-2.5 py-1 text-[12px] font-medium text-foreground">
-                      Développement web
-                    </span>
-                  </div>
-                </div>
-
-                {/* Flèche */}
-                <div className="flex items-center justify-center text-primary/60">
-                  <ArrowRight className="hidden size-5 sm:block" aria-hidden />
-                  <ArrowRight className="size-5 rotate-90 sm:hidden" aria-hidden />
-                </div>
-
-                {/* Votre résultat — rectangle fin */}
-                <div className="rounded-xl border border-border/60 bg-card/30 px-4 py-3 backdrop-blur-sm">
-                  <p className="font-display text-[10px] font-semibold uppercase tracking-[0.22em] text-white">
-                    Votre résultat
-                  </p>
-                  <div className="mt-2 flex flex-wrap gap-1.5">
-                    <span className="rounded-full border border-foreground/15 bg-foreground/5 px-2.5 py-1 text-[12px] font-medium text-foreground">
-                      Plus de crédibilité
-                    </span>
-                    <span className="rounded-full border border-foreground/15 bg-foreground/5 px-2.5 py-1 text-[12px] font-medium text-foreground">
-                      Plus de prospects qualifiés
-                    </span>
-                  </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -97,7 +78,7 @@ export function FounderSection() {
             {/* Footer — description + liens sous la vidéo */}
             <div className="relative mt-10 flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
               <p className="max-w-md text-[14px] leading-relaxed text-muted-foreground sm:text-[15px]">
-                2 minutes pour comprendre comment je travaille.
+                {t.founder.videoCaption[lang]}
               </p>
 
               <div className="flex flex-wrap items-center gap-x-8 gap-y-3">
@@ -105,15 +86,15 @@ export function FounderSection() {
                   href="/a-propos"
                   className="group/link inline-flex items-center gap-1.5 text-[13px] font-medium text-primary transition-colors hover:text-primary/80"
                 >
-                  En savoir plus
+                  {t.founder.learnMore[lang]}
                   <ArrowUpRight className="size-3.5 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
                 </Link>
                 <Link
                   href="/services"
                   className="group/link inline-flex items-center gap-1.5 text-[13px] font-medium text-muted-foreground transition-colors hover:text-foreground"
                 >
-                  Voir les services
-                  <ArrowRight className="size-3.5 transition-transform group-hover/link:translate-x-0.5" />
+                  {t.founder.seeServices[lang]}
+                  <ArrowUpRight className="size-3.5 transition-transform group-hover/link:translate-x-0.5" />
                 </Link>
               </div>
             </div>

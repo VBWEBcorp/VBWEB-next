@@ -1,15 +1,15 @@
+'use client'
+
 import { ArrowUpRight } from 'lucide-react'
 import Link from 'next/link'
 
+import { useHomeLang, t } from '@/components/home/lang'
 import { Reveal } from '@/components/ui/reveal'
 
-const categories = [
+const BASE_CATEGORIES = [
   {
     number: '01',
     label: 'Web Design',
-    title: 'Sites Internet',
-    description:
-      'Vitrines, e-commerce et sites sur-mesure qui transforment vos visiteurs en clients.',
     image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=800&q=65',
     href: '/etudes-de-cas/sites-internet',
     accent: 'from-sky-400/20 via-transparent to-transparent',
@@ -17,9 +17,6 @@ const categories = [
   {
     number: '02',
     label: 'Search',
-    title: 'Référencement SEO',
-    description:
-      'Stratégies de visibilité Google qui propulsent mes clients en première page.',
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=65',
     href: '/etudes-de-cas/referencement',
     accent: 'from-violet-400/20 via-transparent to-transparent',
@@ -27,9 +24,6 @@ const categories = [
   {
     number: '03',
     label: 'Engineering',
-    title: 'Applications Web',
-    description:
-      'CRM, logiciels et dashboards sur-mesure pour automatiser et piloter votre activité.',
     image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=65',
     href: '/etudes-de-cas/applications-web',
     accent: 'from-emerald-400/20 via-transparent to-transparent',
@@ -37,6 +31,13 @@ const categories = [
 ]
 
 export function CaseStudiesSection() {
+  const { lang } = useHomeLang()
+  const translated = t.caseStudies.categories[lang]
+  const categories = BASE_CATEGORIES.map((c, i) => ({
+    ...c,
+    title: translated[i].title,
+    description: translated[i].description,
+  }))
   return (
     <section id="etudes-de-cas" className="relative scroll-mt-20 overflow-hidden bg-background">
       {/* Grain */}
@@ -55,15 +56,15 @@ export function CaseStudiesSection() {
         <Reveal className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
           <div className="max-w-xl">
             <p className="font-display text-[11px] font-semibold tracking-[0.24em] text-primary/80 uppercase">
-              Portfolio
+              {t.caseStudies.eyebrow[lang]}
             </p>
             <h2 className="mt-4 font-display text-balance text-3xl font-medium leading-[1.05] tracking-[-0.025em] text-foreground sm:text-4xl lg:text-[3rem]">
-              Nos{' '}
-              <span className="italic text-muted-foreground/80">réalisations</span>
+              {t.caseStudies.h2Part1[lang]}{' '}
+              <span className="italic text-muted-foreground/80">{t.caseStudies.h2Part2[lang]}</span>
             </h2>
           </div>
           <p className="max-w-xs text-[15px] leading-relaxed text-muted-foreground sm:text-right">
-            Trois disciplines, une obsession : transformer votre digital en levier de croissance.
+            {t.caseStudies.subtitle[lang]}
           </p>
         </Reveal>
 
@@ -110,7 +111,7 @@ export function CaseStudiesSection() {
 
                   <div className="mt-4 flex items-center justify-between">
                     <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-muted-foreground/60">
-                      Voir les études de cas
+                      {t.caseStudies.seeAll[lang]}
                     </span>
                     <span className="font-display text-xs font-semibold text-primary opacity-0 transition-opacity duration-500 group-hover:opacity-100">
                       →

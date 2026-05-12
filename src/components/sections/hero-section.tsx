@@ -2,10 +2,9 @@
 
 import { ArrowRight, Star } from 'lucide-react'
 import Image from 'next/image'
-import Link from 'next/link'
-
 import { useAudit } from '@/components/ui/audit-provider'
 import { Button } from '@/components/ui/button'
+import { useHomeLang, t } from '@/components/home/lang'
 
 function GoogleG({ className = 'size-4' }: { className?: string }) {
   return (
@@ -67,9 +66,11 @@ function ScrollColumn({
             <Image
               src={src}
               alt=""
-              width={300}
-              height={400}
-              loading="eager"
+              width={240}
+              height={320}
+              loading="lazy"
+              fetchPriority="low"
+              quality={40}
               sizes="(max-width: 640px) 33vw, (max-width: 1024px) 20vw, 14vw"
               className="aspect-[3/4] w-full rounded-xl object-cover"
             />
@@ -82,6 +83,7 @@ function ScrollColumn({
 
 export function HeroSection() {
   const { openAudit } = useAudit()
+  const { lang } = useHomeLang()
 
   return (
     <section
@@ -135,21 +137,21 @@ export function HeroSection() {
             {/* Eyebrow */}
             <div className="flex justify-center lg:justify-start">
               <span className="inline-flex items-center rounded-full border border-muted-foreground/80 px-3 py-1 font-display text-[11px] font-semibold tracking-[0.22em] text-muted-foreground/80 uppercase">
-                Référencement &amp; développement web
+                {t.hero.eyebrow[lang]}
               </span>
             </div>
 
             {/* Titre style Framer */}
             <h1 className="mt-5 font-display text-balance text-4xl font-medium leading-[1.05] tracking-[-0.03em] text-foreground sm:text-5xl lg:text-[4rem]">
-              Plus de clients{' '}
+              {t.hero.h1Part1[lang]}{' '}
               <br className="hidden sm:block" />
-              <span className="italic text-muted-foreground/80">grâce à</span>{' '}
-              <span className="text-primary">Google</span>
+              <span className="italic text-muted-foreground/80">{t.hero.h1Part2[lang]}</span>{' '}
+              <span className="text-primary">{t.hero.h1Part3[lang]}</span>
             </h1>
 
             {/* Sous-titre */}
             <p className="mx-auto mt-6 max-w-xl text-pretty text-[15px] leading-relaxed text-white sm:text-base lg:mx-0">
-              Expert en référencement Google (SEO/GEO) et développeur web, j&apos;aide les PME à dominer Google avec un site optimisé de A à Z.
+              {t.hero.subtitle[lang]}
             </p>
           </div>
 
@@ -160,19 +162,22 @@ export function HeroSection() {
           >
             {/* CTAs */}
             <div className="flex flex-col items-center gap-3 lg:items-start">
-              <Button size="lg" className="group bg-primary text-primary-foreground hover:bg-primary/85" asChild>
-                <Link href="/contact">
-                  Parlez-moi de votre projet
-                  <ArrowRight className="transition-transform group-hover:translate-x-0.5" />
-                </Link>
-              </Button>
-              <button
-                type="button"
+              <Button
+                size="lg"
+                className="group bg-primary text-primary-foreground hover:bg-primary/85"
                 onClick={openAudit}
+              >
+                {t.hero.ctaPrimary[lang]}
+                <ArrowRight className="transition-transform group-hover:translate-x-0.5" />
+              </Button>
+              <a
+                href="https://calendly.com/web-rdv/echange-vbweb-30-minutes"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-[13px] text-muted-foreground underline-offset-4 transition-colors hover:text-primary hover:underline"
               >
-                ou demandez un audit SEO gratuit
-              </button>
+                {t.hero.ctaSecondary[lang]}
+              </a>
             </div>
 
             {/* Badge avis Google */}
@@ -185,7 +190,7 @@ export function HeroSection() {
                 ))}
               </div>
               <span aria-hidden className="h-3 w-px bg-border" />
-              <span className="text-[12px] font-medium text-muted-foreground">75 avis</span>
+              <span className="text-[12px] font-medium text-muted-foreground">{t.hero.reviews[lang]}</span>
             </div>
           </div>
         </div>

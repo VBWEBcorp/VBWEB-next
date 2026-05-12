@@ -1,35 +1,22 @@
-import { Search, Rocket, TrendingUp, Gift, ArrowRight } from 'lucide-react'
-import Link from 'next/link'
+'use client'
 
-import { Button } from '@/components/ui/button'
+import { Search, Rocket, TrendingUp, Gift } from 'lucide-react'
+
+import { useHomeLang, t } from '@/components/home/lang'
+import { AuditButton } from '@/components/ui/audit-button'
 import { Reveal } from '@/components/ui/reveal'
 import { ScrollProgress } from '@/components/ui/scroll-progress'
 
-const steps = [
-  {
-    number: '01',
-    icon: Search,
-    title: 'Audit et diagnostic',
-    description:
-      "J'analyse votre site, votre positionnement Google et celui de vos concurrents pour identifier précisément vos opportunités de croissance.",
-  },
-  {
-    number: '02',
-    icon: Rocket,
-    title: 'Site internet et stratégie SEO/GEO',
-    description:
-      'Un site moderne et performant, associé à une stratégie de référencement adaptée à votre marché et à vos clients.',
-  },
-  {
-    number: '03',
-    icon: TrendingUp,
-    title: 'Suivi mensuel et croissance',
-    description:
-      'Optimisations continues, reporting clair et accompagnement régulier. Vous gardez votre énergie pour votre métier, je m\'occupe de votre visibilité.',
-  },
-]
+const STEP_ICONS = [Search, Rocket, TrendingUp]
 
 export function MethodSection() {
+  const { lang } = useHomeLang()
+  const steps = t.method.steps[lang].map((s, i) => ({
+    number: ['01', '02', '03'][i],
+    icon: STEP_ICONS[i],
+    title: s.title,
+    description: s.description,
+  }))
   return (
     <section className="relative overflow-hidden bg-card">
       {/* Background grain */}
@@ -48,14 +35,14 @@ export function MethodSection() {
         {/* Header épuré */}
         <Reveal className="mx-auto max-w-3xl text-center">
           <p className="font-display text-[11px] font-semibold tracking-[0.24em] text-primary/80 uppercase">
-            Ma méthode
+            {t.method.eyebrow[lang]}
           </p>
           <h2 className="mt-5 font-display text-balance text-3xl font-medium leading-[1.1] tracking-[-0.025em] text-foreground sm:text-4xl lg:text-[3rem]">
-            De l&apos;invisible à{' '}
-            <span className="italic text-muted-foreground/80">générateur de clients</span>
+            {t.method.h2Part1[lang]}{' '}
+            <span className="italic text-muted-foreground/80">{t.method.h2Part2[lang]}</span>
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-pretty text-[15px] leading-relaxed text-muted-foreground sm:text-base">
-            Une approche structurée en 3 étapes pour transformer votre site en véritable levier de croissance pour votre entreprise.
+            {t.method.subtitle[lang]}
           </p>
         </Reveal>
 
@@ -110,12 +97,7 @@ export function MethodSection() {
         </div>
 
         <div className="mt-12 flex justify-center">
-          <Button size="lg" className="group bg-primary text-primary-foreground hover:bg-primary/85" asChild>
-            <Link href="/contact">
-              Prendre RDV
-              <ArrowRight className="transition-transform group-hover:translate-x-0.5" />
-            </Link>
-          </Button>
+          <AuditButton />
         </div>
 
         {/* Bonus card */}
@@ -132,13 +114,13 @@ export function MethodSection() {
                 </div>
                 <div className="flex-1">
                   <span className="font-display text-[10px] font-semibold uppercase tracking-[0.22em] text-primary">
-                    En bonus
+                    {t.method.bonusKicker[lang]}
                   </span>
                   <h3 className="mt-2 font-display text-lg font-semibold leading-snug text-foreground sm:text-xl">
-                    Des outils sur-mesure pour gagner du temps
+                    {t.method.bonusTitle[lang]}
                   </h3>
                   <p className="mt-2 text-[15px] leading-relaxed text-muted-foreground">
-                    CRM, tableaux de bord et automatisations adaptés à votre activité. Des outils simples qui simplifient votre quotidien et libèrent du temps pour ce qui compte vraiment.
+                    {t.method.bonusDesc[lang]}
                   </p>
                 </div>
               </div>
