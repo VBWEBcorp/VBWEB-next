@@ -48,7 +48,7 @@ const config: MetierConfig = {
     'Quand une famille doit choisir un monument funéraire, elle veut prendre son temps pour faire le bon choix. Elle cherche sur Google, regarde des photos, compare des styles, se renseigne sur les matériaux et les coûts. Votre site est souvent son premier contact avec votre savoir-faire. S\'il est digne et bien présenté, vous gagnez la confiance avant même le rendez-vous en atelier.',
   whatPara2:
     'Je construis des sites marbrerie funéraire qui valorisent votre savoir-faire avec sobriété. Galerie de monuments (granit, marbre, pierre), pages par type de prestation (création, gravure, rénovation, entretien), explications des matériaux, ton respectueux. Pas de commercial, que du sérieux et de l\'accompagnement.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1518155317743-a8ff43ea6a5f?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1518155317743-a8ff43ea6a5f-w800.webp',
   whatImageAlt: 'Création site internet pour marbrerie funéraire',
   pillars: [
     { icon: 'FileSearch', title: 'Galerie sobre', desc: 'Photos soignées de vos monuments. Les familles comparent visuellement avant de choisir.' },

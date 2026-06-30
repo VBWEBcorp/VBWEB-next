@@ -48,7 +48,7 @@ const config: MetierConfig = {
     'Un cabinet médical de groupe ou une MSP accueille des patients avec des besoins très différents. Sans site bien structuré, le standard passe son temps à répondre aux mêmes questions : "quel médecin prend les nouveaux patients ?", "qui fait la pédiatrie ?", "qui propose la téléconsultation ?". Le site doit répondre à tout ça en 10 secondes.',
   whatPara2:
     'Je construis des sites pour cabinets de groupe qui mettent chaque praticien en valeur tout en renforçant la cohérence du cabinet. Bios, spécialités, agendas, plateau technique, intégration Doctolib avec choix du médecin. Dans le respect strict de la déontologie CNOM.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1519494026892-80bbd2d6fd0d-w800.webp',
   whatImageAlt: 'Création site internet pour cabinet médical de groupe',
   pillars: [
     { icon: 'User', title: 'Bios par praticien', desc: 'Chaque médecin a sa page avec spécialité, parcours et agenda. Les patients choisissent en confiance.' },

@@ -48,7 +48,7 @@ const config: MetierConfig = {
     'Construire une piscine est un projet à 30 000 euros en moyenne. Les clients y réfléchissent des mois, regardent des dizaines de sites de pisciniers, comparent les types de piscines, les prix, les réalisations. Ils demandent 3 à 5 devis. Votre site est votre vitrine principale pendant cette longue phase de comparaison. Si vos photos et votre contenu ne convainquent pas, vous êtes éliminé avant même le premier rendez-vous.',
   whatPara2:
     'Je construis des sites constructeur piscine qui transforment des visiteurs curieux en demandeurs de devis. Galerie de réalisations soignée, pages par type de piscine, démarches expliquées, études de cas chantiers, formulaire de demande détaillé. L\'objectif : que les clients arrivent au rendez-vous déjà convaincus.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1519821172144-4f87d85de2a6?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1460925895917-afdab827c52f-w800.webp',
   whatImageAlt: 'Création site internet pour constructeur piscine',
   pillars: [
     { icon: 'Target', title: 'Page par type', desc: 'Coque, béton, liner, couloir de nage : chaque type a sa requête et son budget spécifique.' },

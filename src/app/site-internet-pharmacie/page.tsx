@@ -69,7 +69,7 @@ const config: MetierConfig = {
     'La moitié des recherches qui amènent à une pharmacie sont des urgences ou des questions pressées : "pharmacie de garde", "pharmacie ouverte dimanche", "pharmacie proche", "pharmacie + nom de ville". Le client tape sur son téléphone et appelle ou va directement à la première qui apparaît. Sans site et sans fiche Google à jour, vous n\'existez pas pour lui à ce moment-là.',
   whatPara2:
     'Je construis des sites pharmacie qui captent ces moments. Horaires clairs dès l\'accueil, mention garde visible, fiche Google optimisée pour remonter sur la carte, pages parapharmacie pour valoriser votre conseil, et click and collect si vous le proposez. Tout est conforme aux règles du Code de la santé publique.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1576602976047-174e57a47881?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1576602976047-174e57a47881-w800.webp',
   whatImageAlt: 'Création site internet pour pharmacie d\'officine',
   pillars: [
     { icon: 'Zap', title: 'Garde visible', desc: 'Horaires et période de garde affichés en gros sur l\'accueil. Google remonte les officines à jour.' },

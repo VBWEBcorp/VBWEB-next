@@ -48,7 +48,7 @@ const config: MetierConfig = {
     'Le transport médical conventionné est la partie la plus stable de l\'activité taxi. Les patients qui font des traitements réguliers (dialyse, chimio, rééducation) cherchent un chauffeur de confiance qu\'ils gardent des années. Ils tapent "taxi conventionné + ville", "taxi dialyse + ville", "VSL + ville" et choisissent celui qui inspire le plus confiance. Une fois choisis, vous êtes souvent leur chauffeur pour longtemps.',
   whatPara2:
     'Je construis des sites taxi conventionné qui captent ces patients et les secrétariats médicaux qui organisent leurs transports. Ton humain et rassurant, présentation du chauffeur, certifications CPAM mises en avant, partenariats centres médicaux, contact direct. Un site qui remplit votre planning avec des clients fidèles sur plusieurs années.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1551601651-2a8555f1a136-w800.webp',
   whatImageAlt: 'Création site internet pour taxi conventionné',
   pillars: [
     { icon: 'User', title: 'Ton rassurant', desc: 'Les patients fragiles cherchent un chauffeur humain, pas une course anonyme.' },

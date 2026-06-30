@@ -48,7 +48,7 @@ const config: MetierConfig = {
     'Des millions de chaudières françaises vont être remplacées ces prochaines années : vieillissement, interdiction du fioul neuf, montée en puissance des solutions plus efficaces. Les propriétaires cherchent activement sur Google "remplacement chaudière + ville", "installation chaudière gaz condensation", "chaudière biomasse aides". Chaque requête correspond à un chantier de 3 à 8 k€ signable rapidement.',
   whatPara2:
     'Je construis des sites installateur chaudière qui captent cette clientèle en recherche active. Pages par énergie (gaz, fioul, biomasse), pages par marque, aides MaPrimeRénov clarifiées, études de cas. L\'objectif : que vous soyez dans le top 3 des installateurs consultés par les propriétaires de votre zone.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1587293852726-70cdb56c2866-w800.webp',
   whatImageAlt: 'Création site internet pour installateur de chaudières',
   pillars: [
     { icon: 'Target', title: 'Page par énergie', desc: 'Gaz, fioul, biomasse : chaque énergie a son marché, son discours et son ensemble d\'aides.' },

@@ -48,7 +48,7 @@ const config: MetierConfig = {
     'Les prestataires de ménage professionnel qui gagnent ne sont pas ceux qui cassent les prix mais ceux qui valorisent leur qualité : formation du personnel, produits sélectionnés, discrétion, ponctualité, engagement environnemental. Les clients qui cherchent "ménage professionnel + leur ville" ne sont pas les mêmes que ceux qui cherchent juste le moins cher : ils veulent un partenaire fiable et professionnel.',
   whatPara2:
     'Je construis des sites ménage professionnel qui mettent en avant votre qualité. Pages par niche (cabinet médical, cabinet d\'avocat, commerce, résidence), ménage écologique, grand ménage ponctuel, engagements qualité. Un positionnement qui justifie des tarifs supérieurs et attire des clients fidèles.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1581578731548-c64695cc6952-w800.webp',
   whatImageAlt: 'Création site internet pour ménage professionnel',
   pillars: [
     { icon: 'Target', title: 'Pages par niche', desc: 'Cabinets médicaux, libéraux, commerces : chaque niche a ses exigences et ses requêtes.' },

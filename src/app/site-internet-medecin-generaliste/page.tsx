@@ -57,7 +57,7 @@ const config: MetierConfig = {
     'Les patients en 2026 cherchent d\'abord sur Google avant d\'appeler. Ils veulent connaître vos horaires, vérifier si vous acceptez de nouveaux patients, savoir si vous proposez la téléconsultation, et réserver en ligne si possible. Sans site, chaque question devient un appel à votre secrétariat saturé. Avec un site bien construit, l\'info est trouvable en quelques secondes et les appels baissent drastiquement.',
   whatPara2:
     'Je construis des sites médecin généraliste qui désengorgent votre pratique. Informations pratiques claires, intégration Doctolib, page téléconsultation, FAQ patients, respect strict des règles CNOM. Le patient trouve ce qu\'il cherche, votre secrétariat se concentre sur l\'essentiel, et vous récupérez du temps pour la consultation.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1576091160399-112ba8d25d1d-w800.webp',
   whatImageAlt: 'Création site internet pour médecin généraliste',
   pillars: [
     { icon: 'User', title: 'Doctolib intégré', desc: 'Prise de rendez-vous 24/7 sans passer par le standard. Réduction nette des appels.' },

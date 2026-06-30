@@ -48,7 +48,7 @@ const config: MetierConfig = {
     'Les contrats de nettoyage industriel se gagnent souvent bien avant l\'appel d\'offres officiel. Les responsables de site et directeurs industriels repèrent leurs prestataires potentiels en amont, sur Google. Ils cherchent "nettoyage usine agroalimentaire + région", "nettoyage industriel certifié MASE", "nettoyage entrepôt logistique". Si votre site est dans le top 3, vous êtes consulté. Sinon, vous n\'existez pas pour eux.',
   whatPara2:
     'Je construis des sites nettoyage industriel qui captent ces acheteurs avant leurs concurrents. Pages par secteur (agro, logistique, industrie lourde, BTP), certifications très visibles, références anonymisées ou avec accord, formulaire de contact B2B qualifié. L\'objectif : que votre entreprise soit dans les short lists des responsables qui lancent leurs consultations.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1581091226825-a6a2a5aee158-w800.webp',
   whatImageAlt: 'Création site internet pour nettoyage industriel',
   pillars: [
     { icon: 'FileSearch', title: 'Certifications visibles', desc: 'HACCP, MASE, ISO 9001/14001 : incontournables pour les appels d\'offres sérieux.' },

@@ -69,7 +69,7 @@ const config: MetierConfig = {
     'Un patient qui cherche un dentiste a souvent une raison précise : une douleur qui dure, une urgence, un déménagement, un besoin d\'implant ou d\'orthodontie. Il tape sur son téléphone "dentiste + sa ville" ou une requête plus spécifique comme "implant dentaire" ou "urgence dentaire weekend". Si votre cabinet n\'apparaît pas dans les trois premiers résultats, il va voir ailleurs — et la première impression est déjà perdue.',
   whatPara2:
     'Je construis des sites qui captent exactement ces moments. Une page par spécialité clairement expliquée, une prise de rendez-vous visible dès l\'accueil, des photos qui rassurent sur l\'hygiène et le matériel, les parcours des praticiens, et une fiche Google optimisée pour remonter sur la carte locale. Tout cela dans le respect strict des règles déontologiques de l\'Ordre.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1606811971618-4486d14f3f99-w800.webp',
   whatImageAlt: 'Création site internet pour cabinet dentaire',
   pillars: [
     { icon: 'User', title: 'RDV en ligne intégré', desc: 'Module Doctolib ou système maison connecté à votre agenda. Le patient réserve en un clic.' },

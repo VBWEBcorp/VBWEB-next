@@ -48,7 +48,7 @@ const config: MetierConfig = {
     'Les dirigeants de PME sont fatigués de gérer leur IT : pannes imprévues, cybersécurité inquiétante, sauvegardes incertaines, équipes internes surchargées. Ils cherchent un prestataire de confiance qui prend tout en charge. Ils tapent "infogérance + leur ville", "maintenance informatique PME", "prestataire IT entreprise". Le choix du prestataire est critique : ils veulent un partenaire sur plusieurs années, pas un exécutant ponctuel.',
   whatPara2:
     'Je construis des sites infogérance qui inspirent cette confiance long terme. Positionnement expert PME, pages services détaillés (serveurs, cloud, cybersécurité, supervision), tarifs indicatifs transparents, étude de cas clients, équipe présentée. Un site qui vous place naturellement dans la short list des dirigeants qui cherchent à changer de prestataire.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1558494949-ef010cbdcc31-w800.webp',
   whatImageAlt: 'Création site internet pour infogérance',
   pillars: [
     { icon: 'Target', title: 'Positionnement PME', desc: 'Différent des grandes ESN. Expertise dédiée au segment TPE-PME avec contact direct.' },

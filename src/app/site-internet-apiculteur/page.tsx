@@ -48,7 +48,7 @@ const config: MetierConfig = {
     'Les consommateurs sont de plus en plus nombreux à chercher du vrai miel local, loin des mélanges pasteurisés des supermarchés. Ils tapent "apiculteur + leur ville", "miel local + région", "acheter miel producteur", "miel bio + département". Ils veulent connaître l\'apiculteur, voir les ruches, comprendre le travail. Un site authentique vous place en tête de leurs recherches et fidélise une clientèle engagée.',
   whatPara2:
     'Je construis des sites apiculteur qui racontent votre passion avec authenticité. Pages par variété de miel, produits de la ruche (gelée royale, propolis, pollen), photos des ruches, histoire de votre démarche, points de vente, engagements bio éventuels. Un site qui fait aimer votre travail avant même la première dégustation.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1587049352846-4a222e784d38-w800.webp',
   whatImageAlt: 'Création site internet pour apiculteur',
   pillars: [
     { icon: 'Target', title: 'Page par variété', desc: 'Acacia, châtaignier, tilleul : chaque miel a sa saveur et sa requête Google.' },

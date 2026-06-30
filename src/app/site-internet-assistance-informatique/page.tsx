@@ -48,7 +48,7 @@ const config: MetierConfig = {
     'Contrairement au dépannage ponctuel, l\'assistance informatique vit de la récurrence. Les clients qui cherchent "assistance informatique + leur ville" ou "aide informatique à distance" veulent souvent un service régulier, pas une intervention unique. Ils sont prêts à payer un abonnement mensuel pour avoir quelqu\'un qu\'ils peuvent appeler en cas de problème. C\'est un modèle économique ultra rentable.',
   whatPara2:
     'Je construis des sites assistance informatique qui promeuvent l\'abonnement plutôt que l\'intervention ponctuelle. Pages particuliers/pros/seniors distinctes, aide à distance expliquée clairement, tarifs par abonnement, témoignages anonymisés de clients fidèles. Un site qui transforme chaque visiteur en abonné récurrent.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1633419461186-7d40a38105ec?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1633419461186-7d40a38105ec-w800.webp',
   whatImageAlt: 'Création site internet pour assistance informatique',
   pillars: [
     { icon: 'TrendingUp', title: 'Modèle abonnement', desc: 'Tarif mensuel avec hotline illimitée. Récurrent stable et très rentable.' },

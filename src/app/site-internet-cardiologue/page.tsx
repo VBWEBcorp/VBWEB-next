@@ -48,7 +48,7 @@ const config: MetierConfig = {
     'Les patients adressés à un cardiologue sont souvent inquiets, mal informés sur les examens, et arrivent avec des questions que le standard n\'a pas le temps de traiter. Un site cardiologue bien pensé explique les examens, rassure, oriente, et filtre les demandes en amont. C\'est autant un outil patient qu\'un outil d\'organisation.',
   whatPara2:
     'Je construis des sites cardiologue qui expliquent chaque examen factuellement, valorisent votre plateau technique, gèrent le flux de correspondants généralistes, et respectent strictement la déontologie CNOM. Prise de rendez-vous connectée, infos pratiques claires, page urgence cardio si vous la proposez.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1551601651-2a8555f1a136-w800.webp',
   whatImageAlt: 'Création site internet pour cardiologue',
   pillars: [
     { icon: 'FileSearch', title: 'Pages par examen', desc: 'Écho, Holter, MAPA, test d\'effort : chaque examen expliqué = une requête captée.' },

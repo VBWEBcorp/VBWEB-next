@@ -48,7 +48,7 @@ const config: MetierConfig = {
     'Les dirigeants de PME ont tous vécu la panne qui bloque l\'entreprise pendant des heures. Ils cherchent désormais un prestataire qui prévient plutôt qu\'il soigne. Les requêtes "maintenance informatique + ville", "contrat maintenance entreprise", "supervision informatique PME" amènent ces décideurs qui veulent passer du curatif au préventif. Votre site doit montrer cette approche moderne.',
   whatPara2:
     'Je construis des sites maintenance informatique qui valorisent votre approche préventive. Pages par type de maintenance, outils de supervision valorisés, tarifs clairs, parc hétérogène Mac/PC/mobile mis en avant, contrats récurrents. Un site qui transforme votre entreprise en référent technique pour les PME de votre zone.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1518770660439-4636190af475-w800.webp',
   whatImageAlt: 'Création site internet pour maintenance informatique',
   pillars: [
     { icon: 'TrendingUp', title: 'Préventif valorisé', desc: 'Positionnement premium qui justifie des contrats récurrents mensuels.' },

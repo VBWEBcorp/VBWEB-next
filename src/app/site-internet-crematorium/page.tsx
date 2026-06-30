@@ -48,7 +48,7 @@ const config: MetierConfig = {
     'Les familles qui choisissent la crémation pour un proche ont souvent peu de connaissances sur le déroulement. Elles se posent des questions sur la cérémonie, le temps disponible, les options de personnalisation, le devenir des cendres. Votre site est leur premier point d\'information. S\'il est clair, sobre, rassurant, vous accompagnez leur choix dans les meilleures conditions.',
   whatPara2:
     'Je construis des sites crématorium qui informent et rassurent avec dignité. Déroulement expliqué, salles présentées, options détaillées, jardins du souvenir, tarifs transparents, ton bienveillant. Un site qui donne aux familles les clés pour préparer sereinement cette étape difficile.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1518155317743-a8ff43ea6a5f?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1518155317743-a8ff43ea6a5f-w800.webp',
   whatImageAlt: 'Création site internet pour crématorium',
   pillars: [
     { icon: 'FileSearch', title: 'Déroulement expliqué', desc: 'Cérémonie, temps, options : ce que les familles cherchent avant tout pour se préparer.' },

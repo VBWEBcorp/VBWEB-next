@@ -48,7 +48,7 @@ const config: MetierConfig = {
     'Le marché du spa à usage privé est en pleine expansion. Les particuliers cherchent à s\'équiper pour profiter chez eux, que ce soit un spa gonflable à 2 000 euros ou un spa encastré haut de gamme à 20 000 euros. Ils tapent "installation spa + ville", "jacuzzi extérieur", "spa de nage prix" et comparent plusieurs revendeurs. Un site qui présente clairement votre offre et vos installations convertit beaucoup mieux qu\'un catalogue générique.',
   whatPara2:
     'Je construis des sites spa-jacuzzi qui captent à la fois les primo-acheteurs et les clients premium. Pages par type de spa, entretien et maintenance, galerie d\'installations réalisées, explications techniques qui justifient votre expertise. Un site qui transforme votre commerce en référent local sur un marché en croissance.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1602872030490-4a484a7b3ba6?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1602872030490-4a484a7b3ba6-w800.webp',
   whatImageAlt: 'Création site internet pour spa jacuzzi',
   pillars: [
     { icon: 'Target', title: 'Page par type de spa', desc: 'Gonflable, rigide, encastré, spa de nage : chaque budget a sa page dédiée.' },

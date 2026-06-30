@@ -65,7 +65,7 @@ const config: MetierConfig = {
     'Construire une piscine, c\'est un projet à 30 000 euros en moyenne. Les clients ne décident jamais sur un coup de tête : ils passent des semaines à comparer les types (coque, béton, liner), à regarder les réalisations des pisciniers locaux, à lire des avis, à demander plusieurs devis. Votre site est votre vitrine principale pendant cette phase de comparaison. Si elle est médiocre, vous êtes éliminé avant même la première prise de contact.',
   whatPara2:
     'Je construis des sites piscinier qui captent ces clients en pleine comparaison. Une galerie de réalisations soignée, une page par type de piscine avec les vraies infos que le client cherche (prix indicatifs, délais, démarches), une page entretien pour le récurrent, et une fiche Google Business optimisée pour dominer le local. Vos plus belles réalisations deviennent votre meilleur argument.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1519821172144-4f87d85de2a6?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1460925895917-afdab827c52f-w800.webp',
   whatImageAlt: 'Création site internet pour piscinier constructeur',
   pillars: [
     { icon: 'FileSearch', title: 'Galerie qui convertit', desc: 'Vos plus belles piscines mises en valeur avec fiches techniques. C\'est votre meilleur argument de vente.' },

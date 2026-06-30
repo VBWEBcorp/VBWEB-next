@@ -1,6 +1,7 @@
 'use client'
 
 import { ArrowRight, ArrowUpRight, Mail, Phone } from 'lucide-react'
+import Image from 'next/image'
 import Link from 'next/link'
 
 import { useHomeLang, t } from '@/components/home/lang'
@@ -89,9 +90,13 @@ export function Footer() {
                 {/* Brand + coordonnées */}
                 <div className="bg-card/60 p-8 sm:p-10">
                   <Link href="/" className="group/logo inline-flex items-center gap-2.5">
-                    <img
-                      src="https://i.ibb.co/C3ZJ3z59/VBWEB-LOGO-BLEU-BLANC.png"
+                    <Image
+                      src="https://pub-698f857760da42999dac8854114fbc41.r2.dev/VBWEB-LOGO-BLEU-BLANC-C3ZJ3z59.webp"
                       alt="VBWEB - Agence web & SEO"
+                      width={1920}
+                      height={463}
+                      loading="lazy"
+                      sizes="149px"
                       className="h-9 w-auto transition-transform duration-300 group-hover/logo:scale-105"
                     />
                   </Link>

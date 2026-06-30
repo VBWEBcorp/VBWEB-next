@@ -48,7 +48,7 @@ const config: MetierConfig = {
     'Le métier de pharmacien a profondément évolué : vaccination, entretien pharmaceutique, bilan de médication, dépistages, accompagnement des patients chroniques. Ces nouvelles missions transforment votre rôle, mais peu d\'officines les valorisent correctement auprès du public. Les patients cherchent ces services sur Google sans savoir que vous les proposez.',
   whatPara2:
     'Je construis des sites pharmacien qui mettent en avant votre expertise professionnelle. Pages par mission, positionnement d\'expert santé publique, conseils conformes au Code de la santé publique, mise en avant de votre rôle de proximité. Ce qui vous différencie des sites d\'officine classiques orientés produit.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1587854692152-cbe660dbde88-w800.webp',
   whatImageAlt: 'Création site internet pour pharmacien',
   pillars: [
     { icon: 'Target', title: 'Missions valorisées', desc: 'Vaccination, entretien, bilan médication : chaque mission = une requête Google spécifique.' },

@@ -69,7 +69,7 @@ const config: MetierConfig = {
     'Le chauffage a changé. Les clients ne décident plus en urgence : ils passent des semaines à comparer les solutions (pompe à chaleur air-eau, chaudière gaz à condensation, biomasse, géothermie), à estimer les aides (MaPrimeRénov, CEE, éco-PTZ) et à lire des avis. Ils tapent "pompe à chaleur + ville", "changer chaudière + ville", "chauffagiste RGE + ville" — des requêtes à haute valeur avec des paniers moyens entre 3 000 et 25 000 euros.',
   whatPara2:
     'Je construis des sites chauffagiste qui captent ces clients au moment de la décision. Pages prestation détaillées, mise en avant de la certification RGE, explication claire des aides, études de cas chantiers, formulaires de demande de devis fluides. Chaque page est pensée pour répondre aux questions que le client se pose avant de choisir entre trois professionnels.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1587293852726-70cdb56c2866-w800.webp',
   whatImageAlt: 'Création site internet pour chauffagiste RGE',
   pillars: [
     { icon: 'Target', title: 'Pages PAC détaillées', desc: 'Air-eau, air-air, géothermie, critères de choix, aides : la page qui convertit sur les chantiers à 15k€.' },

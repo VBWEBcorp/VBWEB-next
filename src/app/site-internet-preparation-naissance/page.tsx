@@ -48,7 +48,7 @@ const config: MetierConfig = {
     'Les futures mamans qui cherchent une préparation à la naissance sont dans une phase active : elles ont déjà décidé de préparer l\'accouchement, il leur reste à choisir qui et comment. Elles comparent les approches (classique vs hypnonaissance vs yoga prénatal), lisent les présentations, vérifient les remboursements. Votre site est leur principal critère de décision.',
   whatPara2:
     'Je construis des sites préparation à la naissance qui captent ces futures mamans convaincues. Pages par approche, explication du déroulé, remboursement clarifié, tarifs, témoignages anonymisés, prise de rendez-vous en ligne. Vos sessions se remplissent avant même leur démarrage.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1604881991720-f91add269bed?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1604881991720-f91add269bed-w800.webp',
   whatImageAlt: 'Création site internet pour préparation à la naissance',
   pillars: [
     { icon: 'Target', title: 'Page par approche', desc: 'Classique, hypno, yoga, sophro, haptonomie : chaque approche a sa requête et sa page dédiée.' },

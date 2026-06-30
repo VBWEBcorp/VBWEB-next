@@ -48,7 +48,7 @@ const config: MetierConfig = {
     'Vos clients ne tombent pas par hasard sur vous : ils cherchent activement. Ils tapent "nutritionniste + leur ville", "perte de poids sérieuse", "rééquilibrage alimentaire", parfois après avoir essayé plusieurs régimes à la mode qui n\'ont pas marché. Ils veulent du professionnel, du scientifique, du durable. Le site qui leur plaît est celui qui parle un langage crédible, pas celui qui promet des miracles.',
   whatPara2:
     'Je construis des sites nutritionniste qui captent cette clientèle motivée. Pages par spécialité, approche basée sur les preuves, téléconsultation nationale, présentation de votre méthode. Le ton reste sérieux et professionnel, ce qui convertit mieux que les promesses creuses de la concurrence.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1512621776951-a57141f2eefd-w800.webp',
   whatImageAlt: 'Création site internet pour nutritionniste',
   pillars: [
     { icon: 'Target', title: 'Page par spécialité', desc: 'Perte de poids, sport, troubles alimentaires, pathologies : une requête = une page.' },

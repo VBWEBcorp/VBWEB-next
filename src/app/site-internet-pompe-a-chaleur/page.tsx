@@ -48,7 +48,7 @@ const config: MetierConfig = {
     'Les clients qui cherchent une pompe à chaleur passent en moyenne 3 à 6 semaines à comparer les solutions, les marques, les aides, les installateurs. Ils demandent 3 à 5 devis avant de signer. La seule question est : est-ce que votre site est assez clair, détaillé et rassurant pour qu\'ils vous placent dans leur short list ?',
   whatPara2:
     'Je construis des sites installateur PAC qui répondent à toutes les questions des clients : types de PAC, prix indicatifs, aides disponibles, étapes d\'installation, garanties, RGE, marques. Un simulateur d\'aides qui qualifie les demandes. Des études de cas chantiers avec photos. L\'objectif : que vos devis se signent plus facilement parce que votre site a déjà fait 80 % du travail de conviction.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1587293852726-70cdb56c2866-w800.webp',
   whatImageAlt: 'Création site internet pour installateur pompe à chaleur',
   pillars: [
     { icon: 'Target', title: 'Pages par type de PAC', desc: 'Air-eau, air-air, géothermie, hybride : chaque technologie a sa requête et sa page dédiée.' },

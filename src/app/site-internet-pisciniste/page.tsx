@@ -48,7 +48,7 @@ const config: MetierConfig = {
     'Le pisciniste se positionne au-delà du simple installateur : il maîtrise toute la chaîne, du projet initial à l\'entretien long terme. Les clients qui tapent "pisciniste + ville" cherchent précisément ce positionnement d\'expert global. Ils ont un budget, un projet ambitieux, et ils veulent un interlocuteur unique capable de tout gérer. Votre site doit refléter cette promesse.',
   whatPara2:
     'Je construis des sites pisciniste qui mettent en avant votre expertise complète. Conception sur mesure, construction, rénovation de piscines anciennes, équipements haut de gamme, mise aux normes sécurité, entretien premium. Un site qui positionne votre entreprise comme le référent local du projet piscine de A à Z.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1576013551627-0cc20b96c2a7-w800.webp',
   whatImageAlt: 'Création site internet pour pisciniste',
   pillars: [
     { icon: 'Target', title: 'Expertise globale', desc: 'Conception, construction, rénovation, équipement, entretien : tout en un.' },

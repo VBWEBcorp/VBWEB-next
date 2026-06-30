@@ -48,7 +48,7 @@ const config: MetierConfig = {
     'Les familles en deuil cherchent souvent un accompagnement complet : pompes funèbres, marbrerie, démarches administratives, cérémonie, contrats prévoyance. Plus vous couvrez ces prestations avec une seule équipe, plus vous soulagez les familles. Elles tapent "services funéraires + ville" pour trouver un interlocuteur unique qui prend tout en charge.',
   whatPara2:
     'Je construis des sites services funéraires qui montrent votre accompagnement global. Pages par prestation, démarches administratives expliquées, contrats prévoyance, équipe présentée avec humanité, ton bienveillant. Un site qui fait la différence pour les familles qui cherchent à ne pas s\'occuper de tout après un décès.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1518155317743-a8ff43ea6a5f?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1518155317743-a8ff43ea6a5f-w800.webp',
   whatImageAlt: 'Création site internet pour services funéraires',
   pillars: [
     { icon: 'User', title: 'Accompagnement global', desc: 'De la démarche à la cérémonie, un seul interlocuteur. Levier différenciateur majeur.' },

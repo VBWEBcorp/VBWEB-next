@@ -48,7 +48,7 @@ const config: MetierConfig = {
     'Les clients qui cherchent spécifiquement un nettoyeur de vitres savent ce qu\'ils veulent : un spécialiste formé, équipé (perche télescopique, perche à eau osmosée, nacelle si besoin), avec un vrai savoir-faire. Ils tapent "laveur de vitres + ville", "nettoyage vitres maison", "nettoyage vitres commerce". Ils préfèrent un vrai spécialiste à une entreprise de nettoyage généraliste qui fait ça à la marge.',
   whatPara2:
     'Je construis des sites laveur de vitres qui captent cette clientèle ciblée. Pages par segment (particuliers, commerces, immeubles, hauteur), contrats récurrents mis en avant, zones d\'intervention, photos de chantier. Un site qui positionne votre entreprise comme le référent local du métier.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1603712725140-51d3bab0bd57?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1460925895917-afdab827c52f-w800.webp',
   whatImageAlt: 'Création site internet pour nettoyage de vitres',
   pillars: [
     { icon: 'Target', title: 'Pages par segment', desc: 'Particuliers, commerces, immeubles : chaque clientèle a sa page et son approche.' },

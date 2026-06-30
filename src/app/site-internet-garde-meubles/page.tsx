@@ -48,7 +48,7 @@ const config: MetierConfig = {
     'Les clients qui cherchent un garde-meubles sont pressés : déménagement en cours, travaux imminents, succession à gérer, expatriation. Ils tapent "garde-meubles + ville", "self-stockage + ville", "box de stockage + quartier" et réservent souvent dans les 48 heures. Votre site doit répondre à toutes leurs questions (taille, prix, accès, sécurité) en quelques secondes.',
   whatPara2:
     'Je construis des sites garde-meubles qui convertissent rapidement. Grille de tarifs claire, pages par taille de box, sécurité mise en avant, flexibilité contractuelle, possibilité de réservation en ligne. Un site qui remplit vos box sans que vous ayez à prospecter.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1600585154340-be6161a56a0c-w800.webp',
   whatImageAlt: 'Création site internet pour garde-meubles',
   pillars: [
     { icon: 'FileSearch', title: 'Tarifs clairs', desc: 'Grille par taille de box. Les clients comparent vite et choisissent en transparence.' },

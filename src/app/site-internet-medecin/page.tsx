@@ -69,7 +69,7 @@ const config: MetierConfig = {
     'Les patients en 2026 cherchent d\'abord sur Google avant d\'appeler. Ils veulent savoir si vous acceptez de nouveaux patients, quelles sont vos spécialités, comment prendre rendez-vous, où se trouve le cabinet, si la téléconsultation est possible. Sans site, chaque question devient un appel à votre secrétariat — avec un site bien fait, l\'info est trouvable en 10 secondes.',
   whatPara2:
     'Je construis des sites médecin qui désengorgent votre standard. Présentation claire du praticien et des spécialités, intégration Doctolib, pages d\'informations pratiques (première consultation, certificats médicaux, tarifs, conventionnement), et fiche Google optimisée pour remonter sur la carte locale. Tout est conforme aux règles CNOM.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1576091160550-2173dba999ef-w800.webp',
   whatImageAlt: 'Création site internet pour cabinet médical',
   pillars: [
     { icon: 'User', title: 'Doctolib intégré', desc: 'Prise de rendez-vous en ligne connectée à votre agenda. Moins d\'appels, plus de rendez-vous honorés.' },

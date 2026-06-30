@@ -48,7 +48,7 @@ const config: MetierConfig = {
     'L\'allaitement est un sujet qui ne suit pas les horaires de bureau. Les difficultés apparaissent la nuit, les questions angoissent, et les mamans cherchent désespérément quelqu\'un qui puisse les aider concrètement. Elles tapent leur problème sur Google, souvent en pleurs, et appellent la première IBCLC qui leur inspire confiance et qui semble disponible rapidement.',
   whatPara2:
     'Je construis des sites conseillère en lactation qui captent ces mamans en détresse. Pages par problème (douleur, crevasses, refus du sein, canal bouché), page IBCLC pour valoriser votre certification, modalités visio et domicile, tarifs clairs. Un site rassurant et professionnel qui permet de prendre rendez-vous immédiatement.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1531722569936-825d3dd91b15?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1531722569936-825d3dd91b15-w800.webp',
   whatImageAlt: 'Création site internet pour conseillère en lactation',
   pillars: [
     { icon: 'Zap', title: 'Page par problème', desc: 'Douleur, crevasses, refus sein, mastite : chaque problème = une requête Google à capter.' },

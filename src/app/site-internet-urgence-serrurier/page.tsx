@@ -48,7 +48,7 @@ const config: MetierConfig = {
     'La requête "urgence serrurier" est l\'une des plus rentables en serrurerie. Les clients qui la tapent sont prêts à payer 250 à 400 euros tout de suite pour retrouver l\'accès à leur logement. Ils ne comparent pas trois devis : ils appellent le premier qui inspire confiance et qui promet un délai rapide. La seule question est : est-ce que c\'est vous qu\'ils voient d\'abord ?',
   whatPara2:
     'Je construis des sites urgence serrurier conçus pour convertir en quelques secondes. Numéro en gros, délai d\'intervention affiché, tarifs indicatifs transparents, fiche Google Business optimisée pour le pack local 24/7. Le tout avec un design mobile-first car 90 % des appels d\'urgence viennent du téléphone.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1558002038-1055907df827-w800.webp',
   whatImageAlt: 'Création site internet pour urgence serrurier 24h/24',
   pillars: [
     { icon: 'Zap', title: 'Numéro + délai visibles', desc: 'Numéro en gros en haut, délai promis à côté. 10 secondes pour convaincre et convertir.' },

@@ -48,7 +48,7 @@ const config: MetierConfig = {
     'Les clients d\'un coach nutrition ont souvent déjà tout essayé : régimes, apps, livres. Ils cherchent maintenant un accompagnement humain qui les aide à comprendre pourquoi ils échouent et à changer en profondeur. Les requêtes "coach nutrition", "accompagnement perte de poids", "coaching alimentaire" reflètent cette demande d\'un soutien qui va au-delà du simple conseil.',
   whatPara2:
     'Je construis des sites coach nutrition qui captent cette clientèle en recherche d\'accompagnement. Positionnement différencié du diététicien, programmes structurés (3 mois, 6 mois), coaching en ligne, témoignages anonymisés, méthode explicitée. L\'objectif : que les clients comprennent immédiatement qu\'ils sont au bon endroit.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1490645935967-10de6ba17061-w800.webp',
   whatImageAlt: 'Création site internet pour coach nutrition',
   pillars: [
     { icon: 'User', title: 'Positionnement coach', desc: 'Différent du diététicien. Accompagnement humain, durable, basé sur les habitudes.' },

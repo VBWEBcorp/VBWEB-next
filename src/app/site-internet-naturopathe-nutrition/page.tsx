@@ -48,7 +48,7 @@ const config: MetierConfig = {
     'Les clients qui cherchent un naturopathe orienté nutrition ne sont pas dans une démarche de curiosité : ils sont convaincus de l\'approche naturelle et cherchent un professionnel qui les accompagne. Ils tapent "naturopathe nutrition + ville", "cure détox accompagnée", "alimentation vivante + ville", "jeûne accompagné". Ce sont des clients fidèles avec des paniers de consultations récurrentes.',
   whatPara2:
     'Je construis des sites naturopathe nutrition qui captent cette clientèle motivée. Pages par approche (alimentation vivante, détox, jeûne, plantes), positionnement non-médical clair, visio pour capter du national, respect des précautions réglementaires. Un site qui convertit des visiteurs curieux en clients engagés.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1505740420928-5e560c06d30e-w800.webp',
   whatImageAlt: 'Création site internet pour naturopathe nutrition',
   pillars: [
     { icon: 'Target', title: 'Approches détaillées', desc: 'Alimentation vivante, détox, jeûne, plantes : chaque approche a sa page dédiée.' },

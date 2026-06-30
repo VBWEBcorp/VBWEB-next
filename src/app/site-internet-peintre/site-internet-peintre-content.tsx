@@ -114,10 +114,13 @@ export function SiteInternetPeintreContent({ faqs }: SiteInternetPeintreContentP
 
                 <Reveal delay={0.1}>
                   <div className="relative overflow-hidden rounded-[1.25rem] border border-border/40">
-                    <img
-                      src="https://images.unsplash.com/photo-1562259929-b4e1fd3aef09?auto=format&fit=crop&w=800&q=80"
+                    <Image
+                      src="https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1562259929-b4e1fd3aef09-w800.webp"
                       alt="Création site internet pour peintre"
                       loading="lazy"
+                      width={800}
+                      height={600}
+                      sizes="(max-width: 1024px) 100vw, 50vw"
                       className="aspect-[4/3] w-full object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent" />

@@ -48,7 +48,7 @@ const config: MetierConfig = {
     'Les clients qui cherchent "technicien informatique + leur ville" ne cherchent pas un prestataire anonyme, ils cherchent une personne. Ils veulent savoir à qui ils vont confier leur PC, leurs données, leur réseau. Votre site est votre carte de visite humaine. S\'il vous présente clairement avec photo, parcours, approche, valeurs, vous captez des clients qui veulent construire une relation durable.',
   whatPara2:
     'Je construis des sites technicien informatique qui mettent en avant votre personnalité. Présentation détaillée, pages particuliers et professionnels distinctes, conseils, approche pédagogique, tarifs transparents. Un positionnement humain qui vous différencie des enseignes anonymes et fidélise une clientèle locale.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1547658719-da2b51169166-w800.webp',
   whatImageAlt: 'Création site internet pour technicien informatique',
   pillars: [
     { icon: 'User', title: 'Bio et photo', desc: 'Personnaliser le service. Clés de conversion pour une relation de confiance.' },

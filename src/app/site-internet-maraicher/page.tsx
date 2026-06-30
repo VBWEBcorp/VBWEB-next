@@ -48,7 +48,7 @@ const config: MetierConfig = {
     'Les consommateurs engagés cherchent activement leurs producteurs locaux. Ils tapent "maraîcher + leur ville", "légumes bio producteur", "AMAP + ville", "drive fermier proche". Ces clients ne cherchent pas le moins cher, ils cherchent la qualité, la proximité, et la relation directe avec le producteur. Ils paient sans négocier et reviennent chaque semaine une fois fidélisés.',
   whatPara2:
     'Je construis des sites maraîcher qui captent cette clientèle engagée. Pages vente directe, calendrier des marchés, AMAP ou drive, engagements bio, photos de la ferme, histoire de votre parcours. Un site qui raconte votre travail avec authenticité et convertit les visiteurs en abonnés à vos paniers.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1605000797499-95a51c5269ae?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1605000797499-95a51c5269ae-w800.webp',
   whatImageAlt: 'Création site internet pour maraîcher',
   pillars: [
     { icon: 'MapPin', title: 'Points de vente clairs', desc: 'Ferme, marchés, AMAP, drive : chaque point avec adresse et horaires pour les clients qui viennent.' },

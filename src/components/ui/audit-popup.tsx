@@ -180,11 +180,13 @@ export function AuditPopup({ open, onClose }: { open: boolean; onClose: () => vo
                 <div>
                   <label htmlFor="audit-budget" className="mb-1.5 block text-[12px] font-medium uppercase tracking-[0.12em] text-muted-foreground/70">
                     {tp.budgetLabel[lang]}
+                    <span className="ml-1.5 normal-case tracking-normal text-muted-foreground/40">
+                      ({lang === 'en' ? 'optional' : 'optionnel'})
+                    </span>
                   </label>
                   <select
                     id="audit-budget"
                     name="budget"
-                    required
                     defaultValue=""
                     className="w-full appearance-none rounded-xl border border-border/60 bg-card/40 px-4 py-2.5 text-base text-foreground outline-none transition-all focus:border-primary/60 focus:ring-2 focus:ring-primary/10"
                   >

@@ -33,8 +33,8 @@ export const t = {
     h1Part2: { fr: 'grâce à', en: 'thanks to' },
     h1Part3: { fr: "Google et l'IA", en: 'Google and AI' },
     subtitle: {
-      fr: "Vos clients vous cherchent sur Google et, de plus en plus, auprès des intelligences artificielles. Je rends votre entreprise visible et crédible aux deux endroits. Plus de clients, plus de chiffre d'affaires.",
-      en: 'Your clients search on Google and, increasingly, on AI tools. I make your business visible and credible in both places. More clients, more revenue.',
+      fr: "Vos clients vous cherchent sur Google et l'IA. Je vous y rends visible et crédible. Plus de clients, plus de chiffre d'affaires.",
+      en: 'Your clients search on Google and AI. I make you visible and credible there. More clients, more revenue.',
     },
     ctaPrimary: { fr: 'Recevez votre diagnostic gratuit', en: 'Get your free diagnostic' },
     ctaSecondary: { fr: 'ou prendre directement rendez-vous', en: 'or book a meeting directly' },
@@ -92,8 +92,8 @@ export const t = {
       en: 'Your site looks great. Meanwhile, your competition is cashing in',
     },
     stat1Desc: {
-      fr: "Pendant que vous gérez votre PME, vos prospects tapent votre métier sur Google et dans l'IA. Ils atterrissent chez vos concurrents. Tous les jours. Sans que vous le sachiez.",
-      en: 'While you run your SMB, prospects type your business into Google and AI. They land on your competitors. Every day. Without you knowing.',
+      fr: "Vos prospects tapent votre métier sur Google et dans l'IA — et atterrissent chez vos concurrents. Tous les jours.",
+      en: 'Prospects type your business into Google and AI — and land on your competitors. Every day.',
     },
     stat2Label: {
       fr: 'des décisions B2B commencent en ligne',
@@ -104,8 +104,8 @@ export const t = {
       en: "Your clients don't stop at Google. They ask ChatGPT",
     },
     stat2Desc: {
-      fr: "Recherche Google, ChatGPT, Claude, Perplexity : vos prospects vous comparent partout. Si l'IA ne cite pas votre PME, vous n'existez pas pour eux. Et vos concurrents, eux, sont déjà cités.",
-      en: "Google search, ChatGPT, Claude, Perplexity: prospects compare you everywhere. If AI doesn't cite your SMB, you don't exist for them. And your competitors? Already cited.",
+      fr: "Google, ChatGPT, Claude, Perplexity : vos prospects vous comparent partout. Si l'IA ne vous cite pas, vous n'existez pas — vos concurrents, eux, sont déjà cités.",
+      en: "Google, ChatGPT, Claude, Perplexity: prospects compare you everywhere. If AI doesn't cite you, you don't exist — your competitors already do.",
     },
   },
   method: {
@@ -121,34 +121,34 @@ export const t = {
         {
           title: 'Diagnostic complet (SEO + GEO)',
           description:
-            "J'analyse votre site, votre positionnement Google ET votre visibilité dans les réponses ChatGPT, Claude, Perplexity. Vous repartez avec un plan d'action priorisé.",
+            "J'analyse votre site, votre position Google et votre présence dans ChatGPT, Claude, Perplexity. Vous repartez avec un plan d'action priorisé.",
         },
         {
           title: 'Site qui convertit + visibilité Google + IA',
           description:
-            'Un site moderne pensé pour les dirigeants de PME, optimisé pour Google et structuré pour être cité par les IA. Pendant que vos concurrents font de la pub, vous récoltez du trafic qualifié.',
+            'Un site moderne, optimisé pour Google et structuré pour être cité par les IA. Vos concurrents paient de la pub ; vous récoltez du trafic qualifié.',
         },
         {
           title: 'Suivi mensuel et croissance',
           description:
-            "Reporting clair, optimisations continues, surveillance de votre présence dans Google ET dans les IA. Vous restez concentré sur votre PME, je m'occupe de votre visibilité.",
+            'Reporting clair, optimisations continues, suivi de votre présence sur Google et dans les IA. Vous gérez votre PME, je gère votre visibilité.',
         },
       ],
       en: [
         {
           title: 'Full diagnostic (SEO + GEO)',
           description:
-            'I analyze your site, your Google ranking AND your visibility in ChatGPT, Claude, Perplexity. You leave with a prioritized action plan.',
+            'I analyze your site, your Google ranking and your presence in ChatGPT, Claude, Perplexity. You leave with a prioritized action plan.',
         },
         {
           title: 'Converting website + Google + AI visibility',
           description:
-            'A modern site built for SMB leaders, optimized for Google and structured to be cited by AI. While your competitors pay for ads, you harvest qualified traffic.',
+            'A modern site, optimized for Google and structured to be cited by AI. Your competitors pay for ads; you harvest qualified traffic.',
         },
         {
           title: 'Monthly tracking and growth',
           description:
-            'Clear reporting, continuous optimization, monitoring your presence on Google AND AI. You stay focused on your SMB, I handle visibility.',
+            'Clear reporting, continuous optimization, tracking your presence on Google and AI. You run your SMB, I handle visibility.',
         },
       ],
     },

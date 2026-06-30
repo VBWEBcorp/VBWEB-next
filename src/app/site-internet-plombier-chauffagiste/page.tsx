@@ -48,7 +48,7 @@ const config: MetierConfig = {
     'La double compétence plombier-chauffagiste est un atout commercial : vous pouvez tout gérer, du dépannage d\'une fuite à l\'installation d\'une pompe à chaleur complète. Mais si votre site ne structure pas clairement les deux activités, vous perdez en lisibilité et en référencement. Google remonte les pages spécifiques, pas les pages généralistes qui mélangent tout.',
   whatPara2:
     'Je construis des sites plombier-chauffagiste à deux niveaux : un menu clair qui sépare les deux métiers, et des pages détaillées pour chaque prestation (dépannage, sanitaire, chaudière, PAC, entretien). Votre label RGE mis en avant, vos zones d\'intervention, un formulaire de devis rapide. L\'objectif : capter à la fois les urgences et les gros chantiers.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1504307651254-35680f356dfd-w800.webp',
   whatImageAlt: 'Création site internet pour plombier-chauffagiste',
   pillars: [
     { icon: 'Zap', title: 'Dépannage urgence', desc: 'Flux immédiat de 100-300 € par appel. Base du chiffre d\'affaires.' },

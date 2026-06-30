@@ -48,7 +48,7 @@ const config: MetierConfig = {
     'Les requêtes "porte claquée + ville" et "ouverture de porte + ville" sont parmi les plus recherchées en serrurerie. Elles reflètent une situation précise : un client dehors, une porte fermée à clé, un besoin d\'intervention immédiate. La différence entre un bon et un mauvais ouvreur de porte, c\'est de savoir ouvrir sans casser — et de le communiquer clairement sur son site.',
   whatPara2:
     'Je construis des sites ouverture de porte qui mettent en avant votre compétence non destructive. Page technique détaillée (crochetage, bump, radio), tarifs clairs, déroulé rassurant, avis Google, fiche Google Business Profile optimisée. Les clients comprennent pourquoi ils doivent vous choisir plutôt qu\'un apprenti qui casse tout.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1558002038-1055907df827-w800.webp',
   whatImageAlt: 'Création site internet pour ouverture de porte',
   pillars: [
     { icon: 'Target', title: 'Non destructif mis en avant', desc: 'Votre compétence technique qui justifie le tarif et évite la casse à 200-400 €.' },

@@ -65,7 +65,7 @@ const config: MetierConfig = {
     'Les consommateurs veulent manger local. Ils cherchent activement "producteur + leur ville", "maraîcher bio + département", "drive fermier proche", "panier légumes producteur". Ce sont des clients fidèles et motivés : une fois qu\'ils ont trouvé leur producteur, ils reviennent chaque semaine pendant des années. La seule question est : est-ce qu\'ils vous trouvent, ou est-ce qu\'ils trouvent un confrère mieux référencé ?',
   whatPara2:
     'Je construis des sites producteur qui captent cette clientèle locale. Une présentation authentique de votre ferme et votre histoire, une page par activité (maraîchage, élevage, apiculture, viticulture), les points de vente clairement indiqués (ferme, marchés, AMAP, drive), vos labels mis en avant, et une fiche Google Business optimisée pour remonter sur les requêtes locales. Le tout avec des textes qui racontent votre métier sans faire commercial.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1500382017468-9049fed747ef-w800.webp',
   whatImageAlt: 'Création site internet pour producteur local',
   pillars: [
     { icon: 'MapPin', title: 'Points de vente clairs', desc: 'Ferme, marchés, AMAP, drive : chaque point avec horaires, adresse et accès. Le client vient directement.' },

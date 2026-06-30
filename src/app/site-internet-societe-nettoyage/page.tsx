@@ -48,7 +48,7 @@ const config: MetierConfig = {
     'Les sociétés de nettoyage locales bien structurées peuvent rivaliser avec les grands groupes sur leurs marchés régionaux — à condition d\'avoir un site qui inspire la même confiance. Les acheteurs B2B exigeants (grands comptes, collectivités, établissements scolaires, hôpitaux privés) évaluent votre sérieux avant même de vous consulter : certifications, références, RSE, gouvernance.',
   whatPara2:
     'Je construis des sites société de nettoyage qui hissent votre crédibilité au niveau des grands groupes. Certifications mises en avant, références anonymisées ou avec accord, engagements RSE détaillés, ancrage local valorisé. Un site qui vous fait sortir du lot dans les short lists des acheteurs publics et privés.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1521791136064-7986c2920216-w800.webp',
   whatImageAlt: 'Création site internet pour société de nettoyage',
   pillars: [
     { icon: 'FileSearch', title: 'Certifications complètes', desc: 'QUALIPROPRE, ISO 9001/14001/45001, sociales : crédibilité face aux grands groupes.' },

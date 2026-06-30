@@ -48,7 +48,7 @@ const config: MetierConfig = {
     'Le dépannage serrurerie a mauvaise presse à cause des faux serruriers qui facturent 800 euros une ouverture de porte à 2h du matin. Les vrais professionnels en pâtissent : les clients arrivent méfiants. Votre site est votre meilleur outil pour casser cette méfiance avant même le premier appel.',
   whatPara2:
     'Je construis des sites dépannage serrurerie qui se démarquent par la transparence : tarifs clairs, SIRET visible, photo du serrurier, avis Google récents, promesse de délai. Vous ne gagnez plus seulement sur Google, vous gagnez aussi la confiance du client dès qu\'il arrive sur le site.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1558002038-1055907df827-w800.webp',
   whatImageAlt: 'Création site internet pour dépannage serrurier',
   pillars: [
     { icon: 'Zap', title: 'Numéro toujours visible', desc: 'En gros, en haut, cliquable. Le client appelle sans chercher.' },

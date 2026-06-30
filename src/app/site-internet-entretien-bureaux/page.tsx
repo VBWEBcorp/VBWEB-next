@@ -48,7 +48,7 @@ const config: MetierConfig = {
     'Les TPE et PME cherchent un prestataire d\'entretien bureaux qui leur corresponde : humain, flexible, réactif, stable dans ses équipes. Elles sont souvent déçues par les gros groupes (turnover, interlocuteurs changeants, qualité variable) et cherchent activement une alternative locale. Elles tapent "entretien bureaux + leur ville" et comparent 3 à 5 prestataires avant de choisir.',
   whatPara2:
     'Je construis des sites entretien bureaux qui valorisent votre proximité et votre sur-mesure. Pages par segment (open space, cabinet, coworking), équipe stable mise en avant, flexibilité horaire, réactivité, formulaire B2B qualifié. Un positionnement qui gagne face aux grands groupes sur les TPE-PME.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1497366216548-37526070297c-w800.webp',
   whatImageAlt: 'Création site internet pour entretien bureaux',
   pillars: [
     { icon: 'Target', title: 'Pages par segment', desc: 'Open space, cabinet, coworking : chaque type d\'espace a ses contraintes et ses requêtes.' },

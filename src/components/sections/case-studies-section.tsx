@@ -1,6 +1,7 @@
 'use client'
 
 import { ArrowUpRight } from 'lucide-react'
+import Image from 'next/image'
 import Link from 'next/link'
 
 import { useHomeLang, t } from '@/components/home/lang'
@@ -10,21 +11,21 @@ const BASE_CATEGORIES = [
   {
     number: '01',
     label: 'Web Design',
-    image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=800&q=65',
+    image: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1467232004584-a241de8bcf5d-w800.webp',
     href: '/etudes-de-cas/sites-internet',
     accent: 'from-sky-400/20 via-transparent to-transparent',
   },
   {
     number: '02',
     label: 'Search',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=65',
+    image: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1551288049-bebda4e38f71-w800.webp',
     href: '/etudes-de-cas/referencement',
     accent: 'from-violet-400/20 via-transparent to-transparent',
   },
   {
     number: '03',
     label: 'Engineering',
-    image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=65',
+    image: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1498050108023-c5249f4df085-w800.webp',
     href: '/etudes-de-cas/applications-web',
     accent: 'from-emerald-400/20 via-transparent to-transparent',
   },
@@ -78,11 +79,13 @@ export function CaseStudiesSection() {
               >
                 {/* Image */}
                 <div className="relative aspect-[4/3] overflow-hidden">
-                  <img
+                  <Image
                     src={cat.image}
                     alt={cat.title}
+                    fill
                     loading="lazy"
-                    className="size-full object-cover transition-transform duration-[1500ms] ease-out group-hover:scale-110"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover transition-transform duration-[1500ms] ease-out group-hover:scale-110"
                   />
                   {/* Overlays */}
                   <div className="absolute inset-0 bg-gradient-to-t from-card via-card/30 to-transparent" />

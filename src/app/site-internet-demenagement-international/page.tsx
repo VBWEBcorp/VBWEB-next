@@ -48,7 +48,7 @@ const config: MetierConfig = {
     'Les expatriés qui préparent un déménagement international vivent une période très stressante : logement à quitter, logement à trouver, visa, école des enfants, déménagement de toute leur vie. Ils cherchent un professionnel qui prend en charge toute la complexité. Les requêtes "déménagement international", "déménagement expatriation", "déménageur conteneur" amènent des clients très motivés mais aussi très exigeants sur la qualité.',
   whatPara2:
     'Je construis des sites déménagement international qui rassurent ces clients stressés. Explication claire des modalités (conteneur, groupage), gestion complète des formalités douanières, assurances, pages par destination récurrente, témoignages d\'expatriés satisfaits. Un positionnement d\'expert qui convertit et justifie des paniers premium.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1494412651409-8963ce7935a7?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1494412651409-8963ce7935a7-w800.webp',
   whatImageAlt: 'Création site internet pour déménagement international',
   pillars: [
     { icon: 'Target', title: 'Conteneur vs groupage', desc: 'Comparaison claire des modalités. Aide les clients à choisir et qualifie les demandes.' },

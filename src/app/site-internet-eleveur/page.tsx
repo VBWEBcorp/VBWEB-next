@@ -48,7 +48,7 @@ const config: MetierConfig = {
     'Les consommateurs sont de plus en plus nombreux à vouloir connaître l\'origine de leur viande. Ils cherchent "éleveur + leur région", "viande producteur direct", "colis bœuf bio + département". Ils veulent voir les bêtes, comprendre l\'élevage, rencontrer l\'éleveur. Ils sont prêts à payer le juste prix pour de la qualité et de l\'éthique. Un site qui raconte votre travail les convertit en clients fidèles.',
   whatPara2:
     'Je construis des sites éleveur qui valorisent votre approche. Pages sur votre élevage (race, conduite, labels), système de colis expliqué, réservation en ligne, photos de la ferme, engagements bio ou Label Rouge. Un site authentique qui fidélise une clientèle qui commande à chaque abattage.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1526797138847-0b1adc5317b5?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1460925895917-afdab827c52f-w800.webp',
   whatImageAlt: 'Création site internet pour éleveur',
   pillars: [
     { icon: 'FileSearch', title: 'Colis expliqué', desc: 'Principe, morceaux, tarifs, conditionnement : clarté qui débloque les ventes.' },

@@ -57,7 +57,7 @@ const config: MetierConfig = {
     'Un patient qui cherche un chirurgien-dentiste a souvent un problème sérieux : dent de sagesse incluse, implant complexe, parodontite avancée, besoin d\'une greffe osseuse avant implant. Il ne cherche pas un "dentiste", il cherche un chirurgien avec des compétences précises. Il compare les parcours universitaires, les plateaux techniques, les techniques maîtrisées. Votre site doit répondre à ces critères factuellement.',
   whatPara2:
     'Je construis des sites chirurgiens-dentistes qui valorisent votre expertise dans le respect de la déontologie. Pages par acte chirurgical, parcours universitaire, plateau technique expliqué cliniquement, conseils post-opératoires, intégration Doctolib pour la prise de rendez-vous. L\'objectif : que le patient ait déjà confiance avant même le premier appel.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1588776814546-1ffcf47267a5-w800.webp',
   whatImageAlt: 'Création site internet pour chirurgien-dentiste',
   pillars: [
     { icon: 'Target', title: 'Page par acte chirurgical', desc: 'Extraction DDS, implant, greffe osseuse, sinus lift : chaque acte a sa requête précise.' },

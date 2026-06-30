@@ -48,7 +48,7 @@ const config: MetierConfig = {
     'Chaque canicule booste massivement les recherches "installation climatisation + ville". Les particuliers qui ont souffert en été décident en septembre ou octobre d\'équiper leur maison avant la prochaine vague. Les entreprises équipent leurs bureaux. Le marché est en forte croissance et les installateurs bien référencés captent une part énorme de ces demandes.',
   whatPara2:
     'Je construis des sites climatisation qui captent les deux marchés : résidentiel (monosplit, multisplit, gainable) et tertiaire (bureaux, commerces, cabinets). Pages par technologie, pages par segment, entretien obligatoire mis en avant, contrats récurrents. Un site qui transforme chaque canicule en pipeline de chantiers.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1580152030525-4db7b82c06d8?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1460925895917-afdab827c52f-w800.webp',
   whatImageAlt: 'Création site internet pour climatisation',
   pillars: [
     { icon: 'Target', title: 'Pages par technologie', desc: 'Monosplit, multisplit, gainable : chaque technologie a son budget et sa clientèle.' },

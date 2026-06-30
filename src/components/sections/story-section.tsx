@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
+import Image from 'next/image'
 import Link from 'next/link'
 
 import { Button } from '@/components/ui/button'
@@ -14,7 +15,7 @@ const defaults = {
   title: 'Une approche humaine, des résultats concrets',
   paragraph1: 'Depuis nos débuts, nous croyons qu\'un bon site commence par une bonne écoute. Nous prenons le temps de comprendre votre métier, vos clients et vos objectifs avant de concevoir quoi que ce soit.',
   paragraph2: 'Le résultat : des projets qui vous ressemblent, qui parlent à votre audience, et qui travaillent pour vous 24h/24.',
-  image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80',
+  image: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1522071820081-009f0129c71c-w800.webp',
 }
 
 export function StorySection() {
@@ -34,13 +35,13 @@ export function StorySection() {
           >
             <div aria-hidden className="absolute -inset-4 rounded-[2rem] bg-linear-to-br from-primary/10 via-transparent to-transparent blur-2xl" />
             <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-border/80 bg-muted/40 shadow-[var(--shadow-md)] ring-1 ring-foreground/5">
-              <img
+              <Image
                 src={story.image}
                 alt="Équipe au travail"
-                className="size-full object-cover"
+                fill
                 loading="lazy"
-                width={800}
-                height={600}
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
               />
             </div>
           </motion.div>

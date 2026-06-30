@@ -65,7 +65,7 @@ const config: MetierConfig = {
     'Le dépannage informatique, c\'est un métier d\'urgence. Un PC qui plante avant une réunion, un serveur qui tombe, un ransomware qui bloque les fichiers, une récupération de données après un crash disque. Les clients (particuliers et PME) tapent leur problème sur Google en panique et appellent le premier qui leur inspire confiance. Les grandes enseignes ne sont pas compétitives sur la rapidité — c\'est votre avantage, à condition d\'être visible.',
   whatPara2:
     'Je construis des sites qui captent ces urgences. Pages détaillées par type de panne (démarrage, virus, récupération de données), une page particulier et une pro, tarifs affichés clairement pour rassurer, fiche Google Business optimisée pour le pack local. L\'objectif : que votre téléphone sonne à chaque PC qui tombe en rade dans votre zone, avec des clients qui savent qu\'ils paient un prix juste.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1518770660439-4636190af475-w800.webp',
   whatImageAlt: 'Création site internet pour dépannage informatique',
   pillars: [
     { icon: 'Zap', title: 'Page urgence visible', desc: 'Numéro cliquable et promesse de délai. Les clients en panique appellent sans hésiter.' },

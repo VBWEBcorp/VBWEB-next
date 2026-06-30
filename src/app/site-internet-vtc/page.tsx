@@ -48,7 +48,7 @@ const config: MetierConfig = {
     'Les applis VTC sont pratiques mais elles vous prennent 25-30 % de commission et vous empêchent de fidéliser votre clientèle. Parallèlement, des dizaines de clients cherchent chaque semaine un VTC en direct : "VTC aéroport + ville", "chauffeur privé mariage", "VTC événementiel + ville". Ces clients payent sans commission et deviennent fidèles si votre service est à la hauteur.',
   whatPara2:
     'Je construis des sites VTC qui captent cette clientèle directe. Pages par type de course (aéroport, événementiel, tourisme, entreprise), présentation du chauffeur et du véhicule, tarifs forfaitaires, système de réservation simple. Un site qui vous permet de reprendre la main sur votre chiffre d\'affaires et votre marge.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1590374504512-48f02a864c42?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1460925895917-afdab827c52f-w800.webp',
   whatImageAlt: 'Création site internet pour VTC',
   pillars: [
     { icon: 'Target', title: 'Aéroport direct', desc: 'Transferts réservés à l\'avance. Courses à 80-150 € sans commission plateforme.' },

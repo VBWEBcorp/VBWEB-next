@@ -65,7 +65,7 @@ const config: MetierConfig = {
     'Les applis Uber, Bolt, Heetch sont pratiques, mais elles vous prennent 25 à 30% de commission et vous privent de toute relation directe avec le client. Parallèlement, chaque jour des milliers de gens cherchent un taxi sur Google : "taxi aéroport + votre ville", "taxi conventionné + ville", "taxi longue distance", "transfert gare". Ces clients veulent réserver à l\'avance, en direct, et ils paient au juste prix sans commission.',
   whatPara2:
     'Je construis des sites qui captent ces réservations directes. Une page par type de course (aéroport, gare, longue distance, conventionné, événementiel), un formulaire de réservation simple, vos certifications (carte pro, ADS, conventionnement) mises en avant, et une fiche Google Business optimisée. L\'objectif : reprendre la main sur votre clientèle et récupérer la marge que les plateformes vous volent.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1590374504512-48f02a864c42?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1460925895917-afdab827c52f-w800.webp',
   whatImageAlt: 'Création site internet pour taxi chauffeur privé',
   pillars: [
     { icon: 'MapPin', title: 'Page aéroport / gare', desc: 'Tarifs indicatifs, véhicule, options. La requête la plus rentable pour un taxi en direct.' },

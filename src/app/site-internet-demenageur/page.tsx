@@ -65,7 +65,7 @@ const config: MetierConfig = {
     'Le déménagement est un métier où tout le monde demande plusieurs devis. Un client ne choisit jamais le premier qu\'il trouve : il en contacte 3 à 5, compare les prix, lit les avis, et choisit celui qui inspire le plus confiance. La seule question est : est-ce que vous êtes dans ces 3 à 5 déménageurs contactés ? Si vous n\'êtes pas dans le top 5 sur Google, la réponse est non, et vous n\'avez aucune chance de signer ce déménagement.',
   whatPara2:
     'Je construis des sites qui vous placent dans le top 3. Pages très détaillées par type de déménagement (particulier, entreprise, longue distance, international), simulateur de devis intégré qui convertit mieux qu\'un simple formulaire, garanties et assurances mises en avant, avis clients récents. L\'objectif : multiplier par 3 à 5 vos demandes de devis entrantes.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1600585154340-be6161a56a0c-w800.webp',
   whatImageAlt: 'Création site internet pour entreprise de déménagement',
   pillars: [
     { icon: 'Target', title: 'Simulateur de devis', desc: 'Le client saisit volume, distance, options et voit une fourchette de prix. Conversion x3.' },

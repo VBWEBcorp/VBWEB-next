@@ -48,7 +48,7 @@ const config: MetierConfig = {
     'De plus en plus de particuliers cherchent un prestataire pour transporter un meuble unique plutôt qu\'un déménagement complet : canapé acheté sur Leboncoin, commode héritée, piano transmis, œuvre d\'art achetée en galerie. Ils cherchent "transport meuble + ville", "transport piano + ville", "livraison meuble lourd". Ce sont des demandes ponctuelles mais rentables que les gros déménageurs traitent mal.',
   whatPara2:
     'Je construis des sites transport mobilier qui captent cette clientèle de niche. Pages par type de transport (meuble classique, piano, objet lourd, œuvre d\'art), forfaits clairs, assurances, équipement dédié. Un positionnement qui génère un flux de demandes ponctuelles rémunératrices sans ressembler à un déménageur classique.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1600585154340-be6161a56a0c-w800.webp',
   whatImageAlt: 'Création site internet pour transport de mobilier',
   pillars: [
     { icon: 'Target', title: 'Forfaits par objet', desc: 'Prix clairs par type de transport. Convertit mieux que "devis sur mesure".' },

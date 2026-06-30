@@ -39,10 +39,10 @@ export function AgenceReferencementBrestContent({ faqs }: AgenceReferencementBre
           <ScrollCol imgs={col1} dir="up" dur={40} />
           <ScrollCol imgs={col2} dir="down" dur={35} />
           <ScrollCol imgs={col3} dir="up" dur={38} />
-          <div className="hidden min-w-0 flex-1 sm:block"><ScrollCol imgs={['https://i.ibb.co/k6sXPdjv/Edouard-Suchet.jpg',...col1.slice(0,5)]} dir="down" dur={42} /></div>
+          <div className="hidden min-w-0 flex-1 sm:block"><ScrollCol imgs={['https://pub-698f857760da42999dac8854114fbc41.r2.dev/Edouard-Suchet-k6sXPdjv.webp',...col1.slice(0,5)]} dir="down" dur={42} /></div>
           <div className="hidden min-w-0 flex-1 sm:block"><ScrollCol imgs={[col1[5],...col2.slice(0,5)]} dir="up" dur={36} /></div>
           <div className="hidden min-w-0 flex-1 lg:block"><ScrollCol imgs={[col2[5],...col3.slice(0,5)]} dir="down" dur={44} /></div>
-          <div className="hidden min-w-0 flex-1 lg:block"><ScrollCol imgs={[col3[5],'https://i.ibb.co/k6sXPdjv/Edouard-Suchet.jpg',...col1.slice(0,4)]} dir="up" dur={39} /></div>
+          <div className="hidden min-w-0 flex-1 lg:block"><ScrollCol imgs={[col3[5],'https://pub-698f857760da42999dac8854114fbc41.r2.dev/Edouard-Suchet-k6sXPdjv.webp',...col1.slice(0,4)]} dir="up" dur={39} /></div>
         </div>
 
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-background via-background/50 to-background" />
@@ -111,10 +111,13 @@ export function AgenceReferencementBrestContent({ faqs }: AgenceReferencementBre
 
                 <Reveal delay={0.1}>
                   <div className="relative overflow-hidden rounded-[1.25rem] border border-border/40">
-                    <img
-                      src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"
+                    <Image
+                      src="https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1460925895917-afdab827c52f-w800.webp"
                       alt="Analyse de référencement pour entreprises à Brest"
                       loading="lazy"
+                      width={800}
+                      height={600}
+                      sizes="(max-width: 1024px) 100vw, 50vw"
                       className="aspect-[4/3] w-full object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent" />

@@ -10,28 +10,28 @@ import { siteConfig } from '@/lib/seo'
 const ease = [0.22, 1, 0.36, 1] as const
 
 const col1 = [
-  'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=400&q=80',
-  'https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=400&q=80',
-  'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=400&q=80',
-  'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=400&q=80',
-  'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=400&q=80',
-  'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=400&q=80',
+  'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1460925895917-afdab827c52f-w400.webp',
+  'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1553877522-43269d4ea984-w400.webp',
+  'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1551288049-bebda4e38f71-w400.webp',
+  'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1522071820081-009f0129c71c-w400.webp',
+  'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1497366216548-37526070297c-w400.webp',
+  'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1600880292203-757bb62b4baf-w400.webp',
 ]
 const col2 = [
-  'https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=400&q=80',
-  'https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?auto=format&fit=crop&w=400&q=80',
-  'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80',
-  'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=400&q=80',
-  'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=400&q=80',
-  'https://images.unsplash.com/photo-1531973576160-7125cd663d86?auto=format&fit=crop&w=400&q=80',
+  'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1559136555-9303baea8ebd-w400.webp',
+  'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1600880292089-90a7e086ee0c-w400.webp',
+  'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1504384308090-c894fdcc538d-w400.webp',
+  'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1556761175-5973dc0f32e7-w400.webp',
+  'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1542744173-8e7e53415bb0-w400.webp',
+  'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1531973576160-7125cd663d86-w400.webp',
 ]
 const col3 = [
-  'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=400&q=80',
-  'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80',
-  'https://images.unsplash.com/photo-1573164574572-cb89e39749b4?auto=format&fit=crop&w=400&q=80',
-  'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80',
-  'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=400&q=80',
-  'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=400&q=80',
+  'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1498050108023-c5249f4df085-w400.webp',
+  'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1560250097-0b93528c311a-w400.webp',
+  'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1573164574572-cb89e39749b4-w400.webp',
+  'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1519389950473-47ba0277781c-w400.webp',
+  'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1552664730-d307ca884978-w400.webp',
+  'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1517245386807-bb43f82c33c4-w400.webp',
 ]
 
 function ScrollColumn({
@@ -117,7 +117,7 @@ export function ContactContent() {
       {/* HERO style Framer */}
       <section className="relative isolate overflow-hidden bg-background">
         {/* Photo columns pleine largeur */}
-        <div className="absolute inset-0 grid grid-cols-3 gap-3 opacity-25 sm:grid-cols-5 lg:grid-cols-7">
+        <div className="absolute inset-0 grid grid-cols-3 gap-3 opacity-[0.08] sm:grid-cols-5 lg:grid-cols-7">
           <ScrollColumn images={col1} direction="up" duration={40} />
           <ScrollColumn images={col2} direction="down" duration={35} />
           <ScrollColumn images={col3} direction="up" duration={38} />
@@ -128,8 +128,8 @@ export function ContactContent() {
         </div>
 
         {/* Overlays */}
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-background via-background/50 to-background" />
-        <div className="pointer-events-none absolute inset-0 bg-background/35" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-background via-background/60 to-background" />
+        <div className="pointer-events-none absolute inset-0 bg-background/55" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(78,186,236,0.08),transparent_60%)]" aria-hidden />
 
         <div className="relative z-10 mx-auto max-w-4xl px-4 pt-24 pb-16 text-center sm:px-6 sm:pt-32 sm:pb-20 lg:px-8 lg:pt-40">

@@ -48,7 +48,7 @@ const config: MetierConfig = {
     'Les consommateurs de produits bio ne se contentent plus d\'un logo AB : ils veulent connaître le producteur, comprendre la démarche, voir la ferme. Ils tapent "producteur bio + leur ville", "ferme bio + région", "légumes bio producteur local". Ils sont lassés du faux bio des grandes surfaces et cherchent une relation directe. Votre site est votre premier argument de crédibilité face à cette exigence.',
   whatPara2:
     'Je construis des sites producteur bio qui racontent votre démarche avec authenticité. Certifications mises en avant, engagements agroécologiques, saisonnalité transparente, points de vente directs, histoire de la ferme. Un site qui fidélise une clientèle engagée qui devient vos meilleurs ambassadeurs.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1500937386664-56d1dfef3854-w800.webp',
   whatImageAlt: 'Création site internet pour producteur bio',
   pillars: [
     { icon: 'FileSearch', title: 'Certifications visibles', desc: 'AB, organisme, numéros : crédibilité immédiate face au greenwashing.' },

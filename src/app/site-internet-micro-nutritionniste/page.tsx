@@ -48,7 +48,7 @@ const config: MetierConfig = {
     'La micro-nutrition est passée en quelques années d\'un terme confidentiel à une approche de plus en plus demandée. Les sportifs cherchent à optimiser leur récupération, les femmes en fatigue chronique cherchent des réponses que la médecine classique ne leur donne pas, les personnes avec troubles digestifs cherchent des solutions personnalisées. Les requêtes explosent et peu de sites y répondent correctement.',
   whatPara2:
     'Je construis des sites micro-nutritionniste qui captent cette niche en croissance. Pages par motif (fatigue, digestion, immunité, sport, hormones), approche basée sur les preuves, consultations en visio pour capter du national, explication claire de votre démarche. Une position d\'expert qui justifie des honoraires premium.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1559757148-5c350d0d3c56-w800.webp',
   whatImageAlt: 'Création site internet pour micro-nutritionniste',
   pillars: [
     { icon: 'Target', title: 'Page par motif', desc: 'Fatigue, digestion, immunité, sport : une page par problème = une requête captée.' },

@@ -48,7 +48,7 @@ const config: MetierConfig = {
     'Les clients qui cassent leur écran de portable ou qui ont un PC qui ne démarre plus ne veulent pas perdre leurs données. Ils cherchent "réparation PC + leur ville", "réparation MacBook écran cassé", "récupération données disque dur". Ils sont stressés et veulent un atelier qui les rassure : transparence sur les tarifs, devis gratuit, délai clair, garantie.',
   whatPara2:
     'Je construis des sites réparation ordinateur qui convertissent ces clients stressés. Pages par panne (écran, batterie, disque, clavier, liquide), pages distinctes Mac et PC, devis gratuit mis en avant, tarifs indicatifs, avis clients récents. Un site qui transforme les urgences Google en clients qui apportent leur matériel en atelier.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1516321318423-f06f85e504b3-w800.webp',
   whatImageAlt: 'Création site internet pour réparation ordinateur',
   pillars: [
     { icon: 'Target', title: 'Pages par panne', desc: 'Écran, batterie, disque, liquide : chaque panne capte sa requête spécifique.' },

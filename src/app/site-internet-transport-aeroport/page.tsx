@@ -48,7 +48,7 @@ const config: MetierConfig = {
     'Les voyageurs qui prennent l\'avion cherchent un transport aéroport fiable à l\'avance. Ils ne veulent pas dépendre d\'une appli le jour J, ils veulent une confirmation. Les requêtes "transport aéroport + ville", "navette aéroport + ville", "transfert CDG + votre département" explosent en permanence et amènent des clients motivés, prêts à payer et souvent à fidéliser.',
   whatPara2:
     'Je construis des sites transport aéroport qui captent ces réservations anticipées. Pages par aéroport desservi, tarifs forfaitaires clairs, système de réservation en ligne, option professionnel avec facturation, avis clients récents. Un site qui vous remplit votre planning de transferts sans appeler personne.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1556388158-158ea5ccacbd?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1556388158-158ea5ccacbd-w800.webp',
   whatImageAlt: 'Création site internet pour transport aéroport',
   pillars: [
     { icon: 'Target', title: 'Pages par aéroport', desc: 'CDG, Orly, Beauvais : chaque aéroport a sa requête et ses clients spécifiques.' },

@@ -48,7 +48,7 @@ const config: MetierConfig = {
     'L\'herboristerie revient en force depuis plusieurs années. Les consommateurs veulent comprendre ce qu\'ils consomment, privilégier les circuits courts, et trouver du conseil personnalisé qu\'ils ne trouvent pas sur les sites e-commerce généralistes. Ils cherchent "herboristerie + ville", "plantes sommeil", "phytothérapie digestion" — et vont dans la boutique qui leur inspire confiance dès le premier clic.',
   whatPara2:
     'Je construis des sites herboristerie qui valorisent votre expertise. Pages sur vos familles de produits, conseils organisés par besoin ou par plante, histoire et savoir-faire, possibilité de rendez-vous conseil. Respect strict de la réglementation applicable aux herboristes.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1471943311424-646960669fbc?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1471943311424-646960669fbc-w800.webp',
   whatImageAlt: 'Création site internet pour herboristerie',
   pillars: [
     { icon: 'User', title: 'Expertise valorisée', desc: 'Votre histoire, votre savoir-faire, votre formation. Ce qui fait la différence avec un e-commerce froid.' },

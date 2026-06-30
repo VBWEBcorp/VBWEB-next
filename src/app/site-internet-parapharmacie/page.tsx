@@ -48,7 +48,7 @@ const config: MetierConfig = {
     'Les grandes enseignes dominent la vente en ligne, mais sur les requêtes locales "parapharmacie + votre ville", "conseil soin visage + ville" ou "marque Avène proche", ce sont souvent les indépendants bien référencés qui ressortent. La clé : valoriser ce que les sites nationaux ne peuvent pas offrir — le conseil personnalisé, la connaissance client, le click and collect.',
   whatPara2:
     'Je construis des sites parapharmacie qui captent cette clientèle de proximité. Pages par marque distribuée, pages conseils par besoin (bébé, soin visage, solaire, compléments), click and collect, présentation de votre équipe conseil. La fiche Google Business est optimisée pour remonter dans le pack local.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1596436889106-be35e843f974?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1596436889106-be35e843f974-w800.webp',
   whatImageAlt: 'Création site internet pour parapharmacie',
   pillars: [
     { icon: 'Target', title: 'Page par marque', desc: 'Avène, La Roche-Posay, Uriage : chaque marque distribuée a sa page pour capter les fidèles.' },

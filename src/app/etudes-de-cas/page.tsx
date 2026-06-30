@@ -95,9 +95,8 @@ export default function EtudesDeCasPage() {
               <span className="italic text-muted-foreground">à Rennes</span>
             </h1>
             <p className="hero-description mx-auto mt-6 max-w-2xl text-pretty text-lg leading-relaxed text-muted-foreground">
-              Sites internet, référencement SEO et applications web : découvrez
-              des résultats concrets obtenus pour des entreprises à Rennes et en
-              Bretagne.
+              Sites internet, SEO et applications web : des résultats concrets
+              pour des entreprises à Rennes et en Bretagne.
             </p>
           </div>
         </div>

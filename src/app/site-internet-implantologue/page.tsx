@@ -57,7 +57,7 @@ const config: MetierConfig = {
     'L\'implantologie est l\'acte dentaire le plus rentable, mais c\'est aussi le plus scruté par les patients. Un All-on-4 à 20 000 euros ne se décide pas en 10 minutes : les patients comparent 3 à 5 cabinets, vérifient les formations universitaires, les DU et CES, regardent les cas cliniques anonymisés, lisent les avis. Ils cherchent un expert, pas un simple dentiste.',
   whatPara2:
     'Je construis des sites implantologues qui valorisent votre expertise scientifiquement. Pages par type d\'implant, études de cas cliniques anonymisées, parcours universitaire détaillé, plateau technique (scanner 3D, guides chirurgicaux), marques d\'implants utilisées. Tout en respectant la déontologie CNCD. L\'objectif : que le patient ait déjà choisi votre cabinet avant le premier appel.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1588776814546-1ffcf47267a5-w800.webp',
   whatImageAlt: 'Création site internet pour implantologue',
   pillars: [
     { icon: 'Target', title: 'Page All-on-4 dédiée', desc: 'La requête la plus rentable en implantologie. Paniers à 15-25 k€ par arcade.' },

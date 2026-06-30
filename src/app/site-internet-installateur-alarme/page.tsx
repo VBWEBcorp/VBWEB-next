@@ -48,7 +48,7 @@ const config: MetierConfig = {
     'L\'installation d\'alarme est un marché où les clients comparent 3 à 5 devis avant de signer. Ils tapent "installation alarme + ville", "alarme entreprise", "télésurveillance maison". Ils cherchent un installateur certifié, avec une offre claire, des marques fiables, et surtout une approche conseil plutôt que commerciale agressive. Votre site est votre premier filtre de qualification.',
   whatPara2:
     'Je construis des sites installateur alarme qui captent ces clients prêts à investir. Pages par type d\'installation, par marque, par segment (maison, entreprise, commerce), mise en avant des certifications APSAD, option télésurveillance. Un site qui fait la différence dans les comparatifs.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1558002038-1055907df827-w800.webp',
   whatImageAlt: 'Création site internet pour installateur alarme',
   pillars: [
     { icon: 'Target', title: 'Pages par segment', desc: 'Maison, entreprise, commerce : chaque segment a son approche et ses mots-clés.' },

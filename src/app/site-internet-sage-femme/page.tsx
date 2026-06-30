@@ -65,7 +65,7 @@ const config: MetierConfig = {
     'Le parcours d\'une future maman commence presque toujours par une recherche Google. "Préparation naissance + ville", "entretien prénatal + ville", "sage-femme libérale + ville" : ce sont des requêtes avec une intention très forte, des femmes qui cherchent à prendre rendez-vous dans la semaine. Si vous n\'êtes pas visible, elles iront chez une consœur mieux référencée, et vous passez à côté d\'un suivi qui peut durer des mois.',
   whatPara2:
     'Je construis des sites sage-femme qui captent ces moments. Une page par acte (préparation naissance, périnée, allaitement, post-partum, gynécologie de prévention), une présentation de votre parcours et de votre approche, la prise de rendez-vous en ligne, et une fiche Google Business Profile optimisée pour remonter sur la carte locale. Le tout dans le respect total de la déontologie CNOSF.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1555252333-9f8e92e65df9?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1555252333-9f8e92e65df9-w800.webp',
   whatImageAlt: 'Création site internet pour sage-femme libérale',
   pillars: [
     { icon: 'User', title: 'Une page par acte', desc: 'Préparation, périnée, allaitement, gynéco : chaque acte a sa page, chaque page cible sa requête.' },

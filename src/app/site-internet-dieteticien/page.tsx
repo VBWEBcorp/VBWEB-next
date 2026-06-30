@@ -65,7 +65,7 @@ const config: MetierConfig = {
     'Un client qui cherche un diététicien est presque toujours un client motivé. Il a pris sa décision, il cherche juste le bon professionnel. Il tape "diététicien + sa ville", "nutritionniste perte de poids", "consultation nutrition sportive" ou "diététicien téléconsultation". C\'est une recherche active, avec une intention de prise de rendez-vous dans les jours qui suivent. La seule question est : est-ce que c\'est vous qu\'il va choisir, ou un confrère mieux référencé ?',
   whatPara2:
     'Je construis des sites diététicien qui captent ces clients motivés. Une page par spécialité pour remonter sur chaque requête, un ton professionnel basé sur les preuves (pas de promesses bidons), la téléconsultation bien mise en avant pour capter du national, et une fiche Google Business Profile optimisée pour dominer le local. Le tout dans le respect de la déontologie du titre DE.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1490645935967-10de6ba17061-w800.webp',
   whatImageAlt: 'Création site internet pour diététicien nutritionniste',
   pillars: [
     { icon: 'FileSearch', title: 'Page par spécialité', desc: 'Perte de poids, sport, troubles alimentaires, pédiatrie : chaque page vise sa requête Google.' },

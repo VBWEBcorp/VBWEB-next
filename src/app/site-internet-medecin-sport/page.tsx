@@ -48,7 +48,7 @@ const config: MetierConfig = {
     'Les sportifs ne se contentent pas d\'un médecin généraliste quand ils ont une blessure ou préparent une compétition. Ils cherchent activement un médecin du sport formé, qui comprend leur pratique et leurs exigences. Les requêtes "médecin du sport + ville", "bilan médecine du sport", "traumatologie sport + ville" sont très qualifiées, avec des patients prêts à consulter rapidement.',
   whatPara2:
     'Je construis des sites médecin du sport qui captent cette patientèle ciblée. Pages par motif de consultation, présentation de votre parcours et vos formations spécifiques (capacité, DESC, DU), partenariats clubs, liens avec kinés et préparateurs. Conforme à la déontologie CNOM.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1571019613454-1cb2f99b2d8b-w800.webp',
   whatImageAlt: 'Création site internet pour médecin du sport',
   pillars: [
     { icon: 'Target', title: 'Page certificat d\'aptitude', desc: 'La requête la plus volumineuse. Patients directs, consultation rapide, panier net.' },

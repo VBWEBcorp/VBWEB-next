@@ -48,7 +48,7 @@ const config: MetierConfig = {
     'Les propriétaires de piscine sont de plus en plus nombreux à déléguer l\'entretien. Ils n\'ont plus le temps ou n\'ont plus envie de s\'en occuper. Ils cherchent "entretien piscine + leur ville", "contrat annuel piscine", "hivernage piscine" — et choisissent un prestataire qui inspire confiance et propose des forfaits clairs. Ce sont des contrats entre 600 et 1 500 euros par an et par piscine, très stables.',
   whatPara2:
     'Je construis des sites entretien piscine qui captent cette clientèle en recherche de délégation. Pages par saison (hivernage, ouverture), pages par problème (eau verte, trouble, panne), contrats annuels clairement présentés, zones d\'intervention. Un flux de contacts stable qui transforme votre activité en revenu récurrent.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1519821172144-4f87d85de2a6?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1460925895917-afdab827c52f-w800.webp',
   whatImageAlt: 'Création site internet pour entretien piscine',
   pillars: [
     { icon: 'TrendingUp', title: 'Contrat annuel mis en avant', desc: 'Votre meilleur revenu récurrent : 600-1 500 €/an par client sur plusieurs années.' },

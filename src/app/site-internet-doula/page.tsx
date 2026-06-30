@@ -48,7 +48,7 @@ const config: MetierConfig = {
     'Les futures mamans qui cherchent une doula ont souvent un besoin précis que le suivi médical classique ne comble pas : une présence humaine continue, une oreille attentive, un accompagnement émotionnel pendant la grossesse et l\'accouchement. Elles cherchent "doula + ville", "accompagnement grossesse", "doula post-partum". Si votre site n\'explique pas clairement ce que vous proposez, vous passez à côté de ces femmes.',
   whatPara2:
     'Je construis des sites doula qui expliquent votre accompagnement avec humanité. Différence claire avec les professions médicales, étapes d\'accompagnement, forfaits, témoignages (anonymisés), votre parcours. L\'objectif : que les futures mamans sachent immédiatement si vous êtes la personne qu\'elles cherchent.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1544829728-e5cb9eedc20e?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1544829728-e5cb9eedc20e-w800.webp',
   whatImageAlt: 'Création site internet pour doula',
   pillars: [
     { icon: 'MessageCircle', title: 'Accompagnement expliqué', desc: 'Le métier est méconnu. Une page claire sur ce que vous faites lève les doutes et convertit.' },

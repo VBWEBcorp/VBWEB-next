@@ -65,7 +65,7 @@ const config: MetierConfig = {
     'Quand une famille perd un proche, elle a souvent peu de temps pour choisir une entreprise de pompes funèbres. Les premières heures suivant le décès sont à la fois urgentes et désorientantes. La famille cherche sur Google, en pleine nuit parfois, "pompes funèbres + sa ville", "organisation obsèques + ville", et doit faire un choix important sans pouvoir vraiment comparer. Votre site est souvent son premier point de contact avec votre entreprise.',
   whatPara2:
     'Je construis des sites pompes funèbres qui accompagnent les familles avec dignité. Un ton sobre et informatif (jamais commercial), des explications claires sur les démarches, une transparence sur les formules et tarifs, et un numéro 24/7 toujours visible. L\'objectif n\'est pas de vendre, c\'est d\'aider les familles à se sentir en confiance avec vous dès les premières secondes sur le site.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1518155317743-a8ff43ea6a5f?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1518155317743-a8ff43ea6a5f-w800.webp',
   whatImageAlt: 'Création site internet pour entreprise de pompes funèbres',
   pillars: [
     { icon: 'MessageCircle', title: 'Ton digne et rassurant', desc: 'Textes sobres qui accompagnent les familles plutôt que de vendre. C\'est ce qui inspire confiance.' },

@@ -48,7 +48,7 @@ const config: MetierConfig = {
     'Une ferme moderne ne se résume plus à la production : vente directe, visites, ferme pédagogique, chambres d\'hôtes, gîte, événements, animations. Chaque activité apporte son flux de revenus, et chaque activité a ses clients qui cherchent sur Google. Sans site qui couvre toutes ces dimensions, vous laissez passer des opportunités.',
   whatPara2:
     'Je construis des sites ferme qui valorisent toutes vos activités. Vente directe, visites pédagogiques, agritourisme, événements, produits : chaque activité a sa page dédiée pour remonter sur ses requêtes. Un site qui transforme votre ferme en destination locale plutôt qu\'un simple lieu de production.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1500382017468-9049fed747ef-w800.webp',
   whatImageAlt: 'Création site internet pour ferme',
   pillars: [
     { icon: 'Target', title: 'Page par activité', desc: 'Vente, visites, pédagogique, hébergement : chaque activité capte sa clientèle propre.' },

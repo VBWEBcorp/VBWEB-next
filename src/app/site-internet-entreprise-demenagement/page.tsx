@@ -48,7 +48,7 @@ const config: MetierConfig = {
     'Le déménagement est un marché où chaque client compare plusieurs devis avant de choisir. La règle est simple : si vous n\'êtes pas dans le top 3 des résultats Google pour votre zone, vous n\'êtes pas dans la short list des clients. Les plateformes comparatives (Opleme, Bougeurs, Jaurai...) captent déjà une part du trafic, mais les clients préfèrent traiter en direct avec un déménageur sérieux dès qu\'ils en trouvent un.',
   whatPara2:
     'Je construis des sites entreprise de déménagement qui captent les demandes directes avant les plateformes. Simulateur de devis intégré, pages par type de déménagement (particulier, entreprise, longue distance, international), garanties claires, avis clients récents. Un site qui convertit 3 à 5 fois plus que les sites génériques de la concurrence.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1600585154340-be6161a56a0c-w800.webp',
   whatImageAlt: 'Création site internet pour entreprise de déménagement',
   pillars: [
     { icon: 'Target', title: 'Simulateur de devis', desc: 'Volume, distance, options : le client voit une estimation en temps réel. Conversion x3.' },

@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
+import Image from 'next/image'
 import Link from 'next/link'
 
 import { Button } from '@/components/ui/button'
@@ -22,13 +23,13 @@ export function FormationSection() {
           >
             <div aria-hidden className="absolute -inset-4 rounded-[2rem] bg-primary/10 blur-2xl" />
             <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-border shadow-[var(--shadow-md)]">
-              <img
-                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80"
+              <Image
+                src="https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1560250097-0b93528c311a-w800.webp"
                 alt="Victor Beasse - Fondateur VBWEB"
-                className="size-full object-cover"
+                fill
                 loading="lazy"
-                width={800}
-                height={600}
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
               />
             </div>
           </motion.div>

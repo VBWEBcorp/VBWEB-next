@@ -69,7 +69,7 @@ const config: MetierConfig = {
     'Dans la serrurerie, la grande majorité des demandes sont des urgences. Une porte claquée, une clé perdue, une serrure bloquée, un cambriolage à réparer. Le client tape son problème sur son téléphone — souvent à minuit, souvent en panique — et appelle le premier serrurier qui apparaît sérieux. Si vous n\'êtes pas dans les trois premiers résultats, vous n\'existez pas pour lui ce soir-là.',
   whatPara2:
     'Je construis des sites qui captent ces moments précis. Une page urgence avec numéro en gros, des tarifs affichés clairement pour se démarquer des faux serruriers, une fiche Google optimisée pour ressortir dans le pack local, et du contenu qui rassure (SIRET, photo, avis récents). L\'objectif : que votre téléphone sonne plus souvent, avec des clients qui savent déjà qu\'ils paient le juste prix.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1558002038-1055907df827-w800.webp',
   whatImageAlt: 'Création site internet pour serrurier dépannage',
   pillars: [
     { icon: 'Zap', title: 'Page urgence 24/7', desc: 'Numéro en gros, zone d\'intervention claire, promesse de temps d\'arrivée. Le bouton appel est toujours visible.' },

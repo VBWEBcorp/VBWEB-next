@@ -1,4 +1,5 @@
 import { ChevronRight, Home } from 'lucide-react'
+import Image from 'next/image'
 import Link from 'next/link'
 
 type PageHeroProps = {
@@ -14,10 +15,13 @@ export function PageHero({ eyebrow, title, description, image, breadcrumb }: Pag
     <section className="relative isolate overflow-hidden border-b border-border/60">
       {/* Background image */}
       <div className="absolute inset-0" aria-hidden>
-        <img
+        <Image
           src={image}
           alt=""
-          className="h-full w-full object-cover"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
         />
         <div className="absolute inset-0 bg-black/55" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/20" />

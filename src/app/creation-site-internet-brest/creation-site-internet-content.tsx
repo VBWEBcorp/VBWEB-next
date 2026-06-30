@@ -111,10 +111,13 @@ export function CreationSiteInternetBrestContent({ faqs }: CreationSiteInternetC
 
                 <Reveal delay={0.1}>
                   <div className="relative overflow-hidden rounded-[1.25rem] border border-border/40">
-                    <img
-                      src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"
+                    <Image
+                      src="https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1460925895917-afdab827c52f-w800.webp"
                       alt="Création de site internet à Brest"
                       loading="lazy"
+                      width={800}
+                      height={600}
+                      sizes="(max-width: 1024px) 100vw, 50vw"
                       className="aspect-[4/3] w-full object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent" />

@@ -18,30 +18,30 @@ function GoogleG({ className = 'size-4' }: { className?: string }) {
 }
 
 const col1 = [
-  'https://i.ibb.co/9HsCRCV6/YUZU-BRANDING.jpg',
-  'https://i.ibb.co/hxpcht55/EPICU.jpg',
-  'https://i.ibb.co/VWfJrSqX/AS-LOCATION.jpg',
-  'https://i.ibb.co/rKD9SJ7q/VENTS-ET-COURBES.jpg',
-  'https://i.ibb.co/DHr9v05v/FL-CONSULTING.jpg',
-  'https://i.ibb.co/BKYFP1x5/RENNES-PNEUS.jpg',
+  'https://pub-698f857760da42999dac8854114fbc41.r2.dev/YUZU-BRANDING-9HsCRCV6.webp',
+  'https://pub-698f857760da42999dac8854114fbc41.r2.dev/EPICU-hxpcht55.webp',
+  'https://pub-698f857760da42999dac8854114fbc41.r2.dev/AS-LOCATION-VWfJrSqX.webp',
+  'https://pub-698f857760da42999dac8854114fbc41.r2.dev/VENTS-ET-COURBES-rKD9SJ7q.webp',
+  'https://pub-698f857760da42999dac8854114fbc41.r2.dev/FL-CONSULTING-DHr9v05v.webp',
+  'https://pub-698f857760da42999dac8854114fbc41.r2.dev/RENNES-PNEUS-BKYFP1x5.webp',
 ]
 
 const col2 = [
-  'https://i.ibb.co/tPHZ4D9L/MATINEH-FOOD.jpg',
-  'https://i.ibb.co/Nd4W02HL/Shaan-production.jpg',
-  'https://i.ibb.co/dwbzZFNN/SHAMPOUINE-TOI.jpg',
-  'https://i.ibb.co/jvyCrGMX/VALENTIN-BEASSE.jpg',
-  'https://i.ibb.co/cKpvpLYJ/ZINE-COACHING.jpg',
-  'https://i.ibb.co/bM518fv2/ECO-HABITAT.jpg',
+  'https://pub-698f857760da42999dac8854114fbc41.r2.dev/MATINEH-FOOD-tPHZ4D9L.webp',
+  'https://pub-698f857760da42999dac8854114fbc41.r2.dev/Shaan-production-Nd4W02HL.webp',
+  'https://pub-698f857760da42999dac8854114fbc41.r2.dev/SHAMPOUINE-TOI-dwbzZFNN.webp',
+  'https://pub-698f857760da42999dac8854114fbc41.r2.dev/VALENTIN-BEASSE-jvyCrGMX.webp',
+  'https://pub-698f857760da42999dac8854114fbc41.r2.dev/ZINE-COACHING-cKpvpLYJ.webp',
+  'https://pub-698f857760da42999dac8854114fbc41.r2.dev/ECO-HABITAT-bM518fv2.webp',
 ]
 
 const col3 = [
-  'https://i.ibb.co/9HhFm9MV/JEREMY-SIMON-AVOCAT.png',
-  'https://i.ibb.co/kZrFB2h/JULIEN-BIDOIS-CHEF-PRIVE.jpg',
-  'https://i.ibb.co/xtRDW0WZ/LES-LUNETTES-DE-LA-CHAPELLE.jpg',
-  'https://i.ibb.co/39zY5X3q/MAXX-LE-MAGICIEN.jpg',
-  'https://i.ibb.co/BH7k4qWR/ON-PARLE-DE-TOUT.webp',
-  'https://i.ibb.co/4gnRwBXW/tracker-solaire-2.jpg',
+  'https://pub-698f857760da42999dac8854114fbc41.r2.dev/JEREMY-SIMON-AVOCAT-9HhFm9MV.webp',
+  'https://pub-698f857760da42999dac8854114fbc41.r2.dev/JULIEN-BIDOIS-CHEF-PRIVE-kZrFB2h.webp',
+  'https://pub-698f857760da42999dac8854114fbc41.r2.dev/LES-LUNETTES-DE-LA-CHAPELLE-xtRDW0WZ.webp',
+  'https://pub-698f857760da42999dac8854114fbc41.r2.dev/MAXX-LE-MAGICIEN-39zY5X3q.webp',
+  'https://pub-698f857760da42999dac8854114fbc41.r2.dev/ON-PARLE-DE-TOUT-BH7k4qWR.webp',
+  'https://pub-698f857760da42999dac8854114fbc41.r2.dev/tracker-solaire-2-4gnRwBXW.webp',
 ]
 
 function ScrollColumn({

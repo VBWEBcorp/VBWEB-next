@@ -48,7 +48,7 @@ const config: MetierConfig = {
     'Le ramonage est obligatoire chaque année et beaucoup de propriétaires cherchent un ramoneur à la dernière minute, souvent en octobre ou novembre quand ils pensent à rallumer le feu. Ils tapent "ramoneur + ville" ou "ramonage poêle à bois + ville" et appellent les premiers résultats. Si votre site n\'est pas bien référencé, vous ratez toute une saison.',
   whatPara2:
     'Je construis des sites ramoneur qui captent cette demande saisonnière. Pages par type d\'appareil, explication de l\'obligation légale, tarifs clairs, certificat remis systématiquement, zone d\'intervention. Fiche Google Business optimisée pour remonter en top des résultats dès septembre.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1604881991720-f91add269bed?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1604881991720-f91add269bed-w800.webp',
   whatImageAlt: 'Création site internet pour ramoneur',
   pillars: [
     { icon: 'Target', title: 'Page par appareil', desc: 'Cheminée, poêle bois, granulés, insert : chaque requête a sa page dédiée.' },

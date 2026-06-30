@@ -48,7 +48,7 @@ const config: MetierConfig = {
     'Les jeunes parents choisissent leur pédiatre comme ils choisissent un lieu de confiance : ils cherchent sur Google, lisent attentivement, regardent les photos, vérifient les avis. Ils veulent un professionnel bienveillant, une communication claire, et idéalement une prise de rendez-vous en ligne pour les petits bobos qui n\'attendent pas.',
   whatPara2:
     'Je construis des sites pédiatres qui rassurent les parents dès la première seconde. Ton bienveillant, présentation du cabinet adapté, pages par tranche d\'âge (nourrisson, enfant, adolescent), téléconsultation pour les motifs adaptés. Respect strict de la déontologie CNOM.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1581594693702-fbdc51b2763b-w800.webp',
   whatImageAlt: 'Création site internet pour pédiatre',
   pillars: [
     { icon: 'User', title: 'Ton rassurant', desc: 'Le site donne l\'ambiance du cabinet. Les parents choisissent aussi sur cette impression initiale.' },

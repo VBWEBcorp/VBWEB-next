@@ -57,7 +57,7 @@ const config: MetierConfig = {
     'Les parents qui cherchent un pédodontiste ont souvent un enfant anxieux, une mauvaise expérience précédente, ou un besoin spécifique (premier rendez-vous, enfant avec TSA, soin complexe). Ils ne cherchent pas un simple "dentiste", ils cherchent un praticien formé aux enfants, avec une approche bienveillante, un cabinet adapté, et parfois la sédation MEOPA. Si votre site ne reflète pas tout ça, vous passez à côté de cette patientèle.',
   whatPara2:
     'Je construis des sites pédodontie rassurants pour les parents. Photos du cabinet adapté, explication de votre approche, pages sur les soins spécifiques enfants (scellement sillons, caries du biberon, orthodontie interceptive), MEOPA si proposé, et prise de rendez-vous simple. L\'objectif : que les parents sentent dès les premières secondes qu\'ils sont au bon endroit.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1609840114035-3c981b782dfe-w800.webp',
   whatImageAlt: 'Création site internet pour dentiste pédiatrique',
   pillars: [
     { icon: 'User', title: 'Approche rassurante', desc: 'Photos du cabinet adapté, explication de votre approche. Ce qui dédramatise avant même le rendez-vous.' },

@@ -57,7 +57,7 @@ const config: MetierConfig = {
     'L\'orthodontie a changé. Les adultes représentent aujourd\'hui une part croissante des traitements, et ils ne passent pas par une prescription : ils cherchent directement sur Google "orthodontiste + ville", "Invisalign + ville", "gouttières transparentes". Ces patients paient souvent 5 000 à 7 000 euros en direct et choisissent le cabinet qui inspire le plus confiance en quelques minutes de navigation.',
   whatPara2:
     'Je construis des sites orthodontiste qui captent cette patientèle adulte tout en préservant la clientèle enfant. Pages spécialisées par type de traitement, présentation du cabinet et de l\'équipement moderne, intégration Doctolib, et une fiche Google optimisée pour le pack local. Le tout dans le respect strict de la déontologie CNCD.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1609840114035-3c981b782dfe-w800.webp',
   whatImageAlt: 'Création site internet pour cabinet d\'orthodontie',
   pillars: [
     { icon: 'Target', title: 'Page Invisalign dédiée', desc: 'La requête la plus rentable en orthodontie adulte. Traitements de 5 à 7 k€ en direct.' },

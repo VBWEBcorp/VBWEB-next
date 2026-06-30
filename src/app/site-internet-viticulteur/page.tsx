@@ -48,7 +48,7 @@ const config: MetierConfig = {
     'Les amateurs de vin cherchent de plus en plus à acheter directement aux producteurs. Ils tapent "domaine + région", "viticulteur indépendant", "œnotourisme + région", "dégustation cave". Ils veulent connaître le domaine, comprendre la philosophie du vigneron, planifier une visite, acheter en direct. Un site qui raconte votre passion et votre terroir vous place en tête de leurs recherches.',
   whatPara2:
     'Je construis des sites viticulteur qui valorisent votre domaine avec élégance. Présentation du vigneron et de l\'histoire, pages par cuvée avec fiches techniques, œnotourisme avec réservation, engagements bio éventuels, boutique si vous le souhaitez. Un site qui transforme les amateurs en clients fidèles sur plusieurs années.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1506377247377-2a5b3b417ebb-w800.webp',
   whatImageAlt: 'Création site internet pour viticulteur',
   pillars: [
     { icon: 'FileSearch', title: 'Fiche par cuvée', desc: 'Cépages, terroir, dégustation, accords : positionnement premium qui justifie les tarifs.' },

@@ -10,6 +10,7 @@ import {
   Code,
   User,
 } from 'lucide-react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState, useEffect } from 'react'
@@ -115,9 +116,13 @@ export function Navbar() {
             aria-label="Accueil"
             className="group flex items-center gap-2"
           >
-            <img
-              src="https://i.ibb.co/C3ZJ3z59/VBWEB-LOGO-BLEU-BLANC.png"
+            <Image
+              src="https://pub-698f857760da42999dac8854114fbc41.r2.dev/VBWEB-LOGO-BLEU-BLANC-C3ZJ3z59.webp"
               alt="VBWEB - Agence web & SEO"
+              width={1920}
+              height={463}
+              priority
+              sizes="133px"
               className="h-8 w-auto transition-transform duration-300 group-hover:scale-105"
             />
           </Link>
@@ -218,9 +223,12 @@ export function Navbar() {
                             >
                               {item.image && (
                                 <span className="flex size-7 shrink-0 overflow-hidden rounded-full ring-1 ring-border/60">
-                                  <img
+                                  <Image
                                     src={item.image}
                                     alt=""
+                                    width={28}
+                                    height={28}
+                                    sizes="28px"
                                     className="size-full object-cover"
                                   />
                                 </span>

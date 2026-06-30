@@ -48,7 +48,7 @@ const config: MetierConfig = {
     'La clientèle du chauffeur privé n\'est pas celle de l\'appli VTC. Ce sont des dirigeants, cadres, diplomates, clients haut de gamme qui veulent un service sur-mesure : chauffeur attitré, véhicule impeccable, ponctualité absolue, discrétion. Ils tapent "chauffeur privé + ville", lisent attentivement votre présentation et ne commandent jamais au premier venu. Le site est votre vitrine pour cette clientèle exigeante.',
   whatPara2:
     'Je construis des sites chauffeur privé qui parlent à cette audience premium. Présentation du chauffeur, photos soignées du véhicule, forfaits clairs, spécialisation (événementiel, mariage, dirigeant, longue distance), discrétion et ponctualité mises en avant. Un positionnement qui justifie des tarifs premium et fidélise sur la durée.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1555215695-3004980ad54e-w800.webp',
   whatImageAlt: 'Création site internet pour chauffeur privé',
   pillars: [
     { icon: 'User', title: 'Positionnement premium', desc: 'Différent d\'Uber. Clientèle qui paie pour la qualité et la discrétion.' },

@@ -53,8 +53,8 @@ const caseStudies: SeoCaseStudy[] = [
     tag: 'Marque',
     website: 'https://epicu.fr',
     images: [
-      { src: 'https://i.ibb.co/y29d3MD/EPICU-AVANT-FILEminimizer.jpg', alt: 'EPICU avant optimisation SEO, trafic organique faible' },
-      { src: 'https://i.ibb.co/XZxVz7Mm/EPICU-APRES-FILEminimizer.jpg', alt: 'EPICU après référencement SEO par VBWEB, 5 000 visites/mois' },
+      { src: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/EPICU-AVANT-FILEminimizer-y29d3MD.webp', alt: 'EPICU avant optimisation SEO, trafic organique faible' },
+      { src: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/EPICU-APRES-FILEminimizer-XZxVz7Mm.webp', alt: 'EPICU après référencement SEO par VBWEB, 5 000 visites/mois' },
     ],
     problem:
       "EPICU est une marque qui propose des guides et expériences locales. Le site partait de zéro en termes de visibilité, avec environ 100 visiteurs mensuels. La marque avait besoin de développer un trafic organique solide pour asseoir sa notoriété et attirer une audience qualifiée sans dépendre de la publicité.",
@@ -88,8 +88,8 @@ const caseStudies: SeoCaseStudy[] = [
     tag: 'Référencement local',
     website: 'https://rennes-pneus.fr',
     images: [
-      { src: 'https://i.ibb.co/Q7JfwsqD/RENNES-PNEUS-AVANT.png', alt: 'Rennes Pneus avant référencement local, invisible sur Google' },
-      { src: 'https://i.ibb.co/jv4Dt7qC/RENNES-PNEUS-APRES-FILEminimizer.jpg', alt: 'Rennes Pneus après SEO local par VBWEB, 3 600 visites/mois' },
+      { src: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/RENNES-PNEUS-AVANT-Q7JfwsqD.webp', alt: 'Rennes Pneus avant référencement local, invisible sur Google' },
+      { src: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/RENNES-PNEUS-APRES-FILEminimizer-jv4Dt7qC.webp', alt: 'Rennes Pneus après SEO local par VBWEB, 3 600 visites/mois' },
     ],
     problem:
       "L'entreprise était invisible sur Google. L'ancien site, hébergé sur un nom de domaine peu stratégique, ne générait quasiment aucun trafic organique. Les clients venaient uniquement par le bouche-à-oreille, ce qui limitait fortement la croissance.",
@@ -134,8 +134,8 @@ const caseStudies: SeoCaseStudy[] = [
     tag: 'E-commerce',
     website: 'https://www.jumelles.com',
     images: [
-      { src: 'https://i.ibb.co/q3k8js8d/JUMELLES-AVANT-FILEminimizer.jpg', alt: 'Jumelles.com avant optimisation SEO e-commerce' },
-      { src: 'https://i.ibb.co/FknFwpWN/JUMELLES-APRES-FILEminimizer.jpg', alt: 'Jumelles.com après SEO par VBWEB, +33% trafic organique' },
+      { src: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/JUMELLES-AVANT-FILEminimizer-q3k8js8d.webp', alt: 'Jumelles.com avant optimisation SEO e-commerce' },
+      { src: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/JUMELLES-APRES-FILEminimizer-FknFwpWN.webp', alt: 'Jumelles.com après SEO par VBWEB, +33% trafic organique' },
     ],
     problem:
       "Jumelles.com est un site e-commerce spécialisé dans la vente de jumelles et d'optiques. Malgré un catalogue riche de 800+ produits, de nombreuses fiches produits étaient mal optimisées, dupliquées ou invisibles sur Google. Le site souffrait également de lenteurs techniques qui pénalisaient le positionnement et l'expérience utilisateur.",

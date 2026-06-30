@@ -65,7 +65,7 @@ const config: MetierConfig = {
     'Les gros contrats de nettoyage ne se gagnent plus par démarchage terrain. Les responsables des services généraux, les syndics, les gérants de PME cherchent un nouveau prestataire sur Google quand leur contrat actuel touche à sa fin ou quand ils ne sont plus satisfaits. Ils tapent "entreprise de nettoyage + leur ville", ils regardent les 3 premiers résultats, ils demandent des devis. Si votre site n\'est pas dans ce top 3, vous n\'avez aucune chance d\'être consulté.',
   whatPara2:
     'Je construis des sites B2B qui captent ces acheteurs. Pages très détaillées par type de prestation (bureaux, industriel, copropriété, vitres), certifications mises en valeur, références clients rassurantes, formulaire de devis B2B qui qualifie les demandes. L\'objectif : que votre entreprise apparaisse dans le top 3 des résultats pour chaque requête B2B de votre zone.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1581578731548-c64695cc6952-w800.webp',
   whatImageAlt: 'Création site internet pour entreprise de nettoyage professionnel',
   pillars: [
     { icon: 'Target', title: 'Pages B2B détaillées', desc: 'Bureaux, industriel, copropriété, vitres : chaque type de prestation cible ses acheteurs.' },

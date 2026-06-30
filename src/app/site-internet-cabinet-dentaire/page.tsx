@@ -57,7 +57,7 @@ const config: MetierConfig = {
     'Un cabinet dentaire pluri-praticien a souvent 3 à 6 praticiens avec des spécialités différentes : omnipraticien, parodontologue, implantologue, pédodontiste. Le défi est de structurer le site pour que chaque patient trouve le bon interlocuteur, tout en montrant la cohérence de l\'équipe. Une simple page "L\'équipe" avec quelques photos ne suffit plus : il faut expliquer qui fait quoi, comment les praticiens collaborent, et comment prendre rendez-vous.',
   whatPara2:
     'Je construis des sites pluri-praticiens qui mettent chaque praticien en valeur tout en renforçant l\'image collective du cabinet. Bios individuelles claires, pages par spécialité, plateau technique partagé, intégration Doctolib avec choix du praticien, conformité CNCD. Le patient sait exactement vers qui il va et pourquoi il choisit votre cabinet.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1629909613654-28e377c37b09-w800.webp',
   whatImageAlt: 'Création site internet pour cabinet dentaire pluri-praticiens',
   pillars: [
     { icon: 'User', title: 'Équipe valorisée', desc: 'Une bio par praticien avec photo, parcours et spécialités. Les patients choisissent en confiance.' },

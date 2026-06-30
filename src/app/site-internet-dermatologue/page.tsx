@@ -48,7 +48,7 @@ const config: MetierConfig = {
     'Les dermatologues sont parmi les spécialistes les plus demandés : délais de plusieurs mois, standards saturés, patients en urgence qui s\'accumulent. Sans site clair, chaque question devient un appel : "vous prenez de nouveaux patients ?", "combien pour un botox ?", "je peux venir en urgence pour une tache ?". Un site bien construit répond à 70 % de ces questions et libère votre secrétariat.',
   whatPara2:
     'Je construis des sites dermato qui filtrent et orientent. Page accueil nouveaux patients, page téléconsultation pour capter hors zone, pages actes médicaux et esthétiques, page urgence dermato. Le tout dans le respect strict de la déontologie CNOM.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=800&q=80',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1579154204601-01588f351e67-w800.webp',
   whatImageAlt: 'Création site internet pour dermatologue',
   pillars: [
     { icon: 'FileSearch', title: 'Téléconsultation nationale', desc: 'Page dédiée pour capter des patients partout en France. Dermato est la spé la plus adaptée.' },
