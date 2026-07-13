@@ -2,18 +2,19 @@
 
 import { motion, useMotionValue, useTransform, animate } from 'framer-motion'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
+import Image from 'next/image'
 import { useCallback, useEffect, useRef, useState } from 'react'
 
 import { Button } from '@/components/ui/button'
 import { useContent } from '@/hooks/use-content'
 
 const defaultImages = [
-  'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=720&q=80',
-  'https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=720&q=80',
-  'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=720&q=80',
-  'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=720&q=80',
-  'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=720&q=80',
-  'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=720&q=80',
+  'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1497366216548-37526070297c-w720.webp',
+  'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1553877522-43269d4ea984-w720.webp',
+  'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1600880292203-757bb62b4baf-w720.webp',
+  'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1524758631624-e2822e304c36-w720.webp',
+  'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1542744173-8e7e53415bb0-w720.webp',
+  'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1556761175-5973dc0f32e7-w720.webp',
 ]
 
 const defaults = {
@@ -89,8 +90,8 @@ export function GalleryCarousel() {
             {images.map((src: string, i: number) => (
               <motion.div key={i} className="shrink-0" style={{ width: CARD_WIDTH, marginRight: i < images.length - 1 ? GAP : 0 }}>
                 <div className="group overflow-hidden rounded-2xl border border-border/80 bg-card/70 shadow-[var(--shadow-sm)] ring-1 ring-foreground/5 transition-shadow duration-300 hover:shadow-[var(--shadow-md)]">
-                  <div className="aspect-[4/3] overflow-hidden">
-                    <img src={src} alt="" loading="lazy" width={720} height={540} className="size-full object-cover transition-transform duration-500 group-hover:scale-[1.04]" />
+                  <div className="relative aspect-[4/3] overflow-hidden">
+                    <Image src={src} alt="" fill loading="lazy" sizes="340px" className="object-cover transition-transform duration-500 group-hover:scale-[1.04]" />
                   </div>
                 </div>
               </motion.div>

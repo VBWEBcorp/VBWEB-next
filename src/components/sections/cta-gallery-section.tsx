@@ -9,17 +9,17 @@ import { useAudit } from '@/components/ui/audit-provider'
 import { Button } from '@/components/ui/button'
 import { Reveal } from '@/components/ui/reveal'
 
-// Même pool réduit de 9 vignettes que le hero (partagé entre toutes les colonnes).
+// Pool réduit de 9 vignettes (URLs Cloudflare R2), partagé entre toutes les colonnes.
 const heroImages = [
-  'https://i.ibb.co/9HsCRCV6/YUZU-BRANDING.jpg',
-  'https://i.ibb.co/hxpcht55/EPICU.jpg',
-  'https://i.ibb.co/VWfJrSqX/AS-LOCATION.jpg',
-  'https://i.ibb.co/tPHZ4D9L/MATINEH-FOOD.jpg',
-  'https://i.ibb.co/Nd4W02HL/Shaan-production.jpg',
-  'https://i.ibb.co/dwbzZFNN/SHAMPOUINE-TOI.jpg',
-  'https://i.ibb.co/9HhFm9MV/JEREMY-SIMON-AVOCAT.png',
-  'https://i.ibb.co/kZrFB2h/JULIEN-BIDOIS-CHEF-PRIVE.jpg',
-  'https://i.ibb.co/xtRDW0WZ/LES-LUNETTES-DE-LA-CHAPELLE.jpg',
+  'https://pub-698f857760da42999dac8854114fbc41.r2.dev/YUZU-BRANDING-9HsCRCV6.webp',
+  'https://pub-698f857760da42999dac8854114fbc41.r2.dev/EPICU-hxpcht55.webp',
+  'https://pub-698f857760da42999dac8854114fbc41.r2.dev/AS-LOCATION-VWfJrSqX.webp',
+  'https://pub-698f857760da42999dac8854114fbc41.r2.dev/MATINEH-FOOD-tPHZ4D9L.webp',
+  'https://pub-698f857760da42999dac8854114fbc41.r2.dev/Shaan-production-Nd4W02HL.webp',
+  'https://pub-698f857760da42999dac8854114fbc41.r2.dev/SHAMPOUINE-TOI-dwbzZFNN.webp',
+  'https://pub-698f857760da42999dac8854114fbc41.r2.dev/JEREMY-SIMON-AVOCAT-9HhFm9MV.webp',
+  'https://pub-698f857760da42999dac8854114fbc41.r2.dev/JULIEN-BIDOIS-CHEF-PRIVE-kZrFB2h.webp',
+  'https://pub-698f857760da42999dac8854114fbc41.r2.dev/LES-LUNETTES-DE-LA-CHAPELLE-xtRDW0WZ.webp',
 ]
 
 const rot = (arr: string[], n: number) => [...arr.slice(n), ...arr.slice(0, n)]

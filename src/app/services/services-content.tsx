@@ -18,11 +18,11 @@ const hero = {
   description:
     "Des prestations compl\u00e8tes, de la conception \u00e0 l'accompagnement continu, adapt\u00e9es \u00e0 toutes les tailles d'entreprise.",
   image:
-    'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1920&q=80',
+    'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1460925895917-afdab827c52f-w1920.webp',
 }
 
 const services = [
-  { title: 'Cr\u00e9ation de site vitrine', description: 'Un site moderne, rapide et responsive qui pr\u00e9sente clairement votre activit\u00e9 et inspire confiance \u00e0 vos visiteurs.' },
+  { title: 'Cr\u00e9ation de site vitrine', description: 'Un site moderne, rapide et responsive qui pr\u00e9sente votre activit\u00e9 et inspire confiance.' },
   { title: 'Application web', description: 'Outils m\u00e9tier, plateformes de r\u00e9servation, espaces clients\u00a0: des applications pens\u00e9es pour simplifier votre quotidien.' },
   { title: 'R\u00e9f\u00e9rencement naturel (SEO)', description: 'Optimisation technique, contenu strat\u00e9gique et suivi de positionnement pour gagner en visibilit\u00e9 sur Google.' },
   { title: 'Identit\u00e9 visuelle', description: 'Logo, charte graphique, supports de communication\u00a0: une image coh\u00e9rente qui vous ressemble.' },

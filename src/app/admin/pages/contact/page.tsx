@@ -8,7 +8,7 @@ const defaults = {
     eyebrow: 'Contact',
     title: 'Parlons de votre projet',
     description: 'Remplissez le formulaire ci-dessous ou contactez-nous directement. Nous répondons sous 24h.',
-    image: 'https://images.unsplash.com/photo-1423666639041-f56000c27a9a?auto=format&fit=crop&w=1920&q=80',
+    image: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1423666639041-f56000c27a9a-w1920.webp',
   },
   info: {
     phone: '',

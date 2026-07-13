@@ -2,9 +2,9 @@
 
 import { ArrowUpRight, TrendingUp, Users, Layers } from 'lucide-react'
 import Link from 'next/link'
-import { useEffect, useRef, useState } from 'react'
 
 import { useHomeLang, t } from '@/components/home/lang'
+import { LazyYouTube } from '@/components/sections/lazy-youtube'
 import { Reveal } from '@/components/ui/reveal'
 
 const VIDEO_ID = 'w_Tg2rnwrSE'
@@ -15,24 +15,6 @@ export function FounderSection() {
   const { lang } = useHomeLang()
   const tags = t.founder.resultTags[lang]
 
-  // La vidéo YouTube n'est chargée que lorsqu'on approche de la section.
-  const videoRef = useRef<HTMLDivElement>(null)
-  const [showVideo, setShowVideo] = useState(false)
-  useEffect(() => {
-    const el = videoRef.current
-    if (!el || showVideo) return
-    const io = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting) {
-          setShowVideo(true)
-          io.disconnect()
-        }
-      },
-      { rootMargin: '250px' }
-    )
-    io.observe(el)
-    return () => io.disconnect()
-  }, [showVideo])
   return (
     <section className="relative overflow-hidden bg-background">
       {/* Grain */}
@@ -103,27 +85,12 @@ export function FounderSection() {
             <div
               className="relative mt-10 sm:mt-12"
             >
-              <div
-                ref={videoRef}
-                className="relative aspect-video overflow-hidden rounded-[1.25rem] border border-border/60 bg-background ring-1 ring-foreground/5 sm:rounded-[1.5rem]"
-              >
-                {showVideo ? (
-                  <iframe
-                    src={`https://www.youtube-nocookie.com/embed/${VIDEO_ID}?autoplay=1&mute=1&loop=1&playlist=${VIDEO_ID}&rel=0&modestbranding=1&playsinline=1`}
-                    title="Victor Béasse, Fondateur VBWEB"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                    allowFullScreen
-                    loading="lazy"
-                    className="absolute inset-0 size-full"
-                  />
-                ) : (
-                  <img
-                    src={`https://i.ytimg.com/vi/${VIDEO_ID}/hqdefault.jpg`}
-                    alt="Victor Béasse, fondateur de VBWEB"
-                    className="absolute inset-0 size-full object-cover"
-                  />
-                )}
+              <div className="relative aspect-video overflow-hidden rounded-[1.25rem] border border-border/60 bg-background ring-1 ring-foreground/5 sm:rounded-[1.5rem]">
+                <LazyYouTube
+                  videoId={VIDEO_ID}
+                  title="Victor Béasse, Fondateur VBWEB"
+                  params={`autoplay=1&mute=1&loop=1&playlist=${VIDEO_ID}&rel=0&modestbranding=1&playsinline=1`}
+                />
               </div>
             </div>
 

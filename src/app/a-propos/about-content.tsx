@@ -12,7 +12,7 @@ const values = [
     icon: Target,
     title: 'Mon parcours',
     description:
-      "De l'entrepreneuriat à l'étranger aux missions IT sous pression, en passant par la gestion de projets digitaux bien corsés et le management d'équipes. J'ai appris à structurer, anticiper et performer là où il faut être bon, vite et bien.",
+      "Entrepreneuriat à l'étranger, missions IT sous pression, projets digitaux corsés, management d'équipes. J'ai appris à structurer, anticiper et performer.",
   },
   {
     icon: Flame,
@@ -24,7 +24,7 @@ const values = [
     icon: Palette,
     title: 'Mes passions',
     description:
-      "Passionné par le web, l'IA, le design et la créativité digitale, ce que j'aime par-dessus tout, c'est partir d'une idée un peu floue et la transformer en projet concret, impactant, qui dégage quelque chose.",
+      "Web, IA, design, créativité digitale. Ce que j'aime par-dessus tout : transformer une idée floue en projet concret et impactant.",
   },
 ]
 
@@ -255,7 +255,7 @@ export function AboutContent() {
               <span className="italic text-muted-foreground/80">une équipe</span>
             </h2>
             <p className="mt-6 text-pretty text-[15px] leading-relaxed text-muted-foreground sm:text-base">
-              Je pilote VBWEB avec une équipe d&rsquo;experts dans leurs domaines. Grâce aux technologies les plus modernes du marché, dont l&rsquo;IA, et en m&rsquo;adaptant en continu, j&rsquo;aide les entreprises à sortir du lot, exploser en visibilité en ligne et propulser leurs projets digitaux.
+              Je pilote VBWEB avec une équipe d&rsquo;experts. Grâce aux technologies les plus modernes, dont l&rsquo;IA, j&rsquo;aide les entreprises à sortir du lot et à exploser en visibilité en ligne.
             </p>
           </motion.div>
         </div>

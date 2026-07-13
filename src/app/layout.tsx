@@ -90,8 +90,9 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
+        {/* Preconnect vers R2 (hôte de toutes les images du site) */}
+        <link rel="preconnect" href="https://pub-698f857760da42999dac8854114fbc41.r2.dev" crossOrigin="anonymous" />
         {/* DNS prefetch pour les ressources externes paresseuses (pas critiques) */}
-        <link rel="dns-prefetch" href="https://images.unsplash.com" />
         <link rel="dns-prefetch" href="https://i.ytimg.com" />
         <link rel="dns-prefetch" href="https://www.youtube-nocookie.com" />
       </head>

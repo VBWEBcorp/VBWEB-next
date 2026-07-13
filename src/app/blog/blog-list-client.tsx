@@ -119,7 +119,7 @@ export function BlogListClient({
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1920&q=80"
+            src="https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1499750310107-5fef28a66643-w1920.webp"
             alt="Bureau avec ordinateur portable, carnet et café pour la rédaction d'articles de blog"
             className="w-full h-full object-cover"
           />

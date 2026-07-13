@@ -3,6 +3,7 @@ import { headers } from 'next/headers'
 import { CookieConsent } from '@/components/layout/cookie-consent'
 import { Footer } from '@/components/layout/footer'
 import { Navbar } from '@/components/layout/navbar'
+import { FloatingCallButton } from '@/components/floating-call-button'
 
 export async function RootWrapper({ children }: { children: React.ReactNode }) {
   // Detection du path cote serveur via x-pathname header (set par middleware Next)
@@ -23,6 +24,7 @@ export async function RootWrapper({ children }: { children: React.ReactNode }) {
         {children}
       </main>
       <Footer />
+      <FloatingCallButton />
       <CookieConsent />
     </>
   )

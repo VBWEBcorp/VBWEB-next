@@ -33,8 +33,8 @@ export const t = {
     h1Part2: { fr: 'grâce à', en: 'thanks to' },
     h1Part3: { fr: "Google et l'IA", en: 'Google and AI' },
     subtitle: {
-      fr: "Vos clients vous cherchent sur Google et, de plus en plus, auprès des intelligences artificielles. Je rends votre entreprise visible et crédible aux deux endroits. Plus de clients, plus de chiffre d'affaires.",
-      en: 'Your clients search on Google and, increasingly, on AI tools. I make your business visible and credible in both places. More clients, more revenue.',
+      fr: "Vos clients vous cherchent sur Google et l'IA. Je vous y rends visible et crédible. Plus de clients, plus de chiffre d'affaires.",
+      en: 'Your clients search on Google and AI. I make you visible and credible there. More clients, more revenue.',
     },
     ctaPrimary: { fr: 'Recevez votre diagnostic gratuit', en: 'Get your free diagnostic' },
     ctaSecondary: { fr: 'ou prendre directement rendez-vous', en: 'or book a meeting directly' },
@@ -93,8 +93,8 @@ export const t = {
       en: 'Your site looks great. Meanwhile, your competition is cashing in',
     },
     stat1Desc: {
-      fr: "Pendant que vous gérez votre PME, vos prospects tapent votre métier sur Google et dans l'IA. Ils atterrissent chez vos concurrents. Tous les jours. Sans que vous le sachiez.",
-      en: 'While you run your SMB, prospects type your business into Google and AI. They land on your competitors. Every day. Without you knowing.',
+      fr: "Vos prospects tapent votre métier sur Google et dans l'IA — et atterrissent chez vos concurrents. Tous les jours.",
+      en: 'Prospects type your business into Google and AI — and land on your competitors. Every day.',
     },
     stat2Label: {
       fr: 'des décisions B2B commencent en ligne',
@@ -105,8 +105,8 @@ export const t = {
       en: "Your clients don't stop at Google. They ask ChatGPT",
     },
     stat2Desc: {
-      fr: "Recherche Google, ChatGPT, Claude, Perplexity : vos prospects vous comparent partout. Si l'IA ne cite pas votre PME, vous n'existez pas pour eux. Et vos concurrents, eux, sont déjà cités.",
-      en: "Google search, ChatGPT, Claude, Perplexity: prospects compare you everywhere. If AI doesn't cite your SMB, you don't exist for them. And your competitors? Already cited.",
+      fr: "Google, ChatGPT, Claude, Perplexity : vos prospects vous comparent partout. Si l'IA ne vous cite pas, vous n'existez pas — vos concurrents, eux, sont déjà cités.",
+      en: "Google, ChatGPT, Claude, Perplexity: prospects compare you everywhere. If AI doesn't cite you, you don't exist — your competitors already do.",
     },
   },
   method: {

@@ -68,8 +68,8 @@ const config: MetierConfig = {
     'Beaucoup de consultants SEO vendent du trafic. Le problème, c\'est que le trafic ne paye pas vos factures : les clients qualifiés si. Mon approche est différente : j\'identifie les requêtes Google qui correspondent à une intention d\'achat réelle dans votre secteur, et je positionne votre site dessus. Chaque position gagnée est une position qui vous ramène un client potentiel, pas juste une visite perdue.',
   whatPara2:
     'Je construis votre stratégie SEO comme on construit un canal d\'acquisition durable : audit technique poussé pour corriger ce qui freine Google, création de contenu qui répond exactement aux questions de vos prospects, optimisation du maillage interne pour faire remonter les pages qui convertissent, et suivi mensuel transparent. Pas de blabla, que des actions qui bougent vos positions et vos revenus.',
-  whatImageUrl: 'https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?auto=format&fit=crop&w=800&q=80',
-  whatImageAlt: 'Consultant SEO — stratégie de référencement naturel',
+  whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1432888622747-4eb9a8efeb07-w800.webp',
+  whatImageAlt: 'Consultant SEO, stratégie de référencement naturel',
   pillars: [
     { icon: 'FileSearch', title: 'Audit stratégique', desc: 'Diagnostic technique, contenu, concurrence. Je vous montre exactement où vous perdez et où vous pouvez gagner.' },
     { icon: 'Target', title: 'Contenu qui convertit', desc: 'Pages pensées pour les requêtes à forte intention d\'achat, pas les mots-clés vanity sans retour.' },

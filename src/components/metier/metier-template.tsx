@@ -17,7 +17,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
 
-import { ScrollCol, Grain, ReadMore, caseStudies, col1, col2, col3 } from '@/components/freelance-seo/shared'
+import { Grain, ReadMore, caseStudies } from '@/components/freelance-seo/shared'
 import { CtaGallerySection } from '@/components/sections/cta-gallery-section'
 import { AuditButton } from '@/components/ui/audit-button'
 import { Button } from '@/components/ui/button'
@@ -100,18 +100,20 @@ export function MetierTemplate({ config, faqs }: MetierTemplateProps) {
     <>
       {/* ══ HERO ══ */}
       <section className="relative isolate overflow-hidden bg-background">
-        <div className="absolute inset-0 flex gap-3 opacity-25">
-          <ScrollCol imgs={col1} dir="up" dur={40} />
-          <ScrollCol imgs={col2} dir="down" dur={35} />
-          <ScrollCol imgs={col3} dir="up" dur={38} />
-          <div className="hidden min-w-0 flex-1 sm:block"><ScrollCol imgs={[...col1].reverse()} dir="down" dur={42} /></div>
-          <div className="hidden min-w-0 flex-1 sm:block"><ScrollCol imgs={[...col2].reverse()} dir="up" dur={36} /></div>
-          <div className="hidden min-w-0 flex-1 lg:block"><ScrollCol imgs={[...col3].reverse()} dir="down" dur={44} /></div>
-          <div className="hidden min-w-0 flex-1 lg:block"><ScrollCol imgs={col1} dir="up" dur={39} /></div>
-        </div>
-
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-background via-background/50 to-background" />
-        <div className="pointer-events-none absolute inset-0 bg-background/35" />
+        {/* Fond calme : grain subtil + halo de marque (cohérent avec la page À propos) */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 opacity-[0.04]"
+          style={{
+            backgroundImage:
+              'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.6) 1px, transparent 0)',
+            backgroundSize: '32px 32px',
+          }}
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute left-1/2 top-1/3 h-[500px] w-[800px] -translate-x-1/2 rounded-full bg-primary/[0.06] blur-[120px]"
+        />
 
         <div className="relative z-10 mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-28">
           <div
@@ -172,11 +174,13 @@ export function MetierTemplate({ config, faqs }: MetierTemplateProps) {
 
                 <Reveal delay={0.1}>
                   <div className="relative overflow-hidden rounded-[1.25rem] border border-border/40">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
+                    <Image
                       src={config.whatImageUrl}
                       alt={config.whatImageAlt}
                       loading="lazy"
+                      width={800}
+                      height={600}
+                      sizes="(max-width: 1024px) 100vw, 50vw"
                       className="aspect-[4/3] w-full object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent" />
@@ -208,13 +212,13 @@ export function MetierTemplate({ config, faqs }: MetierTemplateProps) {
               </p>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <Button size="lg" className="group bg-primary text-primary-foreground hover:bg-primary/85" asChild>
+                <AuditButton />
+                <Button size="lg" variant="outline" className="group border-border/60" asChild>
                   <Link href="/contact">
                     Discuter de mon projet
                     <ArrowRight className="transition-transform group-hover:translate-x-0.5" />
                   </Link>
                 </Button>
-                <AuditButton />
               </div>
             </div>
           </div>
