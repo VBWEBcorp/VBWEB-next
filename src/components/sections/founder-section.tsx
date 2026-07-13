@@ -94,12 +94,8 @@ export function FounderSection() {
               </div>
             </div>
 
-            {/* Footer — description + liens sous la vidéo */}
-            <div className="relative mt-10 flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
-              <p className="max-w-md text-[14px] leading-relaxed text-muted-foreground sm:text-[15px]">
-                {t.founder.videoCaption[lang]}
-              </p>
-
+            {/* Liens sous la vidéo */}
+            <div className="relative mt-8 flex flex-col items-start gap-6 sm:flex-row sm:items-center">
               <div className="flex flex-wrap items-center gap-x-8 gap-y-3">
                 <Link
                   href="/a-propos"
