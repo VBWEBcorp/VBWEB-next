@@ -749,7 +749,7 @@ export default function BlogPostEditor({ params }: { params: Promise<{ slug: str
                 <Input
                   value={secondaryKwInput}
                   onChange={(e) => setSecondaryKwInput(e.target.value)}
-                  placeholder="référencement local, seo bretagne"
+                  placeholder="référencement naturel, seo"
                   className="text-sm"
                 />
                 <p className="text-[11px] text-muted-foreground/60">Séparés par des virgules</p>

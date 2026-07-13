@@ -156,7 +156,7 @@ export function HeroEntrepriseSection() {
                   ))}
                 </div>
                 <span aria-hidden className="h-3 w-px bg-border" />
-                <span className="text-[12px] font-medium text-muted-foreground">75 avis</span>
+                <span className="text-[12px] font-medium text-muted-foreground">80+ avis</span>
               </div>
             </div>
           </motion.div>

@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import dynamic from 'next/dynamic'
 
 import { HeroSection } from '@/components/sections/hero-section'
-import { AudiencesMarquee } from '@/components/sections/audiences-marquee'
 import {
   localBusinessJsonLd,
   organizationJsonLd,
@@ -65,7 +64,6 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <HeroSection />
-      <AudiencesMarquee />
       <FounderSection />
       <ProblemStatsSection />
       <MethodSection />

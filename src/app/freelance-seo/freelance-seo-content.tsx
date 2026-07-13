@@ -9,9 +9,8 @@ import {
   MessageCircle,
   Target,
   TrendingUp,
-  MapPin,
+  Phone,
   FileSearch,
-  type LucideIcon,
 } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -25,81 +24,18 @@ import { CountUp } from '@/components/ui/count-up'
 import { Reveal } from '@/components/ui/reveal'
 import { ScrollProgress } from '@/components/ui/scroll-progress'
 
-export const metierIcons = {
-  Zap,
-  User,
-  Target,
-  MessageCircle,
-  TrendingUp,
-  MapPin,
-  FileSearch,
-} as const
-
-export type MetierIconKey = keyof typeof metierIcons
-
-export interface MetierConfig {
-  // Identité SEO
-  metier: string
-  metierLower: string
-  heroKicker: string
-
-  // Hero
-  heroHeadline: string
-  heroHeadlineItalic: string
-  heroDescription: string
-  heroImageAlt: string
-
-  // Section "Ce que je fais"
-  whatKicker: string
-  whatTitle: string
-  whatTitleItalic: string
-  whatPara1: string
-  whatPara2: string
-  whatImageUrl: string
-  whatImageAlt: string
-  pillars: { icon: MetierIconKey; title: string; desc: string }[]
-  whatFooterText: string
-
-  // Timeline (3 étapes)
-  timelineSteps: { number: string; title: string; description: string }[]
-
-  // Section requêtes Google
-  keywordsTitle: string
-  keywordsIntro: string
-  keywordCategories: { icon: MetierIconKey; title: string; text: string }[]
-
-  // Liens croisés vers pages reliées
-  relatedTitle: string
-  relatedPara: string
-  relatedLinks: { label: string; href: string }[]
-
-  // Mini CTA
-  miniCtaText: string
-
-  // Études de cas (sur-titre)
-  caseStudiesKicker: string
-
-  // FAQ
-  faqTitleItalic: string
-
-  // Overrides optionnels pour pages non-métier (services SEO, etc.)
-  timelineTitle?: string
-  timelineTitleItalic?: string
-  faqTitlePrefix?: string
-}
-
-interface MetierTemplateProps {
-  config: MetierConfig
+interface FreelanceSeoContentProps {
   faqs: { question: string; answer: string }[]
 }
 
-export function MetierTemplate({ config, faqs }: MetierTemplateProps) {
+export function FreelanceSeoContent({ faqs }: FreelanceSeoContentProps) {
   const [openFaq, setOpenFaq] = useState<number | null>(null)
 
   return (
     <>
       {/* ══ HERO ══ */}
       <section className="relative isolate overflow-hidden bg-background">
+        {/* Photo columns background */}
         <div className="absolute inset-0 flex gap-3 opacity-25">
           <ScrollCol imgs={col1} dir="up" dur={40} />
           <ScrollCol imgs={col2} dir="down" dur={35} />
@@ -110,6 +46,7 @@ export function MetierTemplate({ config, faqs }: MetierTemplateProps) {
           <div className="hidden min-w-0 flex-1 lg:block"><ScrollCol imgs={col1} dir="up" dur={39} /></div>
         </div>
 
+        {/* Overlays */}
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-background via-background/50 to-background" />
         <div className="pointer-events-none absolute inset-0 bg-background/35" />
 
@@ -121,7 +58,7 @@ export function MetierTemplate({ config, faqs }: MetierTemplateProps) {
             <div className="mx-auto mb-6 size-20 overflow-hidden rounded-full border-2 border-primary/20 ring-1 ring-foreground/5 sm:size-24">
               <Image
                 src="/victor.jpg"
-                alt={config.heroImageAlt}
+                alt="Victor Béasse, freelance SEO"
                 width={96}
                 height={96}
                 priority
@@ -132,11 +69,11 @@ export function MetierTemplate({ config, faqs }: MetierTemplateProps) {
               Victor Béasse
             </p>
             <h1 className="mt-5 font-display text-balance text-4xl font-medium leading-[1.08] tracking-[-0.03em] text-foreground sm:text-5xl">
-              {config.heroHeadline}{' '}
-              <span className="italic text-muted-foreground/80">{config.heroHeadlineItalic}</span>
+              Freelance SEO,{' '}
+              <span className="italic text-muted-foreground/80">je vous aide à être trouvé sur Google</span>
             </h1>
             <p className="hero-description mx-auto mt-6 max-w-2xl text-pretty text-[15px] leading-relaxed text-muted-foreground sm:text-base">
-              {config.heroDescription}
+              Je suis Victor Béasse, freelance SEO. J&apos;accompagne des PME, artisans et commerces partout en France pour qu&apos;ils attirent plus de clients grâce à Google. Plus de 200 projets SEO menés et 80+ avis 5 étoiles.
             </p>
 
             <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
@@ -149,33 +86,37 @@ export function MetierTemplate({ config, faqs }: MetierTemplateProps) {
         </div>
       </section>
 
-      {/* ══ CE QUE JE FAIS ══ */}
+      {/* ══ CE QUE JE FAIS POUR VOUS ══ */}
       <section className="relative overflow-hidden bg-card">
         <Grain />
         <div className="relative px-3 py-4 sm:px-4 sm:py-5">
           <div className="relative overflow-hidden rounded-[1.5rem] border border-border/60 bg-background/30 sm:rounded-[1.75rem]">
             <div className="relative p-6 sm:p-8 lg:p-10">
+              {/* Texte à gauche + Image à droite */}
               <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
                 <Reveal>
                   <p className="font-display text-[11px] font-semibold tracking-[0.24em] text-primary/80 uppercase">
-                    {config.whatKicker}
+                    Mon métier de freelance SEO
                   </p>
                   <h2 className="mt-4 font-display text-balance text-3xl font-medium leading-[1.1] tracking-[-0.025em] text-foreground sm:text-4xl lg:text-[2.75rem]">
-                    {config.whatTitle}{' '}
-                    <span className="italic text-muted-foreground/80">{config.whatTitleItalic}</span>
+                    Concrètement, je fais quoi{' '}
+                    <span className="italic text-muted-foreground/80">pour votre site</span> ?
                   </h2>
                   <div className="mt-6 space-y-4 text-[15px] leading-relaxed text-muted-foreground">
-                    <p>{config.whatPara1}</p>
-                    <p>{config.whatPara2}</p>
+                    <p>
+                      Le référencement naturel, ça peut sembler abstrait. Voici ce que je fais concrètement : j&apos;analyse votre positionnement actuel sur Google, j&apos;identifie les mots-clés que vos futurs clients recherchent (par exemple &quot;plombier + votre ville&quot; ou &quot;restaurant + votre quartier&quot;), et j&apos;optimise votre site pour qu&apos;il apparaisse dans les premiers résultats.
+                    </p>
+                    <p>
+                      Pour imager : votre site, c&apos;est comme une boutique. Aujourd&apos;hui, elle est peut-être dans une impasse. Mon rôle, c&apos;est de la positionner sur l&apos;avenue principale, là où passent vos clients.
+                    </p>
                   </div>
                 </Reveal>
 
                 <Reveal delay={0.1}>
                   <div className="relative overflow-hidden rounded-[1.25rem] border border-border/40">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
-                      src={config.whatImageUrl}
-                      alt={config.whatImageAlt}
+                      src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"
+                      alt="Analyse de données SEO et référencement naturel pour entreprises"
                       loading="lazy"
                       className="aspect-[4/3] w-full object-cover"
                     />
@@ -184,11 +125,17 @@ export function MetierTemplate({ config, faqs }: MetierTemplateProps) {
                 </Reveal>
               </div>
 
+              {/* Divider */}
               <div className="mt-10 h-px w-full bg-gradient-to-r from-border via-border/60 to-transparent" />
 
+              {/* 3 axes en cards */}
               <div className="mt-10 grid gap-4 sm:grid-cols-3">
-                {config.pillars.map((axis, i) => {
-                  const Icon: LucideIcon = metierIcons[axis.icon]
+                {[
+                  { icon: Zap, title: 'Technique', desc: 'Que votre site soit rapide, bien construit et lisible par Google.' },
+                  { icon: FileSearch, title: 'Contenu', desc: 'Que vos pages répondent aux bonnes questions avec les bons mots-clés.' },
+                  { icon: TrendingUp, title: 'Notoriété', desc: 'Que d\'autres sites de qualité pointent vers le vôtre.' },
+                ].map((axis, i) => {
+                  const Icon = axis.icon
                   return (
                     <Reveal key={axis.title} delay={i * 0.08}>
                       <div className="group h-full rounded-[1.15rem] border border-border/40 bg-card/40 p-5 transition-colors duration-500 hover:border-primary/30 hover:bg-card/60">
@@ -204,7 +151,7 @@ export function MetierTemplate({ config, faqs }: MetierTemplateProps) {
               </div>
 
               <p className="mt-6 text-[14px] text-muted-foreground/70">
-                {config.whatFooterText}
+                Les premiers résultats apparaissent en général entre 3 et 6 mois, et la progression s&apos;accélère avec le temps.
               </p>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -260,10 +207,10 @@ export function MetierTemplate({ config, faqs }: MetierTemplateProps) {
         <div className="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
           <Reveal className="mx-auto max-w-3xl text-center">
             <p className="font-display text-[11px] font-semibold tracking-[0.24em] text-primary/80 uppercase">
-              {config.caseStudiesKicker}
+              Résultats SEO concrets
             </p>
             <h2 className="mt-5 font-display text-balance text-3xl font-medium leading-[1.1] tracking-[-0.025em] text-foreground sm:text-4xl lg:text-[3rem]">
-              Des clients accompagnés{' '}
+              Des clients que j&apos;ai accompagnés{' '}
               <span className="italic text-muted-foreground/80">et leurs résultats</span>
             </h2>
           </Reveal>
@@ -298,7 +245,7 @@ export function MetierTemplate({ config, faqs }: MetierTemplateProps) {
       {/* ══ MINI CTA ══ */}
       <div className="bg-card py-8">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-4 sm:flex-row sm:px-6 lg:px-8">
-          <p className="text-[15px] text-muted-foreground">{config.miniCtaText}</p>
+          <p className="text-[15px] text-muted-foreground">Vous voulez savoir ce que le SEO peut vous apporter ?</p>
           <AuditButton />
         </div>
       </div>
@@ -312,8 +259,8 @@ export function MetierTemplate({ config, faqs }: MetierTemplateProps) {
               Comment ça se passe
             </p>
             <h2 className="mt-5 font-display text-balance text-3xl font-medium leading-[1.1] tracking-[-0.025em] text-foreground sm:text-4xl lg:text-[3rem]">
-              {config.timelineTitle ?? 'Du premier appel'}{' '}
-              <span className="italic text-muted-foreground/80">{config.timelineTitleItalic ?? 'à la mise en ligne'}</span>
+              Si on travaille ensemble,{' '}
+              <span className="italic text-muted-foreground/80">voilà ce qui vous attend</span>
             </h2>
           </Reveal>
 
@@ -321,14 +268,20 @@ export function MetierTemplate({ config, faqs }: MetierTemplateProps) {
             <ScrollProgress />
 
             <ol className="space-y-6 sm:space-y-8">
-              {config.timelineSteps.map((step, i) => (
+              {[
+                { number: '01', title: 'On échange', description: 'Nous prenons 30 minutes pour que je comprenne votre activité, vos objectifs et ce qui freine votre visibilité sur Google. Je vous dis sincèrement si le SEO est pertinent pour vous.' },
+                { number: '02', title: 'J\'analyse votre site', description: 'Je passe votre site au peigne fin : technique, contenu, positionnement, concurrence sur votre marché. Vous recevez un plan d\'action clair avec les priorités.' },
+                { number: '03', title: 'On avance ensemble', description: 'Les optimisations sont déployées mois après mois. Chaque mois, vous voyez vos positions Google, votre trafic et les demandes reçues dans votre espace de suivi.' },
+              ].map((step, i) => (
                 <Reveal as="li" key={step.number} delay={i * 0.08} className="relative pl-14 sm:pl-20">
+                  {/* Node */}
                   <div className="absolute left-0 top-1 sm:top-2">
                     <div className="flex size-9 items-center justify-center rounded-full border border-primary/30 bg-background text-primary shadow-[0_0_0_4px_rgba(0,0,0,0.4)] sm:size-12">
                       <span className="font-display text-[13px] font-bold sm:text-[15px]">{step.number}</span>
                     </div>
                   </div>
 
+                  {/* Card */}
                   <div className="group relative">
                     <div
                       aria-hidden
@@ -362,6 +315,7 @@ export function MetierTemplate({ config, faqs }: MetierTemplateProps) {
           <Reveal>
             <div className="relative overflow-hidden rounded-[1.5rem] border border-border/60 bg-card/40 sm:rounded-[1.75rem]">
               <div className="relative grid lg:grid-cols-[1fr_360px]">
+                {/* Colonne gauche : accordéons */}
                 <div className="border-b border-border/40 p-6 sm:p-8 lg:border-b-0 lg:border-r lg:p-10">
                   <p className="font-display text-[11px] font-semibold tracking-[0.24em] text-primary/80 uppercase">
                     En savoir plus
@@ -372,12 +326,17 @@ export function MetierTemplate({ config, faqs }: MetierTemplateProps) {
                   </h2>
 
                   <div className="mt-8 space-y-3">
-                    <ReadMore title={config.keywordsTitle}>
+                    <ReadMore title="Freelance SEO vs agence">
                       <div className="space-y-4 text-[15px] leading-relaxed text-muted-foreground">
-                        <p>{config.keywordsIntro}</p>
+                        <p>En agence, votre dossier passe entre plusieurs interlocuteurs. Avec un freelance SEO, vous échangez directement avec la personne qui travaille sur votre site, et les choses avancent plus vite.</p>
                         <div className="grid gap-3 sm:grid-cols-2">
-                          {config.keywordCategories.map((item) => {
-                            const Icon: LucideIcon = metierIcons[item.icon]
+                          {[
+                            { icon: User, title: 'Relation directe', text: 'Je comprends votre métier et ce qui vous différencie.' },
+                            { icon: Zap, title: 'Réactivité', text: 'Réponse dans la journée, pas dans 48h.' },
+                            { icon: Target, title: 'Sur mesure', text: 'Stratégie adaptée à votre marché.' },
+                            { icon: MessageCircle, title: 'Transparence', text: 'Rapport mensuel, accès à vos données.' },
+                          ].map((item) => {
+                            const Icon = item.icon
                             return (
                               <div key={item.title} className="flex items-start gap-3 rounded-xl border border-border/40 bg-background/30 p-4">
                                 <Icon className="mt-0.5 size-4 shrink-0 text-primary" />
@@ -392,22 +351,20 @@ export function MetierTemplate({ config, faqs }: MetierTemplateProps) {
                       </div>
                     </ReadMore>
 
-                    <ReadMore title={config.relatedTitle}>
+                    <ReadMore title="Un accompagnement à distance, partout en France">
                       <div className="space-y-4 text-[15px] leading-relaxed text-muted-foreground">
-                        <p>{config.relatedPara}</p>
-                        <div className="grid gap-2 sm:grid-cols-2">
-                          {config.relatedLinks.map((link) => (
-                            <Link key={link.label} href={link.href} className="group flex items-center justify-between rounded-xl border border-border/40 bg-background/30 px-4 py-3 transition-all duration-300 hover:border-primary/30 hover:bg-background/50">
-                              <span className="text-[13px] font-semibold text-foreground">{link.label}</span>
-                              <ArrowRight className="size-3.5 text-muted-foreground/30 transition-all duration-300 group-hover:translate-x-1 group-hover:text-primary" />
-                            </Link>
-                          ))}
-                        </div>
+                        <p>
+                          Le référencement se pilote à distance : audit, stratégie, contenu et suivi se font en visio et par écrit, où que vous soyez. Vous avez le même niveau d&apos;accompagnement, sans contrainte géographique.
+                        </p>
+                        <p>
+                          J&apos;accompagne aussi bien une PME que le commerce du coin : j&apos;identifie les requêtes qui comptent pour <strong>votre marché</strong> et <strong>votre zone de chalandise</strong>, puis je positionne votre site dessus. Rennes Pneus, EPICU, Jumelles.com : des profils différents, des résultats mesurables.
+                        </p>
                       </div>
                     </ReadMore>
                   </div>
                 </div>
 
+                {/* Colonne droite : services liés */}
                 <div className="p-6 sm:p-8 lg:p-10">
                   <p className="font-display text-[11px] font-semibold tracking-[0.24em] text-primary/80 uppercase">
                     Mes services
@@ -419,9 +376,8 @@ export function MetierTemplate({ config, faqs }: MetierTemplateProps) {
 
                   <div className="mt-8 space-y-2">
                     {[
-                      { label: 'Création de site', desc: 'Sites optimisés SEO', href: '/creation-site-internet' },
-                      { label: 'Tous les services', desc: 'Vue d’ensemble', href: '/services' },
-                      { label: 'Freelance SEO', desc: 'Stratégie référencement', href: '/freelance-seo' },
+                      { label: 'Référencement SEO', desc: 'Stratégie Google complète', href: '/referencement-seo' },
+                      { label: 'Création de site', desc: 'Optimisé SEO dès le départ', href: '/creation-site-internet' },
                       { label: 'Audit SEO gratuit', desc: 'Analyse de votre visibilité', href: '/audit-seo-gratuit' },
                     ].map((link) => (
                       <Link
@@ -453,8 +409,8 @@ export function MetierTemplate({ config, faqs }: MetierTemplateProps) {
               Questions fréquentes
             </p>
             <h2 className="mt-5 font-display text-balance text-3xl font-medium leading-[1.1] tracking-[-0.025em] text-foreground sm:text-4xl">
-              {config.faqTitlePrefix ?? `Site internet ${config.metierLower}`} :{' '}
-              <span className="italic text-muted-foreground/80">{config.faqTitleItalic}</span>
+              Freelance SEO :{' '}
+              <span className="italic text-muted-foreground/80">vos questions</span>
             </h2>
           </Reveal>
 
@@ -491,6 +447,7 @@ export function MetierTemplate({ config, faqs }: MetierTemplateProps) {
         </div>
       </section>
 
+      {/* ══ CTA GALLERY ══ */}
       <CtaGallerySection />
     </>
   )

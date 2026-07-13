@@ -4,11 +4,9 @@ import {
   ArrowRight,
   ArrowUpRight,
   Search,
-  MapPin,
   Globe,
-  FileSearch,
-  Code,
   User,
+  Sparkles,
 } from 'lucide-react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -21,7 +19,6 @@ import { cn } from '@/lib/utils'
 interface MenuItem {
   to: string
   label: string
-  description: string
   icon: React.ComponentType<{ className?: string }>
   image?: string
 }
@@ -29,21 +26,21 @@ interface MenuItem {
 interface MenuSection {
   title?: string
   items: MenuItem[]
-  featured?: boolean
 }
 
-// Routes & icons stay constant; labels/descriptions are looked up from translations at render time.
+// Routes & icons stay constant; labels are looked up from translations at render time.
 const ABOUT_ITEM = { to: '/a-propos', key: 'about' as const, icon: User, image: '/victor.jpg' }
+// Les 3 activités — alignées avec la page d'accueil
 const SERVICE_ITEMS = [
-  { to: '/referencement-seo-rennes', key: 'seo' as const, icon: Search },
-  { to: '/referencement-local-rennes', key: 'localSeo' as const, icon: MapPin },
-  { to: '/creation-site-internet-rennes', key: 'webDesign' as const, icon: Globe },
-  { to: '/audit-seo-gratuit', key: 'diagnostic' as const, icon: FileSearch },
+  { to: '/referencement-seo', key: 'seo' as const, icon: Search },
+  { to: '/creation-site-internet', key: 'webDesign' as const, icon: Globe },
+  { to: '/ia-entreprise', key: 'ia' as const, icon: Sparkles },
 ]
+// Études de cas — une seule rubrique, 3 catégories cliquables
 const CASE_STUDY_ITEMS = [
-  { to: '/etudes-de-cas/sites-internet', key: 'sites' as const, icon: Globe },
   { to: '/etudes-de-cas/referencement', key: 'seoCase' as const, icon: Search },
-  { to: '/etudes-de-cas/applications-web', key: 'apps' as const, icon: Code },
+  { to: '/etudes-de-cas/sites-internet', key: 'sites' as const, icon: Globe },
+  { to: '/etudes-de-cas/applications-web', key: 'apps' as const, icon: Sparkles },
 ]
 
 export function Navbar() {
@@ -86,15 +83,14 @@ export function Navbar() {
   const sections: MenuSection[] = [
     {
       title: t.navbar.caseStudies[lang],
-      featured: true,
-      items: CASE_STUDY_ITEMS.map((c) => ({ ...c, label: navItems[c.key].label, description: navItems[c.key].description })),
+      items: CASE_STUDY_ITEMS.map((c) => ({ ...c, label: navItems[c.key].label })),
     },
     {
       title: t.navbar.services[lang],
-      items: SERVICE_ITEMS.map((s) => ({ ...s, label: navItems[s.key].label, description: navItems[s.key].description })),
+      items: SERVICE_ITEMS.map((s) => ({ ...s, label: navItems[s.key].label })),
     },
     {
-      items: [{ ...ABOUT_ITEM, label: navItems.about.label, description: navItems.about.description }],
+      items: [{ ...ABOUT_ITEM, label: navItems.about.label }],
     },
   ]
 
@@ -186,19 +182,16 @@ export function Navbar() {
                       key={section.title ?? `section-${idx}`}
                       className={cn(
                         idx > 0 && 'mt-1 border-t border-border/40 pt-2',
-                        'lg:mt-0 lg:border-t-0 lg:pt-0',
-                        section.featured && 'rounded-xl bg-primary/[0.04] p-1 lg:p-2'
+                        'lg:mt-0 lg:border-t-0 lg:pt-0'
                       )}
                     >
                       {section.title && (
-                        <p
-                          className={cn(
-                            'px-3 pt-2 pb-1.5 font-display text-[10px] font-semibold uppercase tracking-[0.2em]',
-                            section.featured ? 'text-primary' : 'text-white'
-                          )}
-                        >
-                          {section.title}
-                        </p>
+                        <div className="mb-2 flex items-center gap-2 rounded-lg bg-primary/10 px-3 py-2">
+                          <span className="size-1.5 shrink-0 rounded-full bg-primary" />
+                          <p className="font-display text-[12px] font-bold uppercase tracking-[0.18em] text-white">
+                            {section.title}
+                          </p>
+                        </div>
                       )}
                       <div className="space-y-0.5">
                         {section.items.map((item) => {
@@ -209,11 +202,10 @@ export function Navbar() {
                               href={item.to}
                               onClick={() => setOpen(false)}
                               className={cn(
-                                'group/item flex items-center gap-3 rounded-xl px-3 transition-colors duration-200',
-                                section.featured ? 'py-2' : 'py-2.5',
+                                'group/item flex items-center gap-3 rounded-xl px-3 py-2.5 transition-colors duration-200',
                                 isActive
                                   ? 'bg-foreground/[0.05] text-foreground'
-                                  : 'text-foreground/85 hover:bg-foreground/[0.05] hover:text-foreground'
+                                  : 'text-muted-foreground hover:bg-foreground/[0.05] hover:text-foreground'
                               )}
                             >
                               {item.image && (
@@ -225,15 +217,8 @@ export function Navbar() {
                                   />
                                 </span>
                               )}
-                              <span className="flex-1 min-w-0">
-                                <span className="block text-[14px] font-medium">
-                                  {item.label}
-                                </span>
-                                {section.featured && (
-                                  <span className="mt-0.5 block text-[12px] text-muted-foreground/70">
-                                    {item.description}
-                                  </span>
-                                )}
+                              <span className="flex-1 min-w-0 text-[14px] font-medium">
+                                {item.label}
                               </span>
                               <ArrowUpRight className="size-3.5 shrink-0 text-muted-foreground/30 opacity-0 transition-all duration-200 group-hover/item:opacity-100" />
                             </Link>

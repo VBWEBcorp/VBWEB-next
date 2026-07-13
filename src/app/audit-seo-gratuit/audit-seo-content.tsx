@@ -27,10 +27,9 @@ const steps = [
 ]
 
 const relatedServices = [
-  { title: 'Référencement SEO', href: '/referencement-seo-rennes' },
-  { title: 'Référencement local', href: '/referencement-local-rennes' },
-  { title: 'Création de site', href: '/creation-site-internet-rennes' },
-  { title: 'Freelance SEO Rennes', href: '/freelance-seo-rennes' },
+  { title: 'Référencement SEO', href: '/referencement-seo' },
+  { title: 'Création de site', href: '/creation-site-internet' },
+  { title: 'Freelance SEO', href: '/freelance-seo' },
 ]
 
 /* ------------------------------------------------------------------ */

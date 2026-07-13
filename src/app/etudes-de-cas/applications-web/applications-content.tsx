@@ -118,7 +118,7 @@ export function ApplicationsWebContent() {
                 </Link>
               </Button>
               <Button size="lg" variant="outline" className="border-white/15 bg-foreground/5 text-foreground hover:bg-foreground/10 hover:text-foreground" asChild>
-                <Link href="/creation-site-internet-rennes">Nos services web</Link>
+                <Link href="/creation-site-internet">Nos services web</Link>
               </Button>
             </div>
           </div>
@@ -218,11 +218,11 @@ export function ApplicationsWebContent() {
                 Un projet d&apos;application sur mesure ?
               </h2>
               <p className="mx-auto mt-3 max-w-lg text-sm leading-relaxed text-muted-foreground">
-                CRM, outil de gestion, plateforme métier : je développe l&apos;application dont votre entreprise a besoin. Basé à Rennes, je travaille avec des entreprises dans toute la Bretagne.
+                CRM, outil de gestion, plateforme métier : je développe l&apos;application dont votre entreprise a besoin. Basé à Rennes, je travaille avec des entreprises partout en France.
               </p>
               <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
                 <Button size="lg" variant="outline" className="border-white/15 bg-foreground/5 text-foreground hover:bg-foreground/10 hover:text-foreground" asChild>
-                  <Link href="/creation-site-internet-rennes">En savoir plus</Link>
+                  <Link href="/creation-site-internet">En savoir plus</Link>
                 </Button>
                 <Button size="lg" className="group bg-primary text-primary-foreground hover:bg-primary/85" asChild>
                   <Link href="/contact">

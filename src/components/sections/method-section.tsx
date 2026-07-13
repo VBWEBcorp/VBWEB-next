@@ -1,22 +1,14 @@
 'use client'
 
-import { Search, Rocket, TrendingUp, Gift } from 'lucide-react'
-
 import { useHomeLang, t } from '@/components/home/lang'
 import { AuditButton } from '@/components/ui/audit-button'
 import { Reveal } from '@/components/ui/reveal'
 import { ScrollProgress } from '@/components/ui/scroll-progress'
 
-const STEP_ICONS = [Search, Rocket, TrendingUp]
-
 export function MethodSection() {
   const { lang } = useHomeLang()
-  const steps = t.method.steps[lang].map((s, i) => ({
-    number: ['01', '02', '03'][i],
-    icon: STEP_ICONS[i],
-    title: s.title,
-    description: s.description,
-  }))
+  const steps = t.method.steps[lang]
+
   return (
     <section className="relative overflow-hidden bg-card">
       {/* Background grain */}
@@ -30,7 +22,6 @@ export function MethodSection() {
         }}
       />
 
-
       <div className="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
         {/* Header épuré */}
         <Reveal className="mx-auto max-w-3xl text-center">
@@ -41,92 +32,40 @@ export function MethodSection() {
             {t.method.h2Part1[lang]}{' '}
             <span className="italic text-muted-foreground/80">{t.method.h2Part2[lang]}</span>
           </h2>
-          <p className="mx-auto mt-5 max-w-xl text-pretty text-[15px] leading-relaxed text-muted-foreground sm:text-base">
-            {t.method.subtitle[lang]}
-          </p>
         </Reveal>
 
-        {/* Timeline */}
-        <div className="timeline-container relative mx-auto mt-16 max-w-3xl">
+        {/* Timeline verticale — style Framer, épurée */}
+        <div className="timeline-container relative mx-auto mt-16 max-w-xl sm:mt-20">
           <ScrollProgress />
 
-          <ol className="space-y-6 sm:space-y-8">
-            {steps.map((step, i) => {
-              const Icon = step.icon
-              return (
-                <Reveal
-                  as="li"
-                  key={step.number}
-                  delay={i * 0.08}
-                  className="relative pl-14 sm:pl-20"
+          <ol className="space-y-11 sm:space-y-14">
+            {steps.map((step, i) => (
+              <Reveal as="li" key={step.title} delay={i * 0.08} className="relative pl-12 sm:pl-16">
+                {/* Nœud sur la ligne */}
+                <span
+                  aria-hidden
+                  className="absolute left-[18px] top-1 z-10 flex size-3.5 -translate-x-1/2 items-center justify-center rounded-full border border-primary/50 bg-card sm:left-6"
                 >
-                  {/* Node de la timeline */}
-                  <div className="absolute left-0 top-1 sm:top-2">
-                    <div className="flex size-9 items-center justify-center rounded-full border border-primary/30 bg-background text-primary shadow-[0_0_0_4px_rgba(0,0,0,0.4)] sm:size-12">
-                      <Icon className="size-4 sm:size-5" aria-hidden />
-                    </div>
-                  </div>
+                  <span className="size-1.5 rounded-full bg-primary" />
+                </span>
 
-                  {/* Card */}
-                  <div className="group relative">
-                    <div
-                      aria-hidden
-                      className="pointer-events-none absolute -inset-px rounded-[1.2rem] bg-gradient-to-br from-primary/40 via-primary/0 to-primary/20 opacity-0 blur-[2px] transition-opacity duration-500 group-hover:opacity-100"
-                    />
-                    <div className="relative overflow-hidden rounded-[1.15rem] border border-border/60 bg-background/50 p-6 transition-colors duration-500 group-hover:border-primary/30 group-hover:bg-background/70 sm:p-7">
-
-                      <div className="relative flex items-baseline gap-4">
-                        <span className="font-display text-[2.25rem] font-bold leading-none tracking-[-0.03em] text-muted-foreground/30 sm:text-[2.75rem]">
-                          {step.number}
-                        </span>
-                        <div className="h-px flex-1 bg-gradient-to-r from-border/60 to-transparent" />
-                      </div>
-
-                      <h3 className="relative mt-5 font-display text-lg font-semibold leading-snug tracking-[-0.01em] text-foreground sm:text-xl">
-                        {step.title}
-                      </h3>
-                      <p className="relative mt-3 text-[15px] leading-relaxed text-muted-foreground">
-                        {step.description}
-                      </p>
-                    </div>
-                  </div>
-                </Reveal>
-              )
-            })}
+                <p className="font-display text-[11px] font-semibold uppercase tracking-[0.22em] text-primary/70">
+                  Étape {String(i + 1).padStart(2, '0')}
+                </p>
+                <h3 className="mt-2 font-display text-lg font-semibold leading-snug tracking-[-0.01em] text-foreground sm:text-xl">
+                  {step.title}
+                </h3>
+                <p className="mt-2 text-[14px] leading-relaxed text-muted-foreground sm:text-[15px]">
+                  {step.description}
+                </p>
+              </Reveal>
+            ))}
           </ol>
         </div>
 
-        <div className="mt-12 flex justify-center">
+        <div className="mt-16 flex justify-center">
           <AuditButton />
         </div>
-
-        {/* Bonus card */}
-        <Reveal delay={0.35} className="mx-auto mt-12 max-w-3xl">
-          <div className="group relative">
-            <div
-              aria-hidden
-              className="pointer-events-none absolute -inset-px rounded-[1.3rem] bg-gradient-to-br from-primary/50 via-primary/10 to-primary/30 opacity-60 blur-[3px] transition-opacity duration-500 group-hover:opacity-100"
-            />
-            <div className="relative overflow-hidden rounded-[1.25rem] border border-primary/30 bg-background/70 p-7 sm:p-8">
-              <div className="relative flex items-start gap-5">
-                <div className="flex size-11 shrink-0 items-center justify-center rounded-xl border border-primary/40 bg-primary/10 text-primary">
-                  <Gift className="size-5" aria-hidden />
-                </div>
-                <div className="flex-1">
-                  <span className="font-display text-[10px] font-semibold uppercase tracking-[0.22em] text-primary">
-                    {t.method.bonusKicker[lang]}
-                  </span>
-                  <h3 className="mt-2 font-display text-lg font-semibold leading-snug text-foreground sm:text-xl">
-                    {t.method.bonusTitle[lang]}
-                  </h3>
-                  <p className="mt-2 text-[15px] leading-relaxed text-muted-foreground">
-                    {t.method.bonusDesc[lang]}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </Reveal>
       </div>
     </section>
   )

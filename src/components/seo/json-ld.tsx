@@ -45,7 +45,6 @@ export function localBusinessJsonLd() {
       '@type': 'PostalAddress',
       streetAddress: siteConfig.address.street,
       addressLocality: siteConfig.address.city,
-      addressRegion: siteConfig.address.region,
       postalCode: siteConfig.address.postalCode,
       addressCountry: siteConfig.address.country,
     },
@@ -62,8 +61,6 @@ export function localBusinessJsonLd() {
     },
     areaServed: [
       { '@type': 'City', name: 'Rennes' },
-      { '@type': 'AdministrativeArea', name: 'Ille-et-Vilaine' },
-      { '@type': 'AdministrativeArea', name: 'Bretagne' },
       { '@type': 'Country', name: 'France' },
       { '@type': 'Place', name: 'Worldwide (remote)' },
     ],
@@ -84,7 +81,7 @@ export function localBusinessJsonLd() {
           itemOffered: {
             '@type': 'Service',
             name: 'Référencement naturel SEO',
-            url: `${siteConfig.url}/referencement-seo-rennes`,
+            url: `${siteConfig.url}/referencement-seo`,
           },
         },
         {
@@ -92,7 +89,7 @@ export function localBusinessJsonLd() {
           itemOffered: {
             '@type': 'Service',
             name: 'Référencement local',
-            url: `${siteConfig.url}/referencement-local-rennes`,
+            url: `${siteConfig.url}/referencement-seo`,
           },
         },
         {
@@ -100,7 +97,7 @@ export function localBusinessJsonLd() {
           itemOffered: {
             '@type': 'Service',
             name: 'Création de site internet',
-            url: `${siteConfig.url}/creation-site-internet-rennes`,
+            url: `${siteConfig.url}/creation-site-internet`,
           },
         },
         {
@@ -116,7 +113,7 @@ export function localBusinessJsonLd() {
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: '5.0',
-      reviewCount: '75',
+      reviewCount: '80',
       bestRating: '5',
     },
     priceRange: '€€',
@@ -154,7 +151,7 @@ export function personJsonLd() {
       'Stratégie de contenu SEO',
     ],
     knowsLanguage: ['fr', 'en'],
-    award: '75 avis Google 5 étoiles',
+    award: '80+ avis Google 5 étoiles',
     sameAs: siteConfig.socialProfiles,
   }
 }
@@ -242,7 +239,6 @@ export function serviceJsonLd(
     },
     areaServed: areaServed ?? [
       { '@type': 'City', name: 'Rennes' },
-      { '@type': 'AdministrativeArea', name: 'Bretagne' },
       { '@type': 'Country', name: 'France' },
     ],
     url: `${siteConfig.url}${path}`,

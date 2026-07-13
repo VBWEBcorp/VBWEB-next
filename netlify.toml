@@ -31,6 +31,34 @@
 # ici sinon -> ERR_TOO_MANY_REDIRECTS.
 
 # ============================================================
+# REDIRECTIONS 301 — de-localisation des URLs (suppression de "-rennes")
+# Les anciennes URLs pointent vers les nouvelles pages nationales.
+# ============================================================
+[[redirects]]
+  from = "/referencement-seo-rennes"
+  to = "/referencement-seo"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/referencement-local-rennes"
+  to = "/referencement-seo"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/creation-site-internet-rennes"
+  to = "/creation-site-internet"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/freelance-seo-rennes"
+  to = "/freelance-seo"
+  status = 301
+  force = true
+
+# ============================================================
 # SECURITY HEADERS — appliques a toutes les pages
 # ============================================================
 [[headers]]

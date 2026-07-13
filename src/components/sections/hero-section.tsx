@@ -17,32 +17,23 @@ function GoogleG({ className = 'size-4' }: { className?: string }) {
   )
 }
 
-const col1 = [
+// Pool réduit de 9 vignettes, partagé par toutes les colonnes du fond.
+// Moins de requêtes au premier affichage ; le fond animé (25% d'opacité)
+// reste visuellement identique.
+const heroImages = [
   'https://i.ibb.co/9HsCRCV6/YUZU-BRANDING.jpg',
   'https://i.ibb.co/hxpcht55/EPICU.jpg',
   'https://i.ibb.co/VWfJrSqX/AS-LOCATION.jpg',
-  'https://i.ibb.co/rKD9SJ7q/VENTS-ET-COURBES.jpg',
-  'https://i.ibb.co/DHr9v05v/FL-CONSULTING.jpg',
-  'https://i.ibb.co/BKYFP1x5/RENNES-PNEUS.jpg',
-]
-
-const col2 = [
   'https://i.ibb.co/tPHZ4D9L/MATINEH-FOOD.jpg',
   'https://i.ibb.co/Nd4W02HL/Shaan-production.jpg',
   'https://i.ibb.co/dwbzZFNN/SHAMPOUINE-TOI.jpg',
-  'https://i.ibb.co/jvyCrGMX/VALENTIN-BEASSE.jpg',
-  'https://i.ibb.co/cKpvpLYJ/ZINE-COACHING.jpg',
-  'https://i.ibb.co/bM518fv2/ECO-HABITAT.jpg',
-]
-
-const col3 = [
   'https://i.ibb.co/9HhFm9MV/JEREMY-SIMON-AVOCAT.png',
   'https://i.ibb.co/kZrFB2h/JULIEN-BIDOIS-CHEF-PRIVE.jpg',
   'https://i.ibb.co/xtRDW0WZ/LES-LUNETTES-DE-LA-CHAPELLE.jpg',
-  'https://i.ibb.co/39zY5X3q/MAXX-LE-MAGICIEN.jpg',
-  'https://i.ibb.co/BH7k4qWR/ON-PARLE-DE-TOUT.webp',
-  'https://i.ibb.co/4gnRwBXW/tracker-solaire-2.jpg',
 ]
+
+// Décale le tableau pour varier l'ordre d'une colonne à l'autre (mêmes URLs).
+const rot = (arr: string[], n: number) => [...arr.slice(n), ...arr.slice(0, n)]
 
 function ScrollColumn({
   images,
@@ -92,13 +83,13 @@ export function HeroSection() {
     >
       {/* Photo columns pleine largeur (identique au CTA gallery) */}
       <div className="absolute inset-0 flex gap-3 opacity-25">
-        <ScrollColumn images={col1} direction="up" duration={40} />
-        <ScrollColumn images={col2} direction="down" duration={35} />
-        <ScrollColumn images={col3} direction="up" duration={38} />
-        <div className="hidden min-w-0 flex-1 sm:block"><ScrollColumn images={col1.slice().reverse()} direction="down" duration={42} /></div>
-        <div className="hidden min-w-0 flex-1 sm:block"><ScrollColumn images={col2.slice().reverse()} direction="up" duration={36} /></div>
-        <div className="hidden min-w-0 flex-1 lg:block"><ScrollColumn images={col3.slice().reverse()} direction="down" duration={44} /></div>
-        <div className="hidden min-w-0 flex-1 lg:block"><ScrollColumn images={col1} direction="up" duration={39} /></div>
+        <ScrollColumn images={heroImages} direction="up" duration={40} />
+        <ScrollColumn images={rot(heroImages, 3)} direction="down" duration={35} />
+        <ScrollColumn images={rot(heroImages, 6)} direction="up" duration={38} />
+        <div className="hidden min-w-0 flex-1 sm:block"><ScrollColumn images={[...heroImages].reverse()} direction="down" duration={42} /></div>
+        <div className="hidden min-w-0 flex-1 sm:block"><ScrollColumn images={rot(heroImages, 4)} direction="up" duration={36} /></div>
+        <div className="hidden min-w-0 flex-1 lg:block"><ScrollColumn images={rot(heroImages, 2)} direction="down" duration={44} /></div>
+        <div className="hidden min-w-0 flex-1 lg:block"><ScrollColumn images={rot(heroImages, 5)} direction="up" duration={39} /></div>
       </div>
 
       {/* Gradient overlay — laisse voir les images mais garde la lisibilité */}

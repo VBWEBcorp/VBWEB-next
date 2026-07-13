@@ -4,7 +4,7 @@ import { breadcrumbJsonLd, webPageJsonLd } from '@/components/seo/json-ld'
 import { ApplicationsWebContent } from './applications-content'
 
 const description =
-  'Applications web sur mesure développées à Rennes : CRM, logiciels de gestion, plateformes métier. Études de cas développement web pour entreprises en Bretagne.'
+  'Applications web sur mesure développées à Rennes : CRM, logiciels de gestion, plateformes métier. Études de cas développement web pour entreprises partout en France.'
 
 export const metadata: Metadata = {
   title: 'Développement Applications Web à Rennes | Études de Cas',

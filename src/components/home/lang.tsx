@@ -38,7 +38,7 @@ export const t = {
     },
     ctaPrimary: { fr: 'Recevez votre diagnostic gratuit', en: 'Get your free diagnostic' },
     ctaSecondary: { fr: 'ou prendre directement rendez-vous', en: 'or book a meeting directly' },
-    reviews: { fr: '75 avis', en: '75 reviews' },
+    reviews: { fr: '80+ avis', en: '80+ reviews' },
   },
   audiences: {
     fr: [
@@ -68,12 +68,12 @@ export const t = {
   },
   founder: {
     eyebrow: { fr: 'Votre expert SEO/GEO', en: 'Your SEO/GEO expert' },
-    h2Part1: { fr: 'Un expert', en: 'One expert' },
-    h2Part2: { fr: 'et son équipe dédiée à votre PME', en: 'and his team dedicated to your SMB' },
+    h2Part1: { fr: 'Ce que je crée', en: 'What I create' },
+    h2Part2: { fr: 'pour votre PME', en: 'for your business' },
     resultLabel: { fr: 'Votre résultat', en: 'Your outcome' },
     resultTags: {
-      fr: ['Avantage concurrentiel', 'Prospects qualifiés', 'Site internet solide et évolutif'],
-      en: ['Competitive advantage', 'Qualified leads', 'Solid and scalable website'],
+      fr: ['Plus de prospects qualifiés', 'Un avantage concurrentiel', 'Toujours à la page (Google + IA)'],
+      en: ['More qualified leads', 'A competitive edge', 'Always up to date (Google + AI)'],
     },
     videoCaption: {
       fr: "2 minutes pour comprendre comment j'accompagne les dirigeants de PME.",
@@ -81,6 +81,7 @@ export const t = {
     },
     learnMore: { fr: 'En savoir plus', en: 'Learn more' },
     seeServices: { fr: 'Voir les services', en: 'See services' },
+    resultCta: { fr: 'Voir les études de cas', en: 'See case studies' },
   },
   problemStats: {
     eyebrow: { fr: 'Le constat pour les PME', en: 'The reality for SMBs' },
@@ -119,36 +120,38 @@ export const t = {
     steps: {
       fr: [
         {
-          title: 'Diagnostic complet (SEO + GEO)',
-          description:
-            "J'analyse votre site, votre positionnement Google ET votre visibilité dans les réponses ChatGPT, Claude, Perplexity. Vous repartez avec un plan d'action priorisé.",
+          title: 'Audit de la situation',
+          description: 'Où vous en êtes sur Google et dans l’IA, et ce qui vous freine aujourd’hui.',
         },
         {
-          title: 'Site qui convertit + visibilité Google + IA',
-          description:
-            'Un site moderne pensé pour les dirigeants de PME, optimisé pour Google et structuré pour être cité par les IA. Pendant que vos concurrents font de la pub, vous récoltez du trafic qualifié.',
+          title: 'Amélioration ou création du site',
+          description: 'On repart de l’existant, ou on crée un site neuf quand il le faut vraiment.',
         },
         {
-          title: 'Suivi mensuel et croissance',
-          description:
-            "Reporting clair, optimisations continues, surveillance de votre présence dans Google ET dans les IA. Vous restez concentré sur votre PME, je m'occupe de votre visibilité.",
+          title: 'Lancement du référencement',
+          description: 'Stratégie SEO & GEO pour être trouvé sur Google et cité par les IA.',
+        },
+        {
+          title: 'Suivi & croissance',
+          description: 'Reporting clair et optimisations continues. Vous restez sur votre métier.',
         },
       ],
       en: [
         {
-          title: 'Full diagnostic (SEO + GEO)',
-          description:
-            'I analyze your site, your Google ranking AND your visibility in ChatGPT, Claude, Perplexity. You leave with a prioritized action plan.',
+          title: 'Audit of the situation',
+          description: 'Where you stand on Google and in AI, and what’s holding you back today.',
         },
         {
-          title: 'Converting website + Google + AI visibility',
-          description:
-            'A modern site built for SMB leaders, optimized for Google and structured to be cited by AI. While your competitors pay for ads, you harvest qualified traffic.',
+          title: 'Improve or rebuild the site',
+          description: 'We start from what exists, or build a new site when it’s truly needed.',
         },
         {
-          title: 'Monthly tracking and growth',
-          description:
-            'Clear reporting, continuous optimization, monitoring your presence on Google AND AI. You stay focused on your SMB, I handle visibility.',
+          title: 'Launch the SEO',
+          description: 'SEO & GEO strategy to be found on Google and cited by AI.',
+        },
+        {
+          title: 'Tracking & growth',
+          description: 'Clear reporting and continuous optimization. You stay focused on your business.',
         },
       ],
     },
@@ -164,46 +167,32 @@ export const t = {
     },
   },
   results: {
-    eyebrow: { fr: 'Avant / Après', en: 'Before / After' },
-    h2Part1: { fr: "De l'invisible,", en: 'From invisible,' },
-    h2Part2: { fr: 'au top 3 Google', en: 'to top 3 Google' },
-    beforeTitle: { fr: 'Avant VBWEB', en: 'Before VBWEB' },
-    afterTitle: { fr: 'Après VBWEB', en: 'After VBWEB' },
-    beforeBullets: {
+    eyebrow: { fr: 'Résultats clients', en: 'Client results' },
+    h2Part1: { fr: 'Des résultats', en: 'Real results,' },
+    h2Part2: { fr: 'concrets et mesurables', en: 'concrete and measurable' },
+    cases: {
       fr: [
-        '30 visites organiques par mois',
-        '15 appels entrants par mois',
-        '3 mots-clés en top 10',
-        '1ère page Google : invisible',
+        { name: 'Rennes Pneus', type: 'Garage automobile', big: '3 600', unit: 'visites organiques / mois', support: 'Depuis 30 visites · ~500 appels/mois · 1ᵉʳ sur « Pneus Rennes »' },
+        { name: 'EPICU', type: 'Marque de guides & expériences', big: '5 000', unit: 'visites organiques / mois', support: 'Depuis ~100 visites · +4 900 % de trafic organique' },
+        { name: 'Jumelles.com', type: 'E-commerce, 800+ produits', big: '+33 %', unit: 'trafic organique en 12 mois', support: 'Taux de rebond réduit de 68 % à 41 %' },
       ],
       en: [
-        '30 organic visits/month',
-        '15 incoming calls/month',
-        '3 keywords in top 10',
-        'Google page 1: invisible',
+        { name: 'Rennes Pneus', type: 'Auto garage', big: '3,600', unit: 'organic visits / month', support: 'From 30 visits · ~500 calls/month · #1 on “Pneus Rennes”' },
+        { name: 'EPICU', type: 'Guides & experiences brand', big: '5,000', unit: 'organic visits / month', support: 'From ~100 visits · +4,900% organic traffic' },
+        { name: 'Jumelles.com', type: 'E-commerce, 800+ products', big: '+33%', unit: 'organic traffic in 12 months', support: 'Bounce rate cut from 68% to 41%' },
       ],
     },
-    afterBullets: {
-      fr: [
-        '3 600 visites organiques par mois',
-        '~500 appels entrants par mois',
-        '87 mots-clés en top 10',
-        '1er sur "Pneus Rennes", "Pneus neufs à Rennes", +5 autres',
-      ],
-      en: [
-        '3,600 organic visits/month',
-        '~500 incoming calls/month',
-        '87 keywords in top 10',
-        '#1 on "Pneus Rennes", "Pneus neufs à Rennes", +5 more',
-      ],
+    disclaimer: {
+      fr: 'Chaque activité a ses spécificités, mais les fondamentaux du référencement sont les mêmes dans tous les secteurs. La vraie différence se joue sur des années d’expertise.',
+      en: 'Every business has its specifics, but the fundamentals of SEO are the same across every industry. The real difference comes from years of expertise.',
     },
     caseStudyLink: {
-      fr: "accompagnement SEO sur 3 ans · Voir l'étude de cas",
-      en: '3-year SEO partnership · See the case study',
+      fr: 'Voir toutes les études de cas',
+      en: 'See all case studies',
     },
   },
   testimonials: {
-    badge: { fr: '75 avis Google', en: '75 Google reviews' },
+    badge: { fr: '80+ avis Google', en: '80+ Google reviews' },
     h2Part1: { fr: 'Ils en parlent', en: 'They tell it' },
     h2Part2: { fr: 'mieux que moi', en: 'better than I do' },
     cta: { fr: 'Laissez un avis', en: 'Leave a review' },
@@ -252,6 +241,26 @@ export const t = {
     },
     seeAll: { fr: 'Voir les études de cas', en: 'See case studies' },
   },
+  offers: {
+    eyebrow: { fr: 'Ce que je fais', en: 'What I do' },
+    title: { fr: 'Mon métier : vous rendre visible et générer des clients.', en: 'My job: make you visible and generate clients.' },
+    intro: {
+      fr: 'Je suis à la fois expert SEO/GEO et développeur web full-stack. Ce double profil, c’est votre avantage : je connecte le référencement, le site et la technique, j’interviens sur tout le process d’un seul coup et je repère les failles techniques que les autres laissent passer.',
+      en: 'I’m both an SEO/GEO expert and a full-stack web developer. That dual profile is your advantage: I connect SEO, the site and the tech, act on the whole process at once, and spot the technical flaws others miss.',
+    },
+    items: {
+      fr: [
+        { label: 'Référencement SEO & GEO', tag: 'Cœur de métier', href: '/referencement-seo' },
+        { label: 'Création de site internet', tag: 'Si besoin', href: '/creation-site-internet' },
+        { label: 'IA en entreprise & automatisations', tag: 'Pour aller plus loin', href: '/ia-entreprise' },
+      ],
+      en: [
+        { label: 'SEO & GEO', tag: 'Core service', href: '/referencement-seo' },
+        { label: 'Website creation', tag: 'If needed', href: '/creation-site-internet' },
+        { label: 'AI for business & automation', tag: 'To go further', href: '/ia-entreprise' },
+      ],
+    },
+  },
   ctaGallery: {
     eyebrow: { fr: 'Diagnostic gratuit, sans engagement', en: 'Free diagnostic, no commitment' },
     h2: { fr: 'Recevez votre diagnostic SEO/GEO', en: 'Get your SEO/GEO diagnostic' },
@@ -274,21 +283,23 @@ export const t = {
         about: { label: 'À propos', description: "L'histoire et la vision" },
         seo: { label: 'Référencement SEO', description: 'Optimisation technique et contenu' },
         localSeo: { label: 'Référencement local', description: 'Google Maps et SEO local' },
-        webDesign: { label: 'Création de site', description: 'Sites vitrines & e-commerce' },
+        webDesign: { label: 'Création de site internet', description: 'Sites vitrines & e-commerce' },
+        ia: { label: 'IA en entreprise', description: 'Automatisations & outils sur-mesure' },
         diagnostic: { label: 'Diagnostic gratuit', description: 'Analyse complète sous 48h' },
-        sites: { label: 'Sites internet', description: 'Vitrines, e-commerce, sur-mesure' },
+        sites: { label: 'Site internet', description: 'Vitrines, e-commerce, sur-mesure' },
         seoCase: { label: 'Référencement', description: 'Stratégies SEO et résultats' },
-        apps: { label: 'Applications web', description: 'CRM, dashboards, automatisations' },
+        apps: { label: 'IA en entreprise', description: 'CRM, dashboards, automatisations' },
       },
       en: {
         about: { label: 'About', description: 'Story and vision' },
         seo: { label: 'SEO', description: 'Technical SEO & content' },
         localSeo: { label: 'Local SEO', description: 'Google Maps & local SEO' },
-        webDesign: { label: 'Web design', description: 'Showcase & e-commerce sites' },
+        webDesign: { label: 'Website creation', description: 'Showcase & e-commerce sites' },
+        ia: { label: 'AI for business', description: 'Automation & custom tools' },
         diagnostic: { label: 'Free diagnostic', description: 'Full analysis within 48h' },
-        sites: { label: 'Websites', description: 'Showcase, e-commerce, custom' },
+        sites: { label: 'Website', description: 'Showcase, e-commerce, custom' },
         seoCase: { label: 'SEO', description: 'SEO strategies & results' },
-        apps: { label: 'Web applications', description: 'CRMs, dashboards, automation' },
+        apps: { label: 'AI for business', description: 'CRMs, dashboards, automation' },
       },
     },
   },

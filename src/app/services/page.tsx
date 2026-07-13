@@ -8,7 +8,7 @@ import {
 } from '@/components/seo/json-ld'
 
 const description =
-  'Référencement naturel SEO, création de sites internet, applications web et outils sur mesure à Rennes. Des solutions concrètes pour développer votre activité en ligne en Bretagne.'
+  'Référencement naturel SEO, création de sites internet, applications web et outils sur mesure à Rennes. Des solutions concrètes pour développer votre activité en ligne partout en France.'
 
 const services = [
   { title: 'Création de site vitrine', desc: 'Un site moderne, rapide et responsive qui présente clairement votre activité et inspire confiance à vos visiteurs.' },

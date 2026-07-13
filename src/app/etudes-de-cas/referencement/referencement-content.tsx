@@ -505,7 +505,7 @@ export function ReferencementContent() {
                   <Star key={i} className="size-4 fill-amber-400 text-amber-400" />
                 ))}
               </div>
-              <p className="text-xs text-muted-foreground/60">75 avis 5 étoiles</p>
+              <p className="text-xs text-muted-foreground/60">80+ avis 5 étoiles</p>
               <a
                 href="https://share.google/RdtyxDLN4e3KEx2eO"
                 target="_blank"
@@ -527,7 +527,7 @@ export function ReferencementContent() {
               </p>
               <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
                 <Button size="lg" variant="outline" className="border-white/15 bg-foreground/5 text-foreground hover:bg-foreground/10 hover:text-foreground" asChild>
-                  <Link href="/referencement-seo-rennes">Nos services SEO</Link>
+                  <Link href="/referencement-seo">Nos services SEO</Link>
                 </Button>
                 <Button size="lg" className="group bg-primary text-primary-foreground hover:bg-primary/85" asChild>
                   <Link href="/contact">

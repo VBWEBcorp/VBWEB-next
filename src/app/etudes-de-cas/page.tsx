@@ -6,10 +6,10 @@ import { breadcrumbJsonLd, webPageJsonLd } from '@/components/seo/json-ld'
 import { Reveal } from '@/components/ui/reveal'
 
 const description =
-  'Découvrez nos réalisations : sites internet, référencement SEO et applications web pour PME, artisans et commerces à Rennes et en Bretagne. Résultats concrets et mesurables.'
+  'Découvrez nos réalisations : sites internet, référencement SEO et applications web pour PME, artisans et commerces partout en France. Résultats concrets et mesurables.'
 
 export const metadata: Metadata = {
-  title: 'Études de cas | Réalisations SEO & Web à Rennes',
+  title: 'Études de cas | Réalisations SEO & Web',
   description,
   alternates: { canonical: '/etudes-de-cas' },
 }
@@ -92,12 +92,12 @@ export default function EtudesDeCasPage() {
             </p>
             <h1 className="mt-4 font-display text-balance text-4xl font-medium leading-[1.08] tracking-[-0.03em] text-foreground sm:text-5xl">
               Nos réalisations{' '}
-              <span className="italic text-muted-foreground">à Rennes</span>
+              <span className="italic text-muted-foreground">partout en France</span>
             </h1>
             <p className="hero-description mx-auto mt-6 max-w-2xl text-pretty text-lg leading-relaxed text-muted-foreground">
               Sites internet, référencement SEO et applications web : découvrez
-              des résultats concrets obtenus pour des entreprises à Rennes et en
-              Bretagne.
+              des résultats concrets obtenus pour des entreprises partout en
+              France.
             </p>
           </div>
         </div>
@@ -165,9 +165,8 @@ export default function EtudesDeCasPage() {
           <Reveal delay={0.15}>
             <div className="mx-auto mt-8 grid max-w-3xl gap-4 sm:grid-cols-4">
               {[
-                { title: 'Référencement SEO', href: '/referencement-seo-rennes' },
-                { title: 'SEO local', href: '/referencement-local-rennes' },
-                { title: 'Création de site', href: '/creation-site-internet-rennes' },
+                { title: 'Référencement SEO', href: '/referencement-seo' },
+                { title: 'Création de site', href: '/creation-site-internet' },
                 { title: 'Audit SEO gratuit', href: '/audit-seo-gratuit' },
               ].map((s) => (
                 <Link

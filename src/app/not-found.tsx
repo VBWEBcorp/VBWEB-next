@@ -3,8 +3,8 @@ import Link from 'next/link'
 
 const links = [
   { href: '/', label: 'Accueil', icon: Home },
-  { href: '/referencement-seo-rennes', label: 'Referencement SEO', icon: Search },
-  { href: '/creation-site-internet-rennes', label: 'Creation de site', icon: FileText },
+  { href: '/referencement-seo', label: 'Referencement SEO', icon: Search },
+  { href: '/creation-site-internet', label: 'Creation de site', icon: FileText },
   { href: '/contact', label: 'Contact', icon: ArrowLeft },
 ]
 

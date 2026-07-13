@@ -218,7 +218,7 @@ export function SitesInternetContent() {
                 <Info className="mt-0.5 size-4 shrink-0 text-primary sm:size-5" />
                 <p className="text-[11px] leading-relaxed text-muted-foreground sm:text-sm">
                   Cet espace présente un aperçu des créations réalisées par VBWEB.
-                  La partie <Link href="/referencement-seo-rennes" className="text-primary underline underline-offset-2 transition-colors duration-200 hover:text-primary/80">référencement SEO</Link> dépend
+                  La partie <Link href="/referencement-seo" className="text-primary underline underline-offset-2 transition-colors duration-200 hover:text-primary/80">référencement SEO</Link> dépend
                   du budget et des besoins de chaque client. Ici, c&apos;est uniquement le design et l&apos;expérience utilisateur qui sont mis en avant.
                 </p>
               </div>
@@ -246,7 +246,7 @@ export function SitesInternetContent() {
               </Link>
             </Button>
             <Button size="lg" variant="outline" className="border-white/15 bg-foreground/5 text-foreground hover:bg-foreground/10 hover:text-foreground" asChild>
-              <Link href="/creation-site-internet-rennes">Nos services web</Link>
+              <Link href="/creation-site-internet">Nos services web</Link>
             </Button>
           </Reveal>
         </div>
@@ -263,7 +263,7 @@ export function SitesInternetContent() {
                 <Star key={i} className="size-4 fill-amber-400 text-amber-400" />
               ))}
             </div>
-            <p className="text-xs text-muted-foreground/60">75 avis 5 étoiles</p>
+            <p className="text-xs text-muted-foreground/60">80+ avis 5 étoiles</p>
             <a
               href="https://share.google/RdtyxDLN4e3KEx2eO"
               target="_blank"
@@ -285,7 +285,7 @@ export function SitesInternetContent() {
               </p>
               <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
                 <Button size="lg" variant="outline" className="border-white/15 bg-foreground/5 text-foreground hover:bg-foreground/10 hover:text-foreground" asChild>
-                  <Link href="/creation-site-internet-rennes">En savoir plus</Link>
+                  <Link href="/creation-site-internet">En savoir plus</Link>
                 </Button>
                 <Button size="lg" className="group bg-primary text-primary-foreground hover:bg-primary/85" asChild>
                   <Link href="/contact">

@@ -16,11 +16,9 @@ const navLinks = [
 ]
 
 const serviceLinks = [
-  { label: 'Référencement SEO', to: '/referencement-seo-rennes' },
-  { label: 'Référencement local', to: '/referencement-local-rennes' },
-  { label: 'Création de site', to: '/creation-site-internet-rennes' },
-  { label: 'Diagnostic gratuit', to: '/audit-seo-gratuit' },
-  { label: 'Freelance SEO Rennes', to: '/freelance-seo-rennes' },
+  { label: 'Référencement SEO', to: '/referencement-seo' },
+  { label: 'Création de site', to: '/creation-site-internet' },
+  { label: 'IA en entreprise', to: '/ia-entreprise' },
 ]
 
 const legalLinks = [
@@ -85,7 +83,7 @@ export function Footer() {
               </div>
 
               {/* === SECTION 2 — GRILLE LIENS === */}
-              <div className="grid gap-px bg-border/20 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr]">
+              <div className="grid gap-px bg-border/20 sm:grid-cols-2 lg:grid-cols-[1.6fr_1fr_1fr]">
                 {/* Brand + coordonnées */}
                 <div className="bg-card/60 p-8 sm:p-10">
                   <Link href="/" className="group/logo inline-flex items-center gap-2.5">
@@ -163,35 +161,32 @@ export function Footer() {
                   </ul>
                 </nav>
 
-                {/* Légal */}
-                <nav aria-label="Legal" className="bg-card/60 p-8 sm:p-10">
-                  <p className="font-display text-[10px] font-semibold uppercase tracking-[0.22em] text-muted-foreground/60">
-                    {tf.legalTitle[lang]}
-                  </p>
-                  <ul className="mt-5 space-y-2.5">
-                    {legalLinks.map((l) => (
-                      <li key={l.label}>
-                        <Link
-                          href={l.to}
-                          className="group/link inline-flex items-center gap-1 text-[13px] text-muted-foreground transition-colors hover:text-foreground"
-                        >
-                          {l.label}
-                          <ArrowUpRight className="size-3 opacity-0 transition-all duration-300 group-hover/link:opacity-100" />
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </nav>
               </div>
 
               {/* === SECTION 3 — BOTTOM BAR === */}
-              <div className="flex flex-col items-start justify-between gap-3 border-t border-border/40 bg-card/80 px-8 py-5 sm:flex-row sm:items-center sm:px-10">
-                <p className="text-[11px] text-muted-foreground/60">
-                  © {new Date().getFullYear()} {siteConfig.name} · {tf.copyright[lang]}
-                </p>
-                <p className="text-[11px] uppercase tracking-[0.16em] text-muted-foreground/40">
-                  {tf.subTagline[lang]}
-                </p>
+              <div className="border-t border-border/40 bg-card/80 px-6 py-5 sm:px-10">
+                {/* Liens légaux sur une seule ligne */}
+                <nav aria-label="Legal" className="flex flex-wrap items-center gap-x-4 gap-y-1.5">
+                  {legalLinks.map((l) => (
+                    <Link
+                      key={l.label}
+                      href={l.to}
+                      className="text-[11px] text-muted-foreground/70 transition-colors hover:text-foreground"
+                    >
+                      {l.label}
+                    </Link>
+                  ))}
+                </nav>
+
+                {/* Copyright */}
+                <div className="mt-4 flex flex-col items-start justify-between gap-2 border-t border-border/30 pt-4 sm:flex-row sm:items-center">
+                  <p className="text-[11px] text-muted-foreground/60">
+                    © {new Date().getFullYear()} {siteConfig.name} · {tf.copyright[lang]}
+                  </p>
+                  <p className="text-[11px] uppercase tracking-[0.16em] text-muted-foreground/40">
+                    {tf.subTagline[lang]}
+                  </p>
+                </div>
               </div>
             </div>
           </div>

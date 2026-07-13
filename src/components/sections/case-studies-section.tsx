@@ -6,38 +6,10 @@ import Link from 'next/link'
 import { useHomeLang, t } from '@/components/home/lang'
 import { Reveal } from '@/components/ui/reveal'
 
-const BASE_CATEGORIES = [
-  {
-    number: '01',
-    label: 'Web Design',
-    image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=800&q=65',
-    href: '/etudes-de-cas/sites-internet',
-    accent: 'from-sky-400/20 via-transparent to-transparent',
-  },
-  {
-    number: '02',
-    label: 'Search',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=65',
-    href: '/etudes-de-cas/referencement',
-    accent: 'from-violet-400/20 via-transparent to-transparent',
-  },
-  {
-    number: '03',
-    label: 'Engineering',
-    image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=65',
-    href: '/etudes-de-cas/applications-web',
-    accent: 'from-emerald-400/20 via-transparent to-transparent',
-  },
-]
-
 export function CaseStudiesSection() {
   const { lang } = useHomeLang()
-  const translated = t.caseStudies.categories[lang]
-  const categories = BASE_CATEGORIES.map((c, i) => ({
-    ...c,
-    title: translated[i].title,
-    description: translated[i].description,
-  }))
+  const items = t.offers.items[lang]
+
   return (
     <section id="etudes-de-cas" className="relative scroll-mt-20 overflow-hidden bg-background">
       {/* Grain */}
@@ -51,77 +23,37 @@ export function CaseStudiesSection() {
         }}
       />
 
-      <div className="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
-        {/* Header asymétrique style Framer */}
-        <Reveal className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
-          <div className="max-w-xl">
-            <p className="font-display text-[11px] font-semibold tracking-[0.24em] text-primary/80 uppercase">
-              {t.caseStudies.eyebrow[lang]}
-            </p>
-            <h2 className="mt-4 font-display text-balance text-3xl font-medium leading-[1.05] tracking-[-0.025em] text-foreground sm:text-4xl lg:text-[3rem]">
-              {t.caseStudies.h2Part1[lang]}{' '}
-              <span className="italic text-muted-foreground/80">{t.caseStudies.h2Part2[lang]}</span>
-            </h2>
-          </div>
-          <p className="max-w-xs text-[15px] leading-relaxed text-muted-foreground sm:text-right">
-            {t.caseStudies.subtitle[lang]}
+      <div className="relative mx-auto max-w-4xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+        <Reveal className="max-w-2xl">
+          <p className="font-display text-[11px] font-semibold tracking-[0.24em] text-primary/80 uppercase">
+            {t.offers.eyebrow[lang]}
+          </p>
+          <h2 className="mt-4 font-display text-balance text-2xl font-medium leading-[1.15] tracking-[-0.02em] text-foreground sm:text-[1.75rem]">
+            {t.offers.title[lang]}
+          </h2>
+          <p className="mt-4 text-[15px] leading-relaxed text-muted-foreground">
+            {t.offers.intro[lang]}
           </p>
         </Reveal>
 
-        {/* Grille 3 colonnes côte à côte (tablette + desktop) */}
-        <div className="mt-14 grid gap-4 md:grid-cols-3 md:gap-5 lg:gap-6">
-          {categories.map((cat, i) => (
-            <Reveal key={cat.title} delay={i * 0.08} className="">
-              <Link
-                href={cat.href}
-                className="group relative block h-full overflow-hidden rounded-[1.4rem] border border-border/60 bg-card/40 transition-colors duration-500 hover:border-primary/30"
-              >
-                {/* Image */}
-                <div className="relative aspect-[4/3] overflow-hidden">
-                  <img
-                    src={cat.image}
-                    alt={cat.title}
-                    loading="lazy"
-                    className="size-full object-cover transition-transform duration-[1500ms] ease-out group-hover:scale-110"
-                  />
-                  {/* Overlays */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-card via-card/30 to-transparent" />
-                  <div className={`absolute inset-0 bg-gradient-to-tr ${cat.accent} opacity-60`} />
-
-
-                  {/* Arrow en haut à droite */}
-                  <div className="absolute right-5 top-5">
-                    <div className="flex size-9 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white transition-colors duration-500 group-hover:border-primary/60 group-hover:bg-primary group-hover:text-primary-foreground">
-                      <ArrowUpRight className="size-4 transition-transform duration-500 group-hover:rotate-45" />
-                    </div>
-                  </div>
-                </div>
-
-                {/* Texte sous l'image */}
-                <div className="relative p-6 sm:p-7">
-                  <h3 className="font-display text-xl font-semibold leading-tight tracking-[-0.01em] text-foreground transition-colors duration-500 group-hover:text-primary sm:text-2xl">
-                    {cat.title}
-                  </h3>
-                  <p className="mt-3 text-[14px] leading-relaxed text-muted-foreground sm:text-[15px]">
-                    {cat.description}
-                  </p>
-
-                  {/* Trait gradient en bas */}
-                  <div className="mt-6 h-px w-full bg-gradient-to-r from-border via-border/40 to-transparent" />
-
-                  <div className="mt-4 flex items-center justify-between">
-                    <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-muted-foreground/60">
-                      {t.caseStudies.seeAll[lang]}
-                    </span>
-                    <span className="font-display text-xs font-semibold text-primary opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-                      →
-                    </span>
-                  </div>
-                </div>
-              </Link>
-            </Reveal>
+        {/* Liste simple et discrète — chaque offre cliquable vers sa page dédiée */}
+        <Reveal className="mt-8 divide-y divide-border/50 border-y border-border/50">
+          {items.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="group flex items-center gap-4 py-4 transition-colors hover:text-primary"
+            >
+              <span className="font-display text-[15px] font-medium text-foreground transition-colors group-hover:text-primary sm:text-base">
+                {item.label}
+              </span>
+              <span className="rounded-full border border-border/50 px-2.5 py-0.5 text-[11px] font-medium uppercase tracking-[0.12em] text-muted-foreground/70">
+                {item.tag}
+              </span>
+              <ArrowUpRight className="ml-auto size-4 shrink-0 text-muted-foreground/40 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-primary" />
+            </Link>
           ))}
-        </div>
+        </Reveal>
       </div>
     </section>
   )

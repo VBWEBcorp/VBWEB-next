@@ -1,23 +1,27 @@
 'use client'
 
-import { ArrowUpRight, TrendingDown, TrendingUp } from 'lucide-react'
+import { ArrowUpRight } from 'lucide-react'
 import Link from 'next/link'
+import { useRef, useState } from 'react'
 
 import { useHomeLang, t } from '@/components/home/lang'
 import { Reveal } from '@/components/ui/reveal'
+import { cn } from '@/lib/utils'
 
 export function ResultsSection() {
   const { lang } = useHomeLang()
-  const before = {
-    icon: TrendingDown,
-    title: t.results.beforeTitle[lang],
-    bullets: t.results.beforeBullets[lang],
+  const r = t.results
+  const cases = r.cases[lang]
+  const scroller = useRef<HTMLDivElement>(null)
+  const [active, setActive] = useState(0)
+
+  const onScroll = () => {
+    const el = scroller.current
+    if (!el) return
+    const i = Math.round((el.scrollLeft / el.scrollWidth) * cases.length)
+    setActive(Math.min(cases.length - 1, Math.max(0, i)))
   }
-  const after = {
-    icon: TrendingUp,
-    title: t.results.afterTitle[lang],
-    bullets: t.results.afterBullets[lang],
-  }
+
   return (
     <section className="relative overflow-hidden bg-background">
       {/* Grain */}
@@ -31,93 +35,82 @@ export function ResultsSection() {
         }}
       />
 
-      <div className="relative mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+      <div className="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
         {/* Header */}
         <Reveal className="mx-auto max-w-2xl text-center">
           <p className="font-display text-[11px] font-semibold tracking-[0.24em] text-primary/80 uppercase">
-            {t.results.eyebrow[lang]}
+            {r.eyebrow[lang]}
           </p>
           <h2 className="mt-5 font-display text-balance text-3xl font-medium leading-[1.1] tracking-[-0.025em] text-foreground sm:text-4xl lg:text-[2.75rem]">
-            {t.results.h2Part1[lang]}{' '}
-            <span className="italic text-muted-foreground/80">{t.results.h2Part2[lang]}</span>
+            {r.h2Part1[lang]}{' '}
+            <span className="italic text-muted-foreground/80">{r.h2Part2[lang]}</span>
           </h2>
         </Reveal>
 
-        {/* Grille Avant / Après */}
-        <Reveal className="mt-14 grid gap-px overflow-hidden rounded-[1.5rem] border border-border/50 bg-border/40 sm:mt-16 sm:grid-cols-2">
-          {/* Cellule AVANT — éteinte */}
-          <div className="group relative bg-background/95 p-8 transition-colors duration-500 hover:bg-card/40 sm:p-10">
-            <div
-              aria-hidden
-              className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-              style={{
-                background:
-                  'radial-gradient(circle at center top, rgba(255,255,255,0.04), transparent 70%)',
-              }}
-            />
-
-            <div className="relative flex flex-col items-center text-center">
-              <div className="flex size-12 items-center justify-center rounded-full border border-border/60 bg-background text-muted-foreground/60">
-                <before.icon className="size-5" aria-hidden />
-              </div>
-
-              <h3 className="mt-6 font-display text-xl font-semibold tracking-[-0.01em] text-muted-foreground sm:text-2xl">
-                {before.title}
-              </h3>
-
-              <div className="mt-4 h-px w-12 bg-gradient-to-r from-transparent via-border to-transparent" />
-
-              <ul className="mt-5 space-y-2 text-[14px] leading-relaxed text-muted-foreground/80 sm:text-[15px]">
-                {before.bullets.map((b) => (
-                  <li key={b}>{b}</li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          {/* Cellule APRÈS — accentuée */}
-          <div className="group relative bg-background/95 p-8 transition-colors duration-500 hover:bg-card/60 sm:p-10">
-            <div
-              aria-hidden
-              className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-              style={{
-                background:
-                  'radial-gradient(circle at center top, rgba(78,186,236,0.10), transparent 70%)',
-              }}
-            />
-
-            <div className="relative flex flex-col items-center text-center">
-              <div className="flex size-12 items-center justify-center rounded-full border border-primary/40 bg-primary/5 text-primary transition-colors duration-500 group-hover:border-primary group-hover:bg-primary/10">
-                <after.icon className="size-5" aria-hidden />
-              </div>
-
-              <h3 className="mt-6 font-display text-xl font-semibold tracking-[-0.01em] text-foreground sm:text-2xl">
-                {after.title}
-              </h3>
-
-              <div className="mt-4 h-px w-12 bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
-
-              <ul className="mt-5 space-y-2 text-[14px] leading-relaxed text-foreground sm:text-[15px]">
-                {after.bullets.map((b) => (
-                  <li key={b}>{b}</li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </Reveal>
-
-        {/* Attribution */}
-        <div className="mt-6 flex justify-center">
-          <Link
-            href="/etudes-de-cas/referencement"
-            className="group inline-flex items-center gap-1.5 text-[13px] text-muted-foreground transition-colors hover:text-primary"
+        {/* Carrousel */}
+        <div className="mt-12 sm:mt-14">
+          <div
+            ref={scroller}
+            onScroll={onScroll}
+            className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-1 lg:gap-6 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
           >
-            <span>
-              <span className="font-medium text-foreground">Rennes Pneus</span> · {t.results.caseStudyLink[lang]}
-            </span>
-            <ArrowUpRight className="size-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            {cases.map((c, i) => (
+              <Reveal
+                as="div"
+                key={c.name}
+                delay={i * 0.08}
+                className="flex w-[84%] shrink-0 snap-center flex-col rounded-[1.35rem] border border-border/60 bg-card/40 p-6 transition-colors duration-500 hover:border-primary/30 sm:w-[47%] sm:p-8 lg:w-[calc((100%-3rem)/3)]"
+              >
+                <span className="inline-flex items-center gap-2 self-start rounded-full border border-primary/30 bg-primary/5 px-3.5 py-1.5 text-[13px] font-semibold text-foreground">
+                  <span className="size-1.5 shrink-0 rounded-full bg-primary" />
+                  {c.type}
+                </span>
+                <p className="mt-2.5 text-[12px] text-muted-foreground/70">{c.name}</p>
+
+                <div className="mt-7">
+                  <p className="font-display text-[2.75rem] font-bold leading-none tracking-[-0.03em] text-foreground sm:text-5xl">
+                    {c.big}
+                  </p>
+                  <p className="mt-2.5 text-[12px] font-medium uppercase tracking-[0.12em] text-muted-foreground/55">
+                    {c.unit}
+                  </p>
+                </div>
+
+                <div className="mt-6 border-t border-border/50 pt-4">
+                  <p className="text-[13px] leading-relaxed text-muted-foreground">{c.support}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+
+          {/* Points de navigation (mobile / tablette) */}
+          <div className="mt-6 flex justify-center gap-1.5 lg:hidden">
+            {cases.map((c, i) => (
+              <span
+                key={c.name}
+                className={cn(
+                  'h-1.5 rounded-full transition-all duration-300',
+                  i === active ? 'w-5 bg-primary' : 'w-1.5 bg-muted-foreground/30'
+                )}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* CTA */}
+        <div className="mt-10 flex justify-center">
+          <Link
+            href="/etudes-de-cas"
+            className="group inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/40 px-5 py-2.5 text-[14px] font-medium text-foreground transition-colors hover:border-primary/40 hover:text-primary"
+          >
+            {r.caseStudyLink[lang]}
+            <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </Link>
         </div>
+
+        <p className="mx-auto mt-8 max-w-2xl text-center text-[12.5px] leading-relaxed text-muted-foreground/55">
+          {r.disclaimer[lang]}
+        </p>
       </div>
     </section>
   )
