@@ -4,10 +4,10 @@ import { breadcrumbJsonLd, webPageJsonLd } from '@/components/seo/json-ld'
 import { SitesInternetContent } from './sites-content'
 
 const description =
-  '33 sites internet créés à Rennes et partout en France : vitrines, e-commerce et sites sur mesure pour PME, artisans et commerces. Tous en ligne et visitables.'
+  '31 sites internet créés à Rennes et partout en France : vitrines, e-commerce et sites sur mesure pour PME, artisans et commerces. Tous en ligne et visitables.'
 
 export const metadata: Metadata = {
-  title: '33 Réalisations Sites Internet à Rennes | Portfolio Web',
+  title: '31 Réalisations Sites Internet à Rennes | Portfolio Web',
   description,
   alternates: { canonical: '/etudes-de-cas/sites-internet' },
 }
