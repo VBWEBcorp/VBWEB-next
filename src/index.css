@@ -268,3 +268,12 @@
       'ss01' 1;
   }
 }
+
+/* Le bandeau cookies occupe le bas de l'ecran sur mobile : le bouton d'appel
+   flottant remonte au-dessus tant qu'il est affiche, sinon il disparait
+   derriere. Au-dela de sm le bandeau retourne dans son coin, rien a decaler. */
+@media (max-width: 639px) {
+  body[data-cookie-banner='1'] .floating-call {
+    bottom: 9.5rem;
+  }
+}

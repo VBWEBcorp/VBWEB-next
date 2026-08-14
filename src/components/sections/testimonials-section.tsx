@@ -146,7 +146,10 @@ export function TestimonialsSection() {
         {/* Video verticale + avis defilants : cote a cote a toutes les tailles,
             la video retrecit sur petit ecran plutot que de passer au-dessus. */}
         <div className="mt-14 flex flex-row items-center gap-3 pl-3 sm:gap-5 sm:pl-4 lg:gap-8 xl:pl-8">
-          <Reveal className="w-1/4 shrink-0">
+          {/* Un quart de la ligne des l'espace disponible. Sur telephone ce
+              quart tomberait sous les ~200 px en dessous desquels le lecteur
+              YouTube refuse de demarrer : la video y prend donc la moitie. */}
+          <Reveal className="w-1/2 shrink-0 sm:w-1/3 lg:w-1/4">
             <div className="relative aspect-[9/16] overflow-hidden rounded-[1.35rem] border border-border/60 bg-card/60 ring-1 ring-foreground/5">
               <LazyYouTube
                 videoId={SHORT_ID}

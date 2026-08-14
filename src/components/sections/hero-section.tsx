@@ -96,14 +96,16 @@ export function HeroSection() {
 
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(78,186,236,0.08),transparent_60%)]" aria-hidden />
 
-      <div className="relative z-10 mx-auto max-w-6xl px-4 pt-16 pb-16 sm:px-6 sm:pt-28 sm:pb-14 lg:px-8 lg:pt-36 lg:pb-16">
-        <div className="grid items-center gap-10 lg:grid-cols-[1fr_auto] lg:gap-x-16 lg:gap-y-8">
+      <div className="relative z-10 mx-auto max-w-6xl px-4 pt-6 pb-8 sm:px-6 sm:pt-28 sm:pb-14 lg:px-8 lg:pt-36 lg:pb-16">
+        <div className="grid items-center gap-4 sm:gap-10 lg:grid-cols-[1fr_auto] lg:gap-x-16 lg:gap-y-8">
           {/* Photo — à droite sur desktop (sur 2 rangées), en haut sur mobile/tablet */}
           <div
             className="order-1 flex justify-center lg:order-none lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:self-center"
             style={{ animation: 'hero-scale-in 0.7s cubic-bezier(0.22,1,0.36,1) 0.15s both' }}
           >
-            <div className="relative size-56 overflow-hidden rounded-full border-2 border-primary/20 shadow-[var(--shadow-lg)] ring-1 ring-foreground/5 sm:size-64 lg:size-72">
+            {/* Petit ecran : la photo cede de la place pour que le bouton
+                d'appel a l'action reste visible sans faire defiler. */}
+            <div className="relative size-36 overflow-hidden rounded-full border-2 border-primary/20 shadow-[var(--shadow-lg)] ring-1 ring-foreground/5 sm:size-64 lg:size-72">
               <Image
                 src="/victor.jpg"
                 alt="Victor Béasse, Consultant SEO à Rennes, fondateur de VBWEB"
@@ -125,13 +127,13 @@ export function HeroSection() {
           >
             {/* Eyebrow */}
             <div className="flex justify-center lg:justify-start">
-              <span className="inline-flex items-center rounded-full bg-primary px-4 py-1.5 font-display text-[11px] font-semibold tracking-[0.18em] text-primary-foreground uppercase shadow-[var(--shadow-sm)]">
+              <span className="inline-flex items-center rounded-full bg-primary px-3.5 py-1 font-display text-[10px] font-semibold tracking-[0.12em] text-primary-foreground uppercase shadow-[var(--shadow-sm)] sm:px-4 sm:py-1.5 sm:text-[11px] sm:tracking-[0.18em]">
                 {t.hero.eyebrow[lang]}
               </span>
             </div>
 
             {/* Titre style Framer */}
-            <h1 className="mt-5 font-display text-balance text-4xl font-medium leading-[1.05] tracking-[-0.03em] text-foreground sm:text-5xl lg:text-[4rem]">
+            <h1 className="mt-3.5 font-display text-balance text-[2rem] font-medium leading-[1.05] tracking-[-0.03em] text-foreground sm:mt-5 sm:text-5xl lg:text-[4rem]">
               {t.hero.h1Part1[lang]}{' '}
               <br className="hidden sm:block" />
               <span className="italic text-muted-foreground/80">{t.hero.h1Part2[lang]}</span>{' '}
@@ -139,14 +141,14 @@ export function HeroSection() {
             </h1>
 
             {/* Sous-titre */}
-            <p className="mx-auto mt-6 max-w-xl text-pretty text-[15px] leading-relaxed text-white sm:text-base lg:mx-0">
+            <p className="mx-auto mt-3.5 max-w-xl text-pretty text-[14px] leading-snug text-white sm:mt-6 sm:text-base sm:leading-relaxed lg:mx-0">
               {t.hero.subtitle[lang]}
             </p>
           </div>
 
           {/* CTAs + badge Google — sous le texte (à gauche sur desktop) */}
           <div
-            className="order-3 flex flex-col items-center gap-7 lg:order-none lg:col-start-1 lg:row-start-2 lg:items-start"
+            className="order-3 flex flex-col items-center gap-4 sm:gap-7 lg:order-none lg:col-start-1 lg:row-start-2 lg:items-start"
             style={{ animation: 'hero-scale-in 0.7s cubic-bezier(0.22,1,0.36,1) 0.15s both' }}
           >
             {/* CTAs */}
