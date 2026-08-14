@@ -3,7 +3,14 @@
 import { Star } from 'lucide-react'
 
 import { useHomeLang, t } from '@/components/home/lang'
+import { LazyYouTube } from '@/components/sections/lazy-youtube'
 import { Reveal } from '@/components/ui/reveal'
+
+// Short vertical, lu en boucle et sans commandes : il accompagne les avis,
+// il ne demande rien au visiteur. L'autoplay impose le son coupe, et le
+// bouclage exige de repasser l'identifiant en playlist.
+const SHORT_ID = 'ygRn3UEfB1A'
+const SHORT_PARAMS = `autoplay=1&mute=1&loop=1&playlist=${SHORT_ID}&controls=0&rel=0&modestbranding=1&playsinline=1`
 
 const testimonials = [
   { name: 'Maxime Guillois Magicien', initial: 'M', date: 'il y a 5 mois', text: 'Un immense merci à VBWeb et à Victor pour la création de mon site internet "Maxime Guillois Magicien" ! 🎩✨' },
@@ -136,10 +143,23 @@ export function TestimonialsSection() {
           </h2>
         </Reveal>
 
-        {/* Marquee rows */}
-        <div className="mt-14 space-y-5">
-          <MarqueeRow items={topRow} direction="left" />
-          {bottomRow.length > 0 && <MarqueeRow items={bottomRow} direction="right" />}
+        {/* Video verticale + avis defilants : cote a cote a toutes les tailles,
+            la video retrecit sur petit ecran plutot que de passer au-dessus. */}
+        <div className="mt-14 flex flex-row items-center gap-3 pl-3 sm:gap-5 sm:pl-4 lg:gap-8 xl:pl-8">
+          <Reveal className="w-1/4 shrink-0">
+            <div className="relative aspect-[9/16] overflow-hidden rounded-[1.35rem] border border-border/60 bg-card/60 ring-1 ring-foreground/5">
+              <LazyYouTube
+                videoId={SHORT_ID}
+                title="Victor Béasse, fondateur de VBWEB"
+                params={SHORT_PARAMS}
+              />
+            </div>
+          </Reveal>
+
+          <div className="min-w-0 flex-1 space-y-5">
+            <MarqueeRow items={topRow} direction="left" />
+            {bottomRow.length > 0 && <MarqueeRow items={bottomRow} direction="right" />}
+          </div>
         </div>
 
         {/* CTA */}

@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { breadcrumbJsonLd, webPageJsonLd } from '@/components/seo/json-ld'
 
 const description =
-  'Plan du site VBWEB : retrouvez toutes nos pages — services SEO, création de site internet, études de cas et informations légales.'
+  'Plan du site VBWEB : retrouvez toutes nos pages : services SEO, création de site internet, études de cas et informations légales.'
 
 export const metadata: Metadata = {
   title: 'Plan du Site',

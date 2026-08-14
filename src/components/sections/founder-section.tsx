@@ -46,37 +46,38 @@ export function FounderSection() {
               </h2>
             </div>
 
-            {/* Votre résultat — mis en avant : 3 bénéfices clairs + lien études de cas */}
+            {/* Votre résultat — les bénéfices en grand, un par bloc */}
             <div className="relative mt-10 sm:mt-12">
-              <div className="flex items-center gap-3">
-                <p className="font-display text-[11px] font-semibold uppercase tracking-[0.24em] text-primary/80">
-                  {t.founder.resultLabel[lang]}
-                </p>
-                <span className="h-px flex-1 bg-gradient-to-r from-border to-transparent" />
-              </div>
+              <p className="font-display text-sm font-semibold uppercase tracking-[0.18em] text-primary">
+                {t.founder.resultLabel[lang]}
+              </p>
 
-              <div className="mt-4 flex flex-wrap gap-2.5">
+              <ul className="mt-5 grid gap-3 sm:grid-cols-3 sm:gap-4">
                 {tags.map((tag, i) => {
                   const Icon = RESULT_ICONS[i] ?? TrendingUp
                   return (
-                    <span
+                    <li
                       key={tag}
-                      className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-background/50 px-3.5 py-2 text-[13px] font-medium text-foreground sm:text-[14px]"
+                      className="flex items-center gap-3.5 rounded-2xl border border-border/60 bg-background/50 px-5 py-4 sm:flex-col sm:items-start sm:gap-4 sm:px-6 sm:py-6"
                     >
-                      <Icon className="size-3.5 shrink-0 text-primary" aria-hidden />
-                      {tag}
-                    </span>
+                      <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary ring-1 ring-primary/15">
+                        <Icon className="size-5" aria-hidden />
+                      </span>
+                      <span className="font-display text-[17px] font-semibold leading-snug text-foreground sm:text-lg">
+                        {tag}
+                      </span>
+                    </li>
                   )
                 })}
-              </div>
+              </ul>
 
-              <div className="mt-5">
+              <div className="mt-6">
                 <Link
                   href="/etudes-de-cas"
-                  className="group/link inline-flex items-center gap-1.5 text-[13px] font-medium text-primary transition-colors hover:text-primary/80"
+                  className="group/link inline-flex items-center gap-1.5 text-sm font-medium text-primary transition-colors hover:text-primary/80"
                 >
                   {t.founder.resultCta[lang]}
-                  <ArrowUpRight className="size-3.5 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
+                  <ArrowUpRight className="size-4 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
                 </Link>
               </div>
             </div>

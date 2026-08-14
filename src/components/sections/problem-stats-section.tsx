@@ -64,7 +64,7 @@ function MockStyles() {
 function GoogleSearchMock() {
   const podium = ['Un concurrent', 'Un concurrent', 'Un concurrent']
   return (
-    <div className="rounded-xl border border-border/60 bg-background/50 p-3">
+    <div className="flex h-full flex-col rounded-xl border border-border/60 bg-background/50 p-3">
       <div className="flex items-center gap-2 rounded-full border border-border/60 bg-card/70 px-3 py-1.5">
         <GoogleG className="size-3.5" />
         <span className="flex-1 truncate text-[12px] text-muted-foreground">votre métier près de moi</span>
@@ -105,7 +105,9 @@ function GoogleSearchMock() {
 /** Mini-maquette animée : conversation IA qui se crée en direct */
 function AiChatMock() {
   return (
-    <div className="rounded-xl border border-border/60 bg-background/50 p-3">
+    // justify-center : la conversation est plus courte que le podium Google,
+    // on la centre pour que les deux cartes se terminent a la meme hauteur.
+    <div className="flex h-full flex-col justify-center rounded-xl border border-border/60 bg-background/50 p-3">
       {/* Question utilisateur */}
       <div className="vbweb-chat-user flex justify-end">
         <span className="max-w-[85%] rounded-2xl rounded-br-sm bg-primary/10 px-3 py-1.5 text-[11px] leading-snug text-foreground">
@@ -243,8 +245,9 @@ export function ProblemStatsSection() {
                     </p>
                   </div>
 
-                  {/* Mini-maquette visuelle */}
-                  <div className="mt-6">
+                  {/* Mini-maquette visuelle — occupe la hauteur restante pour
+                      que les deux cartes se ferment au meme niveau */}
+                  <div className="mt-6 flex flex-1 flex-col">
                     {stat.mock === 'google' ? <GoogleSearchMock /> : <AiChatMock />}
                   </div>
                 </div>

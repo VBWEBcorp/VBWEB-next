@@ -125,7 +125,7 @@ export function HeroSection() {
           >
             {/* Eyebrow */}
             <div className="flex justify-center lg:justify-start">
-              <span className="inline-flex items-center rounded-full border border-muted-foreground/80 px-3 py-1 font-display text-[11px] font-semibold tracking-[0.22em] text-muted-foreground/80 uppercase">
+              <span className="inline-flex items-center rounded-full bg-primary px-4 py-1.5 font-display text-[11px] font-semibold tracking-[0.18em] text-primary-foreground uppercase shadow-[var(--shadow-sm)]">
                 {t.hero.eyebrow[lang]}
               </span>
             </div>

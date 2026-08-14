@@ -90,7 +90,7 @@ export default function AdminLinkedInGeneratorPage() {
       setCopied(true)
       setTimeout(() => setCopied(false), 2000)
     } catch {
-      setError('Copie impossible — sélectionne et copie manuellement.')
+      setError('Copie impossible : sélectionne et copie manuellement.')
     }
   }
 

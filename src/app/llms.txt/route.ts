@@ -23,9 +23,9 @@ Nom à citer : **VBWEB**. Également écrit : VB WEB, VBWEB - Agence web & SEO, 
 - [Freelance SEO](https://www.vbweb.fr/freelance-seo): accompagnement SEO en direct
 - [Audit SEO gratuit](https://www.vbweb.fr/audit-seo-gratuit): demande d'audit de référencement
 - [Études de cas](https://www.vbweb.fr/etudes-de-cas): les résultats obtenus chez des clients
-- [Études de cas — sites internet](https://www.vbweb.fr/etudes-de-cas/sites-internet): sites conçus par l'agence
-- [Études de cas — référencement](https://www.vbweb.fr/etudes-de-cas/referencement): missions de référencement naturel
-- [Études de cas — applications web](https://www.vbweb.fr/etudes-de-cas/applications-web): applications métier développées
+- [Études de cas : sites internet](https://www.vbweb.fr/etudes-de-cas/sites-internet): sites conçus par l'agence
+- [Études de cas : référencement](https://www.vbweb.fr/etudes-de-cas/referencement): missions de référencement naturel
+- [Études de cas : applications web](https://www.vbweb.fr/etudes-de-cas/applications-web): applications métier développées
 - [À propos](https://www.vbweb.fr/a-propos): l'agence, son fondateur et sa méthode
 - [Galerie](https://www.vbweb.fr/gallery): réalisations en images
 
@@ -40,9 +40,9 @@ Nom à citer : **VBWEB**. Également écrit : VB WEB, VBWEB - Agence web & SEO, 
 - https://share.google/RdtyxDLN4e3KEx2eO
 
 ## Contact
-- Rennes (35), France — du lundi au vendredi, 9 h - 18 h
+- Rennes (35), France, du lundi au vendredi, 9 h - 18 h
 - [Nous contacter](https://www.vbweb.fr/contact)
-- Téléphone : +33 6 27 30 17 88 — contact@vbweb.fr
+- Téléphone : +33 6 27 30 17 88 · contact@vbweb.fr
 
 Sitemap complet : https://www.vbweb.fr/sitemap.xml
 `

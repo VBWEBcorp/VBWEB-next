@@ -8,6 +8,14 @@ import { useHomeLang, t } from '@/components/home/lang'
 import { Reveal } from '@/components/ui/reveal'
 import { cn } from '@/lib/utils'
 
+// Capture du site de chaque client, indexee par son nom (identique en FR et EN).
+// Hors du fichier de langue : une image ne se traduit pas.
+const CAPTURES: Record<string, string> = {
+  'Rennes Pneus': 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/RENNES-PNEUS-hq5zn5fj.webp',
+  EPICU: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/EPICU-d777r6ki.webp',
+  'Jumelles.com': 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/JUMELLES-d1d88m6n.webp',
+}
+
 export function ResultsSection() {
   const { lang } = useHomeLang()
   const r = t.results
@@ -59,25 +67,43 @@ export function ResultsSection() {
                 as="div"
                 key={c.name}
                 delay={i * 0.08}
-                className="flex w-[84%] shrink-0 snap-center flex-col rounded-[1.35rem] border border-border/60 bg-card/40 p-6 transition-colors duration-500 hover:border-primary/30 sm:w-[47%] sm:p-8 lg:w-[calc((100%-3rem)/3)]"
+                className="flex w-[84%] shrink-0 snap-center flex-col overflow-hidden rounded-[1.35rem] border border-border/60 bg-card/40 transition-colors duration-500 hover:border-primary/30 sm:w-[47%] lg:w-[calc((100%-3rem)/3)]"
               >
-                <span className="inline-flex items-center gap-2 self-start rounded-full border border-primary/30 bg-primary/5 px-3.5 py-1.5 text-[13px] font-semibold text-foreground">
-                  <span className="size-1.5 shrink-0 rounded-full bg-primary" />
-                  {c.type}
-                </span>
-                <p className="mt-2.5 text-[12px] text-muted-foreground/70">{c.name}</p>
+                {CAPTURES[c.name] && (
+                  <div className="relative aspect-[16/10] overflow-hidden border-b border-border/60">
+                    <img
+                      src={CAPTURES[c.name]}
+                      alt={`Site internet ${c.name}`}
+                      width={1440}
+                      height={900}
+                      loading="lazy"
+                      decoding="async"
+                      className="size-full object-cover object-top"
+                    />
+                  </div>
+                )}
 
-                <div className="mt-7">
-                  <p className="font-display text-[2.75rem] font-bold leading-none tracking-[-0.03em] text-foreground sm:text-5xl">
-                    {c.big}
-                  </p>
-                  <p className="mt-2.5 text-[12px] font-medium uppercase tracking-[0.12em] text-muted-foreground/55">
-                    {c.unit}
-                  </p>
-                </div>
+                <div className="flex flex-1 flex-col p-6 sm:p-8">
+                  <span className="inline-flex items-center gap-2 self-start rounded-full border border-primary/30 bg-primary/5 px-3.5 py-1.5 text-[13px] font-semibold text-foreground">
+                    <span className="size-1.5 shrink-0 rounded-full bg-primary" />
+                    {c.type}
+                  </span>
+                  <p className="mt-2.5 text-[12px] text-muted-foreground/70">{c.name}</p>
 
-                <div className="mt-6 border-t border-border/50 pt-4">
-                  <p className="text-[13px] leading-relaxed text-muted-foreground">{c.support}</p>
+                  <div className="mt-7">
+                    <p className="font-display text-[2.75rem] font-bold leading-none tracking-[-0.03em] text-foreground sm:text-5xl">
+                      {c.big}
+                    </p>
+                    <p className="mt-2.5 text-[12px] font-medium uppercase tracking-[0.12em] text-muted-foreground/55">
+                      {c.unit}
+                    </p>
+                  </div>
+
+                  {/* mt-auto : la ligne de detail se cale en bas, les trois
+                      cartes se terminent alors au meme niveau. */}
+                  <div className="mt-auto border-t border-border/50 pt-4">
+                    <p className="text-[13px] leading-relaxed text-muted-foreground">{c.support}</p>
+                  </div>
                 </div>
               </Reveal>
             ))}

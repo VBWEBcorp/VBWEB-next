@@ -71,7 +71,7 @@ export function AboutContent() {
                 <span className="italic text-muted-foreground/80">VBWEB</span> ?
               </h1>
               <p className="mx-auto mt-6 max-w-xl text-pretty text-[15px] leading-relaxed text-muted-foreground sm:text-base lg:mx-0">
-                Victor Béasse — Fondateur & CEO. Consultant SEO et développeur web depuis plus de 8 ans, au service des PME, artisans et commerces.
+                Victor Béasse, Fondateur & CEO. Consultant SEO et développeur web depuis plus de 8 ans, au service des PME, artisans et commerces.
               </p>
             </motion.div>
 

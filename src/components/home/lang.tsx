@@ -28,13 +28,13 @@ export function useHomeLang() {
 
 export const t = {
   hero: {
-    eyebrow: { fr: 'Victor Béasse - Expert SEO/GEO', en: 'Victor Béasse - SEO/GEO Expert' },
+    eyebrow: { fr: 'Victor Béasse - Référencement Google et IA', en: 'Victor Béasse - Google and AI visibility' },
     h1Part1: { fr: 'Plus de clients', en: 'More clients' },
     h1Part2: { fr: 'grâce à', en: 'thanks to' },
     h1Part3: { fr: "Google et l'IA", en: 'Google and AI' },
     subtitle: {
-      fr: "Vos clients vous cherchent sur Google et l'IA. Je vous y rends visible et crédible. Plus de clients, plus de chiffre d'affaires.",
-      en: 'Your clients search on Google and AI. I make you visible and credible there. More clients, more revenue.',
+      fr: "Vos clients vous cherchent sur Google et l'IA. Je vous y rends visible et crédible. Expert SEO et développeur web, je maîtrise toute la chaîne : le référencement comme le site. Plus de clients, plus de chiffre d'affaires.",
+      en: 'Your clients search on Google and AI. I make you visible and credible there. SEO expert and web developer, I master the whole chain: the SEO as well as the site. More clients, more revenue.',
     },
     ctaPrimary: { fr: 'Recevez votre diagnostic gratuit', en: 'Get your free diagnostic' },
     ctaSecondary: { fr: 'ou prendre directement rendez-vous', en: 'or book a meeting directly' },
@@ -67,7 +67,7 @@ export const t = {
     ],
   },
   founder: {
-    eyebrow: { fr: 'Votre expert SEO/GEO', en: 'Your SEO/GEO expert' },
+    eyebrow: { fr: 'Votre expert en visibilité Google et IA', en: 'Your Google and AI visibility expert' },
     h2Part1: { fr: 'Ce que je crée', en: 'What I create' },
     h2Part2: { fr: 'pour votre PME', en: 'for your business' },
     resultLabel: { fr: 'Votre résultat', en: 'Your outcome' },
@@ -93,8 +93,8 @@ export const t = {
       en: 'Your site looks great. Meanwhile, your competition is cashing in',
     },
     stat1Desc: {
-      fr: "Vos prospects tapent votre métier sur Google et dans l'IA — et atterrissent chez vos concurrents. Tous les jours.",
-      en: 'Prospects type your business into Google and AI — and land on your competitors. Every day.',
+      fr: "Vos prospects tapent votre métier sur Google et dans l'IA, et atterrissent chez vos concurrents. Tous les jours.",
+      en: 'Prospects type your business into Google and AI, and land on your competitors. Every day.',
     },
     stat2Label: {
       fr: 'des décisions B2B commencent en ligne',
@@ -105,8 +105,8 @@ export const t = {
       en: "Your clients don't stop at Google. They ask ChatGPT",
     },
     stat2Desc: {
-      fr: "Google, ChatGPT, Claude, Perplexity : vos prospects vous comparent partout. Si l'IA ne vous cite pas, vous n'existez pas — vos concurrents, eux, sont déjà cités.",
-      en: "Google, ChatGPT, Claude, Perplexity: prospects compare you everywhere. If AI doesn't cite you, you don't exist — your competitors already do.",
+      fr: "Google, ChatGPT, Claude, Perplexity : vos prospects vous comparent partout. Si l'IA ne vous cite pas, vous n'existez pas. Vos concurrents, eux, sont déjà cités.",
+      en: "Google, ChatGPT, Claude, Perplexity: prospects compare you everywhere. If AI doesn't cite you, you don't exist. Your competitors already do.",
     },
   },
   method: {
@@ -120,38 +120,46 @@ export const t = {
     steps: {
       fr: [
         {
-          title: 'Audit de la situation',
-          description: 'Où vous en êtes sur Google et dans l’IA, et ce qui vous freine aujourd’hui.',
+          title: 'Audit de votre présence en ligne',
+          description:
+            'Votre site, votre fiche Google, vos concurrents, et ce que les IA répondent quand on cherche votre métier.',
         },
         {
-          title: 'Amélioration ou création du site',
-          description: 'On repart de l’existant, ou on crée un site neuf quand il le faut vraiment.',
+          title: 'Proposition',
+          description:
+            'Optimisation de l’existant ou refonte complète : vous recevez une recommandation argumentée, avec le périmètre, le calendrier et le budget. La décision vous revient.',
         },
         {
-          title: 'Lancement du référencement',
-          description: 'Stratégie SEO & GEO pour être trouvé sur Google et cité par les IA.',
+          title: 'Actions mensuelles',
+          description:
+            'Chaque mois, du contenu et des optimisations qui font vivre votre site. Calibrés sur votre entreprise et vos clients, jamais sur un modèle générique.',
         },
         {
-          title: 'Suivi & croissance',
-          description: 'Reporting clair et optimisations continues. Vous restez sur votre métier.',
+          title: 'Suivi et croissance',
+          description:
+            'Vos résultats dans votre application VBWEB. Vous suivez la progression, vous gardez votre temps pour votre métier.',
         },
       ],
       en: [
         {
-          title: 'Audit of the situation',
-          description: 'Where you stand on Google and in AI, and what’s holding you back today.',
+          title: 'Audit of your online presence',
+          description:
+            'Your website, your Google listing, your competitors, and what AI answers when someone searches your trade.',
         },
         {
-          title: 'Improve or rebuild the site',
-          description: 'We start from what exists, or build a new site when it’s truly needed.',
+          title: 'Proposal',
+          description:
+            'Improving what you have or rebuilding it: you get a reasoned recommendation, with scope, timeline and budget. The decision is yours.',
         },
         {
-          title: 'Launch the SEO',
-          description: 'SEO & GEO strategy to be found on Google and cited by AI.',
+          title: 'Monthly actions',
+          description:
+            'Every month, content and improvements that keep your site alive. Tuned to your business and your clients, never to a generic template.',
         },
         {
-          title: 'Tracking & growth',
-          description: 'Clear reporting and continuous optimization. You stay focused on your business.',
+          title: 'Tracking and growth',
+          description:
+            'Your results in your VBWEB app. You follow the progress, you keep your time for your business.',
         },
       ],
     },
@@ -245,28 +253,31 @@ export const t = {
     eyebrow: { fr: 'Ce que je fais', en: 'What I do' },
     title: { fr: 'Mon métier : vous rendre visible et générer des clients.', en: 'My job: make you visible and generate clients.' },
     intro: {
-      fr: 'Je suis à la fois expert SEO/GEO et développeur web full-stack. Ce double profil, c’est votre avantage : je connecte le référencement, le site et la technique, j’interviens sur tout le process d’un seul coup et je repère les failles techniques que les autres laissent passer.',
-      en: 'I’m both an SEO/GEO expert and a full-stack web developer. That dual profile is your advantage: I connect SEO, the site and the tech, act on the whole process at once, and spot the technical flaws others miss.',
+      fr: 'Je suis à la fois expert en référencement Google, en visibilité sur les IA, et développeur web full-stack. Ce double profil, c’est votre avantage : je connecte le référencement, le site et la technique, j’interviens sur tout le process d’un seul coup et je repère les failles techniques que les autres laissent passer.',
+      en: 'I’m both a Google and AI visibility expert and a full-stack web developer. That dual profile is your advantage: I connect SEO, the site and the tech, act on the whole process at once, and spot the technical flaws others miss.',
     },
     items: {
       fr: [
-        { label: 'Référencement SEO & GEO', tag: 'Cœur de métier', href: '/referencement-seo' },
-        { label: 'Création de site internet', tag: 'Si besoin', href: '/creation-site-internet' },
-        { label: 'IA en entreprise & automatisations', tag: 'Pour aller plus loin', href: '/ia-entreprise' },
+        { label: 'Référencement Google et visibilité IA', href: '/referencement-seo' },
+        { label: "Création de site et développement d'applications complexes", href: '/creation-site-internet' },
+        { label: 'IA en entreprise & automatisations', href: '/ia-entreprise' },
       ],
       en: [
-        { label: 'SEO & GEO', tag: 'Core service', href: '/referencement-seo' },
-        { label: 'Website creation', tag: 'If needed', href: '/creation-site-internet' },
-        { label: 'AI for business & automation', tag: 'To go further', href: '/ia-entreprise' },
+        { label: 'Google and AI visibility', href: '/referencement-seo' },
+        { label: 'Website creation & complex app development', href: '/creation-site-internet' },
+        { label: 'AI for business & automation', href: '/ia-entreprise' },
       ],
     },
   },
   ctaGallery: {
     eyebrow: { fr: 'Diagnostic gratuit, sans engagement', en: 'Free diagnostic, no commitment' },
-    h2: { fr: 'Recevez votre diagnostic SEO/GEO', en: 'Get your SEO/GEO diagnostic' },
+    h2: {
+      fr: 'Votre entreprise est-elle visible sur Google et dans ChatGPT ?',
+      en: 'Is your business visible on Google and in ChatGPT?',
+    },
     description: {
-      fr: "Une analyse vidéo de 10 min sous 48h : où vous perdez des clients sur Google, où vous êtes invisible dans ChatGPT, Claude, Perplexity. Plan d'action concret pour votre PME.",
-      en: "A 10-min video analysis within 48h: where you lose clients on Google, where you're invisible on ChatGPT, Claude, Perplexity. Concrete action plan for your SMB.",
+      fr: "Je vous réponds en vidéo, 10 minutes, sous 48 heures : ce qui vous fait perdre des clients sur Google, et si les IA vous citent ou citent vos concurrents. Vous repartez avec un plan d'action clair, que vous deveniez client ou non.",
+      en: 'I answer you on video, 10 minutes, within 48 hours: what makes you lose clients on Google, and whether AI cites you or your competitors. You leave with a clear action plan, whether you become a client or not.',
     },
     ctaPrimary: { fr: 'Recevez votre diagnostic gratuit', en: 'Get your free diagnostic' },
     ctaSecondary: {
@@ -305,7 +316,7 @@ export const t = {
   },
   popup: {
     badge: { fr: '100 % gratuit · sans engagement', en: '100% free · no commitment' },
-    title: { fr: 'Votre diagnostic SEO/GEO en vidéo', en: 'Your SEO/GEO video diagnostic' },
+    title: { fr: 'Votre diagnostic de visibilité en vidéo', en: 'Your video visibility diagnostic' },
     subtitle: {
       fr: 'Analyse vidéo de 10 min de votre visibilité sur Google + IA. Sous 48h.',
       en: '10-min video analysis of your visibility on Google + AI. Within 48h.',
@@ -364,6 +375,6 @@ export const t = {
     servicesTitle: { fr: 'Services', en: 'Services' },
     legalTitle: { fr: 'Légal', en: 'Legal' },
     copyright: { fr: 'Tous droits réservés', en: 'All rights reserved' },
-    subTagline: { fr: 'Expert SEO/GEO', en: 'SEO/GEO Expert' },
+    subTagline: { fr: 'Référencement Google et IA', en: 'Google and AI visibility' },
   },
 } as const
