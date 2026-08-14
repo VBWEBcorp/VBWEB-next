@@ -34,9 +34,9 @@ const categories = [
   {
     icon: Globe,
     title: 'Sites Internet',
-    description: '19+ sites créés pour des PME, artisans et commerces. Design moderne, responsive et pensé pour convertir.',
+    description: '33 sites créés pour des PME, artisans et commerces. Design moderne, responsive et pensé pour convertir.',
     href: '/etudes-de-cas/sites-internet',
-    count: '19+ projets',
+    count: '33 projets',
   },
   {
     icon: Search,

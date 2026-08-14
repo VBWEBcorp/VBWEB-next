@@ -153,18 +153,114 @@ const projects: WebProject[] = [
     image: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1485846234645-a62644f84728-w800.webp',
     description: 'Plateforme de courts-métrages d\'acteurs et cinéastes indépendants.',
   },
+  {
+    id: 'actimaine',
+    name: 'Actimaine',
+    url: 'https://actimaine.fr/',
+    image: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/ACTIMAINE-902xtcu0.webp',
+    description: "Solutions d'encaissement et vidéosurveillance en Sarthe.",
+  },
+  {
+    id: 'studio-m',
+    name: 'Studio M',
+    url: 'https://studio-m-paris.fr/',
+    image: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/STUDIO-M-q0u0fuag.webp',
+    description: "Architecte d'intérieur à Paris.",
+  },
+  {
+    id: 'shi-shi-samui',
+    name: 'Shi Shi Samui',
+    url: 'https://shi-shi-samui.com/',
+    image: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/SHI-SHI-SAMUI-ud76jbgn.webp',
+    description: 'Club sport et loisirs à Koh Samui, en version française et anglaise.',
+  },
+  {
+    id: 'stella-c',
+    name: 'Stella C',
+    url: 'https://stella-ouibo.netlify.app/',
+    image: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/STELLA-C-cj4js09w.webp',
+    description: 'Maquilleuse mode, célébrités et événementiel à Paris.',
+  },
+  {
+    id: 'dp-renov',
+    name: 'DP Rénov',
+    url: 'https://dprenov.fr/',
+    image: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/DP-RENOV-eke6yg15.webp',
+    description: 'Couvreur spécialiste de la toiture dans la Manche.',
+  },
+  {
+    id: 'entre-maman-et-moi',
+    name: 'Entre Maman et Moi',
+    url: 'https://entre-maman-et-moi.fr/',
+    image: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/VIJI-y4vuspms.webp',
+    description: 'Kits culinaires indiens, ateliers et traiteur à Rennes.',
+  },
+  {
+    id: 'marius-aholou',
+    name: 'Marius Aholou',
+    url: 'https://coach-sport-rennes.fr/',
+    image: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/COACH-SPORT-RENNES-wbq6f4wt.webp',
+    description: 'Coach sportif en salle et à domicile à Rennes.',
+  },
+  {
+    id: 'lucie-jagot',
+    name: 'Lucie Jagot',
+    url: 'https://lucie-coach-rennes.fr/',
+    image: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/LUCIE-JAGOT-aftv82rx.webp',
+    description: 'Coach sportive pour femmes actives à Rennes.',
+  },
+  {
+    id: 'veronique-jan',
+    name: 'Véronique Jan',
+    url: 'https://sophrologue-vbweb.netlify.app/',
+    image: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/VERONIQUE-JAN-scxc5dcf.webp',
+    description: 'Hypnothérapeute et sophrologue à Rennes et Acigné.',
+  },
+  {
+    id: 'en-pays-we',
+    name: 'En Pays Wê',
+    url: 'https://demenageurs-en-pays-we.fr/',
+    image: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/EN-PAYS-WE-hkhgx552.webp',
+    description: 'Entreprise de déménagement à Besançon.',
+  },
+  {
+    id: 'auto-conduite',
+    name: 'Auto Conduite',
+    url: 'https://auto-conduite.com/',
+    image: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/AUTO-CONDUITE-5fh6y0ih.webp',
+    description: 'Location de véhicules à double commande en Moselle.',
+  },
+  {
+    id: 'bys-consulting',
+    name: 'BYS Consulting',
+    url: 'https://nour-ouibo.netlify.app/',
+    image: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/BYS-CONSULTING-ol1gwltl.webp',
+    description: "Recrutement, conseil RH et coaching d'entreprise.",
+  },
+  {
+    id: 'blitzclean-77',
+    name: 'BlitzClean 77',
+    url: 'https://www.blitzclean77.fr/',
+    image: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/BLITZCLEAN-77-m4903j3r.webp',
+    description: 'Nettoyage de chantiers et de locations en Seine-et-Marne.',
+  },
 ]
 
 function ProjectCard({ project, index }: { project: WebProject; index: number }) {
   return (
-    <Reveal delay={index * 0.04} className="h-full">
+    // Cascade par rangée : au-delà d'une trentaine de cartes, un délai cumulé
+    // ferait attendre les dernières bien trop longtemps.
+    <Reveal delay={(index % 6) * 0.04} className="h-full">
       <div className="group flex h-full flex-col overflow-hidden rounded-[1.35rem] border border-border/60 bg-card/40 transition-all duration-300 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5">
         <div className="relative aspect-[16/10] overflow-hidden">
           <img
             src={project.image}
             alt={`Site internet ${project.name} créé par VBWEB à Rennes`}
             className="size-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-            loading="lazy"
+            width={1440}
+            height={900}
+            loading={index < 6 ? 'eager' : 'lazy'}
+            decoding="async"
           />
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/80 via-background/10 to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-80" />
         </div>
@@ -208,11 +304,38 @@ export function SitesInternetContent() {
               Portfolio, Créations web à Rennes
             </p>
             <h1 className="mt-2 font-display text-balance text-[26px] leading-[1.08] tracking-[-0.03em] text-foreground sm:mt-3 sm:text-5xl">
-              Sites internet créés sur mesure
+              {projects.length} sites internet créés sur mesure
             </h1>
+            <p className="hero-description mx-auto mt-3 max-w-2xl text-pretty text-[13px] leading-relaxed text-muted-foreground sm:mt-4 sm:text-base">
+              Artisans, commerçants, indépendants et PME : chaque site ci-dessous
+              est en ligne aujourd&apos;hui. Cliquez, ils sont tous visitables.
+            </p>
           </div>
 
-          <Reveal delay={0.05} className="mx-auto mt-5 max-w-3xl sm:mt-6">
+          {/* ── Chiffres clés ── */}
+          <Reveal delay={0.04} className="mx-auto mt-6 max-w-3xl sm:mt-8">
+            <dl className="grid grid-cols-3 divide-x divide-border/60 rounded-2xl border border-border/60 bg-card/40 py-4 sm:py-5">
+              {[
+                { value: `${projects.length}`, label: 'sites en ligne' },
+                { value: '80+', label: 'avis 5 étoiles' },
+                { value: '100%', label: 'sur mesure' },
+              ].map((stat) => (
+                <div key={stat.label} className="px-2 text-center sm:px-4">
+                  <dt className="sr-only">{stat.label}</dt>
+                  <dd>
+                    <span className="block font-display text-xl font-semibold tracking-[-0.02em] text-primary sm:text-3xl">
+                      {stat.value}
+                    </span>
+                    <span className="mt-0.5 block text-[10px] leading-tight text-muted-foreground sm:text-xs">
+                      {stat.label}
+                    </span>
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </Reveal>
+
+          <Reveal delay={0.08} className="mx-auto mt-4 max-w-3xl sm:mt-5">
             <div className="rounded-2xl border border-border/60 bg-card/40 p-3 sm:p-4">
               <div className="flex items-start gap-2.5">
                 <Info className="mt-0.5 size-4 shrink-0 text-primary sm:size-5" />
