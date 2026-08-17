@@ -6,6 +6,11 @@ import Link from 'next/link'
 
 import { useHomeLang, t } from '@/components/home/lang'
 import { Reveal } from '@/components/ui/reveal'
+import { WEB_PROJECTS_HREF, webProjects } from '@/lib/projects'
+
+// Aperçu volontairement compact : une mosaïque de vignettes, pas une galerie.
+// Douze suffisent à donner le volume, le reste est sur la page dédiée.
+const previewProjects = webProjects.slice(0, 12)
 
 export function CaseStudiesSection() {
   const { lang } = useHomeLang()
@@ -51,6 +56,42 @@ export function CaseStudiesSection() {
               <ArrowUpRight className="ml-auto size-4 shrink-0 text-muted-foreground/40 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-primary" />
             </Link>
           ))}
+        </Reveal>
+
+        {/* Mosaïque de réalisations — chaque vignette mène à la page listant tous les sites */}
+        <Reveal className="mt-10 sm:mt-12">
+          <div className="flex items-baseline justify-between gap-4">
+            <p className="font-display text-[11px] font-semibold tracking-[0.24em] text-primary/80 uppercase">
+              {t.offers.worksEyebrow[lang]}
+            </p>
+            <Link
+              href={WEB_PROJECTS_HREF}
+              className="group inline-flex shrink-0 items-center gap-1 text-[13px] text-muted-foreground transition-colors hover:text-primary"
+            >
+              {t.offers.worksCta[lang].replace('{count}', String(webProjects.length))}
+              <ArrowUpRight className="size-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </Link>
+          </div>
+
+          <div className="mt-4 grid grid-cols-3 gap-2 sm:grid-cols-4 sm:gap-3 lg:grid-cols-6">
+            {previewProjects.map((project) => (
+              <Link key={project.id} href={WEB_PROJECTS_HREF} className="group block">
+                <div className="relative aspect-[16/11] overflow-hidden rounded-lg border border-border/60 bg-card/40 transition-colors duration-300 group-hover:border-primary/40">
+                  <Image
+                    src={project.image}
+                    alt={`Site internet ${project.name} créé par VBWEB`}
+                    fill
+                    loading="lazy"
+                    sizes="(max-width: 640px) 33vw, (max-width: 1024px) 25vw, 150px"
+                    className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.06]"
+                  />
+                </div>
+                <p className="mt-1.5 truncate text-[10px] leading-tight text-muted-foreground transition-colors duration-300 group-hover:text-primary sm:text-[11px]">
+                  {project.name}
+                </p>
+              </Link>
+            ))}
+          </div>
         </Reveal>
       </div>
     </section>

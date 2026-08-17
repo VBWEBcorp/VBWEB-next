@@ -268,6 +268,8 @@ export const t = {
         { label: 'AI for business & automation', href: '/ia-entreprise' },
       ],
     },
+    worksEyebrow: { fr: 'Réalisations', en: 'Selected work' },
+    worksCta: { fr: 'Voir les {count} sites', en: 'See all {count} sites' },
   },
   ctaGallery: {
     eyebrow: { fr: 'Diagnostic gratuit, sans engagement', en: 'Free diagnostic, no commitment' },

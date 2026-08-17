@@ -1,0 +1,231 @@
+export interface WebProject {
+  id: string
+  name: string
+  url: string
+  image: string
+  description: string
+}
+
+/** Page dediee listant l'integralite des sites crees. */
+export const WEB_PROJECTS_HREF = '/etudes-de-cas/sites-internet'
+
+export const webProjects: WebProject[] = [
+  {
+    id: 'yuzu-branding',
+    name: 'Yuzu Branding',
+    url: 'https://yuzu-vbweb.netlify.app/',
+    image: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/YUZU-BRANDING-bu8mfxcl.webp',
+    description: 'Agence de branding et identité visuelle.',
+  },
+  {
+    id: 'epicu',
+    name: 'EPICU',
+    url: 'https://epicu.fr/',
+    image: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/EPICU-d777r6ki.webp',
+    description: 'Plateforme lifestyle : food, travel et shopping local.',
+  },
+  {
+    id: 'vents-et-courbes',
+    name: 'Vents et Courbes',
+    url: 'https://ventsetcourbes.org/',
+    image: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/VENTS-ET-COURBES-jq2bmn4h.webp',
+    description: 'Association culturelle et artistique.',
+  },
+  {
+    id: 'fl-consulting',
+    name: 'FL Consulting',
+    url: 'https://fl-consulting.netlify.app/',
+    image: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/FL-CONSULTING-lcqlvaml.webp',
+    description: "Cabinet de consulting et stratégie d'entreprise.",
+  },
+  {
+    id: 'rennes-pneus',
+    name: 'Rennes Pneus',
+    url: 'https://rennespneus.fr/',
+    image: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/RENNES-PNEUS-hq5zn5fj.webp',
+    description: 'Garage automobile et vente de pneus à Rennes.',
+  },
+  {
+    id: 'matineh-food',
+    name: 'Matineh Food',
+    url: 'https://matinehfood.fr/',
+    image: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/MATINEH-FOOD-swhnxdha.webp',
+    description: 'Traiteur et restaurant iranien.',
+  },
+  {
+    id: 'shaan-production',
+    name: 'Shaan Production',
+    url: 'https://shaanproduction.fr/',
+    image: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/SHAAN-PRODUCTION-1vucnnkl.webp',
+    description: 'Monteur vidéo professionnel.',
+  },
+  {
+    id: 'shampouine-toi',
+    name: 'Shampouine Toi',
+    url: 'https://shampouinetoi.fr/',
+    image: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/SHAMPOUINE-TOI-dl9jdyse.webp',
+    description: 'Service de nettoyage à domicile à Rennes et Bordeaux.',
+  },
+  {
+    id: 'valentin-beasse',
+    name: 'Valentin Beasse',
+    url: 'https://valentin-beasse-coaching.netlify.app/',
+    image: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/VALENTIN-BEASSE-4vdt8qd8.webp',
+    description: 'Consultant en prise de parole en public.',
+  },
+  {
+    id: 'eco-habitat',
+    name: 'Eco Habitat',
+    url: 'https://couvreur-eco-habitat.fr/',
+    image: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/ECO-HABITAT-wdoid0f2.webp',
+    description: 'Couvreur et travaux de toiture.',
+  },
+  {
+    id: 'jeremy-simon-avocat',
+    name: 'Jérémy Simon Avocat',
+    url: 'https://jeremy-simon-avocat.fr/',
+    image: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/JEREMY-SIMON-AVOCAT-a2hqnl4b.webp',
+    description: 'Avocat en droit des affaires.',
+  },
+  {
+    id: 'julien-bidois',
+    name: 'Julien Bidois Chef Privé',
+    url: 'https://chef-julien-bidois.fr/',
+    image: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/JULIEN-BIDOIS-et85krqh.webp',
+    description: 'Chef cuisinier à domicile.',
+  },
+  {
+    id: 'les-lunettes-de-la-chapelle',
+    name: 'Les Lunettes de la Chapelle',
+    url: 'https://leslunettesdelachapelle.fr/',
+    image:
+      'https://pub-698f857760da42999dac8854114fbc41.r2.dev/LES-LUNETTES-DE-LA-CHAPELLE-o3qvbavc.webp',
+    description: 'Opticien indépendant.',
+  },
+  {
+    id: 'maxx-le-magicien',
+    name: 'Maxx Le Magicien',
+    url: 'https://maximeguilloismagicien.fr/',
+    image: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/MAXX-LE-MAGICIEN-ete6otl6.webp',
+    description: 'Magicien professionnel pour événements.',
+  },
+  {
+    id: 'on-parle-de-tout',
+    name: 'On Parle De Tout',
+    url: 'https://onparledetout.fr/',
+    image: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/ON-PARLE-DE-TOUT-0daf5lqm.webp',
+    description: 'Podcast et coach en santé mentale.',
+  },
+  {
+    id: 'solatrack',
+    name: 'Solatrack',
+    url: 'https://solatrack.fr/',
+    image: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/SOLATRACK-5js9hmxo.webp',
+    description: 'Tracker solaire pour le secteur agricole.',
+  },
+  {
+    id: 'es-solutions',
+    name: 'ES Solutions Communication',
+    url: 'https://es-solutions-communication.fr/',
+    image: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/ES-SOLUTIONS-4u47fjno.webp',
+    description: 'Société de conseil.',
+  },
+  {
+    id: 'cheap-actors',
+    name: 'Cheap Actors',
+    url: 'https://cheap-actors.netlify.app/',
+    image: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/CHEAP-ACTORS-23yni8l2.webp',
+    description: "Plateforme de courts-métrages d'acteurs et cinéastes indépendants.",
+  },
+  {
+    id: 'actimaine',
+    name: 'Actimaine',
+    url: 'https://actimaine.fr/',
+    image: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/ACTIMAINE-902xtcu0.webp',
+    description: "Solutions d'encaissement et vidéosurveillance en Sarthe.",
+  },
+  {
+    id: 'studio-m',
+    name: 'Studio M',
+    url: 'https://studio-m-paris.fr/',
+    image: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/STUDIO-M-q0u0fuag.webp',
+    description: "Architecte d'intérieur à Paris.",
+  },
+  {
+    id: 'shi-shi-samui',
+    name: 'Shi Shi Samui',
+    url: 'https://shi-shi-samui.com/',
+    image: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/SHI-SHI-SAMUI-ud76jbgn.webp',
+    description: 'Club sport et loisirs à Koh Samui, en version française et anglaise.',
+  },
+  {
+    id: 'stella-c',
+    name: 'Stella C',
+    url: 'https://stella-ouibo.netlify.app/',
+    image: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/STELLA-C-cj4js09w.webp',
+    description: 'Maquilleuse mode, célébrités et événementiel à Paris.',
+  },
+  {
+    id: 'dp-renov',
+    name: 'DP Rénov',
+    url: 'https://dprenov.fr/',
+    image: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/DP-RENOV-eke6yg15.webp',
+    description: 'Couvreur spécialiste de la toiture dans la Manche.',
+  },
+  {
+    id: 'entre-maman-et-moi',
+    name: 'Entre Maman et Moi',
+    url: 'https://entre-maman-et-moi.fr/',
+    image: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/VIJI-y4vuspms.webp',
+    description: 'Kits culinaires indiens, ateliers et traiteur à Rennes.',
+  },
+  {
+    id: 'marius-aholou',
+    name: 'Marius Aholou',
+    url: 'https://coach-sport-rennes.fr/',
+    image: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/COACH-SPORT-RENNES-wbq6f4wt.webp',
+    description: 'Coach sportif en salle et à domicile à Rennes.',
+  },
+  {
+    id: 'lucie-jagot',
+    name: 'Lucie Jagot',
+    url: 'https://lucie-coach-rennes.fr/',
+    image: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/LUCIE-JAGOT-aftv82rx.webp',
+    description: 'Coach sportive pour femmes actives à Rennes.',
+  },
+  {
+    id: 'veronique-jan',
+    name: 'Véronique Jan',
+    url: 'https://sophrologue-vbweb.netlify.app/',
+    image: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/VERONIQUE-JAN-scxc5dcf.webp',
+    description: 'Hypnothérapeute et sophrologue à Rennes et Acigné.',
+  },
+  {
+    id: 'en-pays-we',
+    name: 'En Pays Wê',
+    url: 'https://demenageurs-en-pays-we.fr/',
+    image: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/EN-PAYS-WE-hkhgx552.webp',
+    description: 'Entreprise de déménagement à Besançon.',
+  },
+  {
+    id: 'auto-conduite',
+    name: 'Auto Conduite',
+    url: 'https://auto-conduite.com/',
+    image: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/AUTO-CONDUITE-5fh6y0ih.webp',
+    description: 'Location de véhicules à double commande en Moselle.',
+  },
+  {
+    id: 'bys-consulting',
+    name: 'BYS Consulting',
+    url: 'https://nour-ouibo.netlify.app/',
+    image: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/BYS-CONSULTING-ol1gwltl.webp',
+    description: "Recrutement, conseil RH et coaching d'entreprise.",
+  },
+  {
+    id: 'blitzclean-77',
+    name: 'BlitzClean 77',
+    url: 'https://www.blitzclean77.fr/',
+    image: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/BLITZCLEAN-77-m4903j3r.webp',
+    description: 'Nettoyage de chantiers et de locations en Seine-et-Marne.',
+  },
+]
