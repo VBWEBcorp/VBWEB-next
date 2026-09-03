@@ -228,4 +228,11 @@ export const webProjects: WebProject[] = [
     image: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/BLITZCLEAN-77-m4903j3r.webp',
     description: 'Nettoyage de chantiers et de locations en Seine-et-Marne.',
   },
+  {
+    id: 'zine-coaching',
+    name: 'Zine Coaching',
+    url: 'https://zinecoaching.fr/',
+    image: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/ZINE-COACHING-p3k7wqz2.webp',
+    description: 'Coach sportif à Rennes : boxe anglaise, musculation et remise en forme.',
+  },
 ]
