@@ -57,7 +57,7 @@ export function FreelanceSeoContent({ faqs }: FreelanceSeoContentProps) {
           >
             <div className="mx-auto mb-6 size-20 overflow-hidden rounded-full border-2 border-primary/20 ring-1 ring-foreground/5 sm:size-24">
               <Image
-                src="/victor.jpg"
+                src="/victor-beasse.jpg"
                 alt="Victor Béasse, freelance SEO"
                 width={96}
                 height={96}

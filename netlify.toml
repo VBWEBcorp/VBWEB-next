@@ -59,6 +59,16 @@
   force = true
 
 # ============================================================
+# REDIRECTION 301 : ancienne photo du fondateur
+# /victor.jpg etait l'image Open Graph et le favicon jusqu'en 09/2026 ;
+# des partages LinkedIn et Google Images pointent encore dessus.
+# ============================================================
+[[redirects]]
+  from = "/victor.jpg"
+  to = "/victor-beasse.jpg"
+  status = 301
+
+# ============================================================
 # SECURITY HEADERS — appliques a toutes les pages
 # ============================================================
 [[headers]]

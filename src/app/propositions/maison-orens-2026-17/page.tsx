@@ -134,7 +134,7 @@ export default function PropositionMaisonOrensPage() {
           <div className="flex items-center justify-between gap-4">
             <div className="flex items-center gap-3">
               <Image
-                src="/victor.jpg"
+                src="/victor-beasse.jpg"
                 alt="Victor Béasse, fondateur de VBWEB"
                 width={48}
                 height={48}

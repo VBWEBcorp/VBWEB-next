@@ -57,10 +57,10 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/victor.jpg', type: 'image/jpeg' },
+      { url: '/victor-beasse.jpg', type: 'image/jpeg' },
     ],
-    shortcut: '/victor.jpg',
-    apple: '/victor.jpg',
+    shortcut: '/victor-beasse.jpg',
+    apple: '/victor-beasse.jpg',
   },
   alternates: {
     canonical: '/',

@@ -171,7 +171,7 @@ export function HeroEntrepriseSection() {
             <div aria-hidden className="absolute -inset-6 rounded-full bg-primary/10 blur-3xl" />
             <div className="relative size-56 overflow-hidden rounded-full border-2 border-primary/20 shadow-[var(--shadow-lg)] ring-1 ring-foreground/5 sm:size-64 lg:size-72">
               <Image
-                src="/victor.jpg"
+                src="/victor-beasse.jpg"
                 alt="Victor Béasse, fondateur de VBWEB"
                 width={288}
                 height={288}

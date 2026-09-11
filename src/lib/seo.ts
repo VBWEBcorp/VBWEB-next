@@ -8,7 +8,7 @@ export const siteConfig = {
   locale: 'fr_FR',
   description:
     'VBWEB - Création de sites internet, référencement naturel et applications web sur mesure. Stratégie digitale pour entreprises ambitieuses.',
-  ogImage: 'https://www.vbweb.fr/victor.jpg',
+  ogImage: 'https://www.vbweb.fr/victor-beasse.jpg',
   twitterHandle: '@vbweb',
   themeColor: '#1B2D46',
   phone: '+33 6 27 30 17 88',

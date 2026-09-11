@@ -444,7 +444,7 @@ export function ReferencementContent() {
           >
             <div className="relative mb-3 size-14 overflow-hidden rounded-full border-2 border-primary/30 sm:size-16">
               <img
-                src="/victor.jpg"
+                src="/victor-beasse.jpg"
                 alt="Victor Béasse, consultant SEO à Rennes"
                 className="size-full object-cover"
               />

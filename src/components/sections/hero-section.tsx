@@ -107,7 +107,7 @@ export function HeroSection() {
                 d'appel a l'action reste visible sans faire defiler. */}
             <div className="relative size-36 overflow-hidden rounded-full border-2 border-primary/20 shadow-[var(--shadow-lg)] ring-1 ring-foreground/5 sm:size-64 lg:size-72">
               <Image
-                src="/victor.jpg"
+                src="/victor-beasse.jpg"
                 alt="Victor Béasse, Consultant SEO à Rennes, fondateur de VBWEB"
                 width={288}
                 height={288}

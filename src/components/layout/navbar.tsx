@@ -30,7 +30,7 @@ interface MenuSection {
 }
 
 // Routes & icons stay constant; labels are looked up from translations at render time.
-const ABOUT_ITEM = { to: '/a-propos', key: 'about' as const, icon: User, image: '/victor.jpg' }
+const ABOUT_ITEM = { to: '/a-propos', key: 'about' as const, icon: User, image: '/victor-beasse.jpg' }
 // Les 3 activités — alignées avec la page d'accueil
 const SERVICE_ITEMS = [
   { to: '/referencement-seo', key: 'seo' as const, icon: Search },

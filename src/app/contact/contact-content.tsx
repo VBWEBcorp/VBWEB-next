@@ -199,7 +199,7 @@ export function ContactContent() {
                     />
                     <div className="relative size-28 overflow-hidden rounded-full border-2 border-primary/20 ring-1 ring-foreground/5 lg:size-32">
                       <Image
-                        src="/victor.jpg"
+                        src="/victor-beasse.jpg"
                         alt="Victor Béasse"
                         width={128}
                         height={128}

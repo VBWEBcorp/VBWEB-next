@@ -84,7 +84,7 @@ export function AboutContent() {
               <div aria-hidden className="absolute -inset-6 rounded-full bg-primary/10 blur-3xl" />
               <div className="relative size-56 overflow-hidden rounded-full border-2 border-primary/20 shadow-[var(--shadow-lg)] ring-1 ring-foreground/5 sm:size-64 lg:size-72">
                 <Image
-                  src="/victor.jpg"
+                  src="/victor-beasse.jpg"
                   alt="Victor Béasse, fondateur de VBWEB"
                   width={288}
                   height={288}
@@ -137,7 +137,7 @@ export function AboutContent() {
             <div className="mt-10 flex items-center justify-center gap-3">
               <div className="size-10 overflow-hidden rounded-full ring-1 ring-border/60">
                 <Image
-                  src="/victor.jpg"
+                  src="/victor-beasse.jpg"
                   alt=""
                   width={40}
                   height={40}
