@@ -55,13 +55,6 @@ export const metadata: Metadata = {
     'max-snippet': -1,
     'max-video-preview': -1,
   },
-  icons: {
-    icon: [
-      { url: '/victor-beasse.jpg', type: 'image/jpeg' },
-    ],
-    shortcut: '/victor-beasse.jpg',
-    apple: '/victor-beasse.jpg',
-  },
   alternates: {
     canonical: '/',
     types: {
