@@ -140,7 +140,7 @@ export const t = {
           description: 'Une recommandation claire : périmètre, délai, budget. Vous décidez.',
         },
         {
-          title: 'SEO chaque mois',
+          title: 'Référencement Google (SEO et IA) chaque mois',
           description: 'Contenu et optimisations pour dépasser vos concurrents sur Google et dans les IA.',
         },
         {
@@ -158,7 +158,7 @@ export const t = {
           description: 'A clear recommendation: scope, timeline, budget. You decide.',
         },
         {
-          title: 'SEO every month',
+          title: 'Google ranking (SEO and AI) every month',
           description: 'Content and improvements to outrank your competitors on Google and in AI.',
         },
         {
