@@ -39,6 +39,18 @@ export const t = {
     ctaPrimary: { fr: 'Recevez votre diagnostic gratuit', en: 'Get your free diagnostic' },
     ctaSecondary: { fr: 'ou prendre directement rendez-vous', en: 'or book a meeting directly' },
     reviews: { fr: '80+ avis', en: '80+ reviews' },
+    proofs: {
+      fr: [
+        { value: '150+', label: 'sites réalisés' },
+        { value: '200+', label: 'clients SEO accompagnés' },
+        { value: '10+', label: 'apps mobiles créées' },
+      ],
+      en: [
+        { value: '150+', label: 'websites delivered' },
+        { value: '200+', label: 'SEO clients supported' },
+        { value: '10+', label: 'mobile apps built' },
+      ],
+    },
   },
   audiences: {
     fr: [

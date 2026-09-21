@@ -171,17 +171,32 @@ export function HeroSection() {
               </a>
             </div>
 
-            {/* Badge avis Google */}
-            <div className="inline-flex items-center gap-3 rounded-full border border-border/60 bg-card/60 px-4 py-2 backdrop-blur-sm">
-              <GoogleG className="size-4" />
-              <span aria-hidden className="h-3 w-px bg-border" />
-              <div className="flex items-center gap-0.5">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} className="size-3 fill-amber-400 text-amber-400" aria-hidden />
-                ))}
+            {/* Badge avis Google + preuves chiffrées, sur une même ligne (retour à la ligne sur mobile) */}
+            <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-3 lg:justify-start">
+              <div className="inline-flex items-center gap-3 rounded-full border border-border/60 bg-card/60 px-4 py-2 backdrop-blur-sm">
+                <GoogleG className="size-4" />
+                <span aria-hidden className="h-3 w-px bg-border" />
+                <div className="flex items-center gap-0.5">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <Star key={i} className="size-3 fill-amber-400 text-amber-400" aria-hidden />
+                  ))}
+                </div>
+                <span aria-hidden className="h-3 w-px bg-border" />
+                <span className="text-[12px] font-medium text-muted-foreground">{t.hero.reviews[lang]}</span>
               </div>
-              <span aria-hidden className="h-3 w-px bg-border" />
-              <span className="text-[12px] font-medium text-muted-foreground">{t.hero.reviews[lang]}</span>
+
+              {/* Preuves : chiffre net, libellé discret, séparées par un filet */}
+              <ul className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5 text-[12px] text-muted-foreground lg:justify-start">
+                {t.hero.proofs[lang].map((proof, i) => (
+                  <li key={proof.label} className="flex items-center gap-4">
+                    {i > 0 && <span aria-hidden className="hidden h-3 w-px bg-border sm:block" />}
+                    <span className="whitespace-nowrap">
+                      <span className="font-display font-semibold text-foreground">{proof.value}</span>{' '}
+                      {proof.label}
+                    </span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
