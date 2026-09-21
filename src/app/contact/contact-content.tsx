@@ -2,10 +2,8 @@
 
 import { useState, FormEvent } from 'react'
 import { motion } from 'framer-motion'
-import { ArrowRight, MessageCircle, Calendar, CheckCircle2, Send, Mail, Phone } from 'lucide-react'
+import { ArrowRight, Calendar, CheckCircle2, Send } from 'lucide-react'
 import Image from 'next/image'
-
-import { siteConfig } from '@/lib/seo'
 
 const ease = [0.22, 1, 0.36, 1] as const
 
@@ -68,19 +66,9 @@ function ScrollColumn({
   )
 }
 
-const FORMSPREE = 'https://formspree.io/f/xojppgjr'
 const CALENDLY = 'https://calendly.com/web-rdv/echange-vbweb-30-minutes'
 
-const budgets = [
-  '- de 1 500 €/mois',
-  '1 500 € - 3 000 €/mois',
-  '3 000 € - 5 000 €/mois',
-  '+ de 5 000 €/mois',
-  'Je préfère en discuter de vive voix',
-]
-
 export function ContactContent() {
-  const [budget, setBudget] = useState('')
   const [sending, setSending] = useState(false)
   const [sent, setSent] = useState(false)
   const [error, setError] = useState('')
@@ -90,20 +78,24 @@ export function ContactContent() {
     setSending(true)
     setError('')
 
-    const form = e.currentTarget
-    const data = new FormData(form)
-    data.set('budget', budget)
+    const data = new FormData(e.currentTarget)
 
     try {
-      const res = await fetch(FORMSPREE, {
+      const res = await fetch('/api/contact', {
         method: 'POST',
-        body: data,
-        headers: { Accept: 'application/json' },
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          source: 'contact',
+          name: data.get('name'),
+          email: data.get('email'),
+          message: data.get('message'),
+          company: data.get('company'),
+        }),
       })
       if (res.ok) {
         setSent(true)
       } else {
-        setError('Une erreur est survenue. Réessayez ou appelez-nous directement.')
+        setError('Une erreur est survenue. Réessayez ou réservez un appel.')
       }
     } catch {
       setError('Erreur réseau. Vérifiez votre connexion.')
@@ -219,42 +211,11 @@ export function ContactContent() {
                     Je vous accompagne pour transformer votre site en un véritable levier de croissance.
                   </p>
 
-                  {/* Coordonnées */}
-                  <div className="mt-6 w-full space-y-2 text-left">
-                    <a
-                      href={`mailto:${siteConfig.email}`}
-                      className="group/contact flex items-center gap-3 rounded-xl border border-border/40 bg-background/40 px-3 py-2.5 text-[13px] text-muted-foreground transition-all duration-300 hover:border-primary/30 hover:bg-background/70 hover:text-foreground"
-                    >
-                      <span className="flex size-7 shrink-0 items-center justify-center rounded-lg border border-border/40 bg-background/60 text-muted-foreground transition-colors group-hover/contact:border-primary/40 group-hover/contact:text-primary">
-                        <Mail className="size-3.5" />
-                      </span>
-                      <span className="truncate">{siteConfig.email}</span>
-                    </a>
-                    <a
-                      href={`tel:${siteConfig.phone.replace(/\s/g, '')}`}
-                      className="group/contact flex items-center gap-3 rounded-xl border border-border/40 bg-background/40 px-3 py-2.5 text-[13px] text-muted-foreground transition-all duration-300 hover:border-primary/30 hover:bg-background/70 hover:text-foreground"
-                    >
-                      <span className="flex size-7 shrink-0 items-center justify-center rounded-lg border border-border/40 bg-background/60 text-muted-foreground transition-colors group-hover/contact:border-primary/40 group-hover/contact:text-primary">
-                        <Phone className="size-3.5" />
-                      </span>
-                      {siteConfig.phone}
-                    </a>
-                  </div>
-
                   {/* Divider */}
                   <div className="my-7 h-px w-full bg-gradient-to-r from-transparent via-border/60 to-transparent" />
 
-                  {/* WhatsApp + Calendly CTAs */}
+                  {/* Rendez-vous direct */}
                   <div className="w-full space-y-3">
-                    <a
-                      href={`https://wa.me/${siteConfig.phone.replace(/[^0-9]/g, '')}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group/cta flex h-11 w-full items-center justify-center gap-2 rounded-full border border-border/60 bg-background/60 px-5 text-[13px] font-medium text-foreground/90 backdrop-blur-sm transition-all duration-300 hover:border-primary/40 hover:bg-background/80"
-                    >
-                      <MessageCircle className="size-4 text-primary" />
-                      WhatsApp
-                    </a>
                     <a
                       href={CALENDLY}
                       target="_blank"
@@ -307,6 +268,7 @@ export function ContactContent() {
                     </motion.div>
                   ) : (
                     <form className="space-y-6" onSubmit={handleSubmit}>
+                      <input type="text" name="company" tabIndex={-1} autoComplete="off" aria-hidden className="hidden" />
                       {/* Eyebrow */}
                       <div>
                         <p className="font-display text-[10px] font-semibold uppercase tracking-[0.22em] text-primary/80">
@@ -354,29 +316,6 @@ export function ContactContent() {
                         </div>
                       </div>
 
-                      {/* Budget */}
-                      <div>
-                        <p className="mb-3 text-[12px] font-medium uppercase tracking-[0.12em] text-muted-foreground/70">
-                          Budget estimé
-                        </p>
-                        <div className="flex flex-wrap gap-2">
-                          {budgets.map((b) => (
-                            <button
-                              key={b}
-                              type="button"
-                              onClick={() => setBudget(budget === b ? '' : b)}
-                              className={`rounded-full px-4 py-2 text-[13px] font-medium transition-all duration-300 ${
-                                budget === b
-                                  ? 'border border-primary/40 bg-primary/15 text-primary'
-                                  : 'border border-border/60 bg-background/40 text-muted-foreground hover:border-foreground/30 hover:text-foreground'
-                              }`}
-                            >
-                              {b}
-                            </button>
-                          ))}
-                        </div>
-                      </div>
-
                       {/* Message */}
                       <div>
                         <label
@@ -388,7 +327,8 @@ export function ContactContent() {
                         <textarea
                           id="message"
                           name="message"
-                          rows={4}
+                          rows={5}
+                          required
                           placeholder="Décrivez votre projet en quelques mots…"
                           className="w-full resize-none rounded-xl border border-border/60 bg-background/60 px-4 py-3 text-[14px] text-foreground placeholder:text-muted-foreground/40 outline-none backdrop-blur-sm transition-all focus:border-primary/60 focus:bg-background/90 focus:ring-2 focus:ring-primary/10"
                         />

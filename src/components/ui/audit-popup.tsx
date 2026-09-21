@@ -5,7 +5,6 @@ import { useState, FormEvent, useEffect, useCallback } from 'react'
 
 import { useHomeLang, t } from '@/components/home/lang'
 
-const FORMSPREE = 'https://formspree.io/f/xojppgjr'
 const CALENDLY = 'https://calendly.com/web-rdv/echange-vbweb-30-minutes'
 
 export function useAuditPopup() {
@@ -44,13 +43,19 @@ export function AuditPopup({ open, onClose }: { open: boolean; onClose: () => vo
     setError('')
 
     const data = new FormData(e.currentTarget)
-    data.set('service', 'Diagnostic SEO/GEO gratuit')
 
     try {
-      const res = await fetch(FORMSPREE, {
+      const res = await fetch('/api/contact', {
         method: 'POST',
-        body: data,
-        headers: { Accept: 'application/json' },
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          source: 'audit',
+          name: data.get('name'),
+          email: data.get('email'),
+          website: data.get('website'),
+          budget: data.get('budget'),
+          company: data.get('company'),
+        }),
       })
       if (res.ok) {
         setSent(true)
@@ -137,6 +142,7 @@ export function AuditPopup({ open, onClose }: { open: boolean; onClose: () => vo
               </div>
 
               <form className="space-y-3" onSubmit={handleSubmit}>
+                <input type="text" name="company" tabIndex={-1} autoComplete="off" aria-hidden className="hidden" />
                 <div>
                   <label htmlFor="audit-name" className="mb-1.5 block text-[12px] font-medium uppercase tracking-[0.12em] text-muted-foreground/70">
                     {tp.nameLabel[lang]}
@@ -191,11 +197,9 @@ export function AuditPopup({ open, onClose }: { open: boolean; onClose: () => vo
                     className="w-full appearance-none rounded-xl border border-border/60 bg-card/40 px-4 py-2.5 text-base text-foreground outline-none transition-all focus:border-primary/60 focus:ring-2 focus:ring-primary/10"
                   >
                     <option value="" disabled>{tp.budgetPlaceholder[lang]}</option>
-                    <option value="<1500">{budgetOptions[0]}</option>
-                    <option value="1500-3000">{budgetOptions[1]}</option>
-                    <option value="3000-5000">{budgetOptions[2]}</option>
-                    <option value=">5000">{budgetOptions[3]}</option>
-                    <option value="discuter">{budgetOptions[4]}</option>
+                    {budgetOptions.map((b) => (
+                      <option key={b} value={b}>{b}</option>
+                    ))}
                   </select>
                 </div>
 
