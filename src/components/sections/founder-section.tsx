@@ -4,7 +4,7 @@ import { ArrowUpRight, TrendingUp, Users, Layers } from 'lucide-react'
 import Link from 'next/link'
 
 import { useHomeLang, t } from '@/components/home/lang'
-import { LazyYouTube } from '@/components/sections/lazy-youtube'
+import { AutoplayYouTube } from '@/components/sections/autoplay-youtube'
 import { Reveal } from '@/components/ui/reveal'
 
 const VIDEO_ID = 'M9_8FHzDsl4'
@@ -87,11 +87,7 @@ export function FounderSection() {
               className="relative mt-10 sm:mt-12"
             >
               <div className="relative aspect-video overflow-hidden rounded-[1.25rem] border border-border/60 bg-background ring-1 ring-foreground/5 sm:rounded-[1.5rem]">
-                <LazyYouTube
-                  videoId={VIDEO_ID}
-                  title="Victor Béasse, Fondateur VBWEB"
-                  params={`autoplay=1&mute=1&loop=1&playlist=${VIDEO_ID}&rel=0&modestbranding=1&playsinline=1`}
-                />
+                <AutoplayYouTube videoId={VIDEO_ID} title="Victor Béasse, Fondateur VBWEB" />
               </div>
             </div>
 

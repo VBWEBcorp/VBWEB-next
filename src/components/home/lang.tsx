@@ -132,46 +132,38 @@ export const t = {
     steps: {
       fr: [
         {
-          title: 'Audit gratuit de votre visibilité en ligne',
-          description:
-            'Ce qui fonctionne déjà sur votre site et vos axes d’amélioration : fiche Google, concurrents, et ce que les IA répondent quand on cherche votre métier.',
+          title: 'Audit gratuit',
+          description: 'Site, fiche Google, concurrents, réponses des IA : ce qui marche, ce qui bloque.',
         },
         {
-          title: 'Refonte ou non : on décide ensemble',
-          description:
-            'Optimisation de l’existant ou refonte complète : vous recevez une recommandation argumentée, avec le périmètre, le calendrier et le budget. La décision vous revient.',
+          title: 'Refonte ou optimisation',
+          description: 'Une recommandation claire : périmètre, délai, budget. Vous décidez.',
         },
         {
-          title: 'Accompagnement SEO mensuel',
-          description:
-            'Chaque mois, du contenu et des optimisations pour surpasser vos concurrents sur Google et dans les réponses de ChatGPT ou Perplexity. L’algorithme bouge sans arrêt, votre site suit.',
+          title: 'SEO chaque mois',
+          description: 'Contenu et optimisations pour dépasser vos concurrents sur Google et dans les IA.',
         },
         {
-          title: 'Suivi et croissance',
-          description:
-            'Vos résultats dans votre application VBWEB. Vous suivez la progression, vous gardez votre temps pour votre métier.',
+          title: 'Suivi des résultats',
+          description: 'Tout dans votre application VBWEB. Vous gardez votre temps pour votre métier.',
         },
       ],
       en: [
         {
-          title: 'Free audit of your online visibility',
-          description:
-            'What already works on your site and where to improve: Google listing, competitors, and what AI answers when someone searches your trade.',
+          title: 'Free audit',
+          description: 'Site, Google listing, competitors, AI answers: what works, what holds you back.',
         },
         {
-          title: 'Rebuild or not: we decide together',
-          description:
-            'Improving what you have or rebuilding it: you get a reasoned recommendation, with scope, timeline and budget. The decision is yours.',
+          title: 'Rebuild or optimise',
+          description: 'A clear recommendation: scope, timeline, budget. You decide.',
         },
         {
-          title: 'Monthly SEO support',
-          description:
-            'Every month, content and improvements to outrank your competitors on Google and in ChatGPT or Perplexity answers. The algorithm never stops moving, your site keeps up.',
+          title: 'SEO every month',
+          description: 'Content and improvements to outrank your competitors on Google and in AI.',
         },
         {
-          title: 'Tracking and growth',
-          description:
-            'Your results in your VBWEB app. You follow the progress, you keep your time for your business.',
+          title: 'Results tracking',
+          description: 'All in your VBWEB app. You keep your time for your business.',
         },
       ],
     },
@@ -337,7 +329,11 @@ export const t = {
     },
     nameLabel: { fr: 'Votre nom', en: 'Your name' },
     emailLabel: { fr: 'Votre email', en: 'Your email' },
-    urlLabel: { fr: 'URL de votre site', en: 'Your website URL' },
+    urlLabel: { fr: 'Votre site', en: 'Your website' },
+    siteNone: { fr: "Je n'ai pas encore de site", en: "I don't have a website yet" },
+    messageLabel: { fr: 'Votre projet', en: 'Your project' },
+    messagePlaceholder: { fr: 'En quelques mots', en: 'A few words' },
+    optional: { fr: 'optionnel', en: 'optional' },
     budgetLabel: { fr: 'Budget mensuel envisagé', en: 'Monthly budget' },
     budgetPlaceholder: { fr: 'Sélectionnez votre budget…', en: 'Select your budget…' },
     budgetOptions: {
@@ -346,7 +342,7 @@ export const t = {
         '1 500 € - 3 000 €/mois',
         '3 000 € - 5 000 €/mois',
         '+ de 5 000 €/mois',
-        'Je préfère en discuter de vive voix',
+        'Je préfère en parler de vive voix',
       ],
       en: [
         '< 1,500 €/month',

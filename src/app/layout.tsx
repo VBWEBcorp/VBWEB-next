@@ -85,9 +85,9 @@ export default function RootLayout({
       <head>
         {/* Preconnect vers R2 (hôte de toutes les images du site) */}
         <link rel="preconnect" href="https://pub-698f857760da42999dac8854114fbc41.r2.dev" crossOrigin="anonymous" />
-        {/* DNS prefetch pour les ressources externes paresseuses (pas critiques) */}
+        {/* Preconnect vers le lecteur YouTube : la vidéo de présentation démarre dès l'ouverture */}
+        <link rel="preconnect" href="https://www.youtube-nocookie.com" />
         <link rel="dns-prefetch" href="https://i.ytimg.com" />
-        <link rel="dns-prefetch" href="https://www.youtube-nocookie.com" />
       </head>
       <body className="flex min-h-dvh flex-col">
         <a

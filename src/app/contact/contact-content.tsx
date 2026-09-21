@@ -1,9 +1,11 @@
 'use client'
 
-import { useState, FormEvent } from 'react'
+import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { ArrowRight, Calendar, CheckCircle2, Send } from 'lucide-react'
+import { ArrowRight, Calendar, CheckCircle2 } from 'lucide-react'
 import Image from 'next/image'
+
+import { ContactForm } from '@/components/ui/contact-form'
 
 const ease = [0.22, 1, 0.36, 1] as const
 
@@ -69,40 +71,7 @@ function ScrollColumn({
 const CALENDLY = 'https://calendly.com/web-rdv/echange-vbweb-30-minutes'
 
 export function ContactContent() {
-  const [sending, setSending] = useState(false)
   const [sent, setSent] = useState(false)
-  const [error, setError] = useState('')
-
-  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault()
-    setSending(true)
-    setError('')
-
-    const data = new FormData(e.currentTarget)
-
-    try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          source: 'contact',
-          name: data.get('name'),
-          email: data.get('email'),
-          message: data.get('message'),
-          company: data.get('company'),
-        }),
-      })
-      if (res.ok) {
-        setSent(true)
-      } else {
-        setError('Une erreur est survenue. Réessayez ou réservez un appel.')
-      }
-    } catch {
-      setError('Erreur réseau. Vérifiez votre connexion.')
-    } finally {
-      setSending(false)
-    }
-  }
 
   return (
     <>
@@ -267,9 +236,7 @@ export function ContactContent() {
                       </a>
                     </motion.div>
                   ) : (
-                    <form className="space-y-6" onSubmit={handleSubmit}>
-                      <input type="text" name="company" tabIndex={-1} autoComplete="off" aria-hidden className="hidden" />
-                      {/* Eyebrow */}
+                    <div className="space-y-6">
                       <div>
                         <p className="font-display text-[10px] font-semibold uppercase tracking-[0.22em] text-primary/80">
                           Formulaire
@@ -278,82 +245,8 @@ export function ContactContent() {
                           Décrivez votre projet
                         </h3>
                       </div>
-
-                      {/* Name + Email */}
-                      <div className="grid gap-4 sm:grid-cols-2">
-                        <div>
-                          <label
-                            htmlFor="name"
-                            className="mb-2 block text-[12px] font-medium uppercase tracking-[0.12em] text-muted-foreground/70"
-                          >
-                            Nom
-                          </label>
-                          <input
-                            id="name"
-                            name="name"
-                            required
-                            autoComplete="name"
-                            placeholder="Votre nom"
-                            className="w-full rounded-xl border border-border/60 bg-background/60 px-4 py-3 text-[14px] text-foreground placeholder:text-muted-foreground/40 outline-none backdrop-blur-sm transition-all focus:border-primary/60 focus:bg-background/90 focus:ring-2 focus:ring-primary/10"
-                          />
-                        </div>
-                        <div>
-                          <label
-                            htmlFor="email"
-                            className="mb-2 block text-[12px] font-medium uppercase tracking-[0.12em] text-muted-foreground/70"
-                          >
-                            Email
-                          </label>
-                          <input
-                            id="email"
-                            name="email"
-                            type="email"
-                            required
-                            autoComplete="email"
-                            placeholder="vous@email.com"
-                            className="w-full rounded-xl border border-border/60 bg-background/60 px-4 py-3 text-[14px] text-foreground placeholder:text-muted-foreground/40 outline-none backdrop-blur-sm transition-all focus:border-primary/60 focus:bg-background/90 focus:ring-2 focus:ring-primary/10"
-                          />
-                        </div>
-                      </div>
-
-                      {/* Message */}
-                      <div>
-                        <label
-                          htmlFor="message"
-                          className="mb-2 block text-[12px] font-medium uppercase tracking-[0.12em] text-muted-foreground/70"
-                        >
-                          Votre projet
-                        </label>
-                        <textarea
-                          id="message"
-                          name="message"
-                          rows={5}
-                          required
-                          placeholder="Décrivez votre projet en quelques mots…"
-                          className="w-full resize-none rounded-xl border border-border/60 bg-background/60 px-4 py-3 text-[14px] text-foreground placeholder:text-muted-foreground/40 outline-none backdrop-blur-sm transition-all focus:border-primary/60 focus:bg-background/90 focus:ring-2 focus:ring-primary/10"
-                        />
-                      </div>
-
-                      {error && (
-                        <p className="text-[13px] text-red-400">{error}</p>
-                      )}
-
-                      {/* Submit */}
-                      <button
-                        type="submit"
-                        disabled={sending}
-                        className="group flex h-12 w-full items-center justify-center gap-2 rounded-full bg-primary text-[14px] font-medium text-primary-foreground transition-all hover:bg-primary/85 disabled:opacity-50"
-                      >
-                        {sending ? (
-                          'Envoi en cours…'
-                        ) : (
-                          <>
-                            Envoyer ma demande
-                            <Send className="size-4 transition-transform group-hover:translate-x-0.5" />
-                          </>
-                        )}
-                      </button>
-                    </form>
+                      <ContactForm source="contact" submitLabel="Envoyer ma demande" onSent={() => setSent(true)} />
+                    </div>
                   )}
                 </div>
               </div>

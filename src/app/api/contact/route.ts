@@ -64,11 +64,12 @@ export async function POST(req: Request) {
   if (!name || !isEmail(email)) {
     return NextResponse.json({ error: 'Nom et email requis' }, { status: 400 })
   }
-  if (source === 'audit' && !website) {
+  if (!website) {
     return NextResponse.json({ error: 'Site requis' }, { status: 400 })
   }
 
-  const subject = source === 'audit' ? `Audit gratuit : ${name} (${website})` : `Contact : ${name}`
+  const hasSite = /^https?:\/\//i.test(website)
+  const subject = `${source === 'audit' ? 'Audit gratuit' : 'Contact'} : ${name} (${website})`
   const fields: Array<[string, string]> = [
     ['Nom', name],
     ['Email', email],
@@ -93,7 +94,7 @@ export async function POST(req: Request) {
               `<tr><td style="padding:2px 12px 2px 0;color:#666">${k}</td><td style="padding:2px 0">${
                 k === 'Email'
                   ? `<a href="mailto:${escapeHtml(v)}">${escapeHtml(v)}</a>`
-                  : k === 'Site'
+                  : k === 'Site' && hasSite
                     ? `<a href="${escapeHtml(v)}">${escapeHtml(v)}</a>`
                     : escapeHtml(v)
               }</td></tr>`,
@@ -121,7 +122,7 @@ export async function POST(req: Request) {
   // Accusé de réception au prospect : sa réussite ne conditionne pas la réponse.
   const ack =
     source === 'audit'
-      ? `Bonjour ${name},\n\nBien reçu. Je regarde ${website} et je vous envoie votre audit en vidéo sous 48 heures.\n\nSi vous préférez en parler de vive voix, réservez un créneau : ${CALENDLY}\n\nVictor Béasse\nVBWEB\n${siteConfig.url}`
+      ? `Bonjour ${name},\n\nBien reçu. ${hasSite ? `Je regarde ${website} et je` : 'Je'} vous envoie votre audit en vidéo sous 48 heures.\n\nSi vous préférez en parler de vive voix, réservez un créneau : ${CALENDLY}\n\nVictor Béasse\nVBWEB\n${siteConfig.url}`
       : `Bonjour ${name},\n\nBien reçu, je vous réponds sous 24 heures.\n\nSi vous préférez en parler de vive voix, réservez un créneau : ${CALENDLY}\n\nVictor Béasse\nVBWEB\n${siteConfig.url}`
 
   sendMail(apiKey, {

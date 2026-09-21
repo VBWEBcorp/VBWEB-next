@@ -1,9 +1,10 @@
 'use client'
 
-import { ArrowRight, CalendarClock, CheckCircle2, ShieldCheck, X } from 'lucide-react'
-import { useState, FormEvent, useEffect, useCallback } from 'react'
+import { CalendarClock, CheckCircle2, ShieldCheck, X } from 'lucide-react'
+import { useState, useEffect, useCallback } from 'react'
 
 import { useHomeLang, t } from '@/components/home/lang'
+import { ContactForm } from '@/components/ui/contact-form'
 
 const CALENDLY = 'https://calendly.com/web-rdv/echange-vbweb-30-minutes'
 
@@ -13,12 +14,9 @@ export function useAuditPopup() {
 }
 
 export function AuditPopup({ open, onClose }: { open: boolean; onClose: () => void }) {
-  const [sending, setSending] = useState(false)
   const [sent, setSent] = useState(false)
-  const [error, setError] = useState('')
   const { lang } = useHomeLang()
   const tp = t.popup
-  const budgetOptions = tp.budgetOptions[lang]
 
   const handleKey = useCallback((e: KeyboardEvent) => {
     if (e.key === 'Escape') onClose()
@@ -36,38 +34,6 @@ export function AuditPopup({ open, onClose }: { open: boolean; onClose: () => vo
       window.removeEventListener('keydown', handleKey)
     }
   }, [open, handleKey])
-
-  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault()
-    setSending(true)
-    setError('')
-
-    const data = new FormData(e.currentTarget)
-
-    try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          source: 'audit',
-          name: data.get('name'),
-          email: data.get('email'),
-          website: data.get('website'),
-          budget: data.get('budget'),
-          company: data.get('company'),
-        }),
-      })
-      if (res.ok) {
-        setSent(true)
-      } else {
-        setError(tp.errorGeneric[lang])
-      }
-    } catch {
-      setError(tp.errorNetwork[lang])
-    } finally {
-      setSending(false)
-    }
-  }
 
   if (!open) return null
 
@@ -141,85 +107,7 @@ export function AuditPopup({ open, onClose }: { open: boolean; onClose: () => vo
                 </p>
               </div>
 
-              <form className="space-y-3" onSubmit={handleSubmit}>
-                <input type="text" name="company" tabIndex={-1} autoComplete="off" aria-hidden className="hidden" />
-                <div>
-                  <label htmlFor="audit-name" className="mb-1.5 block text-[12px] font-medium uppercase tracking-[0.12em] text-muted-foreground/70">
-                    {tp.nameLabel[lang]}
-                  </label>
-                  <input
-                    id="audit-name"
-                    name="name"
-                    required
-                    autoComplete="name"
-                    placeholder="Victor Béasse"
-                    className="w-full rounded-xl border border-border/60 bg-card/40 px-4 py-2.5 text-base text-foreground placeholder:text-muted-foreground/40 outline-none transition-all focus:border-primary/60 focus:ring-2 focus:ring-primary/10"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="audit-email" className="mb-1.5 block text-[12px] font-medium uppercase tracking-[0.12em] text-muted-foreground/70">
-                    {tp.emailLabel[lang]}
-                  </label>
-                  <input
-                    id="audit-email"
-                    name="email"
-                    type="email"
-                    required
-                    autoComplete="email"
-                    placeholder="vous@email.com"
-                    className="w-full rounded-xl border border-border/60 bg-card/40 px-4 py-2.5 text-base text-foreground placeholder:text-muted-foreground/40 outline-none transition-all focus:border-primary/60 focus:ring-2 focus:ring-primary/10"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="audit-url" className="mb-1.5 block text-[12px] font-medium uppercase tracking-[0.12em] text-muted-foreground/70">
-                    {tp.urlLabel[lang]}
-                  </label>
-                  <input
-                    id="audit-url"
-                    name="website"
-                    type="url"
-                    required
-                    placeholder="https://votresite.fr"
-                    className="w-full rounded-xl border border-border/60 bg-card/40 px-4 py-2.5 text-base text-foreground placeholder:text-muted-foreground/40 outline-none transition-all focus:border-primary/60 focus:ring-2 focus:ring-primary/10"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="audit-budget" className="mb-1.5 block text-[12px] font-medium uppercase tracking-[0.12em] text-muted-foreground/70">
-                    {tp.budgetLabel[lang]}
-                    <span className="ml-1.5 normal-case tracking-normal text-muted-foreground/40">
-                      ({lang === 'en' ? 'optional' : 'optionnel'})
-                    </span>
-                  </label>
-                  <select
-                    id="audit-budget"
-                    name="budget"
-                    defaultValue=""
-                    className="w-full appearance-none rounded-xl border border-border/60 bg-card/40 px-4 py-2.5 text-base text-foreground outline-none transition-all focus:border-primary/60 focus:ring-2 focus:ring-primary/10"
-                  >
-                    <option value="" disabled>{tp.budgetPlaceholder[lang]}</option>
-                    {budgetOptions.map((b) => (
-                      <option key={b} value={b}>{b}</option>
-                    ))}
-                  </select>
-                </div>
-
-                {error && <p className="text-[13px] text-red-400">{error}</p>}
-
-                <button
-                  type="submit"
-                  disabled={sending}
-                  className="group flex h-11 w-full items-center justify-center gap-2 rounded-full bg-primary text-[14px] font-medium text-primary-foreground transition-all hover:bg-primary/85 disabled:opacity-50"
-                >
-                  {sending ? (
-                    tp.submitting[lang]
-                  ) : (
-                    <>
-                      {tp.submit[lang]}
-                      <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
-                    </>
-                  )}
-                </button>
-              </form>
+              <ContactForm source="audit" onSent={() => setSent(true)} />
 
               {/* Séparateur "ou" */}
               <div className="relative my-3 sm:my-4">

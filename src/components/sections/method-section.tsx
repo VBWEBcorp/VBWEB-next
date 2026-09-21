@@ -42,30 +42,26 @@ export function MethodSection() {
             <ScrollProgress orientation="horizontal" />
           </div>
 
-          <ol className="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-4 sm:gap-x-6">
+          {/* Mobile : une colonne, trait vertical entre les nœuds. sm+ : quatre colonnes sur la ligne. */}
+          <ol className="grid gap-y-7 sm:grid-cols-4 sm:gap-x-6 sm:gap-y-0">
             {steps.map((step, i) => (
-              <Reveal as="li" key={step.title} delay={i * 0.08} className="relative pt-7">
-                {/* Segment mobile — prolongé dans la gouttière pour rejoindre l'étape suivante */}
-                <span
-                  aria-hidden
-                  className="absolute left-0 -right-4 top-[13.5px] h-px bg-border/50 sm:hidden"
-                />
+              <Reveal as="li" key={step.title} delay={i * 0.08} className="relative pl-10 sm:pl-0 sm:pt-10">
+                {i < steps.length - 1 && (
+                  <span aria-hidden className="absolute -bottom-7 left-[13.5px] top-7 w-px bg-border/50 sm:hidden" />
+                )}
 
-                {/* Nœud sur la ligne */}
+                {/* Nœud numéroté, centré sur la ligne */}
                 <span
                   aria-hidden
-                  className="absolute left-0 top-[7px] z-10 flex size-3.5 items-center justify-center rounded-full border border-primary/50 bg-card"
+                  className="absolute left-0 top-0 z-10 flex size-7 items-center justify-center rounded-full border border-primary/50 bg-card font-display text-[11px] font-semibold text-primary"
                 >
-                  <span className="size-1.5 rounded-full bg-primary" />
+                  {i + 1}
                 </span>
 
-                <p className="font-display text-[11px] font-semibold uppercase tracking-[0.22em] text-primary/70">
-                  Étape {String(i + 1).padStart(2, '0')}
-                </p>
-                <h3 className="mt-1.5 font-display text-[15px] font-semibold leading-snug tracking-[-0.01em] text-foreground sm:text-base">
+                <h3 className="font-display text-base font-semibold leading-snug tracking-[-0.01em] text-foreground sm:text-[17px]">
                   {step.title}
                 </h3>
-                <p className="mt-1.5 text-[13px] leading-relaxed text-muted-foreground sm:text-[14px]">
+                <p className="mt-1 text-[13px] leading-relaxed text-muted-foreground sm:mt-1.5 sm:text-[14px]">
                   {step.description}
                 </p>
               </Reveal>
