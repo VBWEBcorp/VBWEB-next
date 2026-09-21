@@ -28,8 +28,9 @@ export function FounderSection() {
         }}
       />
 
-      <div className="relative px-3 py-4 sm:px-4 sm:py-5">
-        {/* GRANDE CARD edge-to-edge */}
+      {/* Bord à bord sur mobile ; sur grand écran la carte est bornée pour que la vidéo tienne dans la fenêtre */}
+      <div className="relative mx-auto max-w-5xl px-3 py-4 sm:px-4 sm:py-5 lg:px-6 lg:py-8">
+        {/* CARD */}
         <Reveal
           className="relative overflow-hidden rounded-[1.5rem] border border-border/60 bg-card/40 sm:rounded-[1.75rem]"
         >
