@@ -113,7 +113,7 @@ export function CtaGallerySection({ variant = 'default' }: { variant?: 'default'
               </Button>
               <Button size="lg" variant="outline" className="border-border bg-card/50 backdrop-blur-sm" asChild>
                 <Link href="/audit-seo-gratuit">
-                  Diagnostic gratuit
+                  Audit gratuit
                 </Link>
               </Button>
             </div>

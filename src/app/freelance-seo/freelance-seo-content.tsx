@@ -73,7 +73,7 @@ export function FreelanceSeoContent({ faqs }: FreelanceSeoContentProps) {
               <span className="italic text-muted-foreground/80">je vous aide à être trouvé sur Google</span>
             </h1>
             <p className="hero-description mx-auto mt-6 max-w-2xl text-pretty text-[15px] leading-relaxed text-muted-foreground sm:text-base">
-              Je suis Victor Béasse, freelance SEO. J&apos;accompagne des PME, artisans et commerces partout en France pour qu&apos;ils attirent plus de clients grâce à Google. Plus de 200 projets SEO menés et 80+ avis 5 étoiles.
+              Je suis Victor Béasse, freelance SEO. J&apos;accompagne des PME, artisans et commerces partout en France pour qu&apos;ils attirent plus de clients grâce à Google. Plus de 150 clients accompagnés en SEO et 80+ avis 5 étoiles.
             </p>
 
             <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
@@ -184,12 +184,12 @@ export function FreelanceSeoContent({ faqs }: FreelanceSeoContentProps) {
 
           <div className="mt-14 grid gap-5 sm:grid-cols-3">
             <Reveal className="rounded-[1.35rem] border border-border/60 bg-background/50 p-8 text-center">
-              <CountUp value={150} prefix="+" className="font-display text-[3rem] font-bold leading-none tracking-[-0.04em] text-foreground" />
+              <CountUp value={200} prefix="+" className="font-display text-[3rem] font-bold leading-none tracking-[-0.04em] text-foreground" />
               <p className="mt-2 text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground/60">sites créés</p>
             </Reveal>
             <Reveal delay={0.1} className="rounded-[1.35rem] border border-border/60 bg-background/50 p-8 text-center">
-              <CountUp value={200} prefix="+" className="font-display text-[3rem] font-bold leading-none tracking-[-0.04em] text-foreground" />
-              <p className="mt-2 text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground/60">campagnes SEO menées</p>
+              <CountUp value={150} prefix="+" className="font-display text-[3rem] font-bold leading-none tracking-[-0.04em] text-foreground" />
+              <p className="mt-2 text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground/60">clients SEO accompagnés</p>
             </Reveal>
             <Reveal delay={0.2} className="rounded-[1.35rem] border border-border/60 bg-background/50 p-8 text-center">
               <CountUp value={75} className="font-display text-[3rem] font-bold leading-none tracking-[-0.04em] text-foreground" />

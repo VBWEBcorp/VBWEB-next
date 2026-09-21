@@ -7,7 +7,7 @@ import { useHomeLang, t } from '@/components/home/lang'
 import { LazyYouTube } from '@/components/sections/lazy-youtube'
 import { Reveal } from '@/components/ui/reveal'
 
-const VIDEO_ID = 'w_Tg2rnwrSE'
+const VIDEO_ID = 'M9_8FHzDsl4'
 
 const RESULT_ICONS = [TrendingUp, Users, Layers]
 

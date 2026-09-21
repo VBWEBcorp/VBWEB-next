@@ -238,12 +238,12 @@ export function MetierTemplate({ config, faqs }: MetierTemplateProps) {
 
           <div className="mt-14 grid gap-5 sm:grid-cols-3">
             <Reveal className="rounded-[1.35rem] border border-border/60 bg-background/50 p-8 text-center">
-              <CountUp value={150} prefix="+" className="font-display text-[3rem] font-bold leading-none tracking-[-0.04em] text-foreground" />
+              <CountUp value={200} prefix="+" className="font-display text-[3rem] font-bold leading-none tracking-[-0.04em] text-foreground" />
               <p className="mt-2 text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground/60">sites créés</p>
             </Reveal>
             <Reveal delay={0.1} className="rounded-[1.35rem] border border-border/60 bg-background/50 p-8 text-center">
-              <CountUp value={200} prefix="+" className="font-display text-[3rem] font-bold leading-none tracking-[-0.04em] text-foreground" />
-              <p className="mt-2 text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground/60">campagnes SEO menées</p>
+              <CountUp value={150} prefix="+" className="font-display text-[3rem] font-bold leading-none tracking-[-0.04em] text-foreground" />
+              <p className="mt-2 text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground/60">clients SEO accompagnés</p>
             </Reveal>
             <Reveal delay={0.2} className="rounded-[1.35rem] border border-border/60 bg-background/50 p-8 text-center">
               <CountUp value={75} className="font-display text-[3rem] font-bold leading-none tracking-[-0.04em] text-foreground" />

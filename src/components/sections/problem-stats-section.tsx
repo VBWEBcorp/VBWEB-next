@@ -148,8 +148,8 @@ export function ProblemStatsSection() {
   const stats = [
     {
       icon: TrendingDown,
-      numValue: 80,
-      prefix: '+',
+      numValue: 76,
+      prefix: '',
       suffix: '%',
       label: t.problemStats.stat1Label[lang],
       title: t.problemStats.stat1Title[lang],

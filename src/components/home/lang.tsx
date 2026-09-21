@@ -33,22 +33,22 @@ export const t = {
     h1Part2: { fr: 'grâce à', en: 'thanks to' },
     h1Part3: { fr: "Google et l'IA", en: 'Google and AI' },
     subtitle: {
-      fr: "Vos clients vous cherchent sur Google et l'IA. Je vous y rends visible et crédible. Expert SEO et développeur web, je maîtrise toute la chaîne : le référencement comme le site. Plus de clients, plus de chiffre d'affaires.",
-      en: 'Your clients search on Google and AI. I make you visible and credible there. SEO expert and web developer, I master the whole chain: the SEO as well as the site. More clients, more revenue.',
+      fr: "Vos clients vous cherchent sur Google et dans l'IA. Je vous y rends visible et crédible. Développeur web et expert SEO depuis 5 ans, je maîtrise toute la chaîne, du référencement au site, et j'accompagne les TPE et PME dans leur croissance.",
+      en: 'Your clients search on Google and in AI. I make you visible and credible there. Web developer and SEO expert for 5 years, I master the whole chain, from SEO to the site itself, and I help small businesses grow.',
     },
-    ctaPrimary: { fr: 'Recevez votre diagnostic gratuit', en: 'Get your free diagnostic' },
+    ctaPrimary: { fr: 'Demandez votre audit gratuit', en: 'Request your free audit' },
     ctaSecondary: { fr: 'ou prendre directement rendez-vous', en: 'or book a meeting directly' },
     reviews: { fr: '80+ avis', en: '80+ reviews' },
     proofs: {
       fr: [
-        { value: '150+', label: 'sites réalisés' },
-        { value: '200+', label: 'clients SEO accompagnés' },
-        { value: '10+', label: 'apps mobiles créées' },
+        { value: '150+', label: 'clients SEO accompagnés' },
+        { value: '200+', label: 'sites créés' },
+        { value: '10+', label: 'applications sur mesure' },
       ],
       en: [
-        { value: '150+', label: 'websites delivered' },
-        { value: '200+', label: 'SEO clients supported' },
-        { value: '10+', label: 'mobile apps built' },
+        { value: '150+', label: 'SEO clients supported' },
+        { value: '200+', label: 'websites delivered' },
+        { value: '10+', label: 'custom apps built' },
       ],
     },
   },
@@ -84,8 +84,8 @@ export const t = {
     h2Part2: { fr: 'pour votre PME', en: 'for your business' },
     resultLabel: { fr: 'Votre résultat', en: 'Your outcome' },
     resultTags: {
-      fr: ['Plus de prospects qualifiés', 'Un avantage concurrentiel', 'Toujours à la page (Google + IA)'],
-      en: ['More qualified leads', 'A competitive edge', 'Always up to date (Google + AI)'],
+      fr: ['Plus de prospects qualifiés', 'Vous surpassez vos concurrents', 'Visible sur Google et dans les IA'],
+      en: ['More qualified leads', 'You outrank your competitors', 'Visible on Google and in AI'],
     },
     videoCaption: {
       fr: "2 minutes pour comprendre comment j'accompagne les dirigeants de PME.",
@@ -96,17 +96,17 @@ export const t = {
     resultCta: { fr: 'Voir les études de cas', en: 'See case studies' },
   },
   problemStats: {
-    eyebrow: { fr: 'Le constat pour les PME', en: 'The reality for SMBs' },
+    eyebrow: { fr: 'Le constat pour les TPE et PME', en: 'The reality for small businesses' },
     h2Part1: { fr: 'Cette situation', en: 'Does this' },
     h2Part2: { fr: 'vous dit quelque chose', en: 'sound familiar' },
-    stat1Label: { fr: 'des sites de PME dorment', en: 'of SMB websites are dormant' },
+    stat1Label: { fr: "des intentions d'achat passent par Google", en: 'of purchase intent goes through Google' },
     stat1Title: {
       fr: 'Votre site est joli. Votre concurrence, elle, encaisse',
       en: 'Your site looks great. Meanwhile, your competition is cashing in',
     },
     stat1Desc: {
-      fr: "Vos prospects tapent votre métier sur Google et dans l'IA, et atterrissent chez vos concurrents. Tous les jours.",
-      en: 'Prospects type your business into Google and AI, and land on your competitors. Every day.',
+      fr: "C'est 11 fois plus que sur les réseaux sociaux. Vos prospects tapent votre métier sur Google et atterrissent chez vos concurrents. Tous les jours.",
+      en: "That's 11 times more than on social media. Prospects type your business into Google and land on your competitors. Every day.",
     },
     stat2Label: {
       fr: 'des décisions B2B commencent en ligne',
@@ -126,25 +126,25 @@ export const t = {
     h2Part1: { fr: "De l'invisible à", en: 'From invisible to' },
     h2Part2: { fr: 'générateur de clients', en: 'client generator' },
     subtitle: {
-      fr: 'Une approche structurée pour rendre votre PME visible sur Google ET dans les réponses de ChatGPT, Claude, Perplexity.',
-      en: 'A structured approach to make your SMB visible on Google AND in answers from ChatGPT, Claude, Perplexity.',
+      fr: 'Une approche structurée pour rendre votre entreprise visible sur Google ET dans les réponses de ChatGPT, Claude, Perplexity.',
+      en: 'A structured approach to make your business visible on Google AND in answers from ChatGPT, Claude, Perplexity.',
     },
     steps: {
       fr: [
         {
-          title: 'Audit de votre présence en ligne',
+          title: 'Audit gratuit de votre visibilité en ligne',
           description:
-            'Votre site, votre fiche Google, vos concurrents, et ce que les IA répondent quand on cherche votre métier.',
+            'Ce qui fonctionne déjà sur votre site et vos axes d’amélioration : fiche Google, concurrents, et ce que les IA répondent quand on cherche votre métier.',
         },
         {
-          title: 'Proposition',
+          title: 'Refonte ou non : on décide ensemble',
           description:
             'Optimisation de l’existant ou refonte complète : vous recevez une recommandation argumentée, avec le périmètre, le calendrier et le budget. La décision vous revient.',
         },
         {
-          title: 'Actions mensuelles',
+          title: 'Accompagnement SEO mensuel',
           description:
-            'Chaque mois, du contenu et des optimisations qui font vivre votre site. Calibrés sur votre entreprise et vos clients, jamais sur un modèle générique.',
+            'Chaque mois, du contenu et des optimisations pour surpasser vos concurrents sur Google et dans les réponses de ChatGPT ou Perplexity. L’algorithme bouge sans arrêt, votre site suit.',
         },
         {
           title: 'Suivi et croissance',
@@ -154,19 +154,19 @@ export const t = {
       ],
       en: [
         {
-          title: 'Audit of your online presence',
+          title: 'Free audit of your online visibility',
           description:
-            'Your website, your Google listing, your competitors, and what AI answers when someone searches your trade.',
+            'What already works on your site and where to improve: Google listing, competitors, and what AI answers when someone searches your trade.',
         },
         {
-          title: 'Proposal',
+          title: 'Rebuild or not: we decide together',
           description:
             'Improving what you have or rebuilding it: you get a reasoned recommendation, with scope, timeline and budget. The decision is yours.',
         },
         {
-          title: 'Monthly actions',
+          title: 'Monthly SEO support',
           description:
-            'Every month, content and improvements that keep your site alive. Tuned to your business and your clients, never to a generic template.',
+            'Every month, content and improvements to outrank your competitors on Google and in ChatGPT or Perplexity answers. The algorithm never stops moving, your site keeps up.',
         },
         {
           title: 'Tracking and growth',
@@ -175,7 +175,7 @@ export const t = {
         },
       ],
     },
-    cta: { fr: 'Diagnostic gratuit', en: 'Free diagnostic' },
+    cta: { fr: 'Audit gratuit', en: 'Free audit' },
     bonusKicker: { fr: 'En bonus', en: 'Bonus' },
     bonusTitle: {
       fr: 'Des outils sur-mesure pour les dirigeants débordés',
@@ -238,9 +238,9 @@ export const t = {
             'Stratégies de visibilité Google qui propulsent mes clients en première page.',
         },
         {
-          title: 'Applications Web',
+          title: 'IA en entreprise',
           description:
-            'CRM, logiciels et dashboards sur-mesure pour automatiser et piloter votre activité.',
+            'CRM, automatisations IA et outils sur mesure pour gagner du temps, gagner en productivité et automatiser vos tâches.',
         },
       ],
       en: [
@@ -254,8 +254,8 @@ export const t = {
           description: 'Google visibility strategies that push my clients to page one.',
         },
         {
-          title: 'Web Applications',
-          description: 'CRMs, custom software and dashboards to automate and run your business.',
+          title: 'AI for business',
+          description: 'CRMs, AI automations and custom tools to save time, boost productivity and automate your tasks.',
         },
       ],
     },
@@ -284,19 +284,19 @@ export const t = {
     worksCta: { fr: 'Voir les {count} sites', en: 'See all {count} sites' },
   },
   ctaGallery: {
-    eyebrow: { fr: 'Diagnostic gratuit, sans engagement', en: 'Free diagnostic, no commitment' },
+    eyebrow: { fr: 'Audit gratuit, sans engagement', en: 'Free audit, no commitment' },
     h2: {
       fr: 'Votre entreprise est-elle visible sur Google et dans ChatGPT ?',
       en: 'Is your business visible on Google and in ChatGPT?',
     },
     description: {
-      fr: "Je vous réponds en vidéo, 10 minutes, sous 48 heures : ce qui vous fait perdre des clients sur Google, et si les IA vous citent ou citent vos concurrents. Vous repartez avec un plan d'action clair, que vous deveniez client ou non.",
-      en: 'I answer you on video, 10 minutes, within 48 hours: what makes you lose clients on Google, and whether AI cites you or your competitors. You leave with a clear action plan, whether you become a client or not.',
+      fr: "Je vous réponds en vidéo, 10 minutes, sous 48 heures : ce qui fonctionne sur votre site, ce qui vous fait perdre des clients sur Google, et si les IA vous citent ou citent vos concurrents. Vous repartez avec un plan d'action clair, que vous deveniez client ou non.",
+      en: 'I answer you on video, 10 minutes, within 48 hours: what works on your site, what makes you lose clients on Google, and whether AI cites you or your competitors. You leave with a clear action plan, whether you become a client or not.',
     },
-    ctaPrimary: { fr: 'Recevez votre diagnostic gratuit', en: 'Get your free diagnostic' },
+    ctaPrimary: { fr: 'Demandez votre audit gratuit', en: 'Request your free audit' },
     ctaSecondary: {
-      fr: 'ou parlons directement de votre projet',
-      en: "or let's talk about your project",
+      fr: 'ou contactez-moi directement',
+      en: 'or contact me directly',
     },
   },
   navbar: {
@@ -310,7 +310,7 @@ export const t = {
         localSeo: { label: 'Référencement local', description: 'Google Maps et SEO local' },
         webDesign: { label: 'Création de site internet', description: 'Sites vitrines & e-commerce' },
         ia: { label: 'IA en entreprise', description: 'Automatisations & outils sur-mesure' },
-        diagnostic: { label: 'Diagnostic gratuit', description: 'Analyse complète sous 48h' },
+        diagnostic: { label: 'Audit gratuit', description: 'Analyse complète sous 48h' },
         sites: { label: 'Site internet', description: 'Vitrines, e-commerce, sur-mesure' },
         seoCase: { label: 'Référencement', description: 'Stratégies SEO et résultats' },
         apps: { label: 'IA en entreprise', description: 'CRM, dashboards, automatisations' },
@@ -321,7 +321,7 @@ export const t = {
         localSeo: { label: 'Local SEO', description: 'Google Maps & local SEO' },
         webDesign: { label: 'Website creation', description: 'Showcase & e-commerce sites' },
         ia: { label: 'AI for business', description: 'Automation & custom tools' },
-        diagnostic: { label: 'Free diagnostic', description: 'Full analysis within 48h' },
+        diagnostic: { label: 'Free audit', description: 'Full analysis within 48h' },
         sites: { label: 'Website', description: 'Showcase, e-commerce, custom' },
         seoCase: { label: 'SEO', description: 'SEO strategies & results' },
         apps: { label: 'AI for business', description: 'CRMs, dashboards, automation' },
@@ -330,7 +330,7 @@ export const t = {
   },
   popup: {
     badge: { fr: '100 % gratuit · sans engagement', en: '100% free · no commitment' },
-    title: { fr: 'Votre diagnostic de visibilité en vidéo', en: 'Your video visibility diagnostic' },
+    title: { fr: 'Votre audit de visibilité en vidéo', en: 'Your video visibility audit' },
     subtitle: {
       fr: 'Analyse vidéo de 10 min de votre visibilité sur Google + IA. Sous 48h.',
       en: '10-min video analysis of your visibility on Google + AI. Within 48h.',
@@ -356,14 +356,14 @@ export const t = {
         "I'd rather discuss it in person",
       ],
     },
-    submit: { fr: 'Recevoir mon diagnostic', en: 'Get my diagnostic' },
+    submit: { fr: 'Recevoir mon audit', en: 'Get my audit' },
     submitting: { fr: 'Envoi en cours…', en: 'Sending…' },
     or: { fr: 'ou', en: 'or' },
     calendly: { fr: 'Prendre directement rendez-vous', en: 'Book a meeting directly' },
     successTitle: { fr: 'Demande envoyée !', en: 'Request sent!' },
     successMessage: {
-      fr: 'Je vous envoie votre diagnostic vidéo sous 48h. Pensez à vérifier vos spams.',
-      en: "I'll send you the video diagnostic within 48h. Check your spam folder just in case.",
+      fr: 'Je vous envoie votre audit vidéo sous 48h. Pensez à vérifier vos spams.',
+      en: "I'll send you the video audit within 48h. Check your spam folder just in case.",
     },
     close: { fr: 'Fermer', en: 'Close' },
     errorGeneric: {

@@ -16,7 +16,7 @@ export function AuditButton({ size = 'lg', className = '' }: { size?: 'lg' | 'de
       className={`group bg-primary text-primary-foreground hover:bg-primary/85 ${className}`}
       onClick={openAudit}
     >
-      {lang === 'en' ? 'Free diagnostic' : 'Diagnostic gratuit'}
+      {lang === 'en' ? 'Free audit' : 'Audit gratuit'}
       <ArrowRight className="transition-transform group-hover:translate-x-0.5" />
     </Button>
   )
