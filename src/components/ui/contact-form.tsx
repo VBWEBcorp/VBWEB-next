@@ -77,13 +77,16 @@ export function ContactForm({
 
       <div>
         <label htmlFor="cf-site" className={label}>{tp.urlLabel[lang]}</label>
+        {/* Texte libre : « votresite.fr » suffit, le serveur complète l'adresse */}
         <input
           id="cf-site"
           name="website"
-          type="url"
+          type="text"
+          inputMode="url"
+          autoComplete="url"
           required={!noSite}
           disabled={noSite}
-          placeholder="https://votresite.fr"
+          placeholder="votresite.fr"
           className={field}
         />
         <label className="mt-2 flex cursor-pointer items-center gap-2 text-[13px] text-muted-foreground">

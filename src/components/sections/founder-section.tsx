@@ -34,7 +34,13 @@ export function FounderSection() {
           className="relative overflow-hidden rounded-[1.5rem] border border-border/60 bg-card/40 sm:rounded-[1.75rem]"
         >
 
-          <div className="relative p-6 sm:p-10 lg:p-14">
+          <div className="relative p-2.5 sm:p-5 lg:p-8">
+            {/* Vidéo : premier élément de la carte, juste sous le hero, quasi bord à bord sur mobile */}
+            <div className="relative aspect-video overflow-hidden rounded-[1.1rem] border border-border/60 bg-black ring-1 ring-foreground/5 sm:rounded-[1.4rem]">
+              <AutoplayYouTube videoId={VIDEO_ID} title="Victor Béasse, Fondateur VBWEB" />
+            </div>
+
+            <div className="px-3 pb-3 pt-8 sm:px-5 sm:pb-5 sm:pt-10 lg:px-6 lg:pb-6 lg:pt-12">
             {/* Header — titre */}
             <div className="relative max-w-2xl">
               <p className="font-display text-[11px] font-semibold tracking-[0.24em] text-primary/80 uppercase">
@@ -82,16 +88,7 @@ export function FounderSection() {
               </div>
             </div>
 
-            {/* Vidéo plein largeur */}
-            <div
-              className="relative mt-10 sm:mt-12"
-            >
-              <div className="relative aspect-video overflow-hidden rounded-[1.25rem] border border-border/60 bg-background ring-1 ring-foreground/5 sm:rounded-[1.5rem]">
-                <AutoplayYouTube videoId={VIDEO_ID} title="Victor Béasse, Fondateur VBWEB" />
-              </div>
-            </div>
-
-            {/* Liens sous la vidéo */}
+            {/* Liens */}
             <div className="relative mt-8 flex flex-col items-start gap-6 sm:flex-row sm:items-center">
               <div className="flex flex-wrap items-center gap-x-8 gap-y-3">
                 <Link
@@ -109,6 +106,7 @@ export function FounderSection() {
                   <ArrowUpRight className="size-3.5 transition-transform group-hover/link:translate-x-0.5" />
                 </Link>
               </div>
+            </div>
             </div>
           </div>
         </Reveal>

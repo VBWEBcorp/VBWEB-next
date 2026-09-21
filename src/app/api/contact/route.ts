@@ -57,7 +57,10 @@ export async function POST(req: Request) {
   const source = body.source === 'audit' ? 'audit' : 'contact'
   const name = clean(body.name, 200)
   const email = clean(body.email, 200)
-  const website = clean(body.website, 500)
+  // « votresite.fr » ou « www.votresite.fr/page » deviennent une adresse complète ;
+  // une vraie URL ou la mention « pas de site » restent telles quelles.
+  const rawSite = clean(body.website, 500)
+  const website = /^[\w-]+(\.[\w-]+)+(\/\S*)?$/.test(rawSite) ? `https://${rawSite}` : rawSite
   const budget = clean(body.budget, 100)
   const message = clean(body.message, 5000)
 
