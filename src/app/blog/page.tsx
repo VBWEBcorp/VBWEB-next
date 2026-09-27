@@ -59,6 +59,7 @@ export async function generateMetadata(): Promise<Metadata> {
       title,
       description,
       url: `${siteConfig.url}/blog`,
+      images: [{ url: siteConfig.ogImage }],
     },
   }
 }

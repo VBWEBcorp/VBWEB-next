@@ -9,7 +9,7 @@ export function organizationJsonLd() {
     alternateName: [siteConfig.shortName, siteConfig.legalName],
     legalName: siteConfig.legalName,
     url: siteConfig.url,
-    logo: `${siteConfig.url}/favicon.svg`,
+    logo: `${siteConfig.url}/logo-vbweb.png`,
     founder: {
       '@type': 'Person',
       name: siteConfig.founder,
