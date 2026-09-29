@@ -235,4 +235,11 @@ export const webProjects: WebProject[] = [
     image: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/ZINE-COACHING-p3k7wqz2.webp',
     description: 'Coach sportif à Rennes : boxe anglaise, musculation et remise en forme.',
   },
+  {
+    id: 'pom-poi',
+    name: 'Pom Poï',
+    url: 'https://pompoi.netlify.app/',
+    image: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/POM-POI-ppzzsutj.webp',
+    description: 'E-commerce : box de cuisine thaïe à préparer chez soi, paiement en ligne et livraison.',
+  },
 ]

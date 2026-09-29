@@ -1,13 +1,18 @@
 import type { Metadata } from 'next'
 
 import { breadcrumbJsonLd, webPageJsonLd } from '@/components/seo/json-ld'
+import { webProjects } from '@/lib/projects'
 import { SitesInternetContent } from './sites-content'
 
+// Compte tiré de la liste, comme le h1 : le titre et la description suivent
+// désormais chaque ajout de réalisation sans retouche.
+const count = webProjects.length
+
 const description =
-  '32 sites internet créés à Rennes et partout en France : vitrines, e-commerce et sites sur mesure pour PME, artisans et commerces. Tous en ligne et visitables.'
+  `${count} sites internet créés à Rennes et partout en France : vitrines, e-commerce et sites sur mesure pour PME, artisans et commerces. Tous en ligne et visitables.`
 
 export const metadata: Metadata = {
-  title: '32 Réalisations Sites Internet à Rennes | Portfolio Web',
+  title: `${count} Réalisations Sites Internet à Rennes | Portfolio Web`,
   description,
   alternates: { canonical: '/etudes-de-cas/sites-internet' },
 }
