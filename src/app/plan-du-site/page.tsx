@@ -37,6 +37,14 @@ const services = [
   { label: 'IA en entreprise', href: '/ia-entreprise' },
   { label: 'Freelance SEO', href: '/freelance-seo' },
   { label: 'Audit SEO gratuit', href: '/audit-seo-gratuit' },
+  { label: 'Référencement IA (GEO)', href: '/referencement-ia-geo' },
+  { label: 'Référencement local', href: '/referencement-local' },
+  { label: 'Refonte de site internet', href: '/refonte-site-internet' },
+  { label: 'Consultant SEO à Rennes', href: '/consultant-seo-rennes' },
+  { label: 'Création de site internet à Rennes', href: '/creation-site-internet-rennes' },
+  { label: 'Site internet pour artisan', href: '/creation-site-internet-artisan' },
+  { label: 'Site internet bien-être', href: '/creation-site-internet-bien-etre' },
+  { label: 'Site internet pour avocat', href: '/creation-site-internet-avocat' },
 ]
 
 const etudes = [

@@ -94,6 +94,20 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
   ]
 
+  // Pages de référencement (liées depuis le bas du footer)
+  for (const path of [
+    '/referencement-ia-geo',
+    '/referencement-local',
+    '/refonte-site-internet',
+    '/consultant-seo-rennes',
+    '/creation-site-internet-rennes',
+    '/creation-site-internet-artisan',
+    '/creation-site-internet-bien-etre',
+    '/creation-site-internet-avocat',
+  ]) {
+    pages.push({ url: `${baseUrl}${path}`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 })
+  }
+
   // Blog toujours inclus
   pages.push({
     url: `${baseUrl}/blog`,

@@ -22,6 +22,19 @@ const serviceLinks = [
   { label: 'IA en entreprise', to: '/ia-entreprise' },
 ]
 
+// Pages de référencement : volontairement discrètes (bas du footer), hors du
+// menu, pour garder le parcours principal minimaliste.
+const moreLinks = [
+  { label: 'Référencement IA (GEO)', to: '/referencement-ia-geo' },
+  { label: 'Référencement local', to: '/referencement-local' },
+  { label: 'Refonte de site', to: '/refonte-site-internet' },
+  { label: 'Consultant SEO Rennes', to: '/consultant-seo-rennes' },
+  { label: 'Création de site à Rennes', to: '/creation-site-internet-rennes' },
+  { label: 'Site pour artisan', to: '/creation-site-internet-artisan' },
+  { label: 'Site bien-être', to: '/creation-site-internet-bien-etre' },
+  { label: 'Site pour avocat', to: '/creation-site-internet-avocat' },
+]
+
 const legalLinks = [
   { label: 'Mentions légales', to: '/mentions-legales' },
   { label: 'Confidentialité', to: '/politique-de-confidentialite' },
@@ -170,6 +183,18 @@ export function Footer() {
 
               {/* === SECTION 3 — BOTTOM BAR === */}
               <div className="border-t border-border/40 bg-card/80 px-6 py-5 sm:px-10">
+                <nav aria-label="Autres services" className="mb-3 flex flex-wrap items-center gap-x-4 gap-y-1.5">
+                  {moreLinks.map((l) => (
+                    <Link
+                      key={l.to}
+                      href={l.to}
+                      className="text-[11px] text-muted-foreground/50 transition-colors hover:text-foreground"
+                    >
+                      {l.label}
+                    </Link>
+                  ))}
+                </nav>
+
                 {/* Liens légaux sur une seule ligne */}
                 <nav aria-label="Legal" className="flex flex-wrap items-center gap-x-4 gap-y-1.5">
                   {legalLinks.map((l) => (

@@ -4,25 +4,25 @@
 
 [[redirects]]
   from = "https://consultant-seo-rennes.fr/*"
-  to = "https://www.vbweb.fr/:splat"
+  to = "https://vbweb.fr/:splat"
   status = 301
   force = true
 
 [[redirects]]
   from = "https://www.consultant-seo-rennes.fr/*"
-  to = "https://www.vbweb.fr/:splat"
+  to = "https://vbweb.fr/:splat"
   status = 301
   force = true
 
 [[redirects]]
   from = "http://consultant-seo-rennes.fr/*"
-  to = "https://www.vbweb.fr/:splat"
+  to = "https://vbweb.fr/:splat"
   status = 301
   force = true
 
 [[redirects]]
   from = "http://www.consultant-seo-rennes.fr/*"
-  to = "https://www.vbweb.fr/:splat"
+  to = "https://vbweb.fr/:splat"
   status = 301
   force = true
 
@@ -36,25 +36,768 @@
 # ============================================================
 [[redirects]]
   from = "/referencement-seo-rennes"
-  to = "/referencement-seo"
+  to = "/consultant-seo-rennes"
   status = 301
   force = true
 
 [[redirects]]
   from = "/referencement-local-rennes"
-  to = "/referencement-seo"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/creation-site-internet-rennes"
-  to = "/creation-site-internet"
+  to = "/referencement-local"
   status = 301
   force = true
 
 [[redirects]]
   from = "/freelance-seo-rennes"
-  to = "/freelance-seo"
+  to = "/consultant-seo-rennes"
+  status = 301
+  force = true
+
+# ============================================================
+# REDIRECTIONS 301 : anciennes pages ville et métier (supprimées le 13/07/2026)
+# vers les pages de référencement du 30/09/2026 plutôt qu'une 404.
+# Netlify n'accepte pas de joker au milieu d'un segment : liste explicite.
+# ============================================================
+[[redirects]]
+  from = "/agence-developpement-web-brest"
+  to = "/creation-site-internet-rennes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/agence-developpement-web-lorient"
+  to = "/creation-site-internet-rennes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/agence-developpement-web-nantes"
+  to = "/creation-site-internet-rennes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/agence-developpement-web-quimper"
+  to = "/creation-site-internet-rennes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/agence-developpement-web-rennes"
+  to = "/creation-site-internet-rennes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/agence-developpement-web-saint-brieuc"
+  to = "/creation-site-internet-rennes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/agence-developpement-web-saint-malo"
+  to = "/creation-site-internet-rennes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/agence-developpement-web-vannes"
+  to = "/creation-site-internet-rennes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/agence-referencement-brest"
+  to = "/consultant-seo-rennes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/agence-referencement-lorient"
+  to = "/consultant-seo-rennes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/agence-referencement-nantes"
+  to = "/consultant-seo-rennes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/agence-referencement-quimper"
+  to = "/consultant-seo-rennes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/agence-referencement-rennes"
+  to = "/consultant-seo-rennes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/agence-referencement-saint-brieuc"
+  to = "/consultant-seo-rennes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/agence-referencement-saint-malo"
+  to = "/consultant-seo-rennes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/agence-referencement-vannes"
+  to = "/consultant-seo-rennes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/agence-seo-brest"
+  to = "/consultant-seo-rennes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/agence-seo-lorient"
+  to = "/consultant-seo-rennes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/agence-seo-nantes"
+  to = "/consultant-seo-rennes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/agence-seo-quimper"
+  to = "/consultant-seo-rennes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/agence-seo-rennes"
+  to = "/consultant-seo-rennes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/agence-seo-saint-brieuc"
+  to = "/consultant-seo-rennes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/agence-seo-saint-malo"
+  to = "/consultant-seo-rennes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/agence-seo-vannes"
+  to = "/consultant-seo-rennes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/consultant-seo-brest"
+  to = "/consultant-seo-rennes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/consultant-seo-lorient"
+  to = "/consultant-seo-rennes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/consultant-seo-nantes"
+  to = "/consultant-seo-rennes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/consultant-seo-quimper"
+  to = "/consultant-seo-rennes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/consultant-seo-saint-brieuc"
+  to = "/consultant-seo-rennes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/consultant-seo-saint-malo"
+  to = "/consultant-seo-rennes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/consultant-seo-vannes"
+  to = "/consultant-seo-rennes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/creation-site-internet-artisan-rennes"
+  to = "/creation-site-internet-artisan"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/creation-site-internet-brest"
+  to = "/creation-site-internet-rennes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/creation-site-internet-lorient"
+  to = "/creation-site-internet-rennes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/creation-site-internet-nantes"
+  to = "/creation-site-internet-rennes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/creation-site-internet-plombier-rennes"
+  to = "/creation-site-internet-artisan"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/creation-site-internet-quimper"
+  to = "/creation-site-internet-rennes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/creation-site-internet-saint-brieuc"
+  to = "/creation-site-internet-rennes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/creation-site-internet-saint-malo"
+  to = "/creation-site-internet-rennes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/creation-site-internet-vannes"
+  to = "/creation-site-internet-rennes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/developpement-web-brest"
+  to = "/creation-site-internet-rennes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/developpement-web-lorient"
+  to = "/creation-site-internet-rennes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/developpement-web-nantes"
+  to = "/creation-site-internet-rennes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/developpement-web-quimper"
+  to = "/creation-site-internet-rennes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/developpement-web-rennes"
+  to = "/creation-site-internet-rennes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/developpement-web-saint-brieuc"
+  to = "/creation-site-internet-rennes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/developpement-web-saint-malo"
+  to = "/creation-site-internet-rennes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/developpement-web-vannes"
+  to = "/creation-site-internet-rennes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/freelance-seo-brest"
+  to = "/consultant-seo-rennes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/freelance-seo-lorient"
+  to = "/consultant-seo-rennes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/freelance-seo-nantes"
+  to = "/consultant-seo-rennes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/freelance-seo-quimper"
+  to = "/consultant-seo-rennes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/freelance-seo-saint-brieuc"
+  to = "/consultant-seo-rennes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/freelance-seo-saint-malo"
+  to = "/consultant-seo-rennes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/freelance-seo-vannes"
+  to = "/consultant-seo-rennes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/referencement-local-brest"
+  to = "/referencement-local"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/referencement-local-lorient"
+  to = "/referencement-local"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/referencement-local-nantes"
+  to = "/referencement-local"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/referencement-local-quimper"
+  to = "/referencement-local"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/referencement-local-saint-brieuc"
+  to = "/referencement-local"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/referencement-local-saint-malo"
+  to = "/referencement-local"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/referencement-local-vannes"
+  to = "/referencement-local"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/referencement-naturel-brest"
+  to = "/consultant-seo-rennes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/referencement-naturel-lorient"
+  to = "/consultant-seo-rennes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/referencement-naturel-nantes"
+  to = "/consultant-seo-rennes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/referencement-naturel-quimper"
+  to = "/consultant-seo-rennes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/referencement-naturel-rennes"
+  to = "/consultant-seo-rennes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/referencement-naturel-saint-brieuc"
+  to = "/consultant-seo-rennes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/referencement-naturel-saint-malo"
+  to = "/consultant-seo-rennes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/referencement-naturel-vannes"
+  to = "/consultant-seo-rennes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/site-internet-artisan"
+  to = "/creation-site-internet-artisan"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/site-internet-avocat"
+  to = "/creation-site-internet-avocat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/site-internet-carreleur"
+  to = "/creation-site-internet-artisan"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/site-internet-chauffagiste"
+  to = "/creation-site-internet-artisan"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/site-internet-climatisation"
+  to = "/creation-site-internet-artisan"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/site-internet-coach-nutrition"
+  to = "/creation-site-internet-bien-etre"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/site-internet-conseillere-lactation"
+  to = "/creation-site-internet-bien-etre"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/site-internet-constructeur-piscine"
+  to = "/creation-site-internet-artisan"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/site-internet-couvreur"
+  to = "/creation-site-internet-artisan"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/site-internet-demenagement-international"
+  to = "/creation-site-internet-artisan"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/site-internet-demenageur"
+  to = "/creation-site-internet-artisan"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/site-internet-depannage-serrurier"
+  to = "/creation-site-internet-artisan"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/site-internet-dieteticien"
+  to = "/creation-site-internet-bien-etre"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/site-internet-doula"
+  to = "/creation-site-internet-bien-etre"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/site-internet-electricien"
+  to = "/creation-site-internet-artisan"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/site-internet-entreprise-demenagement"
+  to = "/creation-site-internet-artisan"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/site-internet-entreprise-nettoyage"
+  to = "/creation-site-internet-artisan"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/site-internet-entretien-bureaux"
+  to = "/creation-site-internet-artisan"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/site-internet-entretien-piscine"
+  to = "/creation-site-internet-artisan"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/site-internet-garde-meubles"
+  to = "/creation-site-internet-artisan"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/site-internet-herboristerie"
+  to = "/creation-site-internet-bien-etre"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/site-internet-huissier"
+  to = "/creation-site-internet-avocat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/site-internet-installateur-alarme"
+  to = "/creation-site-internet-artisan"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/site-internet-installateur-chaudiere"
+  to = "/creation-site-internet-artisan"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/site-internet-kine"
+  to = "/creation-site-internet-bien-etre"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/site-internet-macon"
+  to = "/creation-site-internet-artisan"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/site-internet-menage-professionnel"
+  to = "/creation-site-internet-artisan"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/site-internet-menuisier"
+  to = "/creation-site-internet-artisan"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/site-internet-micro-nutritionniste"
+  to = "/creation-site-internet-bien-etre"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/site-internet-naturopathe-nutrition"
+  to = "/creation-site-internet-bien-etre"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/site-internet-nettoyage-industriel"
+  to = "/creation-site-internet-artisan"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/site-internet-nettoyage-vitres"
+  to = "/creation-site-internet-artisan"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/site-internet-notaire"
+  to = "/creation-site-internet-avocat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/site-internet-nutritionniste"
+  to = "/creation-site-internet-bien-etre"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/site-internet-osteopathe"
+  to = "/creation-site-internet-bien-etre"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/site-internet-ouverture-porte"
+  to = "/creation-site-internet-artisan"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/site-internet-paysagiste"
+  to = "/creation-site-internet-artisan"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/site-internet-peintre"
+  to = "/creation-site-internet-artisan"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/site-internet-piscinier"
+  to = "/creation-site-internet-artisan"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/site-internet-pisciniste"
+  to = "/creation-site-internet-artisan"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/site-internet-plombier"
+  to = "/creation-site-internet-artisan"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/site-internet-plombier-chauffagiste"
+  to = "/creation-site-internet-artisan"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/site-internet-pompe-a-chaleur"
+  to = "/creation-site-internet-artisan"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/site-internet-preparation-naissance"
+  to = "/creation-site-internet-bien-etre"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/site-internet-psychologue"
+  to = "/creation-site-internet-bien-etre"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/site-internet-ramoneur"
+  to = "/creation-site-internet-artisan"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/site-internet-sage-femme"
+  to = "/creation-site-internet-bien-etre"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/site-internet-serrurier"
+  to = "/creation-site-internet-artisan"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/site-internet-societe-nettoyage"
+  to = "/creation-site-internet-artisan"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/site-internet-sophrologue"
+  to = "/creation-site-internet-bien-etre"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/site-internet-spa-jacuzzi"
+  to = "/creation-site-internet-artisan"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/site-internet-therapeute"
+  to = "/creation-site-internet-bien-etre"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/site-internet-transport-mobilier"
+  to = "/creation-site-internet-artisan"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/site-internet-urgence-serrurier"
+  to = "/creation-site-internet-artisan"
   status = 301
   force = true
 
