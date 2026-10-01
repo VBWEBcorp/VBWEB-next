@@ -1,9 +1,8 @@
 'use client'
 
-import { ArrowRight, Star } from 'lucide-react'
+import { Star } from 'lucide-react'
 import Image from 'next/image'
-import { useAudit } from '@/components/ui/audit-provider'
-import { Button } from '@/components/ui/button'
+import { HeroCallbackForm } from '@/components/sections/hero-callback-form'
 import { useHomeLang, t } from '@/components/home/lang'
 
 function GoogleG({ className = 'size-4' }: { className?: string }) {
@@ -71,7 +70,6 @@ function ScrollColumn({
 }
 
 export function HeroSection() {
-  const { openAudit } = useAudit()
   const { lang } = useHomeLang()
 
   return (
@@ -151,16 +149,9 @@ export function HeroSection() {
             className="order-3 flex flex-col items-center gap-4 sm:gap-7 lg:order-none lg:col-start-1 lg:row-start-2 lg:items-start"
             style={{ animation: 'hero-scale-in 0.7s cubic-bezier(0.22,1,0.36,1) 0.15s both' }}
           >
-            {/* CTAs */}
-            <div className="flex flex-col items-center gap-3 lg:items-start">
-              <Button
-                size="lg"
-                className="group bg-primary text-primary-foreground hover:bg-primary/85"
-                onClick={openAudit}
-              >
-                {t.hero.ctaPrimary[lang]}
-                <ArrowRight className="transition-transform group-hover:translate-x-0.5" />
-              </Button>
+            {/* CTA : un seul geste, laisser son numéro pour être rappelé */}
+            <div className="flex w-full flex-col items-center gap-3 lg:items-start">
+              <HeroCallbackForm lang={lang} />
               <a
                 href="https://calendly.com/web-rdv/echange-vbweb-30-minutes"
                 target="_blank"

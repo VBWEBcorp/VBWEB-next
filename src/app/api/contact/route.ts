@@ -13,9 +13,13 @@ const FROM = 'VBWEB <contact@vbweb.fr>'
 const CALENDLY = 'https://calendly.com/web-rdv/echange-vbweb-30-minutes'
 
 type Payload = {
-  source?: 'audit' | 'contact'
+  source?: 'audit' | 'contact' | 'rappel'
   name?: string
   email?: string
+  /** Formulaire de rappel du haut de l'accueil : le téléphone remplace l'email */
+  phone?: string
+  /** Paramètres de la publicité (utm_*, campaign_id, ad_id) et page d'envoi */
+  provenance?: Record<string, unknown>
   website?: string
   budget?: string
   message?: string
@@ -37,6 +41,86 @@ async function sendMail(apiKey: string, mail: Record<string, unknown>) {
   if (!res.ok) throw new Error(`Resend ${res.status} : ${await res.text()}`)
 }
 
+/**
+ * Demande de rappel (haut de l'accueil, cible des publicités) : prénom et
+ * téléphone obligatoires, site facultatif, aucun accusé de réception puisqu'il
+ * n'y a pas d'email. Le sujet dit d'où vient la demande, pour trier d'un coup
+ * d'œil ce que rapporte la publicité ChatGPT.
+ */
+async function demandeDeRappel(apiKey: string, body: Payload) {
+  const name = clean(body.name, 200)
+  const phone = clean(body.phone, 40)
+  const rawSite = clean(body.website, 500)
+  const website = /^[\w-]+(\.[\w-]+)+(\/\S*)?$/.test(rawSite) ? `https://${rawSite}` : rawSite
+
+  if (!name) return NextResponse.json({ error: 'Prénom requis' }, { status: 400 })
+  if (phone.replace(/\D/g, '').length < 9) {
+    return NextResponse.json({ error: 'Numéro de téléphone incomplet' }, { status: 400 })
+  }
+
+  const prov: Record<string, string> = {}
+  if (body.provenance && typeof body.provenance === 'object') {
+    for (const [k, v] of Object.entries(body.provenance).slice(0, 12)) {
+      const val = clean(v, 200)
+      if (/^[a-z_]{2,20}$/.test(k) && val) prov[k] = val
+    }
+  }
+  const sourcePub = prov.utm_source || (prov.campaign_id || prov.ad_id ? 'publicité' : '')
+  const origine = sourcePub
+    ? `${sourcePub}${prov.campaign_id || prov.utm_campaign ? ` · campagne ${prov.campaign_id || prov.utm_campaign}` : ''}${prov.ad_id || prov.utm_content ? ` · annonce ${prov.ad_id || prov.utm_content}` : ''}`
+    : 'site (accès direct ou recherche)'
+
+  const fields: Array<[string, string]> = [
+    ['Prénom', name],
+    ['Téléphone', phone],
+    ['Site', website],
+    ['Provenance', origine],
+    ['Page', prov.page || ''],
+  ].filter((f): f is [string, string] => Boolean(f[1]))
+  const details = Object.entries(prov).filter(([k]) => k !== 'page')
+
+  const text = [
+    ...fields.map(([k, v]) => `${k} : ${v}`),
+    details.length ? `\nParamètres : ${details.map(([k, v]) => `${k}=${v}`).join(' ')}` : '',
+  ]
+    .filter(Boolean)
+    .join('\n')
+
+  const tel = phone.replace(/[^\d+]/g, '')
+  const html = `
+    <div style="font-family:system-ui,sans-serif;font-size:15px;line-height:1.6;color:#111">
+      <p style="margin:0 0 12px"><strong>Demande de rappel</strong> (formulaire du haut de l’accueil)</p>
+      <table style="border-collapse:collapse">
+        ${fields
+          .map(
+            ([k, v]) =>
+              `<tr><td style="padding:2px 12px 2px 0;color:#666">${k}</td><td style="padding:2px 0">${
+                k === 'Téléphone'
+                  ? `<a href="tel:${escapeHtml(tel)}">${escapeHtml(v)}</a>`
+                  : escapeHtml(v)
+              }</td></tr>`,
+          )
+          .join('')}
+      </table>
+      ${details.length ? `<p style="margin:16px 0 0;color:#666;font-size:13px">${details.map(([k, v]) => `${escapeHtml(k)}=${escapeHtml(v)}`).join(' · ')}</p>` : ''}
+    </div>`
+
+  try {
+    await sendMail(apiKey, {
+      from: FROM,
+      to: [siteConfig.email],
+      subject: `À rappeler : ${name} (${phone})${sourcePub ? ` · ${sourcePub}` : ''}`,
+      text,
+      html,
+      tags: [{ name: 'source', value: 'rappel' }],
+    })
+  } catch (err) {
+    console.error('[contact] rappel', err)
+    return NextResponse.json({ error: 'Envoi impossible' }, { status: 502 })
+  }
+  return NextResponse.json({ ok: true })
+}
+
 export async function POST(req: Request) {
   const apiKey = process.env.RESEND_API_KEY
   if (!apiKey) {
@@ -53,6 +137,8 @@ export async function POST(req: Request) {
 
   // Un robot a rempli le champ caché : on répond OK sans rien envoyer.
   if (clean(body.company, 10)) return NextResponse.json({ ok: true })
+
+  if (body.source === 'rappel') return demandeDeRappel(apiKey, body)
 
   const source = body.source === 'audit' ? 'audit' : 'contact'
   const name = clean(body.name, 200)
