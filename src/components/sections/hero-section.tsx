@@ -1,7 +1,8 @@
 'use client'
 
-import { Play, Star } from 'lucide-react'
+import { ChevronDown, Star } from 'lucide-react'
 import Image from 'next/image'
+import { AuditButton } from '@/components/ui/audit-button'
 import { CallbackForm } from '@/components/ui/callback-form'
 import { useHomeLang, t } from '@/components/home/lang'
 
@@ -74,8 +75,7 @@ export function HeroSection() {
 
   return (
     <section
-      className="relative isolate overflow-hidden bg-background"
-      style={{ minHeight: 'min(720px, 100vh)' }}
+      className="relative isolate overflow-hidden bg-background sm:min-h-[min(720px,100vh)]"
     >
       {/* Photo columns pleine largeur (identique au CTA gallery). Absentes sur
           mobile : sur un téléphone, ces images animées étaient le dernier
@@ -142,31 +142,30 @@ export function HeroSection() {
             <p className="mx-auto mt-3.5 max-w-xl text-pretty text-[14px] leading-snug text-white sm:mt-6 sm:text-base sm:leading-relaxed lg:mx-0">
               {t.hero.subtitle[lang]}
             </p>
-
-            {/* Mobile : la vidéo est loin sous le formulaire, un lien discret y mène */}
-            <a
-              href="#video"
-              className="mt-3 inline-flex items-center gap-1.5 rounded-full border border-foreground/15 px-3 py-1 text-[12px] text-muted-foreground transition-colors hover:border-primary/50 hover:text-foreground lg:hidden"
-            >
-              <Play className="size-3 fill-current" aria-hidden />
-              {lang === 'en' ? 'Watch the video' : 'Voir la vidéo'}
-            </a>
           </div>
 
           {/* CTAs + badge Google — sous le texte (à gauche sur desktop) */}
           <div
             className="order-3 flex flex-col items-center gap-4 sm:gap-7 lg:order-none lg:col-start-1 lg:row-start-2 lg:items-start"
           >
-            {/* CTA : un seul geste, laisser son numéro pour être rappelé */}
+            {/* CTA. Ordinateur : le formulaire, visible dans le premier écran.
+                Téléphone : un seul bouton qui l'ouvre en popup, pour que la
+                promesse, les avis et l'action tiennent avant tout défilement. */}
             <div className="flex w-full flex-col items-center gap-3 lg:items-start">
-              <div className="w-full max-w-lg">
+              <div className="hidden w-full max-w-lg lg:block">
                 <CallbackForm lang={lang} />
               </div>
+              <AuditButton className="w-full max-w-sm lg:hidden" />
             </div>
 
             {/* Badge avis Google, puis les trois chiffres côte à côte sur une seule ligne */}
             <div className="flex flex-col items-center gap-4 lg:items-start">
-              <div className="inline-flex items-center gap-3 rounded-full border border-border/60 bg-card/60 px-4 py-2 backdrop-blur-sm">
+              {/* Mène aux avis (vidéo et défilé) plus bas dans la page */}
+              <a
+                href="#avis"
+                aria-label={lang === 'en' ? 'See the Google reviews' : 'Voir les avis Google'}
+                className="inline-flex items-center gap-3 rounded-full border border-border/60 bg-card/60 px-4 py-2 backdrop-blur-sm transition-colors hover:border-primary/40"
+              >
                 <GoogleG className="size-4" />
                 <span aria-hidden className="h-3 w-px bg-border" />
                 <div className="flex items-center gap-0.5">
@@ -176,14 +175,15 @@ export function HeroSection() {
                 </div>
                 <span aria-hidden className="h-3 w-px bg-border" />
                 <span className="text-[12px] font-medium text-muted-foreground">{t.hero.reviews[lang]}</span>
-              </div>
+                <ChevronDown className="size-3.5 text-muted-foreground" aria-hidden />
+              </a>
 
               {/* Preuves : chiffre net, libellé discret, séparées par un filet */}
-              <ul className="grid grid-cols-3 gap-3 text-center sm:flex sm:flex-nowrap sm:items-center sm:gap-4 sm:text-left">
+              <ul className="grid grid-cols-3 items-start gap-3 text-center sm:flex sm:flex-nowrap sm:items-center sm:gap-4 sm:text-left">
                 {t.hero.proofs[lang].map((proof, i) => (
-                  <li key={proof.label} className="flex items-center gap-4">
+                  <li key={proof.label} className="flex items-center justify-center gap-4 sm:justify-start">
                     {i > 0 && <span aria-hidden className="hidden h-8 w-px bg-border sm:block" />}
-                    <span className="flex flex-col leading-tight sm:whitespace-nowrap">
+                    <span className="flex flex-col items-center leading-tight sm:items-start sm:whitespace-nowrap">
                       <span className="font-display text-xl font-semibold text-foreground sm:text-2xl">{proof.value}</span>
                       <span className="text-[11px] text-muted-foreground sm:text-[13px]">{proof.label}</span>
                     </span>

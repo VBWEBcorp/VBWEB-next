@@ -111,7 +111,7 @@ export function TestimonialsSection() {
   const bottomRow = testimonials.slice(mid)
 
   return (
-    <section className="relative overflow-hidden bg-background">
+    <section id="avis" className="relative scroll-mt-20 overflow-hidden bg-background">
       {/* Grain */}
       <div
         aria-hidden
@@ -157,6 +157,16 @@ export function TestimonialsSection() {
                 params={SHORT_PARAMS}
               />
             </div>
+            {/* Juste sous la vidéo des avis : la liste complète sur Google */}
+            <a
+              href="https://maps.google.com/maps?cid=2452601944121140260"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-3 flex items-center justify-center gap-2 rounded-full border border-border bg-card/60 px-3 py-2 text-[12px] font-medium text-foreground/85 transition-colors hover:border-primary/40 hover:text-foreground sm:text-[13px]"
+            >
+              <GoogleLogo className="size-3.5 shrink-0" />
+              {lang === 'en' ? 'See all Google reviews' : 'Voir tous les avis Google'}
+            </a>
           </Reveal>
 
           <div className="min-w-0 flex-1 space-y-5">
@@ -168,7 +178,7 @@ export function TestimonialsSection() {
         {/* CTA */}
         <div className="mt-12 text-center">
           <a
-            href="https://g.page/r/VBWEB/review"
+            href="https://search.google.com/local/writereview?placeid=ChIJVdBQi2NjL6kRJOTFRnlkCSI"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-5 py-2.5 text-sm font-medium text-foreground/80 transition-colors hover:border-primary/30 hover:bg-card/80 hover:text-foreground"
