@@ -324,8 +324,8 @@ export const t = {
     badge: { fr: '100 % gratuit · sans engagement', en: '100% free · no commitment' },
     title: { fr: 'Je vous rappelle sous 24 heures', en: 'I will call you back within 24 hours' },
     subtitle: {
-      fr: 'Laissez votre prénom et votre numéro : on fait le point sur votre projet, gratuitement et sans engagement.',
-      en: 'Leave your first name and number: we talk about your project, free and with no commitment.',
+      fr: 'Quelques informations, et on fait le point sur votre projet au téléphone. Gratuit et sans engagement.',
+      en: 'A few details, and we talk about your project on the phone. Free, no commitment.',
     },
     nameLabel: { fr: 'Votre nom', en: 'Your name' },
     emailLabel: { fr: 'Votre email', en: 'Your email' },

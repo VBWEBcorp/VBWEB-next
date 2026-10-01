@@ -47,7 +47,7 @@ export function AuditPopup({ open, onClose }: { open: boolean; onClose: () => vo
       {/* Modal wrapper — handles centering and overflow scroll */}
       <div className="relative flex min-h-full items-center justify-center p-3 sm:p-4">
         <div className="relative my-4 w-full max-w-md animate-[hero-scale-in_0.25s_cubic-bezier(0.22,1,0.36,1)_both]">
-          <div className="relative overflow-hidden rounded-[1.5rem] border border-border/60 bg-background p-5 shadow-2xl sm:p-8">
+          <div className="relative overflow-hidden rounded-[1.5rem] border border-border/60 bg-background p-4 shadow-2xl sm:p-8">
           {/* Top accent gradient */}
           <div
             aria-hidden

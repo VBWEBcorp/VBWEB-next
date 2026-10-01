@@ -105,11 +105,11 @@ export function CallbackForm({ lang }: { lang: 'fr' | 'en' }) {
   }
 
   const input =
-    'h-11 w-full rounded-xl border border-foreground/30 bg-card px-3.5 text-[15px] text-foreground placeholder:text-muted-foreground outline-none transition hover:border-foreground/50 focus:border-primary focus:ring-2 focus:ring-primary/30'
+    'h-12 w-full min-w-0 rounded-xl border border-foreground/30 bg-card px-3.5 text-base text-foreground placeholder:text-muted-foreground outline-none transition hover:border-foreground/50 focus:border-primary focus:ring-2 focus:ring-primary/30'
   const ph = (f: string, e: string) => (fr ? f : e)
 
   return (
-    <form onSubmit={onSubmit} className="w-full text-left">
+    <form onSubmit={onSubmit} className="@container w-full text-left">
       <div className="grid grid-cols-2 gap-2.5">
         <label className="sr-only" htmlFor="cb-name">{ph('Nom et prénom', 'Full name')}</label>
         <input id="cb-name" name="name" required autoComplete="name" placeholder={ph('Nom et prénom', 'Full name')} className={`${input} col-span-2`} />
@@ -125,9 +125,9 @@ export function CallbackForm({ lang }: { lang: 'fr' | 'en' }) {
           ))}
         </select>
         <label className="sr-only" htmlFor="cb-entreprise">{ph('Entreprise (facultatif)', 'Company (optional)')}</label>
-        <input id="cb-entreprise" name="entreprise" autoComplete="organization" placeholder={ph('Entreprise (facultatif)', 'Company (optional)')} className={input} />
+        <input id="cb-entreprise" name="entreprise" autoComplete="organization" placeholder={ph('Entreprise (facultatif)', 'Company (optional)')} className={`${input} col-span-2 @lg:col-span-1`} />
         <label className="sr-only" htmlFor="cb-site">{ph('Votre site (facultatif)', 'Your website (optional)')}</label>
-        <input id="cb-site" name="website" autoComplete="url" placeholder={ph('Votre site (facultatif)', 'Your website (optional)')} className={input} />
+        <input id="cb-site" name="website" autoComplete="url" placeholder={ph('Votre site (facultatif)', 'Your website (optional)')} className={`${input} col-span-2 @lg:col-span-1`} />
         {/* Pot de miel : invisible pour un humain, rempli par les robots */}
         <input name="company" tabIndex={-1} autoComplete="off" aria-hidden className="hidden" />
       </div>
