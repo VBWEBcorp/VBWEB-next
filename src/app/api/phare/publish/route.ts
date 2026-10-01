@@ -31,6 +31,8 @@ interface PharePayload {
   coverImageUrl?: string
   coverImageAlt?: string
   url?: string
+  // Date de publication décidée dans PHARE (calendrier Contenu), ISO 8601.
+  publishedAt?: string
   // Action `file` : dépôt d'un fichier de la racine du site (llms.txt).
   path?: string
   content?: string
@@ -273,6 +275,11 @@ export async function POST(req: Request) {
 
     const jsonLd = jsonLdToString(body.jsonLd)
     const now = new Date()
+    // La date envoyée par PHARE fait foi : sans elle, le blog afficherait le jour
+    // du dépôt et le calendrier de PHARE une autre date. Repli sur maintenant si
+    // elle manque ou n'est pas lisible.
+    const sent = body.publishedAt ? new Date(body.publishedAt) : null
+    const publishedAt = sent && !Number.isNaN(sent.getTime()) ? sent : null
 
     // 7. UPSERT par slug — jamais de doublon si PHARE renvoie le même article
     const res = await BlogPost.updateOne(
@@ -295,9 +302,10 @@ export async function POST(req: Request) {
           // Déposé EN LIGNE : il sort dans /blog et à son adresse, jamais en
           // brouillon (un brouillon renverrait 404).
           published: true,
+          ...(publishedAt ? { publishedAt } : {}),
         },
         $setOnInsert: {
-          publishedAt: now,
+          ...(publishedAt ? {} : { publishedAt: now }),
           category: 'Actualités',
         },
       },
