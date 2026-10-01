@@ -12,6 +12,8 @@ export function useAuditPopup() {
 }
 
 export function AuditPopup({ open, onClose }: { open: boolean; onClose: () => void }) {
+  // Une fois la demande envoyée, l'animation de validation prend toute la place.
+  const [sent, setSent] = useState(false)
   const { lang } = useHomeLang()
   const tp = t.popup
 
@@ -68,15 +70,15 @@ export function AuditPopup({ open, onClose }: { open: boolean; onClose: () => vo
             <X className="size-4" />
           </button>
 
-          <div className="mb-4 sm:mb-5 pr-6">
+          {!sent && <div className="mb-4 sm:mb-5 pr-6">
             <h3 className="font-display text-lg font-medium tracking-[-0.01em] text-foreground sm:text-2xl">
               {tp.title[lang]}
             </h3>
             <p className="mt-1.5 text-[13px] leading-snug text-muted-foreground sm:text-[14px] sm:leading-relaxed">
               {tp.subtitle[lang]}
             </p>
-          </div>
-          <CallbackForm lang={lang} />
+          </div>}
+          <CallbackForm lang={lang} onLeave={onClose} onSent={() => setSent(true)} />
           </div>
         </div>
       </div>

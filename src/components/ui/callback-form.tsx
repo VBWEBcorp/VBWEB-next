@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { ArrowRight, Check, Loader2 } from 'lucide-react'
+import { ArrowRight, Loader2, Star } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
 import { t } from '@/components/home/lang'
@@ -45,7 +45,65 @@ export function useKeepProvenance() {
   }, [])
 }
 
-export function CallbackForm({ lang }: { lang: 'fr' | 'en' }) {
+/*
+ * Mène à la section des avis de l'accueil (vidéo des avis clients). Dans la
+ * popup, onLeave la ferme d'abord ; depuis une autre page, on va sur /#avis.
+ */
+function goToReviews(onLeave?: () => void) {
+  onLeave?.()
+  window.setTimeout(() => {
+    const el = document.getElementById('avis')
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    else window.location.href = '/#avis'
+  }, onLeave ? 60 : 0)
+}
+
+function ReviewsLink({ lang, onLeave }: { lang: 'fr' | 'en'; onLeave?: () => void }) {
+  return (
+    <button
+      type="button"
+      onClick={() => goToReviews(onLeave)}
+      className="mx-auto mt-2.5 flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[13px] text-muted-foreground transition-colors hover:text-foreground"
+    >
+      <span className="flex items-center gap-0.5" aria-hidden>
+        {Array.from({ length: 5 }).map((_, i) => (
+          <Star key={i} className="size-3 fill-amber-400 text-amber-400" />
+        ))}
+      </span>
+      <span className="underline decoration-foreground/30 underline-offset-4">
+        {lang === 'fr' ? 'Voir les avis clients' : 'See client reviews'}
+      </span>
+    </button>
+  )
+}
+
+const SPARKS = [0, 45, 90, 135, 180, 225, 270, 315]
+
+function SuccessCheck() {
+  return (
+    <div className="cb-anim relative mx-auto flex size-20 items-center justify-center" aria-hidden>
+      <span className="absolute inset-0 rounded-full bg-primary/40" style={{ animation: 'cb-ring 1.1s ease-out 0.25s both' }} />
+      <span className="absolute inset-0 rounded-full bg-primary/30" style={{ animation: 'cb-ring 1.1s ease-out 0.55s both' }} />
+      {SPARKS.map((a, i) => (
+        <span
+          key={a}
+          className={`absolute left-1/2 top-1/2 -ml-1 -mt-1 size-2 rounded-full ${i % 2 ? 'bg-amber-400' : 'bg-primary'}`}
+          style={{ ['--a' as string]: `${a}deg`, animation: 'cb-spark 0.8s ease-out 0.35s both' } as React.CSSProperties}
+        />
+      ))}
+      <span
+        className="relative flex size-20 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-[0_0_40px_-8px_rgba(78,186,236,0.8)]"
+        style={{ animation: 'cb-pop 0.55s cubic-bezier(0.22,1,0.36,1) both' }}
+      >
+        <svg viewBox="0 0 24 24" className="size-10" fill="none" stroke="currentColor" strokeWidth={2.8} strokeLinecap="round" strokeLinejoin="round">
+          <path d="M5 12.5l4.5 4.5L19 7.5" strokeDasharray="24" strokeDashoffset="24" style={{ animation: 'cb-draw 0.45s ease-out 0.4s forwards' }} />
+        </svg>
+      </span>
+    </div>
+  )
+}
+
+export function CallbackForm({ lang, onLeave, onSent }: { lang: 'fr' | 'en'; onLeave?: () => void; onSent?: () => void }) {
   const fr = lang === 'fr'
   const [state, setState] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
   const [error, setError] = useState('')
@@ -76,6 +134,7 @@ export function CallbackForm({ lang }: { lang: 'fr' | 'en' }) {
         throw new Error(j.error || '')
       }
       setState('sent')
+      onSent?.()
     } catch (err) {
       setState('error')
       const msg = err instanceof Error ? err.message : ''
@@ -91,15 +150,19 @@ export function CallbackForm({ lang }: { lang: 'fr' | 'en' }) {
 
   if (state === 'sent') {
     return (
-      <div className="flex w-full items-start gap-3 rounded-2xl border border-primary/30 bg-card/80 p-4 text-left">
-        <span className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground">
-          <Check className="size-4" />
-        </span>
-        <p className="text-[14px] leading-snug text-foreground">
-          {fr
-            ? 'C’est noté. Je vous rappelle sous 24 heures, du lundi au vendredi.'
-            : 'Got it. I will call you back within 24 hours, Monday to Friday.'}
+      <div className="cb-anim w-full py-4 text-center" role="status">
+        <SuccessCheck />
+        <p className="mt-6 font-display text-xl font-medium text-foreground" style={{ animation: 'cb-rise 0.5s ease-out 0.6s both' }}>
+          {fr ? 'C’est noté !' : 'Got it!'}
         </p>
+        <p className="mx-auto mt-1.5 max-w-xs text-[14px] leading-snug text-muted-foreground" style={{ animation: 'cb-rise 0.5s ease-out 0.75s both' }}>
+          {fr
+            ? 'Je vous rappelle sous 24 heures, du lundi au vendredi. Un email de confirmation vient de partir.'
+            : 'I will call you back within 24 hours, Monday to Friday. A confirmation email is on its way.'}
+        </p>
+        <div style={{ animation: 'cb-rise 0.5s ease-out 0.9s both' }}>
+          <ReviewsLink lang={lang} onLeave={onLeave} />
+        </div>
       </div>
     )
   }
@@ -142,6 +205,7 @@ export function CallbackForm({ lang }: { lang: 'fr' | 'en' }) {
         {state === 'sending' ? null : <ArrowRight className="transition-transform group-hover:translate-x-0.5" />}
       </Button>
       {state === 'error' && <p className="mt-2 text-[13px] text-red-400" role="alert">{error}</p>}
+      <ReviewsLink lang={lang} onLeave={onLeave} />
     </form>
   )
 }
