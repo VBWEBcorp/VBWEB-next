@@ -1,11 +1,9 @@
 'use client'
 
-import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { ArrowRight, Calendar, CheckCircle2 } from 'lucide-react'
 import Image from 'next/image'
 
-import { ContactForm } from '@/components/ui/contact-form'
+import { CallbackForm } from '@/components/ui/callback-form'
 
 const ease = [0.22, 1, 0.36, 1] as const
 
@@ -68,11 +66,7 @@ function ScrollColumn({
   )
 }
 
-const CALENDLY = 'https://calendly.com/web-rdv/echange-vbweb-30-minutes'
-
 export function ContactContent() {
-  const [sent, setSent] = useState(false)
-
   return (
     <>
       {/* HERO style Framer */}
@@ -180,74 +174,21 @@ export function ContactContent() {
                     Je vous accompagne pour transformer votre site en un véritable levier de croissance.
                   </p>
 
-                  {/* Divider */}
-                  <div className="my-7 h-px w-full bg-gradient-to-r from-transparent via-border/60 to-transparent" />
-
-                  {/* Rendez-vous direct */}
-                  <div className="w-full space-y-3">
-                    <a
-                      href={CALENDLY}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group/cta flex h-11 w-full items-center justify-center gap-2 rounded-full bg-primary px-5 text-[13px] font-medium text-primary-foreground transition-colors hover:bg-primary/85"
-                    >
-                      <Calendar className="size-4" />
-                      Réserver un appel
-                      <ArrowRight className="size-3.5 transition-transform group-hover/cta:translate-x-0.5" />
-                    </a>
-                    <p className="text-center text-[11px] text-muted-foreground/60">
-                      30 min · Gratuit · Sans engagement
-                    </p>
-                  </div>
                 </div>
 
                 {/* Right panel — Form */}
                 <div className="p-8 lg:p-10">
-                  {sent ? (
-                    <motion.div
-                      initial={{ opacity: 0, scale: 0.95 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      className="flex h-full flex-col items-center justify-center space-y-5 py-12 text-center"
-                    >
-                      <div className="relative">
-                        <div
-                          aria-hidden
-                          className="absolute -inset-4 rounded-full bg-primary/15 blur-2xl"
-                        />
-                        <div className="relative flex size-16 items-center justify-center rounded-full border border-primary/40 bg-primary/10 text-primary">
-                          <CheckCircle2 className="size-8" />
-                        </div>
-                      </div>
-                      <h3 className="font-display text-2xl font-medium tracking-[-0.02em] text-foreground sm:text-3xl">
-                        Message envoyé !
-                      </h3>
-                      <p className="max-w-sm text-[14px] text-muted-foreground">
-                        Merci pour votre message. Je reviens vers vous sous 24h.
+                  <div className="space-y-6">
+                    <div>
+                      <p className="font-display text-[10px] font-semibold uppercase tracking-[0.22em] text-primary/80">
+                        Formulaire
                       </p>
-                      <a
-                        href={CALENDLY}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="group inline-flex items-center gap-2 text-[13px] font-medium text-primary transition-colors hover:text-primary/80"
-                      >
-                        <Calendar className="size-4" />
-                        Ou réservez un appel directement
-                        <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" />
-                      </a>
-                    </motion.div>
-                  ) : (
-                    <div className="space-y-6">
-                      <div>
-                        <p className="font-display text-[10px] font-semibold uppercase tracking-[0.22em] text-primary/80">
-                          Formulaire
-                        </p>
-                        <h3 className="mt-2 font-display text-xl font-medium tracking-[-0.01em] text-foreground sm:text-2xl">
-                          Décrivez votre projet
-                        </h3>
-                      </div>
-                      <ContactForm source="contact" submitLabel="Envoyer ma demande" onSent={() => setSent(true)} />
+                      <h3 className="mt-2 font-display text-xl font-medium tracking-[-0.01em] text-foreground sm:text-2xl">
+                        Je vous rappelle sous 24 heures
+                      </h3>
                     </div>
-                  )}
+                    <CallbackForm lang="fr" />
+                  </div>
                 </div>
               </div>
             </div>

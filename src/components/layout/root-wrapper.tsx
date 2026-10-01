@@ -1,31 +1,15 @@
-import { headers } from 'next/headers'
-
 import { CookieConsent } from '@/components/layout/cookie-consent'
 import { Footer } from '@/components/layout/footer'
 import { Navbar } from '@/components/layout/navbar'
-import { FloatingCallButton } from '@/components/floating-call-button'
+import { SiteChrome } from '@/components/layout/site-chrome'
 
-export async function RootWrapper({ children }: { children: React.ReactNode }) {
-  // Detection du path cote serveur via x-pathname header (set par middleware Next)
-  // ou fallback : on renvoie navbar/footer par defaut
-  const headersList = await headers()
-  const pathname = headersList.get('x-pathname') || headersList.get('x-invoke-path') || ''
-  const isAdmin = pathname.startsWith('/admin')
-
-  // En espace admin: pas de header/footer (pleine largeur pour le dashboard)
-  if (isAdmin) {
-    return <>{children}</>
-  }
-
+// Aucune lecture de la requête ici (ni headers() ni cookies()) : c'est ce qui
+// permet aux pages sans données variables, l'accueil en tête, d'être servies
+// en statique depuis le cache. Le cas /admin se règle dans SiteChrome.
+export function RootWrapper({ children }: { children: React.ReactNode }) {
   return (
-    <>
-      <Navbar />
-      <main id="main-content" className="flex-1">
-        {children}
-      </main>
-      <Footer />
-      <FloatingCallButton />
-      <CookieConsent />
-    </>
+    <SiteChrome navbar={<Navbar />} footer={<Footer />} extras={<CookieConsent />}>
+      {children}
+    </SiteChrome>
   )
 }

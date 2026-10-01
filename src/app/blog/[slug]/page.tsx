@@ -11,11 +11,10 @@ import {
 } from '@/components/seo/json-ld'
 import { BlogPostContent } from './blog-post-client'
 
-// Rendu à chaque requête : le gabarit (RootWrapper) lit headers(), ce qui rend
-// tout le site dynamique. Déclarée en ISR, la page répondait 500
-// (DYNAMIC_SERVER_USAGE) pour tout article absent du build, donc pour chaque
-// article publié par PHARE après le déploiement.
-export const dynamic = 'force-dynamic'
+// En cache, renouvelée toutes les heures ; la route PHARE la purge à chaque
+// publication. Ne jamais lire headers() ou cookies() dans le gabarit : la page
+// répondait 500 (DYNAMIC_SERVER_USAGE) pour tout article absent du build.
+export const revalidate = 3600
 
 type Props = {
   params: Promise<{ slug: string }>

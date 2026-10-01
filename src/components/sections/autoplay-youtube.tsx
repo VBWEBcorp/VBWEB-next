@@ -16,6 +16,10 @@ import { useHomeLang } from '@/components/home/lang'
  * plein écran, son activé. Si le lecteur ne confirme pas la coupure du muet
  * (Safari iOS, par exemple), on recharge une seule fois l'iframe avec ses
  * commandes natives, son activé.
+ *
+ * Le lecteur n'est créé que lorsque la vidéo est à moitié visible : chargé dès
+ * l'arrivée, il pesait environ 1 Mo de scripts YouTube et ralentissait
+ * l'affichage du haut de l'accueil (mesuré le 01/10/2026). Avant, la miniature.
  */
 const CROP = 64
 const ORIGIN = 'https://www.youtube-nocookie.com'
@@ -24,6 +28,7 @@ const ALLOW = 'accelerometer; autoplay; clipboard-write; encrypted-media; fullsc
 export function AutoplayYouTube({ videoId, title }: { videoId: string; title: string }) {
   const [muted, setMuted] = useState(true)
   const [fallback, setFallback] = useState(false)
+  const [near, setNear] = useState(false)
   const mutedRef = useRef(true)
   const frameRef = useRef<HTMLIFrameElement>(null)
   const boxRef = useRef<HTMLDivElement>(null)
@@ -50,6 +55,26 @@ export function AutoplayYouTube({ videoId, title }: { videoId: string; title: st
     window.addEventListener('message', onMessage)
     return () => window.removeEventListener('message', onMessage)
   }, [])
+
+  useEffect(() => {
+    const box = boxRef.current
+    if (!box || near) return
+    if (!('IntersectionObserver' in window)) {
+      setNear(true)
+      return
+    }
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          setNear(true)
+          io.disconnect()
+        }
+      },
+      { threshold: 0.5 },
+    )
+    io.observe(box)
+    return () => io.disconnect()
+  }, [near])
 
   const listen = useCallback(() => {
     frameRef.current?.contentWindow?.postMessage(JSON.stringify({ event: 'listening', id: 1, channel: 'widget' }), ORIGIN)
@@ -102,7 +127,17 @@ export function AutoplayYouTube({ videoId, title }: { videoId: string; title: st
 
   return (
     <div ref={boxRef} className="absolute inset-0 overflow-hidden bg-black">
-      <iframe
+      {!near && (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={`https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`}
+          alt=""
+          loading="lazy"
+          decoding="async"
+          className="absolute inset-0 size-full object-cover"
+        />
+      )}
+      {near && <iframe
         ref={frameRef}
         src={`${ORIGIN}/embed/${videoId}?autoplay=1&mute=1&controls=0&loop=1&playlist=${videoId}&rel=0&playsinline=1&disablekb=1&iv_load_policy=3&enablejsapi=1`}
         title={title}
@@ -113,7 +148,7 @@ export function AutoplayYouTube({ videoId, title }: { videoId: string; title: st
         aria-hidden
         className="pointer-events-none absolute inset-x-0 w-full"
         style={{ top: -CROP, height: `calc(100% + ${CROP * 2}px)` }}
-      />
+      />}
 
       {/* Calque : bloque le survol (habillage YouTube) et porte le clic « son » */}
       <button

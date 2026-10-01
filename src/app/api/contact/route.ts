@@ -10,14 +10,14 @@ import { siteConfig } from '@/lib/seo'
 
 const RESEND_URL = 'https://api.resend.com/emails'
 const FROM = 'VBWEB <contact@vbweb.fr>'
-const CALENDLY = 'https://calendly.com/web-rdv/echange-vbweb-30-minutes'
 
 type Payload = {
   source?: 'audit' | 'contact' | 'rappel'
   name?: string
   email?: string
-  /** Formulaire de rappel du haut de l'accueil : le téléphone remplace l'email */
+  /** Formulaire de rappel (popup de tous les boutons et haut de l'accueil) */
   phone?: string
+  entreprise?: string
   /** Paramètres de la publicité (utm_*, campaign_id, ad_id) et page d'envoi */
   provenance?: Record<string, unknown>
   website?: string
@@ -42,21 +42,26 @@ async function sendMail(apiKey: string, mail: Record<string, unknown>) {
 }
 
 /**
- * Demande de rappel (haut de l'accueil, cible des publicités) : prénom et
- * téléphone obligatoires, site facultatif, aucun accusé de réception puisqu'il
- * n'y a pas d'email. Le sujet dit d'où vient la demande, pour trier d'un coup
+ * Demande de rappel (popup de tous les boutons et haut de l'accueil, cible des
+ * publicités) : nom, téléphone, email et budget obligatoires, entreprise et
+ * site facultatifs. Le sujet dit d'où vient la demande, pour trier d'un coup
  * d'œil ce que rapporte la publicité ChatGPT.
  */
 async function demandeDeRappel(apiKey: string, body: Payload) {
   const name = clean(body.name, 200)
   const phone = clean(body.phone, 40)
+  const email = clean(body.email, 200)
+  const budget = clean(body.budget, 100)
+  const entreprise = clean(body.entreprise, 200)
   const rawSite = clean(body.website, 500)
   const website = /^[\w-]+(\.[\w-]+)+(\/\S*)?$/.test(rawSite) ? `https://${rawSite}` : rawSite
 
-  if (!name) return NextResponse.json({ error: 'Prénom requis' }, { status: 400 })
+  if (!name) return NextResponse.json({ error: 'Nom requis' }, { status: 400 })
   if (phone.replace(/\D/g, '').length < 9) {
     return NextResponse.json({ error: 'Numéro de téléphone incomplet' }, { status: 400 })
   }
+  if (!isEmail(email)) return NextResponse.json({ error: 'Adresse email invalide' }, { status: 400 })
+  if (!budget) return NextResponse.json({ error: 'Budget requis' }, { status: 400 })
 
   const prov: Record<string, string> = {}
   if (body.provenance && typeof body.provenance === 'object') {
@@ -71,8 +76,11 @@ async function demandeDeRappel(apiKey: string, body: Payload) {
     : 'site (accès direct ou recherche)'
 
   const fields: Array<[string, string]> = [
-    ['Prénom', name],
+    ['Nom', name],
     ['Téléphone', phone],
+    ['Email', email],
+    ['Budget', budget],
+    ['Entreprise', entreprise],
     ['Site', website],
     ['Provenance', origine],
     ['Page', prov.page || ''],
@@ -87,19 +95,20 @@ async function demandeDeRappel(apiKey: string, body: Payload) {
     .join('\n')
 
   const tel = phone.replace(/[^\d+]/g, '')
+  const lien = (k: string, v: string) =>
+    k === 'Téléphone'
+      ? `<a href="tel:${escapeHtml(tel)}">${escapeHtml(v)}</a>`
+      : k === 'Email'
+        ? `<a href="mailto:${escapeHtml(v)}">${escapeHtml(v)}</a>`
+        : k === 'Site' && /^https?:\/\//i.test(v)
+          ? `<a href="${escapeHtml(v)}">${escapeHtml(v)}</a>`
+          : escapeHtml(v)
   const html = `
     <div style="font-family:system-ui,sans-serif;font-size:15px;line-height:1.6;color:#111">
-      <p style="margin:0 0 12px"><strong>Demande de rappel</strong> (formulaire du haut de l’accueil)</p>
+      <p style="margin:0 0 12px"><strong>Demande de rappel</strong></p>
       <table style="border-collapse:collapse">
         ${fields
-          .map(
-            ([k, v]) =>
-              `<tr><td style="padding:2px 12px 2px 0;color:#666">${k}</td><td style="padding:2px 0">${
-                k === 'Téléphone'
-                  ? `<a href="tel:${escapeHtml(tel)}">${escapeHtml(v)}</a>`
-                  : escapeHtml(v)
-              }</td></tr>`,
-          )
+          .map(([k, v]) => `<tr><td style="padding:2px 12px 2px 0;color:#666">${k}</td><td style="padding:2px 0">${lien(k, v)}</td></tr>`)
           .join('')}
       </table>
       ${details.length ? `<p style="margin:16px 0 0;color:#666;font-size:13px">${details.map(([k, v]) => `${escapeHtml(k)}=${escapeHtml(v)}`).join(' · ')}</p>` : ''}
@@ -109,6 +118,7 @@ async function demandeDeRappel(apiKey: string, body: Payload) {
     await sendMail(apiKey, {
       from: FROM,
       to: [siteConfig.email],
+      reply_to: email,
       subject: `À rappeler : ${name} (${phone})${sourcePub ? ` · ${sourcePub}` : ''}`,
       text,
       html,
@@ -118,6 +128,15 @@ async function demandeDeRappel(apiKey: string, body: Payload) {
     console.error('[contact] rappel', err)
     return NextResponse.json({ error: 'Envoi impossible' }, { status: 502 })
   }
+
+  // Accusé de réception au prospect : sa réussite ne conditionne pas la réponse.
+  sendMail(apiKey, {
+    from: FROM,
+    to: [email],
+    subject: 'Bien reçu : je vous rappelle sous 24 h',
+    text: `Bonjour ${name},\n\nBien reçu. Je vous rappelle sous 24 heures, du lundi au vendredi, au ${phone}.\n\nVictor Béasse\nVBWEB\n${siteConfig.url}`,
+  }).catch((err) => console.error('[contact] accusé de réception rappel', err))
+
   return NextResponse.json({ ok: true })
 }
 
@@ -211,8 +230,8 @@ export async function POST(req: Request) {
   // Accusé de réception au prospect : sa réussite ne conditionne pas la réponse.
   const ack =
     source === 'audit'
-      ? `Bonjour ${name},\n\nBien reçu. ${hasSite ? `Je regarde ${website} et je` : 'Je'} vous envoie votre audit en vidéo sous 48 heures.\n\nSi vous préférez en parler de vive voix, réservez un créneau : ${CALENDLY}\n\nVictor Béasse\nVBWEB\n${siteConfig.url}`
-      : `Bonjour ${name},\n\nBien reçu, je vous réponds sous 24 heures.\n\nSi vous préférez en parler de vive voix, réservez un créneau : ${CALENDLY}\n\nVictor Béasse\nVBWEB\n${siteConfig.url}`
+      ? `Bonjour ${name},\n\nBien reçu. ${hasSite ? `Je regarde ${website} et je` : 'Je'} vous envoie votre audit en vidéo sous 48 heures.\n\nVictor Béasse\nVBWEB\n${siteConfig.url}`
+      : `Bonjour ${name},\n\nBien reçu, je vous réponds sous 24 heures.\n\nVictor Béasse\nVBWEB\n${siteConfig.url}`
 
   sendMail(apiKey, {
     from: FROM,

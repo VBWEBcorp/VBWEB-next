@@ -1,12 +1,10 @@
 'use client'
 
-import { CalendarClock, CheckCircle2, ShieldCheck, X } from 'lucide-react'
+import { X } from 'lucide-react'
 import { useState, useEffect, useCallback } from 'react'
 
 import { useHomeLang, t } from '@/components/home/lang'
-import { ContactForm } from '@/components/ui/contact-form'
-
-const CALENDLY = 'https://calendly.com/web-rdv/echange-vbweb-30-minutes'
+import { CallbackForm } from '@/components/ui/callback-form'
 
 export function useAuditPopup() {
   const [open, setOpen] = useState(false)
@@ -14,7 +12,6 @@ export function useAuditPopup() {
 }
 
 export function AuditPopup({ open, onClose }: { open: boolean; onClose: () => void }) {
-  const [sent, setSent] = useState(false)
   const { lang } = useHomeLang()
   const tp = t.popup
 
@@ -71,68 +68,15 @@ export function AuditPopup({ open, onClose }: { open: boolean; onClose: () => vo
             <X className="size-4" />
           </button>
 
-          {sent ? (
-            <div className="flex flex-col items-center space-y-4 py-6 text-center">
-              <div className="flex size-14 items-center justify-center rounded-full border border-primary/40 bg-primary/10 text-primary">
-                <CheckCircle2 className="size-7" />
-              </div>
-              <h3 className="font-display text-xl font-medium text-foreground">
-                {tp.successTitle[lang]}
-              </h3>
-              <p className="text-[14px] text-muted-foreground">
-                {tp.successMessage[lang]}
-              </p>
-              <button
-                type="button"
-                onClick={onClose}
-                className="mt-2 text-[13px] font-medium text-primary transition-colors hover:text-primary/80"
-              >
-                {tp.close[lang]}
-              </button>
-            </div>
-          ) : (
-            <>
-              <div className="mb-4 sm:mb-5">
-                <div className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-3 py-1 shadow-[0_0_20px_-8px_rgba(78,186,236,0.5)]">
-                  <ShieldCheck className="size-3.5 text-primary" />
-                  <span className="font-display text-[11px] font-bold uppercase tracking-[0.14em] text-primary sm:text-[12px] sm:tracking-[0.16em]">
-                    {tp.badge[lang]}
-                  </span>
-                </div>
-                <h3 className="mt-3 font-display text-lg font-medium tracking-[-0.01em] text-foreground sm:text-2xl">
-                  {tp.title[lang]}
-                </h3>
-                <p className="mt-1.5 text-[13px] leading-snug text-muted-foreground sm:text-[14px] sm:leading-relaxed">
-                  {tp.subtitle[lang]}
-                </p>
-              </div>
-
-              <ContactForm source="audit" onSent={() => setSent(true)} />
-
-              {/* Séparateur "ou" */}
-              <div className="relative my-3 sm:my-4">
-                <div aria-hidden className="absolute inset-0 flex items-center">
-                  <div className="w-full border-t border-border/40" />
-                </div>
-                <div className="relative flex justify-center">
-                  <span className="bg-background px-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-muted-foreground/60">
-                    {tp.or[lang]}
-                  </span>
-                </div>
-              </div>
-
-              {/* Bouton Calendly direct */}
-              <a
-                href={CALENDLY}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex h-10 w-full items-center justify-center gap-2 rounded-full border border-border/60 bg-card/40 text-[13px] font-medium text-foreground transition-all hover:border-primary/40 hover:bg-card/60 sm:h-11"
-              >
-                <CalendarClock className="size-4 text-primary" />
-                {tp.calendly[lang]}
-              </a>
-            </>
-          )}
+          <div className="mb-4 sm:mb-5 pr-6">
+            <h3 className="font-display text-lg font-medium tracking-[-0.01em] text-foreground sm:text-2xl">
+              {tp.title[lang]}
+            </h3>
+            <p className="mt-1.5 text-[13px] leading-snug text-muted-foreground sm:text-[14px] sm:leading-relaxed">
+              {tp.subtitle[lang]}
+            </p>
+          </div>
+          <CallbackForm lang={lang} />
           </div>
         </div>
       </div>

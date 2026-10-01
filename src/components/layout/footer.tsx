@@ -119,7 +119,10 @@ export function Footer() {
                   {/* Coordonnées */}
                   <div className="mt-6 space-y-2">
                     <a
-                      href={`tel:${siteConfig.phone.replace(/\s/g, '')}`}
+                      href={`https://wa.me/${siteConfig.phone.replace(/\D/g, '')}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`WhatsApp ${siteConfig.phone}`}
                       className="group/c flex items-center gap-3 rounded-xl border border-border/40 bg-foreground/5 px-3 py-2.5 text-[13px] text-muted-foreground transition-all duration-300 hover:border-primary/30 hover:bg-foreground/10 hover:text-foreground"
                     >
                       <span className="flex size-7 shrink-0 items-center justify-center rounded-lg border border-border/40 bg-foreground/5 text-muted-foreground transition-colors group-hover/c:border-primary/40 group-hover/c:text-primary">

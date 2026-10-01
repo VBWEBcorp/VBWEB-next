@@ -3,6 +3,8 @@
 import { createContext, useContext, useState } from 'react'
 import dynamic from 'next/dynamic'
 
+import { useKeepProvenance } from './callback-form'
+
 const AuditPopup = dynamic(() => import('./audit-popup').then((m) => m.AuditPopup), {
   ssr: false,
 })
@@ -16,6 +18,7 @@ export function useAudit() {
 export function AuditProvider({ children }: { children: React.ReactNode }) {
   const [open, setOpen] = useState(false)
   const [mounted, setMounted] = useState(false)
+  useKeepProvenance()
 
   const openAudit = () => {
     setMounted(true)

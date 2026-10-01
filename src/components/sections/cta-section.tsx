@@ -1,10 +1,5 @@
-import { ArrowRight, Calendar } from 'lucide-react'
-import Link from 'next/link'
-
-import { Button } from '@/components/ui/button'
+import { AuditButton } from '@/components/ui/audit-button'
 import { Reveal } from '@/components/ui/reveal'
-
-const CALENDLY = 'https://calendly.com/web-rdv/echange-vbweb-30-minutes'
 
 export function CtaSection() {
   return (
@@ -15,22 +10,11 @@ export function CtaSection() {
             Prêt à transformer votre site en générateur de clients ?
           </h2>
           <p className="mx-auto max-w-2xl text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
-            30 minutes gratuites pour découvrir comment doubler votre acquisition client grâce à un site premium et une stratégie SEO qui fonctionne. Sans engagement, juste du concret.
+            Laissez votre numéro : je vous rappelle sous 24 heures pour parler de votre site et de votre visibilité. Sans engagement, juste du concret.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-4">
-            <Button size="lg" className="group bg-primary text-primary-foreground hover:bg-primary/85 font-semibold" asChild>
-              <a href={CALENDLY} target="_blank" rel="noopener noreferrer">
-                <Calendar className="size-4 mr-1" />
-                Réserver un appel gratuit
-                <ArrowRight className="transition-transform group-hover:translate-x-0.5" />
-              </a>
-            </Button>
-            <Button size="lg" variant="outline" className="border-border/60 text-foreground hover:bg-foreground/5 hover:text-foreground" asChild>
-              <Link href="/contact">
-                Envoyer un message
-              </Link>
-            </Button>
+          <div className="flex justify-center pt-4">
+            <AuditButton />
           </div>
         </Reveal>
       </div>

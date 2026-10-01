@@ -10,6 +10,8 @@ import {
 } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
+
+import { useAudit } from '@/components/ui/audit-provider'
 import { usePathname } from 'next/navigation'
 import { useState, useEffect } from 'react'
 
@@ -49,6 +51,7 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const pathname = usePathname()
   const { lang } = useHomeLang()
+  const { openAudit } = useAudit()
   const navItems = t.navbar.items[lang]
 
   useEffect(() => {
@@ -125,13 +128,14 @@ export function Navbar() {
 
           {/* Right actions */}
           <div className="flex items-center gap-2">
-            <Link
-              href="/contact"
+            <button
+              type="button"
+              onClick={openAudit}
               className="hidden h-9 items-center gap-1.5 rounded-full bg-primary px-4 text-[13px] font-medium text-primary-foreground transition-colors hover:bg-primary/85 sm:inline-flex"
             >
               {t.navbar.prendreRdv[lang]}
               <ArrowRight className="size-3.5" />
-            </Link>
+            </button>
 
             <LangToggle />
 

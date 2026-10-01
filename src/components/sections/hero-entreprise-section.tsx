@@ -5,6 +5,7 @@ import { ArrowRight, Star } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 
+import { AuditButton } from '@/components/ui/audit-button'
 import { Button } from '@/components/ui/button'
 
 const ease = [0.22, 1, 0.36, 1] as const
@@ -127,12 +128,7 @@ export function HeroEntrepriseSection() {
 
             {/* CTAs */}
             <div className="mt-12 flex flex-col justify-center gap-3 sm:mt-10 sm:flex-row lg:justify-start">
-              <Button size="lg" className="group bg-primary text-primary-foreground hover:bg-primary/85" asChild>
-                <Link href="/contact">
-                  Prendre rendez-vous
-                  <ArrowRight className="transition-transform group-hover:translate-x-0.5" />
-                </Link>
-              </Button>
+              <AuditButton />
               <Button
                 size="lg"
                 variant="outline"

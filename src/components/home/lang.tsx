@@ -41,7 +41,7 @@ export const t = {
     reviews: { fr: '80+ avis', en: '80+ reviews' },
     proofs: {
       fr: [
-        { value: '150+', label: 'clients SEO accompagnés' },
+        { value: '150+', label: 'clients accompagnés en référencement' },
         { value: '200+', label: 'sites créés' },
         { value: '10+', label: 'applications sur mesure' },
       ],
@@ -276,23 +276,23 @@ export const t = {
     worksCta: { fr: 'Voir les {count} sites', en: 'See all {count} sites' },
   },
   ctaGallery: {
-    eyebrow: { fr: 'Audit gratuit, sans engagement', en: 'Free audit, no commitment' },
+    eyebrow: { fr: 'Gratuit, sans engagement', en: 'Free, no commitment' },
     h2: {
       fr: 'Votre entreprise est-elle visible sur Google et dans ChatGPT ?',
       en: 'Is your business visible on Google and in ChatGPT?',
     },
     description: {
-      fr: "Je vous réponds en vidéo, 10 minutes, sous 48 heures : ce qui fonctionne sur votre site, ce qui vous fait perdre des clients sur Google, et si les IA vous citent ou citent vos concurrents. Vous repartez avec un plan d'action clair, que vous deveniez client ou non.",
-      en: 'I answer you on video, 10 minutes, within 48 hours: what works on your site, what makes you lose clients on Google, and whether AI cites you or your competitors. You leave with a clear action plan, whether you become a client or not.',
+      fr: 'Laissez votre numéro, je vous rappelle sous 24 heures : ce qui fonctionne sur votre site, ce qui vous fait perdre des clients sur Google, et si les IA vous citent ou citent vos concurrents.',
+      en: 'Leave your number and I will call you back within 24 hours: what works on your site, what loses you clients on Google, and whether AI cites you or your competitors.',
     },
-    ctaPrimary: { fr: 'Demandez votre audit gratuit', en: 'Request your free audit' },
+    ctaPrimary: { fr: 'Être rappelé sous 24 h', en: 'Get a call back within 24 h' },
     ctaSecondary: {
       fr: 'ou contactez-moi directement',
       en: 'or contact me directly',
     },
   },
   navbar: {
-    prendreRdv: { fr: 'Prendre RDV', en: 'Book a call' },
+    prendreRdv: { fr: 'Être rappelé', en: 'Get a call back' },
     services: { fr: 'Services', en: 'Services' },
     caseStudies: { fr: 'Études de cas', en: 'Case studies' },
     items: {
@@ -322,10 +322,10 @@ export const t = {
   },
   popup: {
     badge: { fr: '100 % gratuit · sans engagement', en: '100% free · no commitment' },
-    title: { fr: 'Votre audit de visibilité en vidéo', en: 'Your video visibility audit' },
+    title: { fr: 'Je vous rappelle sous 24 heures', en: 'I will call you back within 24 hours' },
     subtitle: {
-      fr: 'Analyse vidéo de 10 min de votre visibilité sur Google + IA. Sous 48h.',
-      en: '10-min video analysis of your visibility on Google + AI. Within 48h.',
+      fr: 'Laissez votre prénom et votre numéro : on fait le point sur votre projet, gratuitement et sans engagement.',
+      en: 'Leave your first name and number: we talk about your project, free and with no commitment.',
     },
     nameLabel: { fr: 'Votre nom', en: 'Your name' },
     emailLabel: { fr: 'Votre email', en: 'Your email' },

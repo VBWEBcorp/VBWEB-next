@@ -96,25 +96,12 @@ export function CtaGallerySection({ variant = 'default' }: { variant?: 'default'
                 {t.ctaGallery.ctaPrimary[lang]}
                 <ArrowRight className="transition-transform group-hover:translate-x-0.5" />
               </Button>
-              <Link
-                href="/contact"
-                className="text-[13px] text-muted-foreground underline-offset-4 transition-colors hover:text-primary hover:underline"
-              >
-                {t.ctaGallery.ctaSecondary[lang]}
-              </Link>
             </div>
           ) : (
             <div className="flex flex-col justify-center gap-3 pt-2 sm:flex-row">
-              <Button size="lg" className="group bg-primary text-primary-foreground hover:bg-primary/85" asChild>
-                <Link href="/contact">
-                  Prendre rendez-vous
-                  <ArrowRight className="transition-transform group-hover:translate-x-0.5" />
-                </Link>
-              </Button>
-              <Button size="lg" variant="outline" className="border-border bg-card/50 backdrop-blur-sm" asChild>
-                <Link href="/audit-seo-gratuit">
-                  Audit gratuit
-                </Link>
+              <Button size="lg" className="group bg-primary text-primary-foreground hover:bg-primary/85" onClick={openAudit}>
+                {t.ctaGallery.ctaPrimary[lang]}
+                <ArrowRight className="transition-transform group-hover:translate-x-0.5" />
               </Button>
             </div>
           )}

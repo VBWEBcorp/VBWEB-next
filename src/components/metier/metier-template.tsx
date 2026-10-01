@@ -349,12 +349,7 @@ export function MetierTemplate({ config, faqs }: MetierTemplateProps) {
           </div>
 
           <Reveal delay={0.3} className="mt-10 text-center">
-            <Button size="lg" className="group bg-primary text-primary-foreground hover:bg-primary/85" asChild>
-              <Link href="/contact">
-                Prendre rendez-vous
-                <ArrowRight className="transition-transform group-hover:translate-x-0.5" />
-              </Link>
-            </Button>
+            <AuditButton />
           </Reveal>
         </div>
       </section>

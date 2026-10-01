@@ -2,7 +2,7 @@
 
 import { Star } from 'lucide-react'
 import Image from 'next/image'
-import { HeroCallbackForm } from '@/components/sections/hero-callback-form'
+import { CallbackForm } from '@/components/ui/callback-form'
 import { useHomeLang, t } from '@/components/home/lang'
 
 function GoogleG({ className = 'size-4' }: { className?: string }) {
@@ -77,8 +77,10 @@ export function HeroSection() {
       className="relative isolate overflow-hidden bg-background"
       style={{ minHeight: 'min(720px, 100vh)' }}
     >
-      {/* Photo columns pleine largeur (identique au CTA gallery) */}
-      <div className="absolute inset-0 flex gap-3 opacity-25">
+      {/* Photo columns pleine largeur (identique au CTA gallery). Absentes sur
+          mobile : sur un téléphone, ces images animées étaient le dernier
+          élément affiché et retardaient la page (visiteurs de la pub ChatGPT). */}
+      <div className="absolute inset-0 hidden gap-3 opacity-25 sm:flex">
         <ScrollColumn images={heroImages} direction="up" duration={40} />
         <ScrollColumn images={rot(heroImages, 3)} direction="down" duration={35} />
         <ScrollColumn images={rot(heroImages, 6)} direction="up" duration={38} />
@@ -99,7 +101,6 @@ export function HeroSection() {
           {/* Photo — à droite sur desktop (sur 2 rangées), en haut sur mobile/tablet */}
           <div
             className="order-1 flex justify-center lg:order-none lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:self-center"
-            style={{ animation: 'hero-scale-in 0.7s cubic-bezier(0.22,1,0.36,1) 0.15s both' }}
           >
             {/* Petit ecran : la photo cede de la place pour que le bouton
                 d'appel a l'action reste visible sans faire defiler. */}
@@ -121,7 +122,6 @@ export function HeroSection() {
           {/* Text */}
           <div
             className="order-2 text-center lg:order-none lg:col-start-1 lg:row-start-1 lg:text-left"
-            style={{ animation: 'hero-fade-up 0.65s cubic-bezier(0.22,1,0.36,1) both' }}
           >
             {/* Eyebrow */}
             <div className="flex justify-center lg:justify-start">
@@ -147,19 +147,12 @@ export function HeroSection() {
           {/* CTAs + badge Google — sous le texte (à gauche sur desktop) */}
           <div
             className="order-3 flex flex-col items-center gap-4 sm:gap-7 lg:order-none lg:col-start-1 lg:row-start-2 lg:items-start"
-            style={{ animation: 'hero-scale-in 0.7s cubic-bezier(0.22,1,0.36,1) 0.15s both' }}
           >
             {/* CTA : un seul geste, laisser son numéro pour être rappelé */}
             <div className="flex w-full flex-col items-center gap-3 lg:items-start">
-              <HeroCallbackForm lang={lang} />
-              <a
-                href="https://calendly.com/web-rdv/echange-vbweb-30-minutes"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[13px] text-muted-foreground underline-offset-4 transition-colors hover:text-primary hover:underline"
-              >
-                {t.hero.ctaSecondary[lang]}
-              </a>
+              <div className="w-full max-w-lg">
+                <CallbackForm lang={lang} />
+              </div>
             </div>
 
             {/* Badge avis Google + preuves chiffrées, sur une même ligne (retour à la ligne sur mobile) */}
@@ -177,12 +170,12 @@ export function HeroSection() {
               </div>
 
               {/* Preuves : chiffre net, libellé discret, séparées par un filet */}
-              <ul className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5 text-[12px] text-muted-foreground lg:justify-start">
+              <ul className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-[13px] text-muted-foreground sm:text-[14px] lg:justify-start">
                 {t.hero.proofs[lang].map((proof, i) => (
                   <li key={proof.label} className="flex items-center gap-4">
                     {i > 0 && <span aria-hidden className="hidden h-3 w-px bg-border sm:block" />}
                     <span className="whitespace-nowrap">
-                      <span className="font-display font-semibold text-foreground">{proof.value}</span>{' '}
+                      <span className="font-display text-xl font-semibold text-foreground sm:text-2xl">{proof.value}</span>{' '}
                       {proof.label}
                     </span>
                   </li>
