@@ -16,7 +16,7 @@ export function FounderSection() {
   const tags = t.founder.resultTags[lang]
 
   return (
-    <section className="relative overflow-hidden bg-background">
+    <section id="video" className="relative scroll-mt-20 overflow-hidden bg-background">
       {/* Grain */}
       <div
         aria-hidden

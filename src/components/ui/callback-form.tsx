@@ -105,20 +105,20 @@ export function CallbackForm({ lang }: { lang: 'fr' | 'en' }) {
   }
 
   const input =
-    'h-11 w-full rounded-xl border border-border/70 bg-background/80 px-3.5 text-[15px] text-foreground placeholder:text-muted-foreground/70 outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/30'
+    'h-11 w-full rounded-xl border border-foreground/30 bg-card px-3.5 text-[15px] text-foreground placeholder:text-muted-foreground outline-none transition hover:border-foreground/50 focus:border-primary focus:ring-2 focus:ring-primary/30'
   const ph = (f: string, e: string) => (fr ? f : e)
 
   return (
     <form onSubmit={onSubmit} className="w-full text-left">
-      <div className="grid gap-2.5 sm:grid-cols-2">
+      <div className="grid grid-cols-2 gap-2.5">
         <label className="sr-only" htmlFor="cb-name">{ph('Nom et prénom', 'Full name')}</label>
-        <input id="cb-name" name="name" required autoComplete="name" placeholder={ph('Nom et prénom', 'Full name')} className={`${input} sm:col-span-2`} />
+        <input id="cb-name" name="name" required autoComplete="name" placeholder={ph('Nom et prénom', 'Full name')} className={`${input} col-span-2`} />
         <label className="sr-only" htmlFor="cb-phone">{ph('Téléphone', 'Phone')}</label>
         <input id="cb-phone" name="phone" required type="tel" inputMode="tel" autoComplete="tel" placeholder={ph('Téléphone', 'Phone')} className={input} />
         <label className="sr-only" htmlFor="cb-email">Email</label>
         <input id="cb-email" name="email" required type="email" autoComplete="email" placeholder="Email" className={input} />
         <label className="sr-only" htmlFor="cb-budget">{ph('Budget', 'Budget')}</label>
-        <select id="cb-budget" name="budget" required defaultValue="" className={`${input} sm:col-span-2 invalid:text-muted-foreground/70`}>
+        <select id="cb-budget" name="budget" required defaultValue="" className={`${input} col-span-2 invalid:text-muted-foreground/70`}>
           <option value="" disabled>{ph('Budget mensuel envisagé', 'Monthly budget')}</option>
           {t.popup.budgetOptions[lang].map((b) => (
             <option key={b} value={b} className="text-foreground">{b}</option>

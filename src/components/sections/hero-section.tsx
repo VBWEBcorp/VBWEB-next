@@ -1,6 +1,6 @@
 'use client'
 
-import { Star } from 'lucide-react'
+import { Play, Star } from 'lucide-react'
 import Image from 'next/image'
 import { CallbackForm } from '@/components/ui/callback-form'
 import { useHomeLang, t } from '@/components/home/lang'
@@ -142,6 +142,15 @@ export function HeroSection() {
             <p className="mx-auto mt-3.5 max-w-xl text-pretty text-[14px] leading-snug text-white sm:mt-6 sm:text-base sm:leading-relaxed lg:mx-0">
               {t.hero.subtitle[lang]}
             </p>
+
+            {/* Mobile : la vidéo est loin sous le formulaire, un lien discret y mène */}
+            <a
+              href="#video"
+              className="mt-3 inline-flex items-center gap-1.5 rounded-full border border-foreground/15 px-3 py-1 text-[12px] text-muted-foreground transition-colors hover:border-primary/50 hover:text-foreground lg:hidden"
+            >
+              <Play className="size-3 fill-current" aria-hidden />
+              {lang === 'en' ? 'Watch the video' : 'Voir la vidéo'}
+            </a>
           </div>
 
           {/* CTAs + badge Google — sous le texte (à gauche sur desktop) */}
@@ -155,8 +164,8 @@ export function HeroSection() {
               </div>
             </div>
 
-            {/* Badge avis Google + preuves chiffrées, sur une même ligne (retour à la ligne sur mobile) */}
-            <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-3 lg:justify-start">
+            {/* Badge avis Google, puis les trois chiffres côte à côte sur une seule ligne */}
+            <div className="flex flex-col items-center gap-4 lg:items-start">
               <div className="inline-flex items-center gap-3 rounded-full border border-border/60 bg-card/60 px-4 py-2 backdrop-blur-sm">
                 <GoogleG className="size-4" />
                 <span aria-hidden className="h-3 w-px bg-border" />
@@ -170,13 +179,13 @@ export function HeroSection() {
               </div>
 
               {/* Preuves : chiffre net, libellé discret, séparées par un filet */}
-              <ul className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-[13px] text-muted-foreground sm:text-[14px] lg:justify-start">
+              <ul className="grid grid-cols-3 gap-3 text-center sm:flex sm:flex-nowrap sm:items-center sm:gap-4 sm:text-left">
                 {t.hero.proofs[lang].map((proof, i) => (
                   <li key={proof.label} className="flex items-center gap-4">
-                    {i > 0 && <span aria-hidden className="hidden h-3 w-px bg-border sm:block" />}
-                    <span className="whitespace-nowrap">
-                      <span className="font-display text-xl font-semibold text-foreground sm:text-2xl">{proof.value}</span>{' '}
-                      {proof.label}
+                    {i > 0 && <span aria-hidden className="hidden h-8 w-px bg-border sm:block" />}
+                    <span className="flex flex-col leading-tight sm:whitespace-nowrap">
+                      <span className="font-display text-xl font-semibold text-foreground sm:text-2xl">{proof.value}</span>
+                      <span className="text-[11px] text-muted-foreground sm:text-[13px]">{proof.label}</span>
                     </span>
                   </li>
                 ))}
