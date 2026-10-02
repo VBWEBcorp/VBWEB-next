@@ -10,6 +10,12 @@ import { siteConfig } from '@/lib/seo'
 
 const RESEND_URL = 'https://api.resend.com/emails'
 const FROM = 'VBWEB <contact@vbweb.fr>'
+// Les demandes partent AUSSI directement sur le Gmail de Victor. Envoyées de
+// contact@vbweb.fr à contact@vbweb.fr depuis Resend, Infomaniak les acceptait
+// (statut « delivered ») mais ne les transmettait jamais à Gmail : aucune demande
+// de la pub ChatGPT n'a été vue du 30/09 au 02/10/2026. Un seul envoi, un seul
+// Message-ID : Gmail n'affiche qu'un exemplaire si Infomaniak finit par relayer.
+const NOTIFY_TO = [siteConfig.email, 'contact.vbweb.entreprise@gmail.com']
 
 type Payload = {
   source?: 'audit' | 'contact' | 'rappel'
@@ -117,7 +123,7 @@ async function demandeDeRappel(apiKey: string, body: Payload) {
   try {
     await sendMail(apiKey, {
       from: FROM,
-      to: [siteConfig.email],
+      to: NOTIFY_TO,
       reply_to: email,
       subject: `À rappeler : ${name} (${phone})${sourcePub ? ` · ${sourcePub}` : ''}`,
       text,
@@ -215,7 +221,7 @@ export async function POST(req: Request) {
   try {
     await sendMail(apiKey, {
       from: FROM,
-      to: [siteConfig.email],
+      to: NOTIFY_TO,
       reply_to: email,
       subject,
       text,
