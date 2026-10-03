@@ -5,6 +5,7 @@ import { ArrowRight, Loader2, Star } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
 import { t } from '@/components/home/lang'
+import { trackRappelDemande } from '@/lib/openai-pixel'
 
 /*
  * Formulaire de rappel, le même partout : la popup que tous les boutons du site
@@ -134,6 +135,7 @@ export function CallbackForm({ lang, onLeave, onSent }: { lang: 'fr' | 'en'; onL
         throw new Error(j.error || '')
       }
       setState('sent')
+      trackRappelDemande()
       onSent?.()
     } catch (err) {
       setState('error')

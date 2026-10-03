@@ -5,6 +5,7 @@ import { RootWrapper } from '@/components/layout/root-wrapper'
 import { HomeLangProvider } from '@/components/home/lang'
 import { AuditProvider } from '@/components/ui/audit-provider'
 import { siteConfig } from '@/lib/seo'
+import { OPENAI_PIXEL_SNIPPET } from '@/lib/openai-pixel'
 
 import '../index.css'
 
@@ -86,6 +87,8 @@ export default function RootLayout({
         {/* Preconnect vers R2 (hôte de toutes les images du site) */}
         <link rel="preconnect" href="https://pub-698f857760da42999dac8854114fbc41.r2.dev" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://i.ytimg.com" />
+        {/* Pixel OpenAI Ads : mesure les rappels demandés depuis la pub ChatGPT */}
+        <script dangerouslySetInnerHTML={{ __html: OPENAI_PIXEL_SNIPPET }} />
       </head>
       <body className="flex min-h-dvh flex-col">
         <a

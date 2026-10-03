@@ -3,6 +3,8 @@
 import { useEffect, useState } from 'react'
 import { X, Cookie } from 'lucide-react'
 
+import { setPixelConsent } from '@/lib/openai-pixel'
+
 export function CookieConsent() {
   const [visible, setVisible] = useState(false)
 
@@ -26,11 +28,13 @@ export function CookieConsent() {
 
   const handleAccept = () => {
     localStorage.setItem('cookie-consent', 'accepted')
+    setPixelConsent(true)
     setVisible(false)
   }
 
   const handleDecline = () => {
     localStorage.setItem('cookie-consent', 'refused')
+    setPixelConsent(false)
     setVisible(false)
   }
 
