@@ -143,7 +143,8 @@ async function demandeDeRappel(apiKey: string, body: Payload) {
     text: `Bonjour ${name},\n\nBien reçu. Je vous rappelle sous 24 heures, du lundi au vendredi, au ${phone}.\n\nVictor Béasse\nVBWEB\n${siteConfig.url}`,
   }).catch((err) => console.error('[contact] accusé de réception rappel', err))
 
-  return NextResponse.json({ ok: true })
+  // id de la demande : event_id de la conversion côté pixel OpenAI
+  return NextResponse.json({ ok: true, id: crypto.randomUUID() })
 }
 
 export async function POST(req: Request) {

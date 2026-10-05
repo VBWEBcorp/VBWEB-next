@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import { X, Cookie } from 'lucide-react'
 
-import { setPixelConsent } from '@/lib/openai-pixel'
+import { setPixelConsent, trackPageView } from '@/lib/openai-pixel'
 
 export function CookieConsent() {
   const [visible, setVisible] = useState(false)
@@ -29,6 +29,8 @@ export function CookieConsent() {
   const handleAccept = () => {
     localStorage.setItem('cookie-consent', 'accepted')
     setPixelConsent(true)
+    // La page d'arrivée a été vue avant l'accord : on la compte maintenant.
+    trackPageView()
     setVisible(false)
   }
 
