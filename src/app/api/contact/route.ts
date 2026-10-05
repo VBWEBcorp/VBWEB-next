@@ -38,6 +38,31 @@ const isEmail = (v: string) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)
 const escapeHtml = (s: string) =>
   s.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c] ?? c)
 
+/**
+ * Copie de la demande dans le CRM : le lead y apparaît tout seul, avec sa
+ * provenance (la pub ChatGPT est reconnue aux utm_*), et une notification part
+ * dans l'application. L'adresse complète (avec son jeton) vit dans
+ * CRM_LEAD_WEBHOOK ; sans elle, rien ne change et la demande part quand même par
+ * mail. On attend la réponse (une fonction Netlify s'arrête dès qu'elle a
+ * répondu, un appel « en arrière-plan » serait coupé), mais jamais plus de 4 s
+ * et jamais en faisant échouer le formulaire.
+ */
+async function versLeCRM(payload: Record<string, unknown>) {
+  const url = process.env.CRM_LEAD_WEBHOOK
+  if (!url) return
+  try {
+    const res = await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+      signal: AbortSignal.timeout(4000),
+    })
+    if (!res.ok) console.error('[contact] CRM', res.status, await res.text())
+  } catch (err) {
+    console.error('[contact] CRM', err)
+  }
+}
+
 async function sendMail(apiKey: string, mail: Record<string, unknown>) {
   const res = await fetch(RESEND_URL, {
     method: 'POST',
@@ -134,6 +159,8 @@ async function demandeDeRappel(apiKey: string, body: Payload) {
     console.error('[contact] rappel', err)
     return NextResponse.json({ error: 'Envoi impossible' }, { status: 502 })
   }
+
+  await versLeCRM({ source: 'rappel', name, phone, email, budget, entreprise, website, message: '', provenance: prov })
 
   // Accusé de réception au prospect : sa réussite ne conditionne pas la réponse.
   sendMail(apiKey, {
@@ -233,6 +260,15 @@ export async function POST(req: Request) {
     console.error('[contact] notification', err)
     return NextResponse.json({ error: 'Envoi impossible' }, { status: 502 })
   }
+
+  const provContact: Record<string, string> = {}
+  if (body.provenance && typeof body.provenance === 'object') {
+    for (const [k, v] of Object.entries(body.provenance).slice(0, 12)) {
+      const val = clean(v, 200)
+      if (/^[a-z_]{2,20}$/.test(k) && val) provContact[k] = val
+    }
+  }
+  await versLeCRM({ source, name, email, website: rawSite, budget, message, provenance: provContact })
 
   // Accusé de réception au prospect : sa réussite ne conditionne pas la réponse.
   const ack =
