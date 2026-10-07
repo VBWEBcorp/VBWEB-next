@@ -33,6 +33,10 @@ type Payload = {
   company?: string
 }
 
+// Budget sous le plancher : la demande n'est ni notifiée ni envoyée au CRM, le
+// visiteur est renvoyé vers un article du blog (voir CallbackForm).
+const BUDGET_TROP_BAS = /^(moins de 1 000|under 1,000)/i
+
 const clean = (v: unknown, max: number) => (typeof v === 'string' ? v.trim().slice(0, max) : '')
 const isEmail = (v: string) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)
 const escapeHtml = (s: string) =>
@@ -93,6 +97,7 @@ async function demandeDeRappel(apiKey: string, body: Payload) {
   }
   if (!isEmail(email)) return NextResponse.json({ error: 'Adresse email invalide' }, { status: 400 })
   if (!budget) return NextResponse.json({ error: 'Budget requis' }, { status: 400 })
+  if (BUDGET_TROP_BAS.test(budget)) return NextResponse.json({ ok: true, declined: true })
 
   const prov: Record<string, string> = {}
   if (body.provenance && typeof body.provenance === 'object') {
@@ -209,6 +214,7 @@ export async function POST(req: Request) {
   if (!website) {
     return NextResponse.json({ error: 'Site requis' }, { status: 400 })
   }
+  if (BUDGET_TROP_BAS.test(budget)) return NextResponse.json({ ok: true, declined: true })
 
   const hasSite = /^https?:\/\//i.test(website)
   const subject = `${source === 'audit' ? 'Audit gratuit' : 'Contact'} : ${name} (${website})`

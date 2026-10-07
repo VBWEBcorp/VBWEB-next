@@ -22,6 +22,7 @@ export function ContactForm({
   const [sending, setSending] = useState(false)
   const [noSite, setNoSite] = useState(false)
   const [error, setError] = useState('')
+  const [declined, setDeclined] = useState(false)
   const { lang } = useHomeLang()
   const tp = t.popup
 
@@ -46,8 +47,11 @@ export function ContactForm({
           company: data.get('company'),
         }),
       })
-      if (res.ok) onSent()
-      else setError(tp.errorGeneric[lang])
+      if (res.ok) {
+        const { declined: bas } = (await res.json().catch(() => ({}))) as { declined?: boolean }
+        if (bas) setDeclined(true)
+        else onSent()
+      } else setError(tp.errorGeneric[lang])
     } catch {
       setError(tp.errorNetwork[lang])
     } finally {
@@ -58,6 +62,27 @@ export function ContactForm({
   const field =
     'w-full rounded-xl border border-border/60 bg-card/40 px-4 py-2.5 text-base text-foreground placeholder:text-muted-foreground/40 outline-none transition-all focus:border-primary/60 focus:ring-2 focus:ring-primary/10 disabled:opacity-40'
   const label = 'mb-1.5 block text-[12px] font-medium uppercase tracking-[0.12em] text-muted-foreground/70'
+
+  if (declined) {
+    const fr = lang === 'fr'
+    return (
+      <div className="py-4 text-center" role="status">
+        <p className="text-lg font-medium text-foreground">{fr ? 'Merci pour votre message' : 'Thank you for your message'}</p>
+        <p className="mx-auto mt-2 max-w-sm text-[14px] leading-snug text-muted-foreground">
+          {fr
+            ? 'Mon accompagnement démarre à 1 000 €, je ne pourrai donc pas vous répondre. Voici de quoi avancer par vous-même en attendant.'
+            : 'My service starts at €1,000, so I will not be able to reply. Here is something to help you move forward on your own.'}
+        </p>
+        <a
+          href="/blog/apparaitre-google-maps-rennes"
+          className="group mt-4 inline-flex h-11 items-center justify-center gap-2 rounded-full bg-primary px-6 text-[14px] font-medium text-primary-foreground transition-all hover:bg-primary/85"
+        >
+          {fr ? 'Lire : apparaître sur Google Maps' : 'Read: show up on Google Maps'}
+          <ArrowRight className="size-4" />
+        </a>
+      </div>
+    )
+  }
 
   return (
     <form className="space-y-3" onSubmit={handleSubmit}>

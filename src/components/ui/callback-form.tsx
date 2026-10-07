@@ -106,7 +106,7 @@ function SuccessCheck() {
 
 export function CallbackForm({ lang, onLeave, onSent }: { lang: 'fr' | 'en'; onLeave?: () => void; onSent?: () => void }) {
   const fr = lang === 'fr'
-  const [state, setState] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
+  const [state, setState] = useState<'idle' | 'sending' | 'sent' | 'declined' | 'error'>('idle')
   const [error, setError] = useState('')
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -134,9 +134,13 @@ export function CallbackForm({ lang, onLeave, onSent }: { lang: 'fr' | 'en'; onL
         const j = (await res.json().catch(() => ({}))) as { error?: string }
         throw new Error(j.error || '')
       }
-      setState('sent')
       // Pas d'id quand le pot de miel a été rempli : aucune conversion comptée.
-      const { id } = (await res.json().catch(() => ({}))) as { id?: string }
+      const { id, declined } = (await res.json().catch(() => ({}))) as { id?: string; declined?: boolean }
+      if (declined) {
+        setState('declined')
+        return
+      }
+      setState('sent')
       if (id) {
         void trackLead(
           { email: String(data.get('email') ?? ''), phone: String(data.get('phone') ?? ''), name: String(data.get('name') ?? '') },
@@ -155,6 +159,27 @@ export function CallbackForm({ lang, onLeave, onSent }: { lang: 'fr' | 'en'; onL
             : 'Sending failed. Please check the fields and try again.',
       )
     }
+  }
+
+  if (state === 'declined') {
+    return (
+      <div className="cb-anim w-full py-4 text-center" role="status">
+        <p className="font-display text-xl font-medium text-foreground">
+          {fr ? 'Merci pour votre message' : 'Thank you for your message'}
+        </p>
+        <p className="mx-auto mt-2 max-w-xs text-[14px] leading-snug text-muted-foreground">
+          {fr
+            ? 'Mon accompagnement démarre à 1 000 €, je ne pourrai donc pas vous rappeler. Voici de quoi avancer par vous-même en attendant.'
+            : 'My service starts at €1,000, so I will not be able to call you back. Here is something to help you move forward on your own.'}
+        </p>
+        <Button asChild size="lg" className="mt-4 bg-primary text-primary-foreground hover:bg-primary/85">
+          <a href="/blog/apparaitre-google-maps-rennes">
+            {fr ? 'Lire : apparaître sur Google Maps' : 'Read: show up on Google Maps'}
+            <ArrowRight />
+          </a>
+        </Button>
+      </div>
+    )
   }
 
   if (state === 'sent') {
@@ -182,6 +207,11 @@ export function CallbackForm({ lang, onLeave, onSent }: { lang: 'fr' | 'en'; onL
 
   return (
     <form onSubmit={onSubmit} className="@container w-full text-left">
+      <p className="mb-3 text-center text-[13px] leading-snug text-muted-foreground">
+        {fr
+          ? 'Création de site à partir de 1 500 € HT, puis accompagnement mensuel.'
+          : 'Websites from €1,500 excl. VAT, then a monthly support plan.'}
+      </p>
       <div className="grid grid-cols-2 gap-2.5">
         <label className="sr-only" htmlFor="cb-name">{ph('Nom et prénom', 'Full name')}</label>
         <input id="cb-name" name="name" required autoComplete="name" placeholder={ph('Nom et prénom', 'Full name')} className={`${input} col-span-2`} />
