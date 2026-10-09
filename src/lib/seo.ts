@@ -68,6 +68,7 @@ export const routes = [
   '/etudes-de-cas/sites-internet',
   '/etudes-de-cas/referencement',
   '/etudes-de-cas/applications-web',
+  '/guide-ia',
   '/referencement-ia-geo',
   '/referencement-local',
   '/refonte-site-internet',

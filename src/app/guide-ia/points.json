@@ -1,0 +1,100 @@
+{
+  "titre": "Les 12 points que ChatGPT vérifie avant de recommander une entreprise",
+  "sousTitre": "Vos clients ne tapent plus seulement sur Google. Ils demandent à une IA qui appeler. Voici ce qu'elle regarde, et comment vérifier chaque point vous-même, en une minute, sans rien payer.",
+  "testPrompts": [
+    "Quel est le meilleur [votre métier] à [votre ville] ?",
+    "Qui me conseilles-tu pour [le besoin de vos clients] à [votre ville] ?",
+    "Tu connais [le nom de votre entreprise] ? Qu'est-ce que tu peux m'en dire ?"
+  ],
+  "points": [
+    {
+      "n": 1,
+      "titre": "Des pages qui répondent à une question, pas des pages qui vous présentent",
+      "pourquoi": "Une IA cherche une réponse à donner à quelqu'un. Une page appelée « Nos services » ne répond à rien. Une page « Combien coûte un portail en aluminium à Rennes » répond à une vraie question, et c'est celle-là qu'elle citera.",
+      "verifier": "Notez les cinq questions qu'on vous pose au téléphone. Comptez combien ont leur propre page sur votre site.",
+      "vu": "La plupart des sites que je reprends ont une seule page « Services » qui essaie de tout dire à la fois."
+    },
+    {
+      "n": 2,
+      "titre": "Le même nom, la même adresse, le même téléphone partout",
+      "pourquoi": "L'IA recoupe plusieurs sources. Si votre numéro n'est pas le même sur votre site, sur votre fiche Google et dans les annuaires, elle doute. Et quand elle doute, elle cite quelqu'un d'autre.",
+      "verifier": "Tapez votre numéro de téléphone entre guillemets dans Google. Tout ce qui ressort doit raconter la même chose que vous.",
+      "vu": "Un ancien numéro de portable qui traîne sur trois annuaires : c'est le grand classique, et personne ne le sait."
+    },
+    {
+      "n": 3,
+      "titre": "Une fiche Google vivante, pas une fiche créée puis oubliée",
+      "pourquoi": "Pour tout ce qui est local, c'est la première source des IA. Elles y lisent votre catégorie de métier, vos horaires, votre zone, vos photos, et surtout si tout ça bouge encore.",
+      "verifier": "Ouvrez votre fiche. De quand date la dernière photo ? Votre catégorie principale correspond-elle vraiment à ce que vous faites ?",
+      "vu": "Des fiches ouvertes il y a quatre ans, jamais rouvertes depuis, avec une catégorie qui ne correspond plus au métier."
+    },
+    {
+      "n": 4,
+      "titre": "Des avis récents, réguliers, et vos réponses dessous",
+      "pourquoi": "La note compte moins qu'on ne le croit. Ce qui pèse, c'est la régularité, la fraîcheur, et le fait que vous répondiez : les IA lisent les mots que vos clients emploient, et les vôtres.",
+      "verifier": "Votre dernier avis date de quand ? Avez-vous répondu aux cinq derniers, même en deux lignes ?",
+      "vu": "Beaucoup demandent vingt avis d'un coup, puis plus rien pendant deux ans. C'est le pire des rythmes."
+    },
+    {
+      "n": 5,
+      "titre": "Ce que les autres disent de vous, ailleurs que chez vous",
+      "pourquoi": "Votre site, c'est votre parole. Une IA cherche aussi celle des autres : annuaires de votre métier, presse locale, fédérations, partenaires, clients qui vous citent.",
+      "verifier": "Cherchez le nom de votre entreprise dans Google en excluant votre propre site : tapez votre nom, puis -site:votresite.fr",
+      "vu": "Des entreprises très connues dans leur ville, et totalement absentes partout ailleurs sur le web."
+    },
+    {
+      "n": 6,
+      "titre": "Un site qu'une machine peut lire",
+      "pourquoi": "Si vos arguments sont écrits dans une image, ou s'ils n'apparaissent qu'après un clic, ils n'existent pas pour une IA. Elle lit du texte, pas des visuels.",
+      "verifier": "Copiez une phrase de votre page de services, collez-la dans ChatGPT et demandez-lui de retrouver la page qui contient exactement ce texte.",
+      "vu": "De très beaux visuels, avec les meilleurs arguments de vente écrits dedans. Invisibles."
+    },
+    {
+      "n": 7,
+      "titre": "Les étiquettes invisibles de vos pages",
+      "pourquoi": "Ce sont des informations cachées dans le code qui disent à la machine : ceci est une entreprise, voici son adresse, ses horaires, ses services, ses prix. Sans elles, la machine devine. Avec elles, elle sait.",
+      "verifier": "Collez l'adresse de votre page d'accueil dans le test des résultats enrichis de Google (gratuit, recherchez « rich results test »).",
+      "vu": "C'est ce que les sites fabriqués en quelques minutes oublient systématiquement."
+    },
+    {
+      "n": 8,
+      "titre": "Les robots des IA ne doivent pas être bloqués chez vous",
+      "pourquoi": "Quatre robots passent sur les sites pour le compte des IA : GPTBot et OAI-SearchBot pour ChatGPT, PerplexityBot, ClaudeBot. Beaucoup de sites leur ferment la porte sans le savoir, par une simple case cochée.",
+      "verifier": "Ouvrez votresite.fr/robots.txt et cherchez ces quatre noms : aucun ne doit être interdit. Regardez aussi votre pare-feu, Cloudflare bloque parfois ces robots tout seul.",
+      "vu": "C'est la mauvaise surprise numéro un. Le site est parfait, et personne n'a le droit d'entrer."
+    },
+    {
+      "n": 9,
+      "titre": "Une page par service, et par ville si vous vous déplacez",
+      "pourquoi": "Une seule page qui énumère douze prestations ne répond précisément à aucune question. Une page par service, et par zone quand vous intervenez ailleurs, donne à l'IA de quoi vous citer au bon moment.",
+      "verifier": "Comptez vos pages de service. Si vous proposez dix prestations avec trois pages, il en manque.",
+      "vu": "Des artisans qui travaillent sur quatre communes, avec une seule page qui parle de « la région »."
+    },
+    {
+      "n": 10,
+      "titre": "De quoi prouver que vous existez vraiment",
+      "pourquoi": "Années d'activité, équipe, certifications, chantiers datés, chiffres. Une IA évite de recommander une entreprise dont elle ne sait rien : elle protège la personne qui lui pose la question.",
+      "verifier": "Votre page « à propos » contient-elle au moins trois faits qu'on peut vérifier ailleurs ?",
+      "vu": "Des pages « à propos » qui parlent de passion et de proximité, sans une seule date ni un seul chiffre."
+    },
+    {
+      "n": 11,
+      "titre": "Des repères concrets : prix, délais, zone d'intervention",
+      "pourquoi": "« Devis sur mesure » ne sert à rien à une IA. Une fourchette de prix, un délai moyen, un rayon d'intervention, c'est exactement ce qu'elle reprend dans sa réponse, parce que c'est ce qu'on lui a demandé.",
+      "verifier": "Quelqu'un qui ne vous connaît pas peut-il connaître votre ordre de prix sans vous appeler ?",
+      "vu": "La peur d'afficher un prix fait perdre plus de clients qu'elle n'en protège."
+    },
+    {
+      "n": 12,
+      "titre": "De la fraîcheur",
+      "pourquoi": "Une page qui n'a pas bougé depuis trois ans est traitée comme une information périmée. Publier un peu, mais régulièrement, et mettre à jour vos pages principales suffit à rester dans le jeu.",
+      "verifier": "Quelle est la date de la dernière modification de votre page d'accueil ? Si vous ne savez pas, c'est que c'est loin.",
+      "vu": "Un site refait en 2021, jamais retouché depuis, et qui glisse doucement hors des réponses."
+    }
+  ],
+  "fin": {
+    "titre": "Et maintenant ?",
+    "texte": "Si vous cochez dix points sur douze, vous avez déjà une longueur d'avance sur la quasi-totalité de vos concurrents. Si vous en cochez trois, ce n'est pas grave : ce sont presque toujours les mêmes quatre points qui débloquent la situation, et ils se corrigent en quelques jours.",
+    "pourquoiCeGuide": "Je vous donne ça parce que je fais ce test devant chaque nouveau client, et que je vois toujours la même scène : trois concurrents cités, et lui nulle part. Ce n'est presque jamais une question de budget. C'est une question de détails que personne ne lui a jamais montrés."
+  }
+}
