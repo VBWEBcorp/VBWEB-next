@@ -242,4 +242,11 @@ export const webProjects: WebProject[] = [
     image: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/POM-POI-ppzzsutj.webp',
     description: 'E-commerce : box de cuisine thaïe à préparer chez soi, paiement en ligne et livraison.',
   },
+  {
+    id: 'perle-k-paris',
+    name: 'Perle K Paris',
+    url: 'https://perlekparis.netlify.app/',
+    image: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/PERLE-K-PARIS-vd47ij6m.webp',
+    description: 'E-commerce : bijoux de perles waterproof et hypoallergéniques, paiement en ligne et livraison.',
+  },
 ]
