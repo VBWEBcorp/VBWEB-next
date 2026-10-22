@@ -9,7 +9,7 @@ import {
 } from '@/components/seo/json-ld'
 
 const description =
-  'Freelance SEO : je vous aide à attirer plus de clients grâce à Google, partout en France. Audit gratuit, stratégie sur mesure, résultats mesurables. 80+ avis 5 étoiles.'
+  'Freelance SEO : attirez plus de clients grâce à Google, partout en France. Audit gratuit, stratégie sur mesure, résultats mesurables. 80+ avis 5 étoiles.'
 
 export const metadata: Metadata = {
   title: 'Freelance SEO | Référencement Naturel - VBWEB',

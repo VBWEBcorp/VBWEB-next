@@ -6,7 +6,7 @@ import { breadcrumbJsonLd, faqJsonLd, webPageJsonLd } from '@/components/seo/jso
 import { siteConfig } from '@/lib/seo'
 
 const description =
-  "Les 12 points que ChatGPT vérifie avant de recommander une entreprise. Le guide gratuit de Victor Béasse (VBWEB, Rennes) : chaque point expliqué simplement, avec la vérification à faire vous-même en une minute."
+  'Les 12 points que ChatGPT vérifie avant de recommander une entreprise : le guide gratuit de VBWEB (Rennes), avec la vérification à faire en une minute.'
 
 export const metadata: Metadata = {
   title: 'Être recommandé par ChatGPT : les 12 points à vérifier',

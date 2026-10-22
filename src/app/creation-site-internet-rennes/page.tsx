@@ -10,7 +10,7 @@ import {
 
 const path = '/creation-site-internet-rennes'
 const description =
-  "Création de site internet à Rennes : sites vitrines rapides, faciles à modifier et référencés dès la mise en ligne, pour les entreprises de Rennes et de Bretagne."
+  'Création de site internet à Rennes : sites vitrines rapides, faciles à modifier et référencés dès la mise en ligne, pour les entreprises de Bretagne.'
 
 export const metadata: Metadata = {
   title: 'Création de site internet à Rennes',

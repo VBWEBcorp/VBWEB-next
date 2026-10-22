@@ -3,7 +3,7 @@ import type { MetadataRoute } from 'next'
 import { siteConfig } from '@/lib/seo'
 import { connectDB } from '@/lib/db'
 import { BlogPost, BlogSettings } from '@/models/Blog'
-import { GallerySettings } from '@/models/Gallery'
+import { GalleryImage, GallerySettings } from '@/models/Gallery'
 
 const baseUrl = siteConfig.url
 
@@ -121,9 +121,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     if (!process.env.MONGODB_URI) throw new Error('No DB')
     await connectDB()
 
-    // Gallery page if enabled
+    // Galerie : seulement si elle est activée ET contient des photos (une page
+    // vide signalée à Google est une page pauvre).
     const gallerySettings = await GallerySettings.findOne()
-    if (gallerySettings?.enabled) {
+    if (gallerySettings?.enabled && (await GalleryImage.countDocuments()) > 0) {
       pages.push({
         url: `${baseUrl}/gallery`,
         lastModified: new Date(),

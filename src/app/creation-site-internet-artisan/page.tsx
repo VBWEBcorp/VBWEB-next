@@ -10,7 +10,7 @@ import {
 
 const path = '/creation-site-internet-artisan'
 const description =
-  "Création de site internet pour artisan : un site vitrine qui fait sonner le téléphone, trouvé sur « votre métier + votre ville », avec vos réalisations en vitrine."
+  'Site internet pour artisan : un site vitrine qui fait sonner le téléphone, trouvé sur « votre métier + votre ville », avec vos réalisations en vitrine.'
 
 export const metadata: Metadata = {
   title: 'Création de site internet pour artisan',

@@ -249,4 +249,18 @@ export const webProjects: WebProject[] = [
     image: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/PERLE-K-PARIS-vd47ij6m.webp',
     description: 'E-commerce : bijoux de perles waterproof et hypoallergéniques, paiement en ligne et livraison.',
   },
+  {
+    id: 'jeudredi-production',
+    name: 'Jeudredi Production',
+    url: 'https://jeudredi-production.netlify.app/',
+    image: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/JEUDREDI-PRODUCTION-k4r8tz2m.webp',
+    description: 'Agence de production audiovisuelle à Paris : site vitrine en motion design.',
+  },
+  {
+    id: 'france-elastodontie',
+    name: 'France Elastodontie',
+    url: 'https://france-elastodontie.fr/',
+    image: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/FRANCE-ELASTODONTIE-e7q3mw9d.webp',
+    description: "Laboratoire d'orthodontie à Betton : site et espace praticien pour les prescriptions en ligne.",
+  },
 ]

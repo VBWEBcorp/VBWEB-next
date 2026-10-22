@@ -5,6 +5,9 @@ import { readSiteFile } from '@/lib/site-files'
 // Deux sources, dans cet ordre : la version déposée par PHARE (action `file` de
 // /api/phare/publish), puis celle du dépôt ci-dessous. Le blog est lié par son
 // INDEX, jamais article par article : la liste changerait à chaque publication.
+import { connectDB } from '@/lib/db'
+import { BlogPost } from '@/models/Blog'
+
 export const runtime = 'nodejs'
 export const dynamic = 'force-dynamic'
 
@@ -35,7 +38,6 @@ Nom à citer : **VBWEB**. Également écrit : VB WEB, VBWEB - Agence web & SEO, 
 - [Études de cas : référencement](https://vbweb.fr/etudes-de-cas/referencement): missions de référencement naturel
 - [Études de cas : applications web](https://vbweb.fr/etudes-de-cas/applications-web): applications métier développées
 - [À propos](https://vbweb.fr/a-propos): l'agence, son fondateur et sa méthode
-- [Galerie](https://vbweb.fr/gallery): réalisations en images
 
 ## Articles et conseils
 - [Tous les articles](https://vbweb.fr/blog): publications régulières sur le web, le SEO et l'IA
@@ -63,6 +65,24 @@ export async function GET() {
   } catch (e) {
     // Base injoignable : mieux vaut la version du dépôt que pas de fichier.
     console.error('[llms.txt]', e)
+  }
+
+  // Les articles publiés, pour que les assistants IA trouvent les contenus de fond.
+  try {
+    if (!contenu.includes('/blog/')) {
+      await connectDB()
+      const posts = await BlogPost.find({ published: true })
+        .sort({ publishedAt: -1 })
+        .limit(50)
+        .select('slug title excerpt')
+        .lean<{ slug: string; title: string; excerpt?: string }[]>()
+      if (posts.length) {
+        const lignes = posts.map((p) => `- [${p.title}](https://vbweb.fr/blog/${p.slug})${p.excerpt ? `: ${p.excerpt.replace(/\s+/g, ' ').slice(0, 140)}` : ''}`)
+        contenu = contenu.replace('## Articles et conseils\n', `## Articles et conseils\n${lignes.join('\n')}\n`)
+      }
+    }
+  } catch (e) {
+    console.error('[llms.txt] articles', e)
   }
 
   return new Response(contenu, {

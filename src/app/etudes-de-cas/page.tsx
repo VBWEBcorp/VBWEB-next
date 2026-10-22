@@ -6,7 +6,7 @@ import { breadcrumbJsonLd, webPageJsonLd } from '@/components/seo/json-ld'
 import { Reveal } from '@/components/ui/reveal'
 
 const description =
-  'Découvrez nos réalisations : sites internet, référencement SEO et applications web pour PME, artisans et commerces partout en France. Résultats concrets et mesurables.'
+  'Nos réalisations : sites internet, référencement SEO et applications web pour PME, artisans et commerces partout en France, avec des résultats mesurables.'
 
 export const metadata: Metadata = {
   title: 'Études de cas | Réalisations SEO & Web',

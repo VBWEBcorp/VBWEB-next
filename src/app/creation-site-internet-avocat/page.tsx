@@ -10,7 +10,7 @@ import {
 
 const path = '/creation-site-internet-avocat'
 const description =
-  "Création de site internet pour avocat : un site sobre, conforme aux règles de communication de la profession, trouvé sur vos domaines de compétence et votre barreau."
+  'Site internet pour avocat : sobre, conforme aux règles de communication de la profession, trouvé sur vos domaines de compétence et votre barreau.'
 
 export const metadata: Metadata = {
   title: 'Création de site internet pour avocat',

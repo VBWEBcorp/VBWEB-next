@@ -4,7 +4,7 @@ import { breadcrumbJsonLd, webPageJsonLd } from '@/components/seo/json-ld'
 import { ReferencementContent } from './referencement-content'
 
 const description =
-  'Résultats SEO concrets pour nos clients à Rennes : positions Google, trafic organique et génération de clients qualifiés. Études de cas référencement naturel et local pour PME et commerces.'
+  'Résultats SEO de nos clients à Rennes : positions Google, trafic, nouveaux clients. Études de cas en référencement naturel et local pour PME et commerces.'
 
 export const metadata: Metadata = {
   title: 'Résultats SEO à Rennes | Études de Cas Référencement',

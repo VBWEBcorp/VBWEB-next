@@ -9,7 +9,7 @@ import {
 } from '@/components/seo/json-ld'
 
 const description =
-  'Consultant SEO : référencement naturel pour PME, artisans et commerces partout en France. Audit gratuit, stratégie sur mesure, résultats mesurables. 80+ avis 5 étoiles.'
+  'Consultant SEO pour PME, artisans et commerces partout en France : audit gratuit, stratégie sur mesure, résultats mesurables. Plus de 80 avis 5 étoiles.'
 
 export const metadata: Metadata = {
   title: 'Consultant SEO | Référencement Naturel',
