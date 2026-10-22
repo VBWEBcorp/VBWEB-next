@@ -41,17 +41,20 @@ export function localBusinessJsonLd() {
     founder: {
       '@id': `${siteConfig.url}/#person`,
     },
+    // Même ville que la fiche Google, PagesJaunes et Sortlist (Acigné), sans
+    // rue : la fiche est une zone de service à adresse masquée. Une entité
+    // décrite pareil partout se consolide mieux chez Google et dans les IA.
     address: {
       '@type': 'PostalAddress',
-      streetAddress: siteConfig.address.street,
-      addressLocality: siteConfig.address.city,
-      postalCode: siteConfig.address.postalCode,
+      addressLocality: 'Acigné',
+      postalCode: '35690',
+      addressRegion: 'Bretagne',
       addressCountry: siteConfig.address.country,
     },
     geo: {
       '@type': 'GeoCoordinates',
-      latitude: siteConfig.geo.latitude,
-      longitude: siteConfig.geo.longitude,
+      latitude: 48.1336,
+      longitude: -1.5375,
     },
     openingHoursSpecification: {
       '@type': 'OpeningHoursSpecification',
@@ -61,8 +64,9 @@ export function localBusinessJsonLd() {
     },
     areaServed: [
       { '@type': 'City', name: 'Rennes' },
+      { '@type': 'AdministrativeArea', name: 'Ille-et-Vilaine' },
+      { '@type': 'AdministrativeArea', name: 'Bretagne' },
       { '@type': 'Country', name: 'France' },
-      { '@type': 'Place', name: 'Worldwide (remote)' },
     ],
     knowsAbout: [
       'Référencement naturel',
