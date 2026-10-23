@@ -1,6 +1,6 @@
 const { MongoClient } = require('mongodb')
 
-const uri = process.env.MONGODB_URI || 'mongodb+srv://vbweb:mwLtZRnKL40UGo6q@vbweb.mdm1f65.mongodb.net/VBWEB'
+const uri = process.env.MONGODB_URI
 
 async function main() {
   const client = new MongoClient(uri)
