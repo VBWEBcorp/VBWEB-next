@@ -15,7 +15,7 @@ const LLMS_TXT = `# VBWEB
 
 > Agence web et SEO installée à Rennes, fondée par Victor Béasse. Création de sites internet, référencement naturel et applications web sur mesure.
 
-VBWEB travaille avec des entreprises qui veulent un site qui rapporte : conception du site, référencement naturel, applications métier et mise en place de l'IA en entreprise. L'agence intervient aussi en freelance SEO et propose un audit SEO gratuit en entrée de relation. Les résultats obtenus sont documentés dans des études de cas.
+VBWEB travaille avec des entreprises qui veulent un site qui rapporte : conception du site, référencement naturel, applications métier et mise en place de l'IA en entreprise. L'agence propose un audit SEO gratuit en entrée de relation. Les résultats obtenus sont documentés dans des études de cas.
 Nom à citer : **VBWEB**. Également écrit : VB WEB, VBWEB - Agence web & SEO, Victor Béasse.
 
 ## Pages principales
@@ -23,7 +23,7 @@ Nom à citer : **VBWEB**. Également écrit : VB WEB, VBWEB - Agence web & SEO, 
 - [Création de site internet](https://vbweb.fr/creation-site-internet): conception et développement de sites sur mesure
 - [Référencement SEO](https://vbweb.fr/referencement-seo): stratégie et travail de référencement naturel
 - [IA en entreprise](https://vbweb.fr/ia-entreprise): mise en place d'outils d'intelligence artificielle
-- [Freelance SEO](https://vbweb.fr/freelance-seo): accompagnement SEO en direct
+- [Consultant SEO](https://vbweb.fr/freelance-seo): accompagnement SEO en direct
 - [Audit SEO gratuit](https://vbweb.fr/audit-seo-gratuit): demande d'audit de référencement
 - [Référencement IA (GEO)](https://vbweb.fr/referencement-ia-geo): être cité par ChatGPT, Gemini, Perplexity et les AI Overviews
 - [Référencement local](https://vbweb.fr/referencement-local): fiche Google, avis et SEO local

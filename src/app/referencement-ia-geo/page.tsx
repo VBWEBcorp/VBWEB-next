@@ -57,7 +57,7 @@ const faqs = [
   {
     question: 'Travaillez-vous le GEO partout en France ?',
     answer:
-      "Oui. Le travail se fait à distance, avec des points réguliers en visio. Je suis basé près de Rennes et je me déplace en Bretagne quand c'est utile, mais le référencement IA n'a pas de frontière : vos futurs clients posent leurs questions de partout.",
+      "Oui. Le travail se fait à distance, avec des points réguliers en visio. L'agence est basée près de Rennes, mais le référencement IA n'a pas de frontière : vos futurs clients posent leurs questions de partout.",
   },
 ]
 
@@ -76,7 +76,7 @@ const config: MetierConfig = {
   whatPara1:
     "Quand un moteur génératif répond à une question, il ne montre pas dix liens : il cite deux ou trois entreprises, parfois une seule. Être dans cette réponse dépend de ce que le modèle sait de vous, et de la confiance qu'il accorde aux sources qui parlent de vous. C'est un travail précis, qui se mesure question par question.",
   whatPara2:
-    "Mon approche part de vos clients : je relève les questions qu'ils posent vraiment aux IA, je regarde qui est cité aujourd'hui et pourquoi, puis je corrige ce qui vous rend invisible. Identité d'entreprise cohérente partout (site, fiche Google, annuaires), données structurées, fichier llms.txt, pages qui répondent clairement avant de développer, et mentions sur les sources que les modèles lisent. Le SEO de votre site avance en même temps.",
+    "Notre approche part de vos clients : nous relevons les questions qu'ils posent vraiment aux IA, nous regardons qui est cité aujourd'hui et pourquoi, puis nous corrigeons ce qui vous rend invisible. Identité d'entreprise cohérente partout (site, fiche Google, annuaires), données structurées, fichier llms.txt, pages qui répondent clairement avant de développer, et mentions sur les sources que les modèles lisent. Le SEO de votre site avance en même temps.",
   whatImageUrl:
     'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1551288049-bebda4e38f71-w800.webp',
   whatImageAlt: 'Suivi de la visibilité d’une entreprise dans les réponses des IA',

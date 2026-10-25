@@ -28,17 +28,17 @@ export function useHomeLang() {
 
 export const t = {
   hero: {
-    eyebrow: { fr: 'Victor Béasse - Référencement Google et IA', en: 'Victor Béasse - Google and AI visibility' },
+    eyebrow: { fr: 'Agence web et SEO · fondée par Victor Béasse', en: 'Web and SEO agency · founded by Victor Béasse' },
     h1Part1: { fr: 'Plus de clients', en: 'More clients' },
     h1Part2: { fr: 'grâce à', en: 'thanks to' },
     h1Part3: { fr: "Google et l'IA", en: 'Google and AI' },
     subtitle: {
-      fr: "Vos clients vous cherchent sur Google et dans l'IA. Je vous y rends visible et crédible. Développeur web et expert SEO depuis 5 ans, je maîtrise toute la chaîne, du référencement au site, et j'accompagne les TPE et PME dans leur croissance.",
-      en: 'Your clients search on Google and in AI. I make you visible and credible there. Web developer and SEO expert for 5 years, I master the whole chain, from SEO to the site itself, and I help small businesses grow.',
+      fr: "Vos clients vous cherchent sur Google et dans l'IA. Nous vous y rendons visible et crédible. Agence fondée par Victor Béasse, développeur web et expert SEO : nous maîtrisons toute la chaîne, du référencement au site, et nous accompagnons les TPE et PME dans leur croissance.",
+      en: 'Your clients search on Google and in AI. We make you visible and credible there. An agency founded by Victor Béasse, web developer and SEO expert: we master the whole chain, from SEO to the site itself, and we help small businesses grow.',
     },
     ctaPrimary: { fr: 'Demandez votre audit gratuit', en: 'Request your free audit' },
     ctaSecondary: { fr: 'ou prendre directement rendez-vous', en: 'or book a meeting directly' },
-    reviews: { fr: '80+ avis', en: '80+ reviews' },
+    reviews: { fr: '88 avis Google', en: '88 Google reviews' },
     proofs: {
       fr: [
         { value: '150+', label: 'clients accompagnés en référencement' },
@@ -79,8 +79,8 @@ export const t = {
     ],
   },
   founder: {
-    eyebrow: { fr: 'Votre expert en visibilité Google et IA', en: 'Your Google and AI visibility expert' },
-    h2Part1: { fr: 'Ce que je crée', en: 'What I create' },
+    eyebrow: { fr: 'Votre agence de visibilité Google et IA', en: 'Your Google and AI visibility agency' },
+    h2Part1: { fr: 'Ce que nous créons', en: 'What we create' },
     h2Part2: { fr: 'pour votre PME', en: 'for your business' },
     resultLabel: { fr: 'Votre résultat', en: 'Your outcome' },
     resultTags: {
@@ -88,8 +88,8 @@ export const t = {
       en: ['More qualified leads', 'You outrank your competitors', 'Visible on Google and in AI'],
     },
     videoCaption: {
-      fr: "2 minutes pour comprendre comment j'accompagne les dirigeants de PME.",
-      en: '2 minutes to understand how I work with SMB leaders.',
+      fr: '2 minutes pour comprendre comment nous accompagnons les dirigeants de PME.',
+      en: '2 minutes to understand how we work with SMB leaders.',
     },
     learnMore: { fr: 'En savoir plus', en: 'Learn more' },
     seeServices: { fr: 'Voir les services', en: 'See services' },
@@ -122,7 +122,7 @@ export const t = {
     },
   },
   method: {
-    eyebrow: { fr: 'Ma méthode', en: 'My method' },
+    eyebrow: { fr: 'Notre méthode', en: 'Our method' },
     h2Part1: { fr: "De l'invisible à", en: 'From invisible to' },
     h2Part2: { fr: 'générateur de clients', en: 'client generator' },
     subtitle: {
@@ -204,9 +204,9 @@ export const t = {
     },
   },
   testimonials: {
-    badge: { fr: '80+ avis Google', en: '80+ Google reviews' },
+    badge: { fr: '88 avis Google', en: '88 Google reviews' },
     h2Part1: { fr: 'Ils en parlent', en: 'They tell it' },
-    h2Part2: { fr: 'mieux que moi', en: 'better than I do' },
+    h2Part2: { fr: 'mieux que nous', en: 'better than we do' },
     cta: { fr: 'Laissez un avis', en: 'Leave a review' },
   },
   caseStudies: {
@@ -227,7 +227,7 @@ export const t = {
         {
           title: 'Référencement SEO',
           description:
-            'Stratégies de visibilité Google qui propulsent mes clients en première page.',
+            'Stratégies de visibilité Google qui propulsent nos clients en première page.',
         },
         {
           title: 'IA en entreprise',
@@ -243,7 +243,7 @@ export const t = {
         },
         {
           title: 'SEO',
-          description: 'Google visibility strategies that push my clients to page one.',
+          description: 'Google visibility strategies that push our clients to page one.',
         },
         {
           title: 'AI for business',
@@ -254,11 +254,11 @@ export const t = {
     seeAll: { fr: 'Voir les études de cas', en: 'See case studies' },
   },
   offers: {
-    eyebrow: { fr: 'Ce que je fais', en: 'What I do' },
-    title: { fr: 'Mon métier : vous rendre visible et générer des clients.', en: 'My job: make you visible and generate clients.' },
+    eyebrow: { fr: 'Ce que nous faisons', en: 'What we do' },
+    title: { fr: 'Notre métier : vous rendre visible et générer des clients.', en: 'Our job: make you visible and generate clients.' },
     intro: {
-      fr: 'Je suis à la fois expert en référencement Google, en visibilité sur les IA, et développeur web full-stack. Ce double profil, c’est votre avantage : je connecte le référencement, le site et la technique, j’interviens sur tout le process d’un seul coup et je repère les failles techniques que les autres laissent passer.',
-      en: 'I’m both a Google and AI visibility expert and a full-stack web developer. That dual profile is your advantage: I connect SEO, the site and the tech, act on the whole process at once, and spot the technical flaws others miss.',
+      fr: 'Une équipe qui réunit le référencement Google, la visibilité sur les IA et le développement web full-stack. Ce double profil, c’est votre avantage : nous connectons le référencement, le site et la technique, nous intervenons sur tout le process d’un seul coup et nous repérons les failles techniques que les autres laissent passer.',
+      en: 'A team that combines Google SEO, AI visibility and full-stack web development. That dual profile is your advantage: we connect SEO, the site and the tech, act on the whole process at once, and spot the technical flaws others miss.',
     },
     items: {
       fr: [
@@ -282,14 +282,59 @@ export const t = {
       en: 'Is your business visible on Google and in ChatGPT?',
     },
     description: {
-      fr: 'Laissez votre numéro, je vous rappelle sous 24 heures : ce qui fonctionne sur votre site, ce qui vous fait perdre des clients sur Google, et si les IA vous citent ou citent vos concurrents.',
-      en: 'Leave your number and I will call you back within 24 hours: what works on your site, what loses you clients on Google, and whether AI cites you or your competitors.',
+      fr: 'Laissez votre numéro, nous vous rappelons sous 24 heures : ce qui fonctionne sur votre site, ce qui vous fait perdre des clients sur Google, et si les IA vous citent ou citent vos concurrents.',
+      en: 'Leave your number and we will call you back within 24 hours: what works on your site, what loses you clients on Google, and whether AI cites you or your competitors.',
     },
     ctaPrimary: { fr: 'Être rappelé sous 24 h', en: 'Get a call back within 24 h' },
     ctaSecondary: {
-      fr: 'ou contactez-moi directement',
-      en: 'or contact me directly',
+      fr: 'ou contactez-nous directement',
+      en: 'or contact us directly',
     },
+  },
+  team: {
+    eyebrow: { fr: "L'agence", en: 'The agency' },
+    h2Part1: { fr: 'Une équipe,', en: 'One team,' },
+    h2Part2: { fr: 'une interlocutrice dédiée', en: 'one dedicated contact' },
+    intro: {
+      fr: "VBWEB est une agence à taille humaine : un fondateur qui construit, une responsable SEO qui vous répond, et une équipe de production derrière elle. Pas de chef de projet entre vous et ceux qui font le travail.",
+      en: 'VBWEB is a human-sized agency: a founder who builds, an SEO lead who answers you, and a production team behind her. No project manager between you and the people doing the work.',
+    },
+    members: {
+      fr: [
+        { name: 'Victor Béasse', role: 'Fondateur', desc: "Stratégie, développement et référencement IA. Il conçoit les sites et les outils, et garde un œil sur chaque dossier." },
+        { name: 'Léa', role: 'Responsable SEO', desc: 'Votre interlocutrice au quotidien : elle pilote votre référencement et vous répond dans votre application VBWEB.' },
+        { name: 'Pôle production SEO', role: '3 personnes', desc: 'Contenus, fiches Google, netlinking et suivi des positions, chaque mois.' },
+        { name: 'Pôle relation client', role: '3 personnes', desc: 'Premiers échanges, qualification de votre projet et suivi de vos demandes.' },
+      ],
+      en: [
+        { name: 'Victor Béasse', role: 'Founder', desc: 'Strategy, development and AI search. He designs the sites and the tools, and keeps an eye on every account.' },
+        { name: 'Léa', role: 'Head of SEO', desc: 'Your day-to-day contact: she runs your SEO and answers you in your VBWEB app.' },
+        { name: 'SEO production team', role: '3 people', desc: 'Content, Google listings, link building and rank tracking, every month.' },
+        { name: 'Client relations team', role: '3 people', desc: 'First conversations, project qualification and follow-up of your requests.' },
+      ],
+    },
+    facts: {
+      fr: [
+        { value: 88, suffix: '', label: 'avis Google, tous à 5 étoiles' },
+        { value: 200, suffix: '+', label: 'sites livrés' },
+        { value: 150, suffix: '+', label: 'clients accompagnés en référencement' },
+        { value: 10, suffix: '+', label: 'applications sur mesure' },
+      ],
+      en: [
+        { value: 88, suffix: '', label: 'Google reviews, all 5 stars' },
+        { value: 200, suffix: '+', label: 'websites delivered' },
+        { value: 150, suffix: '+', label: 'SEO clients supported' },
+        { value: 10, suffix: '+', label: 'custom apps built' },
+      ],
+    },
+  },
+  platforms: {
+    eyebrow: { fr: 'Plateformes et applications', en: 'Platforms and apps' },
+    title: {
+      fr: 'Nous construisons aussi des produits complets : annuaire national, SaaS, application locale.',
+      en: 'We also build complete products: a national directory, a SaaS, a local app.',
+    },
+    cta: { fr: 'Voir les applications', en: 'See the apps' },
   },
   navbar: {
     prendreRdv: { fr: 'Être rappelé', en: 'Get a call back' },
@@ -322,7 +367,7 @@ export const t = {
   },
   popup: {
     badge: { fr: '100 % gratuit · sans engagement', en: '100% free · no commitment' },
-    title: { fr: 'Je vous rappelle sous 24 heures', en: 'I will call you back within 24 hours' },
+    title: { fr: 'Nous vous rappelons sous 24 heures', en: 'We will call you back within 24 hours' },
     subtitle: {
       fr: 'Quelques informations, et on fait le point sur votre projet au téléphone. Gratuit et sans engagement.',
       en: 'A few details, and we talk about your project on the phone. Free, no commitment.',
@@ -358,8 +403,8 @@ export const t = {
     calendly: { fr: 'Prendre directement rendez-vous', en: 'Book a meeting directly' },
     successTitle: { fr: 'Demande envoyée !', en: 'Request sent!' },
     successMessage: {
-      fr: 'Je vous envoie votre audit vidéo sous 48h. Pensez à vérifier vos spams.',
-      en: "I'll send you the video audit within 48h. Check your spam folder just in case.",
+      fr: 'Nous vous envoyons votre audit vidéo sous 48h. Pensez à vérifier vos spams.',
+      en: "We'll send you the video audit within 48h. Check your spam folder just in case.",
     },
     close: { fr: 'Fermer', en: 'Close' },
     errorGeneric: {
@@ -376,10 +421,10 @@ export const t = {
       fr: 'Réponse sous 24h. Échange sans engagement.',
       en: 'Reply within 24h. No commitment.',
     },
-    cta: { fr: 'Parlez-moi de votre projet', en: 'Tell me about your project' },
+    cta: { fr: 'Parlez-nous de votre projet', en: 'Tell us about your project' },
     brandDesc: {
-      fr: "VBWEB, fondée par Victor Béasse. J'accompagne les entreprises dans leur stratégie digitale : sites internet, référencement naturel, applications web sur mesure.",
-      en: 'VBWEB, founded by Victor Béasse. I help businesses with their digital strategy: websites, SEO, custom web applications.',
+      fr: 'VBWEB, agence web et SEO fondée par Victor Béasse. Nous accompagnons les entreprises dans leur stratégie digitale : sites internet, référencement Google et IA, applications web sur mesure.',
+      en: 'VBWEB, web and SEO agency founded by Victor Béasse. We help businesses with their digital strategy: websites, Google and AI visibility, custom web applications.',
     },
     navTitle: { fr: 'Navigation', en: 'Navigation' },
     servicesTitle: { fr: 'Services', en: 'Services' },

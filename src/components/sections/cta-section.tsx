@@ -10,7 +10,7 @@ export function CtaSection() {
             Prêt à transformer votre site en générateur de clients ?
           </h2>
           <p className="mx-auto max-w-2xl text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Laissez votre numéro : je vous rappelle sous 24 heures pour parler de votre site et de votre visibilité. Sans engagement, juste du concret.
+            Laissez votre numéro : nous vous rappelons sous 24 heures pour parler de votre site et de votre visibilité. Sans engagement, juste du concret.
           </p>
 
           <div className="flex justify-center pt-4">

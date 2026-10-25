@@ -262,17 +262,56 @@
   100% { transform: translateY(0); }
 }
 
-/* Scroll-reveal: CSS transitions only, GPU-composited (opacity + transform) */
+/* Scroll-reveal: CSS transitions only, GPU-composited (opacity + transform).
+   Jamais pose sur le contenu du premier ecran (hero) : il doit etre lisible
+   des le premier rendu, sans JavaScript. */
+:root {
+  --ease-out-strong: cubic-bezier(0.23, 1, 0.32, 1);
+}
 .reveal-on-scroll {
   opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
-              transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  transform: translateY(14px);
+  transition: opacity 0.5s var(--ease-out-strong),
+              transform 0.5s var(--ease-out-strong);
   will-change: opacity, transform;
 }
 .reveal-on-scroll.revealed {
   opacity: 1;
   transform: translateY(0);
+  will-change: auto;
+}
+
+/* Cartes qui se soulevent au survol : transform et ombre seulement, souris
+   fine uniquement (le tactile declenche de faux survols au toucher). */
+@media (hover: hover) and (pointer: fine) {
+  .card-lift {
+    transition: transform 0.25s var(--ease-out-strong), border-color 0.25s ease, box-shadow 0.25s ease;
+  }
+  .card-lift:hover {
+    transform: translateY(-4px);
+  }
+  .card-lift .card-lift-media {
+    transition: transform 0.5s var(--ease-out-strong);
+  }
+  .card-lift:hover .card-lift-media {
+    transform: scale(1.04);
+  }
+}
+
+/* Mouvement reduit : on garde l'apparition en fondu, on retire le deplacement. */
+@media (prefers-reduced-motion: reduce) {
+  .reveal-on-scroll {
+    transform: none;
+    transition: opacity 0.2s ease;
+  }
+  .card-lift, .card-lift:hover, .card-lift:hover .card-lift-media {
+    transform: none;
+  }
+  .animate-marquee-left, .animate-marquee-right, .animate-marquee-bar,
+  .animate-marquee-testimonials-left, .animate-marquee-testimonials-right,
+  .animate-scroll-up, .animate-scroll-down {
+    animation-play-state: paused;
+  }
 }
 
 

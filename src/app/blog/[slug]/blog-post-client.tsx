@@ -283,7 +283,7 @@ export function BlogPostContent({
           >
             <p className="font-display text-xl font-bold text-foreground">Cet article vous a été utile ?</p>
             <p className="text-sm text-muted-foreground mt-2 max-w-md mx-auto">
-              Laissez un commentaire ou contactez-moi pour discuter de votre projet.
+              Laissez un commentaire ou contactez-nous pour discuter de votre projet.
             </p>
             <div className="flex items-center justify-center gap-3 mt-6">
               <Link

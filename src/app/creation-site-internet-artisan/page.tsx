@@ -58,7 +58,7 @@ const config: MetierConfig = {
   heroHeadline: 'Création de site internet pour artisan,',
   heroHeadlineItalic: 'des chantiers qui arrivent par Google',
   heroDescription:
-    "Vos clients vous cherchent sur leur téléphone, souvent dans l'urgence. Je crée des sites d'artisans simples, rapides et rassurants, trouvés sur « votre métier + votre ville », avec vos réalisations en vitrine et un bouton d'appel toujours visible.",
+    "Vos clients vous cherchent sur leur téléphone, souvent dans l'urgence. Nous créons des sites d'artisans simples, rapides et rassurants, trouvés sur « votre métier + votre ville », avec vos réalisations en vitrine et un bouton d'appel toujours visible.",
   heroImageAlt: 'Victor Béasse, création de site internet pour artisans',
   whatKicker: 'Site pour artisans',
   whatTitle: 'Un site qui travaille',

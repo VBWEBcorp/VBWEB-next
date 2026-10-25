@@ -29,7 +29,7 @@ const steps = [
 const relatedServices = [
   { title: 'Référencement SEO', href: '/referencement-seo' },
   { title: 'Création de site', href: '/creation-site-internet' },
-  { title: 'Freelance SEO', href: '/freelance-seo' },
+  { title: 'Consultant SEO', href: '/freelance-seo' },
 ]
 
 /* ------------------------------------------------------------------ */
@@ -107,7 +107,7 @@ export function AuditSeoContent({ faqs }: { faqs: FaqItem[] }) {
               <span className="italic text-muted-foreground">n&apos;attire pas assez de clients</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-              En 30 minutes, je vous montre exactement ce qui bloque votre visibilité sur Google et comment y remédier. Gratuit, sans engagement.
+              En 30 minutes, nous vous montrons exactement ce qui bloque votre visibilité sur Google et comment y remédier. Gratuit, sans engagement.
             </p>
             <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
               <Button size="lg" className="group bg-primary text-primary-foreground hover:bg-primary/85" asChild>

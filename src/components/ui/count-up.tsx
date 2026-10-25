@@ -41,6 +41,11 @@ export function CountUp({
 
   useEffect(() => {
     if (!started) return
+    // Mouvement reduit : le chiffre s'affiche tel quel, sans defilement.
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      setDisplay(value)
+      return
+    }
     const ms = duration * 1000
     const start = performance.now()
     let raf: number

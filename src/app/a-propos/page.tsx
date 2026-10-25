@@ -4,10 +4,10 @@ import { AboutContent } from './about-content'
 import { breadcrumbJsonLd, webPageJsonLd } from '@/components/seo/json-ld'
 
 const description =
-  'Victor Beasse, consultant SEO et développeur web à Rennes : plus de 8 ans au service des PME et artisans partout en France. Mon parcours et ma méthode.'
+  'VBWEB, agence web et SEO fondée par Victor Béasse à Rennes : une équipe à taille humaine au service des PME et artisans partout en France.'
 
 export const metadata: Metadata = {
-  title: 'Victor Beasse | Consultant SEO & Développeur Web à Rennes',
+  title: 'Victor Béasse, fondateur de VBWEB | Agence SEO & Web à Rennes',
   description,
   alternates: { canonical: '/a-propos' },
 }

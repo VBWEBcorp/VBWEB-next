@@ -132,7 +132,7 @@ export function GuideIaContent({ faqs }: { faqs: FaqItem[] }) {
           <div className="mt-8 rounded-2xl border border-border/60 bg-background p-6 sm:p-8">
             <h3 className="font-display text-xl text-foreground">Vous voulez savoir où vous en êtes ?</h3>
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-              Je regarde votre site, votre fiche Google et ce que les IA disent de vous, puis je vous envoie une
+              Nous regardons votre site, votre fiche Google et ce que les IA disent de vous, puis nous vous envoyons une
               vidéo de cinq minutes avec ce que je ferais à votre place. C&apos;est gratuit et sans engagement.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">

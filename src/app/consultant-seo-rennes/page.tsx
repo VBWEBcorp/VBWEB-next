@@ -24,7 +24,7 @@ const faqs = [
   {
     question: 'Pourquoi choisir un consultant SEO à Rennes plutôt qu’une agence parisienne ?',
     answer:
-      "Parce que le référencement local se gagne sur le terrain que vous connaissez : les quartiers, les communes voisines, les concurrents que vos clients comparent. Je suis installé à Acigné, aux portes de Rennes, je connais le tissu d'entreprises bretonnes, et vous travaillez directement avec moi, sans chef de projet entre nous.",
+      "Parce que le référencement local se gagne sur le terrain que vous connaissez : les quartiers, les communes voisines, les concurrents que vos clients comparent. L'agence est installée à Acigné, aux portes de Rennes, nous connaissons le tissu d'entreprises bretonnes, et vous avez une interlocutrice dédiée qui suit votre dossier, sans chef de projet entre vous et ceux qui font le travail.",
   },
   {
     question: 'Quelle différence entre un consultant SEO et une agence SEO à Rennes ?',
@@ -54,7 +54,7 @@ const faqs = [
   {
     question: 'Vous occupez-vous aussi de la visibilité sur ChatGPT ?',
     answer:
-      "Oui. Quand on demande à une IA « un bon électricien à Rennes » ou « une agence web en Bretagne », elle s'appuie sur les fiches Google, les avis et les sites. Je mesure ce qu'elle répond sur votre métier et je travaille les signaux qui vous font citer.",
+      "Oui. Quand on demande à une IA « un bon électricien à Rennes » ou « une agence web en Bretagne », elle s'appuie sur les fiches Google, les avis et les sites. Nous mesurons ce qu'elle répond sur votre métier et nous travaillons les signaux qui vous font citer.",
   },
   {
     question: 'Comment démarrer ?',
@@ -78,7 +78,7 @@ const config: MetierConfig = {
   whatPara1:
     "Le référencement d'une entreprise locale se joue sur trois terrains à la fois : les résultats classiques de Google, la carte où s'affichent trois entreprises, et les réponses que donnent désormais ChatGPT ou Gemini. Je travaille les trois, parce qu'un client rennais qui cherche un prestataire passe de l'un à l'autre sans y penser.",
   whatPara2:
-    "Installé à Acigné, aux portes de Rennes, j'accompagne des artisans, des commerces, des professions libérales et des PME de toute la Bretagne. J'audite votre site et votre fiche Google, je corrige ce qui vous freine, je crée les pages et les articles qui répondent à vos clients, et je vous montre chaque mois ce qui a bougé. Plus de 80 clients m'ont laissé un avis 5 étoiles sur Google.",
+    "Installée à Acigné, aux portes de Rennes, l'agence accompagne des artisans, des commerces, des professions libérales et des PME de toute la Bretagne. Nous auditons votre site et votre fiche Google, nous corrigeons ce qui vous freine, nous créons les pages et les articles qui répondent à vos clients, et nous vous montrons chaque mois ce qui a bougé. Plus de 80 clients nous ont laissé un avis 5 étoiles sur Google.",
   whatImageUrl:
     'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1600880292203-757bb62b4baf-w720.webp',
   whatImageAlt: 'Rendez-vous de travail SEO avec une entreprise de Rennes',

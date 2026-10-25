@@ -20,11 +20,11 @@ const faqs = [
   },
   {
     question: 'Faut-il changer tous mes outils actuels ?',
-    answer: 'Non. La plupart du temps, on connecte et on automatise à partir de vos outils existants. Quand un logiciel du marché ne convient pas, je développe un outil sur-mesure adapté à vos process.',
+    answer: 'Non. La plupart du temps, on connecte et on automatise à partir de vos outils existants. Quand un logiciel du marché ne convient pas, nous développons un outil sur-mesure adapté à vos process.',
   },
   {
     question: 'Combien ça coûte et combien de temps ça prend ?',
-    answer: 'Chaque projet est différent. On commence toujours par un audit gratuit des tâches chronophages : je vous dis ce qui est automatisable, le temps que vous gagneriez et un budget clair avant tout engagement.',
+    answer: 'Chaque projet est différent. On commence toujours par un audit gratuit des tâches chronophages : nous vous disons ce qui est automatisable, le temps que vous gagneriez et un budget clair avant tout engagement.',
   },
 ]
 

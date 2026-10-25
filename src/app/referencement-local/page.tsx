@@ -57,7 +57,7 @@ const faqs = [
   {
     question: 'Travaillez-vous le référencement local ailleurs qu’en Bretagne ?',
     answer:
-      "Oui. Je suis basé près de Rennes, mais le référencement local se pilote très bien à distance : la fiche, les avis et le site se travaillent de la même façon à Lyon ou à Bordeaux qu'à Vannes.",
+      "Oui. L'agence est basée près de Rennes, mais le référencement local se pilote très bien à distance : la fiche, les avis et le site se travaillent de la même façon à Lyon ou à Bordeaux qu'à Vannes.",
   },
 ]
 

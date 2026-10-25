@@ -35,7 +35,7 @@ const services = [
   { label: 'Référencement SEO', href: '/referencement-seo' },
   { label: 'Création de site internet', href: '/creation-site-internet' },
   { label: 'IA en entreprise', href: '/ia-entreprise' },
-  { label: 'Freelance SEO', href: '/freelance-seo' },
+  { label: 'Consultant SEO', href: '/freelance-seo' },
   { label: 'Audit SEO gratuit', href: '/audit-seo-gratuit' },
   { label: 'Référencement IA (GEO)', href: '/referencement-ia-geo' },
   { label: 'Guide : être recommandé par ChatGPT', href: '/guide-ia' },

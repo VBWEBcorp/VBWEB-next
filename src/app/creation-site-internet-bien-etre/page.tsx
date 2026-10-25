@@ -58,7 +58,7 @@ const config: MetierConfig = {
   heroHeadline: 'Création de site internet bien-être,',
   heroHeadlineItalic: 'qui donne envie de prendre rendez-vous',
   heroDescription:
-    "Sophrologues, thérapeutes, coachs, praticiens : vos futurs clients vous choisissent sur un sentiment de confiance. Je crée des sites apaisants, clairs et trouvés près de chez vous, avec la prise de rendez-vous intégrée.",
+    "Sophrologues, thérapeutes, coachs, praticiens : vos futurs clients vous choisissent sur un sentiment de confiance. Nous créons des sites apaisants, clairs et trouvés près de chez vous, avec la prise de rendez-vous intégrée.",
   heroImageAlt: 'Victor Béasse, création de site internet pour le bien-être',
   whatKicker: 'Site pour praticiens',
   whatTitle: 'Un site qui vous ressemble,',

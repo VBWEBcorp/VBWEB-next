@@ -73,7 +73,7 @@ const features = [
 const services = [
   { title: 'Référencement SEO', href: '/referencement-seo' },
   { title: 'Audit SEO gratuit', href: '/audit-seo-gratuit' },
-  { title: 'Freelance SEO', href: '/freelance-seo' },
+  { title: 'Consultant SEO', href: '/freelance-seo' },
 ] as const
 
 /* ------------------------------------------------------------------ */

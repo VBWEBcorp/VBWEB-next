@@ -168,10 +168,10 @@ export function ContactContent() {
                     Victor Béasse
                   </h2>
                   <p className="mt-1 text-[12px] font-medium uppercase tracking-[0.18em] text-primary/80">
-                    Consultant SEO & Dev web
+                    Fondateur de VBWEB
                   </p>
                   <p className="mt-4 text-[14px] leading-relaxed text-muted-foreground">
-                    Je vous accompagne pour transformer votre site en un véritable levier de croissance.
+                    Avec l'équipe VBWEB, nous transformons votre site en un véritable levier de croissance.
                   </p>
 
                 </div>
@@ -184,7 +184,7 @@ export function ContactContent() {
                         Formulaire
                       </p>
                       <h3 className="mt-2 font-display text-xl font-medium tracking-[-0.01em] text-foreground sm:text-2xl">
-                        Je vous rappelle sous 24 heures
+                        Nous vous rappelons sous 24 heures
                       </h3>
                     </div>
                     <CallbackForm lang="fr" />

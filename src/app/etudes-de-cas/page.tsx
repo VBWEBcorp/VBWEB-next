@@ -4,6 +4,8 @@ import { Globe, Search, Settings, ArrowRight } from 'lucide-react'
 
 import { breadcrumbJsonLd, webPageJsonLd } from '@/components/seo/json-ld'
 import { Reveal } from '@/components/ui/reveal'
+import { appProjects } from '@/lib/app-projects'
+import { webProjects } from '@/lib/projects'
 
 const description =
   'Nos réalisations : sites internet, référencement SEO et applications web pour PME, artisans et commerces partout en France, avec des résultats mesurables.'
@@ -34,9 +36,9 @@ const categories = [
   {
     icon: Globe,
     title: 'Sites Internet',
-    description: '32 sites créés pour des PME, artisans et commerces. Design moderne, responsive et pensé pour convertir.',
+    description: `${webProjects.length} sites créés pour des PME, artisans et commerces. Design moderne, responsive et pensé pour convertir.`,
     href: '/etudes-de-cas/sites-internet',
-    count: '32 projets',
+    count: `${webProjects.length} projets`,
   },
   {
     icon: Search,
@@ -48,9 +50,9 @@ const categories = [
   {
     icon: Settings,
     title: 'Applications Web',
-    description: 'CRM, logiciels de gestion et plateformes métier développés sur mesure avec démonstrations vidéo.',
+    description: 'CRM, logiciels de gestion et plateformes complètes développés sur mesure : démonstrations vidéo et produits en ligne.',
     href: '/etudes-de-cas/applications-web',
-    count: '3 projets',
+    count: `${appProjects.length} projets`,
   },
 ]
 

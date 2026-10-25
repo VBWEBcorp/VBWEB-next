@@ -215,7 +215,7 @@ export function MetierTemplate({ config, faqs }: MetierTemplateProps) {
                 <AuditButton />
                 <Button size="lg" variant="outline" className="group border-border/60" asChild>
                   <Link href="/contact">
-                    Discuter de mon projet
+                    Discuter de votre projet
                     <ArrowRight className="transition-transform group-hover:translate-x-0.5" />
                   </Link>
                 </Button>
@@ -420,7 +420,7 @@ export function MetierTemplate({ config, faqs }: MetierTemplateProps) {
                     {[
                       { label: 'Création de site', desc: 'Sites optimisés SEO', href: '/creation-site-internet' },
                       { label: 'Tous les services', desc: 'Vue d’ensemble', href: '/services' },
-                      { label: 'Freelance SEO', desc: 'Stratégie référencement', href: '/freelance-seo' },
+                      { label: 'Consultant SEO', desc: 'Stratégie référencement', href: '/freelance-seo' },
                       { label: 'Audit SEO gratuit', desc: 'Analyse de votre visibilité', href: '/audit-seo-gratuit' },
                     ].map((link) => (
                       <Link

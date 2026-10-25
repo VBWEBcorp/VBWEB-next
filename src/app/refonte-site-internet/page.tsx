@@ -37,7 +37,7 @@ const faqs = [
   {
     question: 'Combien de temps dure une refonte de site ?',
     answer:
-      "Cela dépend surtout du nombre de pages et de la rapidité des validations. Un site vitrine se refait en quelques semaines, un site avec un catalogue ou des fonctions sur mesure demande plus. Je vous donne un calendrier précis après l'audit, avec les dates où j'ai besoin de vous.",
+      "Cela dépend surtout du nombre de pages et de la rapidité des validations. Un site vitrine se refait en quelques semaines, un site avec un catalogue ou des fonctions sur mesure demande plus. Nous vous donnons un calendrier précis après l'audit, avec les dates où nous avons besoin de vous.",
   },
   {
     question: 'Faut-il quitter WordPress, Wix ou Shopify lors d’une refonte ?',
@@ -71,7 +71,7 @@ const config: MetierConfig = {
   whatPara1:
     "La plupart des refontes sont pensées comme un chantier graphique. Le site est plus beau, puis les appels baissent pendant des mois, parce que des pages ont disparu ou changé d'adresse sans que personne ne le prévoie. Je commence donc par l'inverse : ce qui vous rapporte aujourd'hui, page par page, dans votre Search Console.",
   whatPara2:
-    "À partir de là, je construis la nouvelle arborescence, je rédige ou reprends les contenus, je développe un site rapide que vous pouvez modifier vous-même, et je prépare le plan de redirection complet. La mise en ligne est suivie de près : indexation, erreurs, positions. Si une page décroche, on le voit dans la semaine, pas six mois plus tard.",
+    "À partir de là, nous construisons la nouvelle arborescence, nous rédigeons ou reprenons les contenus, nous développons un site rapide que vous pouvez modifier vous-même, et nous préparons le plan de redirection complet. La mise en ligne est suivie de près : indexation, erreurs, positions. Si une page décroche, on le voit dans la semaine, pas six mois plus tard.",
   whatImageUrl:
     'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1460925895917-afdab827c52f-w800.webp',
   whatImageAlt: 'Analyse des pages d’un site avant sa refonte',

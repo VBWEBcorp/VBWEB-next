@@ -147,7 +147,7 @@ export function SitesInternetContent() {
                 <Star key={i} className="size-4 fill-amber-400 text-amber-400" />
               ))}
             </div>
-            <p className="text-xs text-muted-foreground/60">80+ avis 5 étoiles</p>
+            <p className="text-xs text-muted-foreground/60">88 avis Google, 5 étoiles</p>
             <a
               href="https://share.google/RdtyxDLN4e3KEx2eO"
               target="_blank"
@@ -165,7 +165,7 @@ export function SitesInternetContent() {
                 Un projet de site internet à Rennes ?
               </h2>
               <p className="mx-auto mt-3 max-w-lg text-sm leading-relaxed text-muted-foreground">
-                De la maquette à la mise en ligne, je crée votre site sur mesure optimisé pour Google. <Link href="/audit-seo-gratuit" className="text-primary underline underline-offset-2 transition-colors duration-200 hover:text-primary/80">Audit SEO gratuit</Link> inclus.
+                De la maquette à la mise en ligne, nous créons votre site sur mesure optimisé pour Google. <Link href="/audit-seo-gratuit" className="text-primary underline underline-offset-2 transition-colors duration-200 hover:text-primary/80">Audit SEO gratuit</Link> inclus.
               </p>
               <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
                 <Button size="lg" variant="outline" className="border-white/15 bg-foreground/5 text-foreground hover:bg-foreground/10 hover:text-foreground" asChild>

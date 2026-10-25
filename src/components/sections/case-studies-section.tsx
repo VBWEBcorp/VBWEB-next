@@ -6,6 +6,7 @@ import Link from 'next/link'
 
 import { useHomeLang, t } from '@/components/home/lang'
 import { Reveal } from '@/components/ui/reveal'
+import { APP_PROJECTS_HREF, platformProjects } from '@/lib/app-projects'
 import { WEB_PROJECTS_HREF, webProjects } from '@/lib/projects'
 
 // Aperçu volontairement compact : une mosaïque de vignettes, pas une galerie.
@@ -89,6 +90,53 @@ export function CaseStudiesSection() {
                 <p className="mt-1.5 truncate text-[10px] leading-tight text-muted-foreground transition-colors duration-300 group-hover:text-primary sm:text-[11px]">
                   {project.name}
                 </p>
+              </Link>
+            ))}
+          </div>
+        </Reveal>
+
+        {/* Plateformes complètes : trois cartes, chacune mène à sa fiche détaillée */}
+        <Reveal className="mt-10 sm:mt-12">
+          <div className="flex items-baseline justify-between gap-4">
+            <p className="font-display text-[11px] font-semibold tracking-[0.24em] text-primary/80 uppercase">
+              {t.platforms.eyebrow[lang]}
+            </p>
+            <Link
+              href={APP_PROJECTS_HREF}
+              className="group inline-flex shrink-0 items-center gap-1 text-[13px] text-muted-foreground transition-colors hover:text-primary"
+            >
+              {t.platforms.cta[lang]}
+              <ArrowUpRight className="size-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </Link>
+          </div>
+          <p className="mt-2 max-w-2xl text-[15px] leading-relaxed text-muted-foreground">
+            {t.platforms.title[lang]}
+          </p>
+
+          <div className="mt-4 grid gap-3 sm:grid-cols-3">
+            {platformProjects.map((project, i) => (
+              <Link
+                key={project.id}
+                href={`${APP_PROJECTS_HREF}#${project.id}`}
+                className="card-lift group block overflow-hidden rounded-xl border border-border/60 bg-card/40 hover:border-primary/40 hover:shadow-[var(--shadow-md)]"
+                style={{ transitionDelay: `${i * 0.04}s` }}
+              >
+                <div className="relative aspect-[16/10] overflow-hidden border-b border-border/60">
+                  <Image
+                    src={project.image!}
+                    alt={`${project.title}, plateforme développée par VBWEB`}
+                    fill
+                    loading="lazy"
+                    sizes="(max-width: 640px) 100vw, 300px"
+                    className="card-lift-media object-cover object-top"
+                  />
+                </div>
+                <div className="p-3.5">
+                  <p className="font-display text-[14px] font-semibold leading-snug text-foreground transition-colors duration-300 group-hover:text-primary">
+                    {project.title}
+                  </p>
+                  <p className="mt-0.5 text-[12px] text-muted-foreground">{project.kind}</p>
+                </div>
               </Link>
             ))}
           </div>

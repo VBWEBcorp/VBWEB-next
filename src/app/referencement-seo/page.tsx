@@ -48,7 +48,7 @@ const faqs = [
   },
   {
     question: 'Travaillez-vous partout en France ?',
-    answer: 'Oui, j\'accompagne des clients partout en France. Le travail se fait à distance, avec des rendez-vous en personne lorsque c\'est pertinent. Je suis flexible sur la localisation.',
+    answer: 'Oui, nous accompagnons des clients partout en France. Le travail se fait à distance, en visio, avec des points réguliers.',
   },
 ]
 
@@ -71,7 +71,7 @@ const config: MetierConfig = {
   whatImageUrl: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/unsplash-photo-1432888622747-4eb9a8efeb07-w800.webp',
   whatImageAlt: 'Consultant SEO, stratégie de référencement naturel',
   pillars: [
-    { icon: 'FileSearch', title: 'Audit stratégique', desc: 'Diagnostic technique, contenu, concurrence. Je vous montre exactement où vous perdez et où vous pouvez gagner.' },
+    { icon: 'FileSearch', title: 'Audit stratégique', desc: 'Diagnostic technique, contenu, concurrence. Nous vous montrons exactement où vous perdez et où vous pouvez gagner.' },
     { icon: 'Target', title: 'Contenu qui convertit', desc: 'Pages pensées pour les requêtes à forte intention d\'achat, pas les mots-clés vanity sans retour.' },
     { icon: 'TrendingUp', title: 'Suivi mensuel transparent', desc: 'Rapport clair chaque mois : positions gagnées, trafic, conversions. Pas de rapports creux.' },
   ],
@@ -114,7 +114,7 @@ const config: MetierConfig = {
   relatedLinks: [
     { label: 'Audit SEO gratuit', href: '/audit-seo-gratuit' },
     { label: 'Création de site internet', href: '/creation-site-internet' },
-    { label: 'Freelance SEO', href: '/freelance-seo' },
+    { label: 'Consultant SEO', href: '/freelance-seo' },
   ],
   miniCtaText: 'Envie de savoir ce que le SEO peut vraiment vous rapporter ?',
   caseStudiesKicker: 'Résultats SEO de mes clients',

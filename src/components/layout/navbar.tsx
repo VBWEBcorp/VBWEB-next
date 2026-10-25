@@ -249,7 +249,7 @@ export function Navbar() {
                   onClick={() => setOpen(false)}
                   className="group flex h-10 w-full items-center justify-center gap-2 rounded-xl bg-primary text-[13px] font-medium text-primary-foreground transition-colors hover:bg-primary/85 lg:h-11 lg:text-sm"
                 >
-                  Parlez-moi de votre projet
+                  Parlez-nous de votre projet
                   <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" />
                 </Link>
               </div>

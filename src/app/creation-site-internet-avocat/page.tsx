@@ -58,7 +58,7 @@ const config: MetierConfig = {
   heroHeadline: 'Création de site internet pour avocat,',
   heroHeadlineItalic: 'sobre, conforme et trouvé',
   heroDescription:
-    "Vos futurs clients cherchent un avocat par domaine et par ville, souvent dans un moment difficile. Je crée des sites de cabinet clairs et rassurants, conformes aux règles de communication de la profession, et construits pour apparaître sur vos domaines de compétence.",
+    "Vos futurs clients cherchent un avocat par domaine et par ville, souvent dans un moment difficile. Nous créons des sites de cabinet clairs et rassurants, conformes aux règles de communication de la profession, et construits pour apparaître sur vos domaines de compétence.",
   heroImageAlt: 'Victor Béasse, création de site internet pour avocats',
   whatKicker: 'Site pour avocats',
   whatTitle: 'Un cabinet crédible en ligne,',
@@ -76,7 +76,7 @@ const config: MetierConfig = {
     { icon: 'MessageCircle', title: 'Premier contact simple', desc: 'Rendez-vous en ligne ou formulaire de qualification.' },
   ],
   whatFooterText:
-    "Vous restez seul juge de la conformité déontologique de votre communication : je vous fournis un site pensé pour la faciliter.",
+    "Vous restez seul juge de la conformité déontologique de votre communication : nous vous fournissons un site pensé pour la faciliter.",
   timelineSteps: [
     {
       number: '01',

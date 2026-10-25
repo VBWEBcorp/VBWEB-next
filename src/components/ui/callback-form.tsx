@@ -191,7 +191,7 @@ export function CallbackForm({ lang, onLeave, onSent }: { lang: 'fr' | 'en'; onL
         </p>
         <p className="mx-auto mt-1.5 max-w-xs text-[14px] leading-snug text-muted-foreground" style={{ animation: 'cb-rise 0.5s ease-out 0.75s both' }}>
           {fr
-            ? 'Je vous rappelle sous 24 heures, du lundi au vendredi. Un email de confirmation vient de partir.'
+            ? 'Nous vous rappelons sous 24 heures, du lundi au vendredi. Un email de confirmation vient de partir.'
             : 'I will call you back within 24 hours, Monday to Friday. A confirmation email is on its way.'}
         </p>
         <div style={{ animation: 'cb-rise 0.5s ease-out 0.9s both' }}>

@@ -39,7 +39,7 @@ const faqs = [
   {
     question: 'Pourrai-je modifier mon site moi-même ?',
     answer:
-      "Oui. Chaque site est livré avec un espace d'administration simple pour changer vos textes, vos photos et publier des articles, sans toucher au code. Je vous montre comment faire à la livraison.",
+      "Oui. Chaque site est livré avec un espace d'administration simple pour changer vos textes, vos photos et publier des articles, sans toucher au code. Nous vous montrons comment faire à la livraison.",
   },
   {
     question: 'Qui est propriétaire du site une fois livré ?',
@@ -82,13 +82,13 @@ const config: MetierConfig = {
     { icon: 'Target', title: 'Parcours jusqu’au devis', desc: 'Une page, un objectif, et un bouton clair pour vous contacter.' },
     { icon: 'MapPin', title: 'Référencé à Rennes', desc: 'Structure, pages de zone et fiche Google reliées dès la mise en ligne.' },
   ],
-  whatFooterText: `Je crée des sites pour des entreprises de ${zones.join(', ')} et de toute la Bretagne.`,
+  whatFooterText: `Nous créons des sites pour des entreprises de ${zones.join(', ')} et de toute la Bretagne.`,
   timelineSteps: [
     {
       number: '01',
       title: 'Premier échange et cadrage',
       description:
-        "Votre activité, vos clients, ce que le site doit produire. Je vous propose une arborescence et un calendrier, et je regarde déjà ce que vos concurrents rennais font sur Google.",
+        "Votre activité, vos clients, ce que le site doit produire. Nous vous proposons une arborescence et un calendrier, et nous regardons déjà ce que vos concurrents rennais font sur Google.",
     },
     {
       number: '02',

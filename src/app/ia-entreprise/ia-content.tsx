@@ -27,7 +27,7 @@ const piliers = [
   {
     icon: LayoutDashboard,
     title: 'Outils sur-mesure (CRM, dashboards)',
-    desc: "Quand les logiciels du marché ne collent pas à votre activité, je développe l'outil qu'il vous faut : CRM, tableau de bord, plateforme métier. Simple, adapté à vos process, à vous 100 %.",
+    desc: "Quand les logiciels du marché ne collent pas à votre activité, nous développons l'outil qu'il vous faut : CRM, tableau de bord, plateforme métier. Simple, adapté à vos process, à vous 100 %.",
     points: ['CRM taillé pour votre activité', 'Tableaux de bord clairs', 'Plateformes et espaces métier', 'Intégrations sur mesure'],
   },
 ]
@@ -149,7 +149,7 @@ export function IaEntrepriseContent() {
                 href="/contact"
                 className="group inline-flex h-11 items-center gap-2 rounded-full bg-primary px-6 text-[14px] font-medium text-primary-foreground transition-colors hover:bg-primary/85"
               >
-                Parlez-moi de votre projet
+                Parlez-nous de votre projet
                 <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
               </Link>
               <Link

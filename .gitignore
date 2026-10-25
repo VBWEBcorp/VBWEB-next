@@ -27,3 +27,6 @@ public/uploads/
 
 # Local Netlify folder
 .netlify
+
+# Captures et profils Chrome des scripts de controle
+scripts/out/

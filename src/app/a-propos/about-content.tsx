@@ -5,26 +5,29 @@ import { Flame, Target, Palette, ArrowRight, ArrowUpRight } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-const ease = [0.22, 1, 0.36, 1] as const
+import { TeamSection } from '@/components/sections/team-section'
+
+const ease = [0.23, 1, 0.32, 1] as const
+const inView = { once: true, margin: '-80px' } as const
 
 const values = [
   {
     icon: Target,
-    title: 'Mon parcours',
+    title: 'Son parcours',
     description:
-      "Entrepreneuriat à l'étranger, missions IT sous pression, projets digitaux corsés, management d'équipes. J'ai appris à structurer, anticiper et performer.",
+      "Entrepreneuriat à l'étranger, missions IT sous pression, projets digitaux corsés, management d'équipes. Il a appris à structurer, anticiper et performer.",
   },
   {
     icon: Flame,
-    title: 'Ma résilience',
+    title: 'Sa résilience',
     description:
-      "Elle vient de la boxe que j'ai commencée à 13 ans, avec mon premier combat en Thaïlande à 20 ans. Ça m'a appris à tenir bon face aux obstacles.",
+      "Elle vient de la boxe, commencée à 13 ans, avec un premier combat en Thaïlande à 20 ans. De quoi tenir bon face aux obstacles.",
   },
   {
     icon: Palette,
-    title: 'Mes passions',
+    title: 'Ses passions',
     description:
-      "Web, IA, design, créativité digitale. Ce que j'aime par-dessus tout : transformer une idée floue en projet concret et impactant.",
+      "Web, IA, design, créativité digitale. Ce qu'il aime par-dessus tout : transformer une idée floue en projet concret et impactant.",
   },
 ]
 
@@ -37,7 +40,7 @@ const links = [
 export function AboutContent() {
   return (
     <>
-      {/* HERO style Framer */}
+      {/* HERO : premier ecran, aucune animation d'entree (lisible des le rendu). */}
       <section className="relative isolate overflow-hidden bg-background">
         {/* Grain */}
         <div
@@ -56,12 +59,7 @@ export function AboutContent() {
 
         <div className="relative mx-auto max-w-6xl px-4 pt-24 pb-16 sm:px-6 sm:pt-32 sm:pb-20 lg:px-8 lg:pt-40 lg:pb-24">
           <div className="grid items-center gap-12 lg:grid-cols-[1fr_auto] lg:gap-16">
-            <motion.div
-              initial={{ opacity: 0, y: 18 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.65, ease }}
-              className="text-center lg:text-left"
-            >
+            <div className="text-center lg:text-left">
               <p className="font-display text-[11px] font-semibold tracking-[0.24em] text-primary/80 uppercase">
                 À propos
               </p>
@@ -71,16 +69,11 @@ export function AboutContent() {
                 <span className="italic text-muted-foreground/80">VBWEB</span> ?
               </h1>
               <p className="mx-auto mt-6 max-w-xl text-pretty text-[15px] leading-relaxed text-muted-foreground sm:text-base lg:mx-0">
-                Victor Béasse, Fondateur & CEO. Consultant SEO et développeur web depuis plus de 8 ans, au service des PME, artisans et commerces.
+                Victor Béasse, fondateur. VBWEB est une agence web et SEO à taille humaine, installée aux portes de Rennes, au service des PME, artisans et commerces partout en France.
               </p>
-            </motion.div>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0, scale: 0.92 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.7, ease, delay: 0.15 }}
-              className="relative mx-auto lg:mx-0"
-            >
+            <div className="relative mx-auto lg:mx-0">
               <div aria-hidden className="absolute -inset-6 rounded-full bg-primary/10 blur-3xl" />
               <div className="relative size-56 overflow-hidden rounded-full border-2 border-primary/20 shadow-[var(--shadow-lg)] ring-1 ring-foreground/5 sm:size-64 lg:size-72">
                 <Image
@@ -95,12 +88,12 @@ export function AboutContent() {
                   className="size-full object-cover object-center"
                 />
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* CITATION style Framer */}
+      {/* CITATION du fondateur */}
       <section className="relative overflow-hidden bg-card">
         <div
           aria-hidden
@@ -109,10 +102,10 @@ export function AboutContent() {
 
         <div className="relative mx-auto max-w-4xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
           <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-80px' }}
-            transition={{ duration: 0.6, ease }}
+            initial={{ opacity: 0, transform: 'translateY(14px)' }}
+            whileInView={{ opacity: 1, transform: 'translateY(0px)' }}
+            viewport={inView}
+            transition={{ duration: 0.45, ease }}
             className="text-center"
           >
             <p className="font-display text-[11px] font-semibold tracking-[0.24em] text-primary/80 uppercase">
@@ -147,14 +140,17 @@ export function AboutContent() {
               </div>
               <div className="text-left">
                 <p className="text-[13px] font-semibold text-foreground">Victor Béasse</p>
-                <p className="text-[11px] text-muted-foreground/70">Fondateur & CEO VBWEB</p>
+                <p className="text-[11px] text-muted-foreground/70">Fondateur de VBWEB</p>
               </div>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* PARCOURS / RESILIENCE / PASSIONS — grille style Framer */}
+      {/* L'EQUIPE : la meme section que l'accueil, source unique des roles et des chiffres */}
+      <TeamSection />
+
+      {/* PARCOURS / RESILIENCE / PASSIONS du fondateur */}
       <section className="relative overflow-hidden bg-background">
         <div
           aria-hidden
@@ -172,18 +168,18 @@ export function AboutContent() {
 
         <div className="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
           <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-80px' }}
-            transition={{ duration: 0.6, ease }}
+            initial={{ opacity: 0, transform: 'translateY(14px)' }}
+            whileInView={{ opacity: 1, transform: 'translateY(0px)' }}
+            viewport={inView}
+            transition={{ duration: 0.45, ease }}
             className="mx-auto max-w-3xl text-center"
           >
             <p className="font-display text-[11px] font-semibold tracking-[0.24em] text-primary/80 uppercase">
               L&apos;humain derrière VBWEB
             </p>
             <h2 className="mt-5 font-display text-balance text-3xl font-medium leading-[1.1] tracking-[-0.025em] text-foreground sm:text-4xl lg:text-[2.75rem]">
-              Mon parcours,{' '}
-              <span className="italic text-muted-foreground/80">ma force</span>, mes passions
+              Le parcours du fondateur,{' '}
+              <span className="italic text-muted-foreground/80">sa force</span>, ses passions
             </h2>
           </motion.div>
 
@@ -193,24 +189,24 @@ export function AboutContent() {
               return (
                 <motion.div
                   key={v.title}
-                  initial={{ opacity: 0, y: 18 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: '-80px' }}
-                  transition={{ duration: 0.55, ease, delay: i * 0.1 }}
+                  initial={{ opacity: 0, transform: 'translateY(14px)' }}
+                  whileInView={{ opacity: 1, transform: 'translateY(0px)' }}
+                  viewport={inView}
+                  transition={{ duration: 0.4, ease, delay: i * 0.06 }}
                   className="group relative"
                 >
                   <div
                     aria-hidden
                     className="pointer-events-none absolute -inset-px rounded-[1.4rem] bg-gradient-to-br from-primary/40 via-primary/0 to-primary/20 opacity-0 blur-[2px] transition-opacity duration-500 group-hover:opacity-100"
                   />
-                  <div className="relative h-full overflow-hidden rounded-[1.35rem] border border-border/60 bg-card/40 p-7 backdrop-blur-sm transition-all duration-500 group-hover:border-primary/30 group-hover:bg-card/60 sm:p-8">
+                  <div className="card-lift relative h-full overflow-hidden rounded-[1.35rem] border border-border/60 bg-card/40 p-7 backdrop-blur-sm group-hover:border-primary/30 group-hover:bg-card/60 sm:p-8">
                     <div
                       aria-hidden
                       className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-primary/[0.05] blur-3xl transition-opacity duration-500 group-hover:bg-primary/[0.12]"
                     />
 
                     <div className="relative">
-                      <div className="flex size-11 items-center justify-center rounded-xl border border-border/60 bg-background/60 text-muted-foreground transition-all duration-500 group-hover:border-primary/40 group-hover:bg-primary/10 group-hover:text-primary">
+                      <div className="flex size-11 items-center justify-center rounded-xl border border-border/60 bg-background/60 text-muted-foreground transition-colors duration-300 group-hover:border-primary/40 group-hover:bg-primary/10 group-hover:text-primary">
                         <Icon className="size-5" aria-hidden />
                       </div>
 
@@ -232,7 +228,7 @@ export function AboutContent() {
         </div>
       </section>
 
-      {/* AUJOURD'HUI — section vision épurée */}
+      {/* AUJOURD'HUI : la vision */}
       <section className="relative overflow-hidden bg-card">
         <div
           aria-hidden
@@ -241,10 +237,10 @@ export function AboutContent() {
 
         <div className="relative mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
           <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-80px' }}
-            transition={{ duration: 0.6, ease }}
+            initial={{ opacity: 0, transform: 'translateY(14px)' }}
+            whileInView={{ opacity: 1, transform: 'translateY(0px)' }}
+            viewport={inView}
+            transition={{ duration: 0.45, ease }}
             className="text-center"
           >
             <p className="font-display text-[11px] font-semibold tracking-[0.24em] text-primary/80 uppercase">
@@ -255,13 +251,13 @@ export function AboutContent() {
               <span className="italic text-muted-foreground/80">une équipe</span>
             </h2>
             <p className="mt-6 text-pretty text-[15px] leading-relaxed text-muted-foreground sm:text-base">
-              Je pilote VBWEB avec une équipe d&rsquo;experts. Grâce aux technologies les plus modernes, dont l&rsquo;IA, j&rsquo;aide les entreprises à sortir du lot et à exploser en visibilité en ligne.
+              Victor pilote VBWEB avec une équipe de production SEO, une responsable qui suit chaque client, et les technologies les plus modernes, dont l&rsquo;IA. L&rsquo;objectif ne change pas : faire sortir votre entreprise du lot sur Google et dans les réponses des IA, et le prouver chaque mois avec des chiffres.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* LIENS — grille minimaliste */}
+      {/* LIENS */}
       <section className="relative overflow-hidden bg-background">
         <div
           aria-hidden
@@ -275,10 +271,10 @@ export function AboutContent() {
 
         <div className="relative mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
           <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-80px' }}
-            transition={{ duration: 0.6, ease }}
+            initial={{ opacity: 0, transform: 'translateY(14px)' }}
+            whileInView={{ opacity: 1, transform: 'translateY(0px)' }}
+            viewport={inView}
+            transition={{ duration: 0.45, ease }}
             className="mx-auto max-w-2xl text-center"
           >
             <p className="font-display text-[11px] font-semibold tracking-[0.24em] text-primary/80 uppercase">
@@ -286,7 +282,7 @@ export function AboutContent() {
             </p>
             <h2 className="mt-5 font-display text-balance text-3xl font-medium leading-[1.1] tracking-[-0.025em] text-foreground sm:text-4xl">
               Découvrez{' '}
-              <span className="italic text-muted-foreground/80">mes services</span>
+              <span className="italic text-muted-foreground/80">nos services</span>
             </h2>
           </motion.div>
 
@@ -294,18 +290,18 @@ export function AboutContent() {
             {links.map((link, i) => (
               <motion.div
                 key={link.href}
-                initial={{ opacity: 0, y: 14 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-80px' }}
-                transition={{ duration: 0.5, ease, delay: i * 0.08 }}
+                initial={{ opacity: 0, transform: 'translateY(12px)' }}
+                whileInView={{ opacity: 1, transform: 'translateY(0px)' }}
+                viewport={inView}
+                transition={{ duration: 0.4, ease, delay: i * 0.06 }}
               >
                 <Link
                   href={link.href}
-                  className="group relative block h-full bg-background/95 p-7 backdrop-blur-sm transition-colors duration-500 hover:bg-card/60 sm:p-8"
+                  className="group relative block h-full bg-background/95 p-7 backdrop-blur-sm transition-colors duration-300 hover:bg-card/60 sm:p-8"
                 >
                   <div
                     aria-hidden
-                    className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                    className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
                     style={{
                       background:
                         'radial-gradient(circle at center top, rgba(78,186,236,0.08), transparent 70%)',
@@ -313,10 +309,10 @@ export function AboutContent() {
                   />
                   <div className="relative flex flex-col">
                     <div className="flex items-start justify-between">
-                      <h3 className="font-display text-lg font-semibold tracking-[-0.01em] text-foreground transition-colors duration-500 group-hover:text-primary sm:text-xl">
+                      <h3 className="font-display text-lg font-semibold tracking-[-0.01em] text-foreground transition-colors duration-300 group-hover:text-primary sm:text-xl">
                         {link.title}
                       </h3>
-                      <ArrowUpRight className="size-4 shrink-0 text-muted-foreground/40 transition-all duration-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-primary" />
+                      <ArrowUpRight className="size-4 shrink-0 text-muted-foreground/40 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-primary" />
                     </div>
                     <p className="mt-2 text-[14px] leading-relaxed text-muted-foreground">
                       {link.description}
