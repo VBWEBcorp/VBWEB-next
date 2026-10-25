@@ -5,7 +5,7 @@ import { Flame, Target, Palette, ArrowRight, ArrowUpRight } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { TeamSection } from '@/components/sections/team-section'
+import { AgencyNumbersSection } from '@/components/sections/agency-numbers-section'
 
 const ease = [0.23, 1, 0.32, 1] as const
 const inView = { once: true, margin: '-80px' } as const
@@ -147,8 +147,8 @@ export function AboutContent() {
         </div>
       </section>
 
-      {/* L'EQUIPE : la meme section que l'accueil, source unique des roles et des chiffres */}
-      <TeamSection />
+      {/* LES CHIFFRES : la meme bande que l'accueil, source unique */}
+      <AgencyNumbersSection />
 
       {/* PARCOURS / RESILIENCE / PASSIONS du fondateur */}
       <section className="relative overflow-hidden bg-background">
@@ -251,7 +251,7 @@ export function AboutContent() {
               <span className="italic text-muted-foreground/80">une équipe</span>
             </h2>
             <p className="mt-6 text-pretty text-[15px] leading-relaxed text-muted-foreground sm:text-base">
-              Victor pilote VBWEB avec une équipe de production SEO, une responsable qui suit chaque client, et les technologies les plus modernes, dont l&rsquo;IA. L&rsquo;objectif ne change pas : faire sortir votre entreprise du lot sur Google et dans les réponses des IA, et le prouver chaque mois avec des chiffres.
+              Victor pilote VBWEB avec son équipe et les technologies les plus modernes, dont l&rsquo;IA. L&rsquo;objectif ne change pas : faire sortir votre entreprise du lot sur Google et dans les réponses des IA, et le prouver chaque mois avec des chiffres.
             </p>
           </motion.div>
         </div>

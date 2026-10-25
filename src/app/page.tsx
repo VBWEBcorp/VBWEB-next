@@ -17,8 +17,8 @@ import { siteConfig } from '@/lib/seo'
 const FounderSection = dynamic(() =>
   import('@/components/sections/founder-section').then((m) => m.FounderSection),
 )
-const TeamSection = dynamic(() =>
-  import('@/components/sections/team-section').then((m) => m.TeamSection),
+const AgencyNumbersSection = dynamic(() =>
+  import('@/components/sections/agency-numbers-section').then((m) => m.AgencyNumbersSection),
 )
 const ProblemStatsSection = dynamic(() =>
   import('@/components/sections/problem-stats-section').then((m) => m.ProblemStatsSection),
@@ -68,7 +68,7 @@ export default function HomePage() {
       />
       <HeroSection />
       <FounderSection />
-      <TeamSection />
+      <AgencyNumbersSection />
       <ProblemStatsSection />
       <MethodSection />
       <ResultsSection />

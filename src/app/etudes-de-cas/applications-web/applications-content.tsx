@@ -3,6 +3,7 @@ import { ArrowLeft, ArrowRight, ArrowUpRight, CheckCircle2, Quote } from 'lucide
 
 import { Button } from '@/components/ui/button'
 import { Reveal } from '@/components/ui/reveal'
+import { TiltCard } from '@/components/ui/tilt-card'
 import { appProjects, type AppProject } from '@/lib/app-projects'
 
 /* Grain overlay reused across sections */
@@ -134,10 +135,11 @@ export function ApplicationsWebContent() {
 
           <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
             {appProjects.map((project, i) => (
-              <Reveal key={project.id} delay={(i % 3) * 0.06}>
+              <Reveal key={project.id} delay={(i % 3) * 0.06} className="h-full">
+                <TiltCard max={4} className="h-full rounded-[1.35rem]">
                 <article
                   id={project.id}
-                  className="card-lift group flex h-full scroll-mt-24 flex-col overflow-hidden rounded-[1.35rem] border border-border/60 bg-card/40 hover:border-primary/30 hover:shadow-[var(--shadow-md)]"
+                  className="group flex h-full scroll-mt-24 flex-col overflow-hidden rounded-[1.35rem] border border-border/60 bg-card/40 transition-[border-color,box-shadow] duration-300 hover:border-primary/30 hover:shadow-[var(--shadow-md)]"
                 >
                   <ProjectMedia project={project} />
 
@@ -202,6 +204,7 @@ export function ApplicationsWebContent() {
                     )}
                   </div>
                 </article>
+                </TiltCard>
               </Reveal>
             ))}
           </div>

@@ -24,7 +24,7 @@ const faqs = [
   {
     question: 'Pourquoi choisir un consultant SEO à Rennes plutôt qu’une agence parisienne ?',
     answer:
-      "Parce que le référencement local se gagne sur le terrain que vous connaissez : les quartiers, les communes voisines, les concurrents que vos clients comparent. L'agence est installée à Acigné, aux portes de Rennes, nous connaissons le tissu d'entreprises bretonnes, et vous avez une interlocutrice dédiée qui suit votre dossier, sans chef de projet entre vous et ceux qui font le travail.",
+      "Parce que le référencement local se gagne sur le terrain que vous connaissez : les quartiers, les communes voisines, les concurrents que vos clients comparent. L'agence est installée à Acigné, aux portes de Rennes, nous connaissons le tissu d'entreprises bretonnes, et vous travaillez avec une équipe qui connaît votre dossier, sans chef de projet entre vous et ceux qui font le travail.",
   },
   {
     question: 'Quelle différence entre un consultant SEO et une agence SEO à Rennes ?',

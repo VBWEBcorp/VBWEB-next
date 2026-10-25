@@ -298,15 +298,85 @@
   }
 }
 
+/* Carte en relief : inclinaison posee en inline par TiltCard, retour en
+   douceur quand le pointeur sort ; reflet qui suit la souris (--gx, --gy). */
+.tilt-card {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.2s var(--ease-out-strong);
+  will-change: transform;
+}
+.tilt-glare {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  opacity: 0;
+  background: radial-gradient(circle at var(--gx, 50%) var(--gy, 50%), rgba(255, 255, 255, 0.12), transparent 60%);
+  transition: opacity 0.25s ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  .tilt-card:hover .tilt-glare { opacity: 1; }
+  .tilt-card:hover .card-lift-media { transform: scale(1.04); }
+  .tilt-card .card-lift-media { transition: transform 0.5s var(--ease-out-strong); }
+}
+
+/* Bande des chiffres : reflet qui balaie une fois, trait qui se dessine sous
+   chaque chiffre, chiffre qui prend sa taille. Declenche par .revealed du
+   conteneur Reveal, decale de 80 ms par chiffre (--i). */
+.numbers-sheen {
+  pointer-events: none;
+  position: absolute;
+  top: -40%;
+  bottom: -40%;
+  left: 0;
+  width: 32%;
+  background: linear-gradient(100deg, transparent 0%, rgba(78, 186, 236, 0.16) 50%, transparent 100%);
+  transform: translateX(-140%) skewX(-14deg);
+}
+.revealed .numbers-sheen {
+  animation: numbers-sheen 1.2s var(--ease-out-strong) 0.2s both;
+}
+@keyframes numbers-sheen {
+  to { transform: translateX(440%) skewX(-14deg); }
+}
+.numbers-item dd {
+  transform: scale(0.9);
+  transition: transform 0.7s var(--ease-out-strong);
+  transition-delay: calc(0.1s + var(--i) * 0.08s);
+}
+.revealed .numbers-item dd {
+  transform: none;
+}
+.numbers-line {
+  display: block;
+  height: 2px;
+  width: 2.75rem;
+  margin-top: 0.75rem;
+  border-radius: 1px;
+  background: linear-gradient(90deg, var(--primary), transparent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.8s var(--ease-out-strong);
+  transition-delay: calc(0.25s + var(--i) * 0.08s);
+}
+.revealed .numbers-line {
+  transform: scaleX(1);
+}
+
 /* Mouvement reduit : on garde l'apparition en fondu, on retire le deplacement. */
 @media (prefers-reduced-motion: reduce) {
   .reveal-on-scroll {
     transform: none;
     transition: opacity 0.2s ease;
   }
-  .card-lift, .card-lift:hover, .card-lift:hover .card-lift-media {
+  .card-lift, .card-lift:hover, .card-lift:hover .card-lift-media,
+  .tilt-card, .tilt-card:hover .card-lift-media {
     transform: none;
+    transition: none;
   }
+  .numbers-sheen { animation: none; }
+  .numbers-item dd, .numbers-line { transform: none; transition: none; }
   .animate-marquee-left, .animate-marquee-right, .animate-marquee-bar,
   .animate-marquee-testimonials-left, .animate-marquee-testimonials-right,
   .animate-scroll-up, .animate-scroll-down {

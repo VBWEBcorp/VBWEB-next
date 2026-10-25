@@ -291,40 +291,22 @@ export const t = {
       en: 'or contact us directly',
     },
   },
-  team: {
-    eyebrow: { fr: "L'agence", en: 'The agency' },
-    h2Part1: { fr: 'Une équipe,', en: 'One team,' },
-    h2Part2: { fr: 'une interlocutrice dédiée', en: 'one dedicated contact' },
-    intro: {
-      fr: "VBWEB est une agence à taille humaine : un fondateur qui construit, une responsable SEO qui vous répond, et une équipe de production derrière elle. Pas de chef de projet entre vous et ceux qui font le travail.",
-      en: 'VBWEB is a human-sized agency: a founder who builds, an SEO lead who answers you, and a production team behind her. No project manager between you and the people doing the work.',
-    },
-    members: {
-      fr: [
-        { name: 'Victor Béasse', role: 'Fondateur', desc: "Stratégie, développement et référencement IA. Il conçoit les sites et les outils, et garde un œil sur chaque dossier." },
-        { name: 'Léa', role: 'Responsable SEO', desc: 'Votre interlocutrice au quotidien : elle pilote votre référencement et vous répond dans votre application VBWEB.' },
-        { name: 'Pôle production SEO', role: '3 personnes', desc: 'Contenus, fiches Google, netlinking et suivi des positions, chaque mois.' },
-        { name: 'Pôle relation client', role: '3 personnes', desc: 'Premiers échanges, qualification de votre projet et suivi de vos demandes.' },
-      ],
-      en: [
-        { name: 'Victor Béasse', role: 'Founder', desc: 'Strategy, development and AI search. He designs the sites and the tools, and keeps an eye on every account.' },
-        { name: 'Léa', role: 'Head of SEO', desc: 'Your day-to-day contact: she runs your SEO and answers you in your VBWEB app.' },
-        { name: 'SEO production team', role: '3 people', desc: 'Content, Google listings, link building and rank tracking, every month.' },
-        { name: 'Client relations team', role: '3 people', desc: 'First conversations, project qualification and follow-up of your requests.' },
-      ],
-    },
+  agency: {
+    eyebrow: { fr: "L'agence en chiffres", en: "The agency in numbers" },
+    h2Part1: { fr: "Des résultats", en: "Results" },
+    h2Part2: { fr: "déjà livrés", en: "already delivered" },
     facts: {
       fr: [
-        { value: 88, suffix: '', label: 'avis Google, tous à 5 étoiles' },
-        { value: 200, suffix: '+', label: 'sites livrés' },
-        { value: 150, suffix: '+', label: 'clients accompagnés en référencement' },
-        { value: 10, suffix: '+', label: 'applications sur mesure' },
+        { value: 88, suffix: "", label: "avis Google, tous à 5 étoiles" },
+        { value: 200, suffix: "+", label: "sites livrés" },
+        { value: 150, suffix: "+", label: "clients accompagnés en référencement" },
+        { value: 10, suffix: "+", label: "applications sur mesure" },
       ],
       en: [
-        { value: 88, suffix: '', label: 'Google reviews, all 5 stars' },
-        { value: 200, suffix: '+', label: 'websites delivered' },
-        { value: 150, suffix: '+', label: 'SEO clients supported' },
-        { value: 10, suffix: '+', label: 'custom apps built' },
+        { value: 88, suffix: "", label: "Google reviews, all 5 stars" },
+        { value: 200, suffix: "+", label: "websites delivered" },
+        { value: 150, suffix: "+", label: "SEO clients supported" },
+        { value: 10, suffix: "+", label: "custom apps built" },
       ],
     },
   },

@@ -6,6 +6,7 @@ import Link from 'next/link'
 
 import { useHomeLang, t } from '@/components/home/lang'
 import { Reveal } from '@/components/ui/reveal'
+import { TiltCard } from '@/components/ui/tilt-card'
 import { APP_PROJECTS_HREF, platformProjects } from '@/lib/app-projects'
 import { WEB_PROJECTS_HREF, webProjects } from '@/lib/projects'
 
@@ -114,12 +115,11 @@ export function CaseStudiesSection() {
           </p>
 
           <div className="mt-4 grid gap-3 sm:grid-cols-3">
-            {platformProjects.map((project, i) => (
+            {platformProjects.map((project) => (
+              <TiltCard key={project.id} className="rounded-xl">
               <Link
-                key={project.id}
                 href={`${APP_PROJECTS_HREF}#${project.id}`}
-                className="card-lift group block overflow-hidden rounded-xl border border-border/60 bg-card/40 hover:border-primary/40 hover:shadow-[var(--shadow-md)]"
-                style={{ transitionDelay: `${i * 0.04}s` }}
+                className="group block overflow-hidden rounded-xl border border-border/60 bg-card/40 transition-[border-color,box-shadow] duration-300 hover:border-primary/40 hover:shadow-[var(--shadow-md)]"
               >
                 <div className="relative aspect-[16/10] overflow-hidden border-b border-border/60">
                   <Image
@@ -138,6 +138,7 @@ export function CaseStudiesSection() {
                   <p className="mt-0.5 text-[12px] text-muted-foreground">{project.kind}</p>
                 </div>
               </Link>
+              </TiltCard>
             ))}
           </div>
         </Reveal>
