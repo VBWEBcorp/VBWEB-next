@@ -14,7 +14,9 @@ import { estCitee, hacherIp, interroger, nomsCites, question, type Demande } fro
 export const dynamic = 'force-dynamic'
 export const maxDuration = 60
 
-const MAX_JOUR = Number(process.env.TEST_IA_MAX_JOUR) || 40
+// 15 tests par jour au plus : chaque test envoie 1 ou 2 mails par Resend, compte gratuit de 100 mails par jour partagé
+// avec les formulaires des clients et la prospection Ille-et-Vilaine (72 mails le jour le plus chargé de la semaine du 02/11).
+const MAX_JOUR = Number(process.env.TEST_IA_MAX_JOUR) || 15
 const PAR_IP = 3
 
 const clean = (v: unknown, max: number) => (typeof v === 'string' ? v.trim().replace(/\s+/g, ' ').slice(0, max) : '')
