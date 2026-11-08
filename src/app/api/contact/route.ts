@@ -1,21 +1,14 @@
 import { NextResponse } from 'next/server'
 
+import { escapeHtml, FROM, NOTIFY_TO, sendMail } from '@/lib/notification'
 import { siteConfig } from '@/lib/seo'
+import { cleStats, compterSansBloquer } from '@/lib/stats-site'
 
 /**
  * Réception des deux formulaires du site (popup « audit gratuit » et page
  * contact) et envoi par Resend : une notification à contact@vbweb.fr avec le
  * prospect en reply-to, puis un accusé de réception au prospect.
  */
-
-const RESEND_URL = 'https://api.resend.com/emails'
-const FROM = 'VBWEB <contact@vbweb.fr>'
-// Les demandes partent AUSSI directement sur le Gmail de Victor. Envoyées de
-// contact@vbweb.fr à contact@vbweb.fr depuis Resend, Infomaniak les acceptait
-// (statut « delivered ») mais ne les transmettait jamais à Gmail : aucune demande
-// de la pub ChatGPT n'a été vue du 30/09 au 02/10/2026. Un seul envoi, un seul
-// Message-ID : Gmail n'affiche qu'un exemplaire si Infomaniak finit par relayer.
-const NOTIFY_TO = [siteConfig.email, 'contact.vbweb.entreprise@gmail.com']
 
 type Payload = {
   source?: 'audit' | 'contact' | 'rappel'
@@ -39,8 +32,6 @@ const BUDGET_TROP_BAS = /^(moins de 1 000|under 1,000)/i
 
 const clean = (v: unknown, max: number) => (typeof v === 'string' ? v.trim().slice(0, max) : '')
 const isEmail = (v: string) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)
-const escapeHtml = (s: string) =>
-  s.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c] ?? c)
 
 /**
  * Copie de la demande dans le CRM : le lead y apparaît tout seul, avec sa
@@ -67,13 +58,14 @@ async function versLeCRM(payload: Record<string, unknown>) {
   }
 }
 
-async function sendMail(apiKey: string, mail: Record<string, unknown>) {
-  const res = await fetch(RESEND_URL, {
-    method: 'POST',
-    headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
-    body: JSON.stringify(mail),
+/** Compteurs du jour de la mesure d'audience : demandes envoyées, par source et par page. */
+function compterDemande(type: string, sourcePub: string, page?: string) {
+  return compterSansBloquer({
+    'demandes.total': 1,
+    [`demandes.types.${type}`]: 1,
+    [`demandes.sources.${cleStats((sourcePub || 'site').toLowerCase())}`]: 1,
+    ...(page && /^\/[\w\-/%.]*$/.test(page) ? { [`demandes.pages.${cleStats(page)}`]: 1 } : {}),
   })
-  if (!res.ok) throw new Error(`Resend ${res.status} : ${await res.text()}`)
 }
 
 /**
@@ -166,6 +158,7 @@ async function demandeDeRappel(apiKey: string, body: Payload) {
   }
 
   await versLeCRM({ source: 'rappel', name, phone, email, budget, entreprise, website, message: '', provenance: prov })
+  await compterDemande('rappel', sourcePub, prov.page)
 
   // Accusé de réception au prospect : sa réussite ne conditionne pas la réponse.
   sendMail(apiKey, {
@@ -275,6 +268,7 @@ export async function POST(req: Request) {
     }
   }
   await versLeCRM({ source, name, email, website: rawSite, budget, message, provenance: provContact })
+  await compterDemande(source, provContact.utm_source || '', provContact.page)
 
   // Accusé de réception au prospect : sa réussite ne conditionne pas la réponse.
   const ack =

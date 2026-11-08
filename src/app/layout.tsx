@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import { Inter, Plus_Jakarta_Sans } from 'next/font/google'
 
+import { MesureAudience } from '@/components/layout/mesure-audience'
 import { OaiqPageView } from '@/components/layout/oaiq-page-view'
 import { RootWrapper } from '@/components/layout/root-wrapper'
 import { HomeLangProvider } from '@/components/home/lang'
@@ -99,6 +100,7 @@ export default function RootLayout({
           Aller au contenu
         </a>
         <OaiqPageView />
+        <MesureAudience />
         <HomeLangProvider>
           <AuditProvider>
             <RootWrapper>{children}</RootWrapper>

@@ -26,6 +26,7 @@ const serviceLinks = [
 // menu, pour garder le parcours principal minimaliste.
 const moreLinks = [
   { label: 'Référencement IA (GEO)', to: '/referencement-ia-geo' },
+  { label: 'Test : ChatGPT vous recommande-t-il ?', to: '/test-ia' },
   { label: 'Référencement local', to: '/referencement-local' },
   { label: 'Refonte de site', to: '/refonte-site-internet' },
   { label: 'Consultant SEO Rennes', to: '/consultant-seo-rennes' },

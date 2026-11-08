@@ -222,6 +222,14 @@
 @media (prefers-reduced-motion: reduce) {
   .cb-anim, .cb-anim * { animation: none !important; stroke-dashoffset: 0 !important; }
 }
+/* Test IA : la barre avance pendant que ChatGPT cherche (40 s), sans jamais se remplir seule */
+.test-progression { transform: scaleX(0.04); animation: test-progression 40s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+@keyframes test-progression {
+  to { transform: scaleX(0.92); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .test-progression { animation: none; transform: scaleX(0.5); }
+}
 @keyframes fade-in {
   from { opacity: 0; }
   to { opacity: 1; }

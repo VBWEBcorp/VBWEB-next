@@ -97,6 +97,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Pages de référencement (liées depuis le bas du footer)
   for (const path of [
     '/guide-ia',
+    '/test-ia',
     '/referencement-ia-geo',
     '/referencement-local',
     '/refonte-site-internet',

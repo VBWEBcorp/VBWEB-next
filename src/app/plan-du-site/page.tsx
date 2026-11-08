@@ -39,6 +39,7 @@ const services = [
   { label: 'Audit SEO gratuit', href: '/audit-seo-gratuit' },
   { label: 'Référencement IA (GEO)', href: '/referencement-ia-geo' },
   { label: 'Guide : être recommandé par ChatGPT', href: '/guide-ia' },
+  { label: 'Test : ChatGPT recommande-t-il votre entreprise ?', href: '/test-ia' },
   { label: 'Référencement local', href: '/referencement-local' },
   { label: 'Refonte de site internet', href: '/refonte-site-internet' },
   { label: 'Consultant SEO à Rennes', href: '/consultant-seo-rennes' },

@@ -104,7 +104,18 @@ function SuccessCheck() {
   )
 }
 
-export function CallbackForm({ lang, onLeave, onSent }: { lang: 'fr' | 'en'; onLeave?: () => void; onSent?: () => void }) {
+export function CallbackForm({
+  lang,
+  onLeave,
+  onSent,
+  defaults,
+}: {
+  lang: 'fr' | 'en'
+  onLeave?: () => void
+  onSent?: () => void
+  /** Valeurs déjà connues (page /test-ia : l'entreprise et le site testés). */
+  defaults?: { entreprise?: string; website?: string; email?: string }
+}) {
   const fr = lang === 'fr'
   const [state, setState] = useState<'idle' | 'sending' | 'sent' | 'declined' | 'error'>('idle')
   const [error, setError] = useState('')
@@ -218,7 +229,7 @@ export function CallbackForm({ lang, onLeave, onSent }: { lang: 'fr' | 'en'; onL
         <label className="sr-only" htmlFor="cb-phone">{ph('Téléphone', 'Phone')}</label>
         <input id="cb-phone" name="phone" required type="tel" inputMode="tel" autoComplete="tel" placeholder={ph('Téléphone', 'Phone')} className={input} />
         <label className="sr-only" htmlFor="cb-email">Email</label>
-        <input id="cb-email" name="email" required type="email" autoComplete="email" placeholder="Email" className={input} />
+        <input id="cb-email" name="email" required type="email" autoComplete="email" placeholder="Email" defaultValue={defaults?.email} className={input} />
         <label className="sr-only" htmlFor="cb-budget">{ph('Budget', 'Budget')}</label>
         <select id="cb-budget" name="budget" required defaultValue="" className={`${input} col-span-2 invalid:text-muted-foreground/70`}>
           <option value="" disabled>{ph('Budget mensuel envisagé', 'Monthly budget')}</option>
@@ -227,9 +238,9 @@ export function CallbackForm({ lang, onLeave, onSent }: { lang: 'fr' | 'en'; onL
           ))}
         </select>
         <label className="sr-only" htmlFor="cb-entreprise">{ph('Entreprise (facultatif)', 'Company (optional)')}</label>
-        <input id="cb-entreprise" name="entreprise" autoComplete="organization" placeholder={ph('Entreprise (facultatif)', 'Company (optional)')} className={`${input} col-span-2 @lg:col-span-1`} />
+        <input id="cb-entreprise" name="entreprise" autoComplete="organization" placeholder={ph('Entreprise (facultatif)', 'Company (optional)')} defaultValue={defaults?.entreprise} className={`${input} col-span-2 @lg:col-span-1`} />
         <label className="sr-only" htmlFor="cb-site">{ph('Votre site (facultatif)', 'Your website (optional)')}</label>
-        <input id="cb-site" name="website" autoComplete="url" placeholder={ph('Votre site (facultatif)', 'Your website (optional)')} className={`${input} col-span-2 @lg:col-span-1`} />
+        <input id="cb-site" name="website" autoComplete="url" placeholder={ph('Votre site (facultatif)', 'Your website (optional)')} defaultValue={defaults?.website} className={`${input} col-span-2 @lg:col-span-1`} />
         {/* Pot de miel : invisible pour un humain, rempli par les robots */}
         <input name="company" tabIndex={-1} autoComplete="off" aria-hidden className="hidden" />
       </div>

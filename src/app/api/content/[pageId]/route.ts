@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { connectDB } from '@/lib/db'
 import SiteContent from '@/models/SiteContent'
 import { verifyAuth } from '@/lib/auth'
+import { PREFIXE_STATS } from '@/lib/stats-site'
 
 type Params = Promise<{ pageId: string }>
 
@@ -9,6 +10,10 @@ type Params = Promise<{ pageId: string }>
 export async function GET(request: NextRequest, { params }: { params: Params }) {
   try {
     const { pageId } = await params
+    // Les compteurs de la mesure d'audience (stats:AAAA-MM-JJ) ne sont pas publics.
+    if (pageId.startsWith(PREFIXE_STATS)) {
+      return NextResponse.json({ pageId, content: {} })
+    }
     await connectDB()
 
     const page = await SiteContent.findOne({ pageId })
@@ -32,6 +37,9 @@ export async function PUT(request: NextRequest, { params }: { params: Params }) 
     }
 
     const { pageId } = await params
+    if (pageId.startsWith(PREFIXE_STATS)) {
+      return NextResponse.json({ error: 'Réservé à la mesure d’audience' }, { status: 400 })
+    }
     await connectDB()
 
     const { content } = await request.json()
