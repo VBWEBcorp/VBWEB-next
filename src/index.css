@@ -419,3 +419,65 @@
     bottom: 9.5rem;
   }
 }
+
+/* Motion design de l'accueil (10/11/2026, demande de Victor : « quand tu scrolles, ça avance, comme
+   Jeudredi »). Tout est lié au défilement (animation-timeline), en CSS seul : aucune bibliothèque,
+   aucun écouteur de scroll, transform et opacity uniquement (pas de décalage de mise en page).
+   Au chargement, chaque élément est à sa place finale : le premier écran est lisible tout de suite,
+   sans JavaScript. Navigateurs sans « animation-timeline » ou mouvement réduit : rien ne bouge. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    /* Hero : en quittant l'écran, le texte remonte et s'efface un peu, la mosaïque et la photo
+       grossissent (l'image qui « avance » de Jeudredi). Progression 0 = état normal. */
+    .sd-hero-out,
+    .sd-hero-bg,
+    .sd-hero-photo {
+      animation-timing-function: linear;
+      animation-fill-mode: both;
+      animation-timeline: scroll(root);
+      animation-range: 0 90vh;
+    }
+    .sd-hero-out { animation-name: sd-hero-out; }
+    .sd-hero-bg { animation-name: sd-hero-bg; }
+    .sd-hero-photo { animation-name: sd-hero-photo; }
+
+    /* Ruban géant : glisse de droite à gauche pendant qu'il traverse l'écran. */
+    .sd-ruban {
+      animation: sd-ruban linear both;
+      animation-timeline: view();
+      animation-range: cover 0% cover 100%;
+    }
+
+    /* Chaque section remonte et se pose en entrant dans l'écran. */
+    .home-motion > section {
+      animation: sd-monte linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 70%;
+    }
+
+    /* Titres de section : ils s'allument du gris au blanc pendant qu'on descend. */
+    .home-motion section h2 {
+      animation: sd-allume linear both;
+      animation-timeline: view();
+      animation-range: entry 20% cover 45%;
+    }
+
+    /* Mosaïque des réalisations : les colonnes glissent à des vitesses différentes. */
+    .sd-mosaic > * {
+      animation: sd-flotte-a linear both;
+      animation-timeline: view();
+      animation-range: cover 0% cover 100%;
+    }
+    .sd-mosaic > *:nth-child(2n) { animation-name: sd-flotte-b; }
+    .sd-mosaic > *:nth-child(3n) { animation-name: sd-flotte-c; }
+  }
+}
+@keyframes sd-hero-out { to { transform: translateY(-90px); opacity: 0.35; } }
+@keyframes sd-hero-bg { to { transform: scale(1.15) translateY(60px); } }
+@keyframes sd-hero-photo { to { transform: scale(1.18) translateY(-30px); } }
+@keyframes sd-ruban { from { transform: translateX(8%); } to { transform: translateX(-62%); } }
+@keyframes sd-monte { from { transform: translateY(90px) scale(0.97); } to { transform: none; } }
+@keyframes sd-allume { from { opacity: 0.25; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+@keyframes sd-flotte-a { from { transform: translateY(40px); } to { transform: translateY(-40px); } }
+@keyframes sd-flotte-b { from { transform: translateY(80px); } to { transform: translateY(-80px); } }
+@keyframes sd-flotte-c { from { transform: translateY(20px); } to { transform: translateY(-20px); } }

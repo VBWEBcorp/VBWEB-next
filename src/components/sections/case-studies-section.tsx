@@ -75,7 +75,7 @@ export function CaseStudiesSection() {
             </Link>
           </div>
 
-          <div className="mt-4 grid grid-cols-3 gap-2 sm:grid-cols-4 sm:gap-3 lg:grid-cols-6">
+          <div className="sd-mosaic mt-4 grid grid-cols-3 gap-2 sm:grid-cols-4 sm:gap-3 lg:grid-cols-6">
             {previewProjects.map((project) => (
               <Link key={project.id} href={WEB_PROJECTS_HREF} className="group block">
                 <div className="relative aspect-[16/11] overflow-hidden rounded-lg border border-border/60 bg-card/40 transition-colors duration-300 group-hover:border-primary/40">

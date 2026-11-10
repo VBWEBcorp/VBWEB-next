@@ -10,6 +10,28 @@ export interface WebProject {
 export const WEB_PROJECTS_HREF = '/etudes-de-cas/sites-internet'
 
 export const webProjects: WebProject[] = [
+  // Trois dernières réalisations en tête (10/11/2026) : l'accueil n'affiche que les 12 premières.
+  {
+    id: 'jeudredi-production',
+    name: 'Jeudredi Production',
+    url: 'https://jeudredi-production.netlify.app/',
+    image: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/JEUDREDI-PRODUCTION-wb6ssjpq.webp',
+    description: 'Agence de production audiovisuelle à Paris.',
+  },
+  {
+    id: 'couvreurs-verifies',
+    name: 'Couvreurs Vérifiés',
+    url: 'https://couvreurs-verifies.fr/',
+    image: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/COUVREURS-VERIFIES-buybuems.webp',
+    description: 'Annuaire national des entreprises de couverture.',
+  },
+  {
+    id: 'happy-hour-sxm',
+    name: 'Happy Hour SXM',
+    url: 'https://happy-hour-sxm.netlify.app/',
+    image: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/HAPPY-HOUR-SXM-7zvaot6a.webp',
+    description: 'Le guide des happy hours de Saint-Martin.',
+  },
   {
     id: 'yuzu-branding',
     name: 'Yuzu Branding',

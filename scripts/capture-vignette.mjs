@@ -38,7 +38,8 @@ const env = Object.fromEntries(
     }),
 )
 
-const CHROME = 'C:/Program Files/Google/Chrome/Application/chrome.exe'
+// Chrome du poste Windows, ou celui indiqué par CHROME_PATH (sur le VPS : le Chromium de Playwright).
+const CHROME = process.env.CHROME_PATH || 'C:/Program Files/Google/Chrome/Application/chrome.exe'
 const PORT = 9333
 const PUBLIC_BASE = 'https://pub-698f857760da42999dac8854114fbc41.r2.dev'
 const BUCKET = 'vbweb-images'
@@ -50,6 +51,8 @@ const chrome = spawn(CHROME, [
   '--hide-scrollbars',
   '--no-first-run',
   '--disable-gpu',
+  // Sur Linux (VPS), Chromium refuse de démarrer sans ce drapeau.
+  ...(process.platform === 'linux' ? ['--no-sandbox'] : []),
   `--user-data-dir=${join(outDir, 'chrome-profile')}`,
   'about:blank',
 ], { stdio: 'ignore' })

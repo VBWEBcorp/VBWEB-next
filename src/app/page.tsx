@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import dynamic from 'next/dynamic'
 
+import { HomeRuban } from '@/components/home/home-ruban'
 import { HeroSection } from '@/components/sections/hero-section'
 import {
   localBusinessJsonLd,
@@ -67,6 +68,9 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <HeroSection />
+      <HomeRuban />
+      {/* Motion design au scroll : voir « .home-motion » dans index.css */}
+      <div className="home-motion">
       <FounderSection />
       <AgencyNumbersSection />
       <ProblemStatsSection />
@@ -75,6 +79,7 @@ export default function HomePage() {
       <TestimonialsSection />
       <CaseStudiesSection />
       <CtaGallerySection variant="homepage" />
+      </div>
     </>
   )
 }

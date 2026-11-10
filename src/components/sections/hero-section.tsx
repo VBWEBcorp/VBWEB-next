@@ -80,7 +80,7 @@ export function HeroSection() {
       {/* Photo columns pleine largeur (identique au CTA gallery). Absentes sur
           mobile : sur un téléphone, ces images animées étaient le dernier
           élément affiché et retardaient la page (visiteurs de la pub ChatGPT). */}
-      <div className="absolute inset-0 hidden gap-3 opacity-25 sm:flex">
+      <div className="sd-hero-bg absolute inset-0 hidden gap-3 opacity-25 sm:flex">
         <ScrollColumn images={heroImages} direction="up" duration={40} />
         <ScrollColumn images={rot(heroImages, 3)} direction="down" duration={35} />
         <ScrollColumn images={rot(heroImages, 6)} direction="up" duration={38} />
@@ -96,7 +96,7 @@ export function HeroSection() {
 
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(78,186,236,0.08),transparent_60%)]" aria-hidden />
 
-      <div className="relative z-10 mx-auto max-w-6xl px-4 pt-6 pb-8 sm:px-6 sm:pt-28 sm:pb-14 lg:px-8 lg:pt-36 lg:pb-16">
+      <div className="sd-hero-out relative z-10 mx-auto max-w-6xl px-4 pt-6 pb-8 sm:px-6 sm:pt-28 sm:pb-14 lg:px-8 lg:pt-36 lg:pb-16">
         <div className="grid items-center gap-4 sm:gap-10 lg:grid-cols-[1fr_auto] lg:gap-x-16 lg:gap-y-8">
           {/* Photo — à droite sur desktop (sur 2 rangées), en haut sur mobile/tablet */}
           <div
@@ -104,7 +104,7 @@ export function HeroSection() {
           >
             {/* Petit ecran : la photo cede de la place pour que le bouton
                 d'appel a l'action reste visible sans faire defiler. */}
-            <div className="relative size-36 overflow-hidden rounded-full border-2 border-primary/20 shadow-[var(--shadow-lg)] ring-1 ring-foreground/5 sm:size-64 lg:size-72">
+            <div className="sd-hero-photo relative size-36 overflow-hidden rounded-full border-2 border-primary/20 shadow-[var(--shadow-lg)] ring-1 ring-foreground/5 sm:size-64 lg:size-72">
               <Image
                 src="/victor-beasse.jpg"
                 alt="Victor Béasse, Consultant SEO à Rennes, fondateur de VBWEB"
