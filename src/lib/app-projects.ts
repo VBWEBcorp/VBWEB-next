@@ -26,8 +26,8 @@ export const APP_PROJECTS_HREF = '/etudes-de-cas/applications-web'
 
 export const appProjects: AppProject[] = [
   {
-    id: 'turbo-boost',
-    title: 'Turbo Boost',
+    id: 'galon',
+    title: 'Galon',
     kind: 'Plateforme SaaS',
     description:
       "Plateforme de gamification commerciale pour les PME : quêtes, quiz, badges, classements par équipe et boutique de récompenses, validés par le manager. Conçue, développée et éditée par VBWEB.",
@@ -37,8 +37,9 @@ export const appProjects: AppProject[] = [
       'Boutique de récompenses et récapitulatif du lundi',
       'Abonnement en ligne, rôles collaborateur, manager et admin',
     ],
-    image: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/TURBO-DEAL-3o8hjmqx.webp',
-    // Pas de lien tant que le site du produit porte encore son ancien nom (Turbo Deal).
+    // Capture prise dans l'application elle-même (tableau de bord d'un collaborateur de la démo), pas d'une page vitrine.
+    image: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/GALON-uxkaoxf0.webp',
+    href: 'https://turbo-saas.netlify.app/',
     stack: ['Next.js', 'MongoDB', 'Stripe', 'Resend'],
   },
   {

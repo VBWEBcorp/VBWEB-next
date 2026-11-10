@@ -1,6 +1,7 @@
 'use client'
 
 import { useHomeLang, t } from '@/components/home/lang'
+import { RealisationsStrip } from '@/components/home/realisations-strip'
 import { CountUp } from '@/components/ui/count-up'
 import { Reveal } from '@/components/ui/reveal'
 
@@ -25,7 +26,7 @@ export function AgencyNumbersSection() {
         }}
       />
 
-      <div className="relative mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-18 lg:px-8 lg:py-20">
+      <div className="relative mx-auto max-w-6xl px-4 pt-14 sm:px-6 sm:pt-18 lg:px-8 lg:pt-20">
         <Reveal className="mx-auto max-w-3xl text-center">
           <p className="font-display text-[11px] font-semibold tracking-[0.24em] text-primary/80 uppercase">
             {t.agency.eyebrow[lang]}
@@ -59,6 +60,11 @@ export function AgencyNumbersSection() {
             ))}
           </dl>
         </Reveal>
+      </div>
+
+      {/* La preuve en images : sites et applications mélangés, bord à bord */}
+      <div className="relative pb-14 sm:pb-18 lg:pb-20">
+        <RealisationsStrip />
       </div>
     </section>
   )

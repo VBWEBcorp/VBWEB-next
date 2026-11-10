@@ -441,13 +441,6 @@
     .sd-hero-bg { animation-name: sd-hero-bg; }
     .sd-hero-photo { animation-name: sd-hero-photo; }
 
-    /* Ruban géant : glisse de droite à gauche pendant qu'il traverse l'écran. */
-    .sd-ruban {
-      animation: sd-ruban linear both;
-      animation-timeline: view();
-      animation-range: cover 0% cover 100%;
-    }
-
     /* Chaque section remonte et se pose en entrant dans l'écran. */
     .home-motion > section {
       animation: sd-monte linear both;
@@ -475,9 +468,13 @@
 @keyframes sd-hero-out { to { transform: translateY(-90px); opacity: 0.35; } }
 @keyframes sd-hero-bg { to { transform: scale(1.15) translateY(60px); } }
 @keyframes sd-hero-photo { to { transform: scale(1.18) translateY(-30px); } }
-@keyframes sd-ruban { from { transform: translateX(8%); } to { transform: translateX(-62%); } }
-@keyframes sd-monte { from { transform: translateY(90px) scale(0.97); } to { transform: none; } }
+@keyframes sd-monte { from { transform: translateY(90px); } to { transform: none; } }
 @keyframes sd-allume { from { opacity: 0.25; transform: translateY(18px); } to { opacity: 1; transform: none; } }
 @keyframes sd-flotte-a { from { transform: translateY(40px); } to { transform: translateY(-40px); } }
 @keyframes sd-flotte-b { from { transform: translateY(80px); } to { transform: translateY(-80px); } }
 @keyframes sd-flotte-c { from { transform: translateY(20px); } to { transform: translateY(-20px); } }
+
+/* Bandeau des réalisations sous les chiffres (realisations-strip.tsx) : deux copies, on glisse d'une copie. */
+.sd-strip { animation: sd-strip 70s linear infinite; }
+@keyframes sd-strip { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .sd-strip { animation-play-state: paused; } }

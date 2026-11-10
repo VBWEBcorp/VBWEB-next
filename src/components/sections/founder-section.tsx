@@ -42,19 +42,8 @@ export function FounderSection() {
             </div>
 
             <div className="px-3 pb-3 pt-8 sm:px-5 sm:pb-5 sm:pt-10 lg:px-6 lg:pb-6 lg:pt-12">
-            {/* Header — titre */}
-            <div className="relative max-w-2xl">
-              <p className="font-display text-[11px] font-semibold tracking-[0.24em] text-primary/80 uppercase">
-                {t.founder.eyebrow[lang]}
-              </p>
-              <h2 className="mt-4 font-display text-balance text-3xl font-medium leading-[1.1] tracking-[-0.025em] text-foreground sm:text-4xl lg:text-[2.75rem]">
-                {t.founder.h2Part1[lang]}{' '}
-                <span className="italic text-muted-foreground/80">{t.founder.h2Part2[lang]}</span>
-              </h2>
-            </div>
-
             {/* Votre résultat — les bénéfices en grand, un par bloc */}
-            <div className="relative mt-10 sm:mt-12">
+            <div className="relative">
               <p className="font-display text-sm font-semibold uppercase tracking-[0.18em] text-primary">
                 {t.founder.resultLabel[lang]}
               </p>
@@ -89,25 +78,6 @@ export function FounderSection() {
               </div>
             </div>
 
-            {/* Liens */}
-            <div className="relative mt-8 flex flex-col items-start gap-6 sm:flex-row sm:items-center">
-              <div className="flex flex-wrap items-center gap-x-8 gap-y-3">
-                <Link
-                  href="/a-propos"
-                  className="group/link inline-flex items-center gap-1.5 text-[13px] font-medium text-primary transition-colors hover:text-primary/80"
-                >
-                  {t.founder.learnMore[lang]}
-                  <ArrowUpRight className="size-3.5 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
-                </Link>
-                <Link
-                  href="/services"
-                  className="group/link inline-flex items-center gap-1.5 text-[13px] font-medium text-muted-foreground transition-colors hover:text-foreground"
-                >
-                  {t.founder.seeServices[lang]}
-                  <ArrowUpRight className="size-3.5 transition-transform group-hover/link:translate-x-0.5" />
-                </Link>
-              </div>
-            </div>
             </div>
           </div>
         </Reveal>
