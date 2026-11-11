@@ -27,8 +27,8 @@ const ProblemStatsSection = dynamic(() =>
 const MethodSection = dynamic(() =>
   import('@/components/sections/method-section').then((m) => m.MethodSection),
 )
-const ResultsSection = dynamic(() =>
-  import('@/components/sections/results-section').then((m) => m.ResultsSection),
+const EtudesDeCasSection = dynamic(() =>
+  import('@/components/sections/etudes-de-cas-section').then((m) => m.EtudesDeCasSection),
 )
 const TestimonialsSection = dynamic(() =>
   import('@/components/sections/testimonials-section').then((m) => m.TestimonialsSection),
@@ -75,7 +75,7 @@ export default function HomePage() {
       <AgencyNumbersSection />
       <ProblemStatsSection />
       <MethodSection />
-      <ResultsSection />
+      <EtudesDeCasSection />
       <TestimonialsSection />
       <CaseStudiesSection />
       <CtaGallerySection variant="homepage" />

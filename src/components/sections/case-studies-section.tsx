@@ -1,25 +1,20 @@
 'use client'
 
 import { ArrowUpRight } from 'lucide-react'
-import Image from 'next/image'
 import Link from 'next/link'
 
 import { useHomeLang, t } from '@/components/home/lang'
 import { Reveal } from '@/components/ui/reveal'
-import { TiltCard } from '@/components/ui/tilt-card'
-import { APP_PROJECTS_HREF, platformProjects } from '@/lib/app-projects'
-import { WEB_PROJECTS_HREF, webProjects } from '@/lib/projects'
 
-// Aperçu volontairement compact : une mosaïque de vignettes, pas une galerie.
-// Douze suffisent à donner le volume, le reste est sur la page dédiée.
-const previewProjects = webProjects.slice(0, 12)
+// Ce que nous faisons : les trois offres. Les réalisations (sites, applications, résultats SEO)
+// sont dans la section « Études de cas » et son choix à trois onglets (etudes-de-cas-section.tsx).
 
 export function CaseStudiesSection() {
   const { lang } = useHomeLang()
   const items = t.offers.items[lang]
 
   return (
-    <section id="etudes-de-cas" className="relative scroll-mt-20 overflow-hidden bg-background">
+    <section id="offres" className="relative scroll-mt-20 overflow-hidden bg-background">
       {/* Grain */}
       <div
         aria-hidden
@@ -60,88 +55,6 @@ export function CaseStudiesSection() {
           ))}
         </Reveal>
 
-        {/* Mosaïque de réalisations — chaque vignette mène à la page listant tous les sites */}
-        <Reveal className="mt-10 sm:mt-12">
-          <div className="flex items-baseline justify-between gap-4">
-            <p className="font-display text-[11px] font-semibold tracking-[0.24em] text-primary/80 uppercase">
-              {t.offers.worksEyebrow[lang]}
-            </p>
-            <Link
-              href={WEB_PROJECTS_HREF}
-              className="group inline-flex shrink-0 items-center gap-1 text-[13px] text-muted-foreground transition-colors hover:text-primary"
-            >
-              {t.offers.worksCta[lang].replace('{count}', String(webProjects.length))}
-              <ArrowUpRight className="size-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </Link>
-          </div>
-
-          <div className="sd-mosaic mt-4 grid grid-cols-3 gap-2 sm:grid-cols-4 sm:gap-3 lg:grid-cols-6">
-            {previewProjects.map((project) => (
-              <Link key={project.id} href={WEB_PROJECTS_HREF} className="group block">
-                <div className="relative aspect-[16/11] overflow-hidden rounded-lg border border-border/60 bg-card/40 transition-colors duration-300 group-hover:border-primary/40">
-                  <Image
-                    src={project.image}
-                    alt={`Site internet ${project.name} créé par VBWEB`}
-                    fill
-                    loading="lazy"
-                    sizes="(max-width: 640px) 33vw, (max-width: 1024px) 25vw, 150px"
-                    className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.06]"
-                  />
-                </div>
-                <p className="mt-1.5 truncate text-[10px] leading-tight text-muted-foreground transition-colors duration-300 group-hover:text-primary sm:text-[11px]">
-                  {project.name}
-                </p>
-              </Link>
-            ))}
-          </div>
-        </Reveal>
-
-        {/* Plateformes complètes : trois cartes, chacune mène à sa fiche détaillée */}
-        <Reveal className="mt-10 sm:mt-12">
-          <div className="flex items-baseline justify-between gap-4">
-            <p className="font-display text-[11px] font-semibold tracking-[0.24em] text-primary/80 uppercase">
-              {t.platforms.eyebrow[lang]}
-            </p>
-            <Link
-              href={APP_PROJECTS_HREF}
-              className="group inline-flex shrink-0 items-center gap-1 text-[13px] text-muted-foreground transition-colors hover:text-primary"
-            >
-              {t.platforms.cta[lang]}
-              <ArrowUpRight className="size-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </Link>
-          </div>
-          <p className="mt-2 max-w-2xl text-[15px] leading-relaxed text-muted-foreground">
-            {t.platforms.title[lang]}
-          </p>
-
-          <div className="mt-4 grid gap-3 sm:grid-cols-3">
-            {platformProjects.map((project) => (
-              <TiltCard key={project.id} className="rounded-xl">
-              <Link
-                href={`${APP_PROJECTS_HREF}#${project.id}`}
-                className="group block overflow-hidden rounded-xl border border-border/60 bg-card/40 transition-[border-color,box-shadow] duration-300 hover:border-primary/40 hover:shadow-[var(--shadow-md)]"
-              >
-                <div className="relative aspect-[16/10] overflow-hidden border-b border-border/60">
-                  <Image
-                    src={project.image!}
-                    alt={`${project.title}, plateforme développée par VBWEB`}
-                    fill
-                    loading="lazy"
-                    sizes="(max-width: 640px) 100vw, 300px"
-                    className="card-lift-media object-cover object-top"
-                  />
-                </div>
-                <div className="p-3.5">
-                  <p className="font-display text-[14px] font-semibold leading-snug text-foreground transition-colors duration-300 group-hover:text-primary">
-                    {project.title}
-                  </p>
-                  <p className="mt-0.5 text-[12px] text-muted-foreground">{project.kind}</p>
-                </div>
-              </Link>
-              </TiltCard>
-            ))}
-          </div>
-        </Reveal>
       </div>
     </section>
   )

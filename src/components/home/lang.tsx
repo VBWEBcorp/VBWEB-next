@@ -202,6 +202,11 @@ export const t = {
       fr: 'Voir toutes les études de cas',
       en: 'See all case studies',
     },
+    // Le choix des études de cas sur l'accueil (etudes-de-cas-section.tsx)
+    tabsLabel: { fr: 'Choisir un type de réalisation', en: 'Choose a type of work' },
+    tabs: { fr: ['Référencement SEO', 'Sites internet', 'Applications web'], en: ['SEO', 'Websites', 'Web apps'] },
+    tabsShort: { fr: ['SEO', 'Sites', 'Applications'], en: ['SEO', 'Websites', 'Apps'] },
+    seoLink: { fr: 'Voir les études de cas SEO', en: 'See the SEO case studies' },
   },
   testimonials: {
     badge: { fr: '88 avis Google', en: '88 Google reviews' },
