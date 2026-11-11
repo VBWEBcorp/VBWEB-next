@@ -474,7 +474,10 @@
 @keyframes sd-flotte-b { from { transform: translateY(80px); } to { transform: translateY(-80px); } }
 @keyframes sd-flotte-c { from { transform: translateY(20px); } to { transform: translateY(-20px); } }
 
-/* Bandeau des réalisations sous les chiffres (realisations-strip.tsx) : deux copies, on glisse d'une copie. */
+/* Bandeau des réalisations sous les chiffres (realisations-strip.tsx) et ruban géant sous le hero
+   (home-ruban.tsx) : deux copies, on glisse d'une copie, en continu, sans attendre le scroll. */
 .sd-strip { animation: sd-strip 70s linear infinite; }
+.sd-ruban { animation: sd-strip 40s linear infinite; }
+@media (max-width: 639px) { .sd-ruban { animation-duration: 22s; } }
 @keyframes sd-strip { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-@media (prefers-reduced-motion: reduce) { .sd-strip { animation-play-state: paused; } }
+@media (prefers-reduced-motion: reduce) { .sd-strip, .sd-ruban { animation-play-state: paused; } }

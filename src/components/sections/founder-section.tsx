@@ -4,10 +4,16 @@ import { ArrowUpRight, TrendingUp, Users, Layers } from 'lucide-react'
 import Link from 'next/link'
 
 import { useHomeLang, t } from '@/components/home/lang'
-import { AutoplayYouTube } from '@/components/sections/autoplay-youtube'
+import { AutoplayVideo } from '@/components/sections/autoplay-video'
 import { Reveal } from '@/components/ui/reveal'
 
-const VIDEO_ID = 'M9_8FHzDsl4'
+// « Des clients, pas juste un site » (16 s, 16:9), montée au Studio Amazon le 15/10/2026.
+// Remplace la vidéo YouTube M9_8FHzDsl4 le 11/11/2026, à la demande de Victor.
+const VIDEO = {
+  src: '/videos/vbweb-des-clients-1080.mp4',
+  srcMobile: '/videos/vbweb-des-clients-720.mp4',
+  poster: '/videos/vbweb-des-clients.webp',
+}
 
 const RESULT_ICONS = [TrendingUp, Users, Layers]
 
@@ -38,7 +44,10 @@ export function FounderSection() {
           <div className="relative p-2.5 sm:p-5 lg:p-8">
             {/* Vidéo : premier élément de la carte, juste sous le hero, quasi bord à bord sur mobile */}
             <div className="relative aspect-video overflow-hidden rounded-[1.1rem] border border-border/60 bg-black ring-1 ring-foreground/5 sm:rounded-[1.4rem]">
-              <AutoplayYouTube videoId={VIDEO_ID} title="Victor Béasse, Fondateur VBWEB" />
+              <AutoplayVideo
+                {...VIDEO}
+                title={lang === 'en' ? 'VBWEB: a website that brings you clients' : 'VBWEB : un site qui apporte des clients'}
+              />
             </div>
 
             <div className="px-3 pb-3 pt-8 sm:px-5 sm:pb-5 sm:pt-10 lg:px-6 lg:pb-6 lg:pt-12">
