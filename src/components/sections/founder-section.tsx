@@ -4,12 +4,15 @@ import { ArrowUpRight, TrendingUp, Users, Layers } from 'lucide-react'
 import Link from 'next/link'
 
 import { useHomeLang, t } from '@/components/home/lang'
-import { AutoplayYouTube } from '@/components/sections/autoplay-youtube'
+import { AutoplayVideo } from '@/components/sections/autoplay-video'
 import { Reveal } from '@/components/ui/reveal'
 
-// « VBWEB - Les services proposés » : Victor présente ses services, en horizontal.
-// Demande de Victor du 11/11/2026 (« la vidéo de prez où c'est moi qui parle »).
-const VIDEO_ID = 'uVHgKLHXQMU'
+// La présentation 019 (« Qui suis-je ? VBWEB en une minute »), montée au studio VBWEB :
+// verticale sur téléphone, horizontale sur ordinateur. Demande de Victor du 11/11/2026.
+const VIDEO = {
+  mobile: { src: '/videos/vbweb-presentation-verticale.mp4', poster: '/videos/vbweb-presentation-verticale.webp', width: 720, height: 1280 },
+  desktop: { src: '/videos/vbweb-presentation-horizontale.mp4', poster: '/videos/vbweb-presentation-horizontale.webp', width: 1280, height: 720 },
+}
 
 const RESULT_ICONS = [TrendingUp, Users, Layers]
 
@@ -39,8 +42,8 @@ export function FounderSection() {
 
           <div className="relative p-2.5 sm:p-5 lg:p-8">
             {/* Vidéo : premier élément de la carte, juste sous le hero, quasi bord à bord sur mobile */}
-            <div className="relative aspect-video overflow-hidden rounded-[1.1rem] border border-border/60 bg-black ring-1 ring-foreground/5 sm:rounded-[1.4rem]">
-              <AutoplayYouTube videoId={VIDEO_ID} title="Victor Béasse présente les services de VBWEB" />
+            <div className="relative mx-auto aspect-[9/16] max-w-[420px] overflow-hidden rounded-[1.1rem] border border-border/60 bg-black ring-1 ring-foreground/5 sm:rounded-[1.4rem] md:aspect-video md:max-w-none">
+              <AutoplayVideo {...VIDEO} title="Victor Béasse présente VBWEB et ses services" />
             </div>
 
             <div className="px-3 pb-3 pt-8 sm:px-5 sm:pb-5 sm:pt-10 lg:px-6 lg:pb-6 lg:pt-12">
