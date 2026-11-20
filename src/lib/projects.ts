@@ -12,6 +12,13 @@ export const WEB_PROJECTS_HREF = '/etudes-de-cas/sites-internet'
 export const webProjects: WebProject[] = [
   // Trois dernières réalisations en tête (10/11/2026) : l'accueil n'affiche que les 12 premières.
   {
+    id: 'yalin-properties',
+    name: 'Yalin Properties',
+    url: 'https://yalin-properties.netlify.app/fr',
+    image: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/YALIN-PROPERTIES-xd1hp1ix.webp',
+    description: 'Suivi de chantier à Koh Samui pour les acheteurs étrangers : site en trois langues et prix modifiables par le client.',
+  },
+  {
     id: 'jeudredi-production',
     name: 'Jeudredi Production',
     url: 'https://jeudredi-production.netlify.app/',
