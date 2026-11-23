@@ -14,7 +14,7 @@ export const webProjects: WebProject[] = [
   {
     id: 'yalin-properties',
     name: 'Yalin Properties',
-    url: 'https://yalin-properties.netlify.app/fr',
+    url: 'https://yalinproperties.com/fr',
     image: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/YALIN-PROPERTIES-xd1hp1ix.webp',
     description: 'Suivi de chantier à Koh Samui pour les acheteurs étrangers : site en trois langues et prix modifiables par le client.',
   },
@@ -277,13 +277,6 @@ export const webProjects: WebProject[] = [
     url: 'https://perlekparis.netlify.app/',
     image: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/PERLE-K-PARIS-vd47ij6m.webp',
     description: 'E-commerce : bijoux de perles waterproof et hypoallergéniques, paiement en ligne et livraison.',
-  },
-  {
-    id: 'jeudredi-production',
-    name: 'Jeudredi Production',
-    url: 'https://jeudredi-production.netlify.app/',
-    image: 'https://pub-698f857760da42999dac8854114fbc41.r2.dev/JEUDREDI-PRODUCTION-k4r8tz2m.webp',
-    description: 'Agence de production audiovisuelle à Paris : site vitrine en motion design.',
   },
   {
     id: 'france-elastodontie',
