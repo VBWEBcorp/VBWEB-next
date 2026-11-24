@@ -73,7 +73,7 @@ export function CookieConsent() {
         <div className="flex items-start gap-2.5 pr-7 sm:block sm:pr-0">
           <Cookie className="mt-px size-4 shrink-0 text-primary sm:mb-4 sm:mt-0 sm:size-10" />
           <p className="text-[11.5px] leading-[1.35] text-foreground/80 sm:mb-4 sm:text-sm sm:leading-relaxed">
-            Nous utilisons des cookies pour améliorer votre expérience sur notre site. En continuant votre navigation, vous acceptez notre utilisation des cookies.
+            Avec votre accord, ce site utilise Google Analytics pour mesurer sa fréquentation. Vous pouvez refuser.
           </p>
         </div>
 
