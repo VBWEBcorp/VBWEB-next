@@ -28,6 +28,7 @@ export function CookieConsent() {
 
   const handleAccept = () => {
     localStorage.setItem('cookie-consent', 'accepted')
+    window.dispatchEvent(new Event('cookie-consent-change'))
     setPixelConsent(true)
     // La page d'arrivée a été vue avant l'accord : on la compte maintenant.
     trackPageView()
@@ -36,6 +37,7 @@ export function CookieConsent() {
 
   const handleDecline = () => {
     localStorage.setItem('cookie-consent', 'refused')
+    window.dispatchEvent(new Event('cookie-consent-change'))
     setPixelConsent(false)
     setVisible(false)
   }
@@ -47,7 +49,11 @@ export function CookieConsent() {
     // de consentement. Elle flottait auparavant au milieu de l'ecran et
     // interceptait les clics destines au contenu, dont le bouton du hero.
     // A partir de sm : la carte d'origine, dans le coin.
-    <div className="fixed inset-x-0 bottom-0 z-[100] animate-[slide-up_0.4s_ease-out_both] sm:inset-x-auto sm:bottom-6 sm:right-24 sm:w-[320px] sm:max-w-[calc(100vw-7rem)]">
+    <div
+      role="region"
+      aria-label="Consentement aux cookies"
+      className="fixed inset-x-0 bottom-0 z-[100] animate-[slide-up_0.4s_ease-out_both] sm:inset-x-auto sm:bottom-6 sm:right-24 sm:w-[320px] sm:max-w-[calc(100vw-7rem)]"
+    >
       <div className="relative border-t border-border bg-[#1a2c45] px-4 pb-[max(0.625rem,env(safe-area-inset-bottom))] pt-3 shadow-xl sm:overflow-hidden sm:rounded-2xl sm:border sm:p-6 sm:pb-6">
         {/* Background cookie */}
         <div className="pointer-events-none absolute -top-6 -right-6 hidden size-24 opacity-5 animate-[spin_8s_linear_infinite] sm:block">

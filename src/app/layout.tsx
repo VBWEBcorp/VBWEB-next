@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import { Inter, Plus_Jakarta_Sans } from 'next/font/google'
 
+import { GoogleAnalytics } from '@/components/layout/google-analytics'
 import { MesureAudience } from '@/components/layout/mesure-audience'
 import { OaiqPageView } from '@/components/layout/oaiq-page-view'
 import { RootWrapper } from '@/components/layout/root-wrapper'
@@ -106,6 +107,7 @@ export default function RootLayout({
             <RootWrapper>{children}</RootWrapper>
           </AuditProvider>
         </HomeLangProvider>
+        <GoogleAnalytics />
       </body>
     </html>
   )
