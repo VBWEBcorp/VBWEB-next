@@ -42,7 +42,7 @@ export default function CGUPage() {
             Conditions générales d&apos;utilisation
           </h1>
           <p className="mt-4 text-sm text-muted-foreground">
-            Dernière mise à jour : [JJ/MM/AAAA]
+            Dernière mise à jour : 25 novembre 2026
           </p>
 
           <article className="mt-10 space-y-10 text-sm leading-relaxed text-muted-foreground [&_h2]:font-display [&_h2]:text-lg [&_h2]:font-semibold [&_h2]:text-foreground [&_h3]:text-sm [&_h3]:font-semibold [&_h3]:text-foreground">
@@ -53,8 +53,9 @@ export default function CGUPage() {
                 Les présentes Conditions Générales d&apos;Utilisation (ci-après &quot;CGU&quot;)
                 définissent les règles d&apos;accès et d&apos;utilisation du site{' '}
                 <strong>{siteConfig.url}</strong> édité sous la dénomination commerciale{' '}
-                <strong>{siteConfig.name}</strong> par {siteConfig.legalName},
-                micro-entrepreneur (voir les{' '}
+                <strong>{siteConfig.name}</strong> par {siteConfig.company.name},{' '}
+                {siteConfig.company.form}, dont le siège est situé{' '}
+                {siteConfig.company.address} (voir les{' '}
                 <Link href="/mentions-legales" className="font-medium text-primary underline underline-offset-4 hover:text-primary/80">
                   mentions légales
                 </Link>{' '}
@@ -215,8 +216,8 @@ export default function CGUPage() {
               <p>
                 Les présentes CGU sont régies par le droit français. En cas de litige relatif
                 à l&apos;interprétation ou l&apos;exécution des présentes, les parties s&apos;engagent à
-                rechercher une solution amiable. À défaut, le litige sera porté devant les
-                tribunaux compétents du ressort de [Ville, à compléter].
+                rechercher une solution amiable. À défaut, les tribunaux français sont compétents,
+                selon les règles de droit commun.
               </p>
             </section>
 

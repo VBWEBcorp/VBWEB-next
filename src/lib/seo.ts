@@ -14,6 +14,13 @@ export const siteConfig = {
   phone: '+33 6 27 30 17 88',
   email: 'contact@vbweb.fr',
   founder: 'Victor Béasse',
+  // Société éditrice du site (pages légales). L'adresse locale des données
+  // structurées reste celle de la fiche Google, plus bas.
+  company: {
+    name: 'VBWEB LLC',
+    form: 'société à responsabilité limitée (Limited Liability Company) de droit de l’État du Nouveau-Mexique, États-Unis',
+    address: '412 W 7th St, Clovis, NM 88101, États-Unis',
+  },
   address: {
     street: 'Rennes',
     city: 'Rennes',

@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import { useHomeLang, t } from '@/components/home/lang'
+import { EVENEMENT_OUVRIR_BANDEAU } from '@/lib/consentement'
 import { siteConfig } from '@/lib/seo'
 
 const navLinks = [
@@ -210,6 +211,13 @@ export function Footer() {
                       {l.label}
                     </Link>
                   ))}
+                  <button
+                    type="button"
+                    onClick={() => window.dispatchEvent(new Event(EVENEMENT_OUVRIR_BANDEAU))}
+                    className="text-[11px] text-muted-foreground/70 transition-colors hover:text-foreground"
+                  >
+                    Gérer les cookies
+                  </button>
                 </nav>
 
                 {/* Copyright */}

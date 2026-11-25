@@ -3,6 +3,8 @@
 import { usePathname, useSearchParams } from 'next/navigation'
 import { Suspense, useEffect, useRef, useState } from 'react'
 
+import { consentementDonne, EVENEMENT_CONSENTEMENT } from '@/lib/consentement'
+
 /*
  * Google Analytics 4, soumis au consentement.
  *
@@ -24,21 +26,10 @@ import { Suspense, useEffect, useRef, useState } from 'react'
 const GA_ID = (process.env.NEXT_PUBLIC_GA_ID ?? '').trim()
 const GA_ID_VALIDE = /^G-[A-Z0-9]+$/i.test(GA_ID)
 
-const CLE_CONSENTEMENT = 'cookie-consent'
-const EVENEMENT_CONSENTEMENT = 'cookie-consent-change'
-
 type FenetreGtag = Window & {
   dataLayer?: unknown[]
   gtag?: (...args: unknown[]) => void
 } & Record<string, unknown>
-
-function consentementDonne() {
-  try {
-    return window.localStorage.getItem(CLE_CONSENTEMENT) === 'accepted'
-  } catch {
-    return false
-  }
-}
 
 let gtagCharge = false
 

@@ -49,14 +49,14 @@ export default function PrivacyPage() {
             Politique de confidentialité
           </h1>
           <p className="mt-4 text-sm text-muted-foreground">
-            Dernière mise à jour : [JJ/MM/AAAA]
+            Dernière mise à jour : 25 novembre 2026
           </p>
 
           <article className="mt-10 space-y-10 text-sm leading-relaxed text-muted-foreground [&_h2]:font-display [&_h2]:text-lg [&_h2]:font-semibold [&_h2]:text-foreground [&_h3]:text-sm [&_h3]:font-semibold [&_h3]:text-foreground">
 
             <section className="space-y-3">
               <p>
-                La société {siteConfig.name} (&quot;nous&quot;, &quot;notre&quot;,{' '}
+                La société {siteConfig.company.name} (&quot;nous&quot;, &quot;notre&quot;,{' '}
                 &quot;nos&quot;) accorde une grande importance à la protection de
                 vos données personnelles. La présente politique de
                 confidentialité décrit les données que nous collectons, pourquoi
@@ -71,16 +71,16 @@ export default function PrivacyPage() {
               <h2>1. Responsable du traitement</h2>
               <p>Le responsable du traitement des données est :</p>
               <ul className="list-inside list-disc space-y-1 pl-1">
-                <li><strong>Raison sociale :</strong> {siteConfig.name}</li>
-                <li>
-                  <strong>Adresse :</strong> {siteConfig.address.street}, {siteConfig.address.postalCode}{' '}
-                  {siteConfig.address.city}
-                </li>
+                <li><strong>Dénomination sociale :</strong> {siteConfig.company.name} (nom commercial : {siteConfig.name})</li>
+                <li><strong>Forme juridique :</strong> {siteConfig.company.form}</li>
+                <li><strong>Adresse :</strong> {siteConfig.company.address}</li>
+                <li><strong>Représentant légal :</strong> {siteConfig.legalName}</li>
                 <li><strong>Email :</strong> {siteConfig.email}</li>
                 <li><strong>Téléphone :</strong> {siteConfig.phone}</li>
               </ul>
               <p>
-                Délégué à la protection des données (DPO) : [Nom du DPO ou &quot;non désigné&quot;]
+                Délégué à la protection des données (DPO) : non désigné. Pour toute question
+                sur vos données, écrivez à {siteConfig.email}.
               </p>
             </section>
 
@@ -91,11 +91,12 @@ export default function PrivacyPage() {
                 aux finalités décrites ci-dessous, dans le respect du principe
                 de minimisation des données (article 5.1.c du RGPD).
               </p>
-              <h3 className="pt-2">a) Données collectées via le formulaire de contact</h3>
+              <h3 className="pt-2">a) Données collectées via les formulaires du site</h3>
               <ul className="list-inside list-disc space-y-1 pl-1">
                 <li>Nom et prénom</li>
                 <li>Adresse email</li>
-                <li>Numéro de téléphone (optionnel)</li>
+                <li>Numéro de téléphone (demandé pour être rappelé)</li>
+                <li>Entreprise, adresse du site et budget, lorsque le formulaire les demande</li>
                 <li>Objet et contenu du message</li>
               </ul>
               <h3 className="pt-2">b) Données collectées via l&apos;espace administration</h3>
@@ -104,7 +105,16 @@ export default function PrivacyPage() {
                 <li>Mot de passe (stocké sous forme de hash chiffré, jamais en clair)</li>
                 <li>Nom d&apos;affichage</li>
               </ul>
-              <h3 className="pt-2">c) Données collectées automatiquement</h3>
+              <h3 className="pt-2">c) Données utilisées pour contacter des professionnels</h3>
+              <p>
+                Nous contactons des entreprises par email ou sur les réseaux professionnels pour leur
+                présenter nos services. Nous utilisons alors le nom de l&apos;entreprise, son site, le
+                nom du dirigeant et les coordonnées professionnelles affichées publiquement (site de
+                l&apos;entreprise, fiche Google, registres publics, réseaux professionnels). Vous pouvez
+                vous y opposer à tout moment, sans motif, en répondant au message ou en écrivant à{' '}
+                {siteConfig.email} : vous n&apos;êtes plus contacté.
+              </p>
+              <h3 className="pt-2">d) Données collectées automatiquement</h3>
               <ul className="list-inside list-disc space-y-1 pl-1">
                 <li>Adresse IP</li>
                 <li>Type de navigateur et système d&apos;exploitation</li>
@@ -137,14 +147,24 @@ export default function PrivacyPage() {
                       <td className="py-2.5">3 ans après le dernier contact</td>
                     </tr>
                     <tr>
+                      <td className="py-2.5 pr-4">Présenter nos services à des professionnels</td>
+                      <td className="py-2.5 pr-4">Intérêt légitime (art. 6.1.f)</td>
+                      <td className="py-2.5">3 ans après le dernier contact ; une opposition est gardée pour ne plus vous écrire</td>
+                    </tr>
+                    <tr>
                       <td className="py-2.5 pr-4">Gestion de l&apos;espace d&apos;administration</td>
                       <td className="py-2.5 pr-4">Intérêt légitime (art. 6.1.f)</td>
                       <td className="py-2.5">Durée du compte</td>
                     </tr>
                     <tr>
-                      <td className="py-2.5 pr-4">Analyser la fréquentation du site</td>
-                      <td className="py-2.5 pr-4">Intérêt légitime (art. 6.1.f)</td>
+                      <td className="py-2.5 pr-4">Analyser la fréquentation du site (Google Analytics)</td>
+                      <td className="py-2.5 pr-4">Consentement (art. 6.1.a RGPD)</td>
                       <td className="py-2.5">25 mois maximum</td>
+                    </tr>
+                    <tr>
+                      <td className="py-2.5 pr-4">Mesurer l&apos;efficacité de nos annonces (OpenAI Ads)</td>
+                      <td className="py-2.5 pr-4">Consentement (art. 6.1.a RGPD)</td>
+                      <td className="py-2.5">Selon la politique d&apos;OpenAI</td>
                     </tr>
                     <tr>
                       <td className="py-2.5 pr-4">Assurer la sécurité et la disponibilité du site</td>
@@ -160,7 +180,6 @@ export default function PrivacyPage() {
               <h2>4. Technologies et sous-traitants</h2>
               <p>
                 Le site utilise les technologies et services suivants pour son fonctionnement.
-                Chaque sous-traitant est lié par un contrat conforme à l&apos;article 28 du RGPD.
               </p>
               <div className="overflow-x-auto">
                 <table className="w-full border-collapse text-sm">
@@ -175,27 +194,51 @@ export default function PrivacyPage() {
                   <tbody className="divide-y divide-border/40">
                     <tr>
                       <td className="py-2.5 pr-4">Framework web</td>
-                      <td className="py-2.5 pr-4">Next.js (Vercel Inc.)</td>
+                      <td className="py-2.5 pr-4">Next.js (open source)</td>
                       <td className="py-2.5 pr-4">Rendu des pages, routage, API</td>
-                      <td className="py-2.5">USA (clauses contractuelles types)</td>
+                      <td className="py-2.5">Chez l&apos;hébergeur</td>
                     </tr>
                     <tr>
                       <td className="py-2.5 pr-4">Hébergement</td>
-                      <td className="py-2.5 pr-4">[Vercel / OVH / autre, à compléter]</td>
+                      <td className="py-2.5 pr-4">Netlify, Inc.</td>
                       <td className="py-2.5 pr-4">Hébergement du site et des API</td>
-                      <td className="py-2.5">[À compléter]</td>
+                      <td className="py-2.5">États-Unis</td>
+                    </tr>
+                    <tr>
+                      <td className="py-2.5 pr-4">Envoi d&apos;emails</td>
+                      <td className="py-2.5 pr-4">Resend</td>
+                      <td className="py-2.5 pr-4">Transmission des demandes envoyées par les formulaires</td>
+                      <td className="py-2.5">États-Unis</td>
+                    </tr>
+                    <tr>
+                      <td className="py-2.5 pr-4">Mesure d&apos;audience</td>
+                      <td className="py-2.5 pr-4">Google Analytics</td>
+                      <td className="py-2.5 pr-4">Fréquentation du site, après votre accord</td>
+                      <td className="py-2.5">États-Unis</td>
+                    </tr>
+                    <tr>
+                      <td className="py-2.5 pr-4">Mesure publicitaire</td>
+                      <td className="py-2.5 pr-4">OpenAI</td>
+                      <td className="py-2.5 pr-4">Pages vues et demandes de rappel (email, téléphone et nom transmis sous forme hachée), après votre accord</td>
+                      <td className="py-2.5">États-Unis</td>
+                    </tr>
+                    <tr>
+                      <td className="py-2.5 pr-4">Test de visibilité IA</td>
+                      <td className="py-2.5 pr-4">OpenAI</td>
+                      <td className="py-2.5 pr-4">Traitement des informations saisies dans le test</td>
+                      <td className="py-2.5">États-Unis</td>
                     </tr>
                     <tr>
                       <td className="py-2.5 pr-4">Base de données</td>
                       <td className="py-2.5 pr-4">MongoDB Atlas (MongoDB Inc.)</td>
                       <td className="py-2.5 pr-4">Stockage du contenu, comptes admin, messages</td>
-                      <td className="py-2.5">Europe (région configurable)</td>
+                      <td className="py-2.5">Selon la région du service</td>
                     </tr>
                     <tr>
                       <td className="py-2.5 pr-4">Stockage d&apos;images</td>
                       <td className="py-2.5 pr-4">Cloudflare R2 (Cloudflare Inc.)</td>
                       <td className="py-2.5 pr-4">Hébergement des images uploadées</td>
-                      <td className="py-2.5">Europe (auto, région la plus proche)</td>
+                      <td className="py-2.5">Selon la région du service</td>
                     </tr>
                     <tr>
                       <td className="py-2.5 pr-4">Optimisation d&apos;images</td>
@@ -219,8 +262,8 @@ export default function PrivacyPage() {
                 </table>
               </div>
               <p>
-                <strong>Note :</strong> Aucune donnée personnelle n&apos;est transmise à
-                des régies publicitaires, réseaux sociaux ou services de profilage.
+                <strong>Note :</strong> aucune donnée n&apos;est transmise à Google Analytics ni à la
+                mesure publicitaire d&apos;OpenAI sans votre accord dans le bandeau de cookies.
               </p>
             </section>
 
@@ -230,6 +273,7 @@ export default function PrivacyPage() {
               <p>Elles peuvent être transmises uniquement :</p>
               <ul className="list-inside list-disc space-y-1 pl-1">
                 <li>Aux sous-traitants techniques listés ci-dessus, dans le cadre strict de leurs missions et sous contrat de confidentialité</li>
+                <li>Aux prestataires de messagerie, d&apos;hébergement, de gestion commerciale et d&apos;aide à la rédaction que nous utilisons pour nos échanges avec les clients et les prospects</li>
                 <li>Aux autorités compétentes si la loi l&apos;exige (réquisition judiciaire, obligation légale)</li>
               </ul>
             </section>
@@ -237,18 +281,15 @@ export default function PrivacyPage() {
             <section className="space-y-3">
               <h2>6. Transferts de données hors Union européenne</h2>
               <p>
-                Certains de nos sous-traitants techniques (Vercel, MongoDB Atlas, Cloudflare)
-                peuvent traiter des données aux États-Unis. Ces transferts sont encadrés par :
+                Certains de nos sous-traitants techniques (Netlify, Resend, MongoDB Atlas, Cloudflare, Google, OpenAI)
+                peuvent traiter des données aux États-Unis, où {siteConfig.company.name} a également son siège.
+                Selon le prestataire, ces transferts s&apos;appuient sur :
               </p>
               <ul className="list-inside list-disc space-y-1 pl-1">
                 <li>Le EU-US Data Privacy Framework (décision d&apos;adéquation de la Commission européenne du 10 juillet 2023)</li>
                 <li>Des clauses contractuelles types (SCCs) conformes aux modèles adoptés par la Commission européenne</li>
                 <li>Des mesures techniques complémentaires (chiffrement en transit et au repos)</li>
               </ul>
-              <p>
-                Nous privilégions systématiquement les régions de stockage européennes
-                lorsque le service le permet (MongoDB Atlas Europe, Cloudflare R2 Europe).
-              </p>
             </section>
 
             <section className="space-y-3">
@@ -285,19 +326,18 @@ export default function PrivacyPage() {
 
               <h3 className="pt-2">b) Cookies d&apos;analyse (optionnels)</h3>
               <p>
-                Si un outil d&apos;analyse de fréquentation est activé, les cookies correspondants
-                ne sont déposés qu&apos;après votre consentement explicite via le bandeau de cookies.
+                Google Analytics n&apos;est activé qu&apos;après votre accord dans le bandeau de cookies.
               </p>
 
-              <h3 className="pt-2">c) Cookies publicitaires</h3>
+              <h3 className="pt-2">c) Mesure publicitaire (optionnelle)</h3>
               <p>
-                <strong>Aucun cookie publicitaire, de profilage ou de pistage tiers</strong> n&apos;est
-                utilisé sur ce site.
+                Le site utilise la mesure de conversion d&apos;OpenAI pour évaluer ses annonces. Aucune
+                mesure n&apos;est envoyée avant votre accord.
               </p>
 
               <p>
-                Vous pouvez à tout moment modifier vos préférences via le bandeau de
-                consentement ou dans les paramètres de votre navigateur.
+                Vous pouvez à tout moment modifier vos préférences via le lien
+                &quot;Gérer les cookies&quot; en bas de page ou dans les paramètres de votre navigateur.
                 Pour en savoir plus, consultez notre{' '}
                 <Link href="/politique-cookies" className="font-medium text-primary underline underline-offset-4 hover:text-primary/80">
                   Politique de cookies
@@ -317,7 +357,6 @@ export default function PrivacyPage() {
                 <li><strong>Hachage des mots de passe :</strong> algorithme bcrypt avec salage automatique (aucun mot de passe stocké en clair)</li>
                 <li><strong>Authentification sécurisée :</strong> tokens JWT à durée de vie limitée pour l&apos;espace d&apos;administration</li>
                 <li><strong>Accès restreints :</strong> seuls les administrateurs autorisés peuvent accéder au back-office</li>
-                <li><strong>Sauvegardes :</strong> sauvegardes automatiques quotidiennes de la base de données</li>
                 <li><strong>Mises à jour :</strong> dépendances logicielles régulièrement mises à jour pour corriger les vulnérabilités connues</li>
               </ul>
             </section>
@@ -367,8 +406,7 @@ export default function PrivacyPage() {
               <h2>11. Modification de la politique</h2>
               <p>
                 Nous nous réservons le droit de modifier la présente politique de
-                confidentialité à tout moment. Toute modification substantielle sera
-                signalée par un bandeau sur le site pendant 30 jours. La version en
+                confidentialité à tout moment. La version en
                 vigueur est celle accessible sur cette page, identifiée par sa date de
                 dernière mise à jour.
               </p>

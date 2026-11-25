@@ -3,16 +3,20 @@
 import { useEffect, useState } from 'react'
 import { X, Cookie } from 'lucide-react'
 
+import { enregistrerConsentement, EVENEMENT_OUVRIR_BANDEAU, lireConsentement } from '@/lib/consentement'
 import { setPixelConsent, trackPageView } from '@/lib/openai-pixel'
 
 export function CookieConsent() {
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
-    const consent = localStorage.getItem('cookie-consent')
-    if (!consent) {
-      const timer = setTimeout(() => setVisible(true), 1000)
-      return () => clearTimeout(timer)
+    // Lien « Gérer les cookies » du pied de page.
+    const ouvrir = () => setVisible(true)
+    window.addEventListener(EVENEMENT_OUVRIR_BANDEAU, ouvrir)
+    const timer = lireConsentement() ? undefined : setTimeout(ouvrir, 1000)
+    return () => {
+      window.removeEventListener(EVENEMENT_OUVRIR_BANDEAU, ouvrir)
+      clearTimeout(timer)
     }
   }, [])
 
@@ -27,8 +31,7 @@ export function CookieConsent() {
   }, [visible])
 
   const handleAccept = () => {
-    localStorage.setItem('cookie-consent', 'accepted')
-    window.dispatchEvent(new Event('cookie-consent-change'))
+    enregistrerConsentement('accepted')
     setPixelConsent(true)
     // La page d'arrivée a été vue avant l'accord : on la compte maintenant.
     trackPageView()
@@ -36,8 +39,7 @@ export function CookieConsent() {
   }
 
   const handleDecline = () => {
-    localStorage.setItem('cookie-consent', 'refused')
-    window.dispatchEvent(new Event('cookie-consent-change'))
+    enregistrerConsentement('refused')
     setPixelConsent(false)
     setVisible(false)
   }
@@ -73,7 +75,7 @@ export function CookieConsent() {
         <div className="flex items-start gap-2.5 pr-7 sm:block sm:pr-0">
           <Cookie className="mt-px size-4 shrink-0 text-primary sm:mb-4 sm:mt-0 sm:size-10" />
           <p className="text-[11.5px] leading-[1.35] text-foreground/80 sm:mb-4 sm:text-sm sm:leading-relaxed">
-            Avec votre accord, ce site utilise Google Analytics pour mesurer sa fréquentation. Vous pouvez refuser.
+            Avec votre accord, ce site utilise Google Analytics pour mesurer sa fréquentation et OpenAI pour mesurer ses annonces. Vous pouvez refuser, ou changer d’avis par « Gérer les cookies » en bas de page.
           </p>
         </div>
 
@@ -86,7 +88,7 @@ export function CookieConsent() {
           </button>
           <button
             onClick={handleDecline}
-            className="rounded-lg border border-border bg-foreground/5 px-4 py-1.5 text-[13px] font-medium text-foreground transition-all hover:bg-foreground/10 active:scale-[0.98] sm:py-2 sm:text-sm"
+            className="flex-1 rounded-lg border border-border bg-foreground/5 px-4 py-1.5 text-[13px] font-medium text-foreground transition-all hover:bg-foreground/10 active:scale-[0.98] sm:py-2 sm:text-sm"
           >
             Refuser
           </button>

@@ -42,7 +42,7 @@ export default function LegalPage() {
             Mentions légales
           </h1>
           <p className="mt-4 text-sm text-muted-foreground">
-            Dernière mise à jour : [JJ/MM/AAAA]
+            Dernière mise à jour : 25 novembre 2026
           </p>
 
           <article className="mt-10 space-y-10 text-sm leading-relaxed text-muted-foreground [&_h2]:font-display [&_h2]:text-lg [&_h2]:font-semibold [&_h2]:text-foreground [&_h3]:text-sm [&_h3]:font-semibold [&_h3]:text-foreground">
@@ -53,16 +53,12 @@ export default function LegalPage() {
                 Le site accessible à l&apos;adresse <strong>{siteConfig.url}</strong> est édité par :
               </p>
               <ul className="list-inside list-disc space-y-1 pl-1">
-                <li><strong>Raison sociale (personne physique) :</strong> {siteConfig.legalName}</li>
-                <li><strong>Dénomination commerciale :</strong> {siteConfig.name}</li>
-                <li><strong>Marque commerciale historique :</strong> {siteConfig.shortName}</li>
-                <li><strong>Forme juridique :</strong> Entreprise individuelle (micro-entrepreneur)</li>
-                <li><strong>SIRET :</strong> [N° SIRET à compléter]</li>
-                <li><strong>N° TVA intracommunautaire :</strong> Non applicable (franchise en base de TVA, art. 293 B du CGI)</li>
-                <li>
-                  <strong>Siège social :</strong> {siteConfig.address.street},{' '}
-                  {siteConfig.address.postalCode} {siteConfig.address.city}
-                </li>
+                <li><strong>Dénomination sociale :</strong> {siteConfig.company.name}</li>
+                <li><strong>Nom commercial :</strong> {siteConfig.name}</li>
+                <li><strong>Forme juridique :</strong> {siteConfig.company.form}</li>
+                <li><strong>Siège social :</strong> {siteConfig.company.address}</li>
+                <li><strong>N° TVA intracommunautaire :</strong> aucun (société établie hors de l&apos;Union européenne)</li>
+                <li><strong>Représentant légal :</strong> {siteConfig.legalName}</li>
                 <li><strong>Téléphone :</strong> {siteConfig.phone}</li>
                 <li><strong>Email :</strong> {siteConfig.email}</li>
               </ul>
@@ -71,8 +67,7 @@ export default function LegalPage() {
               </p>
               <p className="text-xs italic">
                 L&apos;activité est exploitée sous la dénomination commerciale {' '}
-                <strong>{siteConfig.name}</strong>, reprenant la marque historique {siteConfig.shortName}{' '}
-                créée en 2017. Cette dénomination est utilisée de manière constante sur le site web,
+                <strong>{siteConfig.name}</strong>, marque créée en 2017. Cette dénomination est utilisée de manière constante sur le site web,
                 le nom de domaine principal ({siteConfig.url}), l&apos;adresse de contact, les supports
                 commerciaux et les profils sur les réseaux professionnels.
               </p>
@@ -82,14 +77,15 @@ export default function LegalPage() {
               <h2>2. Hébergement</h2>
               <p>Le site est hébergé par :</p>
               <ul className="list-inside list-disc space-y-1 pl-1">
-                <li><strong>Raison sociale :</strong> [Vercel Inc. / OVHcloud / autre, à compléter]</li>
-                <li><strong>Adresse :</strong> [Adresse de l&apos;hébergeur]</li>
-                <li><strong>Site web :</strong> [URL de l&apos;hébergeur]</li>
+                <li><strong>Raison sociale :</strong> Netlify, Inc.</li>
+                <li><strong>Adresse :</strong> 101 2nd Street, San Francisco, CA 94105, États-Unis</li>
+                <li><strong>Contact :</strong> support@netlify.com (Netlify ne publie pas de numéro de téléphone)</li>
+                <li><strong>Site web :</strong> https://www.netlify.com</li>
               </ul>
               <h3 className="pt-2">Services techniques complémentaires</h3>
               <ul className="list-inside list-disc space-y-1 pl-1">
-                <li><strong>Base de données :</strong> MongoDB Atlas (MongoDB Inc.), serveurs en Union européenne</li>
-                <li><strong>Stockage de fichiers :</strong> Cloudflare R2 (Cloudflare Inc.), stockage objet compatible S3, serveurs en Europe</li>
+                <li><strong>Base de données :</strong> MongoDB Atlas (MongoDB Inc.)</li>
+                <li><strong>Stockage de fichiers :</strong> Cloudflare R2 (Cloudflare Inc.), stockage objet compatible S3</li>
                 <li><strong>CDN et sécurité réseau :</strong> Cloudflare (Cloudflare Inc.), réseau de diffusion de contenu mondial</li>
               </ul>
             </section>
@@ -194,33 +190,26 @@ export default function LegalPage() {
                 Les présentes mentions légales sont régies par le droit français.
                 En cas de litige, et après l&apos;échec de toute tentative de
                 résolution amiable dans un délai de 30 jours, les tribunaux
-                compétents du ressort de [Ville, à compléter] seront seuls
-                compétents.
+                français sont compétents, selon les règles de droit commun.
               </p>
               <p>
-                Conformément à l&apos;article L.612-1 du Code de la consommation,
-                le consommateur a le droit de recourir gratuitement à un médiateur
-                de la consommation. Médiateur : [Nom et coordonnées du médiateur, à compléter].
+                Nos prestations s&apos;adressent aux professionnels et aux particuliers. Le consommateur
+                conserve la protection des règles impératives du pays où il réside, et peut saisir le
+                tribunal de son domicile.
               </p>
               <p>
-                Plateforme de règlement en ligne des litiges de la Commission européenne :{' '}
-                <a
-                  href="https://ec.europa.eu/consumers/odr"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-medium text-primary underline underline-offset-4 hover:text-primary/80"
-                >
-                  https://ec.europa.eu/consumers/odr
-                </a>
+                Pour un contrat conclu à distance, le consommateur dispose d&apos;un délai de
+                rétractation de 14 jours (article L.221-18 du Code de la consommation), sauf les
+                exceptions de l&apos;article L.221-28. Après une réclamation écrite restée sans
+                solution, il peut recourir gratuitement à un médiateur de la consommation
+                (article L.612-1 du même code).
               </p>
             </section>
 
             <section className="space-y-3">
               <h2>9. Crédits</h2>
               <ul className="list-inside list-disc space-y-1 pl-1">
-                <li><strong>Conception et développement :</strong> [À compléter]</li>
-                <li><strong>Design :</strong> [À compléter]</li>
-                <li><strong>Crédits photos :</strong> [À compléter, ex: Unsplash, photographe, etc.]</li>
+                <li><strong>Conception, design et développement :</strong> {siteConfig.name}</li>
                 <li><strong>Icônes :</strong> Lucide Icons (licence ISC)</li>
                 <li><strong>Polices :</strong> Inter et Plus Jakarta Sans (Google Fonts, licence Open Font)</li>
               </ul>

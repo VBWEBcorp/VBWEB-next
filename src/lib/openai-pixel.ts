@@ -1,25 +1,47 @@
+import { consentementDonne } from '@/lib/consentement'
+
 /*
- * Pixel OpenAI Ads (pub ChatGPT). Le script de base est posé dans le <head> de
- * layout.tsx ; ici, ce qui l'appelle depuis les composants. Si le script n'est
- * pas encore chargé, la file oaiq garde l'appel et le rejoue au chargement.
- *
- * RGPD : rien n'est suivi avant « Accepter » dans le bandeau cookies.
+ * Pixel OpenAI Ads (pub ChatGPT). RGPD : le script n'est chargé, et rien n'est
+ * mesuré, qu'après « Accepter » dans le bandeau cookies.
  */
 export const OPENAI_PIXEL_ID = 'G2vxjESFCSreSn3EURdjLC'
+const SDK = 'https://bzrcdn.openai.com/sdk/oaiq.min.js'
 
-type Oaiq = (...args: unknown[]) => void
+type Oaiq = ((...args: unknown[]) => void) & { q?: unknown[] }
+type FenetreOaiq = Window & { oaiq?: Oaiq }
 
 function oaiq(...args: unknown[]) {
-  const fn = (window as unknown as { oaiq?: Oaiq }).oaiq
+  const fn = (window as unknown as FenetreOaiq).oaiq
   if (typeof fn === 'function') fn(...args)
 }
 
+// File d'attente prévue par OpenAI : elle garde les appels jusqu'au chargement.
+function charger() {
+  const w = window as unknown as FenetreOaiq
+  if (w.oaiq) return
+  const file: Oaiq = function () {
+    // eslint-disable-next-line prefer-rest-params
+    file.q!.push(arguments)
+  }
+  file.q = []
+  w.oaiq = file
+  const script = document.createElement('script')
+  script.async = true
+  script.src = SDK
+  document.head.appendChild(script)
+  oaiq('consent', true)
+  oaiq('init', { pixelId: OPENAI_PIXEL_ID, debug: window.location.hostname !== 'vbweb.fr' })
+}
+
 export function setPixelConsent(granted: boolean) {
+  if (granted) charger()
   oaiq('consent', granted)
 }
 
 // Le SDK ne voit pas les changements de route côté client : OaiqPageView l'appelle.
 export function trackPageView() {
+  if (!consentementDonne()) return
+  charger()
   oaiq('measure', 'page_viewed', { type: 'contents' })
 }
 
@@ -40,6 +62,8 @@ const cleanName = (s: string) => s.toLowerCase().replace(/[\s!-/:-@[-`{-~]/g, ''
 // Conversion de la campagne : une demande de rappel réellement envoyée.
 // leadId sert d'event_id, pour qu'un double envoi ne compte qu'une fois.
 export async function trackLead(form: { email?: string; phone?: string; name?: string }, leadId: string) {
+  if (!consentementDonne()) return
+  charger()
   try {
     const user: Record<string, string> = { country: 'FR' }
     if (form.email) user.email_sha256 = await sha256(form.email.trim().toLowerCase())
@@ -56,6 +80,3 @@ export async function trackLead(form: { email?: string; phone?: string; name?: s
   }
   oaiq('measure', 'lead_created', { type: 'customer_action' }, { event_id: leadId })
 }
-
-// Script de base : consentement à false, sauf si le visiteur a déjà accepté.
-export const OPENAI_PIXEL_SNIPPET = `!function(w,d,s,u){if(w.oaiq)return;var q=function(){q.q.push(arguments)};q.q=[];w.oaiq=q;var j=d.createElement(s);j.async=1;j.src=u;var f=d.getElementsByTagName(s)[0];f.parentNode.insertBefore(j,f)}(window,document,"script","https://bzrcdn.openai.com/sdk/oaiq.min.js");var c=false;try{c=localStorage.getItem("cookie-consent")==="accepted"}catch(e){}oaiq("consent",c);oaiq("init",{pixelId:"${OPENAI_PIXEL_ID}",debug:location.hostname!=="vbweb.fr"});`

@@ -42,7 +42,7 @@ export default function CookiePolicyPage() {
             Politique de cookies
           </h1>
           <p className="mt-4 text-sm text-muted-foreground">
-            Dernière mise à jour : [JJ/MM/AAAA]
+            Dernière mise à jour : 25 novembre 2026
           </p>
 
           <article className="mt-10 space-y-10 text-sm leading-relaxed text-muted-foreground [&_h2]:font-display [&_h2]:text-lg [&_h2]:font-semibold [&_h2]:text-foreground [&_h3]:text-sm [&_h3]:font-semibold [&_h3]:text-foreground">
@@ -119,20 +119,15 @@ export default function CookiePolicyPage() {
 
               <h3 className="pt-2">b) Cookies d&apos;analyse de fréquentation (optionnels)</h3>
               <p>
-                Si un outil d&apos;analyse est configuré (Google Analytics, Plausible, Matomo ou autre),
-                les cookies d&apos;analyse ne seront déposés <strong>qu&apos;après votre consentement
-                explicite</strong> via le bandeau de cookies.
-              </p>
-              <p>
                 Ce site utilise Google Analytics pour mesurer sa fréquentation. Tant que vous n&apos;avez
                 pas accepté le bandeau, <strong>aucun cookie d&apos;analyse n&apos;est déposé</strong>.
               </p>
 
-              <h3 className="pt-2">c) Cookies publicitaires et de pistage</h3>
+              <h3 className="pt-2">c) Mesure publicitaire (optionnelle)</h3>
               <p>
-                <strong>Ce site n&apos;utilise aucun cookie publicitaire, de profilage, de retargeting
-                ou de pistage.</strong> Aucune donnée n&apos;est partagée avec des régies publicitaires
-                ou des réseaux sociaux.
+                Ce site utilise la mesure de conversion d&apos;OpenAI pour évaluer ses annonces. Elle
+                compte les pages vues et les demandes de rappel (email, téléphone et nom transmis sous
+                forme hachée). <strong>Aucune mesure n&apos;est envoyée avant votre accord.</strong>
               </p>
 
               <h3 className="pt-2">d) Cookies tiers éventuels</h3>
@@ -193,7 +188,7 @@ export default function CookiePolicyPage() {
               <p>
                 Lors de votre première visite, un bandeau de consentement vous permet
                 d&apos;accepter ou de refuser les cookies optionnels. Vous pouvez modifier
-                votre choix à tout moment en cliquant sur le lien &quot;Gérer les cookies&quot;
+                votre choix à tout moment en cliquant sur &quot;Gérer les cookies&quot;
                 en bas de page.
               </p>
 
